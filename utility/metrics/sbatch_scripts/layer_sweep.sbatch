@@ -14,7 +14,11 @@ module load cuda/12.4
 set -euo pipefail
 
 source /home/mkilic/.llmvenv/bin/activate
-cd "${SLURM_SUBMIT_DIR:-/work/projects/mkilic/privacy-utility/utility}"
+# Repo root -- override with `REPO_ROOT=/path/to/LLM-privacy sbatch <script>` if
+# the repo lives elsewhere. Every path below is relative to it, so the job no
+# longer depends on which directory you submit from.
+REPO_ROOT="${REPO_ROOT:-/work/projects/mkilic/LLM-privacy}"
+cd "$REPO_ROOT/utility"
 
 #Expandable segments let the allocator grow/shrink a single segment instead of 
 #stranding fixed-size blocks, so a failure stays local to the cell that caused it.
@@ -23,7 +27,7 @@ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 echo "Job ${SLURM_JOB_ID:-manual} on $(hostname), GPU: ${CUDA_VISIBLE_DEVICES:-none}"
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 
-python layer_sweep.py \
+python metrics/layer_sweep.py \
     --csv data/privacy_prompt_rewrites_floor_100.csv \
     --k 15 \
     --max_new_tokens 256 \

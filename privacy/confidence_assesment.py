@@ -64,16 +64,16 @@ from typing import Callable
 import torch
 import torch.nn.functional as F
 
-# utility/ is a directory of standalone scripts, not a package: its modules
-# import each other by bare name (kl_utility_scoring.py does `from topk_sample
-# import ...`), so the directory itself has to be ON sys.path -- importing it as
-# `utility.kl_utility_scoring` would resolve this file's import and then fail on
-# that inner one. Setting PYTHONPATH in the sbatch does the same job; this block
-# keeps ad-hoc `python privacy/confidence_assesment.py` runs working from any
-# working directory, with no environment setup.
-_UTILITY = Path(__file__).resolve().parents[1] / "utility"
-if str(_UTILITY) not in sys.path:
-    sys.path.insert(0, str(_UTILITY))
+# utility/metrics/ is a directory of standalone scripts, not a package: its
+# modules import each other by bare name (kl_utility_scoring.py does `from
+# topk_sample import ...`), so the directory itself has to be ON sys.path --
+# importing it as `utility.metrics.kl_utility_scoring` would resolve this file's
+# import and then fail on that inner one. Setting PYTHONPATH in the sbatch does
+# the same job; this block keeps ad-hoc `python privacy/confidence_assesment.py`
+# runs working from any working directory, with no environment setup.
+_METRICS = Path(__file__).resolve().parents[1] / "utility" / "metrics"
+if str(_METRICS) not in sys.path:
+    sys.path.insert(0, str(_METRICS))
 
 from topk_sample import load                     # noqa: E402
 from kl_utility_scoring import build_prompt_ids  # noqa: E402

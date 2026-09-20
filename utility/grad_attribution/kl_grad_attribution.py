@@ -50,11 +50,17 @@ versus differences that permeate the whole answer.
 """
 import argparse
 import sys
+from pathlib import Path
 
 import torch
 import torch.nn.functional as F
 
-sys.path.append("/work/projects/mkilic/privacy-utility/utility/")
+# utility/metrics/ holds the shared sampling and scoring helpers, which import
+# each other by bare name, so that directory goes on sys.path as a whole.
+# Resolved from __file__ so the script runs from any working directory.
+_METRICS = Path(__file__).resolve().parents[1] / "metrics"
+if str(_METRICS) not in sys.path:
+    sys.path.insert(0, str(_METRICS))
 
 from topk_sample import topk_answers
 from kl_utility_scoring import build_prompt_ids

@@ -34,11 +34,18 @@ for reporting.
 import argparse
 import re
 import sys
+from pathlib import Path
 
 import torch
 
-sys.path.append("/work/projects/mkilic/privacy-utility/utility/")
-sys.path.append("/work/projects/mkilic/privacy-utility/utility/grad_attribution/")
+# utility/metrics/ holds the shared sampling and scoring helpers, and this
+# file's own directory holds the grad_attribution modules it pulls from; both
+# import by bare name, so both go on sys.path. Resolved from __file__ so the
+# script runs from any working directory.
+_HERE = Path(__file__).resolve().parent
+for _dir in (_HERE.parent / "metrics", _HERE):
+    if str(_dir) not in sys.path:
+        sys.path.insert(0, str(_dir))
 
 from topk_sample import topk_answers
 from grad_based_utility_score import load

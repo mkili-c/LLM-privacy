@@ -20,9 +20,13 @@ module load cuda/12.4
 set -euo pipefail
 
 source /home/mkilic/.llmvenv/bin/activate
-cd "${SLURM_SUBMIT_DIR:-/work/projects/mkilic/privacy-utility/privacy}"
+# Repo root -- override with `REPO_ROOT=/path/to/LLM-privacy sbatch <script>` if
+# the repo lives elsewhere. Every path below is relative to it, so the job no
+# longer depends on which directory you submit from.
+REPO_ROOT="${REPO_ROOT:-/work/projects/mkilic/LLM-privacy}"
+cd "$REPO_ROOT/privacy"
 
-# confidence_assesment.py puts ../utility on sys.path itself, so running from
+# confidence_assesment.py puts ../utility/metrics on sys.path itself, so running
 # this directory needs no PYTHONPATH. Results land in ./results/privacy_advantage
 # (the path is relative to the cwd), keeping them out of utility/results.
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
