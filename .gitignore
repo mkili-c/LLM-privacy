@@ -1,0 +1,31 @@
+AutoDAN/
+
+# Virtual environments
+venv_autodan/
+venv/
+.venv/
+env/
+
+# Model weights (download via models/download_models.py or huggingface-cli)
+models/**/*.safetensors
+models/**/*.bin
+models/**/*.pt
+models/**/*.gguf
+models/**/tokenizer.model
+models/**/*.json
+!models/download_models.py
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Scratch / diagnostics
+diag_privacy.py
+
+# OS / editor cruft
+.DS_Store
+*.swp
+.vscode/
+.idea/
