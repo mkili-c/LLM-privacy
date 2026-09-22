@@ -95,6 +95,54 @@ def embed_answers(answers, model, tok, batch_size=8, layer=-1):
         embs.append(F.normalize(pooled, dim=-1)) #embs [B,H]
     return torch.cat(embs, dim=0)
 
+@torch.no_grad()
+def embed_answers_last(answers, model, tok, batch_size=8, layer=-1):
+    """
+    Embed each answer text standalone: take the hidden state of the last non-pad
+    token (last-token pooling), in float32, L2-normalized. Returns [N, H].
+    Works for both left and right padding. An EOS token is appended to every
+    answer so the pooled token is the same across answers and has attended to
+    the whole text (answers truncated by max_new_tokens have no EOS of their own).
+    """
+    eos = tok.eos_token or ""
+    embs = []
+    for i in range(0, len(answers), batch_size):
+        batch = [a + eos for a in answers[i:i + batch_size]]
+        enc = tok(batch, return_tensors="pt", padding=True).to(model.device)
+        hidden = model(**enc, output_hidden_states=True).hidden_states[layer].float()
+        #final hidden states B batch L length in number of tokens hidden: [B,L,H]
+        mask = enc.attention_mask #[B,L]
+        L = mask.shape[1]
+        # index of the last real token: position of the first 1 in the flipped mask
+        last = L - 1 - mask.flip(dims=[1]).argmax(dim=1) #[B]
+        pooled = hidden[torch.arange(hidden.shape[0], device=hidden.device), last] #[B,H]
+        embs.append(F.normalize(pooled, dim=-1)) #embs [B,H]
+    return torch.cat(embs, dim=0)
+
+@torch.no_grad()
+def embed_answers_weighted(answers, model, tok, batch_size=8, layer=-1):
+    """
+    Embed each answer text standalone: position-weighted mean pooling of the
+    hidden states over non-pad tokens, in float32, L2-normalized. Returns [N, H].
+    Token i (1-based, among the S real tokens) gets weight i / sum_{j=1}^{S} j
+    = 2i / (S (S+1)), so later tokens, which have attended to more of the
+    answer, count more. Works for both left and right padding.
+    """
+    embs = []
+    for i in range(0, len(answers), batch_size):
+        enc = tok(answers[i:i + batch_size], return_tensors="pt",
+                  padding=True).to(model.device)
+        hidden = model(**enc, output_hidden_states=True).hidden_states[layer].float()
+        #final hidden states B batch L length in number of tokens hidden: [B,L,H]
+        mask = enc.attention_mask.float() #[B,L]
+        pos = mask.cumsum(dim=1) * mask #1..S on real tokens, 0 on pads: [B,L]
+        S = mask.sum(dim=1, keepdim=True) #[B,1]
+        w = pos / (S * (S + 1) / 2).clamp(min=1) #weights sum to 1 per row: [B,L]
+        pooled = (hidden * w.unsqueeze(-1)).sum(dim=1) #[B,H]
+        embs.append(F.normalize(pooled, dim=-1)) #embs [B,H]
+    return torch.cat(embs, dim=0)
+
+
 
 @torch.no_grad()
 def embed_answers_layers(answers, model, tok, batch_size=8, layers=(-1,)):
