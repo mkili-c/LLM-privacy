@@ -3,7 +3,7 @@
 #SBATCH --account=projects
 #SBATCH --gpus=5060ti:1
 #SBATCH --time=12:00:00
-#SBATCH --output=paraphrases_cos_layers_k10_256tok_%j.out
+#SBATCH --output=paraphrases_cos_layers_k15_256tok_%j.out
 
 # Measures cos both with empirical diff of means and unbiased (without diagonal)
 #for the whole dataset
@@ -32,7 +32,7 @@ nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 
 python metrics/cos_measurement_layers.py \
     --csv data/prompt_paraphrases_100.csv \
-    --k_grid 10 \
+    --k_grid 15 \
     --max_new_tokens 256 \
     --save_suffix "paraphrases_cos_layers_${SLURM_JOB_ID:-manual}"
 

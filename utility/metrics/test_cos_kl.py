@@ -70,7 +70,7 @@ def get_args():
     p.add_argument("--seed", type=int, default=23)
     p.add_argument("--embed_batch_size", type=int, default=8)
     p.add_argument("--kl_batch_size", type=int, default=8)
-    p.add_argument("--out_dir", default="./results/cos_kl_test/privacy_floor_100")
+    p.add_argument("--out_dir", default="./results/cos_kl_test")
     p.add_argument("--save_suffix", default="cos_vs_kl_privacy_floor_100")
     return p.parse_args()
 

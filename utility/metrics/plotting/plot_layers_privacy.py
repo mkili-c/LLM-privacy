@@ -35,8 +35,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 CSV = sys.argv[1] if len(sys.argv) > 1 else (
-    "../results/cos_measurement/layers/privacy_floor_100_cos_layers_134.csv")
-OUT = sys.argv[2] if len(sys.argv) > 2 else "../figures/layers_privacy_floor_100/layers"
+    "../results/cos_measurement/layers/privacy_cos_layers_k15_tok256_161.csv")
+OUT = sys.argv[2] if len(sys.argv) > 2 else "../figures/layers_privacy_k15_tok256/layers"
 
 TYPES = ["util_preserving", "util_paraphrase", "priv_preserving",
          "priv_targeted", "util_broken"]

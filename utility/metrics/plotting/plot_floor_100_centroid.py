@@ -20,8 +20,11 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 CSV = sys.argv[1] if len(sys.argv) > 1 else (
-    "../results/cos_kl_test/privacy_floor_100/floor_100_kl_cos_centroid131.csv")
-OUT = sys.argv[2] if len(sys.argv) > 2 else "../figures/floor_100_cos_centroid/distr_vio"
+    "../results/cos_kl_test/kl_vs_cos_measurement_256_tok_152.csv")
+OUT = sys.argv[2] if len(sys.argv) > 2 else "../figures/floor_100_cos_centroid_k15/distr_vio"
+
+# The K-sweep runs put every K in one CSV; these plots are for a single K.
+K = 15
 
 TYPES = ["util_preserving", "util_paraphrase", "priv_preserving",
          "priv_targeted", "util_broken"]
@@ -45,6 +48,8 @@ YLIM = {"cos_centroid": (0.65, 1.01), "cross": (0.65, 1.01)}
 values = defaultdict(lambda: defaultdict(list))
 with open(CSV) as f:
     for row in csv.DictReader(f):
+        if int(row["k"]) != K:
+            continue
         rtype = row["rewrite_type"].strip()
         for column, _, _ in METRICS:
             values[column][rtype].append(float(row[column]))

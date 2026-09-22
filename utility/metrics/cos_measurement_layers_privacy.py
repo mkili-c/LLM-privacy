@@ -81,7 +81,7 @@ def get_args():
     p.add_argument("--summary_metric", default="udist2", choices=SUMMARY_METRICS,
                    help="which column the stdout summary tables rank on")
     p.add_argument("--out_dir", default="./results/cos_measurement/layers")
-    p.add_argument("--save_suffix", default="cos_layers_privacy_floor_100")
+    p.add_argument("--save_suffix", default="cos_layers_privacy_100")
     return p.parse_args()
 
 

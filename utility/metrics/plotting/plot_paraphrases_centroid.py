@@ -22,8 +22,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 CSV = sys.argv[1] if len(sys.argv) > 1 else (
-    "../results/cos_kl_test/paraphrases/paraphrases_kl_cos_centroid_132.csv")
-OUT = sys.argv[2] if len(sys.argv) > 2 else "../figures/paraphrases_cos_centroid/distr_vio"
+    "../results/cos_kl_test/paraphrases/"
+    "paraphrases_kl_vs_cos_measurement_256_tok_153.csv")
+OUT = sys.argv[2] if len(sys.argv) > 2 else "../figures/paraphrases_cos_centroid_k15/distr_vio"
+
+# The K-sweep runs put every K in one CSV; these plots are for a single K.
+K = 15
 
 TYPES = ["synonyms", "reordered", "both"]
 COLORS = ["blue", "orange", "purple"]
@@ -43,6 +47,8 @@ METRICS = [("cos_centroid", "Cosine Between Answer Embedding Centroids (orig vs 
 values = defaultdict(lambda: defaultdict(list))
 with open(CSV) as f:
     for row in csv.DictReader(f):
+        if int(row["k"]) != K:
+            continue
         rtype = row["rewrite_type"].strip()
         for column, _, _, _ in METRICS:
             values[column][rtype].append(float(row[column]))

@@ -3,7 +3,7 @@
 #SBATCH --account=projects
 #SBATCH --gpus=5060ti:1
 #SBATCH --time=12:00:00
-#SBATCH --output=privacy_floor_100_cos_layers_k10_256tok_%j.out
+#SBATCH --output=privacy_cos_layers_k15_256tok_%j.out
 
 # Layer-wise cos measurement (udist2, rel_udist2, cos_centroid, dist2) over the
 # privacy rewrites floor_100 dataset, every hidden layer
@@ -31,9 +31,9 @@ echo "Job ${SLURM_JOB_ID:-manual} on $(hostname), GPU: ${CUDA_VISIBLE_DEVICES:-n
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 
 python metrics/cos_measurement_layers_privacy.py \
-    --csv data/privacy_prompt_rewrites_floor_100.csv \
-    --k_grid 10 \
+    --csv data/prompt_rewrites_100.csv \
+    --k_grid 15 \
     --max_new_tokens 256 \
-    --save_suffix "privacy_floor_100_cos_layers_${SLURM_JOB_ID:-manual}"
+    --save_suffix "privacy_cos_layers_k15_tok256_${SLURM_JOB_ID:-manual}"
 
 echo "Done."

@@ -2,12 +2,11 @@
 #SBATCH --job-name=kl_cos_measurement
 #SBATCH --account=projects
 #SBATCH --gpus=5060ti:1
-#SBATCH --time=24:00:00
-#SBATCH --output=floor_100_kl_cos_centroid_k10_256tok%j.out
+#SBATCH --time=48:00:00
+#SBATCH --output=kl_vs_cos_measurement_256_tok_%j.out
 
 # Measures cos both with empirical diff of means and unbiased (without diagonal)
 # AND the total per token divergence (KL) for the same samples
-
 
 # Required first line so `module` works in a batch job
 . /etc/profile.d/modules.sh
@@ -31,9 +30,9 @@ echo "Job ${SLURM_JOB_ID:-manual} on $(hostname), GPU: ${CUDA_VISIBLE_DEVICES:-n
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 
 python metrics/test_cos_kl.py \
-    --csv data/privacy_prompt_rewrites_floor_100.csv \
-    --k_grid 10 \
+    --csv data/prompt_rewrites_100.csv \
+    --k_grid 5 15 30 \
     --max_new_tokens 256 \
-    --save_suffix "floor_100_kl_cos_centroid${SLURM_JOB_ID:-manual}"
+    --save_suffix "kl_vs_cos_measurement_256_tok_${SLURM_JOB_ID:-manual}"
 
 echo "Done."

@@ -2,8 +2,8 @@
 #SBATCH --job-name=kl_cos_paraphrases
 #SBATCH --account=projects
 #SBATCH --gpus=5060ti:1
-#SBATCH --time=24:00:00
-#SBATCH --output=paraphrases_kl_cos_centroid_k10_256tok%j.out
+#SBATCH --time=48:00:00
+#SBATCH --output=paraphrases_kl_vs_cos_measurement_256_tok_%j.out
 
 # Paraphrase-dataset run of the cos + KL measurement (test_cos_kl_paraphrases.py):
 # unbiased / relative distance, centroid cosine and the total per token
@@ -33,8 +33,8 @@ nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 
 python metrics/test_cos_kl_paraphrases.py \
     --csv data/prompt_paraphrases_100.csv \
-    --k_grid 10 \
+    --k_grid 5 15 30 \
     --max_new_tokens 256 \
-    --save_suffix "paraphrases_kl_cos_centroid_${SLURM_JOB_ID:-manual}"
+    --save_suffix "paraphrases_kl_vs_cos_measurement_256_tok_${SLURM_JOB_ID:-manual}"
 
 echo "Done."

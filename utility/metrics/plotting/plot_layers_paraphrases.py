@@ -38,8 +38,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 CSV = sys.argv[1] if len(sys.argv) > 1 else (
-    "../results/cos_measurement/layers/paraphrases_cos_layers_135.csv")
-OUT = sys.argv[2] if len(sys.argv) > 2 else "../figures/layers_paraphrases/layers"
+    "../results/cos_measurement/layers/paraphrases_cos_layers_160.csv")
+OUT = sys.argv[2] if len(sys.argv) > 2 else "../figures/layers_paraphrases_k15_tok256/layers"
 
 TYPES = ["synonyms", "reordered", "both"]
 COLORS = dict(zip(TYPES, ["blue", "orange", "purple"]))
