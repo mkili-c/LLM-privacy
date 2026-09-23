@@ -245,10 +245,10 @@ def run(model, tok, original, rewritten, answer, device, args):
                 f"{cand_words[j]}(g={grad_score[j].item():+.3f}"
                 + (f", D={cand_D[j].item():.3f})" if args.select == "forward" else ")")
                 for j in order[:8].tolist())
-            print(f"    top candidates: {shown}")
+            print(f"    top candidates: {shown} \n")
 
             if new_D >= current_D:
-                print(f"    no candidate improves D ({new_D:.4f} >= {current_D:.4f}); next position")
+                print(f"    no candidate improves D ({new_D:.4f} >= {current_D:.4f}); next position \n")
                 continue
 
             new_tok_id = cand_toks[best].item()
@@ -256,12 +256,12 @@ def run(model, tok, original, rewritten, answer, device, args):
             current_D = new_D
             new_tok = tok.convert_ids_to_tokens([new_tok_id])[0]
             print(f"step {step:03d}  D={current_D:.4f}  pos={position}  "
-                  f"{old_tok!r} -> {new_tok!r}  content={tok.decode(live_ids[content_slice])!r}")
+                  f"{old_tok!r} -> {new_tok!r}  content={tok.decode(live_ids[content_slice])!r} \n")
             accepted = True
             break
 
         if not accepted:
-            print(f"step {step:03d}  no improving swap in the top {args.max_positions} positions; stopping")
+            print(f"step {step:03d}  no improving swap in the top {args.max_positions} positions; stopping \n")
             break
 
     return tok.decode(live_ids[content_slice])
