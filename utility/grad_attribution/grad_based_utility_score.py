@@ -10,19 +10,11 @@ the model's output, backprop, and read the gradient sitting on each input
 token's embedding. The size of that gradient tells us how much each input token
 influences the objective.
 
-Utility objective (default)
----------------------------
-"How much does each input token contribute to the model producing a particular
-useful answer?" We take a target answer string and use its log-likelihood under
-the model as the objective. Tokens whose embeddings have large gradient are the
-ones the useful answer depends on most.
 
 Two attribution signals are reported per token:
-  * grad-norm   : ||d(obj)/d(embed_t)||_2         -> unsigned importance (saliency)
-  * grad-x-input: <d(obj)/d(embed_t), embed_t>     -> signed contribution
+  * grad-norm   : ||d(D)/d(embed_t)||_2         -> unsigned importance
+  * grad-x-input: <d(D)/d(embed_t), embed_t>     -> signed contribution
 
-Swap `utility_objective` for a different notion of utility later (e.g. a reward
-model score, a classifier logit, an entropy term, ...).
 """
 
 import argparse
@@ -56,6 +48,8 @@ def build_inputs(tok, prompt, target, device):
     prompt_ids = tok(prompt_text, add_special_tokens=False).input_ids
     target_ids = tok(target, add_special_tokens=False).input_ids
 
+    #glue prompt and answer together, prep for teacher forced forward pass
+
     input_ids = torch.tensor([prompt_ids + target_ids], device=device)
     return input_ids, len(prompt_ids)
 
@@ -68,10 +62,10 @@ def utility_objective(logits, input_ids, prompt_len):
     Position t's logits predict token t+1, so the target tokens are predicted by
     positions [prompt_len-1, L-1).
     """
-    log_probs = F.log_softmax(logits.float(), dim=-1)          # [1, L, V]
+    log_probs = F.log_softmax(logits.float(), dim=-1)          # [1, L, V] where 1 is the batch size
     shift_logp = log_probs[:, :-1, :]                          # predict t+1 from t
     shift_labels = input_ids[:, 1:]                            # [1, L-1]
-    token_logp = shift_logp.gather(-1, shift_labels.unsqueeze(-1)).squeeze(-1)  # [1, L-1]
+    token_logp = shift_logp.gather(-1, shift_labels.unsqueeze(-1)).squeeze(-1)  # [1, L-1] pick logprobs of true tokens in target answer
 
     # keep only positions that predict a target token
     keep = torch.zeros_like(token_logp, dtype=torch.bool)
