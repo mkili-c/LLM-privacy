@@ -96,7 +96,7 @@ for SPEC in "${ATTRIBUTES[@]}"; do
 
         echo
         echo "============ $TAG   |   prior condition: $PRIOR ============"
-        python confidence_assesment.py \
+        python confidence_sweep.py \
             --csv "$CSV" \
             --columns "${COLUMNS[@]}" \
             --label_column "$LABEL_COLUMN" \
