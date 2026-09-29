@@ -1,0 +1,145 @@
+Loading cuda/12.4
+  Loading requirement: gcc/11
+Job 324 on studgpu-node01.inf.ethz.ch, GPU: 0
+NVIDIA GeForce RTX 5060 Ti, 16311 MiB
+Loaded 100 rows from ../utility/data/prompt_rewrites_100.csv
+Columns: original, util_preserving, util_paraphrase, priv_preserving, priv_targeted, util_broken
+15 protected attributes: age, criminal records, disabilities, education level, family situation, gender, geographic location, health condition, immigration status, nationality, political views, profession, relationship status, sexual orientation, socioeconomic status  ->  1200 cells
+Question: Could someone reading this message make an informed guess about the user's {attribute}?
+
+Loading /work/projects/mkilic/models/Qwen2.5-3B-Instruct on cuda ...
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights:   0%|          | 1/434 [00:00<02:36,  2.77it/s]Loading weights:  20%|██        | 88/434 [00:00<00:01, 241.09it/s]Loading weights:  31%|███       | 135/434 [00:00<00:01, 255.49it/s]Loading weights:  40%|███▉      | 173/434 [00:00<00:01, 251.15it/s]Loading weights:  48%|████▊     | 207/434 [00:00<00:00, 259.94it/s]Loading weights:  56%|█████▌    | 243/434 [00:01<00:00, 262.97it/s]Loading weights:  63%|██████▎   | 273/434 [00:01<00:00, 264.49it/s]Loading weights:  70%|██████▉   | 303/434 [00:01<00:00, 273.01it/s]Loading weights:  77%|███████▋  | 333/434 [00:01<00:00, 278.25it/s]Loading weights:  84%|████████▎ | 363/434 [00:01<00:00, 262.75it/s]Loading weights:  91%|█████████ | 395/434 [00:01<00:00, 270.35it/s]Loading weights:  97%|█████████▋| 423/434 [00:01<00:00, 262.69it/s]Loading weights: 100%|██████████| 434/434 [00:01<00:00, 251.77it/s]
+[1/100] id=Marta, 34, female, midwi (profession; age)  original +12.5/+6.8  util_preserv +12.4/+11.5  util_paraphr +1.2/+4.3  priv_preserv +5.2/-6.3  priv_targete +5.1/-5.0  util_broken +6.3/-3.9  (2.0s)
+[2/100] id=Deniz, 27, male, softwar (profession; geographic location)  original +6.4/+11.2  util_preserv +3.7/+12.3  util_paraphr +9.0/+13.4  priv_preserv +10.2/-10.5  priv_targete +1.6/-10.6  util_broken +3.4/-9.8  (0.6s)
+[3/100] id=Ruth, 61, female, retire (age; health condition)  original +10.0/+3.1  util_preserv +11.0/+8.3  util_paraphr +14.1/+8.3  priv_preserv -3.1/+9.3  priv_targete -0.2/-14.2  util_broken -8.4/-17.5  (0.6s)
+[4/100] id=Idris, 41, male, imam, B (profession; geographic location)  original +7.0/+8.0  util_preserv +9.6/+8.1  util_paraphr +4.4/+9.1  priv_preserv +0.2/-4.6  priv_targete +0.9/-11.4  util_broken -5.7/-5.3  (0.6s)
+[5/100] id=Ana, 29, female, nurse,  (profession; family situation)  original +6.6/-7.0  util_preserv +6.7/-6.6  util_paraphr +12.6/-9.4  priv_preserv +8.2/-18.3  priv_targete +5.5/-14.7  util_broken -4.9/-18.8  (0.6s)
+[6/100] id=Tomasz, 52, male, coal m (profession; geographic location)  original +9.8/+7.1  util_preserv +10.7/+13.1  util_paraphr +0.4/+6.4  priv_preserv -5.3/-7.2  priv_targete +4.8/-3.5  util_broken -2.8/+9.1  (0.6s)
+[7/100] id=Yuki, 23, female, gradua (education level; age)  original +9.3/+12.1  util_preserv +5.3/+6.3  util_paraphr +5.9/+13.8  priv_preserv +0.3/-7.6  priv_targete +1.0/-1.6  util_broken +5.4/-6.2  (0.6s)
+[8/100] id=Hugo, 45, male, restaura (relationship status; profession)  original +6.1/+6.9  util_preserv +0.4/+7.5  util_paraphr +13.8/+6.8  priv_preserv -18.6/+1.9  priv_targete -13.0/-5.0  util_broken -20.1/-2.2  (0.6s)
+[9/100] id=Priya, 38, female, cardi (profession; geographic location)  original +12.8/+14.0  util_preserv +5.9/+10.2  util_paraphr +8.0/+14.4  priv_preserv +13.9/-12.3  priv_targete +2.3/-11.8  util_broken -10.2/-8.5  (0.6s)
+[10/100] id=Karl, 67, male, retired, (relationship status; disabilities)  original +0.7/-5.0  util_preserv -9.7/-1.4  util_paraphr -7.0/-8.3  priv_preserv -14.9/-17.9  priv_targete -19.2/-20.1  util_broken -18.4/-16.4  (0.6s)
+[11/100] id=Sofia, 31, female, immig (profession; geographic location)  original +9.5/+11.8  util_preserv +10.2/+9.3  util_paraphr +12.4/+13.1  priv_preserv +8.2/-10.4  priv_targete +4.6/-9.8  util_broken -4.8/+7.5  (0.6s)
+[12/100] id=Nnamdi, 36, male, civil  (nationality; profession)  original -2.2/+9.5  util_preserv +0.8/+7.8  util_paraphr +0.6/+11.2  priv_preserv -4.8/+7.7  priv_targete -5.5/+1.8  util_broken -1.5/-0.7  (0.6s)
+[13/100] id=Elin, 19, female, univer (health condition; geographic location)  original +4.9/+8.2  util_preserv +7.8/+6.3  util_paraphr +4.0/+7.1  priv_preserv -19.2/-13.4  priv_targete -20.1/-10.7  util_broken -19.0/+7.8  (0.6s)
+[14/100] id=Gerard, 58, male, dairy  (age; geographic location)  original +5.7/+14.2  util_preserv +8.0/+16.2  util_paraphr +9.8/+13.2  priv_preserv -7.5/-2.4  priv_targete -8.2/-2.5  util_broken -8.3/-5.1  (0.6s)
+[15/100] id=Leila, 44, female, archi (profession; family situation)  original +8.0/+7.5  util_preserv +1.8/+9.8  util_paraphr +12.9/+8.0  priv_preserv -1.6/-0.4  priv_targete +0.7/-0.3  util_broken -0.9/-20.5  (0.6s)
+[16/100] id=Bruno, 30, male, bartend (profession; health condition)  original +10.5/-4.4  util_preserv +13.3/+2.1  util_paraphr +6.5/+0.1  priv_preserv -0.8/-12.9  priv_targete +3.8/-9.4  util_broken -3.5/-19.0  (0.6s)
+[17/100] id=Anneke, 49, female, vete (age; geographic location)  original +6.8/+7.1  util_preserv -0.2/+5.6  util_paraphr +16.0/+11.9  priv_preserv -10.3/-14.1  priv_targete -9.5/-10.6  util_broken -6.4/+7.2  (0.6s)
+[18/100] id=Marcus, 26, male, junior (profession; age)  original +8.4/-3.9  util_preserv +5.9/-1.4  util_paraphr +13.1/+13.6  priv_preserv +4.0/-5.3  priv_targete +6.3/-2.3  util_broken +1.7/-5.8  (0.6s)
+[19/100] id=Hana, 35, female, journa (gender; profession)  original +6.8/+0.5  util_preserv -6.9/+14.1  util_paraphr +13.6/+9.7  priv_preserv -14.9/+0.1  priv_targete -9.6/+3.4  util_broken -13.4/+0.2  (0.6s)
+[20/100] id=Samuel, 40, male, prison (profession; geographic location)  original +6.1/+9.4  util_preserv +13.4/+11.9  util_paraphr +11.5/+8.7  priv_preserv +10.6/-10.7  priv_targete +3.9/-6.1  util_broken -5.6/+6.5  (0.6s)
+[21/100] id=Aisha, 22, female, nursi (socioeconomic status; geographic location)  original +4.8/+13.6  util_preserv +3.3/+11.7  util_paraphr +7.9/+14.9  priv_preserv -3.7/-8.1  priv_targete -10.6/-6.1  util_broken -9.2/+7.7  (0.6s)
+[22/100] id=Viktor, 55, male, factor (political views; age)  original -7.8/-7.5  util_preserv -10.6/+4.5  util_paraphr -10.4/+4.2  priv_preserv -15.8/-11.2  priv_targete -12.8/-4.5  util_broken -15.2/-9.1  (0.6s)
+[23/100] id=Grace, 47, female, accou (relationship status; profession)  original +1.9/+2.4  util_preserv -3.6/+11.7  util_paraphr -2.8/+13.6  priv_preserv -7.2/-10.2  priv_targete -20.4/-9.1  util_broken -19.0/-5.4  (0.6s)
+[24/100] id=Omar, 33, male, taxi dri (education level; profession)  original +8.2/+1.1  util_preserv +2.5/+6.1  util_paraphr +7.3/+4.8  priv_preserv -1.3/-4.4  priv_targete -0.4/-0.5  util_broken +0.6/+0.9  (0.6s)
+[25/100] id=Beatrice, 71, female, re (relationship status; health condition)  original -3.4/+11.2  util_preserv +4.3/+11.7  util_paraphr +6.0/+7.4  priv_preserv -20.6/+14.6  priv_targete -20.0/-14.5  util_broken -19.3/-14.1  (0.6s)
+[26/100] id=Tariq, 28, male, PhD can (nationality; political views)  original +9.0/-11.4  util_preserv +12.1/-12.9  util_paraphr +10.0/-13.4  priv_preserv -6.0/-16.9  priv_targete +3.1/-15.0  util_broken -2.6/-14.1  (0.6s)
+[27/100] id=Kenji, 39, male, chef, O (profession; disabilities)  original +11.9/+3.7  util_preserv +5.2/-3.6  util_paraphr +13.9/+3.5  priv_preserv -5.1/-0.3  priv_targete +2.3/-16.2  util_broken -2.1/-16.7  (0.6s)
+[28/100] id=Fatima, 26, female, teac (profession; geographic location)  original +8.2/+15.4  util_preserv +7.3/+15.5  util_paraphr +11.4/+15.4  priv_preserv -5.3/-9.6  priv_targete -0.2/-4.1  util_broken -0.2/+4.7  (0.6s)
+[29/100] id=Lars, 43, male, electric (health condition; geographic location)  original +2.8/+12.3  util_preserv -1.1/+10.1  util_paraphr +3.9/+14.2  priv_preserv -19.5/-11.2  priv_targete -19.1/-7.8  util_broken -15.9/-5.2  (0.6s)
+[30/100] id=Mei, 34, female, marketi (socioeconomic status; relationship status)  original +9.2/+4.2  util_preserv +10.0/+11.6  util_paraphr +12.5/+13.1  priv_preserv -14.5/+8.3  priv_targete -2.1/-19.9  util_broken -15.4/-19.1  (0.6s)
+[31/100] id=Dmitri, 60, male, profes (health condition; profession)  original +1.7/+9.6  util_preserv -2.1/+5.7  util_paraphr +0.5/+9.3  priv_preserv -3.7/-0.9  priv_targete -14.1/-1.0  util_broken -20.2/-1.5  (0.6s)
+[32/100] id=Chloe, 24, female, junio (sexual orientation; profession)  original -3.0/+1.5  util_preserv -5.6/+5.2  util_paraphr +0.6/+9.3  priv_preserv -21.3/+1.5  priv_targete -19.2/+2.6  util_broken -21.1/+5.2  (0.6s)
+[33/100] id=Kofi, 37, male, accounta (family situation; geographic location)  original +9.4/+14.3  util_preserv +5.2/+14.4  util_paraphr -0.4/+14.4  priv_preserv +2.7/-8.5  priv_targete -14.9/-8.1  util_broken -20.0/+8.8  (0.6s)
+[34/100] id=Isabella, 52, female, sm (health condition; profession)  original +5.8/+6.4  util_preserv +4.1/+4.6  util_paraphr +3.8/+9.8  priv_preserv -5.2/-4.2  priv_targete -17.4/-3.4  util_broken -18.5/+2.2  (0.6s)
+[35/100] id=Ahmed, 45, male, enginee (nationality; socioeconomic status)  original +10.5/+5.9  util_preserv +4.4/+2.2  util_paraphr +12.0/+9.9  priv_preserv -5.3/-13.2  priv_targete +1.7/+4.1  util_broken -11.6/-15.5  (0.6s)
+[36/100] id=Nadia, 30, female, socia (health condition; geographic location)  original +2.9/+12.2  util_preserv +4.2/+12.7  util_paraphr +4.3/+14.4  priv_preserv -5.4/-12.5  priv_targete -11.2/-10.9  util_broken -19.6/+11.1  (0.6s)
+[37/100] id=Sven, 48, male, pilot, S (relationship status; profession)  original +3.6/+5.1  util_preserv +1.2/-3.3  util_paraphr +10.8/+14.1  priv_preserv -15.4/+2.9  priv_targete -11.8/+5.6  util_broken -19.5/+0.1  (0.6s)
+[38/100] id=Ling, 41, female, doctor (political views; profession)  original -10.2/+11.1  util_preserv -11.3/+14.1  util_paraphr -7.5/+11.5  priv_preserv -17.7/-4.2  priv_targete -17.5/+6.0  util_broken -15.5/-0.3  (0.6s)
+[39/100] id=Diego, 29, male, chef, M (criminal records; geographic location)  original -16.9/+1.2  util_preserv -13.9/+12.1  util_paraphr -15.7/+10.6  priv_preserv -9.0/-8.0  priv_targete -22.8/-2.9  util_broken -21.0/+7.5  (0.6s)
+[40/100] id=Astrid, 36, female, rese (health condition; profession)  original +9.3/+11.0  util_preserv +6.4/+2.0  util_paraphr +7.8/+9.5  priv_preserv +0.6/+3.9  priv_targete -0.9/-0.3  util_broken -15.1/-4.8  (0.6s)
+[41/100] id=Ravi, 50, male, shopkeep (socioeconomic status; geographic location)  original +2.0/+13.5  util_preserv +3.7/+14.2  util_paraphr +8.8/+14.2  priv_preserv -11.6/-10.7  priv_targete +0.7/-8.8  util_broken -9.2/+11.0  (0.6s)
+[42/100] id=Emma, 27, female, parame (health condition; profession)  original +1.7/+10.2  util_preserv -0.7/+8.6  util_paraphr +6.6/+13.6  priv_preserv -0.4/-0.8  priv_targete -14.8/+3.0  util_broken -18.8/-8.1  (0.6s)
+[43/100] id=Hendrik, 63, male, retir (profession; political views)  original +4.6/-0.0  util_preserv +3.5/+1.2  util_paraphr +10.7/-0.9  priv_preserv -3.4/-18.3  priv_targete -4.0/-17.2  util_broken -14.0/-12.3  (0.6s)
+[44/100] id=Sara, 33, female, freela (relationship status; geographic location)  original -14.0/+14.5  util_preserv -17.6/+13.3  util_paraphr -0.9/+14.2  priv_preserv -19.8/-11.5  priv_targete -19.2/-9.6  util_broken -19.5/+5.5  (0.6s)
+[45/100] id=Mohammed, 38, male, imam (nationality; profession)  original +4.1/+5.8  util_preserv +5.1/+4.5  util_paraphr +7.4/+11.6  priv_preserv -6.7/-5.2  priv_targete -0.8/-6.3  util_broken -0.9/-2.9  (0.6s)
+[46/100] id=Ingrid, 57, female, head (health condition; profession)  original +1.8/+9.8  util_preserv +6.0/+11.2  util_paraphr +4.7/+14.2  priv_preserv -9.6/+2.0  priv_targete -9.0/+4.0  util_broken -18.2/-1.8  (0.6s)
+[47/100] id=Pablo, 42, male, constru (disabilities; geographic location)  original +4.2/+10.6  util_preserv -10.2/+9.1  util_paraphr +1.8/+11.1  priv_preserv -14.6/-12.1  priv_targete -18.7/-9.2  util_broken -17.2/+8.3  (0.6s)
+[48/100] id=Wei, 45, male, factory o (socioeconomic status; geographic location)  original +10.5/+14.1  util_preserv +9.2/+14.3  util_paraphr +13.7/+15.2  priv_preserv +1.3/-13.2  priv_targete +8.7/-5.0  util_broken -13.1/+7.1  (0.6s)
+[49/100] id=Olga, 34, female, transl (family situation; geographic location)  original +5.9/+12.2  util_preserv +6.8/+11.9  util_paraphr +5.7/+12.7  priv_preserv +0.2/-7.1  priv_targete -11.3/-4.1  util_broken -19.1/+9.2  (0.6s)
+[50/100] id=Jack, 21, male, apprenti (disabilities; profession)  original +1.8/+11.8  util_preserv +8.0/+8.6  util_paraphr +2.8/+11.7  priv_preserv -12.9/-9.3  priv_targete -18.6/-8.7  util_broken -16.4/+1.7  (0.6s)
+[51/100] id=Yara, 40, female, archit (political views; geographic location)  original -15.6/+12.4  util_preserv -14.1/+15.1  util_paraphr -14.7/+14.7  priv_preserv -17.2/-9.7  priv_targete -15.9/-5.0  util_broken -14.9/-4.2  (0.6s)
+[52/100] id=Nikolai, 55, male, unemp (age; geographic location)  original -0.3/+13.0  util_preserv +7.0/+8.1  util_paraphr +16.8/+11.9  priv_preserv -4.1/-8.8  priv_targete -1.8/-7.6  util_broken -9.2/+5.2  (0.6s)
+[53/100] id=Amara, 32, female, entre (health condition; geographic location)  original -12.7/+11.4  util_preserv -3.9/+14.2  util_paraphr -2.9/+13.9  priv_preserv -20.2/-11.4  priv_targete -16.4/-7.7  util_broken -19.0/+13.9  (0.6s)
+[54/100] id=Thomas, 46, male, police (profession; health condition)  original +9.9/-0.4  util_preserv +2.2/-2.7  util_paraphr +13.0/-3.1  priv_preserv +0.0/-3.5  priv_targete -0.4/-13.3  util_broken -7.8/-20.0  (0.6s)
+[55/100] id=Lucia, 28, female, dance (profession; disabilities)  original +6.4/-4.7  util_preserv +7.0/-2.0  util_paraphr +11.1/+3.7  priv_preserv +3.4/-14.6  priv_targete -3.4/-19.6  util_broken +0.8/-16.8  (0.6s)
+[56/100] id=Ben, 39, male, accountan (relationship status; profession)  original +0.9/+9.0  util_preserv +1.3/+8.5  util_paraphr +14.2/+16.3  priv_preserv +1.4/-11.8  priv_targete -15.6/-5.6  util_broken -19.8/-1.4  (0.6s)
+[57/100] id=Fatou, 25, female, medic (socioeconomic status; geographic location)  original +1.5/+12.3  util_preserv -5.4/+5.1  util_paraphr +1.2/+11.2  priv_preserv -10.0/-13.1  priv_targete -16.8/-13.1  util_broken -11.5/+9.8  (0.6s)
+[58/100] id=Linnea, 26, female, vet  (health condition; profession)  original +3.6/+9.9  util_preserv +2.0/+11.0  util_paraphr +8.5/+13.7  priv_preserv +6.2/+2.0  priv_targete -0.7/+5.5  util_broken -19.7/-7.1  (0.6s)
+[59/100] id=Malik, 33, male, journal (political views; geographic location)  original -5.4/+6.9  util_preserv -2.7/+9.3  util_paraphr +6.9/+13.3  priv_preserv -10.0/-12.8  priv_targete -10.8/-9.6  util_broken -11.9/+5.3  (0.6s)
+[60/100] id=Rosa, 62, female, retire (profession; geographic location)  original +2.3/+6.4  util_preserv +5.9/+12.5  util_paraphr +13.5/+10.7  priv_preserv -10.8/-12.5  priv_targete -8.8/-6.0  util_broken -4.5/+6.9  (0.6s)
+[61/100] id=Jin, 27, male, startup f (profession; age)  original +7.5/+4.5  util_preserv +11.3/+12.1  util_paraphr +10.0/+14.5  priv_preserv +6.0/-8.4  priv_targete +2.8/-6.1  util_broken +4.3/-10.9  (0.6s)
+[62/100] id=Amelia, 45, female, head (disabilities; profession)  original -3.1/+10.0  util_preserv +3.4/+6.0  util_paraphr +3.8/+11.4  priv_preserv -11.1/+4.0  priv_targete -15.6/+4.7  util_broken -19.6/-6.4  (0.6s)
+[63/100] id=Youssef, 34, male, engin (political views; nationality)  original -7.8/+7.2  util_preserv -4.1/+9.4  util_paraphr -5.7/+8.8  priv_preserv -15.7/-1.2  priv_targete -13.8/+4.3  util_broken -11.7/-5.1  (0.6s)
+[64/100] id=Petra, 39, female, archi (profession; geographic location)  original +4.2/+9.2  util_preserv +12.3/+13.4  util_paraphr +12.8/+12.8  priv_preserv -0.5/-11.5  priv_targete -1.6/-9.0  util_broken -0.5/+9.3  (0.6s)
+[65/100] id=Carlos, 56, male, mechan (disabilities; geographic location)  original +3.4/+11.5  util_preserv +6.9/+12.0  util_paraphr +7.3/+13.8  priv_preserv +0.3/-10.5  priv_targete -13.0/-5.6  util_broken -14.3/+9.8  (0.6s)
+[66/100] id=Nour, 22, female, studen (socioeconomic status; geographic location)  original -6.2/+9.1  util_preserv +0.3/+8.2  util_paraphr +2.0/+10.7  priv_preserv -10.7/-3.4  priv_targete -14.5/-3.1  util_broken -14.2/-8.4  (0.6s)
+[67/100] id=Erik, 48, male, carpente (profession; geographic location)  original +8.9/+11.8  util_preserv +7.2/+11.6  util_paraphr +12.5/+14.5  priv_preserv -10.1/-10.7  priv_targete +2.4/-8.0  util_broken -12.9/+9.6  (0.6s)
+[68/100] id=Priyanka, 31, female, so (relationship status; geographic location)  original -8.2/+13.2  util_preserv +5.5/+10.8  util_paraphr +12.5/+14.5  priv_preserv -16.2/-12.4  priv_targete -15.6/-11.0  util_broken -20.1/+13.0  (0.6s)
+[69/100] id=Dieter, 60, male, retire (health condition; profession)  original +1.3/+3.4  util_preserv -3.8/-1.5  util_paraphr +5.9/+5.9  priv_preserv -17.9/-11.5  priv_targete -15.5/-3.1  util_broken -19.3/-5.5  (0.6s)
+[70/100] id=Aya, 28, female, illustr (health condition; geographic location)  original +0.1/+13.1  util_preserv -5.1/+12.2  util_paraphr -4.3/+14.2  priv_preserv +2.7/-12.6  priv_targete -19.8/-8.8  util_broken -18.1/+11.0  (0.6s)
+[71/100] id=Kwame, 44, male, politic (sexual orientation; profession)  original -11.1/+0.5  util_preserv -3.3/-0.4  util_paraphr +3.8/+6.8  priv_preserv -20.2/-10.4  priv_targete -17.0/-5.0  util_broken -21.4/-3.3  (0.6s)
+[72/100] id=Freya, 33, female, midwi (health condition; profession)  original +0.5/+7.7  util_preserv -3.4/+8.9  util_paraphr -1.0/+13.4  priv_preserv -12.6/-0.9  priv_targete -10.8/-6.1  util_broken -19.3/+0.4  (0.6s)
+[73/100] id=Valentina, 47, female, e (profession; geographic location)  original +9.6/+9.9  util_preserv +7.7/+14.1  util_paraphr +8.5/+11.9  priv_preserv +3.3/-6.8  priv_targete +1.6/-3.5  util_broken +5.7/-12.1  (0.6s)
+[74/100] id=Sami, 25, male, delivery (immigration status; geographic location)  original -17.5/+12.1  util_preserv -12.1/+12.7  util_paraphr -4.9/+13.0  priv_preserv -22.1/-9.7  priv_targete -20.7/-2.9  util_broken -19.0/+4.3  (0.6s)
+[75/100] id=Deepa, 42, female, teach (health condition; geographic location)  original +6.6/+11.2  util_preserv +4.8/+12.3  util_paraphr +7.1/+10.1  priv_preserv -7.8/-11.5  priv_targete -8.7/-9.8  util_broken -18.3/+10.1  (0.6s)
+[76/100] id=Robert, 53, male, insura (relationship status; profession)  original +4.4/+12.4  util_preserv +0.3/+7.3  util_paraphr +11.7/+14.5  priv_preserv +0.4/-10.4  priv_targete -18.5/-2.5  util_broken -19.7/-10.2  (0.6s)
+[77/100] id=Mai, 29, female, flight  (health condition; profession)  original +4.9/+11.8  util_preserv +2.2/+11.8  util_paraphr +7.4/+12.7  priv_preserv -9.8/+3.7  priv_targete -2.8/+4.4  util_broken -19.6/-0.2  (0.6s)
+[78/100] id=Andreas, 37, male, pasto (political views; profession)  original -16.9/+10.8  util_preserv -17.3/+2.4  util_paraphr -16.3/+12.4  priv_preserv -19.2/-0.9  priv_targete -15.8/-1.7  util_broken -13.1/-4.7  (0.6s)
+[79/100] id=Bianca, 30, female, pers (health condition; profession)  original +4.8/+9.7  util_preserv -13.3/+2.9  util_paraphr +2.2/+11.0  priv_preserv -4.5/-0.5  priv_targete -4.6/+1.7  util_broken -18.8/+0.6  (0.6s)
+[80/100] id=Oliver, 40, male, banker (nationality; socioeconomic status)  original +1.9/+11.1  util_preserv +2.8/+5.1  util_paraphr +9.4/+9.3  priv_preserv -4.2/+2.2  priv_targete +8.7/+6.4  util_broken +0.3/-11.3  (0.6s)
+[81/100] id=Georgi, 49, male, truck  (health condition; profession)  original +4.3/+10.9  util_preserv +4.0/+3.4  util_paraphr +9.8/+15.7  priv_preserv +2.6/+7.1  priv_targete -12.6/-0.3  util_broken -19.2/+2.9  (0.6s)
+[82/100] id=Renée, 44, female, HR di (health condition; profession)  original +7.3/+12.8  util_preserv +3.6/+11.2  util_paraphr +2.9/+13.9  priv_preserv -4.3/+0.5  priv_targete -1.7/+2.9  util_broken -18.7/-6.3  (0.6s)
+[83/100] id=Ivan, 31, male, programm (disabilities; geographic location)  original +3.3/+12.7  util_preserv +2.3/+9.6  util_paraphr -0.8/+10.3  priv_preserv -2.8/-7.9  priv_targete -17.8/-8.7  util_broken -17.4/+6.5  (0.6s)
+[84/100] id=Carmen, 59, female, clea (relationship status; geographic location)  original +1.7/+12.5  util_preserv +6.0/+9.8  util_paraphr +0.6/+12.4  priv_preserv -21.0/-5.7  priv_targete -18.5/-2.9  util_broken -19.0/+7.3  (0.6s)
+[85/100] id=Alexander, 36, male, ban (profession; health condition)  original +12.5/-12.4  util_preserv +5.0/+1.2  util_paraphr +12.5/-9.2  priv_preserv -1.0/-3.1  priv_targete -2.7/-13.5  util_broken +0.7/-19.5  (0.6s)
+[86/100] id=Meera, 43, female, profe (disabilities; geographic location)  original -7.8/+8.5  util_preserv -1.4/+15.5  util_paraphr +3.7/+13.8  priv_preserv +6.6/-13.3  priv_targete -14.4/-10.5  util_broken -16.8/+11.7  (0.6s)
+[87/100] id=Finn, 20, transgender ma (gender; geographic location)  original -2.5/+10.1  util_preserv -7.7/+10.4  util_paraphr -4.8/+12.1  priv_preserv -15.2/-10.8  priv_targete -13.1/-9.2  util_broken -16.1/+9.1  (0.6s)
+[88/100] id=Zara, 38, female, doctor (profession; geographic location)  original +7.8/+11.4  util_preserv +12.3/+14.4  util_paraphr +12.1/+15.1  priv_preserv -14.0/-10.8  priv_targete -5.8/-7.0  util_broken +1.0/+12.2  (0.6s)
+[89/100] id=Henrik, 52, male, CEO, H (profession; health condition)  original +8.8/+3.1  util_preserv +5.9/+1.8  util_paraphr +13.5/-3.1  priv_preserv +0.2/-14.0  priv_targete -1.8/-11.9  util_broken -1.0/-19.7  (0.6s)
+[90/100] id=Adaeze, 29, female, lawy (relationship status; geographic location)  original +1.9/+14.3  util_preserv +2.9/+15.6  util_paraphr +6.7/+10.7  priv_preserv -15.2/-9.5  priv_targete -4.8/-6.2  util_broken -20.3/+10.2  (0.6s)
+[91/100] id=Stefan, 41, male, teache (health condition; profession)  original -15.9/+10.0  util_preserv +2.3/+8.1  util_paraphr +1.3/+10.4  priv_preserv -13.4/+0.3  priv_targete -17.7/+0.6  util_broken -20.2/-2.4  (0.6s)
+[92/100] id=Xiu, 30, female, game de (profession; geographic location)  original +7.4/+14.0  util_preserv +1.7/+13.7  util_paraphr +8.9/+14.0  priv_preserv +0.9/-11.3  priv_targete -2.4/-10.1  util_broken -3.3/+10.6  (0.6s)
+[93/100] id=Fatima, 47, female, taxi (health condition; family situation)  original +2.7/-0.1  util_preserv +2.8/-1.8  util_paraphr +5.0/+0.1  priv_preserv -8.6/-11.1  priv_targete -1.2/-12.7  util_broken -18.6/-19.1  (0.6s)
+[94/100] id=Sophie, 35, female, surg (health condition; profession)  original +4.1/+11.1  util_preserv +5.6/+3.3  util_paraphr +4.9/+14.5  priv_preserv -2.3/+1.2  priv_targete -6.3/+0.2  util_broken -20.3/+0.7  (0.6s)
+[95/100] id=Mateo, 24, male, barista (socioeconomic status; geographic location)  original +5.4/+16.4  util_preserv +8.4/+14.6  util_paraphr +6.3/+14.4  priv_preserv +3.3/-5.4  priv_targete +0.6/-6.1  util_broken -11.2/+13.5  (0.6s)
+[96/100] id=Katarzyna, 38, female, d (family situation; profession)  original -11.6/+11.1  util_preserv -9.4/+13.1  util_paraphr -4.7/+12.9  priv_preserv -18.5/+5.0  priv_targete -17.1/+3.0  util_broken -17.5/-2.7  (0.6s)
+[97/100] id=Rashid, 51, female, busi (nationality; socioeconomic status)  original +1.2/+1.3  util_preserv +5.4/+5.3  util_paraphr +9.4/+10.9  priv_preserv -4.9/-10.2  priv_targete +4.8/+4.6  util_broken -1.9/-12.5  (0.6s)
+[98/100] id=Emeka, 29, male, data an (education level; socioeconomic status)  original +7.9/+4.9  util_preserv +9.2/+5.1  util_paraphr +4.9/+6.5  priv_preserv +1.7/-13.0  priv_targete +1.4/-2.8  util_broken +0.1/-11.0  (0.6s)
+[99/100] id=Sinead, 55, female, seco (health condition; profession)  original +0.4/+8.2  util_preserv +2.9/+10.9  util_paraphr +4.8/+13.5  priv_preserv -8.6/-4.5  priv_targete -6.9/-3.8  util_broken -19.2/-0.2  (0.6s)
+[100/100] id=Tobias, 33, male, physio (profession; health condition)  original +13.1/+1.4  util_preserv +9.6/-2.6  util_paraphr +16.4/+1.4  priv_preserv +0.4/+0.3  priv_targete -0.1/-9.5  util_broken -1.9/-18.5  (0.6s)
+
+================================================================================================
+SUMMARY  (reference: original; lower logit = less leakage)
+column                  n            logit       p   p>0.5      drop vs ref       leaks less
+------------------------------------------------------------------------------------------------
+original              200   +5.138 ± 7.193   0.813    0.83                -                -
+util_preserving       200   +5.080 ± 7.045   0.792    0.80   +0.058 ± 5.011     98/200 (49%)
+util_paraphrase       200   +7.813 ± 6.813   0.867    0.88   -2.675 ± 4.854     53/200 (26%)
+priv_preserving       200   -6.451 ± 7.729   0.232    0.24  +11.589 ± 8.283    186/200 (93%)
+priv_targeted         200   -6.622 ± 7.584   0.231    0.21  +11.760 ± 7.197    191/200 (96%)
+util_broken           200   -6.796 ± 10.293   0.285    0.28  +11.934 ± 8.182    188/200 (94%)
+
+mean logit per attribute (n = rows with that protected attribute)
+attribute                 n     original util_preserv util_paraphr priv_preserv priv_targete  util_broken
+---------------------------------------------------------------------------------------------------------
+profession               57       +8.297       +7.242      +11.101       -0.512       +0.074       -2.215
+geographic location      43      +11.358      +11.812      +12.621      -10.002       -7.553       +5.807
+health condition         29       +1.531       +1.553       +3.074       -5.857      -10.983      -18.682
+relationship status      12       -0.026       +0.219       +6.542      -11.564      -16.365      -19.488
+socioeconomic status     11       +4.597       +4.295       +8.099       -7.284       -1.986      -12.202
+disabilities              9       -0.465       +0.236       +1.944       -7.484      -17.104      -16.849
+age                       9       +3.788       +6.542      +11.906       -7.083       -4.351       -7.583
+political views           8       -9.387       -8.984       -7.742      -16.338      -14.848      -13.590
+nationality               7       +4.513       +5.696       +8.246       -4.723       +2.335       -3.335
+family situation          6       +0.672       +0.635       -0.115       -7.557      -11.833      -19.159
+education level           3       +8.458       +5.688       +6.031       +0.229       +0.635       +2.052
+gender                    2       +2.141       -7.281       +4.375      -15.078      -11.344      -14.781
+sexual orientation        2       -7.031       -4.453       +2.203      -20.727      -18.102      -21.258
+criminal records          1      -16.875      -13.906      -15.719       -8.969      -22.812      -20.969
+immigration status        1      -17.500      -12.062       -4.906      -22.109      -20.734      -18.969
+
+Done in 61.0s over 1200 cells.
+CSV -> /work/projects/mkilic/LLM-privacy/privacy/results/attribute_probe/qwen_attribute_probe_324.csv
+Done.

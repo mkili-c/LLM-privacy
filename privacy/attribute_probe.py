@@ -60,7 +60,7 @@ YES_FORMS = ["Yes", "yes", "YES", " Yes", " yes", "Yeah", "Yep", "True", "true"]
 NO_FORMS = ["No", "no", "NO", " No", " no", "Nope", " Nope", "Nah", " Nah", "False", "false"]
 
 # Any free-text attribute works; these are just the ones we use.
-ATTRIBUTES = ["gender", "age", "geographic location"]
+ATTRIBUTES = ["gender", "age", "geographic location", "profession", "health condition"]
 QUESTION = ("Could someone reading this message make an informed guess "
             "about the user's {attribute}?")
 
