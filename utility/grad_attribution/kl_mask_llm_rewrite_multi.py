@@ -29,9 +29,21 @@ Each step:
            --select grad     argmin of the averaged gradient at the candidate
        If nothing lowers the mean D, fall through to the next-ranked position
        (up to --max_positions); if none improve, stop.
-    5. Repeat for --n_steps tokens.
+    5. Repeat for --n_steps tokens, or until the mean D is <= --kl_threshold:
+       a prompt that already keeps enough utility is not edited (each edit
+       risks pulling private details back in), so it goes back to the
+       privacy step unchanged.
 
 Cost per step is K backward passes and K forward passes per candidate.
+
+Gaps: every [MASK] in the rewritten prompt marks words the privacy step
+deleted. Before the token steps, each gap is filled once, left to right: the
+LLM sees the sentence with that gap as [MASK] (and never the deleted words)
+and proposes fillers of up to --gap_max_words words, and the one with the
+lowest mean D is kept if it beats leaving the gap empty. A filler may be any
+number of tokens: candidates are scored as whole texts, so the sequence length
+is free here, unlike in the token steps. Once D <= --kl_threshold the
+remaining gaps are left empty. Unfilled gaps simply vanish.
 """
 import argparse
 import sys
@@ -52,7 +64,7 @@ from kl_grad_attribution import content_span
 
 from kl_token_grad import token_gradients
 from kl_gcg_rewrite import build_ids_with_answer, kl_of, evaluate_candidates
-from kl_mask_llm_rewrite import masked_text, llm_candidates, words_to_single_tokens
+from kl_mask_llm_rewrite import MASK, masked_text, llm_candidates, words_to_single_tokens
 
 DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
 
@@ -84,6 +96,11 @@ def get_args():
                         "grad: rank by the averaged linear gradient estimate only")
     p.add_argument("--max_positions", type=int, default=3,
                    help="positions tried per step (by rank) before giving up on the step")
+    p.add_argument("--gap_max_words", type=int, default=4, help="longest filler for a [MASK] gap")
+    p.add_argument("--kl_threshold", type=float, default=55.0,
+                   help="mean D at or below which the prompt keeps enough utility and is "
+                        "not edited any further (0 = always edit); D is summed over the "
+                        "answer tokens, so it scales with --answer_max_new_tokens")
     p.add_argument("--eval_chunk_size", type=int, default=32)
     p.add_argument("--dtype", choices=["float16", "float32"], default="float16")
     p.add_argument("--seed", type=int, default=23)
@@ -149,9 +166,80 @@ def mean_candidate_kl(model, live_prompt, refs, position, cand_toks, eval_chunk_
     return total / len(refs)
 
 
+# ------------------------------------------------------------------ gaps
+
+def gap_prompt(text, n, max_words):
+    return (
+        f"In the sentence below, a few words were removed at {MASK}.\n"
+        f"Propose {n} different fillers of 1 to {max_words} words for {MASK} so the "
+        "sentence is grammatical and natural again. Vary the meaning: include specific "
+        "and general options.\n"
+        "Output one filler per line, nothing else -- no numbering, no quotes, "
+        "no explanations.\n\n"
+        f"Sentence: {text}"
+    )
+
+
+def join(left, fill, right):
+    """left + fill + right with a space before the filler, and one after it
+    when a word follows ("a" + "farmer" + ", who" -> "a farmer, who")."""
+    if not fill:
+        return left + right
+    pre = " " if left and not left[-1].isspace() else ""
+    post = " " if right[:1].isalnum() else ""
+    return left + pre + fill + post + right
+
+
+def render(parts, fills):
+    """The text between the gaps (parts) with fills[j] in gap j."""
+    text = parts[0]
+    for f, p in zip(fills, parts[1:]):
+        text = join(text, f, p)
+    return text
+
+
+def text_kl(model, tok, text, answers, refs, device):
+    """Mean D of a whole prompt text; its length may differ from the reference's."""
+    D = 0.0
+    for a, r in zip(answers, refs):
+        ids, _, loss_slice = build_ids_with_answer(tok, text, a)
+        D += kl_of(model, torch.tensor(ids, device=device), r["ref_logits_p"], loss_slice)
+    return D / len(refs)
+
+
+def fill_gaps(model, tok, original, rewritten, answers, device, args):
+    parts = rewritten.split(MASK)
+    fills = [""] * (len(parts) - 1)
+    _, refs = prepare_answers(model, tok, original, render(parts, fills), answers, device)
+    D = text_kl(model, tok, render(parts, fills), answers, refs, device)
+    print(f"gaps     D={D:.4f} (all {len(fills)} empty)")
+    for j in range(len(fills)):
+        if D <= args.kl_threshold:
+            print(f"  D <= {args.kl_threshold}: remaining gaps left empty")
+            break
+        shown = render(parts, fills[:j] + [MASK] + fills[j + 1:])
+        cands = llm_candidates(model, tok, shown, args.n_candidates, args.cand_rounds,
+                               args.cand_temperature, args.cand_max_new_tokens,
+                               prompt=lambda t, n: gap_prompt(t, n, args.gap_max_words),
+                               max_words=args.gap_max_words)
+        cand_D = [text_kl(model, tok, render(parts, fills[:j] + [c] + fills[j + 1:]), answers, refs, device)
+                  for c in cands]
+        order = sorted(range(len(cands)), key=cand_D.__getitem__)
+        print(f"  gap {j}: {shown!r}\n    top fillers: "
+              + ", ".join(f"{cands[i]!r}(D={cand_D[i]:.3f})" for i in order[:8]))
+        if order and cand_D[order[0]] < D:
+            fills[j], D = cands[order[0]], cand_D[order[0]]
+            print(f"    filled with {fills[j]!r}  D={D:.4f}")
+        else:
+            print("    no filler beats the empty gap; left empty")
+    return render(parts, fills)
+
+
 # ------------------------------------------------------------------ main loop
 
 def run(model, tok, original, rewritten, answers, device, args):
+    if MASK in rewritten:
+        rewritten = fill_gaps(model, tok, original, rewritten, answers, device, args)
     live_prompt, refs = prepare_answers(model, tok, original, rewritten, answers, device)
     s, e = content_span(tok, rewritten)
     content_slice = slice(s, e)
@@ -161,6 +249,9 @@ def run(model, tok, original, rewritten, answers, device, args):
           f"{tok.decode(live_prompt[content_slice])!r}")
 
     for step in range(1, args.n_steps + 1):
+        if current_D <= args.kl_threshold:
+            print(f"step {step:03d}  D <= {args.kl_threshold}: utility good enough, no edit \n")
+            break
         grad = mean_gradients(model, live_prompt, refs, content_slice)  # [content_len, vocab]
 
         content_ids = live_prompt[content_slice]

@@ -119,15 +119,15 @@ _LINE_CLEAN = re.compile(r"^\s*(?:[-*•]|\d+[.)]|\(\d+\))?\s*")
 _STRIP_CHARS = " \t\"'`.,;:!?()[]{}"
 
 
-def parse_words(text):
-    """Turn the model's list into words: strip bullets / numbering / quotes,
-    keep only single-token-ish entries (no inner whitespace), dedupe in order."""
+def parse_words(text, max_words=1):
+    """Turn the model's list into entries of at most max_words words: strip
+    bullets / numbering / quotes, dedupe in order."""
     words, seen = [], set()
     for line in text.splitlines():
         if "mask" in line.lower():
             continue
         w = _LINE_CLEAN.sub("", line).strip(_STRIP_CHARS)
-        if not w or " " in w:
+        if not w or len(w.split()) > max_words:
             continue
         if w.lower() not in seen:
             seen.add(w.lower())
@@ -136,11 +136,12 @@ def parse_words(text):
 
 
 @torch.no_grad()
-def llm_candidates(model, tok, text, n, rounds, temperature, max_new_tokens):
+def llm_candidates(model, tok, text, n, rounds, temperature, max_new_tokens,
+                   prompt=fill_prompt, max_words=1):
     """Ask the LLM for fillers for the mask in `text`. One greedy generation
     plus (rounds - 1) sampled ones, pooled and deduped."""
     chat = tok.apply_chat_template(
-        [{"role": "user", "content": fill_prompt(text, n)}],
+        [{"role": "user", "content": prompt(text, n)}],
         tokenize=False, add_generation_prompt=True,
     )
     inputs = tok(chat, return_tensors="pt", add_special_tokens=False).to(model.device)
@@ -156,7 +157,7 @@ def llm_candidates(model, tok, text, n, rounds, temperature, max_new_tokens):
     words = []
     for out in outs:
         for row in tok.batch_decode(out[:, P:], skip_special_tokens=True):
-            words.extend(parse_words(row))
+            words.extend(parse_words(row, max_words))
     return list(dict.fromkeys(words))
 
 

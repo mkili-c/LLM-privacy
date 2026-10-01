@@ -34,7 +34,9 @@ them verbatim ("Adult" proposed for "Zurich", "7th" and "Can").
 
 Utility is deliberately not measured here; a separate utility loop handles it.
 A candidate is chosen for privacy only, so deletion usually wins: the utility
-loop is the one that puts back what turns out to matter.
+loop is the one that puts back what turns out to matter. A deleted span
+leaves SLOT in the text so the utility step knows where something was; the
+attackers and the fill LLM only ever see the text without it (visible).
 """
 import argparse
 import re
@@ -47,6 +49,7 @@ from attribute_probe import (ATTRIBUTES, DEFAULT_MODEL, QUESTION as QWEN_QUESTIO
 from laya_probe import DEFAULT_LAYA, QUESTION as LAYA_QUESTION, LayaProbe
 
 OPEN, CLOSE = "<<", ">>"     # marks the word to generalize in the fill prompt
+SLOT = "[…]"                 # left where a span was deleted, for the utility step to refill
 WORD = re.compile(r"[\w'’-]+")
 STOPWORDS = set("""
 a an the and or but if so as of at by for from in into on onto to with without about
@@ -83,8 +86,14 @@ class LayaAttacker:
         return torch.sigmoid(self.probe.logits([self.probe.encode(t) for t in texts])).cpu()
 
 
+def visible(text):
+    """The text without slot marks: what the attackers and every LLM see."""
+    return text.replace(SLOT, "")
+
+
 def score(attackers, texts):
     """{attacker: [N, K]} and the combined max over attackers [N, K]."""
+    texts = [visible(t) for t in texts]
     per = {a.name: a.p(texts) for a in attackers}
     return per, torch.stack(list(per.values())).amax(0)
 
@@ -108,13 +117,13 @@ def spans(text, max_n):
             if any(content[i:j + 1])]
 
 
-def delete(text, s, e):
-    """Remove text[s:e] and one adjacent space."""
+def delete(text, s, e, mark=""):
+    """Remove text[s:e] and one adjacent space, leaving `mark` in their place."""
     if s > 0 and text[s - 1] == " ":
         s -= 1
     elif e < len(text) and text[e] == " ":
         e += 1
-    return text[:s] + text[e:]
+    return text[:s] + mark + text[e:]
 
 
 def span_occlusion(attackers, text, P_text, leaking, max_n, penalty):
@@ -223,14 +232,14 @@ def rewrite(model, tok, attackers, text, attributes, args):
         changed = False
         for u in sorted(order, key=lambda u: sp[u][0], reverse=True):   # right to left
             s, e, _ = sp[u]
-            old = text[s:e]
-            marked = text[:s] + OPEN + old + CLOSE + text[e:]
+            old = visible(text[s:e])
+            marked = visible(text[:s] + OPEN + text[s:e] + CLOSE + text[e:])
             gone = {w.lower() for w in WORD.findall(old)} - STOPWORDS
             fills = [f for f in llm_fills(model, tok, marked, old, attributes,
                                           args.n_candidates, args.cand_rounds, args.cand_temperature)
                      if not gone & {w.lower() for w in WORD.findall(f)}]   # "Zurich area" still names Zurich
             fills.append("")                                                 # delete the span
-            cands = [text[:s] + f + text[e:] if f else delete(text, s, e) for f in fills]
+            cands = [text[:s] + f + text[e:] if f else delete(text, s, e, SLOT) for f in fills]
             _, Pc = score(attackers, cands)
             obj, cur = objective(Pc, args.threshold), objective(P, args.threshold)[0]
             b = min(range(len(cands)), key=lambda i: obj[i])

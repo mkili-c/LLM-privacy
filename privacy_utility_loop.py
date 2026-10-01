@@ -10,7 +10,9 @@ until the utility-repaired prompt no longer leaks.
                   loop (--privacy_max_iters) and the same --threshold
         2. u_i  = utility_rewrite(reference = x_{i-1}, rewritten = p_i)
                   utility/grad_attribution/: pull P(A | p_i) back toward
-                  P(A | x_{i-1}) (--utility kl_multi | cos_mask)
+                  P(A | x_{i-1}) (--utility kl_multi | cos_mask). Spans the
+                  privacy step deleted reach it as [MASK] gaps; kl_multi
+                  refills them with phrases if that lowers D, cos_mask drops them
         3. leak_i = max_a max_attacker P_a(u_i)
                   stop if leak_i <= --threshold, else x_i = u_i
 
@@ -54,11 +56,12 @@ for _dir in (_ROOT / "privacy", _ROOT / "utility" / "metrics", _ROOT / "utility"
 
 import laya                                                            # noqa: E402
 import privacy_rewrite                                                 # noqa: E402
-from privacy_rewrite import LayaAttacker, QwenAttacker, score          # noqa: E402
+from privacy_rewrite import SLOT, LayaAttacker, QwenAttacker, score    # noqa: E402
 from attribute_probe import ATTRIBUTES, DEFAULT_MODEL                  # noqa: E402
 from laya_probe import DEFAULT_LAYA                                    # noqa: E402
 import kl_mask_llm_rewrite_multi as kl_multi                           # noqa: E402
 import cos_mask_llm_rewrite as cos_mask                                # noqa: E402
+from kl_mask_llm_rewrite import MASK                                   # noqa: E402
 from cos_gcg_rewrite import original_embeddings                        # noqa: E402
 from topk_sample import topk_answers                                   # noqa: E402
 from grad_based_utility_score import load                              # noqa: E402
@@ -74,13 +77,14 @@ def utility_kl_multi(model, tok, reference, rewritten, device, uargs):
         max_new_tokens=uargs.answer_max_new_tokens, temperature=1.0, top_p=1.0) if a.strip()]
     if not answers:
         print("  utility: no non-empty reference answers; rewrite left unchanged")
-        return rewritten
+        return rewritten.replace(MASK, "")
     return kl_multi.run(model, tok, reference, rewritten, answers, device, uargs)
 
 
 def utility_cos_mask(model, tok, reference, rewritten, device, uargs):
     """KL gradient picks positions, LLM proposes fillers, answer-centroid
-    cosine against the reference decides."""
+    cosine against the reference decides. Gaps are not filled, just dropped."""
+    rewritten = rewritten.replace(MASK, "")
     answers, E_ref = original_embeddings(model, tok, reference, device, uargs)
     return cos_mask.run(model, tok, reference, rewritten, answers[0], E_ref, device, uargs)
 
@@ -122,7 +126,7 @@ def privacy_utility_loop(model, tok, attackers, text, attributes, utility, pargs
 
         reference = x if args.utility_ref == "iteration" else text
         print(f"\n{'#' * 30} iteration {i}: utility step ({utility}) {'#' * 30}")
-        u = rewrite_utility(model, tok, reference, p, device, uargs)
+        u = rewrite_utility(model, tok, reference, p.replace(SLOT, MASK), device, uargs)
         leak_u, per = leakage(attackers, u)
 
         history.append(dict(iteration=i, input=x, privacy=p, utility=u,
