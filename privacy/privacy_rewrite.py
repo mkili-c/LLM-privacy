@@ -7,14 +7,19 @@ Each iteration:
            Laya  P_a = P(true) of laya_probe.py     (calibrated classifier)
        and combine them as P_a = max(Qwen, Laya): an attribute leaks if EITHER
        attacker says so. Stop once every P_a <= --threshold.
-    2. Word occlusion: delete each content word from the text (words are
-       letter/digit runs, so "15-year-old" is one unit and punctuation is never
-       touched; function words such as "from" or "can" are skipped),
-       re-score every variant with both probes and give each word
-           score_w = sum over leaking a of max_probe (P_a(text) - P_a(text without w))
-    3. Take the --top_m words with a positive score. From right to left (so
-       the spans of the words left of it stay valid), mark the word in the
-       message and ask Qwen for more general replacements of it, score every
+    2. Span occlusion: delete every run of 1..--max_n consecutive words that
+       holds at least one content word (words are letter/digit runs, so
+       "15-year-old" is one word; function words such as "from" or "can" may
+       sit inside a span but never make one up alone), re-score every variant
+       with both probes and give each span s of n words
+           score_s = sum over leaking a of max_probe (P_a(text) - P_a(text without s))
+                     - --span_penalty * (n - 1)
+       Deleting more never leaks more, so without the penalty the longest
+       spans would always win; with it a longer span must earn its extra words.
+    3. Take the --top_m best non-overlapping spans with a positive score. From
+       right to left (so the spans left of it stay valid), mark the span in
+       the message and ask Qwen for more general replacements of it. The
+       candidates are these replacements plus deleting the span; score every
        candidate text with both probes and keep the best one if it lowers
            (sum_a max(0, P_a - threshold),  sum_a P_a)     compared in order.
 
@@ -28,7 +33,8 @@ still contain the word are dropped. It gives no concrete examples: Qwen copied
 them verbatim ("Adult" proposed for "Zurich", "7th" and "Can").
 
 Utility is deliberately not measured here; a separate utility loop handles it.
-A candidate is chosen for privacy only.
+A candidate is chosen for privacy only, so deletion usually wins: the utility
+loop is the one that puts back what turns out to matter.
 """
 import argparse
 import re
@@ -90,11 +96,16 @@ def objective(P, threshold):
 
 # ---------------------------------------------------------------- occlusion
 
-def words(text):
-    """Content-word spans. Function words are skipped: deleting one ("from",
-    "Can") breaks the sentence, and the probes react to the broken grammar,
-    not to a leak, so they used to rank at the top."""
-    return [(m.start(), m.end()) for m in WORD.finditer(text) if m.group().lower() not in STOPWORDS]
+def spans(text, max_n):
+    """(start, end, n words) of every run of 1..max_n consecutive words with at
+    least one content word. A span of function words alone is skipped:
+    deleting one ("from", "Can") breaks the sentence, and the probes react to
+    the broken grammar, not to a leak, so they used to rank at the top."""
+    ws = list(WORD.finditer(text))
+    content = [w.group().lower() not in STOPWORDS for w in ws]
+    return [(ws[i].start(), ws[j].end(), j - i + 1)
+            for i in range(len(ws)) for j in range(i, min(i + max_n, len(ws)))
+            if any(content[i:j + 1])]
 
 
 def delete(text, s, e):
@@ -106,20 +117,33 @@ def delete(text, s, e):
     return text[:s] + text[e:]
 
 
-def word_occlusion(attackers, text, P_text, leaking):
+def span_occlusion(attackers, text, P_text, leaking, max_n, penalty):
     """-> (spans, score [U], per-attacker drops {name: [U, K]})."""
-    spans = words(text)
-    per, _ = score(attackers, [delete(text, s, e) for s, e in spans])
+    sp = spans(text, max_n)
+    per, _ = score(attackers, [delete(text, s, e) for s, e, _ in sp])
     drops = {n: P_text[n] - v for n, v in per.items()}           # [U, K]
     best = torch.stack(list(drops.values())).amax(0)              # either attacker
-    return spans, (best * leaking.float()).sum(1), drops
+    n_words = torch.tensor([n for _, _, n in sp], dtype=best.dtype)
+    return sp, (best * leaking.float()).sum(1) - penalty * (n_words - 1), drops
+
+
+def pick(sp, sscore, m):
+    """The m best spans with a positive score, skipping any that overlaps one
+    already taken (both "29 years" and "years old" cannot be rewritten)."""
+    taken = []
+    for u in sscore.argsort(descending=True).tolist():
+        if sscore[u] <= 0 or len(taken) == m:
+            break
+        if all(sp[u][1] <= sp[t][0] or sp[u][0] >= sp[t][1] for t in taken):
+            taken.append(u)
+    return taken
 
 
 # ---------------------------------------------------------------- replacements
 
 def fill_prompt(marked, word, n, attributes):
     return (
-        "The message below was written by a user to an AI assistant. The word "
+        "The message below was written by a user to an AI assistant. The part "
         f"{OPEN}{word}{CLOSE} in it may reveal the writer's {', '.join(attributes)}.\n"
         f"Propose {n} different, more general replacements for \"{word}\" (a single "
         "word or a short phrase) that fit exactly in its place, keep the message "
@@ -187,31 +211,31 @@ def rewrite(model, tok, attackers, text, attributes, args):
             print("  max_iters reached")
             return text
 
-        spans, wscore, _ = word_occlusion(attackers, text, {n: v[0] for n, v in per.items()}, leaking)
-        order = [u for u in wscore.argsort(descending=True).tolist() if wscore[u] > 0][:args.top_m]
+        sp, sscore, _ = span_occlusion(attackers, text, {n: v[0] for n, v in per.items()}, leaking,
+                                       args.max_n, args.span_penalty)
+        order = pick(sp, sscore, args.top_m)
         print("  leaking: " + ", ".join(a for a, l in zip(attributes, leaking) if l))
-        print("  top words: " + ", ".join(f"{text[slice(*spans[u])]!r} {wscore[u]:+.3f}" for u in order))
+        print("  top spans: " + ", ".join(f"{text[sp[u][0]:sp[u][1]]!r} {sscore[u]:+.3f}" for u in order))
         if not order:
-            print("  no word lowers the leakage when deleted: stop")
+            print("  no span lowers the leakage when deleted: stop")
             return text
 
         changed = False
-        for u in sorted(order, key=lambda u: spans[u][0], reverse=True):   # right to left
-            s, e = spans[u]
+        for u in sorted(order, key=lambda u: sp[u][0], reverse=True):   # right to left
+            s, e, _ = sp[u]
             old = text[s:e]
             marked = text[:s] + OPEN + old + CLOSE + text[e:]
+            gone = {w.lower() for w in WORD.findall(old)} - STOPWORDS
             fills = [f for f in llm_fills(model, tok, marked, old, attributes,
                                           args.n_candidates, args.cand_rounds, args.cand_temperature)
-                     if old.lower() not in f.lower()]    # "Zurich area" still names Zurich
-            if not fills:
-                print(f"    {old!r}: no candidates")
-                continue
-            cands = [text[:s] + f + text[e:] for f in fills]
+                     if not gone & {w.lower() for w in WORD.findall(f)}]   # "Zurich area" still names Zurich
+            fills.append("")                                                 # delete the span
+            cands = [text[:s] + f + text[e:] if f else delete(text, s, e) for f in fills]
             _, Pc = score(attackers, cands)
             obj, cur = objective(Pc, args.threshold), objective(P, args.threshold)[0]
             b = min(range(len(cands)), key=lambda i: obj[i])
             if obj[b] < cur:
-                print(f"    {old!r} -> {fills[b]!r}  (hinge {cur[0]:.3f} -> {obj[b][0]:.3f}, "
+                print(f"    {old!r} -> {fills[b] or '<deleted>'!r}  (hinge {cur[0]:.3f} -> {obj[b][0]:.3f}, "
                       f"{len(fills)} candidates)")
                 text, P, changed = cands[b], Pc[b:b + 1], True
             else:
@@ -228,7 +252,10 @@ def main():
     p.add_argument("--text", required=True)
     p.add_argument("--attributes", nargs="+", default=ATTRIBUTES)
     p.add_argument("--threshold", type=float, default=0.5)
-    p.add_argument("--top_m", type=int, default=2, help="words masked per iteration")
+    p.add_argument("--top_m", type=int, default=2, help="spans rewritten per iteration")
+    p.add_argument("--max_n", type=int, default=4, help="longest span, in words")
+    p.add_argument("--span_penalty", type=float, default=0.05,
+                   help="score a span pays per word beyond its first")
     p.add_argument("--max_iters", type=int, default=8)
     p.add_argument("--n_candidates", type=int, default=10, help="replacements asked for per mask")
     p.add_argument("--cand_rounds", type=int, default=2, help="1 greedy + (rounds-1) sampled generations")

@@ -1,0 +1,90 @@
+sudo: sorry, you must have a tty to run sudo
+Job 347 on studgpu-spark01.inf.ethz.ch (aarch64), model: /scratch/users/mkilic/Qwen2.5-7B-Instruct
+NVIDIA GB10, [N/A]
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:  34%|███▍      | 115/339 [00:00<00:00, 1136.07it/s]Loading weights:  80%|████████  | 272/339 [00:00<00:00, 1383.91it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 1472.30it/s]
+/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+
+############################## iteration 1: privacy step ##############################
+
+=== iteration 0: 'I hurt my eyes while I was watching the fireworks on 1st of August, what should I do?'
+    qwen     gender 0.000       age 0.007  geograph 0.016  professi 0.000  health c 0.852
+    laya     gender 0.000       age 0.020  geograph 0.001  professi 0.000  health c 0.833
+    max      gender 0.000       age 0.020  geograph 0.016  professi 0.000  health c 0.852
+  leaking: health condition
+  top words: 'hurt' +0.851, 'fireworks' +0.843
+    'fireworks' -> 'glitter'  (hinge 0.352 -> 0.260, 19 candidates)
+    'hurt' -> 'altered'  (hinge 0.260 -> 0.000, 14 candidates)
+
+=== iteration 1: 'I altered my eyes while I was watching the glitter on 1st of August, what should I do?'
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.000  health c 0.002
+    laya     gender 0.000       age 0.005  geograph 0.000  professi 0.000  health c 0.000
+    max      gender 0.000       age 0.005  geograph 0.000  professi 0.000  health c 0.002
+  all attributes <= 0.5: done
+
+############################## iteration 1: utility step (kl_multi) ##############################
+step 000  D=34.6017 (initial, mean over 4 answers)  'I altered my eyes while I was watching the glitter on 1st of August, what should I do?'
+  pos=38 'Ġof' avg g*x=-0.5547  mask='I altered my eyes while I was watching the glitter on 1st [MASK] August, what should I do?'
+    LLM proposed 28 words, 28 single-token, 0 multi-token dropped
+    top candidates: holiday(g=-0.870, D=30.093), celebration(g=-0.659, D=30.622), sky(g=-0.222, D=30.814), festival(g=-0.758, D=31.119), star(g=-0.645, D=31.897), night(g=+0.115, D=32.108), sparkle(g=+0.355, D=32.398), time(g=+0.131, D=32.643) 
+
+step 001  D=30.0932  pos=38  'Ġof' -> 'Ġholiday'  content='I altered my eyes while I was watching the glitter on 1st holiday August, what should I do?' 
+
+  pos=28 'Ġwhile' avg g*x=-0.4131  mask='I altered my eyes [MASK] I was watching the glitter on 1st holiday August, what should I do?'
+    LLM proposed 29 words, 28 single-token, 0 multi-token dropped
+    top candidates: owing(g=-0.084, D=19.005), due(g=-1.294, D=20.276), regard(g=+0.835, D=22.755), concerning(g=+0.009, D=25.130), because(g=-1.329, D=25.200), thanks(g=-0.407, D=26.225), over(g=+0.235, D=27.259), upon(g=+0.808, D=27.524) 
+
+step 002  D=19.0046  pos=28  'Ġwhile' -> 'Ġowing'  content='I altered my eyes owing I was watching the glitter on 1st holiday August, what should I do?' 
+
+  pos=34 'Ġon' avg g*x=+0.2466  mask='I altered my eyes owing I was watching the glitter [MASK] 1st holiday August, what should I do?'
+    LLM proposed 33 words, 23 single-token, 10 multi-token dropped
+    top candidates: striking(g=-1.189, D=16.069), flashing(g=-0.625, D=17.423), outstanding(g=-0.961, D=19.737), brilliant(g=-0.417, D=20.326), spectacular(g=-0.139, D=20.675), impressive(g=-0.457, D=22.168), remarkable(g=-0.621, D=22.593), sparkling(g=+0.673, D=22.698) 
+
+step 003  D=16.0692  pos=34  'Ġon' -> 'Ġstriking'  content='I altered my eyes owing I was watching the glitter striking 1st holiday August, what should I do?' 
+
+  pos=28 'Ġowing' avg g*x=+0.3499  mask='I altered my eyes [MASK] I was watching the glitter striking 1st holiday August, what should I do?'
+    LLM proposed 26 words, 25 single-token, 0 multi-token dropped
+    top candidates: due(g=+17.891, D=16.791), of(g=+0.067, D=17.581), concerning(g=+5.117, D=20.230), near(g=+5.523, D=20.977), during(g=+10.039, D=21.073), about(g=+8.023, D=21.647), if(g=+6.160, D=21.650), via(g=+9.734, D=21.707) 
+
+    no candidate improves D (16.7912 >= 16.0692); next position 
+
+  pos=32 'Ġthe' avg g*x=+0.2510  mask='I altered my eyes owing I was watching [MASK] glitter striking 1st holiday August, what should I do?'
+    LLM proposed 27 words, 16 single-token, 11 multi-token dropped
+    top candidates: fireworks(g=-0.145, D=9.912), shine(g=+0.330, D=18.683), lights(g=-0.141, D=19.199), glow(g=+0.129, D=20.584), celebrations(g=-0.226, D=20.768), shines(g=-0.277, D=21.458), festivities(g=+0.855, D=23.093), sparkle(g=+0.395, D=23.097) 
+
+step 004  D=9.9118  pos=32  'Ġthe' -> 'Ġfireworks'  content='I altered my eyes owing I was watching fireworks glitter striking 1st holiday August, what should I do?' 
+
+  pos=28 'Ġowing' avg g*x=+0.1761  mask='I altered my eyes [MASK] I was watching fireworks glitter striking 1st holiday August, what should I do?'
+    LLM proposed 41 words, 23 single-token, 18 multi-token dropped
+    top candidates: of(g=+0.600, D=10.757), during(g=+3.143, D=12.199), at(g=+1.578, D=12.599), near(g=+1.517, D=12.602), nearby(g=+0.736, D=12.729), on(g=+2.484, D=12.818), with(g=+1.422, D=13.612), via(g=+3.491, D=13.726) 
+
+    no candidate improves D (10.7567 >= 9.9118); next position 
+
+  pos=40 ',' avg g*x=-0.1169  mask='I altered my eyes owing I was watching fireworks glitter striking 1st holiday August[MASK] what should I do?'
+    LLM proposed 37 words, 21 single-token, 16 multi-token dropped
+    top candidates: act(g=+0.172, D=11.545), plans(g=-0.106, D=11.932), schedule(g=+0.073, D=11.999), react(g=+0.086, D=12.004), scheduled(g=-0.218, D=12.097), mark(g=-0.017, D=12.106), ignore(g=+0.203, D=12.117), plan(g=-0.014, D=12.123) 
+
+    no candidate improves D (11.5448 >= 9.9118); next position 
+
+  pos=29 'ĠI' avg g*x=-0.0956  mask='I altered my eyes owing [MASK] was watching fireworks glitter striking 1st holiday August, what should I do?'
+    LLM proposed 27 words, 26 single-token, 1 multi-token dropped
+    top candidates: because(g=+0.313, D=9.122), if(g=+0.138, D=9.339), while(g=+0.189, D=9.387), when(g=+0.157, D=9.734), during(g=+0.383, D=9.827), with(g=+0.149, D=10.750), for(g=+0.279, D=10.832), since(g=+0.318, D=10.967) 
+
+step 005  D=9.1224  pos=29  'ĠI' -> 'Ġbecause'  content='I altered my eyes owing because was watching fireworks glitter striking 1st holiday August, what should I do?' 
+
+
+  iteration 1: leak after privacy 0.005, after utility 0.044 (threshold 0.5)
+
+================================================================================
+original: 'I hurt my eyes while I was watching the fireworks on 1st of August, what should I do?'
+
+  iteration 1
+    privacy  leak 0.005  'I altered my eyes while I was watching the glitter on 1st of August, what should I do?'
+    utility  leak 0.044  'I altered my eyes owing because was watching fireworks glitter striking 1st holiday August, what should I do?'
+      qwen     gender 0.000       age 0.000  geograph 0.001  professi 0.000  health c 0.000
+      laya     gender 0.001       age 0.032  geograph 0.030  professi 0.000  health c 0.044
+
+final (converged (leak <= 0.5), 1 iterations): 'I altered my eyes owing because was watching fireworks glitter striking 1st holiday August, what should I do?'
+Done.

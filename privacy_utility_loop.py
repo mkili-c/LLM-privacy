@@ -5,7 +5,7 @@ until the utility-repaired prompt no longer leaks.
     x_0 = the user's message
     for i = 1 .. --max_iters:
         1. p_i  = privacy_rewrite(x_{i-1})
-                  privacy/privacy_rewrite.py: word occlusion + LLM
+                  privacy/privacy_rewrite.py: span occlusion + LLM
                   generalization against Qwen and Laya, with its own inner
                   loop (--privacy_max_iters) and the same --threshold
         2. u_i  = utility_rewrite(reference = x_{i-1}, rewritten = p_i)
@@ -166,17 +166,20 @@ def main():
                    help="extra arguments for the utility script's own parser, e.g. \"--n_steps 5\"")
     # privacy_rewrite.rewrite reads these fields of its args
     p.add_argument("--privacy_top_m", type=int, default=2)
+    p.add_argument("--privacy_max_n", type=int, default=4)
+    p.add_argument("--privacy_span_penalty", type=float, default=0.05)
     p.add_argument("--privacy_max_iters", type=int, default=8)
     p.add_argument("--privacy_n_candidates", type=int, default=10)
     p.add_argument("--privacy_cand_rounds", type=int, default=2)
     p.add_argument("--privacy_cand_temperature", type=float, default=0.9)
     p.add_argument("--model_path", default=DEFAULT_MODEL)
     p.add_argument("--laya_path", default=DEFAULT_LAYA)
-    p.add_argument("--dtype", choices=["float16", "float32"], default="float16")
+    p.add_argument("--dtype", choices=["float16", "bfloat16", "float32"], default="float16")
     p.add_argument("--seed", type=int, default=23)
     args = p.parse_args()
 
     pargs = Namespace(threshold=args.threshold, top_m=args.privacy_top_m,
+                      max_n=args.privacy_max_n, span_penalty=args.privacy_span_penalty,
                       max_iters=args.privacy_max_iters, n_candidates=args.privacy_n_candidates,
                       cand_rounds=args.privacy_cand_rounds,
                       cand_temperature=args.privacy_cand_temperature)

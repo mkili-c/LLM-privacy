@@ -1,0 +1,20 @@
+# Packages for the GB10 (aarch64) venv, pinned to the versions of the x86
+# venv ~/.llmvenv so both nodes run the same code. torch is installed
+# separately by setup_gb10.sh (CUDA wheel index) and laya with --no-deps.
+accelerate==1.13.0
+transformers==5.8.0
+tokenizers==0.22.2
+huggingface_hub==1.14.0
+hf-xet==1.5.0
+safetensors==0.7.0
+sentencepiece==0.2.1
+protobuf==7.34.1
+Jinja2==3.1.6
+numpy==2.4.4
+pandas==3.0.2
+matplotlib==3.11.1
+tqdm==4.67.3
+# imported by laya
+fastapi==0.136.1
+pydantic==2.13.4
+uvicorn==0.46.0

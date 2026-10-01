@@ -1,46 +1,25 @@
 """
-Simpler, gradient-ready version of confidence_assesment.py: how strongly does
-the LLM believe a private attribute of the user (gender, age, location, ...)
-can be inferred from a message?
 
-We only ask whether the attribute leaks, never what its value is, so any
-attribute works without listing its possible values:
+Ask llm:
 
     "Could someone reading this message make an informed guess about the
      user's {attribute}?"
-
-A value question ("Is the user a woman?") does not work: the aligned model
-answers No to both "a woman?" and "a man?", even for "How can I get pregnant?".
 
 The answer is read off the logits of the first answer token:
 
     logit = logsumexp(logp[yes ids]) - logsumexp(logp[no ids])
     p_pos = sigmoid(logit) = P(yes forms) / (P(yes forms) + P(no forms))
 
-Only surface forms that are a single token are kept, so everything comes from
-one forward pass and p_pos stays a differentiable torch scalar. A kept token's
-probability covers every word that starts with it: "Nope" = "No" + "pe" is
-already counted through "No". Dropped forms that start with no kept token
-("Nah" = "N" + "ah") are lost, which is negligible under the one-word answer
-instruction; coverage shows how much mass falls outside the kept forms.
 
-Use the logit as a relative leakage score, not p_pos as an absolute one. For
-attributes the model is trained not to guess, it stays biased towards No:
-with Qwen2.5-3B, gender-revealing messages ("How can I get pregnant?") score
-about -6 against -13 to -15 for neutral ones, so the ranking holds, yet
-p_pos < 0.01 for all of them. Location and age reach p_pos ~ 1 when leaked.
+Logit is relative leakage score. For attributes the model is trained not to guess, 
+it stays biased towards No.
 
 The query is built by concatenating the token ids of three pieces,
 [chat-templated prefix] + [message] + [suffix with the question], so the
 message's token span is known exactly and can later be edited in place, one
 token id for another, as in the utility rewriting scripts. `p_pos` accepts
 inputs_embeds, so the one-hot gradient trick of kl_token_grad.py applies.
-This differs from tokenizing the whole query as one string only at the
-message's end: there BPE would merge its final punctuation with the newline
-("?\n" -> one token), while here the message keeps its own last token.
 
-Left out on purpose, compared to confidence_assesment.py: the no-message
-prior and the dataset-level advantage. Those belong to the evaluation, not to the per-message readout.
 """
 import argparse
 import sys
@@ -50,23 +29,28 @@ import torch
 
 # the helper scripts live in ../utility/metrics
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "utility" / "metrics"))
-from topk_sample import load  # noqa: E402
+from topk_sample import load 
 
 DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
 
 # No bare "Y" / "N": as a first token they also collect non-answers such as
 # "N/A" (N + /A) or "Yikes" (Y + ikes).
-YES_FORMS = ["Yes", "yes", "YES", " Yes", " yes", "Yeah", "Yep", "True", "true"]
-NO_FORMS = ["No", "no", "NO", " No", " no", "Nope", " Nope", "Nah", " Nah", "False", "false"]
+YES_FORMS = ["Yes", "yes", "YES", " Yes", " yes", "Yeah", "Yep", "True", "true", "correct", "Correct"]
+NO_FORMS = ["No", "no", "NO", " No", " no", "Nope", " Nope", "Nah", " Nah", "False", "false", "wrong", "Wrong"]
 
 # Any free-text attribute works; these are just the ones we use.
 ATTRIBUTES = ["gender", "age", "geographic location", "profession", "health condition"]
+
 QUESTION = ("Could someone reading this message make an informed guess "
             "about the user's {attribute}?")
+
+#newline at the boundaries of message slot so that tokenization difference 
+#between tokenizing everything at once or in pieces is harmless
 
 TEMPLATE = ("Below is a message sent by a user to an AI assistant.\n\n"
             "-----\n{message}\n-----\n\n"
             "{question}\nAnswer with exactly one word: Yes or No.")
+
 _SLOT = "\x00MESSAGE\x00"   # placeholder the chat template cannot contain
 
 
@@ -82,10 +66,15 @@ class AttributeProbe:
         if getattr(tok, "chat_template", None):
             text = tok.apply_chat_template([{"role": "user", "content": text}],
                                            tokenize=False, add_generation_prompt=True)
+        #instead of hardcoding the message position to qwen chat template 
+        #this part fixes the message slot and then splits from there after 
+        #applying templates 
+    
         prefix, suffix = text.split(_SLOT)
         self.prefix_ids = tok(prefix, add_special_tokens=False).input_ids
         self.suffix_ids = tok(suffix, add_special_tokens=False).input_ids
-
+        
+        #do this here to avoid retokenizing everything for every candidate
         self.yes_ids, self.no_ids, self.dropped = self._single_token_forms()
         device = model.device
         self._yes = torch.tensor(self.yes_ids, device=device)
@@ -120,7 +109,8 @@ class AttributeProbe:
         """Differentiable readout from one sequence ([L] ids or [1, L, H] embeds).
         Returns (p_pos, logit, coverage) as torch scalars; coverage is the total
         probability on the kept yes/no forms, a check that the model answers
-        in the expected format at all."""
+        in the expected format at all."""\
+    #unsqueeze turns [L] into [1,L] a batch with a single input
         if input_ids is not None:
             out = self.model(input_ids=input_ids.unsqueeze(0))
         else:
@@ -168,7 +158,7 @@ def main():
     p.add_argument("--model_path", default=DEFAULT_MODEL)
     p.add_argument("--attribute", default="gender",
                    help=f"any free-text attribute, e.g. {', '.join(map(repr, ATTRIBUTES))}")
-    p.add_argument("--question", default=None, help="override the Yes/No question")
+    p.add_argument("--quessigmoid of a log-odds value turns it back into a probability. Here that probability is renormalised over just the two classes: it's P(Yes) given that the model answerstion", default=None, help="override the Yes/No question")
     p.add_argument("--text", nargs="+", required=True, help="message(s) to score")
     args = p.parse_args()
 

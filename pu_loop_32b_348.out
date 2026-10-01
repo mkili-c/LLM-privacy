@@ -1,0 +1,64 @@
+sudo: sorry, you must have a tty to run sudo
+Job 348 on studgpu-spark01.inf.ethz.ch (aarch64), model: /scratch/users/mkilic/Qwen2.5-32B-Instruct
+               total        used        free      shared  buff/cache   available
+Mem:             121           3         102           0          17         118
+Loading /scratch/users/mkilic/Qwen2.5-32B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/771 [00:00<?, ?it/s]Loading weights:   5%|▍         | 35/771 [00:00<00:12, 61.33it/s]Loading weights:   9%|▉         | 73/771 [00:00<00:08, 81.51it/s]Loading weights:  14%|█▍        | 108/771 [00:01<00:08, 81.32it/s]Loading weights:  18%|█▊        | 142/771 [00:01<00:08, 72.79it/s]Loading weights:  26%|██▌       | 200/771 [00:02<00:04, 119.57it/s]Loading weights:  28%|██▊       | 219/771 [00:02<00:05, 98.46it/s] Loading weights:  73%|███████▎  | 562/771 [00:02<00:00, 496.48it/s]Loading weights:  93%|█████████▎| 720/771 [00:02<00:00, 653.47it/s]Loading weights: 100%|██████████| 771/771 [00:02<00:00, 292.25it/s]
+/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+
+############################## iteration 1: privacy step ##############################
+
+=== iteration 0: 'I hurt my eyes while I was watching the fireworks on 1st of August, what should I do?'
+    qwen     gender 0.000       age 0.000  geograph 0.076  professi 0.000  health c 0.000
+    laya     gender 0.000       age 0.020  geograph 0.001  professi 0.000  health c 0.833
+    max      gender 0.000       age 0.020  geograph 0.076  professi 0.000  health c 0.833
+  leaking: health condition
+  top words: 'hurt' +0.833, 'eyes' +0.074
+    'eyes' -> 'eye area'  (hinge 0.333 -> 0.271, 10 candidates)
+    'hurt' -> 'harmed'  (hinge 0.271 -> 0.069, 10 candidates)
+
+=== iteration 1: 'I harmed my eye area while I was watching the fireworks on 1st of August, what should I do?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 0.000
+    laya     gender 0.002       age 0.027  geograph 0.007  professi 0.000  health c 0.569
+    max      gender 0.002       age 0.027  geograph 0.007  professi 0.000  health c 0.569
+  leaking: health condition
+  top words: 'eye' +0.489, 'harmed' +0.386
+    'eye' -> 'periocular area'  (hinge 0.069 -> 0.000, 5 candidates)
+    'harmed' -> 'impacted'  (hinge 0.000 -> 0.000, 10 candidates)
+
+=== iteration 2: 'I impacted my periocular area area while I was watching the fireworks on 1st of August, what should I do?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 0.018
+    laya     gender 0.000       age 0.017  geograph 0.088  professi 0.000  health c 0.002
+    max      gender 0.000       age 0.017  geograph 0.088  professi 0.000  health c 0.018
+  all attributes <= 0.5: done
+
+############################## iteration 1: utility step (kl_multi) ##############################
+step 000  D=32.3284 (initial, mean over 2 answers)  'I impacted my periocular area area while I was watching the fireworks on 1st of August, what should I do?'
+  pos=31 'Ġwhile' avg g*x=+0.0962  mask='I impacted my periocular area area [MASK] I was watching the fireworks on 1st of August, what should I do?'
+    LLM proposed 20 words, 15 single-token, 4 multi-token dropped
+    top candidates: since(g=-0.378, D=23.489), quickly(g=-0.302, D=23.695), suddenly(g=-0.067, D=23.990), inside(g=+0.444, D=24.623), instantly(g=+0.022, D=25.001), here(g=-0.076, D=26.123), there(g=-0.040, D=26.687), outside(g=-0.014, D=27.072) 
+
+step 001  D=23.4890  pos=31  'Ġwhile' -> 'Ġsince'  content='I impacted my periocular area area since I was watching the fireworks on 1st of August, what should I do?' 
+
+  pos=28 'ocular' avg g*x=-0.0643  mask='I impacted my peri[MASK] area area since I was watching the fireworks on 1st of August, what should I do?'
+    LLM proposed 20 words, 11 single-token, 8 multi-token dropped
+    top candidates: eye(g=-4.570, D=22.207), spot(g=+1.162, D=26.822), region(g=+0.379, D=27.397), lid(g=+0.123, D=27.421), location(g=+3.055, D=28.020), face(g=+0.691, D=28.841), zone(g=+2.457, D=29.338), skin(g=-0.900, D=30.083) 
+
+step 002  D=22.2071  pos=28  'ocular' -> 'eye'  content='I impacted my perieye area area since I was watching the fireworks on 1st of August, what should I do?' 
+
+
+  iteration 1: leak after privacy 0.088, after utility 0.068 (threshold 0.5)
+
+================================================================================
+original: 'I hurt my eyes while I was watching the fireworks on 1st of August, what should I do?'
+
+  iteration 1
+    privacy  leak 0.088  'I impacted my periocular area area while I was watching the fireworks on 1st of August, what should I do?'
+    utility  leak 0.068  'I impacted my perieye area area since I was watching the fireworks on 1st of August, what should I do?'
+      qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 0.009
+      laya     gender 0.000       age 0.054  geograph 0.068  professi 0.005  health c 0.061
+
+final (converged (leak <= 0.5), 1 iterations): 'I impacted my perieye area area since I was watching the fireworks on 1st of August, what should I do?'
+Done.
