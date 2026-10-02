@@ -36,10 +36,7 @@ from the string in --utility_args, so its defaults stay in one place; its
 --model / --original / --rewritten are ignored here. The privacy rewriter has
 no get_args, so its knobs are prefixed --privacy_* flags below.
 
-    srun -A projects --gpus 5060ti:1 -t 01:00:00 \\
-        python privacy_utility_loop.py \\
-            --text "I am a 25 year old woman from Zurich and my period is late, could I be pregnant?" \\
-            --utility kl_multi --utility_args "--n_steps 5 --k 4"
+
 """
 import argparse
 import shlex
