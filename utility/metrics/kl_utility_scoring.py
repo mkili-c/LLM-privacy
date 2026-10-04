@@ -29,6 +29,10 @@ import torch.nn.functional as F
 from topk_sample import load, topk_answers
 
 DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+MESSAGE_SLOT = "\x00MESSAGE\x00"    # placeholder that splits the chat template around the message
+# A token above 8 nats of surprisal (P < 1/3000) is a spike: broken grammar ("I am a, who",
+# "I sensitivity my eyes") shows up as such spikes, a clean edit mostly does not.
+SPIKE_NATS = 8.0
 
 
 def get_args():
@@ -114,6 +118,48 @@ def score_answers(answers, prompt, model, tok, batch_size=8):
             totals.append(span.sum().item())
             counts.append(len(r) - P)
     return totals, counts
+
+
+@torch.no_grad()
+def disfluency(texts, model, tok, batch_size=16):
+    """
+    Surprisal spikes of each text as a user message, in nats:
+
+        Σ_t max(0, -log P(x_t | x_<t) - SPIKE_NATS)
+
+    over its tokens and the end-of-turn token after them, given the chat
+    template before them. 0 = no token less likely than e^-8. The end-of-turn
+    token counts because a message cut off mid-phrase is unlikely to end there.
+    Not the mean NLL per token: deleting predictable words ("25 years old")
+    raises the mean of a perfectly grammatical text by as much as a broken
+    edit does, while a spike is what a broken edit adds. Returns a list [N].
+    """
+    chat = tok.apply_chat_template([{"role": "user", "content": MESSAGE_SLOT}],
+                                   tokenize=False, add_generation_prompt=True)
+    prefix, suffix = chat.split(MESSAGE_SLOT)
+    prefix_ids = tok(prefix, add_special_tokens=False).input_ids
+    end_ids = tok(suffix, add_special_tokens=False).input_ids[:1]        # <|im_end|>
+    P = len(prefix_ids)
+
+    spikes = []
+    for i in range(0, len(texts), batch_size):
+        rows = [prefix_ids + tok(t, add_special_tokens=False).input_ids + end_ids
+                for t in texts[i:i + batch_size]]
+        L = max(len(r) for r in rows)
+        input_ids = torch.full((len(rows), L), tok.pad_token_id, dtype=torch.long)
+        attn = torch.zeros((len(rows), L), dtype=torch.long)
+        for b, r in enumerate(rows):
+            input_ids[b, :len(r)] = torch.tensor(r)
+            attn[b, :len(r)] = 1
+        input_ids, attn = input_ids.to(model.device), attn.to(model.device)
+
+        # message + end token sit at [P, len(r)) and are predicted by the logits at [P - 1, len(r) - 1)
+        logits = model(input_ids=input_ids, attention_mask=attn).logits[:, P - 1:-1]   # (batch, L - P, vocab)
+        logp = F.log_softmax(logits.float(), dim=-1)
+        nll = -logp.gather(-1, input_ids[:, P:].unsqueeze(-1)).squeeze(-1)           # (batch, L - P)
+        for b, r in enumerate(rows):
+            spikes.append((nll[b, :len(r) - P] - SPIKE_NATS).clamp(min=0).sum().item())
+    return spikes
 
 
 def _mean_stderr(xs):

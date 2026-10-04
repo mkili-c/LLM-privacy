@@ -19,8 +19,11 @@ Each iteration:
     3. Take the --top_m best non-overlapping spans with a positive score. From
        right to left (so the spans left of it stay valid), mark the span in
        the message and ask Qwen for more general replacements of it. The
-       candidates are these replacements plus deleting the span; score every
-       candidate text with both probes and keep the best one if it lowers
+       candidates are these replacements plus deleting the span. Drop every
+       candidate whose surprisal spikes (disfluency in kl_utility_scoring.py)
+       grow by more than --fluency_eps nats: the probes are fooled by broken
+       sentences, so a broken candidate would win for the wrong reason. Score
+       the rest with both probes and keep the best one if it lowers
            (sum_a max(0, P_a - threshold),  sum_a P_a)     compared in order.
 
 The LLM sees the word it replaces: generalizing needs it ("Zurich" -> "the
@@ -47,6 +50,7 @@ import laya
 from attribute_probe import (ATTRIBUTES, DEFAULT_MODEL, QUESTION as QWEN_QUESTION,
                              AttributeProbe, load)
 from laya_probe import DEFAULT_LAYA, QUESTION as LAYA_QUESTION, LayaProbe
+from kl_utility_scoring import disfluency        # utility/metrics, put on sys.path by attribute_probe
 
 OPEN, CLOSE = "<<", ">>"     # marks the word to generalize in the fill prompt
 SLOT = "[…]"                 # left where a span was deleted, for the utility step to refill
@@ -208,6 +212,7 @@ def show(attackers, attributes, per, P):
 
 
 def rewrite(model, tok, attackers, text, attributes, args):
+    dis = disfluency([visible(text)], model, tok)[0]      # of the current text, updated on every edit
     for it in range(args.max_iters + 1):
         per, P = score(attackers, [text])
         print(f"\n=== iteration {it}: {text!r}")
@@ -240,13 +245,21 @@ def rewrite(model, tok, attackers, text, attributes, args):
                      if not gone & {w.lower() for w in WORD.findall(f)}]   # "Zurich area" still names Zurich
             fills.append("")                                                 # delete the span
             cands = [text[:s] + f + text[e:] if f else delete(text, s, e, SLOT) for f in fills]
+            # fluency guard: no candidate may add more than --fluency_eps nats of surprisal spikes
+            dis_c = disfluency([visible(c) for c in cands], model, tok)
+            keep = [i for i, d in enumerate(dis_c) if d <= dis + args.fluency_eps]
+            n_broken = len(cands) - len(keep)
+            fills, cands, dis_c = [fills[i] for i in keep], [cands[i] for i in keep], [dis_c[i] for i in keep]
+            if not cands:
+                print(f"    {old!r}: all {n_broken} candidates break fluency")
+                continue
             _, Pc = score(attackers, cands)
             obj, cur = objective(Pc, args.threshold), objective(P, args.threshold)[0]
             b = min(range(len(cands)), key=lambda i: obj[i])
             if obj[b] < cur:
                 print(f"    {old!r} -> {fills[b] or '<deleted>'!r}  (hinge {cur[0]:.3f} -> {obj[b][0]:.3f}, "
-                      f"{len(fills)} candidates)")
-                text, P, changed = cands[b], Pc[b:b + 1], True
+                      f"spikes {dis:.1f} -> {dis_c[b]:.1f}, {len(fills)} candidates, {n_broken} broke fluency)")
+                text, P, dis, changed = cands[b], Pc[b:b + 1], dis_c[b], True
             else:
                 print(f"    {old!r}: none of {len(fills)} candidates helps (best {fills[b]!r})")
         if not changed:
@@ -269,6 +282,8 @@ def main():
     p.add_argument("--n_candidates", type=int, default=10, help="replacements asked for per mask")
     p.add_argument("--cand_rounds", type=int, default=2, help="1 greedy + (rounds-1) sampled generations")
     p.add_argument("--cand_temperature", type=float, default=0.9)
+    p.add_argument("--fluency_eps", type=float, default=4.0,
+                   help="nats of surprisal spikes a candidate may add (disfluency); more = rejected")
     p.add_argument("--model_path", default=DEFAULT_MODEL)
     p.add_argument("--laya_path", default=DEFAULT_LAYA)
     p.add_argument("--seed", type=int, default=23)

@@ -88,27 +88,30 @@ def build_ids_with_answer(tok, prompt, answer):
 
 
 def kl_of(model, ids, ref_logits_p, loss_slice):
+    """D = (1/|a|) Σ_t KL(P_ref(·|a<t) ‖ P_live(·|a<t)) in nats per answer token,
+    the unit of kl_utility_scoring.py, so D does not grow with the answer length."""
     with torch.no_grad():
-        logits = model(input_ids=ids.unsqueeze(0)).logits[0, loss_slice, :]
+        logits = model(input_ids=ids.unsqueeze(0)).logits[0, loss_slice, :]   # (answer_len, vocab)
         logq = torch.log_softmax(logits.float(), dim=-1)
-        return (ref_logits_p.exp() * (ref_logits_p - logq)).sum(dim=-1).sum().item()
+        # KL_t = Σ_v p·(log p − log q), averaged over the answer positions t
+        return (ref_logits_p.exp() * (ref_logits_p - logq)).sum(dim=-1).mean().item()
 
 
 def evaluate_candidates(model, live_ids, ref_logits_p, position, loss_slice, candidate_toks, eval_chunk_size):
     """Substitute each candidate token id at `position` and score
-    D = KL(P_ref || P_live) via a chunked forward pass (a full-vocab logits
-    tensor for the whole candidate batch at once is what runs the GPU out of
-    memory -- see kl_gcg_attack.py's history)."""
+    D = KL(P_ref || P_live) in nats per answer token (as kl_of) via a chunked
+    forward pass (a full-vocab logits tensor for the whole candidate batch at
+    once is what runs the GPU out of memory -- see kl_gcg_attack.py's history)."""
     losses = []
     with torch.no_grad():
         for start in range(0, len(candidate_toks), eval_chunk_size):
             chunk = candidate_toks[start:start + eval_chunk_size]
             batch = live_ids.unsqueeze(0).repeat(len(chunk), 1)
             batch[:, position] = chunk
-            logits_live = model(input_ids=batch).logits[:, loss_slice, :]
+            logits_live = model(input_ids=batch).logits[:, loss_slice, :]   # (chunk, answer_len, vocab)
             logq = torch.log_softmax(logits_live.float(), dim=-1)
-            kl = (ref_logits_p.exp() * (ref_logits_p - logq)).sum(dim=-1)
-            losses.append(kl.sum(dim=-1))
+            kl = (ref_logits_p.exp() * (ref_logits_p - logq)).sum(dim=-1)  # (chunk, answer_len)
+            losses.append(kl.mean(dim=-1))
     return torch.cat(losses)
 
 

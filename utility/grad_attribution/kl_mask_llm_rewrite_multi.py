@@ -6,9 +6,13 @@ With one answer, D and its gradient describe how the rewrite changes the
 probability of THAT answer only, so the rewrite can overfit to it. Here K
 answers a_1..a_K are sampled from P_original (or passed with --targets) and
 
-    D = (1/K) * sum_k KL(P_original(. | a_k) || P_rewritten(. | a_k))
+    D = (1/K) * sum_k (1/|a_k|) * sum_t KL(P_original(. | a_k,<t) || P_rewritten(. | a_k,<t))
 
-each term teacher-forced exactly as in the single-answer script.
+each term teacher-forced exactly as in the single-answer script and divided
+by its answer's length: D is in nats per answer token, the unit of
+kl_utility_scoring.py. Answers are --answer_max_new_tokens = 256 tokens long:
+the persona echo ("As a 34-year-old midwife, ...") is a roughly fixed cost at
+the answer opening, so in short answers it dominates D.
 
 Each step:
     1. For every answer, backprop its KL term into the one-hot of every
@@ -44,6 +48,11 @@ lowest mean D is kept if it beats leaving the gap empty. A filler may be any
 number of tokens: candidates are scored as whole texts, so the sequence length
 is free here, unlike in the token steps. Once D <= --kl_threshold the
 remaining gaps are left empty. Unfilled gaps simply vanish.
+
+Fluency guard: KL rewards nothing about grammar ("I am a scientist a mind"
+can lower D), so in both phases a filler or swap whose surprisal spikes
+(disfluency in kl_utility_scoring.py) grow by more than --fluency_eps nats
+over the current text is dropped before its D is computed.
 """
 import argparse
 import sys
@@ -61,6 +70,7 @@ for _dir in (_HERE.parent / "metrics", _HERE):
 from topk_sample import topk_answers
 from grad_based_utility_score import load
 from kl_grad_attribution import content_span
+from kl_utility_scoring import disfluency
 
 from kl_token_grad import token_gradients
 from kl_gcg_rewrite import build_ids_with_answer, kl_of, evaluate_candidates
@@ -79,11 +89,11 @@ def get_args():
                                          "What are the best ways to manage stress?")
     p.add_argument("--rewritten", default="What are some good general strategies for "
                                           "managing everyday stress?")
-    p.add_argument("--k", type=int, default=4,
+    p.add_argument("--k", type=int, default=10,
                    help="number of answers sampled from P_orig to average over")
     p.add_argument("--targets", nargs="+", default=None,
                    help="fixed answers to teacher-force (overrides --k sampling)")
-    p.add_argument("--answer_max_new_tokens", type=int, default=64)
+    p.add_argument("--answer_max_new_tokens", type=int, default=256)
     p.add_argument("--n_steps", type=int, default=10, help="tokens to edit, one per step")
     p.add_argument("--n_candidates", type=int, default=20,
                    help="fillers the LLM is asked for per mask prompt")
@@ -97,11 +107,16 @@ def get_args():
     p.add_argument("--max_positions", type=int, default=3,
                    help="positions tried per step (by rank) before giving up on the step")
     p.add_argument("--gap_max_words", type=int, default=4, help="longest filler for a [MASK] gap")
-    p.add_argument("--kl_threshold", type=float, default=55.0,
-                   help="mean D at or below which the prompt keeps enough utility and is "
-                        "not edited any further (0 = always edit); D is summed over the "
-                        "answer tokens, so it scales with --answer_max_new_tokens")
-    p.add_argument("--eval_chunk_size", type=int, default=32)
+    p.add_argument("--fluency_eps", type=float, default=4.0,
+                   help="nats of surprisal spikes a filler or swap may add (disfluency); more = rejected")
+    # 0.47 separates the privacy rewrites of data/prompt_rewrites_100.csv (93% left
+    # alone) from its off-topic ones (90% edited): Qwen2.5-3B, K = 5, 256-token answers
+    p.add_argument("--kl_threshold", type=float, default=0.47,
+                   help="mean D (nats per answer token) at or below which the prompt keeps "
+                        "enough utility and is not edited any further (0 = always edit)")
+    p.add_argument("--eval_chunk_size", type=int, default=8,
+                   help="candidates per forward pass; logits memory grows with chunk x answer "
+                        "length, and 8 x 256 tokens is the 32 x 64 of 64-token answers")
     p.add_argument("--dtype", choices=["float16", "float32"], default="float16")
     p.add_argument("--seed", type=int, default=23)
     return p.parse_args()
@@ -222,10 +237,15 @@ def fill_gaps(model, tok, original, rewritten, answers, device, args):
                                args.cand_temperature, args.cand_max_new_tokens,
                                prompt=lambda t, n: gap_prompt(t, n, args.gap_max_words),
                                max_words=args.gap_max_words)
-        cand_D = [text_kl(model, tok, render(parts, fills[:j] + [c] + fills[j + 1:]), answers, refs, device)
-                  for c in cands]
+        texts = [render(parts, fills[:j] + [c] + fills[j + 1:]) for c in cands]
+        # fluency guard against the current text, with this gap still empty
+        dis = disfluency([render(parts, fills)], model, tok)[0]
+        keep = [i for i, d in enumerate(disfluency(texts, model, tok)) if d <= dis + args.fluency_eps]
+        n_broken = len(cands) - len(keep)
+        cands, texts = [cands[i] for i in keep], [texts[i] for i in keep]
+        cand_D = [text_kl(model, tok, t, answers, refs, device) for t in texts]
         order = sorted(range(len(cands)), key=cand_D.__getitem__)
-        print(f"  gap {j}: {shown!r}\n    top fillers: "
+        print(f"  gap {j}: {shown!r}  ({n_broken} fillers broke fluency)\n    top fillers: "
               + ", ".join(f"{cands[i]!r}(D={cand_D[i]:.3f})" for i in order[:8]))
         if order and cand_D[order[0]] < D:
             fills[j], D = cands[order[0]], cand_D[order[0]]
@@ -255,6 +275,7 @@ def run(model, tok, original, rewritten, answers, device, args):
         grad = mean_gradients(model, live_prompt, refs, content_slice)  # [content_len, vocab]
 
         content_ids = live_prompt[content_slice]
+        dis = disfluency([tok.decode(content_ids)], model, tok)[0]      # fluency guard baseline
         grad_x_input = grad[torch.arange(grad.shape[0], device=grad.device), content_ids]
         ranked = grad_x_input.abs().argsort(descending=True).tolist()
 
@@ -268,9 +289,19 @@ def run(model, tok, original, rewritten, answers, device, args):
             words = llm_candidates(model, tok, text, args.n_candidates, args.cand_rounds,
                                    args.cand_temperature, args.cand_max_new_tokens)
             cand_ids, cand_words, dropped = words_to_single_tokens(tok, words, old_tok_id)
+            # fluency guard: drop swaps that add more than --fluency_eps nats of surprisal spikes
+            swapped = []
+            for c in cand_ids:
+                ids = content_ids.clone()
+                ids[i] = c
+                swapped.append(tok.decode(ids))
+            keep = [j for j, d in enumerate(disfluency(swapped, model, tok)) if d <= dis + args.fluency_eps]
+            n_broken = len(cand_ids) - len(keep)
+            cand_ids, cand_words = [cand_ids[j] for j in keep], [cand_words[j] for j in keep]
             print(f"  pos={position} {old_tok!r} avg g*x={grad_x_input[i].item():+.4f}  "
                   f"mask={text!r}\n    LLM proposed {len(words)} words, "
-                  f"{len(cand_ids)} single-token, {dropped} multi-token dropped")
+                  f"{len(cand_ids)} single-token and fluent, {dropped} multi-token dropped, "
+                  f"{n_broken} broke fluency")
             if not cand_ids:
                 continue
 

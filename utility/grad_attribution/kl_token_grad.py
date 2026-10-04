@@ -28,8 +28,9 @@ def token_gradients(model, input_ids, ref_ids, input_slice, target_slice, ref_ta
     into the sequence so gradients can flow into the one-hot. The reference
     sequence (ref_ids) is the fixed, unmodified prompt teacher-forced with the
     same answer, run under no_grad. The loss is D = KL(P_ref || P_live),
-    summed over the answer positions -- see kl_grad_attribution.py for the
-    same construction without the one-hot/replacement machinery.
+    averaged over the answer positions (nats per answer token, as kl_of in
+    kl_gcg_rewrite.py) -- see kl_grad_attribution.py for the same
+    construction, summed there, without the one-hot/replacement machinery.
 
     Parameters
     ----------
@@ -88,9 +89,11 @@ def token_gradients(model, input_ids, ref_ids, input_slice, target_slice, ref_ta
 
     # KL(P_ref || P_live), softmax in float32 for numerical stability; the
     # reference branch ran under no_grad, so gradients only flow into logits_live.
+    # Averaged over the answer positions, so the gradient is that of the
+    # nats-per-token D the candidates are scored on.
     logp = torch.log_softmax(logits_ref.float(), dim=-1)
     logq = torch.log_softmax(logits_live.float(), dim=-1)
-    loss = (logp.exp() * (logp - logq)).sum(dim=-1).sum()
+    loss = (logp.exp() * (logp - logq)).sum(dim=-1).mean()
 
     loss.backward()
 

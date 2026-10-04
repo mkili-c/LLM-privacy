@@ -8,24 +8,38 @@ until the utility-repaired prompt no longer leaks.
                   privacy/privacy_rewrite.py: span occlusion + LLM
                   generalization against Qwen and Laya, with its own inner
                   loop (--privacy_max_iters) and the same --threshold
-        2. u_i  = utility_rewrite(reference = x_{i-1}, rewritten = p_i)
+        2. u_i  = utility_rewrite(reference = x_0, rewritten = p_i)
                   utility/grad_attribution/: pull P(A | p_i) back toward
-                  P(A | x_{i-1}) (--utility kl_multi | cos_mask). Spans the
+                  P(A | x_0) (--utility kl_multi | cos_mask). Spans the
                   privacy step deleted reach it as [MASK] gaps; kl_multi
                   refills them with phrases if that lowers D, cos_mask drops them
         3. leak_i = max_a max_attacker P_a(u_i)
                   stop if leak_i <= --threshold, else x_i = u_i
+    after the last iteration:
+        4. fluency fix: the LLM proposes minimal grammar fixes of the final
+           text (--fix_candidates). A fix is kept only if it has fewer
+           surprisal spikes (disfluency), leaks no more than
+           max(leak, --threshold) and loses no more utility than
+           max(D, --kl_threshold); the most fluent such fix wins. kl_multi only,
+           since the check needs its D.
 
 The utility rewriters are free to re-introduce private details (they do not
-see the attackers), which is why step 3 measures u_i and not p_i.
+see the attackers), which is why step 3 measures u_i and not p_i. Both
+rewriters reject any edit that adds more than ε nats of surprisal spikes
+(--privacy_fluency_eps, and --fluency_eps in --utility_args).
 
 Reference of the utility step (--utility_ref):
-    iteration  x_{i-1}, the input of the iteration (default). From i = 2 on
-               this is already a rewrite, so utility is measured against the
-               previous iterate, not the user's message, and can drift.
-    user       x_0 every iteration. No drift, but x_0 carries every private
-               detail, so the utility step pulls towards all of them again
-               each time.
+    user       x_0 every iteration (default): the user's message is the only
+               real definition of utility. It carries every private detail,
+               so the utility step may pull some back in. That is intended:
+               kl_multi only edits while D > its --kl_threshold, i.e. when the
+               rewrite cannot afford to lose them. The reference answers are
+               sampled once and reused in every iteration, so every threshold
+               decision is made against the same answers.
+    iteration  x_{i-1}, the input of the iteration. From i = 2 on this is
+               already a rewrite, so utility is measured against the previous
+               iterate and drifts: a garbled u_1 becomes the reference of
+               iteration 2. Its answers are resampled every iteration.
 
 The whole pipeline runs on one Qwen model: it is the Qwen attacker, the LLM
 that proposes replacements on both sides, and the model the utility
@@ -62,33 +76,51 @@ from kl_mask_llm_rewrite import MASK                                   # noqa: E
 from cos_gcg_rewrite import original_embeddings                        # noqa: E402
 from topk_sample import topk_answers                                   # noqa: E402
 from grad_based_utility_score import load                              # noqa: E402
+from kl_utility_scoring import disfluency                              # noqa: E402
+
+FIX_PROMPT = (
+    "The message below was written by a user to an AI assistant. Words in it were "
+    "removed or replaced, so it may contain grammar mistakes or broken phrases.\n"
+    "Rewrite it with the fewest changes that make it fluent and grammatical. Keep its "
+    "meaning and its request, and do not add any new details.\n"
+    "Output only the corrected message, nothing else.\n\n"
+    "Message: {message}"
+)
+FIX_TEMPERATURE = 0.7       # for the sampled fixes; the first one is greedy
+FIX_MAX_NEW_TOKENS = 200
 
 
 # ---------------------------------------------------------------- utility step
 
-def utility_kl_multi(model, tok, reference, rewritten, device, uargs):
-    """KL gradient picks positions, LLM proposes fillers, mean KL over K
-    answers sampled from the reference decides."""
-    answers = [a for a, _, _ in topk_answers(
+def kl_multi_answers(model, tok, reference, device, uargs):
+    """--k non-empty answers sampled from the reference: the ones D is teacher-forced on."""
+    return [a for a, _, _ in topk_answers(
         reference, model, tok, k=uargs.k, mode="sample",
         max_new_tokens=uargs.answer_max_new_tokens, temperature=1.0, top_p=1.0) if a.strip()]
+
+
+def utility_kl_multi(model, tok, reference, answers, rewritten, device, uargs):
+    """KL gradient picks positions, LLM proposes fillers, mean KL over the
+    reference answers decides."""
     if not answers:
         print("  utility: no non-empty reference answers; rewrite left unchanged")
         return rewritten.replace(MASK, "")
     return kl_multi.run(model, tok, reference, rewritten, answers, device, uargs)
 
 
-def utility_cos_mask(model, tok, reference, rewritten, device, uargs):
+def utility_cos_mask(model, tok, reference, ref_samples, rewritten, device, uargs):
     """KL gradient picks positions, LLM proposes fillers, answer-centroid
-    cosine against the reference decides. Gaps are not filled, just dropped."""
+    cosine against the reference decides. Gaps are not filled, just dropped.
+    ref_samples = (answers, E_ref) of original_embeddings."""
+    answers, E_ref = ref_samples
     rewritten = rewritten.replace(MASK, "")
-    answers, E_ref = original_embeddings(model, tok, reference, device, uargs)
     return cos_mask.run(model, tok, reference, rewritten, answers[0], E_ref, device, uargs)
 
 
+# name -> (sample the reference, rewrite against those samples, the script's own argparse)
 UTILITY = {
-    "kl_multi": (utility_kl_multi, kl_multi.get_args),
-    "cos_mask": (utility_cos_mask, cos_mask.get_args),
+    "kl_multi": (kl_multi_answers, utility_kl_multi, kl_multi.get_args),
+    "cos_mask": (original_embeddings, utility_cos_mask, cos_mask.get_args),
 }
 
 
@@ -110,12 +142,67 @@ def leakage(attackers, text):
     return P[0].max().item(), {n: v[0].tolist() for n, v in per.items()}
 
 
+# ---------------------------------------------------------------- fluency fix
+
+@torch.no_grad()
+def llm_fluency_fixes(model, tok, text, n):
+    """n minimal grammar fixes of text proposed by the LLM: one greedy, n - 1 sampled.
+    Each fix is the first non-empty line of a generation, deduped."""
+    chat = tok.apply_chat_template([{"role": "user", "content": FIX_PROMPT.format(message=text)}],
+                                   tokenize=False, add_generation_prompt=True)
+    inputs = tok(chat, return_tensors="pt", add_special_tokens=False).to(model.device)
+    outs = [model.generate(**inputs, max_new_tokens=FIX_MAX_NEW_TOKENS, do_sample=False,
+                           pad_token_id=tok.pad_token_id)]
+    if n > 1:
+        outs.append(model.generate(**inputs, max_new_tokens=FIX_MAX_NEW_TOKENS, do_sample=True,
+                                   temperature=FIX_TEMPERATURE, num_return_sequences=n - 1,
+                                   pad_token_id=tok.pad_token_id))
+    fixes = []
+    for out in outs:
+        for row in tok.batch_decode(out[:, inputs.input_ids.shape[1]:], skip_special_tokens=True):
+            lines = [line.strip() for line in row.splitlines() if line.strip()]
+            fix = lines[0].removeprefix("Message:").strip().strip('"').strip() if lines else ""
+            if fix and fix != text and fix not in fixes:
+                fixes.append(fix)
+    return fixes
+
+
+def fluency_fix(model, tok, attackers, reference, answers, text, device, uargs, args):
+    """Keep the most fluent LLM fix of text that has fewer surprisal spikes,
+    leaks no more than max(text's leak, --threshold) and has a D no higher than
+    max(text's D, --kl_threshold). -> the fix, or text if none passes."""
+    dis = disfluency([text], model, tok)[0]
+    if dis == 0 or args.fix_candidates == 0:
+        print(f"  no fix: spikes {dis:.1f}, --fix_candidates {args.fix_candidates}")
+        return text
+    texts = [text] + llm_fluency_fixes(model, tok, text, args.fix_candidates)
+    dis_t = [dis] + disfluency(texts[1:], model, tok)
+    _, P = score(attackers, texts)
+    leak = P.amax(1).tolist()                                # max over attributes and attackers
+    _, refs = kl_multi.prepare_answers(model, tok, reference, text, answers, device)
+    D = [kl_multi.text_kl(model, tok, t, answers, refs, device) for t in texts]
+
+    print(f"  {'spikes':>6} {'leak':>6} {'D':>6}")
+    print(f"  {dis_t[0]:6.1f} {leak[0]:6.3f} {D[0]:6.3f}  now  {text!r}")
+    passing = []
+    for k in range(1, len(texts)):
+        ok = (dis_t[k] < dis_t[0] and leak[k] <= max(leak[0], args.threshold)
+              and D[k] <= max(D[0], uargs.kl_threshold))
+        print(f"  {dis_t[k]:6.1f} {leak[k]:6.3f} {D[k]:6.3f}  {'ok  ' if ok else 'drop'} {texts[k]!r}")
+        if ok:
+            passing.append(k)
+    if not passing:
+        print("  no fix passes: text kept")
+        return text
+    return texts[min(passing, key=lambda k: dis_t[k])]
+
+
 # ---------------------------------------------------------------- main loop
 
 def privacy_utility_loop(model, tok, attackers, text, attributes, utility, pargs, uargs, device, args):
     """-> (final text, history, converged). history has one dict per iteration."""
-    rewrite_utility = UTILITY[utility][0]
-    x, history = text, []
+    sample_reference, rewrite_utility, _ = UTILITY[utility]
+    x, u, history, ref_samples, converged = text, text, [], None, False
     for i in range(1, args.max_iters + 1):
         print(f"\n{'#' * 30} iteration {i}: privacy step {'#' * 30}")
         p = privacy_rewrite.rewrite(model, tok, attackers, x, attributes, pargs)
@@ -123,7 +210,13 @@ def privacy_utility_loop(model, tok, attackers, text, attributes, utility, pargs
 
         reference = x if args.utility_ref == "iteration" else text
         print(f"\n{'#' * 30} iteration {i}: utility step ({utility}) {'#' * 30}")
-        u = rewrite_utility(model, tok, reference, p.replace(SLOT, MASK), device, uargs)
+        # x_0 never changes, so its samples are drawn once and every threshold
+        # decision is made against the same answers; an iteration reference is
+        # a new prompt each time. An empty sample is not kept, it is redrawn.
+        if args.utility_ref == "iteration" or not ref_samples:
+            print(f"  sampling the reference answers ({args.utility_ref} reference)")
+            ref_samples = sample_reference(model, tok, reference, device, uargs)
+        u = rewrite_utility(model, tok, reference, ref_samples, p.replace(SLOT, MASK), device, uargs)
         leak_u, per = leakage(attackers, u)
 
         history.append(dict(iteration=i, input=x, privacy=p, utility=u,
@@ -131,12 +224,18 @@ def privacy_utility_loop(model, tok, attackers, text, attributes, utility, pargs
         print(f"\n  iteration {i}: leak after privacy {leak_p:.3f}, after utility {leak_u:.3f} "
               f"(threshold {args.threshold})")
         if leak_u <= args.threshold:
-            return u, history, True
+            converged = True
+            break
         if u == x:
             print("  iteration changed nothing: stop")
-            return u, history, False
+            break
         x = u
-    return x, history, False
+
+    # the fix checks utility with kl_multi's D on the same reference answers
+    if utility == "kl_multi" and ref_samples:
+        print(f"\n{'#' * 30} fluency fix {'#' * 30}")
+        u = fluency_fix(model, tok, attackers, reference, ref_samples, u, device, uargs, args)
+    return u, history, converged
 
 
 def report(text, final, history, converged, attributes, threshold):
@@ -161,8 +260,9 @@ def main():
                         "(also the privacy rewriter's own stopping threshold)")
     p.add_argument("--max_iters", type=int, default=4, help="privacy + utility iterations")
     p.add_argument("--utility", choices=sorted(UTILITY), default="kl_multi")
-    p.add_argument("--utility_ref", choices=["iteration", "user"], default="iteration",
-                   help="reference prompt of the utility step, see the module docstring")
+    p.add_argument("--utility_ref", choices=["user", "iteration"], default="user",
+                   help="reference prompt of the utility step (default: %(default)s), "
+                        "see the module docstring")
     p.add_argument("--utility_args", default="",
                    help="extra arguments for the utility script's own parser, e.g. \"--n_steps 5\"")
     # privacy_rewrite.rewrite reads these fields of its args
@@ -173,6 +273,10 @@ def main():
     p.add_argument("--privacy_n_candidates", type=int, default=10)
     p.add_argument("--privacy_cand_rounds", type=int, default=2)
     p.add_argument("--privacy_cand_temperature", type=float, default=0.9)
+    p.add_argument("--privacy_fluency_eps", type=float, default=4.0,
+                   help="nats of surprisal spikes a privacy edit may add (disfluency)")
+    p.add_argument("--fix_candidates", type=int, default=4,
+                   help="LLM fluency fixes after the last iteration (1 greedy + n - 1 sampled); 0 = none")
     p.add_argument("--model_path", default=DEFAULT_MODEL)
     p.add_argument("--laya_path", default=DEFAULT_LAYA)
     p.add_argument("--dtype", choices=["float16", "bfloat16", "float32"], default="float16")
@@ -183,8 +287,9 @@ def main():
                       max_n=args.privacy_max_n, span_penalty=args.privacy_span_penalty,
                       max_iters=args.privacy_max_iters, n_candidates=args.privacy_n_candidates,
                       cand_rounds=args.privacy_cand_rounds,
-                      cand_temperature=args.privacy_cand_temperature)
-    uargs = stage_args(UTILITY[args.utility][1], args.utility_args)
+                      cand_temperature=args.privacy_cand_temperature,
+                      fluency_eps=args.privacy_fluency_eps)
+    uargs = stage_args(UTILITY[args.utility][2], args.utility_args)
 
     torch.manual_seed(args.seed)
     device = "cuda" if torch.cuda.is_available() else "cpu"
