@@ -1,0 +1,16 @@
+Loading cuda/12.4
+  Loading requirement: gcc/11
+Job 407 on studgpu-node01.inf.ethz.ch, GPU: 0
+NVIDIA GeForce RTX 5060 Ti, 16311 MiB
+/home/mkilic/.llmvenv/lib/python3.12/site-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+pairs: train 1000, calibration 70  ->  items: train 5690 (32% yes), calibration 402
+16 attributes, base T = 1.983, device cuda, out -> /scratch/users/mkilic/laya-privacy-n1000
+epoch 0  calib acc 0.789  auroc 0.886  loss 0.5113   (base Laya)
+epoch 1  calib acc 0.958  auroc 0.986   (monitor only)   train loss 0.5796  reward 0.254  σ 0.40  (88s)
+epoch 2  calib acc 0.955  auroc 0.988   (monitor only)   train loss 0.4785  reward 0.421  σ 0.30  (83s)
+epoch 3  calib acc 0.963  auroc 0.994   (monitor only)   train loss 0.3263  reward 0.539  σ 0.20  (83s)
+epoch 4  calib acc 0.970  auroc 0.993   (monitor only)   train loss 0.2464  reward 0.597  σ 0.10  (83s)
+T 1.983 -> 5.000: calib loss 0.1260  acc 0.970  auroc 0.993
+saved -> /scratch/users/mkilic/laya-privacy-n1000
+Done.

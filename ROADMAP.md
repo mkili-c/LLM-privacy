@@ -79,9 +79,11 @@ Goal: make Laya a real second attacker. Not fine-tuned, it ranks leaks somewhat 
 - Items per pair: (leaking, a) → yes and (safe, a) → no for a in `attributes`, plus (leaking, b) → no for b in `not_inferable`. The last kind makes Laya read the attribute instead of learning "vague text → no".
 
 ### Step 2: before numbers
-- [ ] Eval script: `--laya_path` + test CSV → accuracy at P = 0.5, AUROC, pair accuracy P(leaking) > P(safe), ECE and Brier, per-attribute accuracy, bootstrap 95% CIs over pairs.
-- [ ] Test sets: the synthetic one, and `prompt_rewrites_100.csv` as out-of-distribution (original vs `priv_targeted` on `protected_attrs`, without the 13 of 200 cells on attributes Laya is not trained on: disabilities 9, sexual orientation 2, criminal records 1, immigration status 1).
-- [ ] Rows: Laya; Laya + a bias σ(α·ℓ + β) fitted on train (is the gain more than a threshold shift?); Qwen 3B / 7B / 32B probes as reference.
+- [x] Eval script `privacy/laya_eval.py` (+ `sbatch_scripts/run_laya_eval.sbatch`), written 2026-10-05 and smoke-tested on CPU. It covers base and every checkpoint in one run, with three metrics only (the user's choice): accuracy at P = 0.5 (next to the majority baseline), AUROC, and pair accuracy P(leaking) > P(safe). Each comes with a paired bootstrap 95% CI over pairs, per model and for the difference to base, plus accuracy by item kind, cue_type, edit_type and attribute. Brier, ECE, balanced accuracy and McNemar were dropped. Test items are built by `laya_finetune.make_items` itself.
+- [x] Test sets: the synthetic one, and `prompt_rewrites_100.csv` as out-of-distribution (original vs `priv_targeted` on `protected_attrs`, without the 13 of 200 cells on attributes Laya is not trained on: disabilities 9, sexual orientation 2, criminal records 1, immigration status 1).
+- [x] Rows: Laya; Laya + a bias σ(α·ℓ + β) fitted on train.csv (is the gain more than a threshold shift?).
+- [ ] Qwen 3B / 7B / 32B probes on the same test items as reference (not in laya_eval.py).
+- [ ] Run it on the GPU.
 
 ### Step 3: training (`privacy/laya_finetune.py`, one GPU job)
 Follows the creators' fine-tuning notebook (`notebooks/laya_finetune_typed_decisions_2xT4_kaggle.ipynb` in the Laya repo), by the user's choice on 2026-10-05. Code done the same day (`laya_finetune.py`, `LayaProbe.item_scores`, `sbatch_scripts/run_laya_finetune.sbatch`). Smoke-tested on CPU: a reload with `laya.load` reproduces the reported numbers exactly. No GPU run yet.
@@ -91,7 +93,7 @@ Follows the creators' fine-tuning notebook (`notebooks/laya_finetune_typed_decis
 - [x] Held out: 70 pairs (402 items, the notebook's min(400, 10%)), whole pairs, never trained on. The noul temperature is fit on them by LBFGS, after the fp16 round trip.
 - [x] Save to `/scratch/users/mkilic/laya-privacy-n<pairs>` (`/work` is at 13 of 20 GB): fp16 weights (842 MB, as shipped) and the config as the notebook writes it (temperatures [1.2, 1.2, T_noul], no per-bucket temperatures, which also silences the load warning). Copy the one to keep to `models/laya-privacy`.
 - Deviations, hardware only: one GPU instead of two, bf16 instead of fp16 with a grad scaler, no gradient checkpointing.
-- [ ] Run it, plus the learning curve: `N_PAIRS` = 250 / 500 / 1,000 / all (1,930). Still rising at 1,930 → generate more.
+- [x] Run it, plus the learning curve (jobs 404–407, 2026-10-05; logs in `sbatch_scripts/laya_ft_40*.out`). On the 402 held-out items (accuracy / AUROC): base 0.789 / 0.886; n250 0.950 / 0.968; n500 0.948 / 0.985; n1000 0.970 / 0.993; n1930 0.973 / 0.994. Flat from 1,000 on, within the held-out noise (about ±0.01). The fitted T hits Laya's cap of 5.0 for n250, n500 and n1000 (n1930: 4.74), so those stay over-confident. Checkpoints are on /scratch (auto-deleted): copy the kept one to `models/`.
 
 ### Step 4: after numbers
 - [ ] Same script and test sets on `models/laya-privacy`, plus McNemar's test on before/after correctness of the same items. Claim 1 holds if both test sets improve beyond the fitted-bias row.

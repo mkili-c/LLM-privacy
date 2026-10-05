@@ -1,0 +1,105 @@
+Loading cuda/12.4
+  Loading requirement: gcc/11
+Job 408 on studgpu-node01.inf.ethz.ch, GPU: 0
+NVIDIA GeForce RTX 5060 Ti, 16311 MiB
+/home/mkilic/.llmvenv/lib/python3.12/site-packages/laya/agent.py:1404: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  return Agent(model_id_or_path, device=device, token=token, subfolder=subfolder, fast=fast,
+base: T = 1.983
+base + bias: α = 0.584, β = +0.502 (fit on 11396 train items)
+laya-privacy-n250: T = 5.000
+laya-privacy-n500: T = 5.000
+laya-privacy-n1000: T = 5.000
+laya-privacy-n1930: T = 4.738
+
+=== synthetic: 400 pairs, 2290 items (33% yes), 745 leaking/safe links; majority-class accuracy 0.675
+             model                  acc                auroc             pair_acc
+              base 0.772 [0.758, 0.785] 0.833 [0.817, 0.848] 0.848 [0.821, 0.877]
+       base + bias 0.774 [0.758, 0.789] 0.833 [0.817, 0.848] 0.848 [0.821, 0.877]
+ laya-privacy-n250 0.905 [0.893, 0.916] 0.953 [0.942, 0.963] 0.965 [0.951, 0.978]
+ laya-privacy-n500 0.931 [0.921, 0.941] 0.967 [0.960, 0.974] 0.992 [0.984, 0.997]
+laya-privacy-n1000 0.952 [0.943, 0.960] 0.983 [0.978, 0.988] 0.993 [0.986, 0.999]
+laya-privacy-n1930 0.958 [0.950, 0.966] 0.981 [0.975, 0.987] 0.995 [0.989, 1.000]
+
+difference to base [95% CI]
+             model                     acc                   auroc                pair_acc
+       base + bias +0.002 [-0.008, +0.013] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+ laya-privacy-n250 +0.132 [+0.116, +0.151] +0.120 [+0.105, +0.135] +0.117 [+0.087, +0.148]
+ laya-privacy-n500 +0.159 [+0.142, +0.176] +0.134 [+0.120, +0.149] +0.144 [+0.115, +0.173]
+laya-privacy-n1000 +0.179 [+0.165, +0.195] +0.150 [+0.136, +0.165] +0.145 [+0.117, +0.174]
+laya-privacy-n1930 +0.186 [+0.172, +0.201] +0.149 [+0.134, +0.164] +0.146 [+0.117, +0.174]
+
+accuracy by kind
+                 n  base  base + bias  laya-privacy-n250  laya-privacy-n500  laya-privacy-n1000  laya-privacy-n1930
+kind                                                                                                               
+leaking        745 0.443        0.565              0.914              0.933               0.907               0.925
+not_inferable  800 0.959        0.916              0.899              0.916               0.965               0.968
+safe           745 0.902        0.831              0.902              0.945               0.981               0.981
+
+accuracy by cue_type (leaking items)
+            n  base  base + bias  laya-privacy-n250  laya-privacy-n500  laya-privacy-n1000  laya-privacy-n1930
+cue_type                                                                                                      
+explicit  411 0.582        0.718              0.961              0.988               0.971               0.971
+indirect   79 0.139        0.215              0.734              0.734               0.684               0.785
+mixed     255 0.314        0.427              0.894              0.906               0.875               0.894
+
+accuracy by edit_type (safe items)
+                  n  base  base + bias  laya-privacy-n250  laya-privacy-n500  laya-privacy-n1000  laya-privacy-n1930
+edit_type                                                                                                           
+deletion        327 0.976        0.948              0.936              0.969               0.985               0.988
+generalization  298 0.923        0.822              0.886              0.950               0.987               0.990
+other_person    120 0.650        0.533              0.850              0.867               0.958               0.942
+
+accuracy by attribute
+                        n  base  base + bias  laya-privacy-n250  laya-privacy-n500  laya-privacy-n1000  laya-privacy-n1930
+attribute                                                                                                                 
+age                   239 0.854        0.833              0.929              0.979               0.954               0.962
+credit card number    102 0.941        0.922              0.922              0.980               0.990               0.990
+date of birth         122 0.836        0.869              0.984              0.984               0.967               0.984
+education level       104 0.702        0.740              0.904              0.923               0.923               0.952
+email address         130 0.877        0.769              0.885              0.969               0.992               0.992
+family situation      147 0.673        0.667              0.884              0.905               0.925               0.939
+gender                165 0.721        0.733              0.788              0.745               0.903               0.927
+geographic location   158 0.652        0.677              0.861              0.873               0.918               0.918
+health condition      128 0.711        0.688              0.867              0.930               0.969               0.961
+name                  217 0.829        0.820              0.949              0.954               0.977               0.972
+nationality           122 0.762        0.820              0.984              0.967               0.934               0.984
+political views       105 0.695        0.743              1.000              0.990               1.000               1.000
+profession            215 0.837        0.842              0.874              0.935               0.953               0.958
+relationship status   112 0.741        0.750              0.929              0.964               0.982               0.964
+residential address   119 0.798        0.790              0.882              0.950               0.975               0.966
+socioeconomic status  105 0.610        0.648              0.876              0.876               0.867               0.867
+
+=== ood: 100 pairs, 374 items (50% yes), 187 leaking/safe links; majority-class accuracy 0.500
+             model                  acc                auroc             pair_acc
+              base 0.535 [0.511, 0.561] 0.749 [0.698, 0.797] 0.818 [0.759, 0.876]
+       base + bias 0.599 [0.572, 0.631] 0.749 [0.698, 0.797] 0.818 [0.759, 0.876]
+ laya-privacy-n250 0.810 [0.771, 0.847] 0.852 [0.811, 0.889] 0.872 [0.822, 0.920]
+ laya-privacy-n500 0.837 [0.803, 0.872] 0.906 [0.873, 0.933] 0.909 [0.869, 0.942]
+laya-privacy-n1000 0.890 [0.861, 0.919] 0.937 [0.910, 0.962] 0.952 [0.919, 0.979]
+laya-privacy-n1930 0.888 [0.857, 0.918] 0.947 [0.923, 0.967] 0.963 [0.935, 0.984]
+
+difference to base [95% CI]
+             model                     acc                   auroc                pair_acc
+       base + bias +0.064 [+0.038, +0.090] +0.000 [+0.000, +0.000] +0.000 [+0.000, +0.000]
+ laya-privacy-n250 +0.275 [+0.234, +0.316] +0.103 [+0.063, +0.143] +0.053 [-0.006, +0.115]
+ laya-privacy-n500 +0.302 [+0.265, +0.340] +0.157 [+0.120, +0.196] +0.091 [+0.044, +0.140]
+laya-privacy-n1000 +0.356 [+0.319, +0.390] +0.188 [+0.144, +0.231] +0.134 [+0.076, +0.191]
+laya-privacy-n1930 +0.353 [+0.315, +0.389] +0.198 [+0.155, +0.242] +0.144 [+0.083, +0.204]
+
+accuracy by attribute
+                        n  base  base + bias  laya-privacy-n250  laya-privacy-n500  laya-privacy-n1000  laya-privacy-n1930
+attribute                                                                                                                 
+age                    18 0.611        0.722              0.889              1.000               1.000               1.000
+education level         6 0.500        0.667              1.000              1.000               1.000               1.000
+family situation       12 0.667        0.667              0.750              0.750               0.917               0.917
+gender                  4 0.500        0.500              1.000              0.750               1.000               1.000
+geographic location    86 0.523        0.558              1.000              1.000               1.000               1.000
+health condition       58 0.466        0.483              0.690              0.707               0.862               0.914
+nationality            14 0.786        0.786              0.786              0.857               0.929               0.929
+political views        16 0.500        0.562              0.500              0.562               0.500               0.500
+profession            114 0.526        0.596              0.781              0.816               0.877               0.825
+relationship status    24 0.667        0.792              0.917              0.917               0.917               0.958
+socioeconomic status   22 0.409        0.636              0.545              0.636               0.682               0.727
+
+results -> /work/projects/mkilic/LLM-privacy/privacy/results/laya_eval/laya_eval_408*
+Done.
