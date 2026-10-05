@@ -19,7 +19,8 @@ Design rules:
 - [x] `--utility_ref` defaults to `user` (x₀), so the reference no longer drifts to a garbled earlier rewrite.
 - [x] Reference answers are sampled once and reused (both utility backends). `--utility_ref iteration` still resamples every iteration.
 - [x] D is in nats per answer token (`kl_of`, `evaluate_candidates`, `token_gradients`). Answers went from 64 to 256 tokens and K from 4 to 10, `--eval_chunk_size` from 32 to 8 (same memory), and δ from 55 (summed) to 0.47 nats/token.
-- [ ] Early-stop `break` in the privacy step's right-to-left span loop: stop once nothing leaks. In the fireworks run a second span was rewritten after the leak was already 0, on the Σ P_a tie-break.
+- [x] Early-stop `break` in the privacy step's right-to-left span loop: stop once nothing leaks. In the fireworks run a second span was rewritten after the leak was already 0, on the Σ P_a tie-break.
+- [x] Added with it: a privacy edit is kept only if it lowers the hinge Σ_a max(0, P_a − τ), measured against exactly τ (no margin), not just Σ P_a. Spans are picked one per leaking attribute by their blame on *that* attribute, at most `--top_m` per iteration. A second cue for the same attribute waits for the next iteration, which re-blames on the edited text. This stopped "conclusion" → "conclusionary remarks" and "stress" → "anxiously" in the thesis run.
 - [ ] Fix the `--question` flag in `privacy/attribute_probe.py`. Its name was corrupted by pasted text; this only affects the standalone CLI.
 - [ ] Single-token swaps: decision pending, see below. Since Phase 2 the swaps pass the fluency guard too, so keeping them on is now a real option.
 

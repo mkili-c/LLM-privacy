@@ -11,20 +11,29 @@ Each iteration:
        holds at least one content word (words are letter/digit runs, so
        "15-year-old" is one word; function words such as "from" or "can" may
        sit inside a span but never make one up alone), re-score every variant
-       with both probes and give each span s of n words
-           score_s = sum over leaking a of max_probe (P_a(text) - P_a(text without s))
-                     - --span_penalty * (n - 1)
+       with both probes and blame each span s of n words for each attribute a by
+           blame_s,a = max_probe (P_a(text) - P_a(text without s)) - --span_penalty * (n - 1)
        Deleting more never leaks more, so without the penalty the longest
        spans would always win; with it a longer span must earn its extra words.
-    3. Take the --top_m best non-overlapping spans with a positive score. From
-       right to left (so the spans left of it stay valid), mark the span in
-       the message and ask Qwen for more general replacements of it. The
+    3. Pick one span per leaking attribute, at most --top_m: from the most to
+       the least leaking attribute, its best-blamed span if the blame is
+       positive and the span overlaps none picked so far (else that attribute
+       waits for the next iteration). Spans blamed for different attributes
+       are rewritten in the same iteration. A second cue for the same
+       attribute waits for the next iteration, which blames again on the
+       edited text: with the first cue gone, the second may no longer matter.
+    4. From right to left (so the spans left of it stay valid), mark the span
+       in the message and ask Qwen for more general replacements of it. The
        candidates are these replacements plus deleting the span. Drop every
        candidate whose surprisal spikes (disfluency in kl_utility_scoring.py)
        grow by more than --fluency_eps nats: the probes are fooled by broken
        sentences, so a broken candidate would win for the wrong reason. Score
-       the rest with both probes and keep the best one if it lowers
-           (sum_a max(0, P_a - threshold),  sum_a P_a)     compared in order.
+       the rest with both probes, take the best by
+           (sum_a max(0, P_a - threshold),  sum_a P_a)     compared in order
+       and keep it only if it lowers the hinge sum_a max(0, P_a - threshold):
+       pushing a P that is already below the threshold further down buys no
+       privacy and costs fluency. Once nothing leaks, the remaining spans are
+       skipped.
 
 The LLM sees the word it replaces: generalizing needs it ("Zurich" -> "the
 city", "25" -> "an adult"). A first version hid it behind [MASK]; the LLM then
@@ -130,25 +139,30 @@ def delete(text, s, e, mark=""):
     return text[:s] + mark + text[e:]
 
 
-def span_occlusion(attackers, text, P_text, leaking, max_n, penalty):
-    """-> (spans, score [U], per-attacker drops {name: [U, K]})."""
+def span_occlusion(attackers, text, P_text, max_n, penalty):
+    """-> (spans, blame [U, K]): how much deleting each span lowers each
+    attribute's P under either attacker, minus the length penalty."""
     sp = spans(text, max_n)
     per, _ = score(attackers, [delete(text, s, e) for s, e, _ in sp])
-    drops = {n: P_text[n] - v for n, v in per.items()}           # [U, K]
-    best = torch.stack(list(drops.values())).amax(0)              # either attacker
-    n_words = torch.tensor([n for _, _, n in sp], dtype=best.dtype)
-    return sp, (best * leaking.float()).sum(1) - penalty * (n_words - 1), drops
+    drops = torch.stack([P_text[n] - v for n, v in per.items()]).amax(0)   # [U, K], either attacker
+    n_words = torch.tensor([n for _, _, n in sp], dtype=drops.dtype)
+    return sp, drops - penalty * (n_words[:, None] - 1)
 
 
-def pick(sp, sscore, m):
-    """The m best spans with a positive score, skipping any that overlaps one
-    already taken (both "29 years" and "years old" cannot be rewritten)."""
+def pick(sp, blame, hinge, m):
+    """One span per leaking attribute, at most m: for each attribute from the
+    most to the least leaking (hinge [K] = max(0, P_a - threshold)), its
+    best-blamed span if the blame is positive and the span overlaps none
+    picked so far. A span picked for one attribute that is also the best for
+    another counts for both. -> [(span index, attribute index)]."""
     taken = []
-    for u in sscore.argsort(descending=True).tolist():
-        if sscore[u] <= 0 or len(taken) == m:
+    for a in hinge.argsort(descending=True).tolist():
+        if hinge[a] <= 0 or len(taken) == m:
             break
-        if all(sp[u][1] <= sp[t][0] or sp[u][0] >= sp[t][1] for t in taken):
-            taken.append(u)
+        u = blame[:, a].argmax().item()
+        overlaps = any(sp[u][0] < sp[t][1] and sp[t][0] < sp[u][1] for t, _ in taken)
+        if blame[u, a] > 0 and not overlaps:
+            taken.append((u, a))
     return taken
 
 
@@ -225,17 +239,21 @@ def rewrite(model, tok, attackers, text, attributes, args):
             print("  max_iters reached")
             return text
 
-        sp, sscore, _ = span_occlusion(attackers, text, {n: v[0] for n, v in per.items()}, leaking,
-                                       args.max_n, args.span_penalty)
-        order = pick(sp, sscore, args.top_m)
+        sp, blame = span_occlusion(attackers, text, {n: v[0] for n, v in per.items()},
+                                   args.max_n, args.span_penalty)
+        order = pick(sp, blame, (P[0] - args.threshold).clamp(min=0), args.top_m)
         print("  leaking: " + ", ".join(a for a, l in zip(attributes, leaking) if l))
-        print("  top spans: " + ", ".join(f"{text[sp[u][0]:sp[u][1]]!r} {sscore[u]:+.3f}" for u in order))
+        print("  picked spans: " + ", ".join(f"{text[sp[u][0]:sp[u][1]]!r} ({attributes[a]} {blame[u, a]:+.3f})"
+                                             for u, a in order))
         if not order:
             print("  no span lowers the leakage when deleted: stop")
             return text
 
         changed = False
-        for u in sorted(order, key=lambda u: sp[u][0], reverse=True):   # right to left
+        for u, _ in sorted(order, key=lambda ua: sp[ua[0]][0], reverse=True):   # right to left
+            if not (P[0] > args.threshold).any():
+                print("    nothing leaks any more: remaining spans skipped")
+                break
             s, e, _ = sp[u]
             old = visible(text[s:e])
             marked = visible(text[:s] + OPEN + text[s:e] + CLOSE + text[e:])
@@ -256,12 +274,13 @@ def rewrite(model, tok, attackers, text, attributes, args):
             _, Pc = score(attackers, cands)
             obj, cur = objective(Pc, args.threshold), objective(P, args.threshold)[0]
             b = min(range(len(cands)), key=lambda i: obj[i])
-            if obj[b] < cur:
+            if obj[b][0] < cur[0]:                      # the hinge must drop, not only sum_a P_a
                 print(f"    {old!r} -> {fills[b] or '<deleted>'!r}  (hinge {cur[0]:.3f} -> {obj[b][0]:.3f}, "
                       f"spikes {dis:.1f} -> {dis_c[b]:.1f}, {len(fills)} candidates, {n_broken} broke fluency)")
                 text, P, dis, changed = cands[b], Pc[b:b + 1], dis_c[b], True
             else:
-                print(f"    {old!r}: none of {len(fills)} candidates helps (best {fills[b]!r})")
+                print(f"    {old!r}: none of {len(fills)} candidates lowers the hinge "
+                      f"(best {fills[b] or '<deleted>'!r})")
         if not changed:
             print("  no replacement helped: stop")
             return text
@@ -274,7 +293,8 @@ def main():
     p.add_argument("--text", required=True)
     p.add_argument("--attributes", nargs="+", default=ATTRIBUTES)
     p.add_argument("--threshold", type=float, default=0.5)
-    p.add_argument("--top_m", type=int, default=2, help="spans rewritten per iteration")
+    p.add_argument("--top_m", type=int, default=5,
+                   help="cap on spans rewritten per iteration (one per leaking attribute)")
     p.add_argument("--max_n", type=int, default=4, help="longest span, in words")
     p.add_argument("--span_penalty", type=float, default=0.05,
                    help="score a span pays per word beyond its first")
