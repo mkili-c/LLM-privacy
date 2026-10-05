@@ -82,8 +82,8 @@ class LayaProbe:
             raise ValueError(f"message too long for Laya: {longest} > max_len={self.max_len} tokens")
         return [p + msg_ids + [self.tok.sep_token_id] for p in self.prefixes]
 
-    def _head(self, embeds, att, markers, qtype):
-        """DecisionModel.forward on inputs_embeds, answer logits only -> [B]."""
+    def _scores(self, embeds, att, markers, qtype):
+        """DecisionModel.forward on inputs_embeds, raw [MASK] scores only -> [B, 2] = (z_false, z_true)."""
         m = self.model
         h = m.encoder(inputs_embeds=embeds, attention_mask=att).last_hidden_state
         h = h + m.type_emb(qtype)[:, None, :]
@@ -91,7 +91,11 @@ class LayaProbe:
         for layer in m.head.layers:
             h = layer(h, src_key_padding_mask=pad)
         z = m.scorer(torch.gather(h, 1, markers[:, :, None].expand(-1, -1, h.size(-1))))
-        z = z.squeeze(-1).float()
+        return z.squeeze(-1).float()
+
+    def _head(self, embeds, att, markers, qtype):
+        """Answer logits [B]: (z_true - z_false) / T."""
+        z = self._scores(embeds, att, markers, qtype)
         return (z[:, 1] - z[:, 0]) / self.T
 
     def _pad(self, rows):
@@ -115,6 +119,16 @@ class LayaProbe:
             out.append(self._head(self._embed(ids), att, self._markers.repeat(n, 1),
                                   self._qtype.repeat(n)))
         return torch.cat(out).view(len(msgs_ids), K)
+
+    def item_scores(self, msgs_ids, ks):
+        """Raw scores [N, 2] = (z_false, z_true) of N (message, attribute index) items,
+        one row each. Not under no_grad, so fine-tuning (laya_finetune.py) can backprop."""
+        rows = [self.prefixes[k] + list(m) + [self.tok.sep_token_id] for m, k in zip(msgs_ids, ks)]
+        if max(len(r) for r in rows) > self.max_len:
+            raise ValueError(f"message too long for Laya: > max_len={self.max_len} tokens")
+        ids, att = self._pad(rows)
+        ks = torch.tensor(ks, device=self.device)
+        return self._scores(self._embed(ids), att, self._markers[ks], self._qtype[ks])
 
     def score(self, message):
         """{attribute: {"p", "logit"}} for one message."""

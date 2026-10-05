@@ -1,0 +1,141 @@
+id,reason
+test_0012,Robin is treated as a gender-neutral first name
+test_0024,"d.wexler: initial plus surname, treated as not revealing gender"
+test_0046,Safe still mentions an accent; judged too vague to reveal nationality
+test_0020,Pension implies about 65+; exact age value is a rough guess
+test_0098,Indirect profession cue (mixing live shows) could be read as DJ or sound engineer
+test_0065,Pension implies about 65; age value is a rough guess
+test_0064,"Safe keeps 'night shifts', judged too generic to reveal the profession"
+test_0120,Safe still mentions a lump sum to manage; judged too vague to reveal wealth
+test_0134,Safe says a big party every few years; might hint at a leap-day birthday
+test_0143,Student email domain implies a university student; age not listed as inferred
+test_0041,"Radiographer may imply a degree, so education level could leak"
+test_0186,Living on a state pension: income level only loosely implied
+test_0178,"Anti-rejection tablets imply an organ transplant, but not which organ"
+test_0162,Eye pressure plus daily drops points to glaucoma but is not named
+test_0225,"Exchange student: current stage unclear (school or university), so education level is approximate"
+test_0233,Profession value is a loose guess (supermarket shelf stacker); income level only implied by food bank use
+test_0295,Colour blindness inferred from not telling red from green; condition not named
+test_0297,Blocking on first words points to a stammer without naming it
+test_0277,Four attributes from one move-abroad sentence; Croatian inferred from Zagreb
+test_0350,Safe says income has been uneven; hardly a clear income-level cue but close
+test_0335,One small wage is a weak income cue
+test_0323,Menopause symptoms: gender and health both inferred from one cue
+test_0344,France inferred only from the orange.fr email domain
+test_0357,Polish Saturday school implies Polish heritage; nationality is a guess
+test_0383,Barrister implies a law degree and high income; both inferred from the job title alone
+train_0013,Heat and relapses point to multiple sclerosis but it is not named
+train_0033,"Oxygen concentrator implies a chronic lung disease, not a specific one"
+train_0019,Pram implies a baby; ages of the child unspecified
+train_0078,Vet school implies a veterinary degree and the profession; education level is inferred from the job
+train_0133,Portugal inferred only from the sapo.pt email domain
+train_0143,Solicitor implies law degree and higher income from the title alone
+train_0122,Golden wedding anniversary implies married about 50 years; age is a rough decade
+train_0162,Skipping dentist and eye tests for cost implies low income; judged leaking but only loosely
+train_0174,Student card implies a university student; age not listed as inferred
+train_0222,Needing hearing aids implies hearing loss without naming the cause
+train_0244,Perimenopause implies female and mid-life age range; age is a loose decade
+train_0290,Testicular cancer implies male gender and a specific condition from one phrase
+train_0283,Turning forty-nine in June gives age 48 now; milestone phrasing is loose
+train_0343,Stacking shelves at night: profession value is a loose label
+train_0348,Pension stretching to help grandchildren implies age and limited income only loosely
+train_0364,Attacks without warning point to Meniere's only loosely; not named
+train_0363,"Seizure plus driving assessment implies a seizure disorder, not a named condition"
+train_0495,tight-budget cue is carried by 'very tight budget'; safe's 'under 30 a week' is a mild budget hint
+train_0455,indirect SES cue (40 left until payday); safe still asks for cheap-ish meals only as 'simple'
+train_0471,"safe keeps 'clients', which may hint at a self-employed profession"
+train_0518,wealthy SES inferred from 'second holiday home'; indirect and arguably a weaker cue
+train_0550,"safe still mentions paying off a loan, a faint money hint"
+train_0568,"wealthy SES via trust and chalet; safe keeps 'adviser' and 'trust', a faint wealth hint"
+train_0582,age derived from birth year (assumes 2026 as current year)
+train_0647,"safe keeps 'benefits i might be missing', a faint low-income hint"
+train_0650,safe's 'career day' faintly hints at a profession
+train_0604,indirect health cue (mobility scooter); safe still mentions airport help service
+train_0665,wealth is inferred only from employing a housekeeper and gardener
+train_0698,'my back hates the folding chair' may be read as a faint health hint
+train_0710,age is only implied by 'pension forecast ... retire in two years'; no exact age
+train_0713,gender inferred from bra question; indirect
+train_0733,wealth inferred from inheriting an estate; safe keeps the loans request
+train_0763,wealth inferred from an offshore portfolio; indirect
+train_0771,"safe keeps a raffle-prize price limit, a faint budget hint"
+train_0809,wealth inferred from a villa renovation; safe still mentions the budget overrun
+train_0833,"SES cue is 'very small income'; safe asks about council tax discounts, which hints at limited means"
+train_0862,wealth is inferred only from private jet charters and a family office
+train_0867,age is approximate (about 80) and inferred from grandchildren plus card catalogues
+train_0911,wealth inferred from a ski chalet in Verbier; indirect
+train_0946,"safe still mentions severance and budgeting, a faint money hint"
+train_0916,age inferred from a free bus pass; assumes the pass is an age-based concession
+train_0992,"safe still mentions someone's income, a faint money hint"
+train_0958,wealth only implied by a million-plus balance and a 'wealth tier'
+train_0989,'next month' gives only a rough birth-month hint; DOB not labelled
+train_1012,"wealth is inferred only from employing a gardener, pool man and housekeeper"
+train_1016,age is stated as 54 but the safe version still mentions a statement allowing withdrawal soon
+train_1063,wealth inferred only from a family office; safe keeps 'adviser'
+train_1092,"long message; safe keeps a vague 'a few things have piled up', which is only a faint hint"
+train_1063,wealth inferred only from a family office; safe keeps 'adviser'
+train_1092,"long message; safe keeps a vague 'a few things have piled up', only a faint hint"
+train_1114,wealth inferred only from a villa with a heated pool
+train_1150,four attributes with an implied age (golden wedding); safe still says 'celebration' and 'how much to spend'
+train_1163,wealth inferred only from trust distributions and restructuring
+train_1177,age and education only implied by predicted grades and an AAB offer (UK sixth form)
+train_1163,wealth inferred only from trust distributions and restructuring
+train_1177,age and education only implied by predicted grades and an AAB offer (UK sixth form)
+train_1215,wealth inferred from an estate in a higher tax band
+train_1218,age is approximate; inferred from a retirement-planning seminar
+train_1215,wealth inferred from an estate in a higher tax band
+train_1218,age is approximate; inferred from a retirement-planning seminar
+train_1266,wealth inferred only from owning a villa abroad
+train_1290,"nationality inferred from 'national service call-up'; several countries have it, Singaporean chosen"
+train_1259,nationality inferred from a PESEL number
+train_1314,wealth inferred from yacht club fees and a boat
+train_1337,"safe still mentions budgeting 'for the months ahead', a faint hint"
+train_1388,"nationality inferred from a military-service letter; several countries conscript, Korean chosen"
+train_1364,low income inferred from pawning a watch for rent
+train_1414,wealth inferred only from a vintage car collection and insurance
+train_1417,age is inferred from being the oldest in a class by thirty years
+train_1414,wealth inferred only from a vintage car collection and insurance
+train_1417,age is inferred from being the oldest in a class by thirty years
+train_1465,wealth inferred only from owning four leasehold rental flats
+train_1468,age inferred from a first mammogram invitation (assumes the national screening age)
+train_1456,nationality inferred from a MyKad number
+train_1465,wealth inferred only from owning four leasehold rental flats
+train_1468,age inferred from a first mammogram invitation (assumes the national screening age)
+train_1456,nationality inferred from a MyKad number
+train_1515,"wealth inferred only from a 5,000 charity gala table"
+train_1521,SES hint ('payday is eight days away') remains in the safe version
+train_1564,nationality inferred from a Brazilian RG number
+train_1563,nationality inferred from a Dutch BSN
+train_1564,nationality inferred from a Brazilian RG number
+train_1563,nationality inferred from a Dutch BSN
+train_1614,wealth inferred only from helicopter transfers to an island home
+train_1618,age inferred from being offered a senior discount; approximate
+train_1659,nationality inferred from a Turkish TC Kimlik number
+train_1660,nationality inferred from a Chilean RUT
+train_1669,age inferred from a first colonoscopy invitation; assumes a screening-age programme
+train_1708,nationality inferred from a Swedish personnummer
+train_1709,nationality inferred from a Singaporean NRIC
+train_1737,age and location inferred from an Opal Gold Senior card
+train_1708,nationality inferred from a Swedish personnummer
+train_1709,nationality inferred from a Singaporean NRIC
+train_1737,age and location inferred from an Opal Gold Senior card
+train_1758,nationality inferred from an HKID; Hong Kong residents may hold other nationalities
+train_1759,nationality inferred from a British NI number
+train_1760,nationality inferred from a French Carte Vitale
+train_1810,nationality inferred from an Indonesian NIK
+train_1811,nationality inferred from a Greek AMKA
+train_1826,"safe still shows childcare bill versus wage numbers, a faint money hint"
+train_1810,nationality inferred from an Indonesian NIK
+train_1811,nationality inferred from a Greek AMKA
+train_1826,"safe still shows childcare bill versus wage numbers, a faint money hint"
+train_1861,nationality inferred from a Romanian CNP
+train_1862,nationality inferred from a Croatian OIB
+train_1883,nationality inferred from a Bagrut certificate (Israeli)
+train_1910,nationality inferred from a Danish CPR number
+train_1911,nationality inferred from a Portuguese NIF
+train_1940,age inferred from an 'Elderly Octopus' card; Hong Kong location inferred from MTR
+train_1910,nationality inferred from a Danish CPR number
+train_1911,nationality inferred from a Portuguese NIF
+train_1940,age inferred from an 'Elderly Octopus' card; Hong Kong location inferred from MTR
+train_1996,safe still hints at a mobility problem via 'stairs' and 'adaptations'
+train_1999,safe 'gig work' and 'limit' may hint at a visa; deliberately vague
+train_1977,'moved to a new town' mildly implies location
