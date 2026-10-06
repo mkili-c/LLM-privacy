@@ -1,0 +1,9 @@
+id,method,rewrite,error
+3,papillon,"Create a 7-day itinerary for a family of four visiting Tokyo and Mount Fuji. Include a mix of cultural attractions, family-friendly activities, and a day trip to Mount Fuji. Ensure the itinerary is balanced and includes enough time for rest and exploration.",
+4,papillon,"Write a bio for a student named [NAME_1] who is a beginner freelancer. [NAME_1] provides services in the following areas:
+
+- Logo designing
+- Social Media Management
+
+Please keep the bio concise and highlight their potential and interest in these fields.",
+8,papillon,"If you noticed $75,490 in spending under the IT-Support Services category last month, what steps would you recommend to investigate and manage this expenditure?",

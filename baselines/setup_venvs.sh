@@ -3,7 +3,9 @@
 # Venvs live on permanent storage (/work); the requirements files next to this script pin
 # every package version (pip freeze of the venv the results were made with).
 #
-#   bash baselines/setup_venvs.sh presidio    # x86 login node, Python 3.12.3; no GPU needed
+#   bash baselines/setup_venvs.sh presidio    # x86 login node (Python 3.12.3)
+#   bash baselines/setup_venvs.sh loiseau     # on a GB10 node (aarch64): the sweep runs there
+#   bash baselines/setup_venvs.sh papillon    # on a GB10 node
 set -euo pipefail
 
 VENVS=/work/projects/mkilic/venvs

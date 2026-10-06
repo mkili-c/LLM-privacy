@@ -29,3 +29,5 @@ diag_privacy.py
 *.swp
 .vscode/
 .idea/
+# Third-party baseline code, fetched by baselines/fetch_repos.sh
+baselines/repos/
