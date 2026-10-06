@@ -3,7 +3,11 @@
     python run_baselines.py --method presidio --data data/pupa_sd/pupa_sd_eval.csv
 
 Reads `id` and `original` from the evaluation CSV, gives each prompt to the method's
-adapter, and appends `id, method, rewrite, error` to the output CSV one row at a time.
+adapter, and appends one row per prompt to the output CSV:
+    id, method, rewrite, error     the rewrite, or the exception if the call failed
+    seconds                        wall-clock time of this anonymization
+    calls, prompt_tokens,          LLM calls it made and the tokens the server read and
+    completion_tokens              generated for them (as the server reports; 0 for Presidio)
 A row whose call fails gets an empty rewrite and the exception in `error`. Ids with a
 successful rewrite in the output are skipped, so an interrupted run resumes where it stopped
 and retries the failures; for each id the last row in the file counts.
@@ -22,6 +26,7 @@ import csv
 import os
 import re
 import sys
+import time
 from pathlib import Path
 
 METHODS = ["presidio", "loiseau_pupa", "loiseau_synthpai", "papillon"]  # staab follows
@@ -54,8 +59,19 @@ def load_presidio():
 
     def rewrite(text):
         results = analyzer.analyze(text=text, language="en")
-        return anonymizer.anonymize(text=text, analyzer_results=results).text
+        return anonymizer.anonymize(text=text, analyzer_results=results).text, 0, 0, 0
     return rewrite
+
+
+def call_counting_usage(lm, call):
+    """Run call() and return (its result, LLM calls, prompt tokens, completion tokens) from the
+    usage the server reported to `lm`. The history is cleared first: it is capped, so its
+    length alone cannot tell how many entries one call added."""
+    lm.history.clear()
+    result = call()
+    usage = [entry.get("usage") or {} for entry in lm.history]
+    return (result, len(usage), sum(u.get("prompt_tokens") or 0 for u in usage),
+            sum(u.get("completion_tokens") or 0 for u in usage))
 
 
 def load_loiseau(method):
@@ -66,8 +82,9 @@ def load_loiseau(method):
     md = LOISEAU_PROMPTS[method].read_text(encoding="utf-8")
     instructions = re.search(r"## Optimized prompt\n\n```\n(.*)\n```", md, re.S).group(1)
     program = dspy.Predict(dspy.Signature("text:str -> anonymized_text:str").with_instructions(instructions))
-    program.set_lm(dspy.LM(f"openai/{SERVED_MODEL}", api_base=SERVER, api_key="", max_tokens=25_000))
-    return lambda text: program(text=text).anonymized_text
+    lm = dspy.LM(f"openai/{SERVED_MODEL}", api_base=SERVER, api_key="", max_tokens=25_000)
+    program.set_lm(lm)
+    return lambda text: call_counting_usage(lm, lambda: program(text=text).anonymized_text)
 
 
 def load_papillon():
@@ -78,13 +95,15 @@ def load_papillon():
     import dspy
     sys.path.insert(0, str(REPOS / "PAPILLON" / "papillon"))
     from run_llama_dspy import PAPILLON
-    dspy.configure(lm=dspy.LM(f"openai/{SERVED_MODEL}", api_base=SERVER, api_key="", max_tokens=4000))
+    lm = dspy.LM(f"openai/{SERVED_MODEL}", api_base=SERVER, api_key="", max_tokens=4000)
+    dspy.configure(lm=lm)
     pipeline = PAPILLON(untrusted_model=None)
-    return lambda text: pipeline.prompt_creater(userQuery=text).createdPrompt
+    return lambda text: call_counting_usage(lm, lambda: pipeline.prompt_creater(userQuery=text).createdPrompt)
 
 
 def load_adapter(method):
-    """Load the method's models once; return a function prompt -> rewrite."""
+    """Load the method's models once; return a function
+    prompt -> (rewrite, LLM calls, prompt tokens, completion tokens)."""
     if method == "presidio":
         return load_presidio()
     if method in LOISEAU_PROMPTS:
@@ -121,15 +140,21 @@ def run(rows, rewrite, method, out_path):
     with open(out_path, "a", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         if new_file:
-            writer.writerow(["id", "method", "rewrite", "error"])
+            writer.writerow(["id", "method", "rewrite", "error", "seconds",
+                             "calls", "prompt_tokens", "completion_tokens"])
         for n, row in enumerate(todo, 1):
+            start = time.perf_counter()
             try:
-                text, error = rewrite(row["original"]), ""
+                text, calls, prompt_tokens, completion_tokens = rewrite(row["original"])
+                error = ""
             except Exception as e:
-                text, error = "", f"{type(e).__name__}: {e}"
+                text, calls, prompt_tokens, completion_tokens = "", "", "", ""
+                error = f"{type(e).__name__}: {e}"
                 failed += 1
                 print(f"  id {row['id']} failed: {error[:200]}")
-            writer.writerow([row["id"], method, text, error])
+            seconds = round(time.perf_counter() - start, 2)
+            writer.writerow([row["id"], method, text, error, seconds,
+                             calls, prompt_tokens, completion_tokens])
             f.flush()
             if n % 20 == 0 or n == len(todo):
                 print(f"  {n}/{len(todo)} ({failed} failed)")

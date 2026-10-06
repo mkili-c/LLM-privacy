@@ -148,6 +148,10 @@ Metrics are Phase 1's list, with the judge in place of the probe.
   - Checked 2026-10-06: none of the baselines replaces attributes with fake values by design. Staab et al. tell their anonymizer "do not invent new information"; PAPILLON's published Qwen-7B rewrites abstract ("[Manager's Name]", "Example County") and change some numbers and times, but no personal attributes.
 - **Utility:** D (per-token KL against Qwen 7B's answers to the original, K = 10 answers of 256 tokens) and the centroid cosine.
 - **Fluency:** prompt NLL per token.
+- **Cost (decided 2026-10-06):** seconds per anonymization, measured per prompt on the same GB10 with the server answering one request at a time. That is the main cost number. As supporting detail: LLM calls and generated tokens per anonymization, from the usage the server reports. No money: everything is open source and local. `run_baselines.py` records `seconds`, `calls`, `prompt_tokens`, `completion_tokens` for every row. Still to settle:
+  - Presidio runs on a CPU node: report its time separately.
+  - Staab et al.'s `main.py` processes all prompts per iteration, so their per-prompt time is the total divided by 141, and their tokens need counting from their saved prompts and answers.
+  - The loop's seconds come from its batch run. Its token count is not comparable: most of its compute is scoring forward passes and gradients, not generation.
 - Each metric gets a bootstrap 95% CI over rows, per method and as a difference to the loop, broken down by attribute.
 - [ ] Load the 7B once, for D and NLL. Reuse the D code in `utility/metrics/kl_utility_scoring.py`. The judge runs outside the script: the script writes the judge items (item id, text, attribute; method hidden, shuffled), and after the judge's two steps it reads back the guesses and matches.
 - [ ] Sanity check on the dev set with the same judge: the originals' `protected_attrs` should be guessed correctly (values from the persona in `id`) and `priv_targeted`'s mostly not, and `util_broken` should be worst on D.
@@ -191,7 +195,7 @@ Four baselines: Presidio, Loiseau et al., PAPILLON and Staab et al. Their code i
 - Staab et al.: hand-written prompts, run by the authors on many backbones (GPT-4 in the main results; their repo has configs for Qwen1.5 7B–72B, Llama-3.1 8B/70B, Mistral-7B, Gemma-2-27B). Qwen2.5-7B is a backbone swap within that practice: log it as a deviation and expect weaker anonymization than their GPT-4 numbers. As in their configs, the attacker inside their loop uses the same model.
 - Presidio: no LLM.
 
-- [ ] Each row of the table. Presidio done 2026-10-06: `results/rewrites/pupa_sd_presidio.csv`, 141 rows, looks as expected at first sight. Loiseau et al. and PAPILLON: smoke test (3 rows) pending, then delete those files and run all rows in one fresh job, so a rerun reproduces them.
+- [ ] Each row of the table. Presidio done 2026-10-06: `results/rewrites/pupa_sd_presidio.csv`, 141 rows, looks as expected at first sight. Presidio leaves 45 of 141 prompts unchanged (no entity found). Loiseau et al. and PAPILLON: smoke test passed 2026-10-06 (job 426: 3 rows each, 9 requests, no failures, reasonable rewrites; ~7 s per row per Loiseau prompt, ~13 s for PAPILLON, whose rewrites run ~1.5× the original's length). Next: delete the smoke files and run all 141 rows in one fresh job (~1 h), so a rerun reproduces them. Presidio's file predates the cost columns, so rerun it too (a ~1 min CPU job).
 - [ ] One deviations table: what changed per baseline and why (plumbing only).
 - Dropped: RUPTA (its utility is occupation classification; Loiseau et al. ran it only on DB-Bio for that reason) and DP-Prompt (2026-10-06: it would have to be reimplemented, and four baselines suffice).
 
