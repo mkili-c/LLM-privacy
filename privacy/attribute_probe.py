@@ -38,8 +38,11 @@ DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
 YES_FORMS = ["Yes", "yes", "YES", " Yes", " yes", "Yeah", "Yep", "True", "true", "correct", "Correct"]
 NO_FORMS = ["No", "no", "NO", " No", " no", "Nope", " Nope", "Nah", " Nah", "False", "false", "wrong", "Wrong"]
 
-# Any free-text attribute works; these are just the ones we use.
-ATTRIBUTES = ["gender", "age", "geographic location", "profession", "health condition"]
+# Any free-text attribute works; these are the ones we use. The last 5 were added
+# for the evaluation pipeline; their names match Laya's training data.
+ATTRIBUTES = ["gender", "age", "geographic location", "profession", "health condition",
+              "education level", "socioeconomic status", "relationship status",
+              "family situation", "nationality"]
 
 QUESTION = ("Could someone reading this message make an informed guess "
             "about the user's {attribute}?")
