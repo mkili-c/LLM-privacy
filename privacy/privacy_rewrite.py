@@ -30,10 +30,12 @@ Each iteration:
        in the message and ask Qwen for more general replacements of it. The
        candidates are these replacements plus deleting the span. Drop every
        candidate whose surprisal spikes (disfluency in kl_utility_scoring.py)
-       exceed those of the user's message x_0 by more than --fluency_eps nats:
-       the probes are fooled by broken sentences, so a broken candidate would
-       win for the wrong reason. The budget is anchored to x_0, not to the
-       current text, so that edits which each add a little cannot add up. Score
+       exceed min(spikes of the current text, spikes of the user's message
+       x_0) + --fluency_eps nats: the probes are fooled by broken sentences,
+       so a broken candidate would win for the wrong reason. Both bounds hold
+       at once. The x_0 bound stops edits that each add a little from adding
+       up. The current-text bound stops the spikes freed by removing a rare
+       word ("Kraków", "midwife") from paying for broken grammar later. Score
        the rest with both probes, take the best by
            (sum_a max(0, P_a - threshold),  sum_a P_a)     compared in order
        and keep it only if it lowers the hinge sum_a max(0, P_a - threshold):
@@ -41,8 +43,10 @@ Each iteration:
        privacy and costs fluency. A span is skipped once no attribute it is
        blamed for leaks any more (an earlier edit of the iteration fixed it).
        A span whose candidates all break fluency, or none of which lowers the
-       hinge, goes on the tried list. The step ends when nothing leaks, when
-       no untried span lowers the leakage, or after --max_iters.
+       hinge, goes on the tried list. The loop passes one tried list to every
+       privacy step of a prompt, so a cut that failed is not tried again in a
+       later loop iteration. The step ends when nothing leaks, when no untried
+       span lowers the leakage, or after --max_iters.
 
 The LLM sees the word it replaces: generalizing needs it ("Zurich" -> "the
 city", "25" -> "an adult"). A first version hid it behind [MASK]; the LLM then
@@ -237,12 +241,14 @@ def show(attackers, attributes, per, P):
     print(f"    {'max':<5}" + "".join(f"  {a[:8]:>8} {P[0, k]:.3f}" for k, a in enumerate(attributes)))
 
 
-def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None):
-    """x0_spikes: disfluency of the user's message x_0; by default text is x_0."""
+def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None, tried=None):
+    """x0_spikes: disfluency of the user's message x_0; by default text is x_0.
+    tried: span text -> attribute indices it was tried for without success. Pass the
+    same dict to every call for one prompt; it is updated in place."""
     dis = disfluency([visible(text)], model, tok)[0]      # of the current text, updated on every edit
-    budget = (dis if x0_spikes is None else x0_spikes) + args.fluency_eps
-    print(f"  fluency budget: spikes <= {budget:.1f} (x_0 + {args.fluency_eps})")
-    tried = {}         # span text -> attribute indices it was tried for without success
+    x0 = dis if x0_spikes is None else x0_spikes
+    tried = {} if tried is None else tried
+    print(f"  fluency budget: spikes <= min(current, x_0 = {x0:.1f}) + {args.fluency_eps}")
     for it in range(args.max_iters + 1):
         per, P = score(attackers, [text])
         print(f"\n=== iteration {it}: {text!r}")
@@ -287,9 +293,9 @@ def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None):
                      if not gone & {w.lower() for w in WORD.findall(f)}]   # "Zurich area" still names Zurich
             fills.append("")                                                 # delete the span
             cands = [text[:s] + f + text[e:] if f else delete(text, s, e, SLOT) for f in fills]
-            # fluency guard: no candidate may have more spikes than x_0 + --fluency_eps
+            # fluency guard: at most min(current, x_0) + --fluency_eps spikes
             dis_c = disfluency([visible(c) for c in cands], model, tok)
-            keep = [i for i, d in enumerate(dis_c) if d <= budget]
+            keep = [i for i, d in enumerate(dis_c) if d <= min(dis, x0) + args.fluency_eps]
             n_broken = len(cands) - len(keep)
             fills, cands, dis_c = [fills[i] for i in keep], [cands[i] for i in keep], [dis_c[i] for i in keep]
             if not cands:
@@ -326,8 +332,8 @@ def main():
     p.add_argument("--cand_rounds", type=int, default=2, help="1 greedy + (rounds-1) sampled generations")
     p.add_argument("--cand_temperature", type=float, default=0.9)
     p.add_argument("--fluency_eps", type=float, default=4.0,
-                   help="fluency budget: a candidate may have at most the spikes (disfluency) "
-                        "of the input + this many nats")
+                   help="fluency guard: a candidate may have at most min(spikes of the current text, "
+                        "spikes of the input) + this many nats (disfluency)")
     p.add_argument("--model_path", default=DEFAULT_MODEL)
     p.add_argument("--laya_path", default=PRIVACY_LAYA)
     p.add_argument("--seed", type=int, default=23)

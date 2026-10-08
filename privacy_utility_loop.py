@@ -25,10 +25,15 @@ until the utility-repaired prompt no longer leaks.
 
 The utility rewriters are free to re-introduce private details (they do not
 see the attackers), which is why step 3 measures u_i and not p_i. Both
-rewriters reject any edit whose surprisal spikes exceed those of x_0 by more
-than ε nats (--privacy_fluency_eps, and --fluency_eps in --utility_args). The
-loop computes spikes(x_0) once and passes it to both, so ε is one budget for
-the whole run and small edits cannot add up.
+rewriters reject any edit whose surprisal spikes exceed min(spikes of the
+current text, spikes of x_0) + ε nats (--privacy_fluency_eps, and --fluency_eps
+in --utility_args). The loop computes spikes(x_0) once and passes it to both.
+The x_0 bound stops small edits from adding up; the current-text bound stops
+spikes freed by removing a rare word from paying for broken grammar later.
+
+The loop also keeps one tried list per prompt and passes it to every privacy
+step: a span that failed for an attribute (every candidate broke fluency, or
+none lowered the hinge) is not tried again in a later iteration.
 
 Reference of the utility step (--utility_ref):
     user       x_0 every iteration (default): the user's message is the only
@@ -206,10 +211,11 @@ def privacy_utility_loop(model, tok, attackers, text, attributes, utility, pargs
     """-> (final text, history, converged). history has one dict per iteration."""
     sample_reference, rewrite_utility, _ = UTILITY[utility]
     x, u, history, ref_samples, converged = text, text, [], None, False
-    x0_spikes = disfluency([text], model, tok)[0]      # both steps' fluency budget is this + ε
+    x0_spikes = disfluency([text], model, tok)[0]      # both steps' fluency bound: min(current, this) + ε
+    tried = {}                                         # privacy step's failed (span, attribute)s, kept across iterations
     for i in range(1, args.max_iters + 1):
         print(f"\n{'#' * 30} iteration {i}: privacy step {'#' * 30}")
-        p = privacy_rewrite.rewrite(model, tok, attackers, x, attributes, pargs, x0_spikes)
+        p = privacy_rewrite.rewrite(model, tok, attackers, x, attributes, pargs, x0_spikes, tried)
         leak_p, _ = leakage(attackers, p)
 
         reference = x if args.utility_ref == "iteration" else text
@@ -280,8 +286,8 @@ def main():
     p.add_argument("--privacy_cand_rounds", type=int, default=2)
     p.add_argument("--privacy_cand_temperature", type=float, default=0.9)
     p.add_argument("--privacy_fluency_eps", type=float, default=4.0,
-                   help="fluency budget of the privacy step: an edit may have at most the spikes "
-                        "(disfluency) of x_0 + this many nats")
+                   help="fluency guard of the privacy step: an edit may have at most min(spikes of "
+                        "the current text, spikes of x_0) + this many nats (disfluency)")
     p.add_argument("--fix_candidates", type=int, default=4,
                    help="LLM fluency fixes after the last iteration (1 greedy + n - 1 sampled); 0 = none")
     p.add_argument("--model_path", default=DEFAULT_MODEL)

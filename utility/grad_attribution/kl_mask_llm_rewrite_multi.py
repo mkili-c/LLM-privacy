@@ -51,11 +51,12 @@ remaining gaps are left empty. Unfilled gaps simply vanish.
 
 Fluency guard: KL rewards nothing about grammar ("I am a scientist a mind"
 can lower D), so in both phases a filler or swap whose surprisal spikes
-(disfluency in kl_utility_scoring.py) exceed those of the user's message x_0
-by more than --fluency_eps nats is dropped before its D is computed. The
-budget is anchored to x_0 (by default the original prompt; the loop passes it
-explicitly), not to the current text, so that edits which each add a little
-cannot add up.
+(disfluency in kl_utility_scoring.py) exceed min(spikes of the current text,
+spikes of the user's message x_0) + --fluency_eps nats is dropped before its D
+is computed (x_0: by default the original prompt; the loop passes it
+explicitly). Both bounds hold at once: the x_0 bound stops edits that each add
+a little from adding up, and the current-text bound stops spikes freed by an
+earlier edit from paying for broken grammar.
 """
 import argparse
 import sys
@@ -111,8 +112,8 @@ def get_args():
                    help="positions tried per step (by rank) before giving up on the step")
     p.add_argument("--gap_max_words", type=int, default=4, help="longest filler for a [MASK] gap")
     p.add_argument("--fluency_eps", type=float, default=4.0,
-                   help="fluency budget: a filler or swap may have at most the spikes (disfluency) "
-                        "of x_0 + this many nats")
+                   help="fluency guard: a filler or swap may have at most min(spikes of the current "
+                        "text, spikes of x_0) + this many nats (disfluency)")
     # 0.47 separates the privacy rewrites of data/prompt_rewrites_100.csv (93% left
     # alone) from its off-topic ones (90% edited): Qwen2.5-3B, K = 5, 256-token answers
     p.add_argument("--kl_threshold", type=float, default=0.47,
@@ -226,7 +227,7 @@ def text_kl(model, tok, text, answers, refs, device):
     return D / len(refs)
 
 
-def fill_gaps(model, tok, original, rewritten, answers, device, args, budget):
+def fill_gaps(model, tok, original, rewritten, answers, device, args, x0_spikes):
     parts = rewritten.split(MASK)
     fills = [""] * (len(parts) - 1)
     _, refs = prepare_answers(model, tok, original, render(parts, fills), answers, device)
@@ -242,8 +243,9 @@ def fill_gaps(model, tok, original, rewritten, answers, device, args, budget):
                                prompt=lambda t, n: gap_prompt(t, n, args.gap_max_words),
                                max_words=args.gap_max_words)
         texts = [render(parts, fills[:j] + [c] + fills[j + 1:]) for c in cands]
-        # fluency guard: at most the spikes of x_0 + --fluency_eps
-        keep = [i for i, d in enumerate(disfluency(texts, model, tok)) if d <= budget]
+        # fluency guard: at most min(current, x_0) + --fluency_eps spikes, current = this gap still empty
+        bound = min(disfluency([render(parts, fills)], model, tok)[0], x0_spikes) + args.fluency_eps
+        keep = [i for i, d in enumerate(disfluency(texts, model, tok)) if d <= bound]
         n_broken = len(cands) - len(keep)
         cands, texts = [cands[i] for i in keep], [texts[i] for i in keep]
         cand_D = [text_kl(model, tok, t, answers, refs, device) for t in texts]
@@ -262,10 +264,10 @@ def fill_gaps(model, tok, original, rewritten, answers, device, args, budget):
 
 def run(model, tok, original, rewritten, answers, device, args, x0_spikes=None):
     """x0_spikes: disfluency of the user's message x_0; by default original is x_0."""
-    budget = (disfluency([original], model, tok)[0] if x0_spikes is None else x0_spikes) + args.fluency_eps
-    print(f"fluency budget: spikes <= {budget:.1f} (x_0 + {args.fluency_eps})")
+    x0 = disfluency([original], model, tok)[0] if x0_spikes is None else x0_spikes
+    print(f"fluency budget: spikes <= min(current, x_0 = {x0:.1f}) + {args.fluency_eps}")
     if MASK in rewritten:
-        rewritten = fill_gaps(model, tok, original, rewritten, answers, device, args, budget)
+        rewritten = fill_gaps(model, tok, original, rewritten, answers, device, args, x0)
     live_prompt, refs = prepare_answers(model, tok, original, rewritten, answers, device)
     s, e = content_span(tok, rewritten)
     content_slice = slice(s, e)
@@ -281,6 +283,8 @@ def run(model, tok, original, rewritten, answers, device, args, x0_spikes=None):
         grad = mean_gradients(model, live_prompt, refs, content_slice)  # [content_len, vocab]
 
         content_ids = live_prompt[content_slice]
+        # fluency guard: at most min(current, x_0) + --fluency_eps spikes, current = before this step's swap
+        bound = min(disfluency([tok.decode(content_ids)], model, tok)[0], x0) + args.fluency_eps
         grad_x_input = grad[torch.arange(grad.shape[0], device=grad.device), content_ids]
         ranked = grad_x_input.abs().argsort(descending=True).tolist()
 
@@ -294,13 +298,13 @@ def run(model, tok, original, rewritten, answers, device, args, x0_spikes=None):
             words = llm_candidates(model, tok, text, args.n_candidates, args.cand_rounds,
                                    args.cand_temperature, args.cand_max_new_tokens)
             cand_ids, cand_words, dropped = words_to_single_tokens(tok, words, old_tok_id)
-            # fluency guard: drop swaps with more spikes than x_0 + --fluency_eps
+            # fluency guard: drop swaps above the bound of this step
             swapped = []
             for c in cand_ids:
                 ids = content_ids.clone()
                 ids[i] = c
                 swapped.append(tok.decode(ids))
-            keep = [j for j, d in enumerate(disfluency(swapped, model, tok)) if d <= budget]
+            keep = [j for j, d in enumerate(disfluency(swapped, model, tok)) if d <= bound]
             n_broken = len(cand_ids) - len(keep)
             cand_ids, cand_words = [cand_ids[j] for j in keep], [cand_words[j] for j in keep]
             print(f"  pos={position} {old_tok!r} avg g*x={grad_x_input[i].item():+.4f}  "
