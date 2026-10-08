@@ -1,6 +1,6 @@
 # Privacy–utility loop: roadmap
 
-Status: 2026-10-04. Items are implemented one at a time and may change along the way.
+Status: 2026-10-08. The algorithm is frozen; only δ and ε remain to be calibrated on the dev set (see Order).
 
 ## How the loop works now
 
@@ -26,9 +26,9 @@ Design rules:
 - Rejected (2026-10-08, user's decision), from the dev job 436 log: occlusion can blame a span whose deletion only breaks the sentence ("like" for gender: "a midwife me follow" made Qwen's gender P drop 0.216, Laya didn't move). (F1) Blaming only spans whose deletion stays fluent would push strong cues at important sentence positions behind weak ones. The tried list already limits an artifact span to one failed LLM call. (F2) Choosing, among candidates that clear the span's own attribute, the most fluent one would give up hinge reduction on the other leaking attributes and mix fluency into the privacy step's decision. Roles stay as they are: the privacy step decides by privacy, the budget caps fluency loss, the final fix polishes ("here in home" was removed there).
 - [x] Fix the `--question` flag in `privacy/attribute_probe.py`. Its name was corrupted by pasted text; this only affects the standalone CLI. Done 2026-10-08.
 - [x] Fine-tuned Laya as the default attacker (2026-10-08): `PRIVACY_LAYA` in `privacy/laya_probe.py` (`models/laya-privacy`, the n1930 checkpoint) is the `--laya_path` default of `privacy_utility_loop.py`, `run_loop_sweep.py` and `privacy_rewrite.py`. `DEFAULT_LAYA` stays the base model for `laya_eval.py`, `laya_finetune.py` and `laya_probe_sweep.py`.
-- [ ] Single-token swaps: decision pending, see below. Since Phase 2 the swaps pass the fluency guard too, so keeping them on is now a real option.
+- [x] Single-token swaps: kept on (decided 2026-10-08). Since Phase 2 they pass the fluency guard, and they already reach every token, so generalized spans can be edited too (one token for one token). Making generalized spans slots was dropped.
 
-### Open decision: the single-token swaps
+### Decided 2026-10-08: the single-token swaps stay on (kept for the record)
 
 With the swaps off (`--n_steps 0`) the utility step still runs, but it can only refill *deleted* spans. Generalized spans ("25 years old" → "individual") and the rest of the prompt become untouchable.
 
@@ -40,7 +40,7 @@ With the swaps off (`--n_steps 0`) the utility step still runs, but it can only 
 
 ## Phase 1: measure before tuning
 
-- [ ] Run the loop over `utility/data/prompt_rewrites_100.csv` (one new script) and score each result:
+- Superseded by the Evaluation pipeline and the Plan to the end (kept for the record): run the loop over `utility/data/prompt_rewrites_100.csv` (one new script) and score each result:
   - **privacy:** a held-out Qwen 32B probe on each row's `protected_attrs`, plus the attacker's guess accuracy against the persona in `id` (the protocol of Staab et al.). Superseded 2026-10-06: the Evaluation pipeline uses an external two-step LLM judge and no 32B;
   - **utility:** per-token KL and centroid cosine against the original;
   - **fluency:** prompt NLL per token.
@@ -58,12 +58,12 @@ With the swaps off (`--n_steps 0`) the utility step still runs, but it can only 
 
 ## Phase 3: privacy strength
 
-- [ ] Score span occlusion on the logit or `nll` instead of the saturated `p`. Two cues that each push p to 1.0 are invisible when deleted one at a time. Not done yet: it also needs the hinge acceptance in the same scale (otherwise the picked edit lowers the P-hinge by ~0 and is rejected), a re-tuned λ (drops in nats, not in [0, 1]), and Qwen's uncalibrated logits would dominate the max over attackers. Decide after the dev run (2026-10-08): `privacy_rewrite.py` prints `[stall] <attribute>: best span blame … at P …` when a leaking attribute's best blame is below `STALL_BLAME` = 0.01. A stall followed by the attribute being resolved later means saturation only slows the loop; a stall on a prompt that ends still leaking is the case this item fixes.
-- [ ] Qwen 7B as the in-loop attacker; evaluation by the Evaluation pipeline's external judge (no 32B, 2026-10-06). The 3B model is attacker, rewriter and scorer at once, so its gains are partly circular.
-- [ ] The dataset's 15 attributes instead of the loop's 5. Partly done: 10 since 2026-10-06 (Evaluation pipeline).
-- [ ] Pass the privacy step's generalizations of a deleted span to the gap filler as candidates. D then decides between deleting and generalizing, and a deleted question can come back.
+- [ ] Score span occlusion on the logit or `nll` instead of the saturated `p`. Two cues that each push p to 1.0 are invisible when deleted one at a time. Not done yet: it also needs the hinge acceptance in the same scale (otherwise the picked edit lowers the P-hinge by ~0 and is rejected), a re-tuned λ (drops in nats, not in [0, 1]), and Qwen's uncalibrated logits would dominate the max over attackers. **Not implemented (2026-10-08, user's decision):** it matters only for prompts with redundant cues and is not expected to change overall performance much, so the algorithm is frozen without it. `privacy_rewrite.py` prints `[stall] <attribute>: best span blame … at P …` when a leaking attribute's best blame is below `STALL_BLAME` = 0.01. The dev and PUPA-SD runs count these, for the thesis as a measured limitation and future work. A stall followed by the attribute being resolved later means saturation only slows the loop; a stall on a prompt that ends still leaking is the case this item would fix.
+- [x] Qwen 7B as the in-loop attacker: covered by the evaluation setup, where `run_loop_sweep_gb10.sbatch` runs the whole loop on the 7B. Evaluation is by the Evaluation pipeline's external judge (no 32B, 2026-10-06).
+- [x] Attributes: the fixed 10 (decided 2026-10-06, Evaluation pipeline) instead of the dataset's 15.
+- Dropped (2026-10-08): passing the privacy step's generalizations of a deleted span to the gap filler. It was the slot half of the swaps decision; the swaps stay on instead.
 
-Also open: `cos_mask` drops slots instead of filling them.
+Not evaluated: `cos_mask` drops slots instead of filling them and has neither the fluency guard nor the final fix. The evaluated backend is `kl_multi`.
 
 ## Laya fine-tuning (added 2026-10-05)
 
@@ -162,9 +162,9 @@ Metrics are Phase 1's list, with the judge in place of the probe.
 - [ ] Sanity check on the dev set with the same judge: the originals' `protected_attrs` should be guessed correctly (values from the persona in `id`) and `priv_targeted`'s mostly not, and `util_broken` should be worst on D.
 
 ### Step 3: batch run of the loop
-- [x] Batch script `run_loop_sweep.py` + `run_loop_sweep_gb10.sbatch` (2026-10-07). `privacy_utility_loop.py` stays unchanged (the user's choice), so the loop's flags are copied with the same defaults. It loads the models once, calls `privacy_utility_loop()` on each row's `original`, and writes through `run_baselines.run`: the baselines' format and cost columns, each row as it finishes, rows already done skipped, so a run resumes after the 24 h limit. `calls` and tokens count `model.generate`; the seed is reset per row. Plumbing checked with a fake model; no GPU run yet.
+- [x] Batch script `run_loop_sweep.py` + `run_loop_sweep_gb10.sbatch` (2026-10-07). `privacy_utility_loop.py` stays unchanged (the user's choice), so the loop's flags are copied with the same defaults. It loads the models once, calls `privacy_utility_loop()` on each row's `original`, and writes through `run_baselines.run`: the baselines' format and cost columns, each row as it finishes, rows already done skipped, so a run resumes after the 24 h limit. `calls` and tokens count `model.generate`; the seed is reset per row. Plumbing checked with a fake model; first GPU run 2026-10-08 (job 436, `--limit 3` on the dev set, 3/3 rows, 0 failed).
 - [x] Extend `ATTRIBUTES` in `privacy/attribute_probe.py` to the 10 (2026-10-06). It is the `--attributes` default of the loop, `privacy_rewrite.py`, `laya_probe.py` and `privacy_token_grad.py`. All 10 names match Laya's training data.
-- [ ] Runtime: ~7 min per short prompt on GB10 (7B) with 5 attributes. 10 attributes add attacker passes, so re-measure on a few rows first. 141 PUPA-SD rows at ≥ 7 min each is ≥ 16 h, so expect to resume across two jobs. Long prompts cost more (PUPA-SD's median is 57 Laya tokens, the longest kept 408).
+- [x] Runtime, measured 2026-10-08 (job 436, GB10, 7B, 10 attributes, fine-tuned Laya, 3 short dev prompts): 33:36 in total (`sacct`), of which ~1 min is model loading. Per row (`seconds` column of `results/rewrites/dev_loop.csv`): 930 s (Marta, 2 iterations + fluency fix, 15 calls), 613 s (Deniz, converged after 1 iteration, 11 calls), 416 s (Ruth, 1 iteration that changed nothing, 7 calls). That is ~60 s per call and ~11 min per row on average, so time grows with the number of iterations. Estimate, total ≈ 1 min + n × 11 min (range from the fastest and slowest row): 30 rows ~5.5 h (3.5–8 h), 100 rows ~18 h (12–26 h), 141 rows ~25.5 h (16–36 h). Three rows are a small sample, and none used more than 2 of the 4 `--max_iters`; rows that need 3–4 iterations, and PUPA-SD's longer prompts (median 57 Laya tokens, the longest kept 408), cost more, so expect the upper end. 100 rows may just fit the 24 h limit; 141 rows need two jobs (resubmit the same command, finished rows are skipped).
 
 ### Step 4: baselines (one sweep script; target ½ day of coding, 2026-10-06)
 Four baselines: Presidio, Loiseau et al., PAPILLON and Staab et al. Their code is used as released; only the plumbing around it is ours.
@@ -251,7 +251,32 @@ Effort: PUPA-SD done; baselines with the sweep script ~½ day of coding plus a f
 | δ = 0.47 (K = 5) | leaves 186/200 privacy rewrites alone, edits 90/100 off-topic rewrites |
 | Stress run, old summed D with 64-token answers | garbled "I am programmer scientist a mind, …" scored 33.9, below the sensible "I am a individual, …" at 51.9 |
 
+## Plan to the end (2026-10-08)
+
+GB10 hours are the critical path (one job at a time), so the baselines run while the scorer is written. Times: GPU = GB10 job time, coding = Claude.
+
+- [ ] **A1** Smoke test of the frozen loop (tried list, cap 5) on the 3 rows of job 436, into a new file (the sweep skips ids already in its `--out`): `sbatch run_loop_sweep_gb10.sbatch --out results/rewrites/dev_loop_v2.csv --limit 3`. ~35 min GPU. Check: row 1 moves on after `'routine should a midwife'` fails.
+- [ ] **A2** Delete the old baseline files in `results/rewrites/` (3-row smoke files of `loiseau_pupa`, `loiseau_synthpai`, `papillon`; Staab's 4-row `--ids` file; Presidio's 141 rows without cost columns), since every full run skips ids already written. Then one job, `sbatch baselines/run_sweep_gb10.sbatch "loiseau_pupa loiseau_synthpai papillon staab"`, ~14 h GPU (~1 h + ~13 h), plus Presidio's rerun as a CPU job (~1 min).
+- [ ] **B1** `score_rewrites.py`: D (7B, K = 10 answers of 256 tokens per original, sampled once and cached, so all methods are scored on the same answers), spikes, judge item export and import (method hidden, shuffled), bootstrap 95% CIs per method and attribute. ~5 h coding.
+- [ ] **B2** Calibration with the scorer on the 7B: δ from the dev CSV's own columns (privacy rewrites vs `util_broken`, as for 0.47), ε from the 21 run edits. Update the defaults (loop, sweep, `kl_multi`, `privacy_rewrite`) and tag `algorithm-final`. ~1.5 h GPU + 1 h.
+- [ ] **C1** Dev validation: 30 rows with the final values. ~5.5 h GPU (3.5–8). If the budget blocks too much, one recalibration round (dev only).
+- [ ] **C2** Log statistics: stalls, failed tries, fixes applied, iterations, convergence; Laya's 0.979 ceiling and the non-converged rows (implied attributes). ~1 h coding.
+- [ ] **C3** Judge: prompts for both steps, item files, instructions for the cloud session; sanity check on the dev set; the user checks ~50 decisions by hand. ~3 h coding, ~1–2 h judge, ~1 h user.
+- [ ] **D1** Loop on PUPA-SD, 141 rows, two jobs. ~25 h GPU (16–36).
+- [ ] **D2** Score all methods and run the judge session (~1,450 items × 2 steps). ~1–2 h GPU (+10–14 h if cosine is kept), several hours of judging.
+- [ ] **D3** Staab check: rewritten lines that are verbatim copies of a different original line, plus the sensitivity check without those prompts. 30 min.
+- [ ] **E** Report: main table with CIs, breakdown by attribute, leak-vs-D plot, deviations table, limitations (judge covers labeled values only, `[stall]` counts, echo as definition, fluency thresholds from small samples, the final fix's leak check is noise-driven on non-converged rows). ~5 h.
+- Optional: Laya Step 5 ablation (~5.5 h GPU + judge), Qwen reference probes for Laya's not-aligned claim (~1 h GPU + 1 h coding), reproduction checks (need an API budget).
+
+Totals: ~2 days of coding, ~47 GB10 hours (~60 with cosine), 3–4 days of wall-clock time if jobs chain.
+
+Open decisions for this plan:
+- [ ] Independent utility and fluency measure. D and spikes are the loop's own objectives (same 7B), so they favor the loop. Options: the centroid cosine (~12 GPU h), a judge quality rating (cheap, fully independent), or both.
+- [ ] Matching rule (see Evaluation pipeline, Open decisions).
+
 ## Order
+
+**Algorithm frozen (2026-10-08, user's decision).** No more algorithm changes; what remains is calibrating δ and ε on the 7B dev outputs (`prompt_rewrites_100.csv`, never PUPA-SD). After that the version is final for the evaluation; tag it in git.
 
 Finish Phases 0 and 1 first. Later choices (δ, attacker, echo) should come from Phase 1's numbers, not from single runs.
 
