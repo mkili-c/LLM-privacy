@@ -337,3 +337,22 @@ step 001  D <= 0.47: utility good enough, no edit
   iteration 1: leak after privacy 0.119, after utility 0.119 (threshold 0.5)
 
 ############################## fluency fix ##############################
+  spikes   leak      D
+    34.5  0.095  0.189  now  "What should breakfast look like after a diagnosis? I'm long-time resident, for decades before moving, and I'm still finding my feet with it here in district."
+    24.3  0.029  0.244  ok   "What should breakfast look like after a diagnosis? I've been a long-time resident for decades, and I'm still finding my way here in the district."
+    24.6  0.024  0.222  ok   "What should breakfast look like after a diagnosis? I've been a long-time resident for decades and am still finding my footing here in the district."
+    26.5  0.029  0.243  ok   "What should breakfast look like after a diagnosis? I've been a long-time resident for decades and am still finding my way in this district."
+    28.9  0.022  0.255  ok   "What should breakfast look like after a diagnosis? I'm a long-time resident, having lived here for decades before moving, and I'm still finding my way in this district."
+
+================================================================================
+original: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+
+  iteration 1
+    privacy  leak 0.119  "What should breakfast look like after a[…] diagnosis? I'm long-time resident,[…] for decades before moving, and I'm still finding my feet with it here in district."
+    utility  leak 0.119  "What should breakfast look like after a diagnosis? I'm long-time resident, for decades before moving, and I'm still finding my feet with it here in district."
+      qwen     gender 0.000       age 0.119  geograph 0.001  professi 0.001  health c 0.000  educatio 0.023  socioeco 0.023  relation 0.000  family s 0.003  national 0.000
+      laya     gender 0.020       age 0.023  geograph 0.023  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.021  national 0.020
+
+final (converged (leak <= 0.5), 1 iterations): "What should breakfast look like after a diagnosis? I've been a long-time resident for decades, and I'm still finding my way here in the district."
+  3/3 (0 failed)
+Done Fri Oct  9 00:02:59 CEST 2026
