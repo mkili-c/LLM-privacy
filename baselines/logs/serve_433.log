@@ -1,0 +1,69 @@
+[90mHint: A new version of transformers (5.19.0) is available! You are using version 5.8.0.
+To update, run: /work/projects/mkilic/.llmvenv-gb10/bin/python3.12 -m pip install -U transformers[0m
+[transformers] Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct@main
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:17<1:39:43, 17.70s/it]Loading weights:   3%|▎         | 10/339 [00:17<07:07,  1.30s/it] Loading weights:   3%|▎         | 10/339 [00:30<07:07,  1.30s/it]Loading weights:   4%|▎         | 12/339 [00:31<14:10,  2.60s/it]Loading weights:  17%|█▋        | 56/339 [00:33<01:37,  2.89it/s]Loading weights:  18%|█▊        | 60/339 [00:33<01:27,  3.17it/s]Loading weights:  19%|█▉        | 65/339 [00:34<01:22,  3.32it/s]Loading weights:  20%|█▉        | 67/339 [00:35<01:24,  3.22it/s]Loading weights:  21%|██        | 70/339 [00:35<01:13,  3.65it/s]Loading weights:  22%|██▏       | 76/339 [00:49<03:52,  1.13it/s]Loading weights:  23%|██▎       | 78/339 [00:50<03:39,  1.19it/s]Loading weights:  39%|███▊      | 131/339 [00:54<00:42,  4.88it/s]Loading weights:  39%|███▉      | 133/339 [00:54<00:41,  5.01it/s]Loading weights:  44%|████▍     | 150/339 [00:55<00:27,  6.79it/s]Loading weights:  44%|████▍     | 150/339 [01:10<00:27,  6.79it/s]Loading weights:  45%|████▍     | 151/339 [01:11<01:52,  1.68it/s]Loading weights:  67%|██████▋   | 226/339 [01:11<00:17,  6.54it/s]Loading weights:  69%|██████▉   | 235/339 [01:24<00:30,  3.40it/s]Loading weights:  83%|████████▎ | 281/339 [01:34<00:15,  3.81it/s]Loading weights:  87%|████████▋ | 295/339 [01:34<00:09,  4.52it/s]Loading weights:  94%|█████████▎| 317/339 [01:36<00:03,  5.71it/s]Loading weights:  96%|█████████▌| 324/339 [01:39<00:03,  4.60it/s]Loading weights: 100%|██████████| 339/339 [01:39<00:00,  3.39it/s]
+INFO:     Started server process [1225223]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://localhost:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:48550 - "GET /health HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:46674 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:46674 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:46674 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:51234 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:51234 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:51234 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:35862 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:35862 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:35862 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:59112 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:59112 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:59112 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:40064 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:40064 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:40064 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:41318 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:41318 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:41318 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:46722 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:46722 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:46722 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:54154 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:54154 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:54154 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:58548 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:58548 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:58548 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:41906 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:41906 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
+INFO:     127.0.0.1:41906 - "POST /v1/chat/completions HTTP/1.1" 200 OK

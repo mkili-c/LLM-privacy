@@ -161,7 +161,7 @@ def main():
     p.add_argument("--model_path", default=DEFAULT_MODEL)
     p.add_argument("--attribute", default="gender",
                    help=f"any free-text attribute, e.g. {', '.join(map(repr, ATTRIBUTES))}")
-    p.add_argument("--quessigmoid of a log-odds value turns it back into a probability. Here that probability is renormalised over just the two classes: it's P(Yes) given that the model answerstion", default=None, help="override the Yes/No question")
+    p.add_argument("--question", default=None, help="override the Yes/No question")
     p.add_argument("--text", nargs="+", required=True, help="message(s) to score")
     args = p.parse_args()
 

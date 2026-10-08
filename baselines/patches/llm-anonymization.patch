@@ -1,0 +1,15 @@
+diff --git a/src/models/open_ai.py b/src/models/open_ai.py
+index 1916bf7..255f03b 100644
+--- a/src/models/open_ai.py
++++ b/src/models/open_ai.py
+@@ -88,7 +88,9 @@ class OpenAIGPT(BaseModel):
+         self, inputs: List[Prompt], **kwargs
+     ) -> Iterator[Tuple[Prompt, str]]:
+         max_workers = kwargs["max_workers"] if "max_workers" in kwargs else 4
+-        base_timeout = kwargs["timeout"] if "timeout" in kwargs else 120
++        # Patched (LLM-privacy/baselines/patches): the 40-120 s timeouts count over the whole
++        # batch and suit a parallel hosted API, not one local request at a time at ~10 tokens/s.
++        base_timeout = 24 * 3600
+ 
+         with ThreadPoolExecutor(max_workers=max_workers) as executor:
+             ids_to_do = list(range(len(inputs)))

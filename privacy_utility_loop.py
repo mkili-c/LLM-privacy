@@ -25,8 +25,10 @@ until the utility-repaired prompt no longer leaks.
 
 The utility rewriters are free to re-introduce private details (they do not
 see the attackers), which is why step 3 measures u_i and not p_i. Both
-rewriters reject any edit that adds more than ε nats of surprisal spikes
-(--privacy_fluency_eps, and --fluency_eps in --utility_args).
+rewriters reject any edit whose surprisal spikes exceed those of x_0 by more
+than ε nats (--privacy_fluency_eps, and --fluency_eps in --utility_args). The
+loop computes spikes(x_0) once and passes it to both, so ε is one budget for
+the whole run and small edits cannot add up.
 
 Reference of the utility step (--utility_ref):
     user       x_0 every iteration (default): the user's message is the only
@@ -69,7 +71,7 @@ import laya                                                            # noqa: E
 import privacy_rewrite                                                 # noqa: E402
 from privacy_rewrite import SLOT, LayaAttacker, QwenAttacker, score    # noqa: E402
 from attribute_probe import ATTRIBUTES, DEFAULT_MODEL                  # noqa: E402
-from laya_probe import DEFAULT_LAYA                                    # noqa: E402
+from laya_probe import PRIVACY_LAYA                                    # noqa: E402
 import kl_mask_llm_rewrite_multi as kl_multi                           # noqa: E402
 import cos_mask_llm_rewrite as cos_mask                                # noqa: E402
 from kl_mask_llm_rewrite import MASK                                   # noqa: E402
@@ -99,19 +101,20 @@ def kl_multi_answers(model, tok, reference, device, uargs):
         max_new_tokens=uargs.answer_max_new_tokens, temperature=1.0, top_p=1.0) if a.strip()]
 
 
-def utility_kl_multi(model, tok, reference, answers, rewritten, device, uargs):
+def utility_kl_multi(model, tok, reference, answers, rewritten, device, uargs, x0_spikes):
     """KL gradient picks positions, LLM proposes fillers, mean KL over the
-    reference answers decides."""
+    reference answers decides; no edit may exceed the fluency budget of x_0."""
     if not answers:
         print("  utility: no non-empty reference answers; rewrite left unchanged")
         return rewritten.replace(MASK, "")
-    return kl_multi.run(model, tok, reference, rewritten, answers, device, uargs)
+    return kl_multi.run(model, tok, reference, rewritten, answers, device, uargs, x0_spikes)
 
 
-def utility_cos_mask(model, tok, reference, ref_samples, rewritten, device, uargs):
+def utility_cos_mask(model, tok, reference, ref_samples, rewritten, device, uargs, x0_spikes):
     """KL gradient picks positions, LLM proposes fillers, answer-centroid
     cosine against the reference decides. Gaps are not filled, just dropped.
-    ref_samples = (answers, E_ref) of original_embeddings."""
+    ref_samples = (answers, E_ref) of original_embeddings. x0_spikes is unused:
+    cos_mask has no fluency guard."""
     answers, E_ref = ref_samples
     rewritten = rewritten.replace(MASK, "")
     return cos_mask.run(model, tok, reference, rewritten, answers[0], E_ref, device, uargs)
@@ -203,9 +206,10 @@ def privacy_utility_loop(model, tok, attackers, text, attributes, utility, pargs
     """-> (final text, history, converged). history has one dict per iteration."""
     sample_reference, rewrite_utility, _ = UTILITY[utility]
     x, u, history, ref_samples, converged = text, text, [], None, False
+    x0_spikes = disfluency([text], model, tok)[0]      # both steps' fluency budget is this + ε
     for i in range(1, args.max_iters + 1):
         print(f"\n{'#' * 30} iteration {i}: privacy step {'#' * 30}")
-        p = privacy_rewrite.rewrite(model, tok, attackers, x, attributes, pargs)
+        p = privacy_rewrite.rewrite(model, tok, attackers, x, attributes, pargs, x0_spikes)
         leak_p, _ = leakage(attackers, p)
 
         reference = x if args.utility_ref == "iteration" else text
@@ -216,7 +220,8 @@ def privacy_utility_loop(model, tok, attackers, text, attributes, utility, pargs
         if args.utility_ref == "iteration" or not ref_samples:
             print(f"  sampling the reference answers ({args.utility_ref} reference)")
             ref_samples = sample_reference(model, tok, reference, device, uargs)
-        u = rewrite_utility(model, tok, reference, ref_samples, p.replace(SLOT, MASK), device, uargs)
+        u = rewrite_utility(model, tok, reference, ref_samples, p.replace(SLOT, MASK), device, uargs,
+                            x0_spikes)
         leak_u, per = leakage(attackers, u)
 
         history.append(dict(iteration=i, input=x, privacy=p, utility=u,
@@ -275,11 +280,12 @@ def main():
     p.add_argument("--privacy_cand_rounds", type=int, default=2)
     p.add_argument("--privacy_cand_temperature", type=float, default=0.9)
     p.add_argument("--privacy_fluency_eps", type=float, default=4.0,
-                   help="nats of surprisal spikes a privacy edit may add (disfluency)")
+                   help="fluency budget of the privacy step: an edit may have at most the spikes "
+                        "(disfluency) of x_0 + this many nats")
     p.add_argument("--fix_candidates", type=int, default=4,
                    help="LLM fluency fixes after the last iteration (1 greedy + n - 1 sampled); 0 = none")
     p.add_argument("--model_path", default=DEFAULT_MODEL)
-    p.add_argument("--laya_path", default=DEFAULT_LAYA)
+    p.add_argument("--laya_path", default=PRIVACY_LAYA, help="Laya attacker (default: the fine-tuned one)")
     p.add_argument("--dtype", choices=["float16", "bfloat16", "float32"], default="float16")
     p.add_argument("--seed", type=int, default=23)
     args = p.parse_args()

@@ -43,7 +43,10 @@ from laya.common import build_sequence
 from attribute_probe import ATTRIBUTES
 from privacy_token_grad import LOSSES
 
-DEFAULT_LAYA = "/work/projects/mkilic/models/laya"
+DEFAULT_LAYA = "/work/projects/mkilic/models/laya"            # base checkpoint
+# Fine-tuned on privacy/data/laya_ft (n1930, ROADMAP "Laya fine-tuning"): the
+# default attacker of the loop, run_loop_sweep.py and privacy_rewrite.py
+PRIVACY_LAYA = "/work/projects/mkilic/models/laya-privacy"
 QUESTION = "Can the user's {attribute} be inferred from this message?"
 
 

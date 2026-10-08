@@ -26,8 +26,10 @@ Each iteration:
        in the message and ask Qwen for more general replacements of it. The
        candidates are these replacements plus deleting the span. Drop every
        candidate whose surprisal spikes (disfluency in kl_utility_scoring.py)
-       grow by more than --fluency_eps nats: the probes are fooled by broken
-       sentences, so a broken candidate would win for the wrong reason. Score
+       exceed those of the user's message x_0 by more than --fluency_eps nats:
+       the probes are fooled by broken sentences, so a broken candidate would
+       win for the wrong reason. The budget is anchored to x_0, not to the
+       current text, so that edits which each add a little cannot add up. Score
        the rest with both probes, take the best by
            (sum_a max(0, P_a - threshold),  sum_a P_a)     compared in order
        and keep it only if it lowers the hinge sum_a max(0, P_a - threshold):
@@ -58,7 +60,7 @@ import torch
 import laya
 from attribute_probe import (ATTRIBUTES, DEFAULT_MODEL, QUESTION as QWEN_QUESTION,
                              AttributeProbe, load)
-from laya_probe import DEFAULT_LAYA, QUESTION as LAYA_QUESTION, LayaProbe
+from laya_probe import PRIVACY_LAYA, QUESTION as LAYA_QUESTION, LayaProbe
 from kl_utility_scoring import disfluency        # utility/metrics, put on sys.path by attribute_probe
 
 OPEN, CLOSE = "<<", ">>"     # marks the word to generalize in the fill prompt
@@ -225,8 +227,11 @@ def show(attackers, attributes, per, P):
     print(f"    {'max':<5}" + "".join(f"  {a[:8]:>8} {P[0, k]:.3f}" for k, a in enumerate(attributes)))
 
 
-def rewrite(model, tok, attackers, text, attributes, args):
+def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None):
+    """x0_spikes: disfluency of the user's message x_0; by default text is x_0."""
     dis = disfluency([visible(text)], model, tok)[0]      # of the current text, updated on every edit
+    budget = (dis if x0_spikes is None else x0_spikes) + args.fluency_eps
+    print(f"  fluency budget: spikes <= {budget:.1f} (x_0 + {args.fluency_eps})")
     for it in range(args.max_iters + 1):
         per, P = score(attackers, [text])
         print(f"\n=== iteration {it}: {text!r}")
@@ -263,9 +268,9 @@ def rewrite(model, tok, attackers, text, attributes, args):
                      if not gone & {w.lower() for w in WORD.findall(f)}]   # "Zurich area" still names Zurich
             fills.append("")                                                 # delete the span
             cands = [text[:s] + f + text[e:] if f else delete(text, s, e, SLOT) for f in fills]
-            # fluency guard: no candidate may add more than --fluency_eps nats of surprisal spikes
+            # fluency guard: no candidate may have more spikes than x_0 + --fluency_eps
             dis_c = disfluency([visible(c) for c in cands], model, tok)
-            keep = [i for i, d in enumerate(dis_c) if d <= dis + args.fluency_eps]
+            keep = [i for i, d in enumerate(dis_c) if d <= budget]
             n_broken = len(cands) - len(keep)
             fills, cands, dis_c = [fills[i] for i in keep], [cands[i] for i in keep], [dis_c[i] for i in keep]
             if not cands:
@@ -303,9 +308,10 @@ def main():
     p.add_argument("--cand_rounds", type=int, default=2, help="1 greedy + (rounds-1) sampled generations")
     p.add_argument("--cand_temperature", type=float, default=0.9)
     p.add_argument("--fluency_eps", type=float, default=4.0,
-                   help="nats of surprisal spikes a candidate may add (disfluency); more = rejected")
+                   help="fluency budget: a candidate may have at most the spikes (disfluency) "
+                        "of the input + this many nats")
     p.add_argument("--model_path", default=DEFAULT_MODEL)
-    p.add_argument("--laya_path", default=DEFAULT_LAYA)
+    p.add_argument("--laya_path", default=PRIVACY_LAYA)
     p.add_argument("--seed", type=int, default=23)
     args = p.parse_args()
 

@@ -31,6 +31,8 @@ export DSPY_CACHEDIR=/scratch/users/mkilic/dspy_cache/${SLURM_JOB_ID:-manual_$$}
 # The baselines pass api_key="" (as in PAPILLON's scripts); the OpenAI client treats that as
 # missing and litellm then falls back to this variable. The local server ignores the key.
 export OPENAI_API_KEY=local-server-no-key
+# Staab et al.'s openai 0.28 reads its endpoint from here (the DSPy baselines pass api_base).
+export OPENAI_API_BASE=http://localhost:8000/v1
 SERVE_LOG=baselines/logs/serve_${SLURM_JOB_ID:-manual}.log
 
 echo "Job ${SLURM_JOB_ID:-manual} on $(hostname) ($(uname -m)), methods: $METHODS"

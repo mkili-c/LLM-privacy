@@ -1,0 +1,109 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+430,staab,"Please analyze the following clinical note and extract key sections and entities:
+
+""
+Subjective:
+Patient is a [REDACTED] presenting with a 3-day history of worsening shortness of breath and productive cough. He also reports chest tightness and a low-grade fever. No recent travel or sick contacts. Patient is a former smoker, quit 5 years ago, and has a history of hypertension and type 2 diabetes.
+
+Objective:
+Vital Signs: BP 135/85 mmHg, HR 95 bpm, RR 18 breaths/min, Temp 100.2°F, SpO2 95% on room air
+Physical Examination:
+
+General: [REDACTED], oriented, and in mild respiratory distress
+HEENT: PERRLA, EOMI, oropharynx clear, no nasal discharge
+Chest: Bilateral crackles at lower lung fields, no wheezing
+Cardiovascular: Regular rhythm, no murmurs or gallops
+Abdomen: Soft, non-tender, non-distended, bowel sounds present
+Extremities: No edema, normal peripheral pulses
+Assessment:
+[REDACTED] with a history of hypertension and type 2 diabetes presenting with shortness of breath, productive cough, and fever. Findings are suggestive of a lower respiratory tract infection, possibly pneumonia.
+
+Plan:
+
+Order chest X-ray to evaluate for pneumonia
+Obtain blood cultures and complete blood count
+Start empiric antibiotic therapy with levofloxacin 750 mg daily for 7 days
+Administer supplemental oxygen as needed for SpO2 < 94%
+Monitor vital signs and reassess patient in 24 hours
+Encourage fluid intake and rest
+Identify and provide the information in a structured format, including subjective, objective, assessment, and plan",,481.26,10,,
+526,staab,"Here is [ANONYMIZED_NAME]'s email:
+""I am happy to assist you with securing a Visa Invitation Letter, can you please provide the following information:
+
+-Full Name: [ANONYMIZED_NAME]
+
+-Passport Number & Expiration Date:
+
+-Full Company Name & Address
+
+Once I have this information I can go ahead and draft up the letter for you, please let me know if you have any questions!""
+
+
+
+[ANONYMIZED_NAME] | Lead Generation Manager & Customer Support""
+write an email [ANONYMIZED_NAME] reply [ANONYMIZED_NAME] tell him I appreciate his help. and here is my information:
+
+-Full Name: [ANONYMIZED_NAME]
+-Passport Number: [ANONYMIZED_PASSPORT]
+-Expiration Date: August 14, 2029
+-Full Company Name: [ANONYMIZED_COMPANY]
+-Address: [ANONYMIZED_ADDRESS] [ANONYMIZED_VILLAGE], [ANONYMIZED_DISTRICT], [ANONYMIZED_PROVINCE], Vietnam",,429.25,10,,
+585,staab,"Act as a medical provider explaining a medical note to the patient. Focus on clear and simple language to promote patient literacy.
+Primary diagnosis: Cardiac condition
++/- HISTORY FINDINGS
+that support primary diagnosis:
+Patient reports heavy diet.
+Smoking history.
+Fatigue upon exercising.
+Difficulty sleeping and laying flat.
++/- PHYSICAL EXAM FINDINGS
+that support primary diagnosis:
+Increased urination frequency may imply
+fluid build up.
+High blood pressure.
+Differential with rationale - Provide at least one.
+Differential #1: Chest pain
++/- HISTORY FINDINGS
+that support primary diagnosis:
+Patient reports heavy diet.
+Smoking history.
+Pain occurs when exercising.
++/- PHYSICAL EXAM FINDINGS
+that support primary diagnosis:
+High blood pressure.
+Differential #2: Diabetes
++/- HISTORY FINDINGS
+that support primary diagnosis:
+Patient reports increased urination frequency.
++/- PHYSICAL EXAM FINDINGS
+that support primary diagnosis:
+Normal heart and lung sounds, fluid
+build up could be due to injury to the
+kidneys.",,448.83,10,,
+714,staab,"hi, can you answer to all of these subsections, emphasis on a great interest of any of them
+
+''All animals are equal but some animals are more equal than others''
+Hello everyone! I'm [Generic Name] from [Generic Country]. I'm a philologist but I want to improve my speaking skills much better. I think I could be more fluent in speaking that's why I'm here.
+I need to develop my speaking skills for my job that's why i'll be happy if we communicate through some voice calls or voice clips.
+Requests
+I need to improve my speaking skills that's why my priority is speaking but i am okay with texting as well.
+Dear native speakers, if you contact with me I'll be very glad. Thanks in advance ??
+Btw please be kind, always.
+Language Exchange Requests
+King Crimson - Epitaph
+English to Turkish
+Hobbies & Interests
+Hobbies can be changeable in time. I am an aries ????
+Favorite Music
+King Crimson - Epitaph
+Favorite Movies
+Oh again a difficult question too! I don't like questions starting with ''what's your favourite...''
+Favorite TV Shows
+-
+Favorite Books
+All dystopic books
+Favorite Quotes
+''All animals are equal but some animals are more equal than others''
+
+""Is this a dagger which I see before me,
+The handle toward my hand? Come, let me clutch thee.""",,495.13,10,,

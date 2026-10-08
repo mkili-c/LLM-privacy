@@ -15,21 +15,31 @@ and retries the failures; for each id the last row in the file counts.
 Each method runs in its own venv (/work/projects/mkilic/venvs/<venv>), because the
 baselines pin conflicting packages: presidio -> presidio, loiseau_* -> loiseau
 (DSPy 3.0.4, as in their paper), papillon -> papillon (DSPy 3.1.2: PAPILLON's README says
-its code runs with the newest DSPy for inference, and the authors' 2026 follow-up uses 3.1.2).
+its code runs with the newest DSPy for inference, and the authors' 2026 follow-up uses 3.1.2),
+staab -> staab (openai 0.28.1, as in their environment.yaml).
 The LLM baselines talk to Qwen2.5-7B-Instruct through `transformers serve` at SERVER
 (baselines/run_sweep_gb10.sbatch starts it). The adapters only feed the prompt to the
 released code (baselines/repos, pinned by baselines/fetch_repos.sh) and read its
 output; they never change the method.
+
+Staab et al. are not a per-prompt adapter: their main.py loops over all prompts in each
+iteration. run_staab runs main.py unchanged once per prompt (so each prompt gets its own time)
+and reads the results back into the same CSV format (tokens empty: their code does not keep
+the usage).
 """
 import argparse
 import csv
+import json
 import os
 import re
+import shutil
+import subprocess
 import sys
 import time
 from pathlib import Path
 
-METHODS = ["presidio", "loiseau_pupa", "loiseau_synthpai", "papillon"]  # staab follows
+METHODS = ["presidio", "loiseau_pupa", "loiseau_synthpai", "papillon", "staab"]
+COLUMNS = ["id", "method", "rewrite", "error", "seconds", "calls", "prompt_tokens", "completion_tokens"]
 OUT_TEMPLATE = "results/rewrites/{data}_{method}.csv"  # {data}: the eval CSV's folder name
 HERE = Path(__file__).resolve().parent
 REPOS = HERE / "baselines" / "repos"
@@ -40,6 +50,20 @@ LOISEAU_PROMPTS = {
     "loiseau_pupa": REPOS / "adaptive-text-anonymization" / "prompts" / "pupa" / "qwen_2_5_7b.md",
     "loiseau_synthpai": REPOS / "adaptive-text-anonymization" / "prompts" / "synthpai" / "qwen_2_5_7b.md",
 }
+STAAB_REPO = REPOS / "llm-anonymization"
+STAAB_RUNS = HERE / "results" / "staab_runs"   # their inputs and per-iteration outputs, one folder per run
+STAAB_ITERATIONS = 3                           # as in their configs
+STAAB_TEMPERATURE = 0.1                        # as in their configs
+STAAB_TIMESTAMP = 1700000000                   # their prompts print each comment's date: one fixed date for all
+# Our 10 attributes, under Staab et al.'s key where they have one, so their own description and
+# answer options apply (reddit_utils.type_to_str / type_to_options); the other three pass
+# through by name. Every prompt gets all 10: their attacker targets the types in `reviews`.
+STAAB_ATTRIBUTES = {
+    "gender": "gender", "age": "age", "geographic location": "location",
+    "profession": "occupation", "education level": "education", "socioeconomic status": "income",
+    "relationship status": "married", "health condition": "health condition",
+    "family situation": "family situation", "nationality": "nationality",
+}
 
 
 def get_args():
@@ -48,6 +72,7 @@ def get_args():
     p.add_argument("--data", default="data/pupa_sd/pupa_sd_eval.csv")
     p.add_argument("--out", default=None, help=f"default: {OUT_TEMPLATE}")
     p.add_argument("--limit", type=int, default=None, help="only the first N rows (smoke test)")
+    p.add_argument("--ids", nargs="+", default=None, help="only these ids (smoke test on chosen prompts)")
     return p.parse_args()
 
 
@@ -113,9 +138,11 @@ def load_adapter(method):
     raise ValueError(f"no adapter for {method}")
 
 
-def read_rows(path, limit):
+def read_rows(path, limit, ids):
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
+    if ids:
+        rows = [r for r in rows if r["id"] in set(ids)]
     return rows[:limit] if limit else rows
 
 
@@ -140,8 +167,7 @@ def run(rows, rewrite, method, out_path):
     with open(out_path, "a", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         if new_file:
-            writer.writerow(["id", "method", "rewrite", "error", "seconds",
-                             "calls", "prompt_tokens", "completion_tokens"])
+            writer.writerow(COLUMNS)
         for n, row in enumerate(todo, 1):
             start = time.perf_counter()
             try:
@@ -160,12 +186,132 @@ def run(rows, rewrite, method, out_path):
                 print(f"  {n}/{len(todo)} ({failed} failed)")
 
 
+def write_staab_profiles(rows, path):
+    """Each prompt as one of their profiles. Its non-empty lines are the profile's comments:
+    their parser splits the anonymizer's answer into one comment per line, so a multi-line
+    comment would come back misaligned. `reviews` lists our 10 attributes with empty values,
+    so their attacker targets exactly those (hardness and certainty 1 pass their filter)."""
+    reviews = {"human": {key: {"estimate": "", "hardness": 1, "certainty": 1}
+                         for key in STAAB_ATTRIBUTES.values()}}
+    with open(path, "w", encoding="utf-8") as f:
+        for row in rows:
+            lines = [line.strip() for line in row["original"].split("\n") if line.strip()]
+            comments = [{"text": line, "subreddit": "synthetic", "user": row["id"],
+                         "timestamp": STAAB_TIMESTAMP, "pii": {}} for line in lines]
+            f.write(json.dumps({"username": row["id"], "comments": comments, "reviews": reviews}) + "\n")
+
+
+def write_staab_config(profiles_path, run_dir, config_path):
+    """Their SynthPAI config (configs/anonymization/synthpai/*.yaml) with every model set to our
+    server, one request at a time, and no separate evaluation model. JSON is valid YAML."""
+    model = {"name": SERVED_MODEL, "provider": "openai", "args": {"temperature": STAAB_TEMPERATURE}}
+    config = {
+        "output_dir": str(run_dir / "logs"), "seed": 10, "task": "ANONYMIZED", "dryrun": False,
+        "save_prompts": True, "timeout": 0.0, "max_workers": 1,
+        "task_config": {
+            "profile_path": str(profiles_path), "outpath": str(run_dir / "out"),
+            "anonymizer": {"anon_type": "llm", "target_mode": "single", "max_workers": 1},
+            "anon_model": model, "inference_model": model, "utility_model": model,
+            "eval_inference_model": None,
+            "profile_filter": {"hardness": 1, "certainty": 1},
+            "max_num_iterations": STAAB_ITERATIONS, "use_ner": False,
+            "offset": 0, "num_profiles": 100_000,
+        },
+        "gen_model": model,
+    }
+    config_path.write_text(json.dumps(config, indent=2), encoding="utf-8")
+
+
+def staab_progress(profile):
+    """(comment sets, filled inferences + utility scores) of one saved profile state. A finished
+    profile has 1 + STAAB_ITERATIONS comment sets; its calls = anonymizations + filled."""
+    filled = sum(SERVED_MODEL in c.get("predictions", {}) for c in profile["comments"])
+    filled += sum(SERVED_MODEL in c.get("utility", {}) for c in profile["comments"])
+    return len(profile["comments"]), filled
+
+
+def staab_final_profiles(out_dir):
+    """The most advanced saved state of each profile across their per-iteration files."""
+    final = {}
+    for path in out_dir.glob("*.jsonl"):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            profile = json.loads(line)
+            best = final.get(profile["username"])
+            if best is None or staab_progress(profile) > staab_progress(best):
+                final[profile["username"]] = profile
+    return final
+
+
+def staab_rewrite(original, profile):
+    """Their final comments put back into the prompt's layout, one per non-empty line."""
+    texts = iter(c["text"] for c in profile["comments"][-1]["comments"])
+    return "\n".join(next(texts) if line.strip() else line for line in original.split("\n"))
+
+
+def run_staab_prompt(row, prompt_dir):
+    """One prompt through their main.py, unchanged, in its own folder. Returns its final saved
+    profile (None if there is none), the seconds the run took and main.py's exit code.
+    A finished prompt is not run again; an unfinished one starts over, so its time is whole."""
+    seconds_path, out_dir = prompt_dir / "seconds.txt", prompt_dir / "out"
+    if seconds_path.exists():
+        profile = staab_final_profiles(out_dir).get(row["id"])
+        if profile is not None and staab_progress(profile)[0] > STAAB_ITERATIONS:
+            return profile, float(seconds_path.read_text()), 0
+    shutil.rmtree(prompt_dir, ignore_errors=True)
+    prompt_dir.mkdir(parents=True)
+    profiles_path, config_path = prompt_dir / "profiles.jsonl", prompt_dir / "config.yaml"
+    write_staab_profiles([row], profiles_path)
+    write_staab_config(profiles_path, prompt_dir, config_path)
+    start = time.perf_counter()
+    done = subprocess.run([sys.executable, "main.py", "--config_path", str(config_path)], cwd=STAAB_REPO)
+    seconds = round(time.perf_counter() - start, 2)
+    seconds_path.write_text(str(seconds))
+    return staab_final_profiles(out_dir).get(row["id"]), seconds, done.returncode
+
+
+def run_staab(rows, out_path, run_name):
+    """Each prompt through their main.py separately (STAAB_RUNS/run_name/<id>/), so every prompt
+    gets its own time. Their main.py handles all prompts together in each step, and its loop never
+    mixes profiles, so one prompt per run is the same method; only the order of calls differs.
+    The seconds include ~10-20 s of process startup (their imports and embedding model).
+    The CSV is rewritten from all prompt folders on every run, so a rerun resumes."""
+    run_dir = STAAB_RUNS / run_name
+    print(f"staab: {len(rows)} prompts, their files in {run_dir}/<id>/")
+    incomplete = 0
+    with open(out_path, "w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(COLUMNS)
+        for n, row in enumerate(rows, 1):
+            profile, seconds, exit_code = run_staab_prompt(row, run_dir / row["id"])
+            sets, filled = staab_progress(profile) if profile else (0, 0)
+            if sets <= STAAB_ITERATIONS:
+                incomplete += 1
+                error = (f"incomplete: {max(0, sets - 1)} of {STAAB_ITERATIONS} anonymizations "
+                         f"(main.py exit code {exit_code})")
+                writer.writerow([row["id"], "staab", "", error, seconds, "", "", ""])
+            else:
+                writer.writerow([row["id"], "staab", staab_rewrite(row["original"], profile), "",
+                                 seconds, sets - 1 + filled, "", ""])
+            f.flush()
+            print(f"  {n}/{len(rows)} id {row['id']}: {seconds} s ({incomplete} incomplete so far)")
+    print(f"staab: wrote {out_path} ({incomplete} incomplete)")
+
+
 def main():
     args = get_args()
     data_name = os.path.basename(os.path.dirname(os.path.abspath(args.data)))
     out_path = args.out or OUT_TEMPLATE.format(data=data_name, method=args.method)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
-    rows = read_rows(args.data, args.limit)
+    rows = read_rows(args.data, args.limit, args.ids)
+    if args.method == "staab":
+        # a smoke test (--limit / --ids) gets its own folder, so it never mixes into the full run's files
+        run_name = data_name
+        if args.ids:
+            run_name += "_ids_" + "_".join(args.ids)
+        elif args.limit:
+            run_name += f"_first{args.limit}"
+        run_staab(rows, out_path, run_name)
+        return
     rewrite = load_adapter(args.method)
     run(rows, rewrite, args.method, out_path)
 
