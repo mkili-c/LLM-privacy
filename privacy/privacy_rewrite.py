@@ -65,6 +65,9 @@ from kl_utility_scoring import disfluency        # utility/metrics, put on sys.p
 
 OPEN, CLOSE = "<<", ">>"     # marks the word to generalize in the fill prompt
 SLOT = "[…]"                 # left where a span was deleted, for the utility step to refill
+# A leaking attribute whose best span blame is below this looks saturated: its P is pinned near 1
+# by redundant cues, so no single deletion moves it (ROADMAP Phase 3, occlusion on -log(1 - P)).
+STALL_BLAME = 0.01
 WORD = re.compile(r"[\w'’-]+")
 STOPWORDS = set("""
 a an the and or but if so as of at by for from in into on onto to with without about
@@ -250,6 +253,11 @@ def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None):
         print("  leaking: " + ", ".join(a for a, l in zip(attributes, leaking) if l))
         print("  picked spans: " + ", ".join(f"{text[sp[u][0]:sp[u][1]]!r} ({attributes[a]} {blame[u, a]:+.3f})"
                                              for u, a in order))
+        # saturation check, count with: grep -c "\[stall\]" <log>
+        for a in leaking.nonzero().flatten().tolist():
+            if blame[:, a].max() < STALL_BLAME:
+                print(f"  [stall] {attributes[a]}: best span blame {blame[:, a].max().item():+.4f} "
+                      f"at P {P[0, a].item():.4f}")
         if not order:
             print("  no span lowers the leakage when deleted: stop")
             return text

@@ -45,6 +45,7 @@ def get_args():
     p.add_argument("--out", default=None,
                    help=f"default: {run_baselines.OUT_TEMPLATE}, data = the CSV's folder name")
     p.add_argument("--limit", type=int, default=None, help="only the first N rows (smoke test)")
+    p.add_argument("--ids", nargs="+", default=None, help="only these ids (smoke test on chosen prompts)")
     # the loop's flags, as in privacy_utility_loop.main(); see its --help
     p.add_argument("--attributes", nargs="+", default=ATTRIBUTES)
     p.add_argument("--threshold", type=float, default=0.5)
@@ -132,7 +133,7 @@ def main():
     data_name = Path(args.data).resolve().parent.name           # run_baselines.py's rule
     out_path = args.out or run_baselines.OUT_TEMPLATE.format(data=data_name, method=METHOD)
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
-    rows = run_baselines.read_rows(args.data, args.limit)
+    rows = run_baselines.read_rows(args.data, args.limit, args.ids)
     pargs, uargs = stage_args(args)
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model, tok, attackers = load_models(args, device)

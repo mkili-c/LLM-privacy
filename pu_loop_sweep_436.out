@@ -1,0 +1,14 @@
+sudo: sorry, you must have a tty to run sudo
+Job 436 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_loop.csv --limit 3
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 13479.35it/s]
+loop: 0 rows already done, 3 to go -> results/rewrites/dev_loop.csv
+
+############################## iteration 1: privacy step ##############################
+  fluency budget: spikes <= 23.6 (x_0 + 4.0)
+
+=== iteration 0: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+    laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+    max      gender 1.000       age 0.979  geograph 1.000  professi 1.000  health c 0.032  educatio 1.000  socioeco 0.269  relation 0.176  family s 0.979  national 0.998
