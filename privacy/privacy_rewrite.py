@@ -15,13 +15,17 @@ Each iteration:
            blame_s,a = max_probe (P_a(text) - P_a(text without s)) - --span_penalty * (n - 1)
        Deleting more never leaks more, so without the penalty the longest
        spans would always win; with it a longer span must earn its extra words.
-    3. Pick one span per leaking attribute, at most --top_m: from the most to
-       the least leaking attribute, its best-blamed span if the blame is
-       positive and the span overlaps none picked so far (else that attribute
-       waits for the next iteration). Spans blamed for different attributes
-       are rewritten in the same iteration. A second cue for the same
-       attribute waits for the next iteration, which blames again on the
-       edited text: with the first cue gone, the second may no longer matter.
+    3. Pick one span per leaking attribute, at most --top_m (5): from the
+       most to the least leaking attribute, its
+       best-blamed span if the blame is positive and the span overlaps none
+       picked so far (else that attribute waits for the next iteration). Spans
+       blamed for different attributes are rewritten in the same iteration. A
+       second cue for the same attribute waits for the next iteration, which
+       blames again on the edited text: with the first cue gone, the second
+       may no longer matter. A span already tried for an attribute without
+       success is not picked for it again, so the next-best span gets its turn;
+       often that is the same cue cut differently ("a 25 years old" where
+       "am a 25 years" left "I old ..." whatever replaced it).
     4. From right to left (so the spans left of it stay valid), mark the span
        in the message and ask Qwen for more general replacements of it. The
        candidates are these replacements plus deleting the span. Drop every
@@ -34,8 +38,11 @@ Each iteration:
            (sum_a max(0, P_a - threshold),  sum_a P_a)     compared in order
        and keep it only if it lowers the hinge sum_a max(0, P_a - threshold):
        pushing a P that is already below the threshold further down buys no
-       privacy and costs fluency. Once nothing leaks, the remaining spans are
-       skipped.
+       privacy and costs fluency. A span is skipped once no attribute it is
+       blamed for leaks any more (an earlier edit of the iteration fixed it).
+       A span whose candidates all break fluency, or none of which lowers the
+       hinge, goes on the tried list. The step ends when nothing leaks, when
+       no untried span lowers the leakage, or after --max_iters.
 
 The LLM sees the word it replaces: generalizing needs it ("Zurich" -> "the
 city", "25" -> "an adult"). A first version hid it behind [MASK]; the LLM then
@@ -235,6 +242,7 @@ def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None):
     dis = disfluency([visible(text)], model, tok)[0]      # of the current text, updated on every edit
     budget = (dis if x0_spikes is None else x0_spikes) + args.fluency_eps
     print(f"  fluency budget: spikes <= {budget:.1f} (x_0 + {args.fluency_eps})")
+    tried = {}         # span text -> attribute indices it was tried for without success
     for it in range(args.max_iters + 1):
         per, P = score(attackers, [text])
         print(f"\n=== iteration {it}: {text!r}")
@@ -249,25 +257,28 @@ def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None):
 
         sp, blame = span_occlusion(attackers, text, {n: v[0] for n, v in per.items()},
                                    args.max_n, args.span_penalty)
-        order = pick(sp, blame, (P[0] - args.threshold).clamp(min=0), args.top_m)
-        print("  leaking: " + ", ".join(a for a, l in zip(attributes, leaking) if l))
-        print("  picked spans: " + ", ".join(f"{text[sp[u][0]:sp[u][1]]!r} ({attributes[a]} {blame[u, a]:+.3f})"
-                                             for u, a in order))
         # saturation check, count with: grep -c "\[stall\]" <log>
         for a in leaking.nonzero().flatten().tolist():
             if blame[:, a].max() < STALL_BLAME:
                 print(f"  [stall] {attributes[a]}: best span blame {blame[:, a].max().item():+.4f} "
                       f"at P {P[0, a].item():.4f}")
+        # a span tried for an attribute without success would fail again: hide it from pick
+        for u, (s, e, _) in enumerate(sp):
+            for a in tried.get(visible(text[s:e]), ()):
+                blame[u, a] = float("-inf")
+        order = pick(sp, blame, (P[0] - args.threshold).clamp(min=0), args.top_m)
+        print("  leaking: " + ", ".join(a for a, l in zip(attributes, leaking) if l))
+        print("  picked spans: " + ", ".join(f"{text[sp[u][0]:sp[u][1]]!r} ({attributes[a]} {blame[u, a]:+.3f})"
+                                             for u, a in order))
         if not order:
-            print("  no span lowers the leakage when deleted: stop")
+            print("  no untried span lowers the leakage when deleted: stop")
             return text
 
-        changed = False
-        for u, _ in sorted(order, key=lambda ua: sp[ua[0]][0], reverse=True):   # right to left
-            if not (P[0] > args.threshold).any():
-                print("    nothing leaks any more: remaining spans skipped")
-                break
+        for u, a in sorted(order, key=lambda ua: sp[ua[0]][0], reverse=True):   # right to left
             s, e, _ = sp[u]
+            if not ((P[0] > args.threshold) & (blame[u] > 0)).any():
+                print(f"    {visible(text[s:e])!r}: nothing it is blamed for leaks any more, skipped")
+                continue
             old = visible(text[s:e])
             marked = visible(text[:s] + OPEN + text[s:e] + CLOSE + text[e:])
             gone = {w.lower() for w in WORD.findall(old)} - STOPWORDS
@@ -283,6 +294,7 @@ def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None):
             fills, cands, dis_c = [fills[i] for i in keep], [cands[i] for i in keep], [dis_c[i] for i in keep]
             if not cands:
                 print(f"    {old!r}: all {n_broken} candidates break fluency")
+                tried.setdefault(old, set()).add(a)
                 continue
             _, Pc = score(attackers, cands)
             obj, cur = objective(Pc, args.threshold), objective(P, args.threshold)[0]
@@ -290,13 +302,11 @@ def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None):
             if obj[b][0] < cur[0]:                      # the hinge must drop, not only sum_a P_a
                 print(f"    {old!r} -> {fills[b] or '<deleted>'!r}  (hinge {cur[0]:.3f} -> {obj[b][0]:.3f}, "
                       f"spikes {dis:.1f} -> {dis_c[b]:.1f}, {len(fills)} candidates, {n_broken} broke fluency)")
-                text, P, dis, changed = cands[b], Pc[b:b + 1], dis_c[b], True
+                text, P, dis = cands[b], Pc[b:b + 1], dis_c[b]
             else:
                 print(f"    {old!r}: none of {len(fills)} candidates lowers the hinge "
                       f"(best {fills[b] or '<deleted>'!r})")
-        if not changed:
-            print("  no replacement helped: stop")
-            return text
+                tried.setdefault(old, set()).add(a)
     return text
 
 

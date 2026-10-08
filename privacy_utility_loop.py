@@ -263,7 +263,7 @@ def main():
     p.add_argument("--threshold", type=float, default=0.5,
                    help="max P_a over attributes and attackers counted as private "
                         "(also the privacy rewriter's own stopping threshold)")
-    p.add_argument("--max_iters", type=int, default=4, help="privacy + utility iterations")
+    p.add_argument("--max_iters", type=int, default=6, help="privacy + utility iterations")
     p.add_argument("--utility", choices=sorted(UTILITY), default="kl_multi")
     p.add_argument("--utility_ref", choices=["user", "iteration"], default="user",
                    help="reference prompt of the utility step (default: %(default)s), "
@@ -271,7 +271,7 @@ def main():
     p.add_argument("--utility_args", default="",
                    help="extra arguments for the utility script's own parser, e.g. \"--n_steps 5\"")
     # privacy_rewrite.rewrite reads these fields of its args
-    p.add_argument("--privacy_top_m", type=int, default=2,
+    p.add_argument("--privacy_top_m", type=int, default=5,
                    help="cap on spans the privacy step rewrites per iteration (one per leaking attribute)")
     p.add_argument("--privacy_max_n", type=int, default=4)
     p.add_argument("--privacy_span_penalty", type=float, default=0.05)

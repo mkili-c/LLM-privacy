@@ -1,9 +1,0 @@
-sudo: sorry, you must have a tty to run sudo
-Job 435 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_loop.csv --limit 3
-Traceback (most recent call last):
-  File "/work/projects/mkilic/LLM-privacy/run_loop_sweep.py", line 144, in <module>
-    main()
-  File "/work/projects/mkilic/LLM-privacy/run_loop_sweep.py", line 135, in main
-    rows = run_baselines.read_rows(args.data, args.limit)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: read_rows() missing 1 required positional argument: 'ids'

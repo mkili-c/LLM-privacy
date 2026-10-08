@@ -53,7 +53,7 @@ def get_args():
     p.add_argument("--utility", choices=sorted(loop.UTILITY), default="kl_multi")
     p.add_argument("--utility_ref", choices=["user", "iteration"], default="user")
     p.add_argument("--utility_args", default="", help="for the utility script's own parser")
-    p.add_argument("--privacy_top_m", type=int, default=2)
+    p.add_argument("--privacy_top_m", type=int, default=5)
     p.add_argument("--privacy_max_n", type=int, default=4)
     p.add_argument("--privacy_span_penalty", type=float, default=0.05)
     p.add_argument("--privacy_max_iters", type=int, default=8)
