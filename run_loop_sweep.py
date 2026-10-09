@@ -60,6 +60,7 @@ def get_args():
     p.add_argument("--privacy_n_candidates", type=int, default=10)
     p.add_argument("--privacy_cand_rounds", type=int, default=2)
     p.add_argument("--privacy_cand_temperature", type=float, default=0.9)
+    p.add_argument("--privacy_min_hinge_drop", type=float, default=0.05)
     p.add_argument("--privacy_fluency_eps", type=float, default=4.0)
     p.add_argument("--fix_candidates", type=int, default=4)
     p.add_argument("--model_path", default=DEFAULT_MODEL)
@@ -76,7 +77,7 @@ def stage_args(args):
                       max_iters=args.privacy_max_iters, n_candidates=args.privacy_n_candidates,
                       cand_rounds=args.privacy_cand_rounds,
                       cand_temperature=args.privacy_cand_temperature,
-                      fluency_eps=args.privacy_fluency_eps)
+                      fluency_eps=args.privacy_fluency_eps, min_hinge_drop=args.privacy_min_hinge_drop)
     uargs = loop.stage_args(loop.UTILITY[args.utility][2], args.utility_args)
     return pargs, uargs
 

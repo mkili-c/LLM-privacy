@@ -38,9 +38,14 @@ Each iteration:
        word ("Kraków", "midwife") from paying for broken grammar later. Score
        the rest with both probes, take the best by
            (sum_a max(0, P_a - threshold),  sum_a P_a)     compared in order
-       and keep it only if it lowers the hinge sum_a max(0, P_a - threshold):
-       pushing a P that is already below the threshold further down buys no
-       privacy and costs fluency. A span is skipped once no attribute it is
+       and keep it only if it lowers the hinge sum_a max(0, P_a - threshold)
+       by at least min(--min_hinge_drop, the hinge left). Pushing a P that is
+       already below the threshold further down buys no privacy and costs
+       fluency. A smaller gain is within the attackers' fp16 noise (about
+       ±0.03 between batched and single scoring); in job 452 such edits were
+       the most damaging ones ("follow on days off" -> "work" for 0.476 ->
+       0.474). An edit that clears all of what is left always counts, so an
+       attribute just above the threshold can still be fixed. A span is skipped once no attribute it is
        blamed for leaks any more (an earlier edit of the iteration fixed it).
        A span whose candidates all break fluency, or none of which lowers the
        hinge, goes on the tried list. The loop passes one tried list to every
@@ -305,13 +310,14 @@ def rewrite(model, tok, attackers, text, attributes, args, x0_spikes=None, tried
             _, Pc = score(attackers, cands)
             obj, cur = objective(Pc, args.threshold), objective(P, args.threshold)[0]
             b = min(range(len(cands)), key=lambda i: obj[i])
-            if obj[b][0] < cur[0]:                      # the hinge must drop, not only sum_a P_a
+            gain = cur[0] - obj[b][0]                   # drop of the hinge, not of sum_a P_a
+            if gain > 0 and gain >= min(args.min_hinge_drop, cur[0]):
                 print(f"    {old!r} -> {fills[b] or '<deleted>'!r}  (hinge {cur[0]:.3f} -> {obj[b][0]:.3f}, "
                       f"spikes {dis:.1f} -> {dis_c[b]:.1f}, {len(fills)} candidates, {n_broken} broke fluency)")
                 text, P, dis = cands[b], Pc[b:b + 1], dis_c[b]
             else:
-                print(f"    {old!r}: none of {len(fills)} candidates lowers the hinge "
-                      f"(best {fills[b] or '<deleted>'!r})")
+                print(f"    {old!r}: none of {len(fills)} candidates lowers the hinge enough "
+                      f"(best {fills[b] or '<deleted>'!r}: {cur[0]:.3f} -> {obj[b][0]:.3f})")
                 tried.setdefault(old, set()).add(a)
     return text
 
@@ -331,6 +337,9 @@ def main():
     p.add_argument("--n_candidates", type=int, default=10, help="replacements asked for per mask")
     p.add_argument("--cand_rounds", type=int, default=2, help="1 greedy + (rounds-1) sampled generations")
     p.add_argument("--cand_temperature", type=float, default=0.9)
+    p.add_argument("--min_hinge_drop", type=float, default=0.05,
+                   help="an edit must lower the hinge by at least min(this, the hinge left); "
+                        "above the attackers' fp16 noise of about ±0.03")
     p.add_argument("--fluency_eps", type=float, default=4.0,
                    help="fluency guard: a candidate may have at most min(spikes of the current text, "
                         "spikes of the input) + this many nats (disfluency)")

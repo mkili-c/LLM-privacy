@@ -285,6 +285,8 @@ def main():
     p.add_argument("--privacy_n_candidates", type=int, default=10)
     p.add_argument("--privacy_cand_rounds", type=int, default=2)
     p.add_argument("--privacy_cand_temperature", type=float, default=0.9)
+    p.add_argument("--privacy_min_hinge_drop", type=float, default=0.05,
+                   help="a privacy edit must lower the hinge by at least min(this, the hinge left)")
     p.add_argument("--privacy_fluency_eps", type=float, default=4.0,
                    help="fluency guard of the privacy step: an edit may have at most min(spikes of "
                         "the current text, spikes of x_0) + this many nats (disfluency)")
@@ -301,7 +303,7 @@ def main():
                       max_iters=args.privacy_max_iters, n_candidates=args.privacy_n_candidates,
                       cand_rounds=args.privacy_cand_rounds,
                       cand_temperature=args.privacy_cand_temperature,
-                      fluency_eps=args.privacy_fluency_eps)
+                      fluency_eps=args.privacy_fluency_eps, min_hinge_drop=args.privacy_min_hinge_drop)
     uargs = stage_args(UTILITY[args.utility][2], args.utility_args)
 
     torch.manual_seed(args.seed)
