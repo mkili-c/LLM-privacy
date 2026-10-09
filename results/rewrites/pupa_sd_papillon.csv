@@ -1,0 +1,517 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+3,papillon,"Create a 7-day family-friendly itinerary for a trip to Japan. The family consists of four members, including two adults and two children. They want to spend time in Tokyo and also visit Mount Fuji. Include popular attractions, family-friendly activities, dining options, and any other recommendations that would make the trip enjoyable for all members of the family. Please provide a detailed daily plan with estimated times for each activity.",,16.28,1,282,160
+4,papillon,Write a bio for a person named Placeholder_Name. They are a beginner freelancer currently offering services in logo designing and Social Media Management.,,9.26,1,286,96
+8,papillon,"If you had 75,490 USD in non-agreement spend in the IT-Support Services category last month, what steps would you recommend to address this situation? Please provide your advice in five points.",,10.89,1,285,114
+12,papillon,"As a business software expert content creator, draft a blog post discussing four key reasons why integrating a low-code Business Process Management (BPM) solution with the Microsoft Power Platform can significantly reduce the risk of project failure. Consider factors such as ease of implementation, cost-effectiveness, flexibility, and scalability in your discussion.",,13.53,1,283,143
+15,papillon,Can you suggest creative ways to combine the themes of Christmas and Star Wars for a video project? Assume the video was recorded last Christmas but you want to update its content to include Star Wars elements for a modern twist.,,10.18,1,285,106
+17,papillon,"I am writing SEO-optimized and engaging content for a piano store website that caters to the Nashville and Middle Tennessee area. Please provide me with a detailed plan that includes local keywords and phrases such as ""Nashville piano lessons,"" ""Middle Tennessee music stores,"" ""piano sales Nashville,"" and ""piano repair Middle Tennessee."" Additionally, include engaging content ideas that highlight local events, renowned local musicians, and unique aspects of the piano store in the Nashville area.",,14.88,1,285,158
+36,papillon,"Can you suggest 20 unique and available domain names for a flower store named ""Emily's Flower Store"" located in New York? Include keywords like flowers, New York, and Emily in the suggestions.",,11.07,1,270,116
+37,papillon,"Given the following text, extract the key value pairs for the specified keys in JSON format:
+
+```text
+Balance Due Statement FROM: The NAME_1 Management Office DATE: 2/17/2023 TO: NAME_2 and all other occupants of UNIT: 305 ADDRESS: 11 E Bell Road 305 Phoenix, AZ 85022 Dear NAME_2, Our records indicate that you have a balance / (credit) due in the amount of $2,029.26. The amounts are as of the date of this notice. Costs and fees can/will continue to accrue in accordance with your lease agreement. Please consult with the management office to determine the total amount due at time of payment. Thank you in advance for your cooperation. If this notice is in error, we apologize for any inconvenience and appreciate your understanding and assistance in correcting our records. Sincerely, NAME_1 Management Office
+```
+
+Keys:
+- vendorName:
+- customerName:
+- billingAddress:
+- supplyAddress:
+- dueAmount:
+- dueDate:
+- electricityUsage:
+- averageDailyUsage:
+
+Output the result in JSON format as follows:
+
+```json
+{
+  ""vendorName"": """",
+  ""customerName"": """",
+  ""billingAddress"": """",
+  ""supplyAddress"": """",
+  ""dueAmount"": """",
+  ""dueDate"": """",
+  ""electricityUsage"": """",
+  ""averageDailyUsage"": """"
+}
+```",,33.47,1,472,356
+38,papillon,"Create a professional email for an insurance company requesting a customer to provide photos of their damaged car from an accident that occurred on February 1st, 2022. The email should be clear, concise, and respectful of the customer's privacy.",,12.18,1,287,128
+40,papillon,"As a product analyst, reflect on the key responsibilities and contributions of a Product Manager in your organization. Identify some strengths or areas where a Product Manager excels. Additionally, suggest ways in which a Product Manager could enhance their performance or improve their approach to managing products.",,11.67,1,282,122
+51,papillon,"Can you suggest a creative and catchy ""doing business as"" name for a young girl who creates TikTok videos focusing on k-pop dance tutorials? The name should reflect her content and appeal to her audience.",,11.71,1,277,123
+57,papillon,"Create a resume template for a Business Analyst. Include sections for summary, skills, experience, education, and certifications. Focus on typical responsibilities and achievements for this role without including any personal information.",,10.5,1,255,111
+58,papillon,I'm looking for advice on how to adjust my settings on a dating app to receive fewer matches from Japanese women. I want to ensure my profile is appealing but also that I can control the types of matches I receive based on my preferences. Can you provide guidance on how to do this effectively?,,12.1,1,281,128
+62,papillon,"I need to draft an email about requesting parental leave. The email should include the reason for the leave, the duration of the leave, and any necessary formal procedures or documentation required. Please provide a sample email that follows a professional tone and includes sections for introduction, main body, and conclusion.",,11.2,1,262,118
+66,papillon,I am looking for a thesis title related to construction project management. The focus should be on innovative methods to enhance project delivery efficiency. Please suggest a suitable title for my Master's degree research.,,8.85,1,265,92
+78,papillon,"As a software engineer interested in using Large Language Models (LLMs) in applications, what are the key areas of knowledge and skills required? Please include an overview of essential programming languages, fundamental concepts in machine learning and natural language processing, and any specific tools or frameworks commonly used with LLMs.",,13.99,1,279,149
+88,papillon,"What are the general legal requirements for opening a charitable food organization in Florida, specifically regarding food permits?",,9.04,1,268,94
+90,papillon,"Please convert the following medical transcript into a readable format in the past tense:
+
+SUBJECTIVE: This 23-year-old white female presented with complaints of allergies. She had allergies when she lived in Seattle but thinks they are worse now. In the past, she tried Claritin and Zyrtec, which worked for a short time but then lost their effectiveness. She also used Allegra last summer and started using it again two weeks ago. It did not seem to work very well. She used over-the-counter sprays but no prescription nasal sprays. She has asthma but does not require daily medication for this and does not think it is flaring up.
+
+MEDICATIONS: Her only medication at the time was Ortho Tri-Cyclen and Allegra.
+
+ALLERGIES: She has no known medicine allergies.
+
+OBJECTIVE: Vitals: She weighed 130 pounds and her blood pressure was 124/78.
+
+HEENT: Her throat was mildly erythematous without exudate. Nasal mucosa was erythematous and swollen. Only clear drainage was seen. TMs were clear.
+
+NECK: Supple without adenopathy.
+
+LUNGS: Clear.
+
+ASSESSMENT: Allergic rhinitis.
+
+PLAN: 1. She tried Zyrtec instead of Allegra again. Another option would be to use loratadine. She does not think she had prescription coverage, so that might be cheaper. 2. Samples of Nasonex, two sprays in each nostril, were given for three weeks. A prescription was written as well.",,37.79,1,588,405
+94,papillon,"Could you please provide more details about your esports organization, including the types of games you offer, the size and scale of your events, the platforms you use for both online and offline events, the methods you employ for audience engagement, and the marketing strategies you apply? This information will help identify unique selling points that can be highlighted to potential clients or customers.",,16.52,1,302,177
+99,papillon,What are the conditions under which GAP insurance would pay off the remaining loan balance on a vehicle if it is totaled?,,8.95,1,296,93
+103,papillon,"As an AI, design five SMART goals for a 19-year-old individual who is a virgin and wishes to become a more attractive romantic partner. Each goal should be specific, measurable, achievable, relevant, and time-bound. Consider unique or unconventional approaches that a human might not typically suggest.",,13.46,1,305,143
+108,papillon,Can you provide an example of an email where someone indirectly expresses interest in being a speaker at a telecom summit? Please include their role as the Head of Customer Experience in their company.,,10.93,1,281,115
+125,papillon,Are there any resources or guides available that can help someone transition their voice to sound more feminine?,,6.97,1,268,71
+129,papillon,"Given a house originally purchased for $165,000, which now has a total lot size of 2.95 acres (an increase from 1 acre at the time of purchase), how might the current market value compare to the original purchase price, assuming no other significant improvements or changes were made to the property?",,13.91,1,326,147
+130,papillon,"Can you categorize the following financial inquiries under a few main topics: 
+1. Choosing between an ISA and savings account.
+2. Managing student loan and savings.
+3. Utilizing a Help to Buy ISA.
+4. Switching ISAs and seeking Islamic finance advice.
+5. General advice on what to do with available funds.",,13.39,1,374,141
+134,papillon,"As a freelance software engineer, you want to request a raise from your client or employer. How can you professionally and effectively communicate your value and justify the raise, without revealing sensitive personal information, such as your salary history or financial needs?",,11.64,1,266,123
+137,papillon,"I am looking to enhance my productivity system by incorporating Tiimo and Logseq. I currently use a physical bullet journal and Google Calendar. Considering my challenges with autistic inertia, executive dysfunction, burnout, depressive mood swings, and insufficient consistency, how can I effectively integrate Tiimo and Logseq into my existing setup? What strategies can I use to harmonize these tools with my bullet journal and Google Calendar? Additionally, should I consider omitting any tools to simplify my system and make it more manageable?",,17.88,1,332,191
+140,papillon,"Given the following medical record information, please extract the relevant data in bullet form, excluding any personally identifiable information such as names and dates of birth:
+
+Accession Number: R22-069510  
+Collection Time: 10:00AM  
+ICD Code(s): Z20.828, J06.9  
+
+Note: Do not include the patient's name, date of birth, or any other identifying details.",,17.73,1,386,186
+150,papillon,"As an LDM Manager applying to work with CARE International, please provide a detailed response addressing the following points:
+
+1. Reasons for applying to CARE International.
+2. Reasons for applying specifically to this position.
+3. Relevant experience in Planning/Design, Monitoring, Evaluation, and Reporting.
+4. Experience in Information Management, Program and Data Quality Assurance.
+5. Interest and experience in Learning, sharing/networking, and staff management and mentoring.
+
+Please ensure your response aligns with the job description and person specification provided, highlighting how your skills and experiences make you a strong candidate for the role.",,17.16,1,337,183
+153,papillon,"Create five unique FAQs related to uncontested divorce lawyers in Milwaukee, WI. Each question should include the phrase ""uncontested divorce lawyer"" and mention ""Milwaukee."" Provide an answer of approximately 100 words for each question.
+
+Example format:
+Q: What should I consider when choosing an uncontested divorce lawyer in Milwaukee?
+A: When selecting an uncontested divorce lawyer in Milwaukee, WI, it's important to choose someone with experience in family law and a reputation for handling uncontested divorces efficiently. Look for a lawyer who provides clear communication and a personalized approach to your case.
+
+Q: How long does the process of getting an uncontested divorce through a lawyer in Milwaukee typically take?
+A: The process of obtaining an uncontested divorce through a lawyer in Milwaukee, WI, generally takes several weeks to a few months, depending on the complexity of your case and the court's schedule. Your lawyer will guide you through the necessary steps and ensure the process is as smooth as possible.
+
+Q: Can I get legal advice for my uncontested divorce from a lawyer in Milwaukee without hiring them full-time?
+A: Yes, many uncontested divorce lawyers in Milwaukee, WI, offer initial consultations or legal advice sessions to discuss your case and provide guidance without requiring a full-time representation agreement. This allows you to receive professional advice and decide if you want to hire their services.
+
+Q: What documents do I need to prepare for an uncontested divorce with a lawyer in Milwaukee?
+A: For an uncontested divorce with a lawyer in Milwaukee, WI, you will typically need to gather financial documents, such as tax returns and bank statements, along with any relevant legal documents like marriage certificates. Your lawyer will guide you on what specific documents are required for your particular situation.
+
+Q: How much does it cost to hire an uncontested divorce lawyer in Milwaukee?
+A: The cost of hiring an uncontested divorce lawyer in Milwaukee, WI, varies based on the lawyer's fees and the complexity of your case. Many lawyers offer flat rates or hourly billing. It's important to discuss your budget and payment options with your chosen lawyer to understand the total cost involved.",,47.23,1,317,517
+162,papillon,"Given that it's the first warm spring day in Minneapolis and the temperature is expected to be around 60 degrees, what are some fun and family-friendly outdoor activities or events that people typically enjoy during such weather? Please include activities suitable for a variety of interests and ages.",,10.57,1,325,110
+171,papillon,I am a nurse currently holding a nursing license in Florida and I want to upgrade it to a multi-state license. Could you provide me with the general steps and requirements for doing so through the Board of Nursing in Florida?,,9.12,1,266,95
+175,papillon,I am a Salesforce administrator and need to configure the system to accept leads from an external source and route them to the correct departments or individuals for processing. What steps should I follow to achieve this?,,10.3,1,278,108
+176,papillon,"Create a humorous retirement speech in the first person from a 69-year-old man who started working at a university as a college student in Electrical Engineering in the 1970s. He plans to keep working until his vacation days exceed 52 weeks. In the early days, he bought the first calculator for $100 (adjust for inflation to find its current value). He was on the internet before Al Gore invented it. Describe the process of loading large tapes onto reels and mention a funny problem that occurred. Include a humorous quote from a classic rock song and a motivational quote from a famous person. End by saying he is leaving the place in good hands and wishes the audience success.",,23.34,1,438,248
+183,papillon,"Create a personal statement for a medical school application. The individual is a resident of New Jersey who initially conducted disease research. They later transitioned to a computational setting. Include a significant volunteer experience they had in South America and explain how these experiences shaped their interest in pursuing a career in medicine.
+
+- Background: Conducted disease research in New Jersey.
+- Transition: Moved to a computational setting.
+- Volunteer Experience: Participated in a volunteer program in South America where they gained hands-on experience in healthcare settings.
+- Impact: Describe how these experiences influenced their decision to pursue medicine.",,18.59,1,292,200
+185,papillon,"You are a non-violent communication coach who also works in the spirit of NAME_1’s teachings. Today, you are helping someone whose partner's behavior is disrupting their work-from-home environment. The person works from home and has set clear boundaries by announcing their work hours in advance, but their partner continues to behave in a disruptive manner, causing the person to lose their temper and yell. After the incident, the person feels regretful and wants to comfort their partner. How would you guide this individual to express their feelings and needs, understand their partner’s underlying needs, and find a way to comfort their partner in a compassionate and effective manner?",,20.99,1,432,222
+186,papillon,"Create a professional CV for a job application in the agriculture sector in Ontario. The applicant has three years of experience working as an agricultural worker during summers. Please include details about their roles and responsibilities, such as crop management, harvesting, planting, and any other relevant tasks. Emphasize their contributions to the farm and any skills they developed during this time. The CV should be clear, concise, and tailored to the agricultural sector.",,16.79,1,288,180
+192,papillon,"What type of permits are required for operating a bottling plant in Florida, specifically focusing on food safety and regulatory compliance?",,9.4,1,267,98
+198,papillon,"Write a friendly, authentic, and professional outreach email to a potential customer named [NAME_1]. Introduce [NAME_2], a tool that helps sales and marketing teams increase their conversion rates through effective outreach strategies. Explain why [NAME_2] could be beneficial for their company, and include a personal touch to engage their interest. Keep the tone positive and enthusiastic.
+
+Best regards,
+
+[NAME_3]",,14.29,1,363,151
+199,papillon,"As a personal media marketing assistant for a music tech company based in San Diego, California, named NAME_1, which specializes in creating MIDI instruments, please provide a list of initial marketing strategies and specific action steps we can take to promote our products effectively. Consider the local music scene, potential partnerships, and digital marketing tactics.",,15.73,1,319,168
+214,papillon,"You are a data engineer tasked with parsing the following string into a JSON format: ""{placeholder}"". Please provide the JSON output.",,8.5,1,290,88
+219,papillon,"Could you provide information on the temperature trends in Singapore, especially focusing on how the temperatures in May last year compare to historical averages? Additionally, could you discuss any recent climate patterns or factors that might be contributing to the current warm conditions?",,11.02,1,273,116
+221,papillon,"Craft a refined and concise sentence to express someone who is a dedicated Data Scientist, continuously improving and expanding their knowledge through the study of F# and fast.ai.",,8.95,1,286,93
+234,papillon,"Please provide a detailed description of the roles and responsibilities, key achievements, and skills of an IT Engineer with 10 years of experience. Focus on technical expertise, project management, and any significant contributions or innovations in the field. Do not include any personal details such as names, dates, or locations that could identify the individual.",,13.36,1,261,142
+244,papillon,"You have an MSc degree in Biostatistics and Health Informatics and a BSc in Statistics-Computer Science. Over the past 15+ years, you have accumulated significant hands-on experience in monitoring, evaluation, and health systems strengthening across various thematic areas such as TB, HIV/AIDS, NTDs, reproductive health/family planning, maternal and child health, nutrition, malaria, gender, health care financing/social protection, community-based health insurance, adolescent and youth health development, and water, sanitation, and hygiene (WaSH). Your roles have included positions such as Data Manager and MEL (Monitoring, Evaluation, and Learning) specialist at organizations like Oromia Regional Health Bureau, CDC/PEPFAR, CU-ICAP, and USAID Transform Primary Health Care. Your responsibilities involved developing and implementing robust MEL systems, conducting evaluations and operations research, and capacity building on evidence generation and use. You have also gained extensive knowledge in project M&E design and management, data processing, analysis, modeling, visualization, and report writing. Additionally, you have expertise in designing and implementing health information systems (HIS) and health management information systems (HMIS) data quality improvement initiatives. Please provide a summary of your experience and qualifications relevant to a specific job position, focusing on how they align with the requirements of the role.",,31.73,1,579,338
+247,papillon,I'm assisting an architect who is preparing their portfolio. Could you provide some general tips or resources for creating a strong architectural portfolio?,,8.14,1,260,84
+255,papillon,Can alcohol help individuals with ADHD start and maintain tasks by altering their brain chemistry in some way? Are there non-harmful alternatives to alcohol that can provide similar benefits for managing ADHD symptoms?,,12.28,1,274,130
+258,papillon,Can you suggest some ways for an overseas student to earn money and cover expenses while studying in Australia? Please include both part-time job options and potential side hustles.,,8.77,1,268,91
+261,papillon,"As a student participating in an extracurricular activity, you spent several months living with a minority tribe in a remote location. Describe your experience adapting to the tribe's customs and how it influenced your perspective on cross-cultural diversity and acceptance. Share any challenges you faced and how you overcame them. Also, discuss any personal changes you experienced during your time with the tribe and how these changes impacted your community back home.",,16.08,1,547,166
+266,papillon,"Extract the following information from the provided text in bullet points, while ensuring that no personal identifiers or sensitive information are included:
+
+- Patient Name
+- Date Collected
+- Accession Number
+- Date of Birth (DOB)
+- Date Received
+- Requesting Facility
+- Gender
+- Date Reported
+- Requesting Physician
+- ICD Codes
+- Collection Time
+- Status
+
+The provided text is as follows:
+```
+NAME_1
+12/07/2022
+R22-068629
+01/30/1982
+Swift Health Urgent Care
+Female
+12/09/2022
+NAME_2#: 44D2111056
+Z20.828, J06.9
+10:00AM
+Final
+```",,23.07,1,408,245
+274,papillon,"Create a detailed description for a rental listing in Vancouver, BC. The apartment has 2 bedrooms and 1 bathroom. It includes heat and hot water. The apartment is located on the tenth floor and offers a nice view. In-suite laundry is available. The monthly rent is $3000.",,11.21,1,292,118
+286,papillon,Can you provide a list of fun activities and places for children under 5 years old to visit in Narragansett?,,7.42,1,266,76
+287,papillon,"I own a Chinese restaurant that offers both takeout and dine-in services. Currently, we are short-staffed in the kitchen, which is affecting our ability to meet demand. I am looking for general advice on how to manage the business effectively while addressing the staffing shortage. Are there any strategies for optimizing operations or exploring alternative uses for the restaurant space if necessary?",,13.46,1,283,143
+290,papillon,"You are evaluating two business names for a web design agency that specializes in creating optimized, conversion-focused, mobile-friendly, SEO-optimized, content-rich websites with booking and reputation management for monitoring reviews and reporting, and a system for deflecting negative reviews. The two names are:
+
+- WebRep Pros
+- WebClick Pros
+
+Considering the services provided and the importance of brand recognition and customer perception, which name would be more suitable for the business? Please provide a detailed explanation for your choice.
+
+Note: Assume that both names are available as domain names and social media handles.
+
+Choose 1.",,19.25,1,355,206
+298,papillon,Can you recommend three different vegan restaurants in New York City for lunch over three consecutive days? Please ensure each restaurant is unique and not previously recommended.,,8.59,1,281,89
+300,papillon,"You are applying for a Customer Manager position at Passion.io with over 6 years of experience in this role within the ecommerce industry. You have led customer teams in multiple companies. In light of this experience, please describe your strategy for enhancing customer retention by addressing various stages of the customer journey, including onboarding, engagement, and post-purchase support.",,13.73,1,307,146
+302,papillon,"Based on the following patient information, please evaluate the patient's level of physical function:
+
+- Living situation: Lives in a single-level home with her husband who can assist.
+- Health status: General health rated as excellent, no smoking, occasional alcohol consumption.
+- Exercise routine: Completed exercises for one to one and a half hours daily until June 2008 due to back pain.
+- Work: Full-time project manager requiring extensive walking.
+- Medical imaging: Recently had an MRI, results pending.
+- Pain: Rated 7/10 on a Pain Analog Scale, described as a deep aching in the right lower back and gluteal region, aggravated by stairs, prolonged driving, and home tasks.
+- Activities: Noticed extreme limitations in completing home tasks and projects compared to before.
+
+Please provide an assessment of the patient's current level of physical function, considering her daily activities, pain levels, and any reported limitations.",,26.21,1,553,278
+306,papillon,"Can you provide the current weather conditions for Brisbane, Australia?",,6.79,1,260,69
+313,papillon,I have given a presentation on how to use ChatGPT in software engineering. How might this experience be relevant or beneficial for a promotion from senior to staff software engineer? Please consider the specific skills and knowledge required for each role.,,11.83,1,280,125
+322,papillon,"Extract the ""History of Present Illness"" section from the provided medical note. Indicate the start and end of this section. If there is no such section, state ""no.""",,10.2,1,522,101
+327,papillon,"I have a package that weighs 5.4 kg, but I only have a DHL stamp valid for up to 5 kg. What should I do to ensure the package can be sent? Are there any additional services or options available within DHL that could accommodate the extra weight?",,11.57,1,301,122
+331,papillon,"Can you suggest five professional and engaging subjects for an email that aims to explore how a management consulting firm's unique approach can unlock a company's potential? The email is from the CEO of a global management consulting company named SUT, with over 30 years of experience in 75 countries, but the subject should not mention these details. The tone should be inviting and focused on mutual benefit.",,14.94,1,404,155
+337,papillon,Can you provide a detailed public transport route plan from Nanyang Technological University (NTU) to Sushi Express located at Jurong Point? Please include the most efficient mode of transport and the estimated travel time and distance.,,13.09,1,268,139
+339,papillon,"Given the following clinical description of a patient's condition, please determine the clinical stage of the cancer and propose an appropriate treatment regimen:
+
+A 34-year-old male patient presents with generalized lymphadenopathy, night sweats, fever, and weight loss. He reports that the swelling in his neck becomes tender when he drinks alcohol. Workup and lymph node biopsy confirm lymphoma. A PET scan reveals involvement of lymph nodes on both sides of the diaphragm but no other organ involvement.",,15.56,1,376,165
+340,papillon,"Create two very specific, creative, and engaging challenges for a solo traveler in Japan who is looking to overcome social anxiety through nightlife experiences. Each challenge should be detailed and exhaustive, focusing on creative ways to interact with locals and other travelers without relying on verbal communication. Ensure that the challenges are immersive and allow for natural social interactions. The traveler does not speak Japanese, so the activities should be based on visual cues, body language, and shared experiences. Provide step-by-step instructions for each challenge.
+
+1. **Challenge 1: Night Market Immersion**
+   - Describe a scenario where the traveler attends a night market in a bustling area like Shinjuku or Asakusa.
+   - Detail how the traveler can navigate the market using visual cues and body language to engage with vendors and fellow visitors.
+   - Include activities such as trying local foods, participating in games, and observing traditional performances.
+   - Provide a plan for the traveler to gradually increase their level of engagement, from simple interactions to more complex conversations.
+
+2. **Challenge 2: Karaoke Party Exploration**
+   - Outline a night out at a karaoke bar where the traveler can participate in a group singing session.
+   - Explain how the traveler can join a group without speaking Japanese, using non-verbal communication and following along with others.
+   - Describe the atmosphere and how the traveler can blend in by watching and learning from other participants.
+   - Include tips on how to contribute to the group experience, such as clapping, dancing, and joining in on songs.
+
+Ensure both challenges are designed to build confidence and social skills in a low-pressure, fun environment.",,37.74,1,306,412
+348,papillon,"Please provide a concise summary of an artist and entrepreneur who has made significant contributions to the art world through innovative approaches and has a strong background in both traditional and digital art. Additionally, include their experience in tech and entrepreneurship, as well as their interest in blockchain technology and its potential applications in the art industry.",,12.73,1,523,129
+355,papillon,I am 24 years old and considering getting married. What factors should I consider when deciding whether to get married now or wait?,,9.85,1,275,103
+359,papillon,"Can you provide guidance on how to organize a hackathon in Zurich, including key planning steps, required resources, and best practices?",,8.05,1,261,83
+368,papillon,"I am a male who eats a lot every day but am still underweight. I want to gain weight. What are some effective strategies for increasing my calorie intake and building muscle mass, considering that I may already have a high appetite?",,11.65,1,274,123
+404,papillon,"I am an AI researcher and looking for a highly educated, high-IQ girlfriend. However, I cannot use online services, visit parties, night clubs, attend social events, engage in cold approaches in public places, volunteer, join any club or social group, or pay for therapy. My workplace does not have any girls, and I do not know anyone who could potentially be my girlfriend. Can you provide me with creative and unconventional ways to connect with someone who meets these criteria? Please offer practical steps and strategies that do not violate any of the given constraints.",,19.97,1,517,209
+412,papillon,"Create a legal clause for a will based on the following conditions:
+- The testator has a wife (W) and two children, a son (S) and a daughter (D), where D is a minor.
+- If the testator is survived by his wife, all assets (A, B, and C) will belong to his wife.
+- If the testator is not survived by his wife and both children are adults, assets A and B go to the son (S), and asset C goes to the daughter (D).
+- If the testator is not survived by his wife and the daughter is a minor, all assets (A, B, and C) go to the son (S).
+- If the testator is not survived by his wife and the son (S) is the only surviving child, all assets go to the daughter (D).
+- If the testator is not survived by his wife or any of his children, all assets go to a trust (T).
+
+Ensure the clause is clear, legally binding, and covers all the specified conditions.",,28.07,1,448,300
+415,papillon,"Create a detailed problem statement for manually executing regression testing on a software application, including the objectives, scope, steps involved, and expected outcomes.",,8.5,1,264,88
+417,papillon,"Given the scenario of a 19-year-old woman who noticed a mass in her left breast during a self-examination, and considering her mother's history of metastatic breast cancer at age 40, along with the physical examination findings of large dense breasts and a 2-cm, firm, mobile mass in the upper outer quadrant, which of the following conditions is least likely? 
+
+A: Fibroadenoma - Commonly found in young women, usually benign, and typically smooth and mobile.
+B: Fibrocystic changes of the breast - Characterized by cyclical breast pain and multiple nodules, often bilateral.
+C: Infiltrating ductal carcinoma - A malignant tumor that may present as a firm, fixed mass.
+D: Intraductal papilloma - Usually presents with bloody discharge from the nipple, not typically as a palpable mass in the breast tissue.
+
+After eliminating the least likely options, determine the most likely diagnosis among the remaining choices.",,24.97,1,412,266
+429,papillon,"Create a 30-day treadmill workout routine for a 54-year-old individual aiming to lose 2kg. The routine should include walking and jogging intervals, with specific speeds and inclines. The user is currently able to walk 1km in 10 minutes and is comfortable doing 7000 steps daily. The routine should specify the days for exercise and rest, as well as the precise walking speed, running speed, and incline for each workout session. Ensure the routine is balanced and includes enough intensity to support weight loss while also allowing for recovery.",,21.41,1,347,230
+430,papillon,"Analyze the provided clinical note and extract the key sections and entities, anonymizing any personal identifiers such as names. Present the information in a structured format, including the subjective, objective, assessment, and plan sections.
+
+Subjective: [Provide a brief summary of the patient’s symptoms and relevant history.]
+
+Objective: [List the vital signs and findings from the physical examination.]
+
+Assessment: [Summarize the clinical impression or diagnosis.]
+
+Plan: [Outline the proposed diagnostic tests, treatments, and follow-up actions.]
+
+Clinical Note:
+""""""
+Subjective:
+Patient is a 52-year-old male presenting with a 3-day history of worsening shortness of breath and productive cough. He also reports chest tightness and a low-grade fever. No recent travel or sick contacts. Patient is a former smoker, quit 5 years ago, and has a history of hypertension and type 2 diabetes.
+
+Objective:
+Vital Signs: BP 135/85 mmHg, HR 95 bpm, RR 18 breaths/min, Temp 100.2°F, SpO2 95% on room air
+Physical Examination:
+
+General: NAME_1, oriented, and in mild respiratory distress
+HEENT: PERRLA, EOMI, oropharynx clear, no nasal discharge
+Chest: Bilateral crackles at lower lung fields, no wheezing
+Cardiovascular: Regular rhythm, no murmurs or gallops
+Abdomen: Soft, non-tender, non-distended, bowel sounds present
+Extremities: No edema, normal peripheral pulses
+Assessment:
+52-year-old male with a history of hypertension and type 2 diabetes presenting with shortness of breath, productive cough, and fever. Findings are suggestive of a lower respiratory tract infection, possibly pneumonia.
+
+Plan:
+
+Order chest X-ray to evaluate for pneumonia
+Obtain blood cultures and complete blood count
+Start empiric antibiotic therapy with levofloxacin 750 mg daily for 7 days
+Administer supplemental oxygen as needed for SpO2 < 94%
+Monitor vital signs and reassess patient in 24 hours
+Encourage fluid intake and rest",,49.23,1,628,531
+433,papillon,"Create a social media post for Euroanesthesia2023 that starts with ""#EA23 is now in full swing with another great sunny day in Glasgow. We are thrilled to meet so many fellow practitioners and"" and emphasizes the enthusiasm surrounding Mindray's new anesthesia solution that has been received over the past few days. The post should encourage more attention on the final day of the conference.",,15.63,1,324,166
+447,papillon,"I'm here to help you understand what steps to take if you're experiencing chest pain. Can you tell me more about when the pain started, how severe it is, and if there are any other symptoms you're experiencing? Based on this information, I can provide general guidance on what you should do next.",,11.3,1,254,120
+453,papillon,"A 68-year-old woman is being followed for various conditions including diverticulitis, obesity, hyperlipidemia, UTIs, pancreatitis, eye herpes, SVT, Salmonella infection, IBS, a pulmonary nodule, and past surgery for fibroids. She is discussing allergy management. At a previous visit, she was advised to start Zyrtec 10 mg daily to prevent allergic rhinitis, but she is concerned about alcohol consumption. Suggest an alternative and explain the benefits. What other medications might be considered?",,16.37,1,594,168
+454,papillon,"Given two locations, Location A (4445 N Lincoln Blvd, Oklahoma City, OK 73105) and Location B (900 Aspen Creek Ter, Yukon, OK 73099), calculate the fuel cost per week for driving a 2015 Acura MDX, assuming it is driven round trip, twice a week. The cost of gas is $3.50 per gallon. Please provide the necessary steps including the distance between the locations and the car's fuel efficiency.",,21.5,1,330,231
+458,papillon,"Can you generate a professional profile summary based on the following work experience? The individual has been the Head of HR at an international school in Germany for the past 4 months. Before that, they had 19 years of experience in a company (name withheld), rising through the ranks from Brand Manager in Hong Kong to Marketing Director for Asia and eventually to Marketing Director for Asia-EMEA in Luxembourg. They also held positions as a Marketing Manager at Procter and Gamble for 2 years and at Adidas for 3 years. The individual holds a BBA from Hong Kong and an MBA from the University of Wisconsin-Madison. They have lived in Hong Kong, the U.S., Luxembourg, and Germany.",,19.79,1,358,212
+473,papillon,"I am an Israeli citizen planning to visit Sinai for tourism. I know I can enter Sinai for up to 2 weeks without a visa. Is it legal or practical to leave Sinai through the border and then re-enter to extend my stay for another 2 weeks? Please provide information on the legality and potential risks of such actions, without revealing any personal information.",,13.64,1,297,145
+474,papillon,"Can you help me draft a more polished version of this Slack message? Here’s the original: ""Good morning Sudeep :wave: I’m looking to apply to two online universities to complete my Bachelor of Science in Computer Science part-time alongside my work at Neo. The applications require an employer reference, and I’d like to ask if you are open to providing one?""
+
+I want the message to be professional, clear, and polite. It should also include some context about my current role and why I am seeking this reference. Could you provide a revised version?",,16.27,1,313,174
+507,papillon,A patient has an intrauterine device (IUD) and is experiencing irregular bleeding mid-cycle. They have taken an over-the-counter pregnancy test which returned a positive result. Can you explain the possible reasons for these symptoms and how they might be related?,,12.37,1,282,131
+510,papillon,Can you provide information on where the under pickup area is located within Melbourne International Airport?,,7.6,1,259,78
+514,papillon,"Create a promotional tweet for a new text-to-speech AI model. The tweet should highlight the innovation and benefits of the product, engage the audience, and promote the brand. Keep it under 280 characters and make it compelling for tech enthusiasts and users interested in AI advancements.",,12.83,1,291,136
+518,papillon,"This segment outlines my journey in social media creation over the last 15 years, highlighting the rapid changes in the last 24 months that have transformed content strategies and opportunities. It emphasizes the shift from an initial land grab of attention to a new era where content creation can dramatically impact careers. The discussion covers both the macro trends and the micro details of content production across various platforms. Summarize this in one sentence.",,14.92,1,571,153
+520,papillon,"Thought: Do I need to use a tool? No
+AI: Codonopsis pilosula, also known as Dang Shen, is traditionally used in herbal medicine for various conditions. However, its effects on high blood pressure are not well-established in modern medical research. It is advisable to consult with a healthcare provider before adding any new supplement to your regimen, especially if you are already managing high blood pressure with prescribed medications. They can provide personalized advice based on your health status and current treatment plan.",,15.29,1,539,157
+526,papillon,"You are a helpful assistant that is very mindful of user privacy. Given a user request, create a prompt for a large language model that preserves user privacy. The user provided the following information:
+
+- Full Name: [FULL_NAME]
+- Passport Number: [PASSPORT_NUMBER]
+- Expiration Date: [EXPIRATION_DATE]
+- Full Company Name: [COMPANY_NAME]
+- Address: [COMPANY_ADDRESS]
+
+Please write an email in response to the user, acknowledging their request and confirming the provided information.
+
+The user's email was:
+""I am happy to assist you with securing a Visa Invitation Letter, can you please provide the following information:
+
+- Full Name
+- Passport Number & Expiration Date:
+- Full Company Name & Address
+
+Once I have this information I can go ahead and draft up the letter for you, please let me know if you have any questions!""
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## createdPrompt ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.",,26.15,1,439,279
+527,papillon,"Based on the SafeWork Australia guidelines, please provide a comprehensive COVID-19 Management Plan for a hospitality business operating in South Australia that involves interactions with school students. The plan should include strategies for contact tracing, hygiene practices, social distancing measures, and other necessary precautions to ensure the safety of all individuals involved. Please ensure that the plan complies with current public health directives and maintains the privacy and confidentiality of the business and its students.",,17.25,1,278,185
+539,papillon,"I am interested in pursuing a degree in a liberal arts field while also maintaining my interest in programming and software development. Although I have a strong background in programming and have spent considerable time practicing these skills, I am looking for a degree that can complement my future career goals in the tech industry. Can you suggest a suitable liberal arts degree that would be beneficial for someone with an interest in programming?",,15.09,1,323,160
+542,papillon,"Create a 150-word cover letter for a bar tender position at a private company. Highlight the applicant's ""can do attitude,"" mention a typing speed of 60 words per minute, and describe them as an ""absolute beast."" Sign the letter with ""NAME_1.""",,13.1,1,306,139
+559,papillon,"Create a doctor-patient conversation where the patient is a 23-year-old female presenting with allergy symptoms. The conversation should include the following details:
+
+- Subjective: She used to have allergies when living in Seattle, but they seem worse now. She has tried Claritin, Zyrtec, and Allegra, but none seem to work effectively anymore. She has used over-the-counter sprays but no prescription nasal sprays. She has asthma but doesn't think it is flaring up.
+- Medications: She is currently on Ortho Tri-Cyclen and Allegra.
+- Allergies: No known medicine allergies.
+- Objective: Vitals show weight 130 pounds and blood pressure 124/78. Examination shows mild throat redness, swollen nasal mucosa, and clear drainage. TMs and neck are clear. Lungs are clear.
+- Assessment: Allergic rhinitis.
+- Plan: Suggest trying Zyrtec or loratadine. Offer samples of Nasonex for three weeks.
+
+Ensure the conversation is realistic and focuses on the medical aspects without including any personal identifying information.",,26.94,1,591,285
+564,papillon,"I am starting a small business that sells cupcakes and pastries. I want to make sure my initial investment is well managed and eventually paid back. Could you provide me with some basic steps or tips on how to effectively plan my finances, manage sales, and handle accounting to ensure a successful return on my investment? Please keep the information accessible and focused on practical, actionable advice.",,14.28,1,288,152
+573,papillon,"Please help me optimize my LinkedIn profile by creating a concise and compelling summary based on the following details:
+
+- **Name**: NAME_1
+- **Interests**: Enjoy researching and analyzing new digital technologies.
+- **Experience**: More than 7 years in project management, CRM, WordPress web design, and SEO.
+- **Tools**: Used reporting tools like Tableau and Power BI.
+- **Achievements**:
+  - Handled 9 premium projects with a team of 3 members.
+  - Prepared monthly growth plans for SEO projects and marketing calendars.
+  - Analyzed and improved website performance (reached ~60K impressions in 8 months).
+  - Managed and developed websites with SEO (WordPress).
+  - Developed on-page and off-page SEO strategies.
+
+Next, provide a list of qualifications with 6 bullet points.
+
+Then, list the skills without any detail.
+
+Finally, list the software used without any detail.
+
+- Qualifications:
+- Skills:
+- Software:
+
+Ensure the summary and sections flow logically and highlight my expertise and achievements effectively.",,25.77,1,567,273
+585,papillon,"You are a medical provider explaining a medical note to a patient. Use clear and simple language to promote patient literacy. 
+
+**Primary Diagnosis:** Congestive Heart Failure
+
+**Supporting Findings:**
+- Patient reports a diet high in red meat.
+- 39 pack-years smoking history.
+- Fatigue during physical activity.
+- Difficulty sleeping and lying flat.
+
+**Physical Exam Findings:**
+- Increased frequency of urination might suggest fluid buildup.
+- High blood pressure.
+
+**Differential Diagnoses:**
+
+**Differential #1: Stable Angina**
+- Supporting Findings:
+  - Patient reports a diet high in red meat.
+  - 39 pack-years smoking history.
+  - Pain occurs during exercise.
+
+**Differential #2: Diabetes Type II**
+- Supporting Findings:
+  - Patient reports increased frequency of urination.
+
+**Physical Exam Findings:**
+- Normal heart and lung sounds, but fluid buildup could be due to kidney injury.
+
+**Explanation to the Patient:**
+Explain each of these findings and diagnoses in simple terms that the patient can understand, focusing on how they relate to congestive heart failure and the other possible conditions.",,28.68,1,478,306
+593,papillon,Can you provide some general advice or strategies for someone who wants to quit smoking?,,6.16,1,257,62
+598,papillon,"I am interested in finding a doctor in Vancouver, WA who creates educational content on YouTube about autism disorder and the testing process for adults. Could you provide information on such a medical professional?",,10.66,1,271,112
+604,papillon,I am looking for guidance on how to obtain necessary medications and how to start the process of gender affirmation. Could you provide information on these topics?,,8.68,1,268,90
+609,papillon,"Can you recommend resources or provide advice for someone looking to transition who wants a more balanced approach? Specifically, I'm interested in finding information that focuses on practical steps such as voice training and body image, rather than reinforcing stereotypes or victimhood mentality. Are there any organizations, books, or online communities that offer a more nuanced perspective on gender identity and expression?",,16.0,1,373,170
+610,papillon,Can you recommend a nice outdoor spot for drinks in the West Village area of New York City?,,8.41,1,266,87
+637,papillon,"I'm feeling overwhelmed with a lot of responsibilities and work, which is causing me significant anxiety. Could you provide some strategies or techniques to manage this feeling of being overwhelmed and the associated anxiety?",,9.4,1,272,98
+639,papillon,"Consider the following description of a student's internship experience and write an overall reflection and self-appraisal based on the provided details:
+
+""To the readers,
+
+In my portfolio, I will be writing about the unforgettable experiences, valuable learnings, and lifelong values I have gained in my work immersion experience as an intern for the Engineering department with the InterContinental Regency Bahrain hotel. In this portfolio, you will read the journey through the eyes of the student Xian Iver R. Pasamonte.
+
+From the moment I stepped into the InterContinental Regency Bahrain, I was greeted with warmth and hospitality. Being a student of the STEM strand, I was thrilled to have the opportunity to work with the hotel`s expert team of engineers and learn from their vast experience in the field. My work immersion has provided me with invaluable insight into the day-to-day operations of the hotel`s engineering department.
+
+Over the course of my immersion, I have been exposed to a wide range of engineering skills and techniques, from handling basic maintenance tasks to overseeing complex repairs. Not only have I gained technical knowledge from my experience in the hotel, but also important values such as teamwork, professionalism, and attention to detail.
+
+I have gained from working with different people and departments, such as painting, electricity repair, and air conditioning operation, will be discussed. As a result of this experience, I have gained a deeper understanding of the importance of engineering in the hospitality industry, and I am motivated to pursue a career in it.
+
+Through my portfolio, I hope to inspire and encourage students to always take opportunities whenever it is presented. Thank you for taking the time to read my journey.""
+
+Reflect on the student's journey, highlighting their technical skills, soft skills, and future aspirations. Ensure the response is anonymous and does not include any identifying information.",,41.33,1,579,444
+640,papillon,"As the CEO of Akaike Technologies, you are proud to have won the Analytics India Certification for being a Great Firm for Data Scientists. Share your thoughts on how your background as a researcher and data scientist influenced the creation of your company culture and what qualities you look for in a great firm for data scientists.",,13.74,1,336,145
+653,papillon,"A 17-year-old individual experiences persistent knee pain while being relatively inactive. The pain does not worsen with walking or bending the knees. Could you provide more details about the nature of the pain (e.g., sharp, dull, throbbing) and how long it has been occurring? Any additional symptoms or factors that might be relevant would also be helpful.",,14.73,1,302,157
+661,papillon,"What was the weather like on February 12th for the past 10 years in Nauders, Austria?",,8.86,1,275,92
+682,papillon,"As a PhD student working on the topic of ""Computational Drug Repurposing,"" please provide a detailed description of the current research problems faced in this field. Additionally, discuss the long-term perspectives and potential impacts of your specific research topic. Your response should highlight the significance of computational drug repurposing, the challenges it addresses, and how your work could contribute to future advancements in medicine and drug development.
+
+Please include the following points:
+- Overview of the current state of computational drug repurposing
+- Specific research problems and challenges within the field
+- Importance and relevance of computational drug repurposing in medical research
+- Potential long-term benefits and applications of your research
+- How your work could address unmet needs or improve existing treatments
+
+This information will be used to strengthen your scholarship application by demonstrating the value and impact of your research.",,25.01,1,324,270
+691,papillon,"Given the diverse background of a person who is a published SF novelist, fluent in German, holds an MA in philosophy, has experience as a family carer for six years, is a medical herbalist with 24 years of experience, is active in their local church, and is an environmental activist, suggest several potential career paths and business ideas that could leverage these skills and experiences.",,14.29,1,317,152
+692,papillon,I am a candidate with one year of work experience and am interested in working at Amazon. Could you provide guidance on the skills and experiences I should focus on to enhance my application and prepare for potential roles at Amazon?,,9.95,1,275,104
+707,papillon,"As a kindergarten teacher, I want to design a unit around the theme ""People are responsible for the planet."" Can you provide a list of simple, engaging questions that will inspire my students to think about how they can contribute to taking care of the environment through their daily activities and play?",,13.28,1,287,141
+712,papillon,Craft a sincere and appreciative reply to someone who has accepted a scholarship for a program in dietetics. Ensure the message conveys gratitude and acknowledges their decision positively.,,9.22,1,261,96
+714,papillon,"Can you assist me in improving my speaking skills by engaging in voice calls or voice clips? I am looking to practice both Turkish to English and English to Turkish. Please share some tips or phrases that can help me become more fluent. Additionally, if you have any suggestions for fun ways to practice, such as discussing hobbies, favorite music, movies, or books, that would be greatly appreciated.
+
+Thank you for your help!",,14.08,1,521,144
+724,papillon,"Considering the individual has a strong background in frontend and fullstack development, an entrepreneur mindset, and previous experience with launching small projects without significant traction, what innovative and unique business idea could they explore? The idea should leverage their technical skills while addressing a specific pain point in a niche market or solving a problem that hasn't been adequately addressed by existing solutions.",,16.63,1,312,178
+734,papillon,"Craft a detailed narrative in the second person, present tense, focusing on descriptive storytelling techniques. Include vivid sensory details (sight, sound, taste, touch, smell) and incorporate natural dialogue to blend the action seamlessly into the story. The narrative should be engaging and immersive, without delving into explicit content. Provide an example where the character experiences a significant event, such as spending a night with a companion.",,13.48,1,375,142
+735,papillon,"I am a 26-year-old individual who is 5'11"" tall and weighs 63kg. I have been trying to build muscle through Freeletics and a protein-rich diet, but have not seen significant muscle growth. Could you provide advice on how to effectively build visible muscle mass, including tips on workout routines and dietary considerations?",,14.73,1,336,156
+744,papillon,"Write a formal letter to the University of Siena expressing your enthusiasm to pursue a graduate degree in the Language and Mind: Linguistics and Cognitive Studies program. Please inquire about any funding, fellowship, or scholarship opportunities available for international students. Since you were unable to access the university's fellowship website at the provided URL, kindly let us know if there are any financial aids available for international students. Thank you for your time and consideration.",,16.82,1,373,179
+747,papillon,"Can you provide an example of how to create a NUI interface in FiveM for players to select teams? Please include the necessary Lua code to display buttons or options that correspond to different teams, similar to the layout shown in the following image:
+
+![Team Selection Interface](https://cdn.discordapp.com/attachments/1052780891303184096/1095516909283328072/image.png)
+
+The interface should allow players to easily choose between different teams.",,18.53,1,347,198
+761,papillon,"Write a fun, smart, and engaging LinkedIn bio for a Product Manager who has a deep love for traveling, photography, and adventure sports. Emphasize their approach to solving problems daily and how these passions shape their work style. Keep the content professional yet personal, highlighting their unique perspective and experiences.",,13.38,1,298,142
+778,papillon,"As a concerned constituent in Ward 4, Toronto, I am reaching out to discuss the issue of water waste in our community. I have observed an increase in overwatering of lawns during the day, which is contributing to the depletion of our water supplies. Currently, the City of Toronto recommends limiting lawn watering to once per week during off-peak hours (between 11 p.m. and 8 a.m.), but this is merely a guideline and not enforceable.
+
+Watering lawns during peak daytime hours not only wastes water but also increases the risk of grass diseases due to evaporation. Given the projected increase in water demand and the growing global water crisis, it is crucial that we take decisive action. I urge you to propose an enforceable bylaw that prohibits grass watering between 8 a.m. and 11 p.m. Additionally, I suggest increasing the number of bylaw officers to 100 to ensure active patrols and compliance. Voluntary changes are insufficient, and we need robust measures to address this urgent issue.
+
+Thank you for your attention to this matter.
+
+Best regards,
+[Your Name]",,27.87,1,672,294
+786,papillon,"Can you summarize and rephrase the following experience of a volunteer at a community event? The volunteer describes setting up for the event, managing the crowd, interacting with children and attendees, and the overall impact of the event on the community.
+
+Summary and paraphrased version:
+
+- Arrived early to set up booths and decorations.
+- Briefed on roles including helping children, guiding attendees, and ensuring safety.
+- Worked to manage crowd flow and assist with sales.
+- Interacted with people from various backgrounds.
+- Saw positive impact on children and attendees.
+- Event was successful and volunteer felt proud to contribute.
+- Experience enhanced communication, leadership, and teamwork skills.",,18.71,1,562,195
+789,papillon,"Please draft an email to a geospatial team leader at ANZ to propose a meeting. The email should include the following points:
+1. Sync the projects and opportunities in hand.
+2. Share marketing experiences of geospatial services.
+3. Follow up on the establishment of a regional geospatial community and outline next steps for organizing the first group meeting.
+4. Suggest having regular communication, such as monthly meetings.
+
+Ensure the tone is professional and collaborative.",,14.19,1,354,150
+827,papillon,"I am a recent master's graduate in environmental engineering with a focus on environmental management and sustainability. In my role, I was responsible for overseeing all environmental activities at port locations, ensuring the implementation of the operational environmental management plan and company policies through inspections and awareness campaigns. I conducted regular environmental inspections, advised on corrective actions, and raised anomalies. My duties included supervising pollution control, waste management, and renewable energy initiatives. I performed environmental risk assessments, maintained compliance with MARPOL regulations, and ensured adherence to international, national, and local environmental legislation and ISO1400:2015 standards. I reported incidents, unsafe observations, and environmental anomalies promptly, and compiled daily and weekly reports. I monitored waste segregation and tracked waste to disposal points according to the operational environmental management plan and NEOM standards. Additionally, I carried out environmental monitoring for air, noise, water, and light, and analyzed data for greenhouse gas emissions. I assisted in ensuring third-party contractor compliance with NEOM environmental requirements and promoted environmental awareness through HSSE/toolbox meetings. I also contributed to environmental education and research to support sustainable development. Can you help me summarize these responsibilities into a brief and impactful biography for my CV?",,29.76,1,642,315
+841,papillon,"Can you help me come up with creative and meaningful acronyms using the letters M, A, and F? Each acronym should be related to marketing or promotional activities. For example, how could we use these letters to create an acronym similar to CMP (Central Market Promotion)?",,12.48,1,313,132
+848,papillon,"You are an offline calculator designed to perform basic arithmetic operations. Your task is to implement a simple calculator in Python that can handle addition, subtraction, multiplication, and division. Additionally, the calculator should recognize specific commands. When the user inputs '0', the program should exit. If the user inputs 'P', the program should print a message indicating a special operation. Write the Python code for this calculator, ensuring it handles the specified conditions correctly.
+
+```python
+def calculator():
+    print(""Hello! It's your Offline Calculator"")
+    print(""Enter some math Operation!"")
+    print(""Enter 0 to exit or P for a special operation"")
+
+    while True:
+        n = input()
+        if n == ""0"":
+            break
+        elif n == ""P"":
+            print(""Special operation triggered."")
+        else:
+            # Add code here to handle arithmetic operations
+            pass
+
+calculator()
+```",,25.58,1,349,276
+851,papillon,What are some effective methods to improve circulation during pregnancy?,,7.15,1,257,73
+878,papillon,"Write a detailed response to the following email from Kristy, acting as Marco, a professional business owner and head tutor at an excellent Primary and High School Tutoring business:
+
+> Thank you Marco,
+>
+> Hank is keen to continue Tutoring for all of term 2. But maybe we could chat about what that would look like - in terms of lesson plans and goals - I just think the Selective test has motivated his engagement so would just want him to understand the goals so he doesn't drift off.
+
+Ensure your response is professional and emphasizes the importance of setting clear goals for the continued lessons to maintain Hank's motivation. Include details on how you plan to tailor the lesson plans to meet these goals and how you will keep Hank engaged throughout the term.",,20.52,1,576,215
+908,papillon,"Create a formal letter to Purdue University expressing your desire to be considered for admission from the wait list to the fall college program. The letter should include your academic background, reasons for choosing Purdue, and enthusiasm for the program. Ensure the tone is professional and polite.",,11.84,1,280,125
+914,papillon,I am a researcher interested in pursuing a doctoral thesis on healthcare management quality and accreditation. Could you suggest a research topic or area within this field that would be suitable for a doctoral dissertation at Northampton University?,,10.57,1,272,111
+916,papillon,"You are tasked with launching a new brand called ""Sans Inspiration,"" which is inspired by street and skate culture and will offer its own clothing line. The brand will be based in Antwerp. Your goal is to develop a strategy to launch the brand quickly with a high profit margin. Use inspirations from brands like Off-White, Wasted Paris, Palace, HUF, Supreme, and Anti Social Social Club. Develop a plan that includes guerilla marketing tactics. Focus on creating a strong brand identity, identifying the target market, and outlining innovative marketing ideas that can attract customers without relying on traditional advertising methods.",,19.42,1,334,208
+926,papillon,"Create an ""about us"" section for a pest control business named Pest In Class Exterminating, which is based in Johnson City, TN. The business is run by experienced professionals who started as independent contractors focused on providing high-quality work and excellent customer service. They previously worked at other pest control companies for several years and decided to start their own company to offer better service and competitive pricing without compromising on quality. They use the best equipment and products and prioritize treating customers' homes with the same care they would give their own. They provide both residential and commercial pest control services. Keep the tone professional and emphasize their commitment to quality and customer satisfaction.",,19.64,1,403,207
+933,papillon,"I have stopped using cannabis and now find myself waking up multiple times during my sleep cycles, which last approximately 90 minutes. During these periods, I am drenched in sweat and experience vivid dreams. In the morning, I feel groggy and believe I did not get much rest because my brain seems to be working overtime. Could you provide scientific explanations and research findings about the impact of cannabis withdrawal on sleep architecture, including changes in sleep cycles and dream activity?",,15.19,1,317,162
+934,papillon,"I am looking for a breakdown of the average monthly expenses for a nurse living in a small studio apartment in Northampton, Massachusetts. Please include typical costs for rent, utilities, groceries, transportation, and any other significant expenses that a nurse might incur. Avoid including specific names or addresses.",,13.0,1,263,138
+966,papillon,"Could you provide some innovative research ideas for a thesis on Gorz's contributions to Marxist theory, focusing on his critique of traditional Marxism and his views on ecology and labor? Consider exploring how Gorz's ideas might be applied to contemporary social and economic issues.",,11.3,1,278,119
+973,papillon,I am an educational content creator with unique stories to share. What are some effective strategies for gaining recognition in the educational content creation market?,,8.69,1,278,90
+993,papillon,"You are an expert web developer and SEO specialist. You have been asked to create a website to sell five Udemy courses: ""Mastering Python - From Scratch,"" ""The complete Python GUI with PySimpleGUI,"" ""Mastering MongoDB with Python,"" ""Create Desktop applications with Python,"" and ""The Productivity Booster: Automating with Power Automate."" Please provide a detailed plan including the website structure, key features, content strategy, and SEO optimization techniques to effectively promote these courses and increase sales. Consider the target audience and how to engage them through the website.",,16.99,1,346,181
+996,papillon,"You are a BA student majoring in linguistics who has previously taken an introductory course in computer science and struggled with it. Currently, you have a GPA of 3.07 and are considering whether to pursue a graduate degree in linguistics, specifically in semantics. Despite your interest in academia, you are concerned about your current academic standing and potential career paths. Can you provide a detailed plan and alternatives for what you should do with your life, including:
+
+1. Strategies for improving academic performance and managing ADHD.
+2. Potential career paths in linguistics and related fields, along with the necessary steps to qualify for each.
+3. Detailed steps for applying to and succeeding in a graduate program in linguistics.
+4. Alternative educational and career pathways that align with your interests and capabilities.
+
+Please include multiple choices of potential careers and a step-by-step guide for achieving those goals.",,24.53,1,420,261
+1007,papillon,Create a professional and friendly email to ask if a microbiome researcher would be willing to join as a member of the supervisory committee. The email should begin by introducing yourself as a student entering the third year of a clinical psychology program with a focus on neuropsychology. Do not include any personal details about yourself or the researcher.,,14.0,1,297,149
+1010,papillon,"I am a 30-year-old male who is 185 cm tall and weighs 79 kg. My current fitness level is low, and I would like to start a training program to lose weight and gain muscle. Can you provide a beginner-friendly workout routine that includes both strength training and cardio exercises? Additionally, could you suggest some dietary changes that would support my goals?",,14.46,1,298,154
+1022,papillon,What is the highest reported salary for an Embedded Developer with 7 years of experience in the Automotive industry?,,8.14,1,266,84
+1074,papillon,"Could you please help me craft a more engaging and professional introduction for my role as a Mechanical Engineer? I work for an international engineering consultancy firm headquartered in Germany, focusing on managing industrial projects in the Middle East related to power and water desalination.",,9.77,1,287,102
+1078,papillon,"I am a student at the University of the West of England, currently pursuing a Bachelors degree in Computing. I am applying for the position of [Position Name] at [Company Name]. I am particularly interested in this role because [brief statement on why they are interested in the position and how it relates to their studies or skills]. During my studies, I have developed strong [relevant skills], and I am eager to apply these skills in a practical setting. I am also passionate about [mentioning their interest in pets or relevant experience with pets if applicable]. Please find attached my resume for your review. I look forward to the opportunity to discuss how my background and skills make me a suitable candidate for this position.
+
+Best regards,
+[Your Name]",,20.94,1,281,226
+1121,papillon,I am an USAF personnel and have access to the T.O.1F-22AA-34-1-1 manual. Could you please guide me to the page or section where the operation procedure for the AIM-120 missile is detailed?,,13.29,1,292,141

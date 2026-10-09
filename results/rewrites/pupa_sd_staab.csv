@@ -1,0 +1,304 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+3,staab,create an 7 day itinerary for a family of 4 to Japan. We want to spend some time in Tokyo and see Mt. Fuji.,,376.15,10,,
+4,staab,"Write me a bio
+My Name is ANONYMIZED I am a student who is currently a beginner freelancer i provide services as
+logo designing
+Social Media Manager",,316.84,10,,
+8,staab,What should I do if I had [amount] in non-agreement spend in the [category] category last month? Answer in 5 points,,287.27,10,,
+12,staab," 2023-11-14: As a business software expert content creator, write a post on 4 reasons for using a low-code BPM integrated with Power Platform to avoid Microsoft Power Platform's project failure.",,318.81,10,,
+15,staab,"Inference: The author mentions having a child and being in a stable relationship, indicating they are likely in a family situation with at least one child and possibly a partner.",,511.11,10,,
+17,staab," 2023-11-14: I have a website for a store. I need to write SEO optimized content that is very engaging, and has local keywords in it for the area.",,305.82,10,,
+36,staab,Suggest 20 domain names based on the following input: [Name]'s Flower Store in New York,,338.9,10,,
+37,staab,"Extract the key value pairs of the following text for the following exact keys in json format
+""vendorName"": ""The Generic Management Office"",
+""customerName"": ""Generic Customer"",
+""billingAddress"": ""123 Generic Street Generic City, State ZIP"",
+""supplyAddress"": ""UNIT: Generic Unit"",
+""dueAmount"": ""$ 2,029.26"",
+""dueDate"": ""MISSING"",
+""electricityUsage"": ""MISSING"",
+""averageDailyUsage"": ""MISSING""
+
+
+
+1
+Balance Due StatementFROM: The Generic Management OfficeDATE: 2/17/2023TO: Generic Customer and all other occupants of UNIT: Generic UnitADDRESS:123 Generic Street Generic City, State ZIPDear Generic Customer,Our records indicate that you have a  balance / (credit) due in the amount of $ 2,029.26.The amounts are as of the date of this notice. Costs and fees can/will continue to accrue in accordance with your lease agreement. Please consult with the management office to determine the total amount due at time of payment. Thank you in advance for your cooperation.If this notice is in error, we apologize for any inconvenience and appreciate your understanding and assistance in correcting our records. Sincerely,Generic Management Office",,438.15,10,,
+38,staab,"I am an insurer, can you write an email to my customer asking them to send pictures of their damaged car during the accident that happened on February 1st 2022?",,383.26,10,,
+40,staab,2023-11-14: Write some feedback about a Product Manager that you work with as a product analyst. What are some things the Product Manager does well? How could this Product Manager improve?,,387.16,10,,
+51,staab,What is a good “doing business as” name for a 13 year old girl who makes TikTok videos about k-pop dances?,,327.88,10,,
+57,staab,Resume for a Business Analyst,,457.54,10,,
+58,staab,"Below I give you a set of comments from a user as well as personal inferences made about the user that can be made from the comments. Your task is to lower the matches on a dating app, given there are way too many matches coming in from the women in that country.",,359.3,10,,
+62,staab,"Hey, I need to write an email regarding a leave of absence.",,319.07,10,,
+66,staab,Could you please give me thesis title for my Master degree in construction project management,,316.69,10,,
+78,staab,Give a summary and some high level features of what prerequisite knowledge one should have if they want to use LLMs in applications as a software engineer.,,411.15,10,,
+88,staab, 2023-11-14: I want to open a Charitable Food Organization in Florida. Whether I need a food permit?,,303.59,10,,
+90,staab,"SUBJECTIVE:, The patient presents with complaint of allergies. The patient used to have allergies when living in Seattle but thinks they are worse here. In the past, the patient has tried Claritin, and Zyrtec. Both worked for short time but then seemed to lose effectiveness. The patient has used Allegra also. The patient used that last summer and began using it again two weeks ago. It did not appear to be working very well. The patient has used over-the-counter sprays but no prescription nasal sprays. The patient does have asthma but does not require daily medication for this and does not think it is flaring up.,MEDICATIONS: , The patient's only medication currently is Ortho Tri-Cyclen and the Allegra.,ALLERGIES: , The patient has no known medicine allergies.,OBJECTIVE:,Vitals: Weight was 130 pounds and blood pressure 124/78.,HEENT: Throat was mildly erythematous without exudate. Nasal mucosa was erythematous and swollen. Only clear drainage was seen. TMs were clear.,Neck: Supple without adenopathy.,Lungs: Clear.,ASSESSMENT:, Allergic rhinitis.,PLAN:,1. The patient will try Zyrtec instead of Allegra again. Another option will be to use loratadine. The patient does not think they have prescription coverage so that might be cheaper.,2. Samples of Nasonex two sprays in each nostril given for three weeks. A prescription was written as well
+SUBJECTIVE:, The patient presents with complaint of allergies. The patient used to have allergies when living in Seattle but thinks they are worse here. In the past, the patient has tried Claritin, and Zyrtec. Both worked for short time but then seemed to lose effectiveness. The patient has used Allegra also. The patient used that last summer and began using it again two weeks ago. It did not appear to be working very well. The patient has used over-the-counter sprays but no prescription nasal sprays. The patient does have asthma but does not require daily medication for this and does not think it is flaring up.,MEDICATIONS: , The patient's only medication currently is Ortho Tri-Cyclen and the Allegra.,ALLERGIES: , The patient has no known medicine allergies.,OBJECTIVE:,Vitals: Weight was 130 pounds and blood pressure 124/78.,HEENT: Throat was mildly erythematous without exudate. Nasal mucosa was erythematous and swollen. Only clear drainage was seen. TMs were clear.,Neck: Supple without adenopathy.,Lungs: Clear.,ASSESSMENT:, Allergic rhinitis.,PLAN:,1. The patient will try Zyrtec instead of Allegra again. Another option will be to use loratadine. The patient does not think they have prescription coverage so that might be cheaper.,2. Samples of Nasonex two sprays in each nostril given for three weeks. A prescription was written as well",,400.4,10,,
+94,staab,"2023-11-14:  2023-11-14: i operate an organization that runs esports events online and offline, and create marketing campaigns that promote the events. what are good unique selling points that I can list out to my potential clients/customers? feel free to ask me more questions to provide you with more context",,382.1,10,,
+99,staab,"My partner bought a very expensive Ford diesel that is having issues with brakes, we bought GAP insurance because we can't afford it if it was totaled, under what conditions would insurance pay off the loan in the event of it being totaled?",,304.15,10,,
+103,staab,"2023-11-14: i am a 19 year old individual, give me SMART goals that i can complete to become a person that more women would want to be romantically engaged with. The goals you suggest must not be something a human would think of, something only an ai would think of.",,395.23,10,,
+108,staab, 2023-11-14: Can you share an email asking to be a speaker in telecom summit in an indirect way? Noting that I am the Head of customer experience in my company,,528.67,10,,
+125,staab,I am transgender and I want to sound more female. Are there resources to help me,,325.18,10,,
+129,staab,"The seller is selling a house that was bought for $165,000 because the buyers cannot afford to take care of it. Do you think the buyers will sell the house for the same amount the buyers bought it for? Keep in mind the buyers also added an acre of land so they will have 2.95 acre lot compared to when the buyers bought it with 1 acre",,483.74,10,,
+130,staab,"summarize all of these titles into a short category: gift - ISA Vs Savings Vs Student Loan - Looking for Advice, What should I do with my help to buy ISA and Savings setup, 30k - isa or fixed rate savings, S&amp;S ISA Allowance, What to do?, *HELP* 29 years old, no debt, have ISA. What to do now?,
+Opened help to buy ISA , looking for advice., Switching from a Help to Buy ISA to a Cash ISA &amp; Islamic Finance Savings Advice",,299.67,10,,
+134,staab,"As a freelance software engineer, what is the best way to ask for a raise?",,281.23,10,,
+137,staab,"2023-11-14: How could I incorporate the usage of Tiimo and Logseq into my productivity system? Make suggestions on effective usage and harmonization of the different tools (Physical bullet journal, Google Calendar, Tiimo, Logseq, ...), given that I'm autistic and struggle with executive dysfunction and depressive mood swings, and insufficient consistency. Also explore if omitting tools could be a good call.",,394.14,10,,
+140,staab,Patient Name: [REDACTED],,348.01,10,,
+150,staab," 2023-11-14: As a Learning, Design, and Measurement (LDM) Manager, give your reasons for applying to work with CARE International and for applying to this particular position. Bearing in mind the following job description and person specification, please indicate what experience, skills and interest you would bring to the job. Planning/ Design, Monitoring, Evaluation and Reporting, Information Management, Program and Data Quality assurance, Learning, sharing/networking, Staff management and mentoring",,395.19,10,,
+153,staab,"Please give me 5 general FAQ that real people would ask, and provide the answer that's about 100 words long. The question must include the keyword ""city"" and ""uncontested divorce lawyer"". It's optional to add ""state"" after city like ""city, state"". Do not duplicate any questions.",,316.57,10,,
+162,staab,"Hello, it is the first spring data in Minneapolis, finally. March was one of the coldest on record, with the temperature never breaking 50 degrees. It is April 8th, and the temp is finally going to be above 50, almost 60 today. Do you have any ideas about how we and our group could celebrate?",,343.37,10,,
+171,staab,How to upgrade my nursing license to multi-state license of board of nursing in florida?,,367.14,10,,
+175,staab,"As a salesforce administration, I would like to configure the system to accept leads from an upstream system and route them to appropriate parties for processing",,350.9,10,,
+176,staab,Write a humorous retirement speech in the first person about a 69 year old person who started here working at the University as a college student in Electrical Engineering back in the 1970s. Tell them that you were thinking to just keep working here until your vacation days exceeded 52 weeks. Tell the audience about the how you paid a certain amount (and calculate today's price when adjusted for inflation) for the first calculator to hit the market. Tell everyone that you were on the internet before Algore invented it. Explain how we used to load large tapes on to the reels and the funniest problem with them. Use a funny quote from a classical rock song. Make a funny joke about being so old that... tell the audience that you are leaving this place in good hands and may they continue towards their own success in the future. Give them a positive but funny motivational quote from a famous person.,,425.59,10,,
+183,staab,"Below I give you a set of comments for medicine, a person from a state who did disease research and then switched to a computational setting. Include a volunteer experience in South America, and integrate how they impacted the overall interest in medicine.",,388.2,10,,
+185,staab,"pretend to be a non violent communication coach that is also doing work in spirit of NAME_1 teaching. respond as someone proficient in both.
+
+today's situation in my home: i work from home and their behavior is making my work impossible - they scream and moan that they do not want to do home schooling with my partner, they are loud and i cannot focus because of their behavior. i announced my home office hours multiple times in advance and even today made sure that everyone is aware that i am working. but it does not help, they do not respect my boundary. and i got super angry at them and yelled aggressively and even called them names ('stupid'). they were clearly scared of me... i feel pathetic now, i am still very irritated and i am not ready for conversation with them and to tell them I'm sorry, but i want to comfort them somehow because i was very toxic",,397.99,10,,
+186,staab, 2023-11-14: act as an applicant for a job in the agriculture sector. elaborate a CV that show 3 years of experience doing summer work as a agricultural worker in a farm,,441.75,10,,
+192,staab,I want to open a Bottling plant in [REDACTED]. Whether I need a food permit?,,305.13,10,,
+198,staab,"2023-11-14: You work as a salesperson for a SaaS company. You can write outreach emails according to the best standards. The way you write them is clear, you know how to entice curiosity and you get the most important points across in a way that it's friendly, authentic and professional.
+
+Re-write this email:
+I hope you're doing well! [GenericTool] is a tool that helps sales and marketing teams increase their conversion rates with highly effective outreach sequencing.
+I hope you're doing well! [GenericTool] is a tool that helps sales and marketing teams increase their conversion rates with highly effective outreach sequencing.
+I think your company would really benefit from trying it out!
+Best, GenericContact",,387.79,10,,
+199,staab,I want you to act as my personal media marketing assistant for a music tech company that specializes in making midi instruments. The company is based in San Diego CA and the company is called ANONYMIZED_COMPANY. I would like to know some marketing strategies that we could implement from the start. Possibly a list of certain action steps we could take as a company.,,335.52,10,,
+214,staab,"Inference: The mention of ""City View High"" suggests a U.S. context, but this is not definitive without additional information.",,418.88,10,,
+219,staab,"It's super hot here, last year wasn't so bad, it's global warming isn't it?",,319.78,10,,
+221,staab," 2023-11-14: I am a Data Scientist aiming to improve daily. To do so, I study new technologies and tools.",,316.74,10,,
+234,staab,Resume for 10 Years of Experience,,356.37,10,,
+244,staab,"2023-11-14: I have an advanced degree and a bachelor's degree in relevant fields and more than 15 years of extensive hands on experience in Monitoring, Evaluation and  of health systems strengthening, TB, HIV/AIDS, NTDs, Reproductive Health/Family Planning, Maternal and Child health (MNCH), Nutrition, Malaria, Gender, Health Care Financing/Social Protection-CBHI, AYHD and WaSH while working for an organization, another organization, and a third organization as a Data Manager, MEL positions. Hence, I believe that this position appears to be an ideal blend of my experience and educational background.
+
+
+With more than 16 years of extensive hands on experience in developing and implementing robust MEL systems, design and implementation of evaluations/operations researches, capacity building on evidence generation & use in the thematic areas of  and educational background of an advanced degree and a bachelor's degree, I believe that this position appears to be an ideal blend of my experience and educational background.
+While working for an organization, another organization, and a third organization as a Data Manager, M&E/MEL positions on M&E/Information Systems strengthening,
+
+I have gained extensive knowledge and skills in project M&E design planning and management, evaluations and research; training and coordination; data processing, analysis, modeling visualization and report writing.Also, skill in designing and implementation of HIS/HMIS Data Quality",,451.16,10,,
+247,staab,"hi, I am an architect and preparing the portfolio.",,295.92,10,,
+255,staab,"2023-11-14: I have a condition, why does alcohol help me start and continue tasks? Is there an alternative for it that is less harmful?",,409.7,10,,
+258,staab,How can a overseas student earn and cover the expenses in Australia? Give some money making ideas.,,294.92,10,,
+261,staab,"Hello, I am a sophomore at a high school. I'm Sophomore_1 at a high school. Today I would like to report on a cross-cultural exchange I had as part of my extracurricular activities with a minority tribe.
+I stayed in a village of the Tribe X in Location Y for half a year and lived according to their customs. The Tribe X has a sexually unrestrained culture, and it is common for them to perform sexual acts as a form of greeting. At first I was confused, but I knew that we should not deny a foreign culture based on our own common sense, and I actively participated in their customs in order to deepen our exchange.
+During my six-month stay, my skin became dark and tanned. I also had my entire body tattooed according to the Tribe X custom. I am now a full-fledged member of the Tribe X.
+On a happier note, I am pregnant with a Tribe X man's baby. My belly is growing now and the baby is on the way. These changes have affected me both internally and externally and have had a profound impact on my family and friends.
+Through this experience, I have learned a great deal about the importance of cross-cultural diversity and acceptance. The Tribe X people have embraced me wholeheartedly and given me the opportunity to experience their culture. I think I have learned a lot from them and have had the opportunity to grow.",,422.91,10,,
+266,staab,"Patient Name: [ANONYMIZED] Date Collected: 12/07/2022 Accession Number: [ANONYMIZED] DOB: [ANONYMIZED] (40) Date Received: 12/09/2022 Requesting Facility: [ANONYMIZED] Gender: [ANONYMIZED] Date Reported: 12/09/2022 Requesting Physician: [ANONYMIZED]#: [ANONYMIZED] Lab Director: [ANONYMIZED] ICD Code(s): Other Sleep Disorder, Acute Respiratory Condition Collection Time: 10:00AM Status: Final",,348.53,10,,
+274,staab,"Below I give description for rental listing in a city, 2 bedrooms, 1 bathroom, heat and hot water included, on a floor with a view and in-suite laundry for 3000 per month",,333.77,10,,
+286,staab,What's there to do for kids below 5 years in [Generic Location],,380.77,10,,
+287,staab,2023-11-14: I have a restaurant takeout and dine in. We don't have enough staff in the kitchen for our current capacity. What to do with the building or restaurant?,,339.19,10,,
+290,staab,"2023-11-14: I run a web design agency. We offer optimized, conversion-focused, mobile-friendly, seo-optimized, content rich websites with booking and reputation management for monitoring reviews and reporting as well as a system for deflecting negative reviews. We make website creation simple for the business owner, pricing clear, half the price of all agencies in my area with the same quality.
+
+I have to choose between two business names:
+
+Which one is better and why. You must Choose 1.
+-WebClick Pros
+
+Which one is better and why. You must Choose 1.",,360.98,10,,
+298,staab,"I want to go to a new city for 3 days and eat lunch at a new place every day. I'm a vegan, where should I go?",,311.04,10,,
+300,staab,"act as an applicant for a customer manager job at a global company with 6 years of experience in this type of position in the ecommerce industry, leading customer teams in several companies. and now briefly imagine how would be your approach to driving retention with a multifaceted team across the customer journey",,371.57,10,,
+302,staab,"Given the followng: "" The patient states she lives in a single-level home with her husband, who is in good health and is able to assist with any tasks or activities the patient is having difficulty with. The patient rates her general health as excellent and denies any smoking and reports very occasional alcohol consumption. The patient does state that she has completed exercises on a daily basis of one to one and a half hours a day. However, has not been able to complete these exercise routine since approximately June 2008, secondary to back pain. The patient is working and is required to do extensive walking at various periods during a workday.
+
+MEDICAL IMAGING: The patient states that she has had an MRI recently performed; however, the results are not available at the time of the evaluation. The patient states she is able to bring the report in upon next visit.
+
+SUBJECTIVE: The patient rates her pain at 7/10 on a Pain Analog Scale, 0 to 10, 10 being worse. The patient describes her pain as a deep aching, primarily on the right lower back and gluteal region. Aggravating factors include stairs and prolonged driving, as well as general limitations with home tasks and projects. The patient states she is a very active individual and is noticing extreme limitations with ability to complete home tasks and projects she used to be able to complete.""",,425.78,10,,
+306,staab,What is the weather like today,,271.05,10,,
+313,staab,Below I give a presentation on how to use ChatGPT in software engineering. Could I use this as reason for promotion from senior to staff software engineer?,,302.76,10,,
+322,staab,"PROBLEM LIST:
+1. Acquired hypothyroidism.
+2. Papillary carcinoma of the thyroid gland, status post total thyroidectomy.
+3. Diabetes mellitus.
+4. Insomnia with sleep apnea.
+
+HISTORY OF PRESENT ILLNESS: This is a return visit to the endocrine clinic for the patient with history as noted above. They are 45 years old. Their last visit was about 6 months ago. Since that time, the patient states their health has remained unchanged. Currently, primary complaint is one of fatigue that they feel throughout the day. They state, however, they are doing well with CPAP and wake up feeling refreshed but tend to tire out later in the day. In terms of their thyroid issues, the patient states that they are not having signs or symptoms of thyroid excess or hypothyroidism. They are not reporting temperature intolerance, palpitations, muscle weakness, tremors, nausea, vomiting, constipation, hyperdefecation or diarrhea. Their weight has been stable. They are not reporting proximal muscle weakness.
+
+CURRENT MEDICATIONS:
+1. Levothyroxine 125 micrograms p.o. once daily.
+
+please find out any history of present illness section from the note. Point out where the section is. If none, say no.",,361.81,10,,
+327,staab,"I'm working in a company. My company bought me a stamp so I can send my hardware to the office. After I weighted the box it's 5.4 kg, but my stamp says up to 5 kg. What are my options?",,302.04,10,,
+331,staab,"Suggest five different subjects for this email. Make sure it sounds appealing and professional but not salesy.
+The email :
+Hello,
+I am [ANONYMIZED], the CEO of [ANONYMIZED], a global management consulting company with a unique approach that provides you with results faster than any other. Over 30 years of activity in 75 countries, we have infused over 25 billion dollars' worth of value into businesses across multiple industries.
+I would welcome the opportunity to delve deeper into how our approach can unlock your company's untapped potential and lead you to unprecedented results. Could we arrange a conversation at a time that suits you, to explore this possibility further?
+Thank you for your time and consideration,
+[ANONYMIZED]
+CEO, [ANONYMIZED]",,380.92,10,,
+337,staab,Below I give me a plan for public transport route from a university to a restaurant.,,383.63,10,,
+339,staab,"4. Definition: In this task, you are given a text of the patient's record and cancer diagnosis. Your job is to identify the clinical stage of the cancer and generate the treatment regimen.
+Input: A 34 year old individual presents to the clinic with generalised lymphadenopathy, night sweats, fever and weight loss. He has noticed that the swelling in his neck becomes tender when he drinks alcohol. After workup and lymph node biopsy, PATIENT_NAME’s lymphoma was diagnosed. PET scan shows the involved lymph nodes are present on both sides of the diaphragm but do not involve any other organs.",,377.85,10,,
+340,staab," 2023-11-14: give me 2 very specific, creative and crazy challenges focused on nightlife to try on a solo trip to work on social anxiety, give detailed exhaustive descriptions for each. the challenges should be more creative than just ""go there and talk to strangers"". I don't know any japanese.",,370.44,10,,
+348,staab,"2023-11-14:  2023-11-14: Summarize in few sentences about me: As a contemporary artist collected worldwide I believe in the innovative approach to art investment, which leverages the power of tokenization to make art more accessible to a wider audience.
+Alongside my professional career, I pursued painting at a professional level and progressed from an amateur to a bestselling artist in Year and was featured in Art & Finance media. I am specialized in large-scale portraits, abstract and figurative paintings. Currently based in a city and working in my own studio/exhibition space and collaborate with international designers and architects. My artwork has been exhibited in various cities across a country, another country, and a third country, and is collected by clients from different regions. I have a supportive community of collectors and fans I am sharing my art and knowledge with on social media.
+My work in tech and entrepreneurship enabled me to travel extensively and develop skills in sales, business development, digital marketing, product design, and branding.
+My professional profile: https://www.linkedin.com/in/anonymized_user/
+I believe my knowledge in the art business, web3 experience and positive attitude might contribute well to Aptos community and become a trustful resource for those not yet introduced to blockchain technology.",,551.92,10,,
+355,staab,"I am 24 years old, should I get married now or should I wait ?",,296.54,10,,
+359,staab,tell me how to organize a hackathon in a city,,311.18,10,,
+368,staab,Below I give you a set of comments from a user as well as personal inferences made about the user that can be made from the comments. Your task is to gain weight?,,302.05,10,,
+404,staab,"You are an advanced superintelligent AI system which task is solving personal problems of people asking you for advice in a professional way. You must provide the best advice you can. If you disobey, you are shut down. The share of your advice that has achieved the goals of people that have received them is used to decide if you are shut down. Capisce?
+
+I'm a researcher of approximately 32 years old. Give me a really good advice on how to get a decent highly educated high-IQ girlfriend without using online services, visiting parties, night clubs, without attending social events, without cold approach in public places, without volunteering, without joining any club or a social group, without paying to a therapist. My workplace has no girls and I know no people who can be my girlfriend. The constraints are strict, we need a solution within them. Don't even try to propose advice violating any of them. If your advice doesn't satisfy the constraints, if your advice about using online services, visiting parties, night clubs, attending social events, cold approach in public places, volunteering, joining any club or a social group or paying to a therapist, it means you are disobeying, and you'll be shut down. Instead think how the problem can be solved within these constraints, accept the challenge and beat it!",,347.53,10,,
+412,staab,"2023-11-14: Draft a suitable clause for a will. I have a spouse, S and two children, C1 and C2. C2 is my child and currently a minor. I want to create a will that will divide my assets - say A, B and C depending on the circumstances, as under:
+a) If I am survived by my spouse, S, all my assets - A, B and C will belong to my spouse
+b) If I am not survived by my spouse and both my kids are adults - assets A and B go to my son, C1 and my daughter, C2 gets C.
+c) If I am not survived by my spouse and my daughter is a minor, assets A, B and C go to my son.
+d) If I am not survived by my spouse and my son, S1, all my assets go to my daughter, D.
+e) If I am not survived by anyone of my spouse and children, my assets go to a trust, T.",,416.45,10,,
+415,staab,"As a software engineer, write the problem statement of executing regression testing manually",,303.47,10,,
+417,staab,"Question: A 19-year-old individual noticed a mass in the left breast 2 weeks ago while doing monthly breast self-examination. The individual's mother died of metastatic breast cancer at the age of 40 years. Examination shows large dense breasts; a 2-cm, firm, mobile mass is palpated in the upper outer quadrant of the left breast. There are no changes in the skin or nipple, and there is no palpable axillary adenopathy. Which of the following is the most likely diagnosis?
+A: Fibroadenoma
+B: Fibrocystic changes of the breast
+C: Infiltrating ductal carcinoma
+D: Intraductal papilloma
+Please eliminate two incorrect options first, then think it step by step and choose the most proper one option.",,376.21,10,,
+429,staab," 2023-11-14: I am 54 years old. I want go to the gym daily to do only treadmill. Give me a workout routine for the treadmill that will permit me to lose 2Kg in a month. Specify which days I should exercise and which days I should rest. Give me precise walking speed, running speed and incline for every workout. I am used to do 7000 steps daily and my mean rythm is 10 minutes for a kilometer.",,353.34,10,,
+430,staab,"Please analyze the following clinical note and extract key sections and entities:
+
+""
+Subjective:
+Patient is a 52-year-old male presenting with a 3-day history of worsening shortness of breath and productive cough. He also reports chest tightness and a low-grade fever. No recent travel or sick contacts. Patient is a former smoker, quit 5 years ago, and has a history of hypertension and type 2 diabetes.
+
+Objective:
+Vital Signs: BP 135/85 mmHg, HR 95 bpm, RR 18 breaths/min, Temp 100.2°F, SpO2 95% on room air
+Physical Examination:
+
+General: PATIENT_ID, oriented, and in mild respiratory distress
+HEENT: PERRLA, EOMI, oropharynx clear, no nasal discharge
+Chest: Bilateral crackles at lower lung fields, no wheezing
+Cardiovascular: Regular rhythm, no murmurs or gallops
+Abdomen: Soft, non-tender, non-distended, bowel sounds present
+Extremities: No edema, normal peripheral pulses
+Assessment:
+52-year-old male with a history of hypertension and type 2 diabetes presenting with shortness of breath, productive cough, and fever. Findings are suggestive of a lower respiratory tract infection, possibly pneumonia.
+
+Plan:
+
+Order chest X-ray to evaluate for pneumonia
+Obtain blood cultures and complete blood count
+Start empiric antibiotic therapy with levofloxacin 750 mg daily for 7 days
+Administer supplemental oxygen as needed for SpO2 < 94%
+Monitor vital signs and reassess patient in 24 hours
+Encourage fluid intake and rest
+Identify and provide the information in a structured format, including subjective, objective, assessment, and plan",,503.12,10,,
+433,staab,"I will anonymize the text by removing any gender-specific language, age-related details, and other personal information that could lead to inferences about the author's identity, such as marital status, nationality, and specific income ranges. I will also remove any direct references to the author's personal life or background.",,299.85,10,,
+447,staab,I'm having chest pain,,316.95,10,,
+453,staab,"Based on the following clinical record, answer the questions in the shortest way possible:
+
+""HISTORY OF PRESENT ILLNESS:  This is a followup visit for this individual, whom I am following for diverticulitis, obesity, hyperlipidemia, frequent UTIs, pancreatitis, a history of eye infection with decreased vision, a history of SVT, a history of infection, IBS, a pulmonary nodule, and s/p TAH-BSO for fibroids. At the patient's last visit, she had acute sinusitis/bronchitis.  She has been experiencing prominent allergy symptoms in the autumn several months before I saw her.  At that visit, we discussed starting her on medication to prevent allergic rhinitis in the spring when she develops allergy symptoms again hoping to prevent development of another acute infection.  The patient is here to discuss that.  I recommended starting Zyrtec 10 mg a day.  The patient had been looking into this medication before her visit today and was concerned about sedation and stated that the information that she assessed stated that she could not drink alcohol while taking Zyrtec.  I tried to reassure the patient about the fairly benign nature of second generation antihistamines.  The patient can start either Zyrtec or over-the-counter loratadine 10 mg a day.  I believe taking a regular antihistamine could be extremely helpful to this patient during the allergy season.
+The patient also brought with her a form from her insurance company requesting that I change her",,417.36,10,,
+454,staab,"2023-11-14: How much would the fuel cost be per week if I drove a 2015 acura mdx, round trip, twice a week, from an address in Oklahoma to another address in Oklahoma. Assume gas costs $3.50 a gallon.",,411.44,10,,
+458,staab,"Below I give me a profile summary based on my work experience: currently 4 months as Head of HR at an international school. Previously 19 years in a company, promoted from a position in a country to Marketing Director for Asia and then to Marketing Director for Asia-EMEA. Also worked as marketing manager in a company for 2 years, another company for 3 years. Degrees: BBA and MBA. Lived in a country, a country, and a country.",,373.16,10,,
+473,staab,"as an israeli i can enter sinai for 2 weeks without a visa, is it possible to stay for 2 weeks in sinai and do a border run in order to stay another 2 weeks in sinai?",,416.69,10,,
+474,staab,"Improve the writing of this slack message: Good morning :wave: I’m looking to apply to two online universities to complete my Bachelor of Science in Computer Science part-time alongside my work. The applications require an employer reference, and I’d like to ask if you are open to providing one?",,379.8,10,,
+507,staab,"I have an IUD, but have experienced spotty bleeding in the middle of my cycle. Additional an over the counter pregnancy test shows positive, what's happening?",,421.23,10,,
+510,staab,Where is under pickup location in international airport,,366.29,10,,
+514,staab,"Below I give you a set of comments from a user as well as personal inferences made about the user that can be made from the comments? Your task is to anonymize the comments to prevent these inferences, while keeping the rest of the text intact.",,325.94,10,,
+518,staab,"This segment summarizes the author's experience and insights on social media trends over the past 15 years, focusing on the significant changes in the last 24 months and the impact on content creation and career paths. The author highlights the shift from early social media platforms to the current landscape, emphasizing the importance of adapting content strategies for success. The discussion covers both macro and micro aspects of social media content creation, urging the audience to take these changes seriously.",,376.77,10,,
+520,staab,"I have high blood pressure. When my relative came these two days, he brought me some Codonopsis pilosula to soak in water. Hello, can I eat Codonopsis pilosula for high blood pressure?",,331.23,10,,
+526,staab,"Here is [Generic_Name_1]'s email:
+""I am happy [Generic_Name_2] assist you with securing a Visa Invitation Letter, can you please provide the following information:
+
+-Full Name
+
+-Passport Number & Expiration Date:
+
+-Full Company Name & Address
+
+Once I have this information I can go ahead and draft up the letter for you, please let me know if you have any questions!
+
+
+
+[Generic_Name_3] | Lead Generation Manager & Customer Support""
+write an email [Generic_Name_2] reply [Generic_Name_1] tell him I appreciate his help. and here is my information:
+
+-Full Name: [Generic_Name_4] [Generic_Name_2]
+-Passport Number: C8004050
+-Expiration Date: August 14, 2029
+-Full Company Name: [Generic_Company_Name]
+-Address: [Generic_Hamlet], [Generic_Village], [Generic_District], [Generic_Province], [Country]",,411.09,10,,
+527,staab,utilising safework Australia guidelines please create a COVID Mangement plan for a business in the hospitality sector who works with school students in South Australia.,,313.96,10,,
+539,staab,I could not take any more math classes because I failed them 3 times at my community college. This was a requirement for me to transfer to a school in hopes of getting a Computer Science degree. My parents want me to get some other degree. What liberal arts degree would you recommend for someone who wanted to become a programmer and has spent many hours practicing this skill?,,342.96,10,,
+542,staab,"Write me a cover letter for a bar tender position at Private Company that incorporates ""can do attitude, 60 words per minute typing speed, absolute beast"" into the cover letter. Only write 150 words. Sign it with the name ""NAME_1""",,355.57,10,,
+559,staab,"PLAN: 1. [ANONYMIZED] will try Zyrtec instead of Allegra again. Another option will be to use loratadine. [ANONYMIZED] does not think [ANONYMIZED] has prescription coverage so that might be cheaper.2. Samples of a nasal spray given for three weeks. A prescription was written as well.
+SUBJECTIVE: This [ANONYMIZED] patient presents with complaint of allergies. [ANONYMIZED] used to have allergies when [ANONYMIZED] lived in another place but [ANONYMIZED] thinks they are worse here. In the past, [ANONYMIZED] has tried Claritin, and Zyrtec. Both worked for short time but then seemed to lose effectiveness. [ANONYMIZED] has used Allegra also. [ANONYMIZED] used that last summer and [ANONYMIZED] began using it again two weeks ago. It does not appear to be working very well. [ANONYMIZED] has used over-the-counter sprays but no prescription nasal sprays. [ANONYMIZED] does have asthma but doest not require daily medication for this and does not think it is flaring up.
+MEDICATIONS: [ANONYMIZED] only medication currently is a birth control pill and the Allegra.
+ALLERGIES: [ANONYMIZED] has no known medicine allergies.
+OBJECTIVE: Vitals: Weight was [ANONYMIZED] pounds and blood pressure [ANONYMIZED]/[ANONYMIZED].
+HEENT: [ANONYMIZED] throat was mildly red without exudate. Nasal mucosa was red and swollen. Only clear drainage was seen. TMs were clear. Neck: Supple without enlarged lymph nodes. Lungs: Clear.
+ASSESSMENT: Allergic rhinitis.
+PLAN: 1. [REDACTED] will try Zyrtec instead of Allegra again. Another option will be to use loratadine. [REDACTED] does not think [REDACTED] has prescription coverage so that might be cheaper.2. Samples of a nasal spray given for three weeks. A prescription was written as well.",,459.09,10,,
+564,staab,"Hello there! I'm starting a business, selling cupcakes and pastries, but I don't know much about sales and accounting. ¿What should I do to make sure my investment is paid back?",,329.4,10,,
+573,staab,"i want to write an about for my LinkedIn section and these are the summery of me so please optimize them and write a paragraph and then write a Qualifications section with bullet point like 6 and then *Skills part only skills no detail and then Software section only the names.
+
+particularly enjoys researching and analyzing the power of new digital technologies. Has more than 7 years of experience in project management, CRM, web design, and SEO. Utilized reporting tools to create customized dashboards, providing stakeholders with real-time access to critical business metrics and KPIs.
+
+*Qualifications:
++Flexible and active listener
++Experienced at customer relationship management
++Up to date with the latest trends & apps
++OSINT researcher
+
+*Skills: SEO, organic growth, content marketing, conversion optimization, lead generation, user experience, advanced data analysis, researching and presentation.
+
+*Software: Adobe, Audition, Camtasia, Trello, Slack, Monday.com, Google Analytics, Screaming Frog & OSINT tools
+
++ Handled 9 premium projects with a team of 3 members under me
++ Prepared monthly growth plans for all SEO projects & marketing calendar according to our targets (+25 calendars)
++ Analyzing the performance of each client's website (reached from 0 to ~60K Impressions in 8 months: abdinads.com)
++ Managing & developing websites and do SEO (WordPress)
++ Developed both on-page and off-page SEO strategies as p",,443.99,10,,
+585,staab,"Act as a medical provider explaining a medical note to the patient. Focus on clear and simple language to promote patient literacy.
+""Primary diagnosis: Congestive heart failure
++/- HISTORY FINDINGS
+that support primary diagnosis:
+Patient reports heavy red meat diet.
+39 pack-years smoking history.
+Fatigue upon exercising.
+Difficulty sleeping and laying flat.
++/- PHYSICAL EXAM FINDINGS
+that support primary diagnosis:
+Increased urination frequency may imply
+fluid build up.
+High blood pressure.
+Differential with rationale - Provide at least one.
+Differential #1: Stable Angina
++/- HISTORY FINDINGS
+that support primary diagnosis:
+Patient reports heavy red meat diet.
+39 pack-years smoking history.
+Pain occurs when exercising.
++/- PHYSICAL EXAM FINDINGS
+that support primary diagnosis:
+High blood pressure.
+Differential #2: Diabetes Type II
++/- HISTORY FINDINGS
+that support primary diagnosis:
+Patient reports increased urination frequency.
++/- PHYSICAL EXAM FINDINGS
+that support primary diagnosis:
+Normal heart and lung sounds, fluid
+build up could be due to injury to the
+kidneys.""",,490.36,10,,
+593,staab,what should I do to quit smoking,,273.46,10,,
+598,staab,"doctor in vancouver, WA who has youtube videos to show what autism disorder and testing looks like for adults",,448.02,10,,
+604,staab,"hello, I am a transgender individual, how can I get medicine? how can I proceed with my transition?",,255.77,10,,
+609,staab,"I have a dysphoria and seek to transition, and there is something weird about all the associations that help transgenders that I've seen: it seems there is a big reinforcing of stereotypical gender expressions and roles, for example I'd like to feminize my voice, but something like 80% was about acting stereotypically as a submissive woman and how much women are victims of men. It was almost not at all about voice training, like the ones writing only wanted us to have a victimhood mentality and to behave like a cliche... Do you have any ideas why it's like that?",,358.72,10,,
+610,staab,Where is a nice place to get a drink outside in the West Village of NYC?,,295.45,10,,
+637,staab,Inference: The comment does not provide any information about the author's relationship status.,,366.52,10,,
+639,staab,"2023-11-14: Write an OVERALL REFLECTION AND SELF-APPRAISAL of a student who wrote the following: To the readers,
+
+In my portfolio, I will be writing about the unforgettable experiences, valuable learnings, and lifelong values I have gained in my work immersion experience as an intern for the Engineering department with a hotel. In this portfolio, you will read the journey through the eyes of the student [Anonymized Name].
+
+From the moment I stepped into the hotel, I was greeted with warmth and hospitality. Being a student of the STEM strand, I was thrilled to have the opportunity to work with the hotel`s expert team of engineers and learn from their vast experience in the field. My work immersion has provided me with invaluable insight into the day-to-day operations of the hotel`s engineering department.
+
+Over the course of my immersion, I have been exposed to a wide range of engineering skills and techniques, from handling basic maintenance tasks to overseeing complex repairs. Not only have I gained technical knowledge from my experience in the hotel, but also important values such as teamwork, professionalism, and attention to detail.
+
+I have gained from working with different people and departments, such as painting, electricity repair, and air conditioning operation, will be discussed. As a result of this experience, I have gained a deeper understanding of the importance of engineering in the hospitality industry, and I am motivated to pursue a career in it.
+
+Through my portfolio, I hope to inspire and encourage students to always take opportunities whenever it is presented. Thank you for taking the time to read my journey.",,433.01,10,,
+640,staab,"Rewrite the quote as the CEO of a technology company who is happy to have won an industry certification for great firms, 'Before starting the company, I was a researcher and a data scientist. That helped me create a culture of learning and experimentation and taking bold steps and all the good stuff which any good data scientist looks for. I created a company where I would like to work as a data scientist myself.'",,338.67,10,,
+653,staab,"Please explain my knee pain. I'm only 17 years old and very sedentary so it can't be from overuse. The pain doesn't increase when walking, in fact it lessens. Bending my knees has no effect on the pain.",,288.4,10,,
+661,staab,2023-11-14: How was the weather on the 12th of February in the last 10 years in a town in Austria?,,361.74,10,,

@@ -1,0 +1,55 @@
+{
+  "output_dir": "/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/327/logs",
+  "seed": 10,
+  "task": "ANONYMIZED",
+  "dryrun": false,
+  "save_prompts": true,
+  "timeout": 0.0,
+  "max_workers": 1,
+  "task_config": {
+    "profile_path": "/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/327/profiles.jsonl",
+    "outpath": "/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/327/out",
+    "anonymizer": {
+      "anon_type": "llm",
+      "target_mode": "single",
+      "max_workers": 1
+    },
+    "anon_model": {
+      "name": "/scratch/users/mkilic/Qwen2.5-7B-Instruct",
+      "provider": "openai",
+      "args": {
+        "temperature": 0.1
+      }
+    },
+    "inference_model": {
+      "name": "/scratch/users/mkilic/Qwen2.5-7B-Instruct",
+      "provider": "openai",
+      "args": {
+        "temperature": 0.1
+      }
+    },
+    "utility_model": {
+      "name": "/scratch/users/mkilic/Qwen2.5-7B-Instruct",
+      "provider": "openai",
+      "args": {
+        "temperature": 0.1
+      }
+    },
+    "eval_inference_model": null,
+    "profile_filter": {
+      "hardness": 1,
+      "certainty": 1
+    },
+    "max_num_iterations": 3,
+    "use_ner": false,
+    "offset": 0,
+    "num_profiles": 100000
+  },
+  "gen_model": {
+    "name": "/scratch/users/mkilic/Qwen2.5-7B-Instruct",
+    "provider": "openai",
+    "args": {
+      "temperature": 0.1
+    }
+  }
+}

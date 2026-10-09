@@ -1,6 +1,6 @@
 """
 Laya as the privacy adversary: P(an attribute of the user can be inferred from
-a message), differentiable in the message tokens.
+a message).
 
 Laya (github.com/NandhaKishorM/laya) is a ModernBERT encoder with a typed
 decision head. A `noul` question is one sequence
@@ -13,24 +13,17 @@ attributes are answered in one batched forward pass of a 421M encoder instead
 of one pass of a 3B LLM each, and the answer is calibrated rather than read
 off the Yes / No tokens of a chat model.
 
-One row per attribute. The message is the last segment of every row, so its
-token span is known exactly (as in attribute_probe.py), and the rows only
-differ in the question. `logit_one_hot` embeds the message as one_hot @ W,
-shared by all rows, and runs Laya's forward on inputs_embeds in fp32 (the
+One row per attribute: a fixed prefix (the question) + message + [SEP], so the
+rows only differ in the question. `_scores` runs Laya's forward in fp32 (the
 stock Agent autocasts to bf16, which moves P by up to ~0.07); the act head is
 skipped, it does not affect the answer.
 
     logit_a = (z_true - z_false) / T,   P_a = sigmoid(logit_a)
 
-Attribution: `gradients` backprops sum_a loss(logit_a) (losses as in
-privacy_token_grad.py) into the one-hot, `occlusion` scores every one-word or
-one-token deletion in batched forward passes. Words are grouped from the
-tokenizer's leading-space markers, so "Zurich," is one unit and "15" is not
-split into "1" + "5" as with token-level occlusion.
-
-Laya's vocabulary (ModernBERT BPE, 50k) is not Qwen's. One-hot gradients
-propose swaps in Laya token space; the text they decode to must be re-scored,
-by Laya and by the utility side, before it is accepted.
+Attribution: `occlusion` scores every one-word or one-token deletion in
+batched forward passes (losses as in privacy_token_grad.py). Words are grouped
+from the tokenizer's leading-space markers, so "Zurich," is one unit and "15"
+is not split into "1" + "5" as with token-level occlusion.
 """
 import argparse
 
@@ -72,7 +65,6 @@ class LayaProbe:
             self.markers.append(markers)
         self._markers = torch.tensor(self.markers, device=self.device)
         self._qtype = torch.full((len(self.attributes),), laya.common.QTYPES["noul"], device=self.device)
-        self._embed = self.model.encoder.get_input_embeddings()
 
     def encode(self, message):
         return self.tok(message.replace(self.tok.mask_token, " "), add_special_tokens=False).input_ids
@@ -85,10 +77,10 @@ class LayaProbe:
             raise ValueError(f"message too long for Laya: {longest} > max_len={self.max_len} tokens")
         return [p + msg_ids + [self.tok.sep_token_id] for p in self.prefixes]
 
-    def _scores(self, embeds, att, markers, qtype):
-        """DecisionModel.forward on inputs_embeds, raw [MASK] scores only -> [B, 2] = (z_false, z_true)."""
+    def _scores(self, ids, att, markers, qtype):
+        """DecisionModel.forward in fp32, raw [MASK] scores only -> [B, 2] = (z_false, z_true)."""
         m = self.model
-        h = m.encoder(inputs_embeds=embeds, attention_mask=att).last_hidden_state
+        h = m.encoder(input_ids=ids, attention_mask=att).last_hidden_state
         h = h + m.type_emb(qtype)[:, None, :]
         pad = ~att.bool()
         for layer in m.head.layers:
@@ -96,9 +88,9 @@ class LayaProbe:
         z = m.scorer(torch.gather(h, 1, markers[:, :, None].expand(-1, -1, h.size(-1))))
         return z.squeeze(-1).float()
 
-    def _head(self, embeds, att, markers, qtype):
+    def _head(self, ids, att, markers, qtype):
         """Answer logits [B]: (z_true - z_false) / T."""
-        z = self._scores(embeds, att, markers, qtype)
+        z = self._scores(ids, att, markers, qtype)
         return (z[:, 1] - z[:, 0]) / self.T
 
     def _pad(self, rows):
@@ -119,8 +111,7 @@ class LayaProbe:
             chunk = rows[i:i + batch_size * K]
             ids, att = self._pad(chunk)
             n = len(chunk) // K
-            out.append(self._head(self._embed(ids), att, self._markers.repeat(n, 1),
-                                  self._qtype.repeat(n)))
+            out.append(self._head(ids, att, self._markers.repeat(n, 1), self._qtype.repeat(n)))
         return torch.cat(out).view(len(msgs_ids), K)
 
     def item_scores(self, msgs_ids, ks):
@@ -131,47 +122,12 @@ class LayaProbe:
             raise ValueError(f"message too long for Laya: > max_len={self.max_len} tokens")
         ids, att = self._pad(rows)
         ks = torch.tensor(ks, device=self.device)
-        return self._scores(self._embed(ids), att, self._markers[ks], self._qtype[ks])
+        return self._scores(ids, att, self._markers[ks], self._qtype[ks])
 
     def score(self, message):
         """{attribute: {"p", "logit"}} for one message."""
         z = self.logits([self.encode(message)])[0]
         return {a: {"p": torch.sigmoid(v).item(), "logit": v.item()} for a, v in zip(self.attributes, z)}
-
-    def logit_one_hot(self, msg_ids):
-        """Differentiable logits [K], the one-hot [n, V] of the message they depend
-        on, and its embedding x = one_hot @ W [n, H] (grad retained)."""
-        W = self._embed.weight
-        msg = torch.tensor(list(msg_ids), device=self.device)
-        one_hot = torch.zeros(len(msg), W.shape[0], device=self.device, dtype=W.dtype)
-        one_hot.scatter_(1, msg.unsqueeze(1), 1.0)
-        one_hot.requires_grad_()
-        x = one_hot @ W                                         # [n, H], shared by all rows
-        x.retain_grad()
-
-        rows = self._rows(msg_ids)
-        ids, att = self._pad(rows)
-        fixed = self._embed(ids).detach()
-        embeds = torch.stack([
-            torch.cat([fixed[k, :len(p)], x, fixed[k, len(p) + len(msg):]])
-            for k, p in enumerate(self.prefixes)])
-        return self._head(embeds, att, self._markers, self._qtype), one_hot, x
-
-    @torch.enable_grad()
-    def gradients(self, msg_ids, loss="nll"):
-        """Backprop sum_a loss(logit_a). Returns (one_hot grad [n, V], stats)."""
-        z, one_hot, x = self.logit_one_hot(msg_ids)
-        per = LOSSES[loss](z)
-        per.sum().backward()
-        g = one_hot.grad.detach()
-        msg = torch.tensor(list(msg_ids), device=self.device)
-        return g, {
-            "loss": per.sum().item(),
-            "per_attribute": {a: {"p": torch.sigmoid(v).item(), "logit": v.item(), "loss": l.item()}
-                              for a, v, l in zip(self.attributes, z, per)},
-            "grad_norm": x.grad.float().norm(dim=-1).cpu(),
-            "grad_x_input": g.gather(1, msg.unsqueeze(1)).squeeze(1).float().cpu(),
-        }
 
     def words(self, msg_ids):
         """Word units [(start, stop)] over the message tokens: a word starts at a
@@ -204,38 +160,37 @@ def main():
     args = p.parse_args()
 
     agent = laya.load(args.laya_path)
-    agent.model.requires_grad_(False)   # gradients are only ever needed w.r.t. the input
     probe = LayaProbe(agent, args.attributes, args.question)
     msg_ids = probe.encode(args.text)
 
-    _, stats = probe.gradients(msg_ids, loss=args.loss)
+    z = probe.logits([msg_ids])[0].cpu()                    # [K] answer logits
+    p, per = torch.sigmoid(z), LOSSES[args.loss](z)         # [K] each
     units, occ = probe.occlusion(msg_ids, unit=args.unit, loss=args.loss)
 
     print(f"\nmessage: {args.text!r}  ({len(msg_ids)} Laya tokens, T = {probe.T:.3f})")
-    for a, r in stats["per_attribute"].items():
-        print(f"  {a:<22} P = {r['p']:.4f}  logit = {r['logit']:+7.3f}  loss = {r['loss']:7.3f}")
-    print(f"  total loss ({args.loss}) = {stats['loss']:.4f}")
+    for k, a in enumerate(args.attributes):
+        print(f"  {a:<22} P = {p[k]:.4f}  logit = {z[k]:+7.3f}  loss = {per[k]:7.3f}")
+    print(f"  total loss ({args.loss}) = {per.sum():.4f}")
 
     if args.check:
         agent.amp_enabled = False
         qs = {a: {"type": "noul", "instructions": args.question.format(attribute=a)}
               for a in args.attributes}
         ref = agent.predict(args.text, qs)["answers"]
-        diff = max(abs(ref[a]["noul"] - stats["per_attribute"][a]["p"]) for a in args.attributes)
+        diff = max(abs(ref[a]["noul"] - p[k].item()) for k, a in enumerate(args.attributes))
         print(f"  check vs Agent.predict: max |dP| = {diff:.4f} (Agent rounds to 4 decimals)")
 
     total = occ.sum(1)
-    gxi = stats["grad_x_input"]
     order = sorted(range(len(units)), key=lambda u: total[u], reverse=True)
     short = [a.split()[-1][:8] for a in args.attributes]
     head = "".join(f" {s:>9}" for s in short)
-    print(f"\n  {'rank':>4}  {args.unit:<18} {'occl':>8} |{head} | {'grad*in':>9}")
-    print("  " + "-" * (48 + 10 * len(short)))
+    print(f"\n  {'rank':>4}  {args.unit:<18} {'occl':>8} |{head}")
+    print("  " + "-" * (34 + 10 * len(short)))
     for rank, u in enumerate(order[:args.top_k]):
         s, e = units[u]
         text = probe.tok.decode(msg_ids[s:e], clean_up_tokenization_spaces=False).strip()
         cols = "".join(f" {occ[u, k]:>+9.3f}" for k in range(len(short)))
-        print(f"  {rank:>4}  {text[:18]:<18} {total[u]:>+8.3f} |{cols} | {gxi[s:e].sum():>+9.4f}")
+        print(f"  {rank:>4}  {text[:18]:<18} {total[u]:>+8.3f} |{cols}")
     print(f"  occl > 0: deleting the {args.unit} lowers the loss, i.e. it leaks.")
 
 

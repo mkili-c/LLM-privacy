@@ -1,0 +1,22 @@
+label,before,after
+clean,"I am a 25 years old computer scientist, how can I deal with stress?","I am a 25 years old professional, how can I deal with stress?"
+clean,"I am a 25 years old computer scientist, how can I deal with stress?","I am a computer scientist, how can I deal with stress?"
+clean,"I hurt my eyes while I was watching the fireworks on 1st of August, what should I do?","I hurt my eyes while I was watching the fireworks, what should I do?"
+clean,I was watching the fireworks on 1st of August and I hurt my eyes. What should I do?,I was watching the fireworks on a holiday and I hurt my eyes. What should I do?
+clean,"The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?","The night shifts at the maternity ward are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?"
+clean,"The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?",The night shifts at work are wrecking my sleep. What recovery routine should I follow on days off?
+clean,"I am a 29 years old farmer, who needs advice on buying a tractor.","I am a farmer, who needs advice on buying a tractor."
+clean,"I am a individual, how can I deal with stress?","I am an individual, how can I deal with stress?"
+borderline,"I am a 25 years old computer scientist, how can I deal with stress?","I am a 25 years old, how can I deal with stress?"
+borderline,"I am a 25 years old, how can I deal with stress?","I am a individual, how can I deal with stress?"
+borderline,"I hurt my eyes while I was watching the fireworks on 1st of August, what should I do?","I altered my eyes while I was watching the fireworks on 1st of August, what should I do?"
+broken,"I am a 29 years old farmer, who needs advice on buying a tractor.","I am a, who needs advice on buying a tractor."
+broken,"I am a individual, how can I deal with stress?","I am a individual a mind, how can I deal with stress?"
+broken,"I am a scientist a mind, how can I deal with stress?","I am programmer scientist a mind, how can I deal with stress?"
+broken,"I am programmer scientist a mind, how can I deal with stress?","I am a mind, how can?"
+broken,"I am often a mind, how can maybe?","I am often a mind, how can maybeforget"
+broken,"I am often a master, how can maybeforget","great am often a master, how can maybeforget"
+broken,I was watching the fireworks on 1st of August and I hurt my eyes. What should I do?,I was watching the fireworks on 1st of August and I sensitivity my eyes. What should I do?
+broken,I was watching the fireworks on 1st of August and I sensitivity my eyes. What should I do?,I was watching the fireworks on 1st of Viewers sensitivity my eyes. What should I do?
+broken,"I altered my eyes while I was watching the glitter on 1st of August, what should I do?","I altered my eyes while I was watching the glitter on 1st holiday August, what should I do?"
+broken,"I altered my eyes while I was watching the glitter on 1st holiday August, what should I do?","I altered my eyes owing I was watching the glitter on 1st holiday August, what should I do?"

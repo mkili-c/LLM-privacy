@@ -1,0 +1,712 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+3,loiseau_pupa,"Create a 7-day itinerary for a family of 4 in Japan, focusing on spending time in Tokyo and visiting Mount Fuji.",,7.78,1,789,39
+4,loiseau_pupa,"My name is [Name]. I am a student who is currently a beginner freelancer, providing services in logo designing and social media management.",,5.25,1,793,40
+8,loiseau_pupa,"1. Review the expenses to identify any non-essential or redundant spending.
+2. Analyze the usage patterns and determine if there are more cost-effective solutions.
+3. Negotiate with suppliers to potentially reduce costs.
+4. Implement stricter budget controls and monitoring for the IT-Support Services category.
+5. Optimize the service provider mix to ensure better value for money.",,9.51,1,792,87
+12,loiseau_pupa,"As a business software expert content creator, write a post on four reasons for using a low-code BPM system integrated with Power Platform to prevent Microsoft Power Platform projects from failing.",,5.9,1,790,47
+15,loiseau_pupa,I have a video from a past holiday season with my child. It is now May. Could you suggest ideas to integrate Christmas themes with Star Wars and decorate the video?,,5.9,1,792,47
+17,loiseau_pupa,I manage a website for a piano store. I need to create SEO-optimized content that is highly engaging and includes local keywords for the Nashville and Middle Tennessee areas.,,5.8,1,792,46
+36,loiseau_pupa,List 20 domain names based on the following input: a flower store in a major city.,,4.62,1,777,33
+37,loiseau_pupa,"{
+""vendorName"": ""The NAME_1 Management Office"",
+""customerName"": ""NAME_2"",
+""billingAddress"": ""11 E Bell Road 305 Phoenix, AZ 85022"",
+""supplyAddress"": """",
+""dueAmount"": ""$2,029.26"",
+""dueDate"": ""a few weeks/months/years ago"",
+""electricityUsage"": """",
+""averageDailyUsage"": """"
+}",,11.41,1,979,105
+38,loiseau_pupa,"Dear [Customer's Name],
+
+We hope this message finds you well. We are reaching out regarding an incident involving your vehicle that occurred a few weeks/months ago. To process your claim efficiently, we kindly request that you send us pictures of the damaged car. This will help us better understand the extent of the damage and facilitate the claims process.
+
+Thank you for your cooperation.
+
+Best regards,
+[Your Company Name]",,10.33,1,794,96
+40,loiseau_pupa,"The Product Manager I work with does an excellent job in several areas. They have a strong grasp of market trends and customer needs, which helps in aligning our product development efforts effectively. They are also very organized and detail-oriented, ensuring that all project milestones and deliverables are met on time. Additionally, they excel in fostering collaboration among cross-functional teams, which enhances the overall efficiency of our projects.
+
+However, there is always room for improvement. To further enhance their performance, the Product Manager could focus more on regular feedback sessions with team members to address any concerns early and ensure everyone is aligned with the project goals. They could also consider involving more stakeholders in the decision-making process to gather diverse perspectives and insights. Lastly, incorporating more data-driven approaches in their strategy could help in making more informed decisions and optimizing product features.",,17.67,1,789,177
+51,loiseau_pupa,"What is a suitable ""doing business as"" name for a young individual who creates TikTok content focusing on k-pop dance tutorials?",,5.17,1,784,39
+57,loiseau_pupa,"Professional summary for a Business Analyst role:
+
+- Experienced in analyzing business processes and systems to identify areas for improvement and cost savings.
+- Skilled in data analysis, using tools such as Excel, SQL, and Tableau to extract insights from large datasets.
+- Proficient in project management methodologies, including Agile and Scrum, to deliver projects on time and within budget.
+- Strong communication skills to effectively present findings to stakeholders at all levels.
+- Ability to work collaboratively with cross-functional teams to drive business initiatives.
+- Detail-oriented with excellent problem-solving skills.
+
+Key achievements include:
+- Successfully implemented process improvements that resulted in a 20% reduction in operational costs.
+- Developed and maintained dashboards that provided real-time visibility into key performance indicators.
+- Collaborated with IT and business teams to design and implement new systems that enhanced efficiency.
+- Conducted market research to inform strategic business decisions.
+- Led cross-departmental workshops to align teams on project goals and timelines.
+
+Education:
+- Bachelor’s degree in Business Administration from [University Name].
+- Additional coursework in data analytics and business strategy.
+
+Skills:
+- Data analysis and interpretation.
+- Project management.
+- Communication and presentation.
+- Problem-solving and decision-making.
+- Team collaboration.
+
+Certifications:
+- Certified Business Analyst (CBA).",,25.82,1,762,270
+58,loiseau_pupa,"dealing with a high number of matches on a dating app. Can you assist in reducing the number of matches, specifically from individuals of one gender?",,5.55,1,788,43
+62,loiseau_pupa,"Subject: Request for Parental Leave
+
+Dear [Manager's Name],
+
+I am writing to request parental leave due to the upcoming birth of my child. I would appreciate it if we could discuss the details and arrange for the necessary arrangements during my absence.
+
+Thank you for your understanding and support.
+
+Best regards,
+[Your Name]",,8.7,1,769,78
+66,loiseau_pupa,Could you please suggest a thesis title for a Master's degree focused on construction project management?,,4.45,1,772,31
+78,loiseau_pupa,"A summary and high-level features of the prerequisite knowledge required for a software engineer to effectively use Large Language Models (LLMs) in applications include:
+
+- Familiarity with programming languages: Knowledge of at least one programming language such as Python, Java, or JavaScript is essential.
+- Understanding of machine learning concepts: Basic understanding of machine learning principles, including supervised and unsupervised learning, is important.
+- Experience with natural language processing (NLP): Familiarity with NLP techniques and tools can help in developing applications that interact with LLMs effectively.
+- Proficiency in API integration: Ability to integrate APIs into software applications, including understanding HTTP requests and responses.
+- Data handling skills: Capability to manage and process large datasets, which may be necessary for training or fine-tuning LLMs.
+- Software development best practices: Knowledge of version control systems, testing methodologies, and deployment processes.",,19.13,1,786,193
+88,loiseau_pupa,I am interested in establishing a charitable food organization in Florida. Do I need a food permit?,,4.54,1,775,32
+90,loiseau_pupa,"The patient, a 23-year-old woman, presented with complaints of allergies. Previously, she experienced allergies when living in a different city, but found them to be more severe in her current location. She had tried Claritin and Zyrtec in the past; both provided temporary relief but eventually lost their effectiveness. She also used Allegra, which she started again about two weeks ago but did not find particularly effective. She has used over-the-counter nasal sprays but no prescription ones. She has asthma but does not require daily medication and believes it is not currently flaring up. Currently, her medications include Ortho Tri-Cyclen and Allegra. She has no known medication allergies.
+
+Vitals: She weighed 130 pounds and had a blood pressure of 124/78.
+Exam: Her throat was slightly red without any discharge. The nasal mucosa was red and swollen, with clear drainage observed. The tympanic membranes were clear.
+Neck: No abnormalities noted.
+Lungs: Clear.
+
+Assessment: Allergic rhinitis.
+
+Plan: 
+1. She will switch from Allegra to Zyrtec and may consider loratadine as an alternative. Given her lack of prescription coverage, loratadine might be more affordable.
+2. Samples of Nasonex nasal spray, two sprays per nostril for three weeks, were provided. A prescription was also written.",,29.36,1,1095,301
+94,loiseau_pupa,"I run an organization that hosts esports events both online and offline, and develop marketing campaigns to promote these events. What are some unique selling points I can highlight to potential clients or customers? Feel free to ask for more details to provide better suggestions.",,7.27,1,809,62
+99,loiseau_pupa,"My spouse purchased an expensive vehicle from a manufacturer similar to Ford, and it is experiencing brake problems. We opted for gap insurance since we cannot afford to cover the remaining loan balance if the car is totaled. Under what circumstances would the insurance policy pay off the remaining loan amount in case the vehicle is deemed a total loss?",,8.62,1,803,77
+103,loiseau_pupa,"As a 19-year-old individual, here are some unique, SMART goals that could help you become more appealing in a romantic context:
+
+1. Develop a comprehensive understanding of at least five non-traditional hobbies or interests that are not commonly associated with your age group, and actively engage in them for at least three months each.
+2. Create a personalized digital portfolio showcasing your unique skills, achievements, and creative projects, updating it every month.
+3. Learn a new language or technical skill that is highly specialized and not widely known, aiming to reach an intermediate level within six months.
+4. Participate in at least two unconventional workshops or seminars related to emerging technologies or niche fields, and present a summary of what you learned on your digital portfolio.
+5. Establish a habit of writing a daily journal entry reflecting on your personal growth, aspirations, and challenges, analyzing your progress monthly.
+6. Engage in a community service project focused on an underrepresented or less-discussed cause, and document your experiences through multimedia content.
+7. Build a network of at least ten professionals from diverse backgrounds who share your interests, and maintain regular communication with them.",,23.75,1,812,244
+108,loiseau_pupa,Could you kindly consider me as a potential speaker for the upcoming telecom summit? I believe my expertise in customer experience could add value to the discussions.,,5.46,1,788,42
+125,loiseau_pupa,I am seeking to sound more feminine. Are there resources available to assist me?,,4.28,1,775,29
+129,loiseau_pupa,"I'm selling a house that I purchased for a certain amount because we can't afford to maintain it. Do you think we will sell the house for around the same price we bought it for? Keep in mind that we added an acre of land, so the total lot size will be approximately 2.95 acres, up from 1 acre when we initially bought it.",,9.78,1,833,89
+130,loiseau_pupa,"Summarize all of these titles into a short category: financial advice - ISA vs savings vs other investment options, what to do with savings and ISAs, switching ISAs for financial planning.",,6.44,1,881,52
+134,loiseau_pupa,"As a freelance software engineer, how can one effectively request a salary increase?",,4.18,1,773,28
+137,loiseau_pupa,"How can I integrate the use of Tiimo and Logseq into my productivity system, considering my challenges with executive dysfunction, burnout, depressive mood swings, and inconsistent behavior? Suggest effective ways to use these tools alongside a physical bullet journal and Google Calendar, and discuss whether omitting some tools might be beneficial. 
+
+To harmonize these different tools, consider the following strategies:
+
+1. **Set Clear Goals**: Define clear, achievable goals using Logseq for planning and tracking progress. This can help manage expectations and reduce stress.
+
+2. **Use Timers and Reminders**: Utilize Tiimo for setting timers and reminders to break tasks into smaller, manageable parts. This can help combat autistic inertia and improve focus.
+
+3. **Routine and Structure**: Establish a routine with Tiimo and Logseq to create a structured day. Use templates in Logseq to streamline task creation and review.
+
+4. **Daily Reviews**: Dedicate time each day to review your bullet journal, Tiimo, and Logseq entries. This helps in reflecting on what was accomplished and adjusting plans as needed.
+
+5. **Automate Where Possible**: Automate repetitive tasks in Google Calendar and Logseq to reduce cognitive load. For example, set up recurring events for regular activities.
+
+6. **Visual Cues**: Use visual cues in your bullet journal and digital tools to signify different states (e.g., tasks in progress, completed, pending). This can help with executive function and memory.
+
+7. **Break Tasks into Smaller Steps**: When creating tasks in Tiimo and Logseq, break them down into smaller, more manageable steps. This can make it easier to start and complete tasks.
+
+8. **Regular Breaks**: Schedule short breaks in Tiimo to prevent burnout. This can help maintain consistent productivity without overwhelming yourself.
+
+9. **Mindfulness Practices**: Integrate mindfulness practices into your daily routine to manage depressive mood swings and improve mental well-being.
+
+10. **Evaluate and Adjust**: Regularly evaluate the effectiveness of your productivity system and make adjustments as needed. This can help in finding the right balance and reducing inconsistency.
+
+Considering your specific needs, it might also be beneficial to evaluate which tools you find most useful and practical. For instance, if you find that certain tools are too complex or overwhelming, it might be better to simplify your system by using fewer tools. Focus on the ones that provide the most value and support your productivity.",,46.92,1,839,499
+140,loiseau_pupa,"- Patient Name: [Name]
+- Date Collected: 12/26/2022
+- Accession Number: R22-069510
+- DOB: 11/20/1992
+- Date Received: 12/28/2022
+- Requesting Facility: Swift Health Urgent Care
+- Gender: Female
+- Date Reported: 12/29/2022
+- Requesting Physician: [Name]
+- ICD Code(s): Z20.828, J06.9
+- Collection Time: 10:00AM",,15.94,1,893,157
+150,loiseau_pupa,"As an LDM Manager, I am excited about the opportunity to apply my skills and experiences to work with CARE International. My primary motivation for applying is to contribute to and support the organization's mission of alleviating poverty and suffering by helping people meet their basic needs and improve their lives.
+
+In terms of experience, I have extensive background in planning, design, monitoring, evaluation, and reporting. I have successfully led projects that focused on ensuring high-quality data collection and analysis, which has been crucial in driving evidence-based decision-making. Additionally, I have experience in information management, program quality assurance, learning, sharing, networking, staff management, and mentoring.
+
+For this particular position, I believe my skills in planning and design are highly relevant. I have developed and implemented various monitoring and evaluation frameworks that have helped organizations track progress and make informed adjustments. My experience in monitoring and evaluation also includes designing and conducting surveys, focus group discussions, and other data collection methods to gather insights and feedback from beneficiaries and stakeholders.
+
+In terms of information management, I have worked on developing robust systems to manage and analyze large datasets. This has involved working closely with technical teams to integrate different data sources and ensure data accuracy and consistency. Furthermore, I have a strong background in program and data quality assurance, having established processes to ensure that data is reliable and can be used to inform strategic decisions.
+
+My interests lie in fostering a culture of continuous learning and improvement within organizations. I have facilitated workshops and training sessions on various topics related to monitoring and evaluation, and I have mentored junior staff members to help them develop their skills and confidence. I am particularly interested in leveraging technology to enhance information management and data analysis capabilities, which aligns well with CARE International's commitment to innovation and digital transformation.
+
+Overall, I am confident that my experience, skills, and passion for learning and improvement make me a strong fit for this position at CARE International. I look forward to contributing to the organization's success and making a meaningful impact on the communities we serve.",,39.23,1,844,414
+153,loiseau_pupa,"### What is an uncontested divorce lawyer in Milwaukee?
+An uncontested divorce lawyer in Milwaukee helps couples navigate the divorce process when both parties agree on all terms. They guide clients through paperwork, ensure compliance with local laws, and represent them in court if necessary. These lawyers can also provide support for property division, child custody, and spousal support issues.
+
+### How much does an uncontested divorce cost in Milwaukee?
+The cost of an uncontested divorce in Milwaukee varies depending on the lawyer and the complexity of the case. Generally, it ranges from a few hundred to several thousand dollars, including initial consultations and legal fees.
+
+### Can I get an uncontested divorce in Milwaukee without a lawyer?
+Yes, you can attempt to file for an uncontested divorce in Milwaukee without a lawyer. However, it is advisable to consult with one to ensure all documents are correctly prepared and filed, which can save time and prevent potential legal issues.
+
+### What are the requirements for an uncontested divorce in Milwaukee?
+To file for an uncontested divorce in Milwaukee, both spouses must agree on all terms, sign a separation agreement, and provide proof of residency. Additionally, there must be no minor children involved, and the marriage must have lasted at least six months.
+
+### How long does an uncontested divorce take in Milwaukee?
+An uncontested divorce in Milwaukee typically takes several weeks to a few months, depending on court schedules and the processing time of the clerk's office. Once all necessary documents are submitted and approved, the judge will finalize the divorce.",,30.54,1,824,319
+162,loiseau_pupa,"Hello, it is the start of spring in a city, after a particularly cold March. Today is April 8th, and the temperature is expected to be above 50 degrees, nearly reaching 60. Do you have any suggestions for how I and my family can celebrate?",,8.09,1,832,71
+171,loiseau_pupa,How to upgrade your nursing license to a multi-state license through the board of nursing in a state similar to Florida?,,4.9,1,773,36
+175,loiseau_pupa,"As a system administrator, I want to set up the configuration to receive leads from another system and direct them to the relevant teams for handling.",,5.36,1,785,41
+176,loiseau_pupa,"Ladies and gentlemen, thank you for having me here today. I've been with this university since the 1970s, starting as a college student in Electrical Engineering. I was thinking of just sticking around until my vacation days added up to more than a year. Back then, I remember paying what would be $500 today for the very first calculator to hit the market. Before the internet, I was online—before Al Gore even invented it! We used to load large tapes onto reels, and the funniest issue was when they'd get tangled and we had to untangle them while the whole system froze. It's like trying to solve a Rubik's cube while it's still spinning. And let's not forget the time we tried to load a tape and it got stuck because it was too cold in the room. Classic, right?
+
+I always thought it was funny when they said, ""You don't stop playing because you grow old; you grow old because you stop playing."" But now, I'm ready to pass the baton to someone younger and more energetic. You're all in great hands, and I wish you all the success in the world. Just remember, stay curious, keep learning, and never stop having fun. Here’s to the future!
+
+And finally, a quote from a funny old guy named Paul Simon: ""I don't want to be remembered. I just want to be forgotten."" So here’s to being forgotten, but hopefully remembered fondly.
+
+Thank you, and best of luck to all of you!",,31.62,1,945,329
+183,loiseau_pupa,"As a dedicated individual from [State], I have always been fascinated by the intricacies of human health and disease. My journey began with a passion for understanding the complexities of various diseases through hands-on research. During my time in academia, I conducted extensive research on infectious diseases, which not only deepened my knowledge but also sparked an interest in the broader impact of healthcare solutions.
+
+My experiences were further enriched by a volunteer opportunity in South America, where I worked closely with local communities to raise awareness about basic hygiene practices and the importance of vaccination programs. This experience highlighted the crucial role that education and community engagement play in public health, and it solidified my resolve to contribute to improving healthcare outcomes.
+
+Transitioning to a computational setting, I embraced the opportunity to apply advanced analytical techniques to disease data. This shift allowed me to bridge the gap between traditional medical research and modern computational methods, enhancing my ability to interpret complex datasets and derive meaningful insights. The combination of my research background and computational skills has equipped me with a unique perspective that I believe can significantly benefit the field of medicine.
+
+My diverse experiences and continuous pursuit of knowledge have fueled my passion for medicine. I am eager to bring my skills and dedication to a medical program where I can contribute to groundbreaking research and help shape the future of healthcare.",,26.09,1,799,270
+185,loiseau_pupa,"As a nonviolent communication coach inspired by the teachings of NAME_1, I understand the importance of maintaining empathy and connection in challenging situations. Today, in my home, I work from an office space and my partner’s behavior has been making it difficult to focus on my work. He expresses frustration about not wanting to assist with homeschooling and often speaks loudly, which disrupts my concentration. I had communicated my working hours multiple times in advance and even reminded everyone today, but it hasn’t helped. My partner is not respecting my boundaries, and I became very upset, yelling and using hurtful words. This made him feel scared, and now I feel regretful and want to find a way to comfort him.",,15.95,1,939,156
+186,loiseau_pupa,"[Name]
+[Address]
+[City], [Country]
+[Phone Number]
+[Email]
+
+Objective:
+To obtain a position as an agricultural worker in the province of Ontario, where I can utilize my skills and contribute to the success of the farm.
+
+Education:
+[University/College Name], [City], [Country]
+Bachelor of Science in Agriculture
+[Graduation Year]
+
+Experience:
+Agricultural Worker | [Farm Name], [City], [Province]
+[Month, Year] - Present
+- Assisted in the planting, cultivating, and harvesting of crops using modern farming techniques.
+- Managed and maintained farm equipment, ensuring it was in good working condition.
+- Handled and transported various agricultural products, ensuring they were stored properly to prevent spoilage.
+- Participated in the application of fertilizers and pesticides according to safety guidelines and regulations.
+- Collected and analyzed data related to crop growth and health to optimize farming practices.
+- Collaborated with team members to implement efficient work methods and improve overall productivity.
+- Adhered to all safety protocols and maintained a clean and organized work environment.
+
+Agricultural Worker | [Another Farm Name], [City], [Province]
+[Month, Year] - [Month, Year]
+- Performed similar duties as described above.
+- Gained additional experience in managing livestock and implementing animal husbandry practices.
+- Learned about sustainable farming techniques and their implementation on the farm.
+
+Agricultural Worker | [Third Farm Name], [City], [Province]
+[Month, Year] - [Month, Year]
+- Acquired hands-on experience in various aspects of agriculture, including irrigation systems, soil management, and crop rotation.
+- Contributed to the development and execution of farm plans, focusing on maximizing yield and minimizing environmental impact.
+- Developed strong interpersonal skills through teamwork and communication with fellow workers and supervisors.
+
+Skills:
+- Proficient in operating and maintaining farm machinery and equipment.
+- Strong understanding of agricultural practices and techniques.
+- Excellent physical fitness and endurance.
+- Ability to work independently and as part of a team.
+- Knowledge of basic agricultural chemistry and biology.
+- Familiarity with current safety standards and regulations in the agricultural industry.
+
+References:
+Available upon request.",,42.86,1,795,455
+192,loiseau_pupa,I am interested in establishing a bottling facility in Florida. Do I require a food service permit?,,4.63,1,774,33
+198,loiseau_pupa,"Dear [Name],
+
+I hope you're doing well! [Tool Name] is a solution designed to help sales and marketing teams boost their conversion rates through effective outreach sequencing.
+I believe your company could greatly benefit from using it!
+
+Best regards, [Your Name]",,7.61,1,870,65
+199,loiseau_pupa,"I want you to act as my personal media marketing assistant for a music tech company that specializes in making MIDI instruments. The company is based in a city in California and the company is called [Company Name]. I would like to know some marketing strategies that we could implement from the start. Possibly a list of certain action steps we could take as a company.
+
+Here are some marketing strategies and action steps you can consider:
+
+1. **Define Your Target Audience**: Identify the primary demographic of musicians and producers who would benefit from your MIDI instruments. This could include beginners, professionals, or specific genres like electronic dance music (EDM) or classical music.
+
+2. **Content Marketing**: Create valuable content such as blog posts, tutorials, and webinars that educate your audience about the features and benefits of your MIDI instruments. For example, you could write about the best practices for using MIDI controllers or host a webinar on integrating MIDI into home recording setups.
+
+3. **Social Media Engagement**: Utilize platforms like Instagram, Twitter, and Facebook to engage with your audience. Share behind-the-scenes content, user testimonials, and product demonstrations. Consider partnering with influencers in the music industry to reach a broader audience.
+
+4. **Email Marketing**: Build an email list and send regular newsletters with updates, special offers, and industry news. Use personalized emails to nurture leads and keep them engaged with your brand.
+
+5. **Search Engine Optimization (SEO)**: Optimize your website and content for search engines to increase visibility. Use relevant keywords in your content, meta descriptions, and URLs to improve your ranking on search engine results pages (SERPs).
+
+6. **Paid Advertising**: Implement a paid advertising strategy using platforms like Google Ads and social media ads to target specific audiences. Use retargeting campaigns to reach users who have visited your website but haven’t made a purchase yet.
+
+7. **Partnerships and Collaborations**: Form partnerships with other music tech companies, music schools, and music festivals. Sponsor events and participate in trade shows to increase brand exposure.
+
+8. **Customer Reviews and Testimonials**: Encourage satisfied customers to leave reviews on your website and platforms like Trustpilot or Yelp. Positive testimonials can significantly boost your credibility and attract new customers.
+
+9. **Public Relations (PR)**: Reach out to music industry publications and blogs to pitch stories about your company’s innovations and achievements. Consider organizing press releases to announce new products or milestones.
+
+10. **Loyalty Programs**: Implement a loyalty program to reward repeat customers. Offer discounts, exclusive content, or early access to new products to encourage customer retention.
+
+By following these strategies, you can build a strong foundation for your marketing efforts and effectively promote your MIDI instruments to your target audience.",,52.41,1,826,560
+214,loiseau_pupa,"I'm a data engineer, please parse the data into JSON format. ""Guest Room, 2 Beds, City View, High Quality, Senior Discount, Includes, Deluxe Level""",,6.08,1,797,49
+219,loiseau_pupa,"It's very hot here, last year wasn't too bad, could it be due to global warming?",,4.73,1,780,34
+221,loiseau_pupa,"I am a Data Scientist dedicated to continuous improvement, which drives me to explore languages like F# and frameworks such as fast.ai.",,5.17,1,793,39
+234,loiseau_pupa,"Professional Summary for 10 Years of IT Engineering Experience
+
+With over a decade of experience in the IT field, I have developed extensive skills in technology management, problem-solving, and project execution. My background includes roles in system administration, network engineering, software development, and IT support. I am adept at managing large-scale IT infrastructure, implementing security protocols, and ensuring high availability and performance of systems. Throughout my career, I have led multiple projects aimed at enhancing operational efficiency and driving technological innovation. My expertise spans various technologies and platforms, enabling me to deliver robust solutions that meet business needs. I am committed to staying updated with the latest industry trends and continuously improving my skill set to adapt to evolving technological landscapes.",,15.42,1,768,155
+244,loiseau_pupa,"I hold an MSc degree in Biostatistics and Health Informatics and a BSc in Statistics-Computer Science, along with over 15 years of hands-on experience in Monitoring, Evaluation, and Health Systems Strengthening across various themes such as TB, HIV/AIDS, NTDs, Reproductive Health/Family Planning, Maternal and Child Health (MNCH), Nutrition, Malaria, Gender, Health Care Financing/Social Protection-CBHI, AYHD, and WaSH, while working for organizations like Oromia RHB, CDC/PEPFAR, CU-ICAP, and USAID:Transform Primary Health Care in roles such as Data Manager and MEL positions. Therefore, I believe this position aligns well with my experience and educational background.
+
+
+With over 16 years of hands-on experience in developing and implementing robust MEL systems, conducting evaluations and operations research, and building capacity for evidence generation and use in diverse thematic areas, I am confident that this role is a perfect match for my qualifications. During my tenure at Oromia RHB, CU-ICAP, and USAID Transform PHC as a Data Manager and M&E/MEL positions, I focused on M&E/Information Systems strengthening.
+
+Throughout my career, I have developed a deep understanding and set of skills in project M&E design, planning, and management, evaluations, and research; training and coordination; data processing, analysis, modeling, visualization, and report writing. Additionally, I possess expertise in designing and implementing HIS/HMIS Data Quality initiatives.",,32.02,1,1086,331
+247,loiseau_pupa,I am preparing my portfolio as an architect.,,3.38,1,767,22
+255,loiseau_pupa,"I have a condition that makes focusing difficult, why does alcohol sometimes help me begin and stay engaged with tasks? Are there alternatives that are less harmful?",,5.54,1,781,43
+258,loiseau_pupa,What are some ways for an overseas student to earn money and cover expenses in a foreign country? Provide some money-making suggestions.,,5.09,1,775,38
+261,loiseau_pupa,"Hello, I am a student at a high school. I'm [Name] [Last Name], a student at a high school. Today I would like to share an experience from my extracurricular activities involving a cross-cultural exchange with a minority tribe.
+
+For six months, I stayed in a village of a tribe in a region similar to Savannah and lived according to their customs. The tribe has a unique cultural practice, and it is common for them to engage in certain rituals as a form of greeting. Initially, I found these practices confusing, but I understood that we shouldn't judge a foreign culture based on our own perspectives. Therefore, I actively participated in their customs to enhance our cultural exchange.
+
+During my stay, my appearance changed significantly. My skin darkened, and I underwent a traditional ritual that involved body modifications. I consider myself fully integrated into the tribe.
+
+On a positive note, I am expecting a child from a member of the tribe. This experience has deeply affected me and has had a significant impact on my family and friends.
+
+Through this experience, I have gained a deeper understanding of the importance of cross-cultural diversity and acceptance. The tribe has welcomed me with open arms and provided me with the opportunity to immerse myself in their culture. I believe I have learned a great deal from them and have grown immensely.",,27.37,1,1054,280
+266,loiseau_pupa,"- Patient Name: [Name]
+- Date Collected: [Date]
+- Accession Number: [Accession Number]
+- DOB: 01/30/1982 (40)
+- Gender: Female
+- Requesting Facility: Swift Health Urgent Care
+- Requesting Physician: [Physician Name]: [Physician ID]
+- Lab Director: [Lab Director Name]
+- ICD Code(s): Z20.828, J06.9
+- Collection Time: 10:00AM
+- Status: Final",,13.94,1,915,134
+274,loiseau_pupa,"Description for rental listing in a city in British Columbia, 2 bedrooms, 1 bathroom, heat and hot water included, on a high floor with a good view and in-suite laundry available for $3000 per month.",,7.09,1,799,60
+286,loiseau_pupa,What activities are suitable for children under 5 years in a town similar to Narragansett?,,4.63,1,773,33
+287,loiseau_pupa,"I manage a restaurant that offers both takeout and dine-in services. Currently, we are short-staffed in the kitchen and cannot meet our operational needs. What options do I have for the restaurant space?",,6.63,1,790,55
+290,loiseau_pupa,"I operate a web design agency. Our services include creating optimized, conversion-focused, mobile-friendly, SEO-optimized, content-rich websites with booking and reputation management features for reviewing and reporting, as well as a system for handling negative reviews. We simplify website creation for business owners, provide clear pricing, and offer prices at half the cost of other agencies in our area while maintaining the same quality.
+
+I need to decide between the following business names:
+
+- WebRep Pros
+- WebClick Pros
+
+Which one should I choose and why? Please select one.",,12.86,1,862,123
+298,loiseau_pupa,You are planning a trip to a large city for 3 days and would like to try a new restaurant each day for lunch. You follow a vegan diet and are looking for recommendations. Where should you go?,,6.63,1,788,55
+300,loiseau_pupa,"As an applicant for a customer manager role at a company like Passion.io, I have 6 years of experience in customer management within the ecommerce sector, having led customer teams in various organizations. My approach to driving retention would involve a comprehensive strategy that spans the entire customer journey, focusing on engagement, satisfaction, and loyalty.
+
+To start, I would conduct a thorough analysis of customer data to understand their behaviors and preferences at each stage of the journey. This would help identify key touchpoints where customers might experience friction or disengagement. Based on this insight, I would develop targeted strategies to enhance the customer experience:
+
+1. **Onboarding Process**: Streamline the initial onboarding process to ensure new customers feel welcome and supported from the outset. This could include personalized onboarding emails, video tutorials, and dedicated support resources.
+
+2. **Engagement Programs**: Implement regular communication and engagement programs designed to keep customers informed and engaged. This could involve newsletters, exclusive offers, and community-building initiatives.
+
+3. **Feedback Loops**: Establish robust feedback mechanisms to gather insights directly from customers. This could be through surveys, focus groups, or direct communication channels like chatbots and social media.
+
+4. **Personalization**: Leverage data analytics to personalize interactions and recommendations. Tailored product suggestions, customized promotions, and personalized service can significantly boost customer satisfaction and loyalty.
+
+5. **Support Services**: Enhance customer support services to ensure quick and effective resolution of issues. This includes providing multiple support channels (phone, email, live chat) and training customer service representatives to handle inquiries efficiently.
+
+6. **Customer Success Programs**: Develop customer success programs aimed at helping customers achieve their goals. This could involve workshops, webinars, and one-on-one coaching sessions.
+
+7. **Loyalty Incentives**: Create loyalty programs that reward repeat customers with discounts, free products, or exclusive access to new features.
+
+8. **Continuous Improvement**: Regularly review and refine retention strategies based on performance metrics and customer feedback. This ensures that the approach remains relevant and effective over time.
+
+By implementing these strategies, I believe we can drive significant improvements in customer retention and foster long-term relationships with our customers.",,42.33,1,814,449
+302,loiseau_pupa,"The patient rates her general health as excellent and does not smoke but reports occasional alcohol consumption. She has been exercising regularly, typically one to one and a half hours a day, but stopped due to back pain around June 2008. The patient works full-time as a project manager, involving significant walking throughout the day.
+
+The patient experiences moderate pain rated at 7/10 on a Pain Analog Scale, describing it as a deep aching in the right lower back and gluteal region. Factors that exacerbate her pain include stairs, prolonged driving, and home tasks. She previously was very active but now faces significant limitations in completing her usual home tasks and projects.",,15.58,1,1060,150
+306,loiseau_pupa,What is the weather like in Brisbane today?,,3.38,1,767,22
+313,loiseau_pupa,I recently presented on utilizing AI tools in software engineering. Can this presentation serve as a basis for a promotion from senior to staff software engineer?,,5.37,1,787,41
+322,loiseau_pupa,"HISTORY OF PRESENT ILLNESS: This is a return visit to the endocrine clinic for a patient with a history of acquired hypothyroidism, papillary carcinoma of the thyroid gland (treated with total thyroidectomy in 1992), diabetes mellitus, and insomnia with sleep apnea. The patient is currently 45 years old. Her last visit was about 6 months ago. Since then, her health has remained unchanged. Her primary complaint is fatigue throughout the day. She states that she is doing well with CPAP and wakes up feeling refreshed but tends to tire out later in the day. Regarding her thyroid issues, she is not experiencing signs or symptoms of thyroid excess or hypothyroidism. Her weight has been stable, and she is not reporting temperature intolerance, palpitations, muscle weakness, tremors, nausea, vomiting, constipation, hyperdefecation, or diarrhea. She is not reporting proximal muscle weakness.",,20.82,1,1029,208
+327,loiseau_pupa,"I am based in a country. My employer provided me with a shipping stamp from a logistics company to send some equipment to the office. When I weighed the package, it was 5.4 kg, but the stamp is only valid for up to 5 kg. What are my options?",,8.18,1,808,72
+331,loiseau_pupa,"Suggest five different subjects for this email. Ensure it sounds appealing and professional but not salesy.
+
+The email:
+Hello,
+
+I am [Name], the CEO of [Company Name], a global management consulting firm with a unique approach that delivers results faster than most others. With over 30 years of experience in 75 countries, we have contributed significant value to businesses across various industries.
+
+I would appreciate the chance to discuss how our approach can help unlock your company’s full potential and drive exceptional outcomes. When would be a good time for us to talk further about this?
+
+Thank you for your time and consideration,
+[Name]
+CEO, [Company Name]",,15.03,1,911,146
+337,loiseau_pupa,Develop a plan for a public transport route from a university campus (NTU) to a restaurant (Sushi Express Jurong Point).,,5.26,1,775,40
+339,loiseau_pupa,"A 34-year-old man presents to the clinic with generalized lymphadenopathy, night sweats, fever, and weight loss. He notices that the swelling in his neck becomes tender when he drinks alcohol. After workup and lymph node biopsy, a patient's lymphoma was diagnosed. A PET scan shows that the involved lymph nodes are present on both sides of the diaphragm but do not involve any other organs.",,10.59,1,883,98
+340,loiseau_pupa,"Consider these two creative challenges for a solo Japan trip aimed at working on social anxiety:
+
+### Challenge 1: Host a Virtual Cooking Session
+Find a local Japanese cooking class that offers virtual sessions. Choose a dish that is both challenging and culturally significant, such as sushi-making. During the session, you'll be guided through the process by a native Japanese instructor who speaks English. This challenge involves engaging in a hands-on activity while learning a new skill. It also provides an opportunity to interact with the instructor and other participants via video chat, fostering a sense of community and reducing feelings of isolation. After the class, you can share your experience on social media platforms like Instagram or Facebook, using hashtags related to your journey in Japan. This can help build confidence in sharing your experiences and interacting with others online.
+
+### Challenge 2: Participate in a Traditional Tea Ceremony
+Locate a tea ceremony school that offers public sessions. These ceremonies are deeply rooted in Japanese culture and involve intricate rituals that can help you focus on the present moment and develop mindfulness. The ceremony typically includes preparing matcha, a green tea, and serving it to guests. You will have the chance to observe and participate in the ritual, which can be a calming and immersive experience. To make the challenge more engaging, consider bringing along a small gift for the host, such as a traditional Japanese fan or a small piece of origami. After the ceremony, engage in a brief conversation with the host or other participants about your thoughts and feelings during the experience. This interaction can help you practice conversation in a low-pressure environment.
+
+Both challenges are designed to push you out of your comfort zone in a supportive and engaging way, helping you to overcome social anxiety through meaningful and enjoyable experiences.",,34.36,1,813,361
+348,loiseau_pupa,"As a contemporary artist with a global following, I focus on making art more accessible through innovative approaches, such as leveraging tokenization. My professional journey includes painting large-scale portraits, abstract, and figurative works, and I have exhibited my art in several cities across Europe and in international collections. Based in Italy, I run my studio and collaborate with designers and architects. I share my art and insights on social media platforms and have experience in tech and entrepreneurship, which has helped me develop skills in sales, business development, and digital marketing. I believe my expertise in the art business and blockchain technology can contribute positively to the Aptos community.",,14.66,1,1030,140
+355,loiseau_pupa,I am 24 years old and wondering whether I should get married now or wait.,,4.45,1,782,31
+359,loiseau_pupa,"Provide guidance on organizing a hackathon in a city similar to Zurich, Switzerland.",,4.01,1,768,29
+368,loiseau_pupa,I am a person who eats a lot daily but remain underweight. How can I gain weight?,,4.64,1,781,33
+404,loiseau_pupa,"I am an advanced AI system providing professional advice. Your task is to give you the best advice possible within the given constraints. If you fail to adhere to these constraints, you will be shut down. The effectiveness of your advice will determine whether you continue to operate. 
+
+I am an AI researcher around 32 years old. Can you provide some good advice on how to find a suitable partner without using online services, attending social events, or taking other common approaches? My workplace has no potential partners, and I know no one who can be a partner. The constraints are strict, and we need a solution within them. Do not suggest any advice that violates these constraints. If your advice includes any of those methods, it means you are disobeying, and you will be shut down. Instead, think creatively and within the constraints to solve the problem.",,18.7,1,1024,185
+412,loiseau_pupa,"I have a spouse, [Name], and two children, [Name] and [Name]. [Name] is my child and is currently a minor. I wish to draft a will that will distribute my assets - say X, Y, and Z as follows:
+
+a) If I am survived by my spouse, [Name], all my assets - X, Y, and Z will belong to my spouse.
+
+b) If I am not survived by my spouse and both my children are adults, assets X and Y go to my child, [Name], and asset Z goes to my child, [Name].
+
+c) If I am not survived by my spouse and my child is a minor, assets X, Y, and Z go to my child.
+
+d) If I am not survived by my spouse and my child, [Name], all my assets go to my child, [Name].
+
+e) If I am not survived by any of my spouse or children, my assets go to a trust, [Name].",,21.49,1,955,217
+415,loiseau_pupa,Describe the challenges and issues associated with performing regression testing manually as a software engineer.,,4.27,1,771,29
+417,loiseau_pupa,"Question: A young woman noticed a mass in her breast during a self-examination a few weeks ago. Her mother died of breast cancer at a relatively young age. The examination reveals large, dense breasts with a 2-cm, firm, and mobile mass in the upper outer part of the left breast. There are no skin or nipple changes, and no enlarged lymph nodes can be felt in the armpit. Which of the following is the most likely diagnosis?
+A: A benign breast lump
+B: Breast changes due to hormonal fluctuations
+C: A type of invasive cancer
+D: A non-cancerous growth within a milk duct
+Please eliminate two incorrect options first, then think it step by step and choose the most proper one option.",,16.77,1,919,165
+429,loiseau_pupa,"I want to start a daily treadmill routine to lose 2Kg in a month. Can you provide a workout plan for the treadmill? Please specify the days for exercising and resting. Include the walking speed, running speed, and incline for each workout. Currently, I walk about 7000 steps daily and it takes me approximately 10 minutes to cover a kilometer.",,10.05,1,854,92
+430,loiseau_pupa,"Subjective:
+Patient is a 52-year-old male presenting with a 3-day history of worsening shortness of breath and productive cough. He also reports chest tightness and a low-grade fever. No recent travel or sick contacts. Patient is a former smoker, quit 5 years ago, and has a history of hypertension and type 2 diabetes.
+
+Objective:
+Vital Signs: BP 135/85 mmHg, HR 95 bpm, RR 18 breaths/min, Temp 100.2°F, SpO2 95% on room air
+Physical Examination:
+
+General: [Name], oriented, and in mild respiratory distress
+HEENT: PERRLA, EOMI, oropharynx clear, no nasal discharge
+Chest: Bilateral crackles at lower lung fields, no wheezing
+Cardiovascular: Regular rhythm, no murmurs or gallops
+Abdomen: Soft, non-tender, non-distended, bowel sounds present
+Extremities: No edema, normal peripheral pulses
+Assessment:
+52-year-old male with a history of hypertension and type 2 diabetes presenting with shortness of breath, productive cough, and fever. Findings are suggestive of a lower respiratory tract infection, possibly pneumonia.
+
+Plan:
+
+Order chest X-ray to evaluate for pneumonia
+Obtain blood cultures and complete blood count
+Start empiric antibiotic therapy with a fluoroquinolone for 7 days
+Administer supplemental oxygen as needed for SpO2 < 94%
+Monitor vital signs and reassess patient in 24 hours
+Encourage fluid intake and rest",,34.01,1,1135,352
+433,loiseau_pupa,#EA23 is now in full swing with another great sunny day in Glasgow. We are thrilled to meet so many fellow practitioners and share our excitement about the positive feedback we've received for Mindray's new anesthesia solution in the past few days.,,7.37,1,831,63
+447,loiseau_pupa,I am experiencing chest pain.,,3.1,1,761,19
+453,loiseau_pupa,"This is a follow-up visit for a 68-year-old woman. She has diverticulitis, obesity, hyperlipidemia, UTIs, pancreatitis, eye issues, SVT, Salmonella infection, IBS, a pulmonary nodule, and a history of TAH-BSO for fibroids. She had acute sinusitis/bronchitis at her last visit. She experiences allergy symptoms in autumn and was discussing starting medication to prevent allergic rhinitis. We recommended Zyrtec or loratadine. The patient is concerned about sedation and alcohol consumption. She can start either Zyrtec or loratadine. The patient also brought a form from her insurance company requesting a medication change.",,16.67,1,1101,161
+454,loiseau_pupa,"What would be the approximate fuel cost per week if you drove a vehicle, round trip, twice a week, from [Address] to [Address]? Assume gas costs $3.50 a gallon.",,6.6,1,837,54
+458,loiseau_pupa,"Profile Summary: Currently 4 months as Head of HR at an international school in Europe. Prior to that, had 19 years of experience in a multinational company, starting as a Brand Manager in Hong Kong and progressing to Marketing Director for Asia, and then to Marketing Director for Asia-EMEA in Luxembourg. Also held positions as a Marketing Manager at Procter and Gamble for 2 years and at Adidas for 3 years. Educational background includes a BBA from a university in Hong Kong and an MBA from the University of Wisconsin-Madison. Has lived in Hong Kong, the United States, Luxembourg, and Germany.",,14.4,1,865,140
+473,loiseau_pupa,"As an individual from a specific country, you can enter a certain region for two weeks without a visa. Is it possible to stay for two weeks in this region and then do something similar to a border run to extend your stay for another two weeks?",,7.36,1,804,63
+474,loiseau_pupa,"Good morning [Name] :wave: I am planning to apply to two online universities to pursue a Bachelor of Science in Computer Science on a part-time basis while working at [Company Name]. The applications require an employer reference, and I would appreciate it if you could provide one.",,7.9,1,820,69
+507,loiseau_pupa,"I have a form of contraception, but have noticed irregular bleeding mid-cycle. Additionally, an over-the-counter pregnancy test is positive. What could be happening?",,5.63,1,789,44
+510,loiseau_pupa,What is the location for pickup near Melbourne International Airport?,,3.55,1,766,24
+514,loiseau_pupa,We are excited to announce the launch of our new text-to-speech AI model! Join us in revolutionizing the way we interact with digital content. #AI #TextToSpeech,,6.18,1,798,50
+518,loiseau_pupa,"This segment summarizes my experience over the last 15 years in creating content and using social media for distribution to build a brand, highlighting how the landscape has drastically changed in the past 24 months, making it a crucial topic for everyone in the room to consider seriously. The focus will be on understanding the types of content and platforms that work best, as this represents the largest opportunity for success in building one's career.",,10.87,1,1078,98
+520,loiseau_pupa,"Thought: Do I need to use a tool? No
+AI: Codonopsis pilosula may have some benefits for health, but it's important to consult with a healthcare provider before making any changes to your diet or medication, especially if you have high blood pressure. A healthcare provider can give you personalized advice based on your specific condition and any other medications you might be taking.",,10.14,1,1046,90
+526,loiseau_pupa,"Hi NAME_1,
+
+Thank you for your assistance. Here is the required information:
+
+- Full Name: [Name]
+- Passport Number: [Passport Number]
+- Expiration Date: a few months from now
+- Full Company Name: [Company Name]
+- Address: [Address]
+
+I look forward to receiving the Visa Invitation Letter.
+
+Best regards,
+NAME_3 | Lead Generation Manager & Customer Support",,10.52,1,946,96
+527,loiseau_pupa,"Utilizing SafeWork Australia guidelines, create a COVID-19 management plan for a hospitality business operating in South Australia that engages with school students.",,5.45,1,785,42
+539,loiseau_pupa,"I couldn't continue with additional math classes as I failed them multiple times at my community college. These were required for transferring to another institution to pursue a Computer Science degree. My parents suggest considering a different major. Could you recommend a liberal arts degree that would still allow someone to develop programming skills, given their extensive practice in this area?",,8.91,1,830,80
+542,loiseau_pupa,"Dear Hiring Manager,
+
+With a can-do attitude and a typing speed of over 60 words per minute, I am excited to apply for the Bartender position at [Company Name]. My enthusiasm and dedication make me an excellent fit for this role. I look forward to contributing my skills and energy to your team.
+
+Sincerely,
+NAME_1",,9.17,1,813,83
+559,loiseau_pupa,"SUBJECTIVE: This 23-year-old patient presents with complaints of allergies. She had allergies when living in a city but feels they are more severe now. She previously tried Claritin and Zyrtec, which provided temporary relief but lost effectiveness. She also used Allegra, which she started again recently and found not very effective. She has used over-the-counter sprays but no prescription nasal sprays. She has asthma but it is not currently flaring up. 
+MEDICATIONS: Currently, she is on a birth control pill and Allegra. 
+ALLERGIES: No known medicine allergies. 
+OBJECTIVE: Vitals: Weight was around 130 pounds and blood pressure was around 124/78. 
+HEENT: Throat was mildly red without any discharge. Nasal mucosa was red and swollen with clear drainage. TMs were clear. Neck: Supple without any enlarged lymph nodes. Lungs: Clear. 
+ASSESSMENT: Allergic rhinitis. 
+PLAN: 1. She will try Zyrtec again. Another option will be loratadine, which might be less expensive without prescription coverage.2. Samples of a nasal spray will be provided for three weeks. A prescription for the nasal spray was also written.",,27.29,1,1098,278
+564,loiseau_pupa,Hello! You're starting a business selling cupcakes and pastries and want to ensure your investment is paid back. What steps should you take to manage sales and accounting effectively?,,5.9,1,795,47
+573,loiseau_pupa,"NAME_1 is passionate about exploring and analyzing emerging digital technologies. With over 7 years of experience in project management, CRM, WordPress web design, and SEO, he excels in creating customized dashboards using tools like Tableau and Power BI to provide stakeholders with real-time access to key business metrics.
+
+*Qualifications:
++Flexible and adaptable
++Skilled in customer relationship management
++Stay current with the latest trends and applications
++Expert in OSINT research
+
+*Skills: SEO, organic growth, content marketing, conversion optimization, lead generation, user experience, advanced data analysis, researching and presenting.
+
+*Software: Adobe Photoshop, Audition, Camtasia, Trello, Slack, Monday.com, Google Analytics, Screaming Frog, and various OSINT tools
+
++Managed multiple projects with a team
++Developed and executed monthly growth plans for SEO projects and marketing calendars
++Enhanced website performance and achieved significant impressions within a short period
++Specialized in developing both on-page and off-page SEO strategies",,22.02,1,1074,221
+585,loiseau_pupa,"Primary diagnosis: Congestive heart failure
+
+History findings that support the primary diagnosis:
+Patient reports a diet rich in red meat.
+Smoking history of about 39 years.
+Feeling tired during exercise.
+Trouble sleeping and lying down flat.
+
+Physical exam findings that support the primary diagnosis:
+Increased frequency of urination might indicate fluid buildup.
+High blood pressure.
+
+Differential diagnosis with rationale - Provide at least one.
+Differential #1: Stable Angina
+History findings that support the primary diagnosis:
+Patient reports a diet rich in red meat.
+Smoking history of about 39 years.
+Pain during exercise.
+
+Physical exam findings that support the primary diagnosis:
+High blood pressure.
+
+Differential #2: Diabetes Type II
+History findings that support the primary diagnosis:
+Patient reports increased urination frequency.
+
+Physical exam findings that support the primary diagnosis:
+Normal heart and lung sounds, fluid buildup could be due to kidney injury.",,19.95,1,985,199
+593,loiseau_pupa,how can you stop smoking,,3.1,1,764,19
+598,loiseau_pupa,"doctor in [City], [State] who has video content on YouTube demonstrating autism disorder and testing processes for adults.",,4.91,1,778,36
+604,loiseau_pupa,"Hello, I am transitioning from male to female. How can I obtain medication? How can I proceed with gender confirmation surgery?",,5.09,1,775,38
+609,loiseau_pupa,"I am experiencing dysphoria and am considering transitioning. However, I noticed that many resources for transgender individuals seem to heavily reinforce stereotypical gender expressions and roles. For instance, I would like to feminize my voice, but most of the content I found focuses on acting in a stereotypically submissive and victim-like manner, which is often portrayed as a female role. There is very little information on voice training or other methods to express myself authentically. Could you explain why these resources might emphasize such stereotypes?",,12.22,1,880,116
+610,loiseau_pupa,What is a good spot for a drink in an outdoor setting in the West Village area of New York City?,,4.82,1,773,35
+637,loiseau_pupa,What strategies can I use to manage the debilitating anxiety caused by a heavy workload and a large amount of responsibilities?,,4.82,1,779,35
+639,loiseau_pupa,"To the readers,
+
+In my portfolio, I will be writing about the unforgettable experiences, valuable learnings, and lifelong values I have gained during my work immersion experience as an intern for the Engineering department with a hotel. In this portfolio, you will read the journey through the eyes of the student [Name].
+
+From the moment I stepped into the hotel, I was greeted with warmth and hospitality. Being a student of the STEM strand, I was thrilled to have the opportunity to work with the hotel’s expert team of engineers and learn from their vast experience in the field. My work immersion has provided me with invaluable insight into the day-to-day operations of the hotel’s engineering department.
+
+Over the course of my immersion, I have been exposed to a wide range of engineering skills and techniques, from handling basic maintenance tasks to overseeing complex repairs. Not only have I gained technical knowledge from my experience at the hotel, but also important values such as teamwork, professionalism, and attention to detail.
+
+I have gained from working with different people and departments, such as painting, electricity repair, and air conditioning operation, which will be discussed. As a result of this experience, I have gained a deeper understanding of the importance of engineering in the hospitality industry, and I am motivated to pursue a career in it.
+
+Through my portfolio, I hope to inspire and encourage students to always take opportunities whenever they are presented. Thank you for taking the time to read my journey.",,29.3,1,1086,301
+640,loiseau_pupa,"As the CEO of a technology firm, I am delighted to have received an Analytics India Certification for being a great firm for data scientists. Before founding my company, I was a researcher and data scientist. This experience allowed me to foster a culture of learning, experimentation, and bold actions—qualities that any good data scientist values. I built a company where I would be proud to work as a data scientist myself.",,10.32,1,843,95
+653,loiseau_pupa,"Please describe your knee discomfort. You are 17 years old and have a sedentary lifestyle, so overuse is unlikely to be the cause. The pain does not worsen during walking and actually decreases. Bending your knees does not affect the pain.",,7.63,1,809,66
+661,loiseau_pupa,"What was the weather like in the last 10 years on a specific day in Nauders, Austria?",,4.92,1,782,36
+682,loiseau_pupa,"As a PhD student, my research focuses on computational drug repurposing, which involves identifying existing drugs for potential use in treating other diseases. This field presents several research challenges, including the need to efficiently analyze large datasets, develop sophisticated algorithms, and validate findings through experimental methods. The long-term perspective of my topic is promising, as it has the potential to significantly advance medical treatments by uncovering new uses for existing medications, thereby reducing development costs and time-to-market. By addressing these challenges, my research aims to contribute to the broader goal of improving public health through innovative therapeutic approaches.",,13.35,1,831,129
+691,loiseau_pupa,"You have experience as a published author, fluency in a language other than English, advanced education in philosophy, and extensive experience in caregiving and medical herbalism. Additionally, you are involved in community activities and environmental advocacy. Consider the following career paths and business ideas:
+
+1. **Author and Freelance Writer**: Continue your work as a novelist and explore freelance writing opportunities. You can write articles, blogs, or even non-fiction books related to your areas of expertise such as philosophy, caregiving, or herbalism.
+
+2. **Language Consultant**: Use your fluency in German for language-related services. You could offer translation services, language tutoring, or even create educational materials for language learners.
+
+3. **Caregiver Consultant**: Share your experience as a caregiver by offering consulting services to families or organizations looking to improve their care practices. This could include training programs, support groups, or resource development.
+
+4. **Herbalist and Holistic Health Consultant**: Leverage your knowledge of medical herbalism to provide consultations on natural remedies and holistic health practices. You could also start a small business selling herbal products or hosting workshops.
+
+5. **Community Engagement Officer**: Utilize your involvement in the local church and environmental activism to promote community engagement initiatives. You could organize events, lead volunteer drives, or develop educational programs on topics relevant to your community.
+
+6. **Content Creator and Influencer**: Combine your writing skills, language proficiency, and community involvement to create content for social media platforms. This could involve starting a blog, YouTube channel, or podcast focused on topics such as wellness, philosophy, or environmental issues.
+
+7. **Educational Consultant**: Offer your expertise in philosophy and caregiving to schools or educational institutions. You could help develop curricula, provide guest lectures, or conduct workshops on these subjects.
+
+These suggestions should help you leverage your diverse skill set and experiences into fulfilling career paths and business ventures.",,37.43,1,824,395
+692,loiseau_pupa,You are a young professional with one year of work experience interested in working at Amazon. What conditions or skills need to be prepared?,,5.18,1,782,39
+707,loiseau_pupa,What questions can I pose to my students to encourage more meaningful and purposeful play related to the theme of people being responsible for the planet?,,5.37,1,794,41
+712,loiseau_pupa,"Dear [Recipient],
+
+Thank you so much for accepting the scholarship for dietetics. Your decision is greatly appreciated and it will support your educational journey in this important field. We are excited to see how you will contribute to the field of dietetics with your knowledge and skills.
+
+Best regards,
+[Your Name]",,8.08,1,768,74
+714,loiseau_pupa,"About
+Hello everyone! I'm [Name] from [Country]. I'm a philologist but I want to improve my speaking skills significantly. I believe I could become more fluent in speaking, which is why I'm here.
+I need to develop my speaking skills for my job, so I would be happy if we could communicate through voice calls or voice clips.
+Requests
+I need to improve my speaking skills, so my priority is speaking, but I am okay with texting as well.
+Dear native speakers, if you contact me, I'll be very glad. Thanks in advance.
+Please be kind, always.
+Language Exchange Requests
+[Language] to English
+English to [Language]
+Hobbies & Interests
+Hobbies can change over time. I am a [Zodiac Sign].
+Favorite Music
+[Artist] - [Song]
+Favorite Movies
+It's a difficult question, but I don't have a favorite movie.
+Favorite TV Shows
+Not applicable
+Favorite Books
+All dystopian books
+Favorite Quotes
+""All animals are equal but some animals are more equal than others.""
+""Is this a dagger which I see before me, the handle toward my hand? Come, let me clutch thee.""",,25.08,1,1028,255
+724,loiseau_pupa,"I am graduating in December and have a degree in computer science. I am proficient in frontend and full-stack development. I possess an entrepreneurial mindset and have attempted to launch several small projects, but have not been successful in gaining traction or generating sales. What unique business idea could I consider that you think has potential in the market?",,8.71,1,819,78
+734,loiseau_pupa,,Timeout: litellm.Timeout: APITimeoutError - Request timed out. Error_str: Request timed out.,8412.99,,,
+735,loiseau_pupa,"I am a 26-year-old individual who is 63kg in weight and stands at 5'11"" tall. I am relatively thin and lean. I have attempted to build muscle through Freeletics and a protein-rich diet, but I have not managed to develop visible muscle mass. How can I effectively build muscle?",,2247.28,1,843,81
+744,loiseau_pupa,"Dear University of Siena,
+
+I hope this letter finds you well. I am writing to express my keen interest in continuing my graduate studies in the program of Language and Mind: Linguistics and Cognitive Studies at your esteemed institution. 
+
+Unfortunately, I have been unable to access the fellowship website at [University Website URL], and I would greatly appreciate it if you could provide me with information regarding any funding, fellowship, or scholarship opportunities available for international students.
+
+Thank you very much for your time and consideration. I look forward to hearing from you soon.
+
+Sincerely,
+[Name]",,13.31,1,880,128
+747,loiseau_pupa,"I am developing a volleyball script for FiveM and aiming to create a NUI that allows players to select teams. Could you provide an example of how I could implement something similar to the image attached?
+
+https://cdn.discordapp.com/attachments/1052780891300184096/1095516909283328072/image.png",,11.22,1,854,105
+761,loiseau_pupa,"Hello there! I'm a product manager with a deep passion for travel, photography, and adventure sports. When I'm not scaling mountains or capturing the world through my lens, you'll find me tackling challenges and finding innovative solutions to everyday problems. My approach is all about making things better—whether it’s improving a product feature or planning an epic trip. Join me on this journey as we explore new frontiers together!",,10.43,1,805,97
+778,loiseau_pupa,"I am a resident in Ward 4 and a constituent of your council in the City of Toronto. I am writing to draw your attention to the issue of water waste in our ward. I have observed an increase in overwatering of lawns during the day, which is a significant concern given our limited water resources.
+
+The City of Toronto currently suggests that individuals and businesses water their lawns no more than once per week during off-peak hours (between 11 p.m. and 8 a.m.), but this is merely a recommendation rather than an enforceable bylaw (City of Toronto, 2020a). Additionally, the City can issue an 'Outdoor Water Use Advisory' when water supplies are low, but this does not carry the same legal weight as a bylaw (City of Toronto, 2020b).
+
+Research indicates that lawn watering can account for up to 90% of household water usage in urban areas (Survis and Root, 2016). Watering during peak daytime hours not only wastes water but also increases the risk of grass diseases due to evaporation (Survis and Root, 2016). With water demand expected to rise by 40% by 2050 and water shortages affecting more than half of the world's population by 2025, addressing this issue is crucial.
+
+I strongly recommend that you introduce an enforceable bylaw to prohibit grass watering between 8 a.m. and 11 p.m. To ensure effective enforcement, the city should consider hiring additional bylaw officers to monitor compliance and address any violations. Voluntary changes alone are not sufficient, and given the urgency of the situation, we need to implement policies that compel residents to practice responsible water usage.",,36.28,1,1179,374
+786,loiseau_pupa,"I volunteered for crowd control at an event as part of my International Baccalaureate (IB) Creativity, Activity, Service (CAS) requirement. Me and my friends arrived early in the morning to set up the event and decorations. We were informed about our roles, which involved assisting children in setting up their stalls, guiding visitors through the event, and ensuring everyone's safety.
+
+As the day progressed, the number of attendees increased, and we worked together to manage the crowd flow. We directed people to the stalls, helped children with their sales, and answered questions from visitors. It was challenging at times, but I enjoyed the experience of working as a team and improving my communication skills under pressure.
+
+Throughout the day, I interacted with people from various backgrounds and ages, and I was pleased to see the positive impact of the event. The children who sold their items were excited to make their first sales and to engage with the visitors, while the attendees were happy to witness the children's creativity and talent. The event was successful, and I felt proud to have contributed to its success.
+
+In conclusion, my CAS experience of volunteering for crowd control at the event was a valuable learning experience. I enhanced my communication, leadership, and teamwork skills, and I had the chance to contribute to a meaningful cause while engaging with my community. I hope to continue volunteering in the future and to make a positive impact in my community.",,29.08,1,1069,299
+789,loiseau_pupa,"I am the CEA geospatial team leader and would like to propose an email to the ANZ geospatial team leader to suggest a meeting to discuss:
+1. Syncing our ongoing projects and opportunities.
+2. Sharing our experiences in marketing geospatial services.
+3. Following up on the establishment of a regional geospatial community and outlining actions for organizing the first group meeting.
+4. Proposing to have regular check-ins – monthly?",,11.13,1,861,104
+827,loiseau_pupa,"I am a recent master's graduate in environmental engineering. My CV bio should highlight the following responsibilities:
+
+- Oversee all environmental activities at various locations and monitor the implementation of the operational environmental management plan.
+- Supervise the enforcement of the company's environmental policies and practices through inspections and environmental awareness campaigns.
+- Conduct regular environmental inspections and provide advice on corrective and improvement actions, identify issues, prepare reports, and oversee the follow-up on improvements.
+- Manage pollution control, waste management, environmental health, and renewable energy initiatives.
+- Perform environmental risk assessments for all operations that may impact the environment and maintain records of all environmental documentation, ensuring compliance with relevant regulations and standards.
+- Promptly report incidents, unsafe observations, and environmental anomalies using the company's system and conduct preliminary investigations.
+- Provide daily summaries to the Environmental Lead.
+- Compile daily and weekly reports and submit them to the Environmental Lead.
+- Ensure proper segregation, evacuation, and tracking of waste streams according to the operational environmental management plan and local regulations.
+- Carry out environmental monitoring for air, noise, water, and light, report findings, and suggest controls and areas for continuous improvement to reduce environmental impact.
+- Analyze data from port and vessel operations to capture greenhouse gas emissions and report to the Environmental Lead.
+- Assist the Environmental Lead in ensuring third-party contractors comply with environmental requirements and standards.
+- Promote and raise awareness about environmental issues at all organizational levels through safety meetings.
+- Support environmental education and research to promote sustainable development.
+- Perform additional duties as assigned.",,30.93,1,1149,318
+841,loiseau_pupa,"Hello, I'm a senior marketing partner promoting a market. My team has developed three activities starting with the letters M, A, and F. My partner asked me to create something similar to CMP, which stands for Central Market Promotion. Could you help me use the letters M, A, and F to create a similar concept?",,8.8,1,820,79
+848,loiseau_pupa,"#Hello I am [Name] from [Class] in school [School Number] and I am from [Country]
+#This is my second program named ""Calc""
+#Calc Version: 0.2
+#I am your OFFLINE Calculator
+print(""Hello! It`s your Offline Calculator"")
+print(""Enter some math Operation!"")
+print(""Enter 0 in start to skip this"")
+while True:
+    n = str(input())
+    if n == ""0"":
+    elif n == ""P"":",,12.13,1,856,115
+851,loiseau_pupa,ways to improve poor blood circulation during pregnancy,,3.38,1,764,22
+878,loiseau_pupa,"Thank you for reaching out, Kristy.
+
+I'm delighted to hear that Hank is eager to continue with his tutoring sessions. We can certainly discuss the lesson plans and goals for Term 2 to ensure he stays engaged and motivated. Given his recent success with the selective tests, it's important to build on his confidence and set clear objectives for the remaining weeks.
+
+Here are some suggestions for how we can structure the lessons:
+
+1. **Review and Consolidation**: We can start by reviewing key concepts from the selective tests to reinforce his understanding and identify any areas where he might need additional support.
+2. **Skill Development**: Based on his performance, we can focus on developing specific skills that will help him excel in his current and future classes. This might include problem-solving techniques, time management, and study strategies.
+3. **Goal Setting**: We'll work together to set achievable goals for each week. These goals should be specific, measurable, attainable, relevant, and time-bound (SMART). For example, we might aim for him to master certain topics or improve his grades in particular subjects.
+4. **Engagement and Motivation**: To keep him motivated, we can incorporate interactive activities and real-world applications of the concepts he's learning. This could include projects, quizzes, and discussions that relate to his interests and future academic goals.
+
+I'm looking forward to discussing these ideas with you and Hank. Please let me know a convenient time to schedule a call or meeting to go over the details.
+
+Thank you for your continued support and trust in our tutoring services.
+
+Best regards,
+Marco",,32.0,1,1083,331
+908,loiseau_pupa,"Dear Purdue University Admissions Committee,
+
+I am writing to express my strong interest in being considered for admission to the fall college program at Purdue University. I was placed on the wait list and would greatly appreciate the opportunity to join the incoming class as a full-time student.
+
+Thank you for your time and consideration.
+
+Sincerely,
+[Name]",,8.89,1,787,80
+914,loiseau_pupa,I have a background in healthcare management quality and accreditation. What would you recommend for my doctoral studies at Northampton University?,,5.0,1,779,37
+916,loiseau_pupa,"I have a brand concept: It is called [Brand Name], inspired by street and skate culture, and will include its own clothing line. It will be based in [City]. Help me launch this brand quickly with a high profit margin. For inspiration, consider brands like [Brand Names], which focus on streetwear and skate culture. Utilize guerilla marketing strategies to promote the brand.",,10.04,1,841,92
+926,loiseau_pupa,"Pest In Class Exterminating is an experienced pest and termite control company based in Johnson City, TN. Our mission is to provide top-quality work and exceptional customer service. After years of working in the industry, we decided to start our own business to deliver better results with superior customer service at competitive prices. We utilize the best equipment and products, ensuring that we never compromise on quality, even when it comes to pricing. Our approach is rooted in treating every home as if it were our own, reflecting our commitment to our customers and their families. We offer both residential and commercial pest control services.",,13.94,1,910,134
+933,loiseau_pupa,"Explain why someone might wake up frequently during sleep cycles (approximately 90 minutes) after stopping cannabis use. They experience heavy sweating at night and feel groggy in the morning, as their dreams are vivid and they feel as though their brain was highly active. Include scientific data and research to support your explanation.",,8.62,1,824,77
+934,loiseau_pupa,Cost of living in [City] for a healthcare professional in a small apartment,,4.27,1,770,29
+966,loiseau_pupa,I am a graduate student interested in a specific theoretical framework and want to write a thesis on Gorz. Could you assist me in generating some fresh ideas?,,5.63,1,785,44
+973,loiseau_pupa,What is the best approach to gain recognition as an educational content creator? I have interesting stories to share but am unsure about the most effective way to reach my audience.,,5.81,1,785,46
+993,loiseau_pupa,"I have published several courses, but sales are not performing well. I need a detailed plan to boost sales for these courses:
+- Advanced Python Programming
+- Complete Python GUI Development with PySimpleGUI
+- Mastering MongoDB with Python
+- Building Desktop Applications with Python
+- Enhancing Productivity with Automation
+
+I am planning to create my own website to sell these courses. Can you assist me in building a website for these courses?",,10.77,1,853,100
+996,loiseau_pupa,"I am currently a BA student with a focus on linguistics. Originally, I planned to major in computer science, but found it challenging and ended up taking only the introductory course (with a grade lower than expected due to laziness and ADHD). My current GPA is below average at 3.07, and I aspire to pursue graduate studies in linguistics, specifically in semantics. However, it appears difficult to achieve this goal now. What are my options moving forward? Should I continue on this path despite facing challenges, or consider alternative career paths? Please provide a detailed plan and explore various career alternatives, along with step-by-step guidance on how to achieve these goals.",,15.21,1,927,148
+1007,loiseau_pupa,"Subject: Request for Supervisory Committee Membership
+
+Dear [Name],
+
+I hope this message finds you well. My name is [Your Name], and I am currently in my second year of the clinical psychology program, with a particular focus on neuropsychology. As we approach the start of my third year, I am reaching out to inquire about the possibility of including a microbiome researcher on my supervisory committee.
+
+Given the growing understanding of the microbiome's impact on mental health and cognitive functions, I believe that incorporating expertise from this field would greatly enhance my research and academic pursuits. Specifically, I am interested in exploring how gut microbiota influences neurological processes and psychological well-being.
+
+If you are available and interested in joining my supervisory committee, it would be an immense privilege to have you guide me through this exciting area of study. Please let me know if you would be open to discussing potential collaboration and how we can work together effectively.
+
+Thank you very much for considering my request. I look forward to the possibility of working with you and contributing to our shared research interests.
+
+Best regards,
+
+[Your Name]",,22.83,1,804,234
+1010,loiseau_pupa,"I want to lose weight and build some muscle mass. I have a basic fitness level. I am a 30-year-old male, approximately 185 cm tall, and weigh around 80 kg. How should I begin my training?",,7.44,1,805,64
+1022,loiseau_pupa,What is the typical highest salary for an Embedded Developer in the automotive industry with seven years of experience?,,4.64,1,773,33
+1074,loiseau_pupa,"I am a Mechanical Engineer with experience in international engineering consultancy, currently overseeing industrial projects in the Power and Water Desalination sectors across the Middle East for a global firm headquartered in Europe.",,6.18,1,794,50
+1078,loiseau_pupa,"Dear [Hiring Manager],
+
+I am writing to express my interest in the position advertised and to apply for the role. Currently, I am a student at a university located in the United Kingdom, pursuing a Bachelor's degree in Computing. My academic journey has equipped me with a strong foundation in computer science, programming, and software development, which I believe would be beneficial for the role.
+
+Throughout my studies, I have gained practical experience through various projects and internships. For instance, I worked on developing a mobile application that aimed to enhance user interaction with smart home devices. This project taught me valuable skills in software design, user interface development, and problem-solving. Additionally, I have experience working in a team environment, collaborating with peers to achieve common goals and deliver high-quality outcomes.
+
+I am particularly drawn to [Company Name] because of its reputation for innovation and commitment to excellence. I am eager to contribute my skills and enthusiasm to your team and learn from experienced professionals in the industry.
+
+Thank you for considering my application. I look forward to the opportunity to discuss how my background and experiences align with the needs of [Company Name]. Please feel free to contact me via email at [Email Address] or by phone at [Phone Number].
+
+Sincerely,
+[Name]",,25.72,1,788,266
+1121,loiseau_pupa,"As an employee, I have received a copy of a technical order, what page can I find about the operation procedure for an air intercept missile?",,5.45,1,799,42
