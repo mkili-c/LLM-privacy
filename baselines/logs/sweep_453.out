@@ -3846,3 +3846,986 @@ Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF
 {'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/734/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/734/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/734/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
 
 Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:52<00:00, 52.41s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.13s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.65s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:02<00:00, 62.65s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:17<00:00, 77.90s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.55s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.36s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:22<00:00, 22.28s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.84s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.27s/it][A
+                                                       [A  113/141 id 734: 405.72 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 13413.23it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/735/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/735/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/735/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:50<00:00, 50.17s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:20<00:00, 20.37s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.71s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.08s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:19<00:00, 19.45s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.71s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:06<00:00, 66.27s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:19<00:00, 19.82s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.62s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:01<00:00, 61.90s/it][A
+                                                       [A  114/141 id 735: 357.84 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11472.93it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/744/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/744/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/744/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.12s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:22<00:00, 22.18s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.11s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.50s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.48s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.11s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:55<00:00, 55.57s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.25s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.82s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.21s/it][A
+                                                       [A  115/141 id 744: 344.03 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10103.45it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/747/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/747/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/747/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:13<00:00, 73.04s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.63s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.47s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:14<00:00, 74.58s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.28s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.47s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:09<00:00, 69.81s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:19<00:00, 19.83s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.47s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:18<00:00, 78.28s/it][A
+                                                       [A  116/141 id 747: 398.6 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10191.88it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/761/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/761/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/761/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:54<00:00, 54.67s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:05<00:00, 65.31s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.40s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.71s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.86s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.13s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:55<00:00, 55.32s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.13s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.13s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:01<00:00, 61.11s/it][A
+                                                       [A  117/141 id 761: 366.67 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 13801.02it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/778/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/778/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/778/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:01<00:00, 61.12s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:49<00:00, 49.09s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.50s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.85s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.99s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.80s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.13s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:48<00:00, 48.44s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.25s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.05s/it][A
+                                                       [A  118/141 id 778: 437.97 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 13058.86it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/786/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/786/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/786/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:58<00:00, 58.12s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:38<00:00, 38.60s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.70s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:06<00:00, 66.64s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:38<00:00, 38.81s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.33s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.12s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:38<00:00, 38.16s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.69s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.13s/it][A
+                                                       [A  119/141 id 786: 412.12 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7649.91it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/789/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/789/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/789/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:01<00:00, 61.88s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:25<00:00, 25.26s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.32s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.85s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:21<00:00, 21.26s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.57s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.75s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:20<00:00, 20.29s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.86s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.08s/it][A
+                                                       [A  120/141 id 789: 355.9 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 13980.11it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/827/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/827/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/827/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.61s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.24s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.22s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.54s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:54<00:00, 54.68s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.67s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:04<00:00, 64.25s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:55<00:00, 55.78s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.37s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.81s/it][A
+                                                       [A  121/141 id 827: 463.63 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 15511.03it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/841/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/841/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/841/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.99s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.83s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.63s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:54<00:00, 54.76s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.52s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.26s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:52<00:00, 52.05s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.93s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.18s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.07s/it][A
+                                                       [A  122/141 id 841: 358.0 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6673.88it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/848/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/848/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/848/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:48<00:00, 48.58s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:24<00:00, 24.24s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.57s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.28s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:25<00:00, 25.81s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.74s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.97s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:25<00:00, 25.18s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.13s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.40s/it][A
+                                                       [A  123/141 id 848: 363.68 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 14619.74it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/851/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/851/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/851/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:50<00:00, 50.25s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:52<00:00, 52.77s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:11<00:00, 11.42s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:01<00:00, 61.82s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:04<00:00, 64.83s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:11<00:00, 11.50s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 58.00s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.98s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:11<00:00, 11.51s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:51<00:00, 51.15s/it][A
+                                                       [A  124/141 id 851: 438.86 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 29362.69it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/878/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/878/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/878/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.53s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:41<00:00, 41.27s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.83s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:58<00:00, 58.76s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:38<00:00, 38.35s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.90s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.54s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:39<00:00, 39.45s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.52s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.05s/it][A
+                                                       [A  125/141 id 878: 409.85 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7664.70it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/908/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/908/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/908/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.61s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:11<00:00, 11.04s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.84s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:43<00:00, 43.53s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:45<00:00, 45.06s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.65s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:45<00:00, 45.30s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:47<00:00, 47.04s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.10s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:48<00:00, 48.46s/it][A
+                                                       [A  126/141 id 908: 345.16 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8181.61it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/914/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/914/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/914/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:54<00:00, 54.50s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.05s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.67s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 60.00s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:08<00:00,  8.80s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.14s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:58<00:00, 58.77s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:10<00:00, 10.51s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.13s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.02s/it][A
+                                                       [A  127/141 id 914: 357.31 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 15273.58it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/916/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/916/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/916/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:58<00:00, 58.01s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.12s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.26s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:01<00:00, 61.08s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:14<00:00, 74.43s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.16s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.71s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.57s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.61s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:01<00:00, 61.33s/it][A
+                                                       [A  128/141 id 916: 397.97 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 15710.15it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/926/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/926/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/926/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:02<00:00, 62.92s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.56s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.11s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.48s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.91s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.47s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.95s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:19<00:00, 19.54s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.75s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.47s/it][A
+                                                       [A  129/141 id 926: 345.91 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 18969.58it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/933/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/933/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/933/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.73s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.38s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.10s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:52<00:00, 52.96s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.01s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.08s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.39s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.40s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.98s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.89s/it][A
+                                                       [A  130/141 id 933: 321.66 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 17920.66it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/934/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/934/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/934/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.87s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:07<00:00,  7.70s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.86s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:06<00:00, 66.13s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:11<00:00, 71.79s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.86s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:02<00:00, 62.88s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:09<00:00,  9.33s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.86s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:06<00:00, 66.27s/it][A
+                                                       [A  131/141 id 934: 389.2 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 16067.74it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/966/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/966/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/966/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.23s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:08<00:00,  8.33s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.51s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.59s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:09<00:00,  9.25s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.53s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.25s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:10<00:00, 10.15s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.52s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:52<00:00, 52.45s/it][A
+                                                       [A  132/141 id 966: 294.47 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11839.87it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/973/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/973/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/973/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.19s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:05<00:00, 65.17s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.48s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.65s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.98s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.65s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.74s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.31s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.83s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:51<00:00, 51.75s/it][A
+                                                       [A  133/141 id 973: 407.53 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 16571.92it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/993/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/993/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/993/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:07<00:00, 67.80s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:20<00:00, 20.93s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.48s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:06<00:00, 66.87s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:20<00:00, 20.31s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.58s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:08<00:00, 68.06s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:23<00:00, 23.47s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.49s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:05<00:00, 65.97s/it][A
+                                                       [A  134/141 id 993: 379.7 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 12480.16it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/996/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/996/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/996/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:58<00:00, 58.64s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:23<00:00, 23.83s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.41s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.12s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:26<00:00, 26.82s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.24s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:58<00:00, 58.41s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:23<00:00, 23.28s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.24s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:55<00:00, 55.42s/it][A
+                                                       [A  135/141 id 996: 359.16 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 12631.60it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1007/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1007/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1007/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:06<00:00, 66.80s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.96s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.19s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.49s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.14s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.64s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:02<00:00, 62.86s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.02s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.63s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.29s/it][A
+                                                       [A  136/141 id 1007: 340.75 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6902.94it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1010/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1010/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1010/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:52<00:00, 52.46s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:11<00:00, 11.14s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.11s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.50s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.70s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.11s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.24s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.06s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.39s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.29s/it][A
+                                                       [A  137/141 id 1010: 415.73 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 16292.55it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1022/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1022/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1022/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:02<00:00, 62.21s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:05<00:00,  5.72s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:11<00:00, 11.96s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.12s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:08<00:00,  8.32s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:11<00:00, 11.96s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.22s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:07<00:00,  7.62s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:11<00:00, 11.97s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.96s/it][A
+                                                       [A  138/141 id 1022: 295.67 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 12721.61it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1074/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1074/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1074/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.55s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.76s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.37s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.42s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.21s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.27s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:55<00:00, 55.85s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.76s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.78s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.84s/it][A
+                                                       [A  139/141 id 1074: 335.64 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 9317.06it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1078/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1078/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1078/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:54<00:00, 54.25s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.34s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.69s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:59<00:00, 59.12s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:06<00:00, 66.27s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.15s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.77s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:03<00:00, 63.90s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.32s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:48<00:00, 48.06s/it][A
+                                                       [A  140/141 id 1078: 450.61 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 12752.41it/s]
+{'output_dir': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1121/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1121/profiles.jsonl', 'outpath': '/work/projects/mkilic/LLM-privacy/results/staab_runs/pupa_sd/1121/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.17s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.49s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:13<00:00, 13.30s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:02<00:00, 62.68s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.62s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.34s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:09<00:00, 69.11s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.74s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.93s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:06<00:00, 66.87s/it][A
+                                                       [A  141/141 id 1121: 348.98 s (0 incomplete so far)
+staab: wrote results/rewrites/pupa_sd_staab.csv (0 incomplete)
+Done Fri Oct  9 21:08:44 CEST 2026

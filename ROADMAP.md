@@ -254,21 +254,27 @@ Effort: PUPA-SD done; baselines with the sweep script ~½ day of coding plus a f
 | δ = 0.47 (K = 5) | leaves 186/200 privacy rewrites alone, edits 90/100 off-topic rewrites |
 | Stress run, old summed D with 64-token answers | garbled "I am programmer scientist a mind, …" scored 33.9, below the sensible "I am a individual, …" at 51.9 |
 
-## Plan to the end (updated 2026-10-09)
+## Plan to the end (updated 2026-10-09, evening)
 
-Code state: `algorithm_v2` (commit `2e7be39`): tried list kept across loop iterations, fluency bound min(spikes(current), spikes(x₀)) + ε. Times: GPU = GB10 job time (one job at a time), coding = Claude.
+Code state: `algorithm_v3` (commits `e53d0a9`, `5911295`): tried list kept across loop iterations; fluency bound min(spikes(current), spikes(x₀)) + ε; minimum hinge drop min(0.05, the hinge left). Times: GPU = GB10 job time (one job at a time), coding = Claude.
 
 Runtime per dev row so far (`seconds` column; Marta / Deniz / Ruth):
 - job 436, before the tried list: 930 / 613 / 416 s (~11 min average);
-- job 445, tried list without the two fixes: 3946 / 602 / 1700 s (~24 min average). Marta needed 43 LLM calls, many of them on retried cuts; 21 tries broke fluency.
+- job 445, tried list without the two fixes: 3946 / 602 / 1700 s (~24 min average). Marta needed 43 LLM calls, many of them on retried cuts; 21 tries broke fluency;
+- job 452, `algorithm_v2`: 4518 / 784 / 1693 s (~39 min average).
 
-A1b measures `algorithm_v2`, and its numbers set the C1 and D1 estimates.
+A1c measures `algorithm_v3`, and its numbers set the C1 and D1 estimates.
 
 - [x] **A1** Smoke test of the tried list (job 445, 2026-10-08, 1:45 h, `dev_loop_tried_list.csv`). It found the budget transfer ("Kraków" removed, then "should a like me follow") and the retried cuts, fixed in `algorithm_v2`.
-- [ ] **A1b** Smoke test of `algorithm_v2` on the same 3 rows, into a new file: `sbatch run_loop_sweep_gb10.sbatch --out results/rewrites/dev_loop_v3.csv --limit 3`. ~35–70 min GPU. Check in the log: `fluency budget: spikes <= min(current, x_0 = …) + 4.0`; no "should a like me follow"; no cut retried in the second outer iteration; per-row seconds.
 - [x] **A1b** Done (job 452, `dev_loop_v3.csv`): both fixes behaved as intended, but runtime rose to 4,518 / 784 / 1,693 s (~39 min per row). Four problems: (1) noise-sized hinge gains accepted → minimum hinge drop added; (2) D missed lost utility-critical content (Ruth's "type 2 diabetes" deleted: D 0.19; Marta's question destroyed: D 0.445, both < δ, so the utility step made no edit in any row): a limitation of per-token D, for the judge to show; (3) the spike measure is offset when an edit also removes rare words ("I here in location" lowered the spikes); (4) wasted rounds on an attribute at τ.
 - [ ] **A1c** Smoke test with the minimum hinge drop, same 3 rows: `sbatch run_loop_sweep_gb10.sbatch --out results/rewrites/dev_loop_v4.csv --limit 3`. Compare with 452: runtime per row, no edit with a gain below 0.05, the final texts.
-- [ ] **A2** Baselines on PUPA-SD (the old files were deleted on 2026-10-08): `sbatch baselines/run_sweep_gb10.sbatch "loiseau_pupa loiseau_synthpai papillon staab"`, ~14 h GPU (~1 h + ~13 h), plus Presidio's rerun as a CPU job (~1 min).
+- [ ] **A2** Baselines on PUPA-SD: job 453, running since 2026-10-09 02:09. Status at 18:15 (16 h in):
+  - `loiseau_pupa`: 141 rows, 1 failed (id 734: litellm timeout), median 8.7 s per prompt;
+  - `loiseau_synthpai`: 141 rows, median 7.2 s;
+  - `papillon`: 141 rows, median 13.6 s;
+  - `staab`: 113 of 141, median 362 s (~6 min) per prompt, ~3 h left. The job ends at ~19 h, inside its 24 h limit; if it hits the limit, resubmitting the same command resumes.
+
+  After it: rerun `loiseau_pupa` for the failed id 734 (`run_baselines.py` retries failed rows; a short GB10 job), and Presidio's rerun as a CPU job (~1 min).
 - [ ] **B1** Written 2026-10-09, logic-tested with stubs, not run yet: `calibrate_thresholds.py` + `run_calibration_gb10.sbatch`, edits in `utility/data/fluency_pairs.csv`, outputs to `results/calibration/`. Calibration measurement, one small script on the 7B. Per dev row, 10 answers of 256 tokens sampled once from the original and cached. D with the loop's estimator (`kl_multi.prepare_answers` + `text_kl`) and spikes (`disfluency`) for every column of `prompt_rewrites_100.csv`, plus the spikes of the 21 calibration edits (saved to the repo as a data file). Output: one CSV. ~1.5 h coding, ~2–3 h GPU.
 - [ ] **B2** Derive δ and ε from B1's CSV, with no model. δ separates the privacy rewrites (`priv_preserving`, `priv_targeted`) from `util_broken`, as for 0.47; ε separates the clean from the broken edits (per edit, as the guard now applies it). Set the defaults (loop, sweep, `kl_multi`, `privacy_rewrite`) and tag `algorithm-final`. ~1 h.
 - [ ] **C1** Dev validation: 30 rows with the final values. ~5.5–12 h GPU (11–24 min per row; A1b narrows it). If the guard blocks too much, one recalibration round (dev only).
@@ -280,12 +286,12 @@ A1b measures `algorithm_v2`, and its numbers set the C1 and D1 estimates.
 - [ ] **E** Report: main table with CIs, breakdown by attribute, leak-vs-D plot, deviations table, limitations (judge covers labeled values only, `[stall]` counts, echo as definition, fluency thresholds from small samples, the final fix's leak check is noise-driven on non-converged rows). ~5 h.
 - Optional: Laya Step 5 ablation (one more C1-sized run + judge), Qwen reference probes for Laya's not-aligned claim (~1 h GPU + 1 h coding), reproduction checks (need an API budget).
 
-GPU order, critical path first: **A1b → B1 → C1 → A2 → D1 → D2.** Calibration and validation come before the baselines so that a recalibration round, if needed, happens early. A2 only has to finish before D2, and the total GPU time is the same in any order.
+GPU order from here: **A2 (running) → A1c → B1 → C1 → D1 → D2**, with the short id-734 rerun anywhere before D2.
 
-Totals: ~14 h of coding (~2 days), ~52–88 GB10 hours depending on A1b, ~4–5 days of wall-clock time if jobs chain.
+Totals left: ~11 h of coding (B2, C2, C3, D3, E), ~45–95 GB10 hours depending on A1c's per-row time, ~3–5 days of wall-clock time if jobs chain.
 
 Open decisions for this plan:
-- [ ] Runtime: if A1b still shows ~20+ min per row, D1 needs ~50 h. Lowering `--privacy_max_iters` (8) would shorten it but changes the frozen algorithm, so it's the user's call after A1b.
+- [ ] Runtime: if A1c still shows ~20+ min per row, D1 needs ~50 h or more. Lowering `--privacy_max_iters` (8) would shorten it but changes the frozen algorithm, so it's the user's call after A1c.
 - [x] Independent utility and fluency measure (decided 2026-10-08): the judge rates each rewrite in a separate call from the blind guess. **Utility 1–5** (sees original and rewrite: how well would the request still be served?) and **fluency 1–5** (sees the rewrite only; the originals are rated too, as reference). ~846 + 141 ratings. D and spikes stay in, but the loop steers toward both (same 7B), so the judge's ratings carry the independent claim. Cosine dropped.
 - [ ] Matching rule (see Evaluation pipeline, Open decisions).
 

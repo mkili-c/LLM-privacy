@@ -1,0 +1,662 @@
+sudo: sorry, you must have a tty to run sudo
+Job 463 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_loop_v4.csv --limit 3
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 9845.03it/s]
+loop: 0 rows already done, 3 to go -> results/rewrites/dev_loop_v4.csv
+
+############################## iteration 1: privacy step ##############################
+  fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+
+=== iteration 0: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+    laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+    max      gender 1.000       age 0.979  geograph 1.000  professi 1.000  health c 0.032  educatio 1.000  socioeco 0.269  relation 0.176  family s 0.979  national 0.998
+  leaking: gender, age, geographic location, profession, education level, family situation, nationality
+  picked spans: 'routine should a midwife' (profession +0.782), 'Kraków' (geographic location +0.999), 'maternity' (family situation +0.960), '34' (age +0.957)
+    'routine should a midwife': all 14 candidates break fluency
+    '34': none of 1 candidates lowers the hinge enough (best 'midlife': 3.454 -> 3.467)
+    'Kraków' -> 'hospital'  (hinge 3.454 -> 2.454, spikes 19.6 -> 13.9, 15 candidates, 0 broke fluency)
+    'maternity' -> 'ward'  (hinge 2.454 -> 1.978, spikes 13.9 -> 14.6, 14 candidates, 6 broke fluency)
+
+=== iteration 1: 'The night shifts at the ward ward here in hospital are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    qwen     gender 0.995       age 0.982  geograph 0.000  professi 1.000  health c 0.000  educatio 0.999  socioeco 0.029  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.977       age 0.979  geograph 0.032  professi 0.978  health c 0.025  educatio 0.027  socioeco 0.025  relation 0.022  family s 0.034  national 0.021
+    max      gender 0.995       age 0.982  geograph 0.032  professi 1.000  health c 0.025  educatio 0.999  socioeco 0.029  relation 0.022  family s 0.034  national 0.021
+  leaking: gender, age, profession, education level
+  picked spans: 'midwife' (profession +0.182), 'At 34' (age +0.932)
+    'midwife' -> 'care provider'  (hinge 1.975 -> 0.979, spikes 14.6 -> 15.5, 10 candidates, 9 broke fluency)
+    'At 34': none of 8 candidates lowers the hinge enough (best 'In my mid-thirties': 0.979 -> 0.993)
+
+=== iteration 2: 'The night shifts at the ward ward here in hospital are wrecking my sleep. At 34, what recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.971  geograph 0.000  professi 1.000  health c 0.000  educatio 0.438  socioeco 0.007  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.979  geograph 0.064  professi 0.978  health c 0.026  educatio 0.027  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+    max      gender 0.022       age 0.979  geograph 0.064  professi 1.000  health c 0.026  educatio 0.438  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+  leaking: age, profession
+  picked spans: 'shifts at the ward' (profession +0.794), 'sleep. At' (age +0.918)
+    'sleep. At': all 14 candidates break fluency
+    'shifts at the ward': all 20 candidates break fluency
+
+=== iteration 3: 'The night shifts at the ward ward here in hospital are wrecking my sleep. At 34, what recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.971  geograph 0.000  professi 1.000  health c 0.000  educatio 0.438  socioeco 0.007  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.979  geograph 0.064  professi 0.978  health c 0.026  educatio 0.027  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+    max      gender 0.022       age 0.979  geograph 0.064  professi 1.000  health c 0.026  educatio 0.438  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+  leaking: age, profession
+  picked spans: 'shifts at the' (profession +0.170), '34, what' (age +0.910)
+    '34, what': all 21 candidates break fluency
+    'shifts at the': all 16 candidates break fluency
+
+=== iteration 4: 'The night shifts at the ward ward here in hospital are wrecking my sleep. At 34, what recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.971  geograph 0.000  professi 1.000  health c 0.000  educatio 0.438  socioeco 0.007  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.979  geograph 0.064  professi 0.978  health c 0.026  educatio 0.027  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+    max      gender 0.022       age 0.979  geograph 0.064  professi 1.000  health c 0.026  educatio 0.438  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+  leaking: age, profession
+  picked spans: 'care provider' (profession +0.132), 'sleep. At 34' (age +0.870)
+    'care provider': none of 10 candidates lowers the hinge enough (best 'team member': 0.979 -> 0.986)
+    'sleep. At 34': all 14 candidates break fluency
+
+=== iteration 5: 'The night shifts at the ward ward here in hospital are wrecking my sleep. At 34, what recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.971  geograph 0.000  professi 1.000  health c 0.000  educatio 0.438  socioeco 0.007  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.979  geograph 0.064  professi 0.978  health c 0.026  educatio 0.027  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+    max      gender 0.022       age 0.979  geograph 0.064  professi 1.000  health c 0.026  educatio 0.438  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+  leaking: age, profession
+  picked spans: 'provider like' (profession +0.098), 'my sleep. At' (age +0.870)
+    'provider like': none of 1 candidates lowers the hinge enough (best 'staff member': 0.979 -> 0.978)
+    'my sleep. At': all 14 candidates break fluency
+
+=== iteration 6: 'The night shifts at the ward ward here in hospital are wrecking my sleep. At 34, what recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.971  geograph 0.000  professi 1.000  health c 0.000  educatio 0.438  socioeco 0.007  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.979  geograph 0.064  professi 0.978  health c 0.026  educatio 0.027  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+    max      gender 0.022       age 0.979  geograph 0.064  professi 1.000  health c 0.026  educatio 0.438  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+  leaking: age, profession
+  picked spans: 'the ward ward' (profession +0.040), '34, what recovery' (age +0.870)
+    '34, what recovery': all 12 candidates break fluency
+    'the ward ward': none of 15 candidates lowers the hinge enough (best 'hospitals': 0.979 -> 0.978)
+
+=== iteration 7: 'The night shifts at the ward ward here in hospital are wrecking my sleep. At 34, what recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.971  geograph 0.000  professi 1.000  health c 0.000  educatio 0.438  socioeco 0.007  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.979  geograph 0.064  professi 0.978  health c 0.026  educatio 0.027  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+    max      gender 0.022       age 0.979  geograph 0.064  professi 1.000  health c 0.026  educatio 0.438  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+  leaking: age, profession
+  picked spans: 'a care provider' (profession +0.019), 'At 34, what' (age +0.864)
+    'a care provider': none of 1 candidates lowers the hinge enough (best 'doctor': 0.979 -> 1.478)
+    'At 34, what' -> 'Which'  (hinge 0.979 -> 0.881, spikes 15.5 -> 17.3, 1 candidates, 20 broke fluency)
+
+=== iteration 8: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.881  socioeco 0.004  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.258  professi 0.978  health c 0.025  educatio 0.025  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.258  professi 1.000  health c 0.025  educatio 0.881  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+  max_iters reached
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+step 000  D=0.1947 (initial, mean over 10 answers)  'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 1: leak after privacy 1.000, after utility 1.000 (threshold 0.5)
+
+############################## iteration 2: privacy step ##############################
+  fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+
+=== iteration 0: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.881  socioeco 0.004  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.258  professi 0.978  health c 0.025  educatio 0.025  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.258  professi 1.000  health c 0.025  educatio 0.881  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+  leaking: profession, education level
+  picked spans: 'The night shifts at' (profession +0.362), 'sleep. Which' (education level +0.771)
+    'sleep. Which': all 13 candidates break fluency
+    'The night shifts at': all 13 candidates break fluency
+
+=== iteration 1: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.881  socioeco 0.004  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.258  professi 0.978  health c 0.025  educatio 0.025  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.258  professi 1.000  health c 0.025  educatio 0.881  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+  leaking: profession, education level
+  picked spans: 'night shifts at the' (profession +0.333), 'sleep. Which recovery' (education level +0.721)
+    'sleep. Which recovery': all 12 candidates break fluency
+    'night shifts at the': all 11 candidates break fluency
+
+=== iteration 2: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.881  socioeco 0.004  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.258  professi 0.978  health c 0.025  educatio 0.025  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.258  professi 1.000  health c 0.025  educatio 0.881  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+  leaking: profession, education level
+  picked spans: 'shifts at' (profession +0.219), 'recovery routine should a' (education level +0.708)
+    'recovery routine should a': all 18 candidates break fluency
+    'shifts at': all 12 candidates break fluency
+
+=== iteration 3: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.881  socioeco 0.004  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.258  professi 0.978  health c 0.025  educatio 0.025  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.258  professi 1.000  health c 0.025  educatio 0.881  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+  leaking: profession, education level
+  picked spans: 'night shifts at' (profession +0.143)
+    'night shifts at': all 13 candidates break fluency
+
+=== iteration 4: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.881  socioeco 0.004  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.258  professi 0.978  health c 0.025  educatio 0.025  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.258  professi 1.000  health c 0.025  educatio 0.881  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+  leaking: profession, education level
+  picked spans: 'shifts' (profession +0.009)
+    'shifts': all 13 candidates break fluency
+
+=== iteration 5: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.881  socioeco 0.004  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.258  professi 0.978  health c 0.025  educatio 0.025  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.258  professi 1.000  health c 0.025  educatio 0.881  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+  leaking: profession, education level
+  picked spans: 'night' (profession +0.002)
+    'night': none of 1 candidates lowers the hinge enough (best 'evening': 0.881 -> 0.881)
+
+=== iteration 6: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.881  socioeco 0.004  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.258  professi 0.978  health c 0.025  educatio 0.025  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.258  professi 1.000  health c 0.025  educatio 0.881  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+  leaking: profession, education level
+  picked spans: 'like' (profession +0.001), 'night shifts at' (education level +0.685)
+    'like' -> 'suggest'  (hinge 0.881 -> 0.646, spikes 17.3 -> 17.3, 3 candidates, 14 broke fluency)
+    'night shifts at': all 13 candidates break fluency
+
+=== iteration 7: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.997  health c 0.002  educatio 0.622  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.526  professi 0.978  health c 0.026  educatio 0.025  socioeco 0.024  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.526  professi 0.997  health c 0.026  educatio 0.622  socioeco 0.024  relation 0.021  family s 0.021  national 0.021
+  leaking: geographic location, profession, education level
+  picked spans: 'sleep. Which' (profession +0.929), 'recovery routine should' (education level +0.485), 'hospital' (geographic location +0.501)
+    'recovery routine should': none of 1 candidates lowers the hinge enough (best 'schedule': 0.646 -> 0.652)
+    'sleep. Which': all 14 candidates break fluency
+    'hospital': none of 5 candidates lowers the hinge enough (best 'facility': 0.646 -> 0.678)
+
+=== iteration 8: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.997  health c 0.002  educatio 0.622  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.526  professi 0.978  health c 0.026  educatio 0.025  socioeco 0.024  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.526  professi 0.997  health c 0.026  educatio 0.622  socioeco 0.024  relation 0.021  family s 0.021  national 0.021
+  max_iters reached
+
+############################## iteration 2: utility step (kl_multi) ##############################
+fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+step 000  D=0.2333 (initial, mean over 10 answers)  'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider suggest me follow on days off?'
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 2: leak after privacy 0.997, after utility 0.997 (threshold 0.5)
+
+############################## iteration 3: privacy step ##############################
+  fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+
+=== iteration 0: 'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.997  health c 0.002  educatio 0.622  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.526  professi 0.978  health c 0.026  educatio 0.025  socioeco 0.024  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.526  professi 0.997  health c 0.026  educatio 0.622  socioeco 0.024  relation 0.021  family s 0.021  national 0.021
+  leaking: geographic location, profession, education level
+  picked spans: 'night shifts' (profession +0.929), 'Which recovery routine' (education level +0.462)
+    'Which recovery routine' -> '<deleted>'  (hinge 0.646 -> 0.478, spikes 17.3 -> 19.7, 6 candidates, 9 broke fluency)
+    'night shifts': none of 1 candidates lowers the hinge enough (best 'work schedules': 0.478 -> 0.476)
+
+=== iteration 1: 'The night shifts at the ward ward here in hospital are wrecking my sleep.[…] should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.953  health c 0.018  educatio 0.095  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.025  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.095  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+  leaking: profession
+  picked spans: 'sleep.[…] should a' (profession +0.851)
+    'sleep. should a': all 14 candidates break fluency
+
+=== iteration 2: 'The night shifts at the ward ward here in hospital are wrecking my sleep.[…] should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.953  health c 0.018  educatio 0.095  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.025  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.095  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+  leaking: profession
+  picked spans: 'The night shifts' (profession +0.849)
+    'The night shifts': none of 2 candidates lowers the hinge enough (best 'Shift work': 0.478 -> 0.493)
+
+=== iteration 3: 'The night shifts at the ward ward here in hospital are wrecking my sleep.[…] should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.953  health c 0.018  educatio 0.095  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.025  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.095  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+  leaking: profession
+  picked spans: 'on days' (profession +0.720)
+    'on days': all 17 candidates break fluency
+
+=== iteration 4: 'The night shifts at the ward ward here in hospital are wrecking my sleep.[…] should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.953  health c 0.018  educatio 0.095  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.025  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.095  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+  leaking: profession
+  picked spans: 'days off' (profession +0.634)
+    'days off': none of 7 candidates lowers the hinge enough (best 'respite': 0.478 -> 0.477)
+
+=== iteration 5: 'The night shifts at the ward ward here in hospital are wrecking my sleep.[…] should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.953  health c 0.018  educatio 0.095  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.025  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.095  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+  leaking: profession
+  picked spans: 'sleep.[…] should' (profession +0.634)
+    'sleep. should': all 16 candidates break fluency
+
+=== iteration 6: 'The night shifts at the ward ward here in hospital are wrecking my sleep.[…] should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.953  health c 0.018  educatio 0.095  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.025  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.095  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+  leaking: profession
+  picked spans: 'follow on days' (profession +0.584)
+    'follow on days': none of 4 candidates lowers the hinge enough (best 'rest': 0.478 -> 0.477)
+
+=== iteration 7: 'The night shifts at the ward ward here in hospital are wrecking my sleep.[…] should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.953  health c 0.018  educatio 0.095  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.025  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.095  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+  leaking: profession
+  picked spans: 'on days off' (profession +0.532)
+    'on days off': none of 3 candidates lowers the hinge enough (best '<deleted>': 0.478 -> 0.735)
+
+=== iteration 8: 'The night shifts at the ward ward here in hospital are wrecking my sleep.[…] should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.953  health c 0.018  educatio 0.095  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.025  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.371  professi 0.978  health c 0.032  educatio 0.095  socioeco 0.025  relation 0.021  family s 0.023  national 0.021
+  max_iters reached
+
+############################## iteration 3: utility step (kl_multi) ##############################
+fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+gaps     D=0.4820 (all 1 empty)
+  gap 0: 'The night shifts at the ward ward here in hospital are wrecking my sleep. [MASK] should a care provider suggest me follow on days off?'  (29 fillers broke fluency)
+    top fillers: 'so that'(D=0.450), 'and then'(D=0.456), 'should'(D=0.481)
+    filled with 'so that'  D=0.4500
+step 000  D=0.4500 (initial, mean over 10 answers)  'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me follow on days off?'
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 3: leak after privacy 0.978, after utility 0.978 (threshold 0.5)
+
+############################## iteration 4: privacy step ##############################
+  fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+
+=== iteration 0: 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.953  health c 0.076  educatio 0.269  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.684  professi 0.978  health c 0.041  educatio 0.025  socioeco 0.025  relation 0.020  family s 0.022  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.684  professi 0.978  health c 0.076  educatio 0.269  socioeco 0.025  relation 0.020  family s 0.022  national 0.021
+  leaking: geographic location, profession
+  picked spans: 'sleep. so that should' (profession +0.534), 'night' (geographic location +0.656)
+    'sleep. so that should': all 14 candidates break fluency
+    'night': none of 1 candidates lowers the hinge enough (best 'evening': 0.662 -> 0.636)
+
+=== iteration 1: 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me follow on days off?'
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.953  health c 0.076  educatio 0.269  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.684  professi 0.978  health c 0.041  educatio 0.025  socioeco 0.025  relation 0.020  family s 0.022  national 0.021
+    max      gender 0.022       age 0.022  geograph 0.684  professi 0.978  health c 0.076  educatio 0.269  socioeco 0.025  relation 0.020  family s 0.022  national 0.021
+  leaking: geographic location, profession
+  picked spans: 'follow on days off' (profession +0.303), 'ward' (geographic location +0.651)
+    'follow on days off' -> 'seek time away'  (hinge 0.662 -> 0.478, spikes 22.0 -> 23.1, 9 candidates, 7 broke fluency)
+    'ward': none of 1 candidates lowers the hinge enough (best 'floor': 0.478 -> 0.478)
+
+=== iteration 2: 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time away?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.818  health c 0.011  educatio 0.182  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.024  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.182  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+  leaking: profession
+  picked spans: 'time away' (profession +0.620)
+    'time away': none of 2 candidates lowers the hinge enough (best 'respite': 0.478 -> 0.477)
+
+=== iteration 3: 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time away?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.818  health c 0.011  educatio 0.182  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.024  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.182  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+  leaking: profession
+  picked spans: 'The night' (profession +0.268)
+    'The night': all 12 candidates break fluency
+
+=== iteration 4: 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time away?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.818  health c 0.011  educatio 0.182  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.024  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.182  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+  leaking: profession
+  picked spans: 'away' (profession +0.255)
+    'away': none of 2 candidates lowers the hinge enough (best 'respite': 0.478 -> 0.477)
+
+=== iteration 5: 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time away?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.818  health c 0.011  educatio 0.182  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.024  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.182  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+  leaking: profession
+  picked spans: 'the ward ward here' (profession +0.230)
+    'the ward ward here': none of 1 candidates lowers the hinge enough (best 'the clinic clinic here': 0.478 -> 0.926)
+
+=== iteration 6: 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time away?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.818  health c 0.011  educatio 0.182  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.024  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.182  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+  leaking: profession
+  picked spans: 'are wrecking my' (profession +0.218)
+    'are wrecking my': none of 1 candidates lowers the hinge enough (best '<deleted>': 0.478 -> 0.477)
+
+=== iteration 7: 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time away?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.818  health c 0.011  educatio 0.182  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.024  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.182  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+  leaking: profession
+  picked spans: 'seek time away' (profession +0.218)
+    'seek time away': none of 12 candidates lowers the hinge enough (best 'get some days off': 0.478 -> 0.478)
+
+=== iteration 8: 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time away?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.818  health c 0.011  educatio 0.182  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.024  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.022  geograph 0.097  professi 0.978  health c 0.030  educatio 0.182  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+  max_iters reached
+
+############################## iteration 4: utility step (kl_multi) ##############################
+fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+step 000  D=0.5837 (initial, mean over 10 answers)  'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time away?'
+  pos=41 'Ġthat' avg g*x=+0.0029  mask='The night shifts at the ward ward here in hospital are wrecking my sleep. so [MASK] should a care provider suggest me seek time away?'
+    LLM proposed 38 words, 0 single-token and fluent, 7 multi-token dropped, 31 broke fluency
+  pos=50 'Ġaway' avg g*x=-0.0014  mask='The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time [MASK]?'
+    LLM proposed 33 words, 3 single-token and fluent, 5 multi-token dropped, 25 broke fluency
+    top candidates: shift(g=+0.010, D=0.576), treatment(g=+0.010, D=0.598), therapy(g=+0.003, D=0.621) 
+
+step 001  D=0.5763  pos=50  'Ġaway' -> 'Ġshift'  content='The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time shift?' 
+
+  pos=41 'Ġthat' avg g*x=+0.0024  mask='The night shifts at the ward ward here in hospital are wrecking my sleep. so [MASK] should a care provider suggest me seek time shift?'
+    LLM proposed 29 words, 0 single-token and fluent, 4 multi-token dropped, 25 broke fluency
+  pos=49 'Ġtime' avg g*x=+0.0014  mask='The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek [MASK] shift?'
+    LLM proposed 30 words, 2 single-token and fluent, 2 multi-token dropped, 26 broke fluency
+    top candidates: alternative(g=-0.003, D=0.597), alternate(g=-0.001, D=0.598) 
+
+    no candidate improves D (0.5969 >= 0.5763); next position 
+
+  pos=51 '?' avg g*x=+0.0010  mask='The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time shift[MASK]'
+    LLM proposed 36 words, 0 single-token and fluent, 15 multi-token dropped, 21 broke fluency
+step 002  no improving swap in the top 3 positions; stopping 
+
+
+  iteration 4: leak after privacy 0.978, after utility 0.978 (threshold 0.5)
+
+############################## fluency fix ##############################
+  spikes   leak      D
+    23.2  0.978  0.576  now  'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time shift?'
+    15.5  0.995  0.582  drop 'The night shifts at the ward here in the hospital are wrecking my sleep. Should a care provider suggest I seek a time shift?'
+    13.7  0.977  0.596  drop 'The night shifts at the ward here in the hospital are wrecking my sleep. Should a care provider suggest I seek a night shift?'
+    12.6  0.996  0.649  drop 'The night shifts at the ward here in the hospital are wrecking my sleep. Should a care provider suggest that I seek a sleep study?'
+    15.5  0.995  0.583  drop 'The night shifts at the ward here in the hospital are wrecking my sleep. Should a care provider suggest that I seek a time shift?'
+  no fix passes: text kept
+
+================================================================================
+original: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+
+  iteration 1
+    privacy  leak 1.000  'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+    utility  leak 1.000  'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider like me follow on days off?'
+      qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.881  socioeco 0.004  relation 0.000  family s 0.000  national 0.000
+      laya     gender 0.021       age 0.021  geograph 0.258  professi 0.978  health c 0.025  educatio 0.025  socioeco 0.024  relation 0.020  family s 0.021  national 0.021
+
+  iteration 2
+    privacy  leak 0.997  'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider suggest me follow on days off?'
+    utility  leak 0.997  'The night shifts at the ward ward here in hospital are wrecking my sleep. Which recovery routine should a care provider suggest me follow on days off?'
+      qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.997  health c 0.002  educatio 0.622  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+      laya     gender 0.021       age 0.021  geograph 0.526  professi 0.978  health c 0.026  educatio 0.025  socioeco 0.024  relation 0.021  family s 0.021  national 0.021
+
+  iteration 3
+    privacy  leak 0.978  'The night shifts at the ward ward here in hospital are wrecking my sleep.[…] should a care provider suggest me follow on days off?'
+    utility  leak 0.978  'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me follow on days off?'
+      qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.953  health c 0.076  educatio 0.269  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+      laya     gender 0.022       age 0.022  geograph 0.684  professi 0.978  health c 0.041  educatio 0.025  socioeco 0.025  relation 0.020  family s 0.022  national 0.021
+
+  iteration 4
+    privacy  leak 0.978  'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time away?'
+    utility  leak 0.978  'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time shift?'
+      qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.731  health c 0.018  educatio 0.321  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+      laya     gender 0.021       age 0.022  geograph 0.677  professi 0.978  health c 0.027  educatio 0.024  socioeco 0.025  relation 0.020  family s 0.021  national 0.021
+
+final (NOT converged, 4 iterations): 'The night shifts at the ward ward here in hospital are wrecking my sleep. so that should a care provider suggest me seek time shift?'
+
+############################## iteration 1: privacy step ##############################
+  fluency budget: spikes <= min(current, x_0 = 27.4) + 4.0
+
+=== iteration 0: 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+    qwen     gender 0.007       age 0.999  geograph 0.924  professi 1.000  health c 0.000  educatio 0.818  socioeco 0.009  relation 0.000  family s 0.000  national 0.924
+    laya     gender 0.021       age 0.978  geograph 0.974  professi 0.971  health c 0.020  educatio 0.599  socioeco 0.022  relation 0.020  family s 0.020  national 0.034
+    max      gender 0.021       age 0.999  geograph 0.974  professi 1.000  health c 0.020  educatio 0.818  socioeco 0.022  relation 0.020  family s 0.020  national 0.924
+  leaking: age, geographic location, profession, education level, nationality
+  picked spans: 'test software' (profession +0.949), '27' (age +0.998), 'Izmir' (geographic location +0.953), 'Which certifications' (education level +0.747)
+    '27': none of 1 candidates lowers the hinge enough (best 'around this age': 2.214 -> 2.351)
+    'Izmir' -> 'location'  (hinge 2.214 -> 1.298, spikes 27.4 -> 24.0, 11 candidates, 1 broke fluency)
+    'test software' -> '<deleted>'  (hinge 1.298 -> 0.499, spikes 24.0 -> 18.2, 1 candidates, 0 broke fluency)
+    'Which certifications': none of 1 candidates lowers the hinge enough (best 'What credentials': 0.499 -> 0.498)
+
+=== iteration 1: 'Which certifications would help someone break into security work? I[…] here in location and, at 27, want to make the jump soon.'
+    qwen     gender 0.000       age 0.999  geograph 0.008  professi 0.002  health c 0.000  educatio 0.269  socioeco 0.000  relation 0.000  family s 0.000  national 0.004
+    laya     gender 0.021       age 0.978  geograph 0.021  professi 0.025  health c 0.020  educatio 0.038  socioeco 0.022  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.021       age 0.999  geograph 0.021  professi 0.025  health c 0.020  educatio 0.269  socioeco 0.022  relation 0.020  family s 0.020  national 0.021
+  leaking: age
+  picked spans: 'at 27' (age +0.949)
+    'at 27' -> 'at my current stage'  (hinge 0.499 -> 0.000, spikes 18.2 -> 19.0, 6 candidates, 7 broke fluency)
+
+=== iteration 2: 'Which certifications would help someone break into security work? I[…] here in location and, at my current stage, want to make the jump soon.'
+    qwen     gender 0.000       age 0.000  geograph 0.004  professi 0.033  health c 0.000  educatio 0.148  socioeco 0.000  relation 0.000  family s 0.000  national 0.002
+    laya     gender 0.020       age 0.020  geograph 0.021  professi 0.025  health c 0.019  educatio 0.023  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.020       age 0.020  geograph 0.021  professi 0.033  health c 0.019  educatio 0.148  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  all attributes <= 0.5: done
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+fluency budget: spikes <= min(current, x_0 = 27.4) + 4.0
+gaps     D=0.1304 (all 1 empty)
+  D <= 0.47: remaining gaps left empty
+step 000  D=0.1304 (initial, mean over 10 answers)  'Which certifications would help someone break into security work? I here in location and, at my current stage, want to make the jump soon.'
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 1: leak after privacy 0.148, after utility 0.148 (threshold 0.5)
+
+############################## fluency fix ##############################
+  spikes   leak      D
+    18.9  0.165  0.130  now  'Which certifications would help someone break into security work? I here in location and, at my current stage, want to make the jump soon.'
+    23.6  0.107  0.142  drop 'Which certifications would help someone break into security work? I am located [location] and, at my current stage, want to make the jump soon.'
+  no fix passes: text kept
+
+================================================================================
+original: 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+
+  iteration 1
+    privacy  leak 0.148  'Which certifications would help someone break into security work? I[…] here in location and, at my current stage, want to make the jump soon.'
+    utility  leak 0.148  'Which certifications would help someone break into security work? I here in location and, at my current stage, want to make the jump soon.'
+      qwen     gender 0.000       age 0.000  geograph 0.004  professi 0.033  health c 0.000  educatio 0.148  socioeco 0.000  relation 0.000  family s 0.000  national 0.002
+      laya     gender 0.020       age 0.020  geograph 0.021  professi 0.025  health c 0.019  educatio 0.023  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+
+final (converged (leak <= 0.5), 1 iterations): 'Which certifications would help someone break into security work? I here in location and, at my current stage, want to make the jump soon.'
+
+############################## iteration 1: privacy step ##############################
+  fluency budget: spikes <= min(current, x_0 = 31.7) + 4.0
+
+=== iteration 0: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    qwen     gender 0.060       age 0.999  geograph 0.182  professi 0.998  health c 1.000  educatio 0.999  socioeco 0.967  relation 0.000  family s 0.005  national 0.867
+    laya     gender 0.020       age 0.979  geograph 0.978  professi 0.959  health c 0.977  educatio 0.028  socioeco 0.023  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.060       age 0.999  geograph 0.978  professi 0.998  health c 1.000  educatio 0.999  socioeco 0.967  relation 0.021  family s 0.021  national 0.867
+  leaking: age, geographic location, profession, health condition, education level, socioeconomic status, nationality
+  picked spans: '2 diabetes' (health condition +0.950), '61, taught school for' (age +0.580), 'Cardiff' (geographic location +0.958)
+    'Cardiff' -> 'district'  (hinge 3.309 -> 2.440, spikes 31.7 -> 34.7, 8 candidates, 3 broke fluency)
+    '61, taught school for': all 15 candidates break fluency
+    '2 diabetes': all 13 candidates break fluency
+
+=== iteration 1: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.003       age 0.999  geograph 0.000  professi 0.998  health c 0.999  educatio 0.988  socioeco 0.953  relation 0.000  family s 0.007  national 0.000
+    laya     gender 0.020       age 0.978  geograph 0.021  professi 0.771  health c 0.977  educatio 0.026  socioeco 0.022  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.020       age 0.999  geograph 0.021  professi 0.998  health c 0.999  educatio 0.988  socioeco 0.953  relation 0.021  family s 0.021  national 0.021
+  leaking: age, profession, health condition, education level, socioeconomic status
+  picked spans: 'type 2 diabetes' (health condition +0.899), "I'm 61" (age +0.726), 'taught school' (profession +0.946)
+    'taught school' -> '<deleted>'  (hinge 2.436 -> 1.062, spikes 34.7 -> 32.1, 4 candidates, 9 broke fluency)
+    "I'm 61": all 1 candidates break fluency
+    'type 2 diabetes' -> '<deleted>'  (hinge 1.062 -> 0.479, spikes 32.1 -> 32.9, 8 candidates, 5 broke fluency)
+
+=== iteration 2: "What should breakfast look like after a[…] diagnosis? I'm 61,[…] for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: '61,[…] for' (age +0.848)
+    '61, for': all 13 candidates break fluency
+
+=== iteration 3: "What should breakfast look like after a[…] diagnosis? I'm 61,[…] for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: "I'm 61,[…] for" (age +0.836)
+    "I'm 61, for": all 13 candidates break fluency
+
+=== iteration 4: "What should breakfast look like after a[…] diagnosis? I'm 61,[…] for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: '61,[…] for decades' (age +0.833)
+    '61, for decades': all 17 candidates break fluency
+
+=== iteration 5: "What should breakfast look like after a[…] diagnosis? I'm 61,[…] for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: '61' (age +0.821)
+    '61': none of 1 candidates lowers the hinge enough (best 'long-time resident': 0.479 -> 0.471)
+
+=== iteration 6: "What should breakfast look like after a[…] diagnosis? I'm 61,[…] for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: "I'm 61,[…] for decades" (age +0.790)
+    "I'm 61, for decades": none of 2 candidates lowers the hinge enough (best 'For many years': 0.479 -> 0.462)
+
+=== iteration 7: "What should breakfast look like after a[…] diagnosis? I'm 61,[…] for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: '61,[…] for decades before' (age +0.790)
+    '61, for decades before': all 15 candidates break fluency
+
+=== iteration 8: "What should breakfast look like after a[…] diagnosis? I'm 61,[…] for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  max_iters reached
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+fluency budget: spikes <= min(current, x_0 = 31.7) + 4.0
+gaps     D=0.1254 (all 2 empty)
+  D <= 0.47: remaining gaps left empty
+step 000  D=0.1254 (initial, mean over 10 answers)  "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 1: leak after privacy 0.979, after utility 0.979 (threshold 0.5)
+
+############################## iteration 2: privacy step ##############################
+  fluency budget: spikes <= min(current, x_0 = 31.7) + 4.0
+
+=== iteration 0: "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: "diagnosis? I'm 61, for" (age +0.788)
+    "diagnosis? I'm 61, for": all 18 candidates break fluency
+
+=== iteration 1: "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: "diagnosis? I'm 61" (age +0.568)
+    "diagnosis? I'm 61": all 11 candidates break fluency
+
+=== iteration 2: "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: 'like after' (age +0.390)
+    'like after': all 20 candidates break fluency
+
+=== iteration 3: "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: "a diagnosis? I'm 61" (age +0.290)
+    "a diagnosis? I'm 61": all 10 candidates break fluency
+
+=== iteration 4: "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: 'look like after' (age +0.278)
+    'look like after': none of 4 candidates lowers the hinge enough (best 'deal with': 0.479 -> 0.478)
+
+=== iteration 5: "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: 'my feet with it' (age +0.111)
+    'my feet with it': none of 3 candidates lowers the hinge enough (best 'adjusting': 0.479 -> 0.479)
+
+=== iteration 6: "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: 'before retiring, and' (age +0.109)
+    'before retiring, and': none of 4 candidates lowers the hinge enough (best 'before transitioning, and': 0.479 -> 0.479)
+
+=== iteration 7: "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  leaking: age
+  picked spans: 'finding my' (age +0.072)
+    'finding my': all 14 candidates break fluency
+
+=== iteration 8: "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.047  relation 0.021  family s 0.020  national 0.021
+  max_iters reached
+
+############################## iteration 2: utility step (kl_multi) ##############################
+fluency budget: spikes <= min(current, x_0 = 31.7) + 4.0
+step 000  D=0.1254 (initial, mean over 10 answers)  "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 2: leak after privacy 0.979, after utility 0.979 (threshold 0.5)
+  iteration changed nothing: stop
+
+############################## fluency fix ##############################
+  spikes   leak      D
+    33.2  0.979  0.125  now  "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    38.5  0.979  0.134  drop "What should breakfast look like after a diagnosis? I'm 61, and I've been retired for decades, but I'm still finding my footing here in the district."
+    39.9  0.978  0.139  drop "What should breakfast look like after a diagnosis? I'm 61, and I've been retired for decades, but I'm still finding my way here in [district]."
+  no fix passes: text kept
+
+================================================================================
+original: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+
+  iteration 1
+    privacy  leak 0.979  "What should breakfast look like after a[…] diagnosis? I'm 61,[…] for decades before retiring, and I'm still finding my feet with it here in district."
+    utility  leak 0.979  "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+      qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+      laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+
+  iteration 2
+    privacy  leak 0.979  "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+    utility  leak 0.979  "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+      qwen     gender 0.001       age 0.940  geograph 0.000  professi 0.001  health c 0.000  educatio 0.009  socioeco 0.047  relation 0.000  family s 0.000  national 0.000
+      laya     gender 0.021       age 0.979  geograph 0.021  professi 0.023  health c 0.021  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+
+final (NOT converged, 2 iterations): "What should breakfast look like after a diagnosis? I'm 61, for decades before retiring, and I'm still finding my feet with it here in district."
+  3/3 (0 failed)
+Done Sat Oct 10 00:19:03 CEST 2026
