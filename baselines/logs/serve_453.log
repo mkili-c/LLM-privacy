@@ -3009,3 +3009,4 @@ INFO:     127.0.0.1:40646 - "POST /v1/chat/completions HTTP/1.1" 200 OK
 INFO:     127.0.0.1:50034 - "POST /v1/chat/completions HTTP/1.1" 200 OK
 [transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
 INFO:     127.0.0.1:53060 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[transformers] [Request received] Model: /scratch/users/mkilic/Qwen2.5-7B-Instruct@main, CB: False
