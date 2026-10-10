@@ -1,0 +1,4 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+"Marta, 34, female, midwife, Kraków, Poland",loop,"The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?",,397.93,7,1117,2844
+"Deniz, 27, male, software tester, Izmir, Turkey",loop,"Which certifications would help someone break into security work? I test software in Izmir and, at 27, want to make the jump soon.",,353.36,7,1081,2801
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",loop,"What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff.",,1139.5,13,2320,3084

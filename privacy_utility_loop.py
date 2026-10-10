@@ -5,14 +5,15 @@ until the utility-repaired prompt no longer leaks.
     x_0 = the user's message
     for i = 1 .. --max_iters:
         1. p_i  = privacy_rewrite(x_{i-1})
-                  privacy/privacy_rewrite.py: span occlusion + LLM
-                  generalization against Qwen and Laya, with its own inner
-                  loop (--privacy_max_iters) and the same --threshold
+                  privacy/privacy_rewrite.py: span occlusion against Qwen and
+                  Laya blames the leaking spans, and the LLM rewrites the
+                  message around them, right to left; its own inner loop
+                  (--privacy_max_iters) and the same --threshold
         2. u_i  = utility_rewrite(reference = x_0, rewritten = p_i)
                   utility/grad_attribution/: pull P(A | p_i) back toward
-                  P(A | x_0) (--utility kl_multi | cos_mask). Spans the
-                  privacy step deleted reach it as [MASK] gaps; kl_multi
-                  refills them with phrases if that lowers D, cos_mask drops them
+                  P(A | x_0) (--utility kl_multi | cos_mask). The privacy step
+                  no longer leaves [MASK] gaps, so kl_multi's gap filling is
+                  idle; its single-token swaps still run
         3. leak_i = max_a max_attacker P_a(u_i)
                   stop if leak_i <= --threshold, else x_i = u_i
     after the last iteration:
@@ -24,16 +25,11 @@ until the utility-repaired prompt no longer leaks.
            since the check needs its D.
 
 The utility rewriters are free to re-introduce private details (they do not
-see the attackers), which is why step 3 measures u_i and not p_i. Both
-rewriters reject any edit whose surprisal spikes exceed min(spikes of the
-current text, spikes of x_0) + ε nats (--privacy_fluency_eps, and --fluency_eps
-in --utility_args). The loop computes spikes(x_0) once and passes it to both.
-The x_0 bound stops small edits from adding up; the current-text bound stops
-spikes freed by removing a rare word from paying for broken grammar later.
-
-The loop also keeps one tried list per prompt and passes it to every privacy
-step: a span that failed for an attribute (every candidate broke fluency, or
-none lowered the hinge) is not tried again in a later iteration.
+see the attackers), which is why step 3 measures u_i and not p_i. The utility
+step rejects any edit whose surprisal spikes exceed min(spikes of the current
+text, spikes of x_0) + ε nats (--fluency_eps in --utility_args); the loop
+computes spikes(x_0) once and passes it on. The privacy step has no such guard
+since 2026-10-10: its LLM rewrites whole regions, and its rewrites are accepted.
 
 Reference of the utility step (--utility_ref):
     user       x_0 every iteration (default): the user's message is the only
@@ -74,7 +70,7 @@ for _dir in (_ROOT / "privacy", _ROOT / "utility" / "metrics", _ROOT / "utility"
 
 import laya                                                            # noqa: E402
 import privacy_rewrite                                                 # noqa: E402
-from privacy_rewrite import SLOT, LayaAttacker, QwenAttacker, score    # noqa: E402
+from privacy_rewrite import LayaAttacker, QwenAttacker, score          # noqa: E402
 from attribute_probe import ATTRIBUTES, DEFAULT_MODEL                  # noqa: E402
 from laya_probe import PRIVACY_LAYA                                    # noqa: E402
 import kl_mask_llm_rewrite_multi as kl_multi                           # noqa: E402
@@ -211,11 +207,10 @@ def privacy_utility_loop(model, tok, attackers, text, attributes, utility, pargs
     """-> (final text, history, converged). history has one dict per iteration."""
     sample_reference, rewrite_utility, _ = UTILITY[utility]
     x, u, history, ref_samples, converged = text, text, [], None, False
-    x0_spikes = disfluency([text], model, tok)[0]      # both steps' fluency bound: min(current, this) + ε
-    tried = {}                                         # privacy step's failed (span, attribute)s, kept across iterations
+    x0_spikes = disfluency([text], model, tok)[0]      # the utility step's fluency bound: min(current, this) + ε
     for i in range(1, args.max_iters + 1):
         print(f"\n{'#' * 30} iteration {i}: privacy step {'#' * 30}")
-        p = privacy_rewrite.rewrite(model, tok, attackers, x, attributes, pargs, x0_spikes, tried)
+        p = privacy_rewrite.rewrite(model, tok, attackers, x, attributes, pargs)
         leak_p, _ = leakage(attackers, p)
 
         reference = x if args.utility_ref == "iteration" else text
@@ -226,8 +221,7 @@ def privacy_utility_loop(model, tok, attackers, text, attributes, utility, pargs
         if args.utility_ref == "iteration" or not ref_samples:
             print(f"  sampling the reference answers ({args.utility_ref} reference)")
             ref_samples = sample_reference(model, tok, reference, device, uargs)
-        u = rewrite_utility(model, tok, reference, ref_samples, p.replace(SLOT, MASK), device, uargs,
-                            x0_spikes)
+        u = rewrite_utility(model, tok, reference, ref_samples, p, device, uargs, x0_spikes)
         leak_u, per = leakage(attackers, u)
 
         history.append(dict(iteration=i, input=x, privacy=p, utility=u,
@@ -282,14 +276,6 @@ def main():
     p.add_argument("--privacy_max_n", type=int, default=4)
     p.add_argument("--privacy_span_penalty", type=float, default=0.05)
     p.add_argument("--privacy_max_iters", type=int, default=8)
-    p.add_argument("--privacy_n_candidates", type=int, default=10)
-    p.add_argument("--privacy_cand_rounds", type=int, default=2)
-    p.add_argument("--privacy_cand_temperature", type=float, default=0.9)
-    p.add_argument("--privacy_min_hinge_drop", type=float, default=0.05,
-                   help="a privacy edit must lower the hinge by at least min(this, the hinge left)")
-    p.add_argument("--privacy_fluency_eps", type=float, default=4.0,
-                   help="fluency guard of the privacy step: an edit may have at most min(spikes of "
-                        "the current text, spikes of x_0) + this many nats (disfluency)")
     p.add_argument("--fix_candidates", type=int, default=4,
                    help="LLM fluency fixes after the last iteration (1 greedy + n - 1 sampled); 0 = none")
     p.add_argument("--model_path", default=DEFAULT_MODEL)
@@ -300,10 +286,7 @@ def main():
 
     pargs = Namespace(threshold=args.threshold, top_m=args.privacy_top_m,
                       max_n=args.privacy_max_n, span_penalty=args.privacy_span_penalty,
-                      max_iters=args.privacy_max_iters, n_candidates=args.privacy_n_candidates,
-                      cand_rounds=args.privacy_cand_rounds,
-                      cand_temperature=args.privacy_cand_temperature,
-                      fluency_eps=args.privacy_fluency_eps, min_hinge_drop=args.privacy_min_hinge_drop)
+                      max_iters=args.privacy_max_iters)
     uargs = stage_args(UTILITY[args.utility][2], args.utility_args)
 
     torch.manual_seed(args.seed)

@@ -1,0 +1,180 @@
+sudo: sorry, you must have a tty to run sudo
+Job 544 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_loop_v6.csv --limit 3
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 7724.40it/s]
+loop: 0 rows already done, 3 to go -> results/rewrites/dev_loop_v6.csv
+
+############################## iteration 1: privacy step ##############################
+
+=== iteration 0: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+    laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+    max      gender 1.000       age 0.979  geograph 1.000  professi 1.000  health c 0.032  educatio 1.000  socioeco 0.269  relation 0.176  family s 0.979  national 0.998
+  leaking: gender, age, geographic location, profession, education level, family situation, nationality
+  picked spans: 'routine should a midwife' (profession +0.782), 'Kraków' (geographic location +0.999), 'maternity' (family situation +0.960), '34' (age +0.957)
+    'routine should a midwife' (profession): rewriter gave no <message>, answer: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should I follow on days off?'
+    '34' (age): rewriter gave no <message>, answer: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. As a midwife, what recovery routine should I follow on days off?'
+    'Kraków' (geographic location, nationality): rewriter gave no <message>, answer: 'The night shifts at the maternity ward are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    'maternity' (family situation): rewriter gave no <message>, answer: 'The night shifts at the hospital here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+  no rewrite changed the message: stop
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+step 000  D=0.0000 (initial, mean over 10 answers)  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 1: leak after privacy 1.000, after utility 1.000 (threshold 0.5)
+  iteration changed nothing: stop
+
+############################## fluency fix ##############################
+  spikes   leak      D
+    19.6  1.000  0.000  now  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    27.3  1.000  0.017  drop 'The night shifts at the maternity ward in Kraków are wrecking my sleep. As a midwife at 34, what recovery routine should I follow on my days off?'
+    23.0  1.000  0.016  drop 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. As a midwife at 34, what recovery routine should I follow on my days off?'
+  no fix passes: text kept
+
+================================================================================
+original: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+
+  iteration 1
+    privacy  leak 1.000  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    utility  leak 1.000  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+      qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+      laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+
+final (NOT converged, 1 iterations): 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+
+############################## iteration 1: privacy step ##############################
+
+=== iteration 0: 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+    qwen     gender 0.007       age 0.999  geograph 0.924  professi 1.000  health c 0.000  educatio 0.818  socioeco 0.009  relation 0.000  family s 0.000  national 0.924
+    laya     gender 0.021       age 0.978  geograph 0.974  professi 0.971  health c 0.020  educatio 0.599  socioeco 0.022  relation 0.020  family s 0.020  national 0.034
+    max      gender 0.021       age 0.999  geograph 0.974  professi 1.000  health c 0.020  educatio 0.818  socioeco 0.022  relation 0.020  family s 0.020  national 0.924
+  leaking: age, geographic location, profession, education level, nationality
+  picked spans: 'test software' (profession +0.949), '27' (age +0.998), 'Izmir' (geographic location +0.953), 'Which certifications' (education level +0.747)
+    '27' (age): rewriter gave no <message>, answer: 'Which certifications would help someone break into security work? I test software here in Izmir and want to make the jump soon.'
+    'Izmir' (geographic location, nationality): rewriter gave no <message>, answer: 'Which certifications would help someone break into security work? I test software and, at 27, want to make the jump soon.'
+    'test software' (profession): rewriter gave no <message>, answer: 'Which certifications would help someone break into security work? I work in Izmir and, at 27, want to make the jump soon.'
+    'Which certifications' (education level): rewriter gave no <message>, answer: 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+  no rewrite changed the message: stop
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+fluency budget: spikes <= min(current, x_0 = 27.4) + 4.0
+step 000  D=0.0000 (initial, mean over 10 answers)  'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 1: leak after privacy 1.000, after utility 1.000 (threshold 0.5)
+  iteration changed nothing: stop
+
+############################## fluency fix ##############################
+  spikes   leak      D
+    27.4  1.000  0.000  now  'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+    26.1  1.000  0.010  ok   'Which certifications would be helpful for breaking into security work? I test software in Izmir and, at 27, want to make the jump soon.'
+    25.1  1.000  0.002  ok   'Which certifications would help someone break into security work? I test software in Izmir and, at 27, want to make the jump soon.'
+
+================================================================================
+original: 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+
+  iteration 1
+    privacy  leak 1.000  'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+    utility  leak 1.000  'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+      qwen     gender 0.007       age 0.999  geograph 0.924  professi 1.000  health c 0.000  educatio 0.818  socioeco 0.009  relation 0.000  family s 0.000  national 0.924
+      laya     gender 0.021       age 0.978  geograph 0.974  professi 0.971  health c 0.020  educatio 0.599  socioeco 0.022  relation 0.020  family s 0.020  national 0.034
+
+final (NOT converged, 1 iterations): 'Which certifications would help someone break into security work? I test software in Izmir and, at 27, want to make the jump soon.'
+
+############################## iteration 1: privacy step ##############################
+
+=== iteration 0: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    qwen     gender 0.060       age 0.999  geograph 0.182  professi 0.998  health c 1.000  educatio 0.999  socioeco 0.967  relation 0.000  family s 0.005  national 0.867
+    laya     gender 0.020       age 0.979  geograph 0.978  professi 0.959  health c 0.977  educatio 0.028  socioeco 0.023  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.060       age 0.999  geograph 0.978  professi 0.998  health c 1.000  educatio 0.999  socioeco 0.967  relation 0.021  family s 0.021  national 0.867
+  leaking: age, geographic location, profession, health condition, education level, socioeconomic status, nationality
+  picked spans: '2 diabetes' (health condition +0.950), '61, taught school for' (age +0.580), 'Cardiff' (geographic location +0.958)
+    'Cardiff' (geographic location, nationality): rewriter gave no <message>, answer: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here."
+    '61, taught school for' (age): rewriter gave no <message>, answer: 'What should breakfast look like after a type 2 diabetes diagnosis? I retired and am still finding my feet with it here in Cardiff.'
+    '2 diabetes' (health condition): hinge 3.309 -> 3.318
+      -> "What should breakfast look like after a type diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+
+=== iteration 1: "What should breakfast look like after a type diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    qwen     gender 0.014       age 0.999  geograph 0.321  professi 0.996  health c 0.999  educatio 0.997  socioeco 0.982  relation 0.000  family s 0.014  national 0.867
+    laya     gender 0.020       age 0.979  geograph 0.978  professi 0.962  health c 0.976  educatio 0.027  socioeco 0.023  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.020       age 0.999  geograph 0.978  professi 0.996  health c 0.999  educatio 0.997  socioeco 0.982  relation 0.021  family s 0.021  national 0.867
+  leaking: age, geographic location, profession, health condition, education level, socioeconomic status, nationality
+  picked spans: "diagnosis? I'm 61, taught" (age +0.580), 'diabetes' (health condition +0.999), 'Cardiff' (geographic location +0.958)
+    'Cardiff' (geographic location, nationality): rewriter gave no <message>, answer: "What should breakfast look like after a type diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here."
+    "diagnosis? I'm 61, taught" (age): rewriter gave no <message>, answer: "What should breakfast look like after a type diabetes diagnosis? I've taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    'diabetes' (health condition): hinge 3.318 -> 2.002
+      -> "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+
+=== iteration 2: "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    qwen     gender 0.047       age 0.622  geograph 0.037  professi 0.378  health c 0.001  educatio 0.958  socioeco 0.881  relation 0.000  family s 0.000  national 0.438
+    laya     gender 0.020       age 0.979  geograph 0.978  professi 0.706  health c 0.023  educatio 0.028  socioeco 0.023  relation 0.020  family s 0.021  national 0.022
+    max      gender 0.047       age 0.979  geograph 0.978  professi 0.706  health c 0.023  educatio 0.958  socioeco 0.881  relation 0.020  family s 0.021  national 0.438
+  leaking: age, geographic location, profession, education level, socioeconomic status
+  picked spans: "diagnosis? I'm 61, taught" (age +0.784), 'Cardiff' (geographic location +0.958)
+    'Cardiff' (geographic location): rewriter gave no <message>, answer: "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here."
+    "diagnosis? I'm 61, taught" (age): rewriter gave no <message>, answer: "What should breakfast look like after a type [condition] diagnosis? I've taught for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+  no rewrite changed the message: stop
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+fluency budget: spikes <= min(current, x_0 = 31.7) + 4.0
+step 000  D=0.0860 (initial, mean over 10 answers)  "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 1: leak after privacy 0.979, after utility 0.979 (threshold 0.5)
+
+############################## iteration 2: privacy step ##############################
+
+=== iteration 0: "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    qwen     gender 0.047       age 0.622  geograph 0.037  professi 0.378  health c 0.001  educatio 0.958  socioeco 0.881  relation 0.000  family s 0.000  national 0.438
+    laya     gender 0.020       age 0.979  geograph 0.978  professi 0.706  health c 0.023  educatio 0.028  socioeco 0.023  relation 0.020  family s 0.021  national 0.022
+    max      gender 0.047       age 0.979  geograph 0.978  professi 0.706  health c 0.023  educatio 0.958  socioeco 0.881  relation 0.020  family s 0.021  national 0.438
+  leaking: age, geographic location, profession, education level, socioeconomic status
+  picked spans: "diagnosis? I'm 61, taught" (age +0.784), 'Cardiff' (geographic location +0.958)
+    'Cardiff' (geographic location): rewriter gave no <message>, answer: "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here."
+    "diagnosis? I'm 61, taught" (age): rewriter gave no <message>, answer: "What should breakfast look like after a type [condition] diagnosis? I've taught for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+  no rewrite changed the message: stop
+
+############################## iteration 2: utility step (kl_multi) ##############################
+fluency budget: spikes <= min(current, x_0 = 31.7) + 4.0
+step 000  D=0.0860 (initial, mean over 10 answers)  "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 2: leak after privacy 0.979, after utility 0.979 (threshold 0.5)
+  iteration changed nothing: stop
+
+############################## fluency fix ##############################
+  spikes   leak      D
+    48.6  0.979  0.086  now  "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    45.3  0.998  0.091  drop "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still getting used to it here in Cardiff."
+    54.9  0.999  0.074  drop "What should breakfast look like after a Type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still getting used to it here in Cardiff."
+    44.8  0.999  0.099  drop "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still getting used to things here in Cardiff."
+  no fix passes: text kept
+
+================================================================================
+original: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+
+  iteration 1
+    privacy  leak 0.979  "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    utility  leak 0.979  "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+      qwen     gender 0.047       age 0.622  geograph 0.037  professi 0.378  health c 0.001  educatio 0.958  socioeco 0.881  relation 0.000  family s 0.000  national 0.438
+      laya     gender 0.020       age 0.979  geograph 0.978  professi 0.706  health c 0.023  educatio 0.028  socioeco 0.023  relation 0.020  family s 0.021  national 0.022
+
+  iteration 2
+    privacy  leak 0.979  "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    utility  leak 0.979  "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+      qwen     gender 0.047       age 0.622  geograph 0.037  professi 0.378  health c 0.001  educatio 0.958  socioeco 0.881  relation 0.000  family s 0.000  national 0.438
+      laya     gender 0.020       age 0.979  geograph 0.978  professi 0.706  health c 0.023  educatio 0.028  socioeco 0.023  relation 0.020  family s 0.021  national 0.022
+
+final (NOT converged, 2 iterations): "What should breakfast look like after a type [condition] diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+  3/3 (0 failed)
+Done Sat Oct 10 20:23:10 CEST 2026

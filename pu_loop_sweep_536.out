@@ -1,0 +1,50 @@
+sudo: sorry, you must have a tty to run sudo
+Job 536 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_loop_v5.csv --limit 1
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 7062.80it/s]
+loop: 0 rows already done, 1 to go -> results/rewrites/dev_loop_v5.csv
+
+############################## iteration 1: privacy step ##############################
+
+=== iteration 0: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+    laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+    max      gender 1.000       age 0.979  geograph 1.000  professi 1.000  health c 0.032  educatio 1.000  socioeco 0.269  relation 0.176  family s 0.979  national 0.998
+  leaking: gender, age, geographic location, profession, education level, family situation, nationality
+  picked spans: 'routine should a midwife' (profession +0.782), 'Kraków' (geographic location +0.999), 'maternity' (family situation +0.960), '34' (age +0.957)
+    'routine should a midwife' (age, profession, education level, family situation, nationality): rewriter gave no <message>
+    '34' (gender, age, geographic location, education level, family situation, nationality): rewriter gave no <message>
+    'Kraków' (gender, geographic location, profession, education level, family situation, nationality): rewriter gave no <message>
+    'maternity' (gender, profession, education level, family situation): rewriter gave no <message>
+  no rewrite changed the message: stop
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+fluency budget: spikes <= min(current, x_0 = 19.6) + 4.0
+step 000  D=0.0000 (initial, mean over 10 answers)  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+step 001  D <= 0.47: utility good enough, no edit 
+
+
+  iteration 1: leak after privacy 1.000, after utility 1.000 (threshold 0.5)
+  iteration changed nothing: stop
+
+############################## fluency fix ##############################
+  spikes   leak      D
+    19.6  1.000  0.000  now  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    27.3  1.000  0.017  drop 'The night shifts at the maternity ward in Kraków are wrecking my sleep. As a midwife at 34, what recovery routine should I follow on my days off?'
+    23.0  1.000  0.016  drop 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. As a midwife at 34, what recovery routine should I follow on my days off?'
+  no fix passes: text kept
+
+================================================================================
+original: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+
+  iteration 1
+    privacy  leak 1.000  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    utility  leak 1.000  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+      qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+      laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+
+final (NOT converged, 1 iterations): 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+  1/1 (0 failed)
+Done Sat Oct 10 19:44:27 CEST 2026
