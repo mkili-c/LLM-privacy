@@ -83,7 +83,7 @@ import torch
 
 import laya
 from attribute_probe import (ATTRIBUTES, DEFAULT_MODEL, QUESTION as QWEN_QUESTION,
-                             AttributeProbe, load)
+                             AttributeProbe, load, logits_shared)
 from laya_probe import PRIVACY_LAYA, QUESTION as LAYA_QUESTION, LayaProbe
 
 OPEN, CLOSE = "<<", ">>"         # marks the span in the rewrite prompt
@@ -116,9 +116,9 @@ class QwenAttacker:
         self.tok = tok
 
     def p(self, texts):
-        """[N, K] P(yes) per text and attribute."""
+        """[N, K] P(yes) per text and attribute; each text is encoded once for all K questions."""
         ids = [self.tok(t, add_special_tokens=False).input_ids for t in texts]
-        return torch.stack([torch.sigmoid(pr.logits_batch(ids)) for pr in self.probes], dim=1).cpu()
+        return torch.sigmoid(logits_shared(self.probes, ids)).cpu()
 
 
 class LayaAttacker:

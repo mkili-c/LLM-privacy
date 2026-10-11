@@ -6,3 +6,8 @@ dev message: 28 words, 89 span variants x 10 attributes = 91854 tokens
   old (full logits, batch 16):  201.1 s  (    457 tokens/s)
   new (last positions, batch  16):  184.2 s  (    499 tokens/s)  x 1.1   max |P_new - P_old| 0.0000, mean 0.00000
   new (last positions, batch  64):  176.7 s  (    520 tokens/s)  x 1.1   max |P_new - P_old| 0.0000, mean 0.00000
+  new (last positions, batch 128):  176.2 s  (    521 tokens/s)  x 1.1   max |P_new - P_old| 0.0000, mean 0.00000
+
+PUPA-SD id 331: 119 words, 396 span variants x 2 attributes = 174736 tokens
+  old (full logits, batch 16):  367.8 s  (    475 tokens/s)
+[2026-10-11T20:31:11.672] error: *** JOB 640 ON studgpu-spark01 CANCELLED AT 2026-10-11T20:31:11 DUE to SIGNAL Terminated ***

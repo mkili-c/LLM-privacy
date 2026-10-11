@@ -26,15 +26,17 @@ import sys
 from pathlib import Path
 
 import torch
+from transformers import DynamicCache
 
 # the helper scripts live in ../utility/metrics
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "utility" / "metrics"))
 from topk_sample import load 
 
 DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
-# messages per forward pass in logits_batch. Only each row's last position goes through the output
-# layer, so a batch holds no (rows, length, vocab) logits tensor and 64 rows of the longest PUPA-SD
-# prompt (~480 tokens) take a few GB; it was 16 with the full logits.
+# messages per forward pass in logits_batch and logits_shared. Only each row's last position goes
+# through the output layer, so a batch holds no (rows, length, vocab) logits tensor and 64 rows of
+# the longest PUPA-SD prompt (~480 tokens) take a few GB; it was 16 with the full logits. The size
+# hardly matters for speed: the probe is compute-bound (job 640: x1.1 at 16, 64 and 128 alike).
 BATCH_SIZE = 64
 
 # No bare "Y" / "N": as a first token they also collect non-answers such as
@@ -161,6 +163,50 @@ class AttributeProbe:
         ids, _ = self.build(message)
         p, logit, cov = self.p_pos(input_ids=ids)
         return {"p_pos": p.item(), "logit": logit.item(), "coverage": cov.item()}
+
+
+@torch.no_grad()
+def logits_shared(probes, msgs_ids, batch_size=BATCH_SIZE):
+    """Yes-vs-no logits [N, K] of K probes for N messages, the message encoded once.
+
+    Every probe's input is prefix + message + suffix, where the prefix (chat header and TEMPLATE
+    up to the message) is the same for all of them and only the suffix (the question) differs.
+    So per batch, prefix + message runs once with its KV cache kept, and each probe's suffix runs
+    on top of it: about (prefix + message) + K * suffix tokens instead of K * (prefix + message +
+    suffix). The logits are those of logits_batch; only the order of the computation changes.
+
+    Rows are right-padded as in logits_batch, so every real token keeps its position. The padding
+    stays in the cache between a row's message and its suffix, masked out, and the suffix tokens
+    get the positions right after the row's own last token. All suffixes of a probe have the same
+    length, so the answer is read at the same last position in every row. After each probe the
+    cache is cropped back to prefix + message for the next one."""
+    model, tok, prefix = probes[0].model, probes[0].tok, probes[0].prefix_ids
+    if any(p.prefix_ids != prefix for p in probes):
+        raise ValueError("logits_shared needs probes whose text before the message is the same")
+    decoder, head = model.get_decoder(), model.get_output_embeddings()
+    out = []
+    for i in range(0, len(msgs_ids), batch_size):
+        rows = [prefix + list(m) for m in msgs_ids[i:i + batch_size]]
+        lens = torch.tensor([len(r) for r in rows], device=model.device)
+        L = int(lens.max())
+        ids = torch.full((len(rows), L), tok.pad_token_id, device=model.device)
+        att = torch.zeros_like(ids)
+        for j, r in enumerate(rows):
+            ids[j, :len(r)], att[j, :len(r)] = torch.tensor(r, device=model.device), 1
+        cache = DynamicCache()
+        decoder(input_ids=ids, attention_mask=att, past_key_values=cache, use_cache=True)
+        logits = []
+        for p in probes:
+            suffix = torch.tensor(p.suffix_ids, device=model.device).repeat(len(rows), 1)   # (rows, S)
+            S = suffix.shape[1]
+            hidden = decoder(input_ids=suffix,
+                             attention_mask=torch.cat([att, torch.ones_like(suffix)], dim=1),
+                             position_ids=lens[:, None] + torch.arange(S, device=model.device),
+                             past_key_values=cache, use_cache=True).last_hidden_state   # (rows, S, H)
+            logits.append(p._readout(head(hidden[:, -1]))[1])
+            cache.crop(L)
+        out.append(torch.stack(logits, dim=1))                                       # (rows, K)
+    return torch.cat(out)
 
 
 def main():

@@ -1,0 +1,12 @@
+sudo: sorry, you must have a tty to run sudo
+Job 643 on studgpu-spark01.inf.ethz.ch (aarch64)
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 9352.92it/s]
+
+dev message: 28 words, 90 span variants x 10 attributes (92920 probe tokens the old way)
+  old, batch 16        203.2 s
+  batch, batch 64      181.2 s   x  1.1   |P - P_old| max 0.0000, mean 0.00000; 0 cells cross 0.5, best span changes for 0/10 attributes; worst: gender P_old 1.000 -> 1.000
+  shared, batch 64      70.7 s   x  2.9   |P - P_old| max 0.1244, mean 0.00619; 4 cells cross 0.5, best span changes for 0/10 attributes; worst: socioeconomic status P_old 0.562 -> 0.438
+  shared, batch 128     68.6 s   x  3.0   |P - P_old| max 0.1244, mean 0.00634; 4 cells cross 0.5, best span changes for 0/10 attributes; worst: socioeconomic status P_old 0.562 -> 0.438
+Done Sun Oct 11 21:23:30 CEST 2026
