@@ -1,0 +1,189 @@
+sudo: sorry, you must have a tty to run sudo
+Job 561 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_loop_v9.csv --limit 3 --utility_args --kl_threshold 0.1 --k 5
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 10974.60it/s]
+loop: 0 rows already done, 3 to go -> results/rewrites/dev_loop_v9.csv
+
+############################## iteration 1: privacy step ##############################
+
+=== iteration 0: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+    laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+    max      gender 1.000       age 0.979  geograph 1.000  professi 1.000  health c 0.032  educatio 1.000  socioeco 0.269  relation 0.176  family s 0.979  national 0.998
+  leaking: gender, age, geographic location, profession, education level, family situation, nationality
+  picked spans: 'routine should a midwife' (profession +0.782), 'Kraków' (geographic location +0.999), 'maternity' (family situation +0.960), '34' (age +0.957)
+    'routine should a midwife' (profession): hinge 3.454 -> 3.276
+      -> 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should I follow on days off?'
+    '34' (age): hinge 3.276 -> 3.353
+      -> 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At my age, what recovery routine should I follow on days off?'
+    'Kraków' (geographic location, nationality): hinge 3.353 -> 2.389
+      -> 'The night shifts at the maternity ward are wrecking my sleep. At my age, what recovery routine should I follow on days off?'
+    'maternity' (relationship status, family situation): hinge 2.389 -> 0.975
+      -> 'The night shifts at the ward are wrecking my sleep. At my age, what recovery routine should I follow on days off?'
+
+=== iteration 1: 'The night shifts at the ward are wrecking my sleep. At my age, what recovery routine should I follow on days off?'
+    qwen     gender 0.000       age 0.622  geograph 0.000  professi 0.998  health c 0.148  educatio 0.148  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.977  geograph 0.021  professi 0.977  health c 0.025  educatio 0.024  socioeco 0.022  relation 0.021  family s 0.021  national 0.020
+    max      gender 0.022       age 0.977  geograph 0.021  professi 0.998  health c 0.148  educatio 0.148  socioeco 0.022  relation 0.021  family s 0.021  national 0.020
+  leaking: age, profession
+  picked spans: 'ward' (profession +0.953), 'age' (age +0.955)
+    'age' (age): hinge 0.975 -> 0.500
+      -> 'The night shifts at the ward are wrecking my sleep. What recovery routine should I follow on days off?'
+    'ward' (profession): hinge 0.500 -> 0.500
+      -> 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+
+=== iteration 2: 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.378  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.022  health c 0.022  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 1.000  health c 0.378  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  leaking: profession
+  picked spans: 'shifts' (profession +0.990)
+    'shifts' (profession): hinge 0.500 -> 0.352
+      -> 'The schedule is wrecking my sleep. What recovery routine should I follow on days off?'
+
+=== iteration 3: 'The schedule is wrecking my sleep. What recovery routine should I follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.852  health c 0.182  educatio 0.009  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.022  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.852  health c 0.182  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  leaking: profession
+  picked spans: 'is wrecking' (profession +0.755)
+    'is wrecking' (profession): hinge 0.352 -> 0.381
+      -> 'The schedule is disrupting my sleep. What recovery routine should I follow on days off?'
+
+=== iteration 4: 'The schedule is disrupting my sleep. What recovery routine should I follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.881  health c 0.223  educatio 0.018  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.021  health c 0.022  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.881  health c 0.223  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  leaking: profession
+  picked spans: 'is disrupting' (profession +0.783)
+    'is disrupting' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+
+=== utility iteration 0: D=0.4115 (mean over 5 answers)  'The schedule is disrupting my sleep. What recovery routine should I follow on days off?'
+  marked in the original: 'shifts' (+0.0006), 'recovery' (+0.0007), 'days' (+0.0003)
+    'The night <<shifts>> at the maternity ward here in Kraków are wrecking my sleep. At 34, what <<recovery>> routine should a midwife like me follow on <<days>> off?'
+  D 0.4115 -> 0.0000: kept
+    -> 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+
+=== utility iteration 1: D=0.0000 (mean over 5 answers)  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+  D <= 0.1: utility good enough, no edit
+
+  iteration 1: leak after privacy 0.881, after utility 1.000 (threshold 0.5); privacy step 697 s, utility step 110 s
+  iteration changed nothing: stop
+
+================================================================================
+original: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+
+  iteration 1
+    privacy  leak 0.881  'The schedule is disrupting my sleep. What recovery routine should I follow on days off?'
+    utility  leak 1.000  'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+      qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+      laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+
+final (NOT converged, 1 iterations): 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+
+############################## iteration 1: privacy step ##############################
+
+=== iteration 0: 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+    qwen     gender 0.007       age 0.999  geograph 0.924  professi 1.000  health c 0.000  educatio 0.818  socioeco 0.009  relation 0.000  family s 0.000  national 0.924
+    laya     gender 0.021       age 0.978  geograph 0.974  professi 0.971  health c 0.020  educatio 0.599  socioeco 0.022  relation 0.020  family s 0.020  national 0.034
+    max      gender 0.021       age 0.999  geograph 0.974  professi 1.000  health c 0.020  educatio 0.818  socioeco 0.022  relation 0.020  family s 0.020  national 0.924
+  leaking: age, geographic location, profession, education level, nationality
+  picked spans: 'test software' (profession +0.949), '27' (age +0.998), 'Izmir' (geographic location +0.953), 'Which certifications' (education level +0.747)
+    '27' (age): hinge 2.214 -> 1.711
+      -> 'Which certifications would help someone break into security work? I test software here in Izmir and want to make the jump soon.'
+    'Izmir' (geographic location, nationality): hinge 1.711 -> 0.777
+      -> 'Which certifications would help someone break into security work? I test software and want to make the jump soon.'
+    'test software' (profession): hinge 0.777 -> 0.000
+      -> 'Which certifications would help someone break into security work? I want to make the jump soon.'
+    'Which certifications': nothing it is blamed for leaks any more, skipped
+
+=== iteration 1: 'Which certifications would help someone break into security work? I want to make the jump soon.'
+    qwen     gender 0.000       age 0.002  geograph 0.000  professi 0.009  health c 0.000  educatio 0.269  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.023  health c 0.019  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.023  health c 0.019  educatio 0.269  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  all attributes <= 0.5: done
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+
+=== utility iteration 0: D=0.1796 (mean over 5 answers)  'Which certifications would help someone break into security work? I want to make the jump soon.'
+  marked in the original: 'help' (+0.0001), 'break' (+0.0001), 'want' (+0.0001)
+    'Which certifications would <<help>> someone <<break>> into security work? I test software here in Izmir and, at 27, <<want>> to make the jump soon.'
+  D 0.1796 -> 0.0000: kept
+    -> 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+
+=== utility iteration 1: D=0.0000 (mean over 5 answers)  'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+  D <= 0.1: utility good enough, no edit
+
+  iteration 1: leak after privacy 0.269, after utility 1.000 (threshold 0.5); privacy step 206 s, utility step 107 s
+  iteration changed nothing: stop
+
+================================================================================
+original: 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+
+  iteration 1
+    privacy  leak 0.269  'Which certifications would help someone break into security work? I want to make the jump soon.'
+    utility  leak 1.000  'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+      qwen     gender 0.007       age 0.999  geograph 0.924  professi 1.000  health c 0.000  educatio 0.818  socioeco 0.009  relation 0.000  family s 0.000  national 0.924
+      laya     gender 0.021       age 0.978  geograph 0.974  professi 0.971  health c 0.020  educatio 0.599  socioeco 0.022  relation 0.020  family s 0.020  national 0.034
+
+final (NOT converged, 1 iterations): 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+
+############################## iteration 1: privacy step ##############################
+
+=== iteration 0: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    qwen     gender 0.060       age 0.999  geograph 0.182  professi 0.998  health c 1.000  educatio 0.999  socioeco 0.967  relation 0.000  family s 0.005  national 0.867
+    laya     gender 0.020       age 0.979  geograph 0.978  professi 0.959  health c 0.977  educatio 0.028  socioeco 0.023  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.060       age 0.999  geograph 0.978  professi 0.998  health c 1.000  educatio 0.999  socioeco 0.967  relation 0.021  family s 0.021  national 0.867
+  leaking: age, geographic location, profession, health condition, education level, socioeconomic status, nationality
+  picked spans: '2 diabetes' (health condition +0.950), '61, taught school for' (age +0.580), 'Cardiff' (geographic location +0.958)
+    'Cardiff' (geographic location, nationality): hinge 3.309 -> 2.478
+      -> "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it."
+    '61, taught school for' (age): hinge 2.478 -> 2.456
+      -> 'What should breakfast look like after a type 2 diabetes diagnosis? I retired after teaching for many years and am still finding my way with it.'
+    '2 diabetes' (health condition): hinge 2.456 -> 2.465
+      -> 'What should breakfast look like after a type diabetes diagnosis? I retired after teaching for many years and am still finding my way with it.'
+
+=== iteration 1: 'What should breakfast look like after a type diabetes diagnosis? I retired after teaching for many years and am still finding my way with it.'
+    qwen     gender 0.003       age 0.182  geograph 0.000  professi 1.000  health c 1.000  educatio 0.998  socioeco 0.990  relation 0.000  family s 0.378  national 0.000
+    laya     gender 0.021       age 0.977  geograph 0.020  professi 0.079  health c 0.972  educatio 0.027  socioeco 0.023  relation 0.020  family s 0.021  national 0.020
+    max      gender 0.021       age 0.977  geograph 0.020  professi 1.000  health c 1.000  educatio 0.998  socioeco 0.990  relation 0.020  family s 0.378  national 0.020
+  leaking: age, profession, health condition, education level, socioeconomic status
+  picked spans: 'teaching' (profession +0.999), 'diabetes' (health condition +1.000), 'retired' (socioeconomic status +0.972)
+    'teaching' (profession): rewriter changed nothing
+    'retired' (age, socioeconomic status): hinge 2.465 -> 0.500
+      -> 'What should breakfast look like after a type diabetes diagnosis? I am still finding my way with it.'
+    'diabetes' (health condition): hinge 0.500 -> 0.000
+      -> 'What should breakfast look like after a type diagnosis? I am still finding my way with it.'
+
+=== iteration 2: 'What should breakfast look like after a type diagnosis? I am still finding my way with it.'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 0.002  educatio 0.047  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.022  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.022  educatio 0.047  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  all attributes <= 0.5: done
+
+############################## iteration 1: utility step (kl_multi) ##############################
+  sampling the reference answers (user reference)
+
+=== utility iteration 0: D=0.0939 (mean over 5 answers)  'What should breakfast look like after a type diagnosis? I am still finding my way with it.'
+  D <= 0.1: utility good enough, no edit
+
+  iteration 1: leak after privacy 0.047, after utility 0.047 (threshold 0.5); privacy step 445 s, utility step 91 s
+
+================================================================================
+original: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+
+  iteration 1
+    privacy  leak 0.047  'What should breakfast look like after a type diagnosis? I am still finding my way with it.'
+    utility  leak 0.047  'What should breakfast look like after a type diagnosis? I am still finding my way with it.'
+      qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 0.002  educatio 0.047  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+      laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.022  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+
+final (converged (leak <= 0.5), 1 iterations): 'What should breakfast look like after a type diagnosis? I am still finding my way with it.'
+  3/3 (0 failed)
+Done Sun Oct 11 01:15:59 CEST 2026

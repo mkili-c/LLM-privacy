@@ -50,7 +50,8 @@ choosing among them needed a fluency guard, a tried list and an acceptance
 test that together blamed the wrong spans and cost up to 117 LLM calls per
 prompt (job 463).
 
-Utility is deliberately not measured here; a separate utility loop handles it.
+Utility is deliberately not measured here; a separate utility loop handles it. Its rewriter
+(kl_mask_llm_rewrite_multi.py) mirrors this one and shares the marks and generate_message.
 """
 import argparse
 import re
@@ -182,17 +183,22 @@ def rewrite_prompt(marked, attributes):
 
 
 @torch.no_grad()
-def llm_rewrite(model, tok, text, s, e, attributes):
-    """The message rewritten around text[s:e] by one greedy generation: the LLM's
-    answer itself, which is only the message (job 544), without leftover marks."""
-    marked = text[:s] + OPEN + text[s:e] + CLOSE + text[e:]
-    chat = tok.apply_chat_template([{"role": "user", "content": rewrite_prompt(marked, attributes)}],
+def generate_message(model, tok, prompt):
+    """The LLM's greedy answer to prompt, without leftover marks. Asked for the rewritten
+    message only, the answer is that message (job 544). The utility rewriter uses it too."""
+    chat = tok.apply_chat_template([{"role": "user", "content": prompt}],
                                    tokenize=False, add_generation_prompt=True)
     inputs = tok(chat, return_tensors="pt", add_special_tokens=False).to(model.device)
     out = model.generate(**inputs, max_new_tokens=REWRITE_MAX_NEW_TOKENS, do_sample=False,
                          pad_token_id=tok.pad_token_id)
     answer = tok.decode(out[0, inputs.input_ids.shape[1]:], skip_special_tokens=True)
     return answer.replace(OPEN, "").replace(CLOSE, "").strip()
+
+
+def llm_rewrite(model, tok, text, s, e, attributes):
+    """The message rewritten around text[s:e] by one greedy generation."""
+    marked = text[:s] + OPEN + text[s:e] + CLOSE + text[e:]
+    return generate_message(model, tok, rewrite_prompt(marked, attributes))
 
 
 # ---------------------------------------------------------------- main loop

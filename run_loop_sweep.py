@@ -13,10 +13,9 @@ Each row is flushed as it finishes and ids already done are skipped, so a run re
 24 h limit. The seed is reset for every row, so a row's rewrite does not depend on which rows
 ran before it.
 
-calls and tokens cover the LLM's generations: the privacy step's replacements, the gap and token
-fillers, the K sampled reference answers and the fluency fixes. The scoring forward passes and
-gradients (attackers, D, disfluency), most of the loop's compute, are not in them, so `seconds`
-is the cost that compares with the baselines.
+calls and tokens cover the LLM's generations: the privacy and utility rewrites and the K sampled
+reference answers. The scoring forward passes and gradients (attackers, D and its gradient), most
+of the loop's compute, are not in them, so `seconds` is the cost that compares with the baselines.
 
 privacy_utility_loop.py has no get_args, so its flags are copied below with the same defaults:
 change them in both places.
@@ -49,7 +48,7 @@ def get_args():
     # the loop's flags, as in privacy_utility_loop.main(); see its --help
     p.add_argument("--attributes", nargs="+", default=ATTRIBUTES)
     p.add_argument("--threshold", type=float, default=0.5)
-    p.add_argument("--max_iters", type=int, default=4)
+    p.add_argument("--max_iters", type=int, default=2)
     p.add_argument("--utility", choices=sorted(loop.UTILITY), default="kl_multi")
     p.add_argument("--utility_ref", choices=["user", "iteration"], default="user")
     p.add_argument("--utility_args", default="", help="for the utility script's own parser")
@@ -57,7 +56,6 @@ def get_args():
     p.add_argument("--privacy_max_n", type=int, default=4)
     p.add_argument("--privacy_span_penalty", type=float, default=0.05)
     p.add_argument("--privacy_max_iters", type=int, default=8)
-    p.add_argument("--fix_candidates", type=int, default=4)
     p.add_argument("--model_path", default=DEFAULT_MODEL)
     p.add_argument("--laya_path", default=PRIVACY_LAYA)
     p.add_argument("--dtype", choices=["float16", "bfloat16", "float32"], default="float16")

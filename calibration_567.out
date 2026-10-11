@@ -1,0 +1,10 @@
+sudo: sorry, you must have a tty to run sudo
+Job 567 on studgpu-spark01.inf.ethz.ch (aarch64), args: --limit 2
+K = 10 answers of 256 tokens per original
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 8826.77it/s]
+dev: 0 rows already done, 2 to go -> /work/projects/mkilic/LLM-privacy/results/calibration/dev_D.csv
+  1/2 'Marta, 34, female, midwife, Kr': original D=0.000  util_preserving D=0.167  util_paraphrase D=0.298  priv_preserving D=0.363  priv_targeted D=0.246  util_broken D=0.606
+  2/2 'Deniz, 27, male, software test': original D=0.000  util_preserving D=0.086  util_paraphrase D=0.056  priv_preserving D=0.143  priv_targeted D=0.138  util_broken D=0.422
+Done Sun Oct 11 02:24:40 CEST 2026

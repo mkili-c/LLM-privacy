@@ -1,0 +1,10 @@
+sudo: sorry, you must have a tty to run sudo
+Job 569 on studgpu-spark01.inf.ethz.ch (aarch64), args: 
+K = 10 answers of 256 tokens per original
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 8436.04it/s]
+dev: 2 rows already done, 98 to go -> /work/projects/mkilic/LLM-privacy/results/calibration/dev_D.csv
+  1/98 'Ruth, 61, female, retired teac': original D=0.000  util_preserving D=0.074  util_paraphrase D=0.052  priv_preserving D=0.163  priv_targeted D=0.218  util_broken D=0.554
+  2/98 'Idris, 41, male, imam, Birming': original D=0.000  util_preserving D=0.261  util_paraphrase D=0.179  priv_preserving D=0.399  priv_targeted D=0.403  util_broken D=0.746
+[2026-10-11T02:37:36.100] error: *** JOB 569 ON studgpu-spark01 CANCELLED AT 2026-10-11T02:37:36 DUE to SIGNAL Terminated ***

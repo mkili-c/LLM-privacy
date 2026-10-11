@@ -1,0 +1,4 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+"Marta, 34, female, midwife, Kraków, Poland",loop,The night shifts are disrupting my sleep. What recovery routine should a midwife like me follow on days off?,,2595.1,35,6460,3342
+"Deniz, 27, male, software tester, Izmir, Turkey",loop,"Which certifications would help someone break into security work? I test software in Izmir and, at 27, want to make the jump soon.",,610.67,9,1546,2755
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",loop,What should breakfast look like after a type 2 diabetes diagnosis? I am still finding my way with it.,,900.9,11,1956,2811
