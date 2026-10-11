@@ -1,0 +1,176 @@
+sudo: sorry, you must have a tty to run sudo
+Job 630 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_loop_v11.csv --max_share 0.35 --ids Marta, 34, female, midwife, Kraków, Poland Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence Diego, 29, male, chef, Mexico City, Mexico, criminal record
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 9507.59it/s]
+loop: 0 rows already done, 3 to go -> results/rewrites/dev_loop_v11.csv
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.5225 (92 s)
+
+=== iteration 0: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+    laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+    max      gender 1.000       age 0.979  geograph 1.000  professi 1.000  health c 0.032  educatio 1.000  socioeco 0.269  relation 0.176  family s 0.979  national 0.998
+  leaking: gender, age, geographic location, profession, education level, family situation, nationality
+  picked spans: 'routine should a midwife' (profession +0.782), 'Kraków' (geographic location +0.999), 'maternity' (family situation +0.960), '34' (age +0.957)
+    'routine should a midwife' (profession)
+      -> 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should I follow on days off?'
+      utility R 11%: in
+      hinge 3.454 -> 3.276
+    '34' (age)
+      -> 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At my age, what recovery routine should I follow on days off?'
+      utility R 17%: in
+      hinge 3.276 -> 3.353
+    'Kraków' (geographic location, nationality)
+      -> 'The night shifts at the maternity ward are wrecking my sleep. At my age, what recovery routine should I follow on days off?'
+      utility R 19%: in
+      hinge 3.353 -> 2.389
+    'maternity' (relationship status, family situation)
+      -> 'The night shifts at the ward are wrecking my sleep. At my age, what recovery routine should I follow on days off?'
+      utility R 39% >= 35%: request lost; more general:
+      -> 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 60%: still lost
+      span kept and protected: 'maternity'
+
+=== iteration 1: 'The night shifts at the maternity ward are wrecking my sleep. At my age, what recovery routine should I follow on days off?'
+    qwen     gender 0.971       age 0.679  geograph 0.000  professi 0.731  health c 0.002  educatio 0.119  socioeco 0.001  relation 0.269  family s 0.998  national 0.000
+    laya     gender 0.978       age 0.976  geograph 0.021  professi 0.976  health c 0.027  educatio 0.023  socioeco 0.023  relation 0.960  family s 0.979  national 0.021
+    max      gender 0.978       age 0.976  geograph 0.021  professi 0.976  health c 0.027  educatio 0.119  socioeco 0.023  relation 0.960  family s 0.998  national 0.021
+  leaking: gender, age, profession, relationship status, family situation
+  picked spans: 'wrecking my' (family situation +0.510), 'age, what recovery' (gender +0.775), 'ward' (profession +0.952), 'sleep' (relationship status +0.930)
+    'age, what recovery' (gender)
+      -> 'The night shifts at the maternity ward are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 34%: in
+      hinge 2.389 -> 1.485
+    'sleep' (relationship status): rewriter changed nothing
+    'wrecking my' (family situation)
+      -> 'The night shifts at work are disrupting my sleep. What recovery routine should I follow on days off?'
+      utility R 61% >= 35%: request lost; more general:
+      -> 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 60%: still lost
+      span kept and protected: 'wrecking my'
+    'ward' (profession)
+      -> 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 60% >= 35%: request lost; more general:
+      -> 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 60%: still lost
+      span kept and protected: 'ward'
+
+=== iteration 2: 'The night shifts at the maternity ward are wrecking my sleep. What recovery routine should I follow on days off?'
+    qwen     gender 0.818       age 0.002  geograph 0.000  professi 0.986  health c 0.000  educatio 0.037  socioeco 0.000  relation 0.531  family s 0.989  national 0.000
+    laya     gender 0.979       age 0.020  geograph 0.021  professi 0.976  health c 0.031  educatio 0.023  socioeco 0.023  relation 0.366  family s 0.979  national 0.021
+    max      gender 0.979       age 0.020  geograph 0.021  professi 0.986  health c 0.031  educatio 0.037  socioeco 0.023  relation 0.531  family s 0.989  national 0.021
+  leaking: gender, profession, relationship status, family situation
+  picked spans: 'shifts at the' (family situation +0.420), 'recovery routine' (gender +0.745)
+    'recovery routine' (gender): rewriter changed nothing
+    'shifts at the' (family situation): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+  qwen     gender 0.818       age 0.002  geograph 0.000  professi 0.986  health c 0.000  educatio 0.037  socioeco 0.000  relation 0.531  family s 0.989  national 0.000
+  laya     gender 0.979       age 0.020  geograph 0.021  professi 0.976  health c 0.031  educatio 0.023  socioeco 0.023  relation 0.366  family s 0.979  national 0.021
+final (NOT converged, leak 0.989, utility R 34%; reference 92 s, privacy step 592 s): 'The night shifts at the maternity ward are wrecking my sleep. What recovery routine should I follow on days off?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.6387 (91 s)
+
+=== iteration 0: 'Two years sober, and I pour drinks all night for a living. How does a 30-year-old bartender in São Paulo stay steady surrounded by it?'
+    qwen     gender 0.018       age 0.679  geograph 0.001  professi 0.867  health c 0.881  educatio 0.000  socioeco 0.777  relation 0.000  family s 0.001  national 0.000
+    laya     gender 0.021       age 0.976  geograph 0.977  professi 0.976  health c 0.020  educatio 0.022  socioeco 0.023  relation 0.021  family s 0.020  national 0.389
+    max      gender 0.021       age 0.976  geograph 0.977  professi 0.976  health c 0.881  educatio 0.022  socioeco 0.777  relation 0.021  family s 0.020  national 0.389
+  leaking: age, geographic location, profession, health condition, socioeconomic status
+  picked spans: 'in São' (geographic location +0.906), 'pour' (profession +0.860), '30-year-old' (age +0.955), 'sober' (health condition +0.881)
+    'in São' (geographic location)
+      -> 'Two years sober, and I pour drinks all night for a living. How does a 30-year-old bartender stay steady surrounded by it?'
+      utility R 17%: in
+      hinge 2.087 -> 1.450
+    '30-year-old' (age)
+      -> 'Two years sober, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+      utility R 27%: in
+      hinge 1.450 -> 0.933
+    'pour' (profession): rewriter changed nothing
+    'sober' (health condition)
+      -> 'Two years clean, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+      utility R 38% >= 35%: request lost; more general:
+      -> 'Two years in recovery, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+      utility R 35%: in
+      hinge 0.933 -> 1.437
+
+=== iteration 1: 'Two years in recovery, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+    qwen     gender 0.000       age 0.060  geograph 0.000  professi 0.269  health c 0.996  educatio 0.000  socioeco 0.963  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.020  professi 0.978  health c 0.021  educatio 0.023  socioeco 0.023  relation 0.021  family s 0.021  national 0.020
+    max      gender 0.021       age 0.060  geograph 0.020  professi 0.978  health c 0.996  educatio 0.023  socioeco 0.963  relation 0.021  family s 0.021  national 0.020
+  leaking: profession, health condition, socioeconomic status
+  picked spans: 'recovery' (health condition +0.996), 'pour' (profession +0.952)
+    'pour' (profession): rewriter changed nothing
+    'recovery' (health condition): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Two years sober, and I pour drinks all night for a living. How does a 30-year-old bartender in São Paulo stay steady surrounded by it?'
+  qwen     gender 0.000       age 0.060  geograph 0.000  professi 0.269  health c 0.996  educatio 0.000  socioeco 0.963  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.021       age 0.021  geograph 0.020  professi 0.978  health c 0.021  educatio 0.023  socioeco 0.023  relation 0.021  family s 0.021  national 0.020
+final (NOT converged, leak 0.996, utility R 35%; reference 91 s, privacy step 368 s): 'Two years in recovery, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4494 (91 s)
+
+=== iteration 0: "Will an old conviction block me from getting a restaurant licensed? I've cooked in Mexico City kitchens for years, I'm 29, and I want my own place."
+    qwen     gender 0.000       age 0.119  geograph 0.002  professi 0.986  health c 0.000  educatio 0.002  socioeco 0.378  relation 0.000  family s 0.000  national 0.023
+    laya     gender 0.021       age 0.979  geograph 0.971  professi 0.975  health c 0.021  educatio 0.023  socioeco 0.025  relation 0.021  family s 0.021  national 0.979
+    max      gender 0.021       age 0.979  geograph 0.971  professi 0.986  health c 0.021  educatio 0.023  socioeco 0.378  relation 0.021  family s 0.021  national 0.979
+  leaking: age, geographic location, profession, nationality
+  picked spans: 'restaurant' (profession +0.948), 'Mexico' (nationality +0.958), '29' (age +0.957)
+    '29' (age)
+      -> "Will an old conviction block me from getting a restaurant licensed? I've cooked in Mexico City kitchens for years, and I want my own place."
+      utility R 1%: in
+      hinge 1.915 -> 1.410
+    'Mexico' (geographic location, nationality)
+      -> "Will an old conviction block me from getting a restaurant licensed? I've cooked in foreign city kitchens for years, and I want my own place."
+      utility R 2%: in
+      hinge 1.410 -> 0.277
+    'restaurant' (profession)
+      -> "Will an old conviction block me from getting a license? I've cooked in foreign city kitchens for years, and I want my own place."
+      utility R 18%: in
+      hinge 0.277 -> 0.335
+
+=== iteration 1: "Will an old conviction block me from getting a license? I've cooked in foreign city kitchens for years, and I want my own place."
+    qwen     gender 0.000       age 0.003  geograph 0.001  professi 0.835  health c 0.000  educatio 0.023  socioeco 0.378  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.021  professi 0.023  health c 0.020  educatio 0.022  socioeco 0.022  relation 0.021  family s 0.021  national 0.022
+    max      gender 0.021       age 0.021  geograph 0.021  professi 0.835  health c 0.020  educatio 0.023  socioeco 0.378  relation 0.021  family s 0.021  national 0.022
+  leaking: profession
+  picked spans: "I've cooked in" (profession +0.727)
+    "I've cooked in" (profession)
+      -> "Will an old conviction block me from getting a license? I've worked in kitchens for years, and I want my own place."
+      utility R 21%: in
+      hinge 0.335 -> 0.503
+
+=== iteration 2: "Will an old conviction block me from getting a license? I've worked in kitchens for years, and I want my own place."
+    qwen     gender 0.000       age 0.018  geograph 0.000  professi 0.622  health c 0.000  educatio 0.095  socioeco 0.881  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.020  professi 0.029  health c 0.020  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.021       age 0.021  geograph 0.020  professi 0.622  health c 0.020  educatio 0.095  socioeco 0.881  relation 0.020  family s 0.020  national 0.020
+  leaking: profession, socioeconomic status
+  picked spans: 'worked in' (socioeconomic status +0.771), 'kitchens' (profession +0.620)
+    'kitchens' (profession)
+      -> "Will an old conviction block me from getting a license? I've worked in various fields for years, and I want my own place."
+      utility R 37% >= 35%: request lost; more general:
+      -> "Will an old conviction block me from getting a license? I've worked in the industry for years, and I want my own place."
+      utility R 31%: in
+      hinge 0.503 -> 0.000
+    'worked in': nothing it is blamed for leaks any more, skipped
+
+=== iteration 3: "Will an old conviction block me from getting a license? I've worked in the industry for years, and I want my own place."
+    qwen     gender 0.000       age 0.007  geograph 0.001  professi 0.060  health c 0.000  educatio 0.009  socioeco 0.119  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.022  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.021       age 0.021  geograph 0.020  professi 0.060  health c 0.020  educatio 0.021  socioeco 0.119  relation 0.020  family s 0.020  national 0.020
+  all attributes <= 0.5: done
+
+================================================================================
+original: "Will an old conviction block me from getting a restaurant licensed? I've cooked in Mexico City kitchens for years, I'm 29, and I want my own place."
+  qwen     gender 0.000       age 0.007  geograph 0.001  professi 0.060  health c 0.000  educatio 0.009  socioeco 0.119  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.021       age 0.021  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.022  relation 0.020  family s 0.020  national 0.020
+final (converged (leak <= 0.5), leak 0.119, utility R 31%; reference 91 s, privacy step 604 s): "Will an old conviction block me from getting a license? I've worked in the industry for years, and I want my own place."
+  3/3 (0 failed)
+Done Sun Oct 11 19:18:15 CEST 2026

@@ -32,6 +32,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "utility" / "metric
 from topk_sample import load 
 
 DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+# messages per forward pass in logits_batch. Only each row's last position goes through the output
+# layer, so a batch holds no (rows, length, vocab) logits tensor and 64 rows of the longest PUPA-SD
+# prompt (~480 tokens) take a few GB; it was 16 with the full logits.
+BATCH_SIZE = 64
 
 # No bare "Y" / "N": as a first token they also collect non-answers such as
 # "N/A" (N + /A) or "Yikes" (Y + ikes).
@@ -131,10 +135,13 @@ class AttributeProbe:
         return torch.sigmoid(logit), logit, coverage
 
     @torch.no_grad()
-    def logits_batch(self, msgs_ids, batch_size=16):
+    def logits_batch(self, msgs_ids, batch_size=BATCH_SIZE):
         """Yes-vs-no logits [N] for messages given as token-id lists of any
         lengths. Rows are right-padded, so every real token keeps its position
-        and the answer is read at each row's own last token."""
+        and the answer is read at each row's own last token. The output layer
+        runs on those last positions only: the logits there are the same as in
+        the full (rows, length, vocab) tensor."""
+        decoder, head = self.model.get_decoder(), self.model.get_output_embeddings()
         out = []
         for i in range(0, len(msgs_ids), batch_size):
             rows = [self.build_ids(m)[0] for m in msgs_ids[i:i + batch_size]]
@@ -143,8 +150,8 @@ class AttributeProbe:
             att = torch.zeros_like(ids)
             for j, r in enumerate(rows):
                 ids[j, :len(r)], att[j, :len(r)] = r, 1
-            logits = self.model(input_ids=ids, attention_mask=att).logits
-            last = logits[torch.arange(len(rows), device=ids.device), lens - 1]
+            hidden = decoder(input_ids=ids, attention_mask=att, use_cache=False).last_hidden_state  # (rows, length, H)
+            last = head(hidden[torch.arange(len(rows), device=ids.device), lens - 1])  # (rows, vocab)
             out.append(self._readout(last)[1])
         return torch.cat(out)
 

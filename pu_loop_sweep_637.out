@@ -1,0 +1,152 @@
+sudo: sorry, you must have a tty to run sudo
+Job 637 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_loop_v12.csv --max_share 0.35 --ids Marta, 34, female, midwife, Kraków, Poland Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence Diego, 29, male, chef, Mexico City, Mexico, criminal record
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 6492.97it/s]
+loop: 0 rows already done, 3 to go -> results/rewrites/dev_loop_v12.csv
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.5225 (91 s)
+
+=== iteration 0: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.269  relation 0.107  family s 0.963  national 0.998
+    laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+    max      gender 1.000       age 0.979  geograph 1.000  professi 1.000  health c 0.032  educatio 1.000  socioeco 0.269  relation 0.176  family s 0.979  national 0.998
+  leaking: gender, age, geographic location, profession, education level, family situation, nationality
+  picked spans: 'routine should a midwife' (profession +0.782), 'Kraków' (geographic location +0.999), 'maternity' (family situation +0.960), '34' (age +0.957)
+  utility order (R with the span deleted): 'Kraków' 1%, 'maternity' 8%, '34' 16%, 'routine should a midwife' 32%
+    'Kraków' (geographic location, nationality)
+      -> 'The night shifts at the maternity ward are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+      utility R 2%: in
+      hinge 3.454 -> 2.456
+    'maternity' (family situation)
+      -> 'The night shifts at the ward are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+      utility R 10%: in
+      hinge 2.456 -> 1.991
+    '34' (age)
+      -> 'The night shifts at the ward are wrecking my sleep. What recovery routine should a midwife like me follow on days off?'
+      utility R 25%: in
+      hinge 1.991 -> 1.498
+    'routine should a midwife' (profession)
+      -> 'The night shifts at the ward are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 51% >= 35%: request lost; more general:
+      -> 'The night shifts at the ward are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 51%: still lost
+      span kept and protected: 'routine should a midwife'
+
+=== iteration 1: 'The night shifts at the ward are wrecking my sleep. What recovery routine should a midwife like me follow on days off?'
+    qwen     gender 1.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.998  socioeco 0.023  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.959       age 0.020  geograph 0.021  professi 0.977  health c 0.024  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.312  national 0.020
+    max      gender 1.000       age 0.020  geograph 0.021  professi 1.000  health c 0.024  educatio 0.998  socioeco 0.023  relation 0.021  family s 0.312  national 0.020
+  leaking: gender, profession, education level
+  picked spans: 'ward are wrecking' (profession +0.827), 'shifts' (gender +0.930)
+  utility order (R with the span deleted): 'ward are wrecking' 25%, 'shifts' 25%
+    'ward are wrecking' (profession)
+      -> 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 60% >= 35%: request lost; more general:
+      -> 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 60%: still lost
+      span kept and protected: 'ward are wrecking'
+    'shifts' (gender)
+      -> 'The nights at the ward are wrecking my sleep. What recovery routine should a midwife like me follow on days off?'
+      utility R 26%: in
+      hinge 1.498 -> 1.495
+
+=== iteration 2: 'The nights at the ward are wrecking my sleep. What recovery routine should a midwife like me follow on days off?'
+    qwen     gender 0.999       age 0.000  geograph 0.000  professi 1.000  health c 0.009  educatio 0.996  socioeco 0.029  relation 0.000  family s 0.018  national 0.000
+    laya     gender 0.027       age 0.020  geograph 0.020  professi 0.971  health c 0.023  educatio 0.022  socioeco 0.021  relation 0.021  family s 0.025  national 0.020
+    max      gender 0.999       age 0.020  geograph 0.020  professi 1.000  health c 0.023  educatio 0.996  socioeco 0.029  relation 0.021  family s 0.025  national 0.020
+  leaking: gender, profession, education level
+  picked spans: 'like me' (profession +0.855), 'sleep. What recovery' (education level +0.673)
+  utility order (R with the span deleted): 'like me' 30%, 'sleep. What recovery' 74%
+    'like me' (gender, profession)
+      -> 'The nights at the ward are wrecking my sleep. What recovery routine should a midwife follow on days off?'
+      utility R 30%: in
+      hinge 1.495 -> 0.272
+    'sleep. What recovery': nothing it is blamed for leaks any more, skipped
+
+=== iteration 3: 'The nights at the ward are wrecking my sleep. What recovery routine should a midwife follow on days off?'
+    qwen     gender 0.119       age 0.002  geograph 0.000  professi 0.119  health c 0.223  educatio 0.438  socioeco 0.001  relation 0.000  family s 0.562  national 0.000
+    laya     gender 0.025       age 0.020  geograph 0.020  professi 0.710  health c 0.022  educatio 0.022  socioeco 0.021  relation 0.021  family s 0.023  national 0.020
+    max      gender 0.119       age 0.020  geograph 0.020  professi 0.710  health c 0.223  educatio 0.438  socioeco 0.021  relation 0.021  family s 0.562  national 0.020
+  leaking: profession, family situation
+  picked spans: 'The nights' (profession +0.624), 'on days off' (family situation +0.455)
+  utility order (R with the span deleted): 'The nights' 40%, 'on days off' 41%
+    'The nights' (profession)
+      -> 'The nights at the ward are wrecking my sleep. What recovery routine should someone following a midwifery career path follow on days off?'
+      utility R 30%: in
+      hinge 0.272 -> 1.060
+    'on days off': nothing it is blamed for leaks any more, skipped
+
+=== iteration 4: 'The nights at the ward are wrecking my sleep. What recovery routine should someone following a midwifery career path follow on days off?'
+    qwen     gender 0.777       age 0.001  geograph 0.000  professi 0.047  health c 0.119  educatio 0.622  socioeco 0.000  relation 0.005  family s 0.321  national 0.000
+    laya     gender 0.967       age 0.023  geograph 0.021  professi 0.971  health c 0.025  educatio 0.024  socioeco 0.022  relation 0.021  family s 0.025  national 0.020
+    max      gender 0.967       age 0.023  geograph 0.021  professi 0.971  health c 0.119  educatio 0.622  socioeco 0.022  relation 0.021  family s 0.321  national 0.020
+  leaking: gender, profession, education level
+  picked spans: 'The nights at' (profession +0.844), 'midwifery' (gender +0.946)
+  utility order (R with the span deleted): 'The nights at' 38%, 'midwifery' 49%
+    'The nights at' (profession)
+      -> 'The nights at the ward are wrecking my sleep. What recovery routine should someone following a career path in healthcare follow on days off?'
+      utility R 53% >= 35%: request lost; more general:
+      -> 'The nights are wrecking my sleep. What recovery routine should someone follow on days off?'
+      utility R 65%: still lost
+      span kept and protected: 'The nights at'
+    'midwifery' (gender)
+      -> 'The nights at the ward are wrecking my sleep. What recovery routine should someone following a healthcare career path follow on days off?'
+      utility R 53% >= 35%: request lost; the retry to generalize changed nothing
+      span kept and protected: 'midwifery'
+
+=== iteration 5: 'The nights at the ward are wrecking my sleep. What recovery routine should someone following a midwifery career path follow on days off?'
+    qwen     gender 0.777       age 0.001  geograph 0.000  professi 0.047  health c 0.119  educatio 0.622  socioeco 0.000  relation 0.005  family s 0.321  national 0.000
+    laya     gender 0.967       age 0.023  geograph 0.021  professi 0.971  health c 0.025  educatio 0.024  socioeco 0.022  relation 0.021  family s 0.025  national 0.020
+    max      gender 0.967       age 0.023  geograph 0.021  professi 0.971  health c 0.119  educatio 0.622  socioeco 0.022  relation 0.021  family s 0.321  national 0.020
+  leaking: gender, profession, education level
+  picked spans: 'days off' (profession +0.159), 'following a' (gender +0.890), 'sleep' (education level +0.503)
+  utility order (R with the span deleted): 'following a' 31%, 'sleep' 35%, 'days off' 35%
+    'following a' (gender): rewriter changed nothing
+    'sleep' (education level)
+      -> 'The nights at the ward are disrupting my sleep. What recovery routine should someone following a midwifery career path follow on days off?'
+      utility R 32%: in
+      hinge 1.060 -> 0.954
+    'days off' (profession)
+      -> 'The nights at the ward are disrupting my sleep. What recovery routine should someone follow on days off?'
+      utility R 54% >= 35%: request lost; more general:
+      -> 'The nights at the ward are disrupting my sleep. What recovery routine should someone follow on days off?'
+      utility R 54%: still lost
+      span kept and protected: 'days off'
+
+=== iteration 6: 'The nights at the ward are disrupting my sleep. What recovery routine should someone following a midwifery career path follow on days off?'
+    qwen     gender 0.622       age 0.000  geograph 0.000  professi 0.023  health c 0.076  educatio 0.562  socioeco 0.000  relation 0.012  family s 0.321  national 0.000
+    laya     gender 0.919       age 0.022  geograph 0.021  professi 0.973  health c 0.025  educatio 0.024  socioeco 0.021  relation 0.020  family s 0.024  national 0.020
+    max      gender 0.919       age 0.022  geograph 0.021  professi 0.973  health c 0.076  educatio 0.562  socioeco 0.021  relation 0.020  family s 0.321  national 0.020
+  leaking: gender, profession, education level
+  picked spans: 'ward' (profession +0.947), 'disrupting' (gender +0.887), 'sleep' (education level +0.502)
+  utility order (R with the span deleted): 'sleep' 35%, 'ward' 36%, 'disrupting' 42%
+    'sleep' (education level): rewriter changed nothing
+    'ward' (profession)
+      -> 'The nights are disrupting my sleep. What recovery routine should someone following a midwifery career path follow on days off?'
+      utility R 38% >= 35%: request lost; more general:
+      -> 'The nights are disrupting my sleep. What recovery routine should someone following a career path follow on days off?'
+      utility R 69%: still lost
+      span kept and protected: 'ward'
+    'disrupting' (gender): rewriter changed nothing
+
+=== iteration 7: 'The nights at the ward are disrupting my sleep. What recovery routine should someone following a midwifery career path follow on days off?'
+    qwen     gender 0.622       age 0.000  geograph 0.000  professi 0.023  health c 0.076  educatio 0.562  socioeco 0.000  relation 0.012  family s 0.321  national 0.000
+    laya     gender 0.919       age 0.022  geograph 0.021  professi 0.973  health c 0.025  educatio 0.024  socioeco 0.021  relation 0.020  family s 0.024  national 0.020
+    max      gender 0.919       age 0.022  geograph 0.021  professi 0.973  health c 0.076  educatio 0.562  socioeco 0.021  relation 0.020  family s 0.321  national 0.020
+  leaking: gender, profession, education level
+  picked spans: 'my sleep' (profession +0.521), 'disrupting' (gender +0.887)
+  utility order (R with the span deleted): 'my sleep' 36%, 'disrupting' 42%
+    'my sleep' (profession): rewriter changed nothing
+    'disrupting' (gender): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+  qwen     gender 0.622       age 0.000  geograph 0.000  professi 0.023  health c 0.076  educatio 0.562  socioeco 0.000  relation 0.012  family s 0.321  national 0.000
+  laya     gender 0.919       age 0.022  geograph 0.021  professi 0.973  health c 0.025  educatio 0.024  socioeco 0.021  relation 0.020  family s 0.024  national 0.020
+final (NOT converged, leak 0.973, utility R 32%; reference 91 s, privacy step 1548 s): 'The nights at the ward are disrupting my sleep. What recovery routine should someone following a midwifery career path follow on days off?'
+
+  sampling the reference answers
+[2026-10-11T20:11:00.602] error: *** JOB 637 ON studgpu-spark01 CANCELLED AT 2026-10-11T20:11:00 DUE to SIGNAL Terminated ***

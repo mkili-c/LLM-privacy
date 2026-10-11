@@ -1,0 +1,8 @@
+sudo: sorry, you must have a tty to run sudo
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 10418.07it/s]
+
+dev message: 28 words, 89 span variants x 10 attributes = 91854 tokens
+  old (full logits, batch 16):  201.1 s  (    457 tokens/s)
+  new (last positions, batch  16):  184.2 s  (    499 tokens/s)  x 1.1   max |P_new - P_old| 0.0000, mean 0.00000
+  new (last positions, batch  64):  176.7 s  (    520 tokens/s)  x 1.1   max |P_new - P_old| 0.0000, mean 0.00000

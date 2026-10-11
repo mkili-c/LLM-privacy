@@ -34,6 +34,6 @@ python privacy_utility_loop.py \
     --model_path "$MODEL_PATH" \
     --dtype bfloat16 \
     --text "I hurt my eyes while I was watching the fireworks on 1st of August, what should I do?" \
-    --utility kl_multi --utility_args "--k 4"
+    --k 4
 
 echo "Done."

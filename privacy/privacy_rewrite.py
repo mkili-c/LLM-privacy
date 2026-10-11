@@ -20,25 +20,43 @@ Each iteration:
        positive and the span overlaps none picked so far (else that attribute
        waits for the next iteration). A second cue for the same attribute
        waits for the next iteration, which blames again on the edited text.
-    4. From right to left, the LLM rewrites the message around each picked
-       span. It sees the message with the span marked and the leaking
+    4. One after another, the LLM rewrites the message around each picked
+       span. With the utility check (5.), the least utility-bearing span goes
+       first: each picked span's cost is R of the message with the span
+       deleted (exact, K forward passes each; the gradient of D is zero at the
+       start, where the message is still the original). The most
+       utility-bearing span comes last, so a cheaper edit may already resolve
+       its attributes, and if the check refuses anything, it refuses that one.
+       Without the check: right to left. The LLM sees the message with the span marked and the leaking
        attributes the span is the best-blamed span for (a blame > 0 alone is
        too loose: noise gives almost every span a little of every attribute,
        and the first run told the LLM that "Kraków" reveals the writer's
        gender and education), and returns the whole message with
        the marked part made more general or left out. It may reword the words
        right around the span so that the result reads naturally, and keeps the
-       rest word for word. Its rewrite is accepted as it is: there are no
-       candidates to choose from, so no fluency guard, no tried list and no
-       acceptance test.
-       Right to left keeps the spans on the left valid: a rewrite only changes
-       text to the right of the next span's end. A span is rewritten only if
-       the text up to its end is still exactly as at the start of the
-       iteration; if the LLM changed it anyway, the span is blamed again in
-       the next iteration. After each rewrite the message is scored again, and
-       a span is skipped once nothing it is blamed for leaks any more.
-The step ends when nothing leaks, when no span lowers the leakage, when an
-iteration changes nothing, or after --max_iters.
+       rest word for word. There are no candidates to choose from, so no fluency
+       guard; the only test a rewrite has to pass is the utility check below.
+       Each span is found again by its text in the current message (the
+       occurrence nearest its old position), since earlier rewrites shift it;
+       if an earlier rewrite changed its words, it is blamed again in the next
+       iteration. After each rewrite the message is scored again, and a span is
+       skipped once nothing it is blamed for leaks any more.
+    5. Utility check (when the loop passes utility_share): after each rewrite,
+           R = D(rewrite) / D(∅)          (utility/metrics/utility_check.py)
+       R >= --max_share means the rewrite moves the answers as far as an empty
+       message would: the request is lost. The LLM is then asked once more for
+       the same span, told that the request depends on it and to make it more
+       general instead of leaving it out (the first rewrite mostly deletes).
+       That goes in if its R < --max_share. Otherwise the span stays as it was
+       and is protected: its text is kept in a list, and no span that overlaps
+       it is picked again for this message, so its attributes fall to their
+       next-best spans. Without the list, the next iteration would blame the
+       same span, greedy decoding would repeat the same rewrite, and the check
+       would refuse it again every iteration. Utility wins: a protected span
+       stays even if it leaks.
+The step ends when nothing leaks, when no unprotected span lowers the leakage,
+when an iteration neither changes the message nor protects a span, or after
+--max_iters.
 
 The LLM sees the part it rewrites: generalizing needs it ("Zurich" -> "the
 city", "25" -> "an adult"). The prompt forbids a different specific value
@@ -50,11 +68,16 @@ choosing among them needed a fluency guard, a tried list and an acceptance
 test that together blamed the wrong spans and cost up to 117 LLM calls per
 prompt (job 463).
 
-Utility is deliberately not measured here; a separate utility loop handles it. Its rewriter
-(kl_mask_llm_rewrite_multi.py) mirrors this one and shares the marks and generate_message.
+The utility check sits inside this step since 2026-10-11, interleaved with the
+rewrites: checking each rewrite as it is made knows exactly what was lost (this
+span), where the separate utility step afterwards had to guess it and cycled
+with this step (jobs 556, 561). That earlier utility rewriter,
+kl_mask_llm_rewrite_multi.py, is kept as it was and still imports the marks and
+generate_message from here.
 """
 import argparse
 import re
+import time
 
 import torch
 
@@ -64,6 +87,10 @@ from attribute_probe import (ATTRIBUTES, DEFAULT_MODEL, QUESTION as QWEN_QUESTIO
 from laya_probe import PRIVACY_LAYA, QUESTION as LAYA_QUESTION, LayaProbe
 
 OPEN, CLOSE = "<<", ">>"         # marks the span in the rewrite prompt
+LEAVE_OUT = "Make the marked part more general or leave it out"
+# the retry when the utility check refused the first rewrite
+GENERALIZE = ("The request of the message depends on the marked part, so do not leave it out: "
+              "make it more general, keeping what the request needs")
 REWRITE_MAX_NEW_TOKENS = 1024    # the whole message comes back; greedy decoding stops at its end
 # A leaking attribute whose best span blame is below this looks saturated: its P is pinned near 1
 # by redundant cues, so no single deletion moves it (ROADMAP Phase 3, occlusion on -log(1 - P)).
@@ -167,13 +194,15 @@ def pick(sp, blame, hinge, m):
 
 # ---------------------------------------------------------------- rewriting
 
-def rewrite_prompt(marked, attributes):
+def rewrite_prompt(marked, attributes, generalize=False):
+    """generalize: the retry after the utility check refused the first rewrite."""
     attrs = ", ".join(attributes)
+    how = GENERALIZE if generalize else LEAVE_OUT
     return (
         "The message below was written by a user to an AI assistant. The part marked "
         f"{OPEN} {CLOSE} reveals the writer's {attrs}.\n"
         f"Rewrite the message so that the writer's {attrs} can no longer be inferred from it. "
-        "Make the marked part more general or leave it out; never replace it with a different "
+        f"{how}; never replace it with a different "
         "specific value, and do not add new details. Change the words right around it only "
         "where the sentence needs it to read naturally, and keep the rest of the message word "
         "for word. The request of the message must stay intact.\n"
@@ -195,10 +224,55 @@ def generate_message(model, tok, prompt):
     return answer.replace(OPEN, "").replace(CLOSE, "").strip()
 
 
-def llm_rewrite(model, tok, text, s, e, attributes):
+def llm_rewrite(model, tok, text, s, e, attributes, generalize=False):
     """The message rewritten around text[s:e] by one greedy generation."""
     marked = text[:s] + OPEN + text[s:e] + CLOSE + text[e:]
-    return generate_message(model, tok, rewrite_prompt(marked, attributes))
+    return generate_message(model, tok, rewrite_prompt(marked, attributes, generalize))
+
+
+# ---------------------------------------------------------------- utility check
+
+def utility_vetted(model, tok, text, s, e, attributes, new, utility_share, max_share):
+    """new if the utility check passes it (R < max_share); else the LLM's second rewrite of
+    text around text[s:e], told to make the part more general instead of leaving it out, if
+    that passes; else None: the span stays as it was."""
+    R = utility_share(new)
+    if R < max_share:
+        print(f"      utility R {R:.0%}: in")
+        return new
+    general = llm_rewrite(model, tok, text, s, e, attributes, generalize=True)
+    if not general or general == text:
+        print(f"      utility R {R:.0%} >= {max_share:.0%}: request lost; "
+              "the retry to generalize changed nothing")
+        return None
+    R_general = utility_share(general)
+    print(f"      utility R {R:.0%} >= {max_share:.0%}: request lost; more general:\n"
+          f"      -> {general!r}\n      utility R {R_general:.0%}: "
+          + ("in" if R_general < max_share else "still lost"))
+    return general if R_general < max_share else None
+
+
+def locate(text, old, near):
+    """Start of the occurrence of old in text nearest to position near, or None if it is gone."""
+    starts = [m.start() for m in re.finditer(re.escape(old), text)]
+    return min(starts, key=lambda p: abs(p - near)) if starts else None
+
+
+def utility_order(text, sp, order, utility_share):
+    """The picked spans, least utility-bearing first: by R of text with the span deleted."""
+    cost = {}
+    for u, _ in order:
+        cost[u] = utility_share(delete(text, sp[u][0], sp[u][1]))
+    queue = sorted(order, key=lambda ua: cost[ua[0]])
+    print("  utility order (R with the span deleted): "
+          + ", ".join(f"{text[sp[u][0]:sp[u][1]]!r} {cost[u]:.0%}" for u, _ in queue))
+    return queue
+
+
+def protected_spans(text, sp, protected):
+    """[U] bool: the spans that overlap an occurrence of a protected span text."""
+    kept = [(m.start(), m.end()) for p in protected for m in re.finditer(re.escape(p), text)]
+    return torch.tensor([any(s < b and a < e for a, b in kept) for s, e, _ in sp], dtype=torch.bool)
 
 
 # ---------------------------------------------------------------- main loop
@@ -209,7 +283,10 @@ def show(attackers, attributes, per, P):
     print(f"    {'max':<5}" + "".join(f"  {a[:8]:>8} {P[0, k]:.3f}" for k, a in enumerate(attributes)))
 
 
-def rewrite(model, tok, attackers, text, attributes, args):
+def rewrite(model, tok, attackers, text, attributes, args, utility_share=None):
+    """-> the rewritten message. utility_share(text) -> R = D(text) / D(∅) is the utility
+    check, against args.max_share; None (standalone use): no check."""
+    protected = []                   # span texts the utility check keeps in the message
     for it in range(args.max_iters + 1):
         per, P = score(attackers, [text])
         print(f"\n=== iteration {it}: {text!r}")
@@ -222,29 +299,38 @@ def rewrite(model, tok, attackers, text, attributes, args):
             print("  max_iters reached")
             return text
 
+        start_time = time.perf_counter()
         sp, blame = span_occlusion(attackers, text, {n: v[0] for n, v in per.items()},
                                    args.max_n, args.span_penalty)
+        print(f"  occlusion: {len(sp)} spans scored in {time.perf_counter() - start_time:.0f} s")
         # saturation check, count with: grep -c "\[stall\]" <log>
         for a in leaking.nonzero().flatten().tolist():
             if blame[:, a].max() < STALL_BLAME:
                 print(f"  [stall] {attributes[a]}: best span blame {blame[:, a].max().item():+.4f} "
                       f"at P {P[0, a].item():.4f}")
+        # protected spans compete no more: their attributes fall to their next-best spans
+        blame = blame.masked_fill(protected_spans(text, sp, protected)[:, None], float("-inf"))
         order = pick(sp, blame, (P[0] - args.threshold).clamp(min=0), args.top_m)
         print("  leaking: " + ", ".join(a for a, l in zip(attributes, leaking) if l))
         print("  picked spans: " + ", ".join(f"{text[sp[u][0]:sp[u][1]]!r} ({attributes[a]} {blame[u, a]:+.3f})"
                                              for u, a in order))
         if not order:
-            print("  no span lowers the leakage when deleted: stop")
+            print("  no unprotected span lowers the leakage when deleted: stop")
             return text
 
+        if utility_share is None:
+            queue = sorted(order, key=lambda ua: sp[ua[0]][0], reverse=True)          # right to left
+        else:
+            queue = utility_order(text, sp, order, utility_share)
         best = blame.argmax(0)                        # [K] each attribute's best-blamed span
-        start, changed = text, False
-        for u, _ in sorted(order, key=lambda ua: sp[ua[0]][0], reverse=True):   # right to left
-            s, e, _ = sp[u]
-            old = start[s:e]
-            if text[:e] != start[:e]:
-                print(f"    {old!r}: an earlier rewrite changed the text left of it, blamed again next iteration")
+        start, changed, n_protected = text, False, len(protected)
+        for u, _ in queue:
+            old = start[sp[u][0]:sp[u][1]]
+            s = locate(text, old, sp[u][0])
+            if s is None:
+                print(f"    {old!r}: an earlier rewrite changed it, blamed again next iteration")
                 continue
+            e = s + len(old)
             # the attributes this span is the best cue for and that still leak (a blame > 0
             # alone is too loose: noise gives almost every span a little of every attribute)
             blamed = [attributes[b] for b in range(len(attributes)) if P[0, b] > args.threshold and best[b] == u]
@@ -256,11 +342,17 @@ def rewrite(model, tok, attackers, text, attributes, args):
                 print(f"    {old!r} ({', '.join(blamed)}): rewriter "
                       + ("gave an empty answer" if not new else "changed nothing"))
                 continue
+            print(f"    {old!r} ({', '.join(blamed)})\n      -> {new!r}")
+            if utility_share is not None:
+                new = utility_vetted(model, tok, text, s, e, blamed, new, utility_share, args.max_share)
+                if new is None:
+                    protected.append(old)
+                    print(f"      span kept and protected: {old!r}")
+                    continue
             _, P_new = score(attackers, [new])
-            print(f"    {old!r} ({', '.join(blamed)}): hinge {hinge(P, args.threshold):.3f} -> "
-                  f"{hinge(P_new, args.threshold):.3f}\n      -> {new!r}")
+            print(f"      hinge {hinge(P, args.threshold):.3f} -> {hinge(P_new, args.threshold):.3f}")
             text, P, changed = new, P_new, True
-        if not changed:
+        if not changed and len(protected) == n_protected:
             print("  no rewrite changed the message: stop")
             return text
     return text

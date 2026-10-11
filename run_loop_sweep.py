@@ -13,15 +13,15 @@ Each row is flushed as it finishes and ids already done are skipped, so a run re
 24 h limit. The seed is reset for every row, so a row's rewrite does not depend on which rows
 ran before it.
 
-calls and tokens cover the LLM's generations: the privacy and utility rewrites and the K sampled
-reference answers. The scoring forward passes and gradients (attackers, D and its gradient), most
-of the loop's compute, are not in them, so `seconds` is the cost that compares with the baselines.
+calls and tokens cover the LLM's generations: the privacy rewrites (with the utility check's
+retries to generalize) and the K sampled reference answers. The scoring forward passes (attackers,
+D), most of the loop's compute, are not in them, so `seconds` is the cost that compares with the
+baselines.
 
 privacy_utility_loop.py has no get_args, so its flags are copied below with the same defaults:
 change them in both places.
 """
 import argparse
-from argparse import Namespace
 from pathlib import Path
 
 import torch
@@ -48,28 +48,18 @@ def get_args():
     # the loop's flags, as in privacy_utility_loop.main(); see its --help
     p.add_argument("--attributes", nargs="+", default=ATTRIBUTES)
     p.add_argument("--threshold", type=float, default=0.5)
-    p.add_argument("--max_iters", type=int, default=2)
-    p.add_argument("--utility", choices=sorted(loop.UTILITY), default="kl_multi")
-    p.add_argument("--utility_ref", choices=["user", "iteration"], default="user")
-    p.add_argument("--utility_args", default="", help="for the utility script's own parser")
     p.add_argument("--privacy_top_m", type=int, default=5)
     p.add_argument("--privacy_max_n", type=int, default=4)
     p.add_argument("--privacy_span_penalty", type=float, default=0.05)
     p.add_argument("--privacy_max_iters", type=int, default=8)
+    p.add_argument("--max_share", type=float, default=1.0)
+    p.add_argument("--k", type=int, default=5)
+    p.add_argument("--answer_max_new_tokens", type=int, default=256)
     p.add_argument("--model_path", default=DEFAULT_MODEL)
     p.add_argument("--laya_path", default=PRIVACY_LAYA)
     p.add_argument("--dtype", choices=["float16", "bfloat16", "float32"], default="float16")
     p.add_argument("--seed", type=int, default=23)
     return p.parse_args()
-
-
-def stage_args(args):
-    """(privacy step args, utility step args), built as in privacy_utility_loop.main()."""
-    pargs = Namespace(threshold=args.threshold, top_m=args.privacy_top_m,
-                      max_n=args.privacy_max_n, span_penalty=args.privacy_span_penalty,
-                      max_iters=args.privacy_max_iters)
-    uargs = loop.stage_args(loop.UTILITY[args.utility][2], args.utility_args)
-    return pargs, uargs
 
 
 def load_models(args, device):
@@ -112,9 +102,9 @@ def loop_rewriter(model, tok, attackers, pargs, uargs, device, args):
     def rewrite(text):
         usage.update(calls=0, prompt_tokens=0, completion_tokens=0)
         torch.manual_seed(args.seed)
-        final, history, converged = loop.privacy_utility_loop(
-            model, tok, attackers, text, args.attributes, args.utility, pargs, uargs, device, args)
-        loop.report(text, final, history, converged, args.attributes, args.threshold)
+        final, summary, converged = loop.privacy_utility_loop(
+            model, tok, attackers, text, args.attributes, pargs, uargs, device)
+        loop.report(text, final, summary, converged, args.attributes, args.threshold)
         return final, usage["calls"], usage["prompt_tokens"], usage["completion_tokens"]
     return rewrite
 
@@ -125,7 +115,7 @@ def main():
     out_path = args.out or run_baselines.OUT_TEMPLATE.format(data=data_name, method=METHOD)
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     rows = run_baselines.read_rows(args.data, args.limit, args.ids)
-    pargs, uargs = stage_args(args)
+    pargs, uargs = loop.stage_args(args)
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model, tok, attackers = load_models(args, device)
     rewrite = loop_rewriter(model, tok, attackers, pargs, uargs, device, args)

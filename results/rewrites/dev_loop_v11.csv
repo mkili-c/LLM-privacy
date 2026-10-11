@@ -1,0 +1,4 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+"Marta, 34, female, midwife, Kraków, Poland",loop,The night shifts at the maternity ward are wrecking my sleep. What recovery routine should I follow on days off?,,692.33,14,2471,1597
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",loop,"Two years in recovery, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?",,467.56,8,1333,1463
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",loop,"Will an old conviction block me from getting a license? I've worked in the industry for years, and I want my own place.",,703.26,7,1173,1452

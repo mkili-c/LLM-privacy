@@ -3,8 +3,8 @@ Calibration measurement (ROADMAP "Plan to the end", B1): the numbers that δ (--
 is derived from, measured with the model the evaluation uses (7B).
 
 δ: per row of utility/data/prompt_rewrites_100.csv, K answers are sampled once from the
-original, exactly as the loop samples its reference answers (privacy_utility_loop.kl_multi_answers,
-K and the answer length from kl_multi's defaults), and every column is scored with the loop's D:
+original, exactly as the loop samples its reference answers (utility/metrics/utility_check.py,
+the loop's utility check), and every column is scored with the loop's D:
 
     D = (1/K) Σ_k (1/|a_k|) Σ_t KL( P(·|original, a_k,<t) ‖ P(·|column, a_k,<t) )    [nats/token]
 
@@ -45,11 +45,11 @@ from pathlib import Path
 import torch
 
 REPO = Path(__file__).resolve().parents[1]
-if str(REPO) not in sys.path:             # the loop lives in the repo root
-    sys.path.insert(0, str(REPO))
+for _dir in (REPO / "privacy", REPO / "utility" / "metrics", REPO / "utility" / "grad_attribution"):
+    if str(_dir) not in sys.path:
+        sys.path.insert(0, str(_dir))
 
-import privacy_utility_loop as loop       # noqa: E402  (also puts privacy/ and utility/ on sys.path)
-import kl_mask_llm_rewrite_multi as kl_multi   # noqa: E402
+import utility_check                           # noqa: E402
 from attribute_probe import DEFAULT_MODEL      # noqa: E402
 from grad_based_utility_score import load      # noqa: E402
 
@@ -63,8 +63,9 @@ def get_args():
     p.add_argument("--data", default=str(REPO / "utility" / "data" / "prompt_rewrites_100.csv"))
     p.add_argument("--out_dir", default=str(REPO / "results" / "calibration"))
     p.add_argument("--limit", type=int, default=None, help="only the first N dev rows (smoke test)")
-    p.add_argument("--utility_args", default="",
-                   help="kl_multi's own arguments, as in the loop; K and the answer length come from them")
+    # 10 answers, so that B2 can compare the loop's K = 5 (or 8) with all 10 on the same answers
+    p.add_argument("--k", type=int, default=10, help="answers sampled per original")
+    p.add_argument("--answer_max_new_tokens", type=int, default=256)
     p.add_argument("--model_path", default=DEFAULT_MODEL)
     p.add_argument("--dtype", choices=["float16", "bfloat16", "float32"], default="bfloat16")
     p.add_argument("--seed", type=int, default=23)
@@ -84,12 +85,12 @@ def measure_row(model, tok, row, answers, device):
     if not answers:                                   # every sampled answer was empty: no D
         return [(c, float("nan"), []) for c in columns]
     # the original's log-probs on each answer, computed once and shared by all columns
-    _, refs = kl_multi.prepare_answers(model, tok, row["original"], row["original"], answers, device)
-    kls = [kl_multi.answer_kls(model, tok, t, answers, refs, device) for t in texts]
+    ref_logp = utility_check.reference_logprobs(model, tok, row["original"], answers, device)
+    kls = [utility_check.answer_kls(model, tok, t, answers, ref_logp, device) for t in texts]
     return [(c, sum(k) / len(k), k) for c, k in zip(columns, kls)]
 
 
-def measure_dev(model, tok, rows, uargs, device, out_dir, seed):
+def measure_dev(model, tok, rows, args, device, out_dir):
     """D of every column of every dev row, written row by row."""
     answers_path, out_path = out_dir / "dev_answers.json", out_dir / "dev_D.csv"
     answers = json.loads(answers_path.read_text(encoding="utf-8")) if answers_path.exists() else {}
@@ -102,9 +103,10 @@ def measure_dev(model, tok, rows, uargs, device, out_dir, seed):
         if new_file:
             w.writerow(["id", "column", "D", "kl_per_answer"])
         for n, row in enumerate(todo, 1):
-            torch.manual_seed(seed)
+            torch.manual_seed(args.seed)
             if row["id"] not in answers:
-                answers[row["id"]] = loop.kl_multi_answers(model, tok, row["original"], device, uargs)
+                answers[row["id"]] = utility_check.sample_answers(model, tok, row["original"], args.k,
+                                                                  args.answer_max_new_tokens)
                 answers_path.write_text(json.dumps(answers, ensure_ascii=False, indent=1), encoding="utf-8")
             results = measure_row(model, tok, row, answers[row["id"]], device)
             w.writerows([row["id"], c, f"{D:.6f}", " ".join(f"{k:.6f}" for k in kls)] for c, D, kls in results)
@@ -117,14 +119,13 @@ def main():
     args = get_args()
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    uargs = loop.stage_args(kl_multi.get_args, args.utility_args)
-    print(f"K = {uargs.k} answers of {uargs.answer_max_new_tokens} tokens per original")
+    print(f"K = {args.k} answers of {args.answer_max_new_tokens} tokens per original")
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Loading {args.model_path} on {device} ({args.dtype}) ...")
     model, tok = load(args.model_path, device, getattr(torch, args.dtype))
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
-    measure_dev(model, tok, read_csv(args.data, args.limit), uargs, device, out_dir, args.seed)
+    measure_dev(model, tok, read_csv(args.data, args.limit), args, device, out_dir)
 
 
 if __name__ == "__main__":
