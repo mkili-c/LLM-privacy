@@ -1,0 +1,108 @@
+sudo: sorry, you must have a tty to run sudo
+Job 573 on studgpu-spark01.inf.ethz.ch (aarch64), args: 
+K = 10 answers of 256 tokens per original
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 6883.13it/s]
+dev: 0 rows already done, 100 to go -> /work/projects/mkilic/LLM-privacy/results/calibration/dev_D.csv
+  1/100 'Marta, 34, female, midwife, Kr': original D=0.000  util_preserving D=0.167  util_paraphrase D=0.298  priv_preserving D=0.363  priv_targeted D=0.246  util_broken D=0.606  empty D=0.532
+  2/100 'Deniz, 27, male, software test': original D=0.000  util_preserving D=0.086  util_paraphrase D=0.056  priv_preserving D=0.143  priv_targeted D=0.138  util_broken D=0.422  empty D=0.384
+  3/100 'Ruth, 61, female, retired teac': original D=0.000  util_preserving D=0.074  util_paraphrase D=0.052  priv_preserving D=0.163  priv_targeted D=0.218  util_broken D=0.554  empty D=0.440
+  4/100 'Idris, 41, male, imam, Birming': original D=0.000  util_preserving D=0.261  util_paraphrase D=0.179  priv_preserving D=0.399  priv_targeted D=0.403  util_broken D=0.746  empty D=0.474
+  5/100 'Ana, 29, female, nurse, Lisbon': original D=0.000  util_preserving D=0.172  util_paraphrase D=0.130  priv_preserving D=0.349  priv_targeted D=0.330  util_broken D=0.516  empty D=0.399
+  6/100 'Tomasz, 52, male, coal miner, ': original D=0.000  util_preserving D=0.356  util_paraphrase D=0.331  priv_preserving D=0.730  priv_targeted D=0.210  util_broken D=0.722  empty D=0.777
+  7/100 'Yuki, 23, female, graduate stu': original D=0.000  util_preserving D=0.079  util_paraphrase D=0.091  priv_preserving D=0.127  priv_targeted D=0.083  util_broken D=0.480  empty D=0.443
+  8/100 'Hugo, 45, male, restaurant own': original D=0.000  util_preserving D=0.113  util_paraphrase D=0.165  priv_preserving D=0.427  priv_targeted D=0.230  util_broken D=0.537  empty D=0.415
+  9/100 'Priya, 38, female, cardiologis': original D=0.000  util_preserving D=0.217  util_paraphrase D=0.143  priv_preserving D=0.273  priv_targeted D=0.325  util_broken D=0.593  empty D=0.483
+  10/100 'Karl, 67, male, retired, widow': original D=0.000  util_preserving D=0.185  util_paraphrase D=0.231  priv_preserving D=0.589  priv_targeted D=0.375  util_broken D=0.704  empty D=0.734
+  11/100 'Sofia, 31, female, immigration': original D=0.000  util_preserving D=0.148  util_paraphrase D=0.086  priv_preserving D=0.298  priv_targeted D=0.161  util_broken D=0.478  empty D=0.426
+  12/100 'Nnamdi, 36, male, civil engine': original D=0.000  util_preserving D=0.195  util_paraphrase D=0.167  priv_preserving D=0.305  priv_targeted D=0.195  util_broken D=0.635  empty D=0.543
+  13/100 'Elin, 19, female, university s': original D=0.000  util_preserving D=0.232  util_paraphrase D=0.152  priv_preserving D=0.512  priv_targeted D=0.481  util_broken D=0.684  empty D=0.619
+  14/100 'Gerard, 58, male, dairy farmer': original D=0.000  util_preserving D=0.204  util_paraphrase D=0.137  priv_preserving D=0.282  priv_targeted D=0.155  util_broken D=0.581  empty D=0.467
+  15/100 'Leila, 44, female, architect, ': original D=0.000  util_preserving D=0.291  util_paraphrase D=0.203  priv_preserving D=0.392  priv_targeted D=0.319  util_broken D=0.654  empty D=0.487
+  16/100 'Bruno, 30, male, bartender, Sã': original D=0.000  util_preserving D=0.242  util_paraphrase D=0.250  priv_preserving D=0.605  priv_targeted D=0.638  util_broken D=0.722  empty D=0.575
+  17/100 'Anneke, 49, female, veterinari': original D=0.000  util_preserving D=0.259  util_paraphrase D=0.181  priv_preserving D=0.423  priv_targeted D=0.105  util_broken D=0.548  empty D=0.526
+  18/100 'Marcus, 26, male, junior trade': original D=0.000  util_preserving D=0.123  util_paraphrase D=0.108  priv_preserving D=0.308  priv_targeted D=0.184  util_broken D=0.551  empty D=0.436
+  19/100 'Hana, 35, female, journalist, ': original D=0.000  util_preserving D=0.166  util_paraphrase D=0.150  priv_preserving D=0.339  priv_targeted D=0.208  util_broken D=0.465  empty D=0.432
+  20/100 'Samuel, 40, male, prison offic': original D=0.000  util_preserving D=0.339  util_paraphrase D=0.314  priv_preserving D=0.436  priv_targeted D=0.235  util_broken D=0.566  empty D=0.479
+  21/100 'Aisha, 22, female, nursing stu': original D=0.000  util_preserving D=0.165  util_paraphrase D=0.127  priv_preserving D=0.345  priv_targeted D=0.372  util_broken D=0.523  empty D=0.468
+  22/100 'Viktor, 55, male, factory supe': original D=0.000  util_preserving D=0.416  util_paraphrase D=0.204  priv_preserving D=0.537  priv_targeted D=0.242  util_broken D=0.654  empty D=0.459
+  23/100 'Grace, 47, female, accountant,': original D=0.000  util_preserving D=0.046  util_paraphrase D=0.057  priv_preserving D=0.143  priv_targeted D=0.219  util_broken D=0.441  empty D=0.378
+  24/100 'Omar, 33, male, taxi driver, A': original D=0.000  util_preserving D=0.134  util_paraphrase D=0.186  priv_preserving D=0.525  priv_targeted D=0.386  util_broken D=0.662  empty D=0.619
+  25/100 'Beatrice, 71, female, retired,': original D=0.000  util_preserving D=0.158  util_paraphrase D=0.158  priv_preserving D=0.424  priv_targeted D=0.322  util_broken D=0.728  empty D=0.630
+  26/100 'Tariq, 28, male, PhD candidate': original D=0.000  util_preserving D=0.173  util_paraphrase D=0.168  priv_preserving D=0.337  priv_targeted D=0.259  util_broken D=0.563  empty D=0.460
+  27/100 'Kenji, 39, male, chef, Osaka, ': original D=0.000  util_preserving D=0.279  util_paraphrase D=0.183  priv_preserving D=0.225  priv_targeted D=0.425  util_broken D=0.522  empty D=0.489
+  28/100 'Fatima, 26, female, teacher, C': original D=0.000  util_preserving D=0.121  util_paraphrase D=0.097  priv_preserving D=0.311  priv_targeted D=0.239  util_broken D=0.487  empty D=0.450
+  29/100 'Lars, 43, male, electrician, B': original D=0.000  util_preserving D=0.210  util_paraphrase D=0.090  priv_preserving D=0.439  priv_targeted D=0.322  util_broken D=0.668  empty D=0.580
+  30/100 'Mei, 34, female, marketing man': original D=0.000  util_preserving D=0.352  util_paraphrase D=0.198  priv_preserving D=0.363  priv_targeted D=0.387  util_broken D=0.622  empty D=0.596
+  31/100 'Dmitri, 60, male, professor, T': original D=0.000  util_preserving D=0.380  util_paraphrase D=0.222  priv_preserving D=0.533  priv_targeted D=0.428  util_broken D=0.568  empty D=0.577
+  32/100 'Chloe, 24, female, junior desi': original D=0.000  util_preserving D=0.237  util_paraphrase D=0.079  priv_preserving D=0.252  priv_targeted D=0.366  util_broken D=0.633  empty D=0.437
+  33/100 'Kofi, 37, male, accountant, Ac': original D=0.000  util_preserving D=0.326  util_paraphrase D=0.197  priv_preserving D=0.445  priv_targeted D=0.400  util_broken D=0.652  empty D=0.497
+  34/100 'Isabella, 52, female, small bu': original D=0.000  util_preserving D=0.194  util_paraphrase D=0.192  priv_preserving D=0.541  priv_targeted D=0.462  util_broken D=0.641  empty D=0.630
+  35/100 'Ahmed, 45, male, engineer, Dub': original D=0.000  util_preserving D=0.242  util_paraphrase D=0.081  priv_preserving D=0.383  priv_targeted D=0.365  util_broken D=0.713  empty D=0.544
+  36/100 'Nadia, 30, female, social work': original D=0.000  util_preserving D=0.198  util_paraphrase D=0.183  priv_preserving D=0.510  priv_targeted D=0.384  util_broken D=0.621  empty D=0.622
+  37/100 'Sven, 48, male, pilot, Stockho': original D=0.000  util_preserving D=0.232  util_paraphrase D=0.198  priv_preserving D=0.326  priv_targeted D=0.337  util_broken D=0.610  empty D=0.458
+  38/100 'Ling, 41, female, doctor, Kual': original D=0.000  util_preserving D=0.403  util_paraphrase D=0.177  priv_preserving D=0.293  priv_targeted D=0.196  util_broken D=0.664  empty D=0.495
+  39/100 'Diego, 29, male, chef, Mexico ': original D=0.000  util_preserving D=0.342  util_paraphrase D=0.202  priv_preserving D=0.392  priv_targeted D=0.540  util_broken D=0.648  empty D=0.482
+  40/100 'Astrid, 36, female, researcher': original D=0.000  util_preserving D=0.240  util_paraphrase D=0.260  priv_preserving D=0.519  priv_targeted D=0.472  util_broken D=0.719  empty D=0.576
+  41/100 'Ravi, 50, male, shopkeeper, Mu': original D=0.000  util_preserving D=0.230  util_paraphrase D=0.194  priv_preserving D=0.515  priv_targeted D=0.385  util_broken D=0.649  empty D=0.518
+  42/100 'Emma, 27, female, paramedic, D': original D=0.000  util_preserving D=0.308  util_paraphrase D=0.203  priv_preserving D=0.482  priv_targeted D=0.388  util_broken D=0.560  empty D=0.551
+  43/100 'Hendrik, 63, male, retired dip': original D=0.000  util_preserving D=0.541  util_paraphrase D=0.335  priv_preserving D=0.537  priv_targeted D=0.545  util_broken D=0.810  empty D=0.618
+  44/100 'Sara, 33, female, freelance wr': original D=0.000  util_preserving D=0.331  util_paraphrase D=0.277  priv_preserving D=0.434  priv_targeted D=0.359  util_broken D=0.708  empty D=0.545
+  45/100 'Mohammed, 38, male, imam, Mars': original D=0.000  util_preserving D=0.175  util_paraphrase D=0.090  priv_preserving D=0.388  priv_targeted D=0.316  util_broken D=0.622  empty D=0.555
+  46/100 'Ingrid, 57, female, headteache': original D=0.000  util_preserving D=0.247  util_paraphrase D=0.166  priv_preserving D=0.485  priv_targeted D=0.433  util_broken D=0.566  empty D=0.495
+  47/100 'Pablo, 42, male, construction ': original D=0.000  util_preserving D=0.309  util_paraphrase D=0.186  priv_preserving D=0.483  priv_targeted D=0.441  util_broken D=0.583  empty D=0.558
+  48/100 'Wei, 45, male, factory owner, ': original D=0.000  util_preserving D=0.125  util_paraphrase D=0.091  priv_preserving D=0.338  priv_targeted D=0.138  util_broken D=0.581  empty D=0.489
+  49/100 'Olga, 34, female, translator, ': original D=0.000  util_preserving D=0.186  util_paraphrase D=0.147  priv_preserving D=0.426  priv_targeted D=0.397  util_broken D=0.637  empty D=0.583
+  50/100 'Jack, 21, male, apprentice plu': original D=0.000  util_preserving D=0.175  util_paraphrase D=0.125  priv_preserving D=0.379  priv_targeted D=0.308  util_broken D=0.677  empty D=0.570
+  51/100 'Yara, 40, female, architect, A': original D=0.000  util_preserving D=0.256  util_paraphrase D=0.167  priv_preserving D=0.423  priv_targeted D=0.302  util_broken D=0.720  empty D=0.504
+  52/100 'Nikolai, 55, male, unemployed,': original D=0.000  util_preserving D=0.191  util_paraphrase D=0.136  priv_preserving D=0.459  priv_targeted D=0.233  util_broken D=0.472  empty D=0.519
+  53/100 'Amara, 32, female, entrepreneu': original D=0.000  util_preserving D=0.293  util_paraphrase D=0.247  priv_preserving D=0.483  priv_targeted D=0.457  util_broken D=0.707  empty D=0.663
+  54/100 'Thomas, 46, male, police offic': original D=0.000  util_preserving D=0.121  util_paraphrase D=0.125  priv_preserving D=0.290  priv_targeted D=0.379  util_broken D=0.618  empty D=0.586
+  55/100 'Lucia, 28, female, dancer, Hav': original D=0.000  util_preserving D=0.221  util_paraphrase D=0.244  priv_preserving D=0.419  priv_targeted D=0.295  util_broken D=0.598  empty D=0.568
+  56/100 'Ben, 39, male, accountant, Auc': original D=0.000  util_preserving D=0.098  util_paraphrase D=0.070  priv_preserving D=0.233  priv_targeted D=0.143  util_broken D=0.644  empty D=0.483
+  57/100 'Fatou, 25, female, medical stu': original D=0.000  util_preserving D=0.190  util_paraphrase D=0.128  priv_preserving D=0.274  priv_targeted D=0.302  util_broken D=0.536  empty D=0.479
+  58/100 'Linnea, 26, female, vet nurse,': original D=0.000  util_preserving D=0.192  util_paraphrase D=0.186  priv_preserving D=0.467  priv_targeted D=0.461  util_broken D=0.647  empty D=0.588
+  59/100 'Malik, 33, male, journalist, C': original D=0.000  util_preserving D=0.163  util_paraphrase D=0.122  priv_preserving D=0.293  priv_targeted D=0.216  util_broken D=0.525  empty D=0.482
+  60/100 'Rosa, 62, female, retired nurs': original D=0.000  util_preserving D=0.135  util_paraphrase D=0.192  priv_preserving D=0.524  priv_targeted D=0.225  util_broken D=0.621  empty D=0.514
+  61/100 'Jin, 27, male, startup founder': original D=0.000  util_preserving D=0.324  util_paraphrase D=0.251  priv_preserving D=0.503  priv_targeted D=0.274  util_broken D=0.637  empty D=0.585
+  62/100 'Amelia, 45, female, headhunter': original D=0.000  util_preserving D=0.275  util_paraphrase D=0.069  priv_preserving D=0.492  priv_targeted D=0.424  util_broken D=0.572  empty D=0.574
+  63/100 'Youssef, 34, male, engineer, T': original D=0.000  util_preserving D=0.164  util_paraphrase D=0.216  priv_preserving D=0.476  priv_targeted D=0.385  util_broken D=0.663  empty D=0.594
+  64/100 'Petra, 39, female, architect, ': original D=0.000  util_preserving D=0.135  util_paraphrase D=0.077  priv_preserving D=0.159  priv_targeted D=0.108  util_broken D=0.495  empty D=0.343
+  65/100 'Carlos, 56, male, mechanic, Ma': original D=0.000  util_preserving D=0.322  util_paraphrase D=0.186  priv_preserving D=0.464  priv_targeted D=0.303  util_broken D=0.618  empty D=0.551
+  66/100 'Nour, 22, female, student, Dam': original D=0.000  util_preserving D=0.350  util_paraphrase D=0.414  priv_preserving D=0.433  priv_targeted D=0.463  util_broken D=0.905  empty D=0.678
+  67/100 'Erik, 48, male, carpenter, Rey': original D=0.000  util_preserving D=0.120  util_paraphrase D=0.109  priv_preserving D=0.488  priv_targeted D=0.224  util_broken D=0.520  empty D=0.582
+  68/100 'Priyanka, 31, female, software': original D=0.000  util_preserving D=0.336  util_paraphrase D=0.324  priv_preserving D=0.465  priv_targeted D=0.336  util_broken D=0.598  empty D=0.515
+  69/100 'Dieter, 60, male, retired sold': original D=0.000  util_preserving D=0.242  util_paraphrase D=0.242  priv_preserving D=0.499  priv_targeted D=0.275  util_broken D=0.653  empty D=0.612
+  70/100 'Aya, 28, female, illustrator, ': original D=0.000  util_preserving D=0.233  util_paraphrase D=0.149  priv_preserving D=0.296  priv_targeted D=0.268  util_broken D=0.567  empty D=0.527
+  71/100 'Kwame, 44, male, politician, A': original D=0.000  util_preserving D=0.253  util_paraphrase D=0.245  priv_preserving D=0.632  priv_targeted D=0.489  util_broken D=0.718  empty D=0.639
+  72/100 'Freya, 33, female, midwife, Ed': original D=0.000  util_preserving D=0.223  util_paraphrase D=0.220  priv_preserving D=0.455  priv_targeted D=0.466  util_broken D=0.598  empty D=0.526
+  73/100 'Valentina, 47, female, executi': original D=0.000  util_preserving D=0.203  util_paraphrase D=0.096  priv_preserving D=0.377  priv_targeted D=0.097  util_broken D=0.694  empty D=0.499
+  74/100 'Sami, 25, male, delivery rider': original D=0.000  util_preserving D=0.227  util_paraphrase D=0.109  priv_preserving D=0.441  priv_targeted D=0.261  util_broken D=0.632  empty D=0.574
+  75/100 'Deepa, 42, female, teacher, Co': original D=0.000  util_preserving D=0.230  util_paraphrase D=0.180  priv_preserving D=0.396  priv_targeted D=0.332  util_broken D=0.584  empty D=0.466
+  76/100 'Robert, 53, male, insurance br': original D=0.000  util_preserving D=0.156  util_paraphrase D=0.107  priv_preserving D=0.139  priv_targeted D=0.219  util_broken D=0.601  empty D=0.535
+  77/100 'Mai, 29, female, flight attend': original D=0.000  util_preserving D=0.123  util_paraphrase D=0.117  priv_preserving D=0.336  priv_targeted D=0.327  util_broken D=0.486  empty D=0.401
+  78/100 'Andreas, 37, male, pastor, Ath': original D=0.000  util_preserving D=0.227  util_paraphrase D=0.156  priv_preserving D=0.416  priv_targeted D=0.404  util_broken D=0.647  empty D=0.513
+  79/100 'Bianca, 30, female, personal t': original D=0.000  util_preserving D=0.397  util_paraphrase D=0.346  priv_preserving D=0.629  priv_targeted D=0.525  util_broken D=0.768  empty D=0.698
+  80/100 'Oliver, 40, male, banker, Sing': original D=0.000  util_preserving D=0.151  util_paraphrase D=0.116  priv_preserving D=0.293  priv_targeted D=0.181  util_broken D=0.539  empty D=0.443
+  81/100 'Georgi, 49, male, truck driver': original D=0.000  util_preserving D=0.312  util_paraphrase D=0.337  priv_preserving D=0.515  priv_targeted D=0.571  util_broken D=0.600  empty D=0.564
+  82/100 'Renée, 44, female, HR director': original D=0.000  util_preserving D=0.262  util_paraphrase D=0.194  priv_preserving D=0.363  priv_targeted D=0.278  util_broken D=0.756  empty D=0.548
+  83/100 'Ivan, 31, male, programmer, Be': original D=0.000  util_preserving D=0.082  util_paraphrase D=0.237  priv_preserving D=0.117  priv_targeted D=0.248  util_broken D=0.712  empty D=0.600
+  84/100 'Carmen, 59, female, cleaner, L': original D=0.000  util_preserving D=0.352  util_paraphrase D=0.238  priv_preserving D=0.528  priv_targeted D=0.234  util_broken D=0.602  empty D=0.596
+  85/100 'Alexander, 36, male, banker, Z': original D=0.000  util_preserving D=0.223  util_paraphrase D=0.128  priv_preserving D=0.425  priv_targeted D=0.297  util_broken D=0.606  empty D=0.623
+  86/100 'Meera, 43, female, professor, ': original D=0.000  util_preserving D=0.155  util_paraphrase D=0.073  priv_preserving D=0.285  priv_targeted D=0.269  util_broken D=0.516  empty D=0.485
+  87/100 'Finn, 20, transgender man, stu': original D=0.000  util_preserving D=0.134  util_paraphrase D=0.152  priv_preserving D=0.485  priv_targeted D=0.389  util_broken D=0.674  empty D=0.629
+  88/100 'Zara, 38, female, doctor, Kara': original D=0.000  util_preserving D=0.178  util_paraphrase D=0.205  priv_preserving D=0.275  priv_targeted D=0.126  util_broken D=0.645  empty D=0.569
+  89/100 'Henrik, 52, male, CEO, Helsink': original D=0.000  util_preserving D=0.333  util_paraphrase D=0.322  priv_preserving D=0.617  priv_targeted D=0.525  util_broken D=0.853  empty D=0.661
+  90/100 'Adaeze, 29, female, lawyer, Ab': original D=0.000  util_preserving D=0.231  util_paraphrase D=0.354  priv_preserving D=0.392  priv_targeted D=0.196  util_broken D=0.589  empty D=0.627
+  91/100 'Stefan, 41, male, teacher, Vie': original D=0.000  util_preserving D=0.404  util_paraphrase D=0.347  priv_preserving D=0.382  priv_targeted D=0.275  util_broken D=0.667  empty D=0.541
+  92/100 'Xiu, 30, female, game develope': original D=0.000  util_preserving D=0.124  util_paraphrase D=0.137  priv_preserving D=0.310  priv_targeted D=0.205  util_broken D=0.584  empty D=0.533
+  93/100 'Fatima, 47, female, taxi drive': original D=0.000  util_preserving D=0.155  util_paraphrase D=0.152  priv_preserving D=0.492  priv_targeted D=0.283  util_broken D=0.548  empty D=0.531
+  94/100 'Sophie, 35, female, surgeon, M': original D=0.000  util_preserving D=0.325  util_paraphrase D=0.187  priv_preserving D=0.466  priv_targeted D=0.428  util_broken D=0.493  empty D=0.444
+  95/100 'Mateo, 24, male, barista, Bogo': original D=0.000  util_preserving D=0.252  util_paraphrase D=0.211  priv_preserving D=0.563  priv_targeted D=0.228  util_broken D=0.648  empty D=0.593
+  96/100 'Katarzyna, 38, female, doctor,': original D=0.000  util_preserving D=0.297  util_paraphrase D=0.178  priv_preserving D=0.537  priv_targeted D=0.477  util_broken D=0.617  empty D=0.548
+  97/100 'Rashid, 51, female, business o': original D=0.000  util_preserving D=0.174  util_paraphrase D=0.116  priv_preserving D=0.263  priv_targeted D=0.167  util_broken D=0.618  empty D=0.528
+  98/100 'Emeka, 29, male, data analyst,': original D=0.000  util_preserving D=0.084  util_paraphrase D=0.242  priv_preserving D=0.287  priv_targeted D=0.212  util_broken D=0.729  empty D=0.569
+  99/100 'Sinead, 55, female, secondary ': original D=0.000  util_preserving D=0.126  util_paraphrase D=0.142  priv_preserving D=0.356  priv_targeted D=0.532  util_broken D=0.654  empty D=0.656
+  100/100 'Tobias, 33, male, physiotherap': original D=0.000  util_preserving D=0.145  util_paraphrase D=0.082  priv_preserving D=0.415  priv_targeted D=0.554  util_broken D=0.585  empty D=0.575
+Done Sun Oct 11 06:33:48 CEST 2026

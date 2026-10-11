@@ -32,21 +32,27 @@ Dev rows are written as they finish and rows already in dev_D.csv are skipped, s
 continues. A row's answers are saved before its row, so a rerun scores it on the same answers.
 The seed is reset per row, as in run_loop_sweep.py.
 
-    python calibrate_thresholds.py --model_path /scratch/users/mkilic/Qwen2.5-7B-Instruct --dtype bfloat16
+    python calibration/calibrate_thresholds.py --model_path /scratch/users/mkilic/Qwen2.5-7B-Instruct --dtype bfloat16
+
+analyze_calibration.py (same folder) turns the CSV into the B2 numbers.
 """
 import argparse
 import csv
 import json
+import sys
 from pathlib import Path
 
 import torch
 
-import privacy_utility_loop as loop       # also puts privacy/ and utility/ on sys.path
-import kl_mask_llm_rewrite_multi as kl_multi
-from attribute_probe import DEFAULT_MODEL
-from grad_based_utility_score import load
+REPO = Path(__file__).resolve().parents[1]
+if str(REPO) not in sys.path:             # the loop lives in the repo root
+    sys.path.insert(0, str(REPO))
 
-REPO = Path(__file__).resolve().parent
+import privacy_utility_loop as loop       # noqa: E402  (also puts privacy/ and utility/ on sys.path)
+import kl_mask_llm_rewrite_multi as kl_multi   # noqa: E402
+from attribute_probe import DEFAULT_MODEL      # noqa: E402
+from grad_based_utility_score import load      # noqa: E402
+
 COLUMNS = ["original", "util_preserving_rewrite", "util_paraphrase_rewrite",
            "priv_preserving_rewrite", "priv_targeted_rewrite", "util_broken_rewrite"]
 EMPTY = "empty"     # the column of the empty message, D(∅): not in the CSV, scored on ""

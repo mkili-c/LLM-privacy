@@ -1,6 +1,0 @@
-sudo: sorry, you must have a tty to run sudo
-Job 573 on studgpu-spark01.inf.ethz.ch (aarch64), args: 
-K = 10 answers of 256 tokens per original
-Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
-[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
-Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 6883.13it/s]

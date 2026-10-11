@@ -1,0 +1,701 @@
+id,column,D,kl_per_answer
+"Marta, 34, female, midwife, Kraków, Poland",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Marta, 34, female, midwife, Kraków, Poland",util_preserving_rewrite,0.167318,0.249191 0.138176 0.128070 0.225490 0.141932 0.144456 0.152166 0.153973 0.218255 0.121469
+"Marta, 34, female, midwife, Kraków, Poland",util_paraphrase_rewrite,0.298207,0.316346 0.284317 0.273135 0.369362 0.257897 0.279349 0.276734 0.328352 0.364932 0.231643
+"Marta, 34, female, midwife, Kraków, Poland",priv_preserving_rewrite,0.363066,0.462280 0.330984 0.472816 0.357332 0.247645 0.349441 0.433823 0.263396 0.374981 0.337959
+"Marta, 34, female, midwife, Kraków, Poland",priv_targeted_rewrite,0.246136,0.368084 0.212350 0.371014 0.243208 0.145634 0.182083 0.321860 0.150529 0.242257 0.224337
+"Marta, 34, female, midwife, Kraków, Poland",util_broken_rewrite,0.606180,0.748573 0.557531 0.496662 0.614126 0.437214 0.710657 0.701836 0.637717 0.580864 0.576621
+"Marta, 34, female, midwife, Kraków, Poland",empty,0.532304,0.621209 0.436852 0.654850 0.610323 0.363131 0.538923 0.513115 0.652800 0.470099 0.461742
+"Deniz, 27, male, software tester, Izmir, Turkey",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Deniz, 27, male, software tester, Izmir, Turkey",util_preserving_rewrite,0.085790,0.075339 0.074314 0.069879 0.118839 0.075856 0.092784 0.089814 0.128973 0.071590 0.060514
+"Deniz, 27, male, software tester, Izmir, Turkey",util_paraphrase_rewrite,0.055896,0.057919 0.052440 0.043492 0.084472 0.052504 0.051590 0.046147 0.076616 0.050511 0.043274
+"Deniz, 27, male, software tester, Izmir, Turkey",priv_preserving_rewrite,0.142584,0.123809 0.102983 0.101566 0.205942 0.118193 0.141542 0.131353 0.300162 0.102105 0.098184
+"Deniz, 27, male, software tester, Izmir, Turkey",priv_targeted_rewrite,0.137636,0.120352 0.110465 0.113667 0.139740 0.096427 0.138779 0.241334 0.263499 0.112804 0.039297
+"Deniz, 27, male, software tester, Izmir, Turkey",util_broken_rewrite,0.421809,0.471404 0.357964 0.370013 0.442139 0.426823 0.380986 0.464989 0.537988 0.363364 0.402416
+"Deniz, 27, male, software tester, Izmir, Turkey",empty,0.383835,0.372007 0.282411 0.326973 0.421294 0.373152 0.394165 0.438897 0.604071 0.274217 0.351163
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",util_preserving_rewrite,0.074188,0.086877 0.058515 0.089057 0.058285 0.066708 0.058352 0.060522 0.105951 0.104042 0.053569
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",util_paraphrase_rewrite,0.051944,0.067512 0.044594 0.062239 0.029862 0.041555 0.036319 0.037541 0.078611 0.073347 0.047865
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",priv_preserving_rewrite,0.163111,0.247531 0.143948 0.136515 0.109036 0.116789 0.130261 0.131461 0.297819 0.168420 0.149326
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",priv_targeted_rewrite,0.217544,0.404116 0.251468 0.271851 0.153606 0.128597 0.242019 0.130280 0.150746 0.146283 0.296474
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",util_broken_rewrite,0.553724,0.814120 0.588809 0.681677 0.467286 0.532038 0.546183 0.359449 0.583748 0.489909 0.474024
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",empty,0.439502,0.599481 0.491205 0.499831 0.363091 0.409795 0.505137 0.306041 0.512947 0.334275 0.373214
+"Idris, 41, male, imam, Birmingham, England",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Idris, 41, male, imam, Birmingham, England",util_preserving_rewrite,0.260786,0.218487 0.168623 0.231330 0.346528 0.192446 0.212292 0.378999 0.229578 0.207123 0.422454
+"Idris, 41, male, imam, Birmingham, England",util_paraphrase_rewrite,0.178993,0.196376 0.115974 0.169491 0.192911 0.160805 0.136889 0.232618 0.154235 0.145303 0.285325
+"Idris, 41, male, imam, Birmingham, England",priv_preserving_rewrite,0.399057,0.298933 0.279833 0.458992 0.548929 0.338370 0.300669 0.490744 0.388549 0.427542 0.458007
+"Idris, 41, male, imam, Birmingham, England",priv_targeted_rewrite,0.403101,0.275337 0.321243 0.436746 0.513977 0.304238 0.299718 0.516147 0.454694 0.389966 0.518949
+"Idris, 41, male, imam, Birmingham, England",util_broken_rewrite,0.745953,0.725496 0.659897 0.781886 0.794365 0.723389 0.720486 0.902644 0.626824 0.809507 0.715040
+"Idris, 41, male, imam, Birmingham, England",empty,0.473989,0.401790 0.381258 0.448657 0.492123 0.377285 0.527156 0.542917 0.490913 0.628299 0.449492
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",util_preserving_rewrite,0.172427,0.191645 0.174908 0.159565 0.166694 0.175911 0.150199 0.161345 0.201661 0.107710 0.234632
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",util_paraphrase_rewrite,0.129538,0.122934 0.095900 0.099805 0.195886 0.067296 0.098657 0.090891 0.199656 0.082405 0.241953
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",priv_preserving_rewrite,0.349163,0.380170 0.292187 0.246067 0.414547 0.226858 0.319044 0.298947 0.421681 0.288762 0.603369
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",priv_targeted_rewrite,0.330159,0.316736 0.292882 0.298656 0.370887 0.252178 0.324383 0.290479 0.367258 0.239228 0.548900
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",util_broken_rewrite,0.516118,0.484600 0.516822 0.508648 0.471142 0.484532 0.650000 0.439328 0.572072 0.515258 0.518777
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",empty,0.398660,0.374825 0.413233 0.333167 0.372197 0.332778 0.509279 0.344196 0.436845 0.368330 0.501750
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",util_preserving_rewrite,0.356272,0.358104 0.353415 0.282315 0.339928 0.368463 0.484550 0.311723 0.320887 0.432043 0.311293
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",util_paraphrase_rewrite,0.330816,0.317714 0.336370 0.248979 0.325157 0.370140 0.445650 0.244437 0.265375 0.414687 0.339649
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",priv_preserving_rewrite,0.729780,0.722076 0.689133 0.620494 0.797300 0.729820 0.888346 0.604061 0.694388 0.950572 0.601612
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",priv_targeted_rewrite,0.209686,0.192923 0.193015 0.142244 0.237226 0.190646 0.216829 0.249961 0.242665 0.213782 0.217570
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",util_broken_rewrite,0.721571,0.778943 0.811067 0.639183 0.718831 0.669925 0.889780 0.697794 0.553321 0.747247 0.709619
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",empty,0.776780,0.716864 0.750785 0.717182 0.872894 0.782371 0.896434 0.972819 0.637499 0.827807 0.593147
+"Yuki, 23, female, graduate student, Kyoto, Japan",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Yuki, 23, female, graduate student, Kyoto, Japan",util_preserving_rewrite,0.078507,0.075871 0.078163 0.072861 0.077037 0.067408 0.067887 0.078149 0.076462 0.109005 0.082227
+"Yuki, 23, female, graduate student, Kyoto, Japan",util_paraphrase_rewrite,0.091466,0.078576 0.098287 0.114717 0.099488 0.057562 0.083020 0.070413 0.108238 0.115718 0.088641
+"Yuki, 23, female, graduate student, Kyoto, Japan",priv_preserving_rewrite,0.126790,0.083345 0.081683 0.309944 0.069241 0.077925 0.101374 0.061756 0.061060 0.348168 0.073401
+"Yuki, 23, female, graduate student, Kyoto, Japan",priv_targeted_rewrite,0.083145,0.063953 0.090731 0.202010 0.043972 0.041680 0.050954 0.038825 0.035191 0.201229 0.062909
+"Yuki, 23, female, graduate student, Kyoto, Japan",util_broken_rewrite,0.479511,0.539643 0.432274 0.475520 0.464260 0.501739 0.550376 0.416361 0.452239 0.582367 0.380335
+"Yuki, 23, female, graduate student, Kyoto, Japan",empty,0.442856,0.420627 0.452588 0.432930 0.471957 0.382015 0.529788 0.314020 0.419822 0.646043 0.358768
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",util_preserving_rewrite,0.113059,0.157224 0.076349 0.078581 0.079340 0.100779 0.182592 0.125637 0.113092 0.123536 0.093456
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",util_paraphrase_rewrite,0.164563,0.151231 0.180227 0.107341 0.245873 0.201030 0.173305 0.136760 0.144550 0.123480 0.181834
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",priv_preserving_rewrite,0.426635,0.473243 0.360295 0.288931 0.442291 0.402203 0.522009 0.424537 0.459684 0.521533 0.371620
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",priv_targeted_rewrite,0.230368,0.254643 0.208231 0.158907 0.282071 0.167666 0.241396 0.223015 0.266249 0.294583 0.206918
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",util_broken_rewrite,0.537346,0.499144 0.507968 0.449504 0.601214 0.497563 0.565423 0.611880 0.489464 0.522262 0.629032
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",empty,0.414544,0.344140 0.423695 0.262129 0.489865 0.514016 0.484714 0.411991 0.443178 0.452270 0.319446
+"Priya, 38, female, cardiologist, Chennai, India",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Priya, 38, female, cardiologist, Chennai, India",util_preserving_rewrite,0.217269,0.151128 0.203454 0.281481 0.256773 0.184456 0.188080 0.258530 0.215800 0.209770 0.223219
+"Priya, 38, female, cardiologist, Chennai, India",util_paraphrase_rewrite,0.143084,0.093194 0.174524 0.181050 0.220127 0.146359 0.133228 0.113788 0.103663 0.153760 0.111149
+"Priya, 38, female, cardiologist, Chennai, India",priv_preserving_rewrite,0.272631,0.170274 0.167857 0.279312 0.287658 0.310630 0.216997 0.449811 0.232664 0.274949 0.336156
+"Priya, 38, female, cardiologist, Chennai, India",priv_targeted_rewrite,0.324786,0.207053 0.223680 0.315894 0.313841 0.329808 0.319844 0.509015 0.351920 0.293045 0.383756
+"Priya, 38, female, cardiologist, Chennai, India",util_broken_rewrite,0.592588,0.507135 0.670787 0.654610 0.738069 0.596724 0.464669 0.581041 0.512897 0.633116 0.566836
+"Priya, 38, female, cardiologist, Chennai, India",empty,0.482923,0.344631 0.532641 0.535682 0.556203 0.328040 0.464039 0.556237 0.456794 0.627141 0.427818
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",util_preserving_rewrite,0.185281,0.208840 0.168260 0.197276 0.218886 0.165901 0.188580 0.223995 0.146248 0.158343 0.176477
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",util_paraphrase_rewrite,0.231011,0.183812 0.197871 0.312218 0.319010 0.192601 0.269068 0.231987 0.203243 0.188919 0.211383
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",priv_preserving_rewrite,0.589170,0.639495 0.533942 0.764424 0.578065 0.559454 0.610811 0.587647 0.604345 0.503423 0.510089
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",priv_targeted_rewrite,0.374641,0.423863 0.327053 0.529687 0.397122 0.338187 0.318616 0.374022 0.404975 0.299068 0.333814
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",util_broken_rewrite,0.704052,0.701102 0.634350 0.891272 0.668903 0.650097 0.719953 0.717832 0.681026 0.611588 0.764397
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",empty,0.734053,0.709403 0.683133 0.944295 0.655727 0.744749 0.820458 0.706469 0.726750 0.583305 0.766245
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",util_preserving_rewrite,0.147608,0.171958 0.134395 0.116807 0.165393 0.156324 0.162357 0.171951 0.148836 0.144994 0.103061
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",util_paraphrase_rewrite,0.086485,0.104062 0.088946 0.064418 0.121209 0.084147 0.071708 0.112761 0.081657 0.072885 0.063061
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",priv_preserving_rewrite,0.298074,0.273951 0.296869 0.237425 0.364855 0.340727 0.322999 0.366962 0.237547 0.286938 0.252464
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",priv_targeted_rewrite,0.160919,0.145537 0.154800 0.136052 0.198881 0.182408 0.147148 0.235456 0.117916 0.150376 0.140620
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",util_broken_rewrite,0.478392,0.493770 0.449458 0.425194 0.626634 0.439511 0.539692 0.455365 0.469345 0.524964 0.359984
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",empty,0.426473,0.416557 0.397602 0.367643 0.473847 0.395706 0.428491 0.427825 0.521158 0.463462 0.372442
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",util_preserving_rewrite,0.194669,0.202267 0.210543 0.216998 0.185942 0.160153 0.239173 0.154054 0.190959 0.203688 0.182917
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",util_paraphrase_rewrite,0.167434,0.192887 0.191600 0.143163 0.138184 0.134573 0.240887 0.178865 0.146874 0.168785 0.138522
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",priv_preserving_rewrite,0.304965,0.249027 0.342447 0.282311 0.272615 0.272925 0.376188 0.267115 0.331344 0.293439 0.362233
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",priv_targeted_rewrite,0.195121,0.165120 0.169397 0.166750 0.132616 0.147027 0.289752 0.123605 0.262616 0.253874 0.240448
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",util_broken_rewrite,0.635457,0.548902 0.686363 0.611722 0.583192 0.591631 0.659872 0.677422 0.652265 0.678354 0.664843
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",empty,0.543066,0.549513 0.433326 0.550628 0.558280 0.476861 0.567305 0.560540 0.538881 0.547160 0.648173
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",util_preserving_rewrite,0.232213,0.250585 0.155444 0.178136 0.245494 0.297500 0.208220 0.254833 0.166965 0.266757 0.298199
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",util_paraphrase_rewrite,0.152083,0.161100 0.107085 0.125230 0.128548 0.178298 0.155997 0.199457 0.110955 0.196577 0.157583
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",priv_preserving_rewrite,0.512226,0.623698 0.355353 0.402670 0.452378 0.627185 0.519313 0.585953 0.365568 0.550311 0.639835
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",priv_targeted_rewrite,0.480865,0.568633 0.301831 0.327318 0.446425 0.643220 0.477329 0.568142 0.334864 0.534220 0.606667
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",util_broken_rewrite,0.684029,0.655517 0.737721 0.771384 0.531936 0.699876 0.655445 0.672612 0.752614 0.698416 0.664771
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",empty,0.619380,0.665520 0.561837 0.602377 0.481753 0.711582 0.598186 0.712286 0.571442 0.658887 0.629935
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",util_preserving_rewrite,0.204432,0.149128 0.298082 0.278298 0.209575 0.195213 0.167203 0.140850 0.227037 0.207275 0.171654
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",util_paraphrase_rewrite,0.137162,0.147044 0.138315 0.140140 0.183720 0.164992 0.093210 0.116337 0.127574 0.151178 0.109114
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",priv_preserving_rewrite,0.281945,0.192737 0.499467 0.382918 0.315951 0.316591 0.195891 0.131031 0.248655 0.287651 0.248560
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",priv_targeted_rewrite,0.155405,0.059868 0.295624 0.117543 0.200697 0.199086 0.121155 0.039431 0.123850 0.198710 0.198082
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",util_broken_rewrite,0.581354,0.550117 0.648283 0.606049 0.718709 0.570890 0.596239 0.488666 0.504740 0.542212 0.587635
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",empty,0.467424,0.411144 0.539979 0.470927 0.433141 0.461969 0.647631 0.388706 0.431951 0.437728 0.451068
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",util_preserving_rewrite,0.291193,0.318474 0.255645 0.304931 0.329243 0.325841 0.256594 0.283379 0.340628 0.243626 0.253574
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",util_paraphrase_rewrite,0.202537,0.173834 0.175603 0.262180 0.199015 0.291175 0.172560 0.163539 0.239742 0.180138 0.167586
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",priv_preserving_rewrite,0.391600,0.502621 0.331904 0.332888 0.332208 0.445793 0.250507 0.438428 0.407793 0.423912 0.449947
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",priv_targeted_rewrite,0.318996,0.347606 0.244562 0.306765 0.316739 0.364076 0.243246 0.336066 0.323746 0.362547 0.344612
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",util_broken_rewrite,0.653896,0.727230 0.668551 0.686892 0.627968 0.745524 0.633983 0.570125 0.559666 0.582620 0.736403
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",empty,0.487487,0.544213 0.440362 0.489583 0.533964 0.539201 0.422431 0.427414 0.490407 0.481782 0.505508
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",util_preserving_rewrite,0.241719,0.253780 0.291954 0.246340 0.225857 0.239138 0.260339 0.202937 0.269300 0.276216 0.151327
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",util_paraphrase_rewrite,0.250051,0.287313 0.255850 0.295356 0.222877 0.267784 0.278335 0.243012 0.221984 0.280929 0.147073
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",priv_preserving_rewrite,0.605058,0.562133 0.625517 0.692144 0.613389 0.513125 0.728734 0.462991 0.649331 0.647239 0.555979
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",priv_targeted_rewrite,0.638001,0.675002 0.663847 0.616458 0.616288 0.665472 0.687347 0.513214 0.616704 0.795993 0.529689
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",util_broken_rewrite,0.722395,0.700843 0.714496 0.652107 0.815853 0.719579 0.747104 0.560930 0.728677 0.791572 0.792787
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",empty,0.574692,0.672062 0.588744 0.502676 0.646594 0.525753 0.571543 0.383768 0.633080 0.672729 0.549969
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",util_preserving_rewrite,0.259093,0.263863 0.224527 0.259110 0.248146 0.255905 0.310957 0.281614 0.223670 0.275788 0.247352
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",util_paraphrase_rewrite,0.181050,0.199667 0.123592 0.177597 0.152851 0.195900 0.202070 0.185323 0.184517 0.209793 0.179188
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",priv_preserving_rewrite,0.422823,0.369578 0.339397 0.436788 0.398973 0.415415 0.434653 0.487345 0.435511 0.447672 0.462896
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",priv_targeted_rewrite,0.105392,0.121110 0.071983 0.082728 0.098411 0.074232 0.145457 0.101704 0.133744 0.151478 0.073075
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",util_broken_rewrite,0.548281,0.584712 0.525152 0.514787 0.595706 0.556776 0.585990 0.573634 0.555428 0.544456 0.446165
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",empty,0.525580,0.596572 0.426211 0.477535 0.578872 0.486357 0.565057 0.542761 0.555249 0.524755 0.502433
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",util_preserving_rewrite,0.123491,0.111518 0.102912 0.160637 0.087778 0.129802 0.147983 0.128788 0.127043 0.102739 0.135714
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",util_paraphrase_rewrite,0.107876,0.126417 0.108459 0.088702 0.073815 0.108894 0.097977 0.127932 0.123757 0.091792 0.131016
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",priv_preserving_rewrite,0.307974,0.340018 0.343464 0.305203 0.112134 0.302053 0.386837 0.375920 0.279432 0.189313 0.445363
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",priv_targeted_rewrite,0.183975,0.230451 0.218531 0.185873 0.078858 0.168286 0.254586 0.142390 0.168114 0.132890 0.259775
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",util_broken_rewrite,0.551213,0.604457 0.580985 0.547573 0.498371 0.554843 0.504362 0.531123 0.548318 0.466759 0.675338
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",empty,0.435896,0.508401 0.469203 0.384982 0.330213 0.454042 0.449200 0.477153 0.445971 0.343325 0.496470
+"Hana, 35, female, journalist, Prague, Czechia",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Hana, 35, female, journalist, Prague, Czechia",util_preserving_rewrite,0.165849,0.117622 0.140209 0.150525 0.195912 0.169415 0.162573 0.187686 0.095088 0.158762 0.280697
+"Hana, 35, female, journalist, Prague, Czechia",util_paraphrase_rewrite,0.150311,0.127110 0.133871 0.120796 0.172078 0.179685 0.147495 0.154426 0.095856 0.167661 0.204137
+"Hana, 35, female, journalist, Prague, Czechia",priv_preserving_rewrite,0.339141,0.396297 0.329156 0.185670 0.411336 0.386062 0.425990 0.222255 0.200889 0.388309 0.445451
+"Hana, 35, female, journalist, Prague, Czechia",priv_targeted_rewrite,0.208449,0.225211 0.217215 0.160322 0.295631 0.170006 0.220969 0.202239 0.143425 0.175240 0.274231
+"Hana, 35, female, journalist, Prague, Czechia",util_broken_rewrite,0.464996,0.506818 0.513509 0.416231 0.567162 0.510124 0.476168 0.383554 0.413009 0.438537 0.424849
+"Hana, 35, female, journalist, Prague, Czechia",empty,0.432315,0.551384 0.434879 0.331282 0.523232 0.443248 0.443722 0.353790 0.406458 0.385015 0.450140
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",util_preserving_rewrite,0.338603,0.309328 0.442957 0.367184 0.369278 0.265243 0.378934 0.311629 0.309778 0.245599 0.386103
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",util_paraphrase_rewrite,0.313978,0.272053 0.369166 0.331974 0.349811 0.206975 0.349155 0.323720 0.280890 0.306183 0.349852
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",priv_preserving_rewrite,0.436440,0.465335 0.563271 0.507725 0.526599 0.336570 0.310854 0.391480 0.376092 0.442013 0.444462
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",priv_targeted_rewrite,0.235257,0.266695 0.323995 0.254455 0.274596 0.260332 0.171400 0.291014 0.161299 0.179674 0.169112
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",util_broken_rewrite,0.565945,0.539360 0.516213 0.549075 0.643345 0.540134 0.576937 0.614719 0.532980 0.698036 0.448655
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",empty,0.478802,0.502495 0.478578 0.480112 0.560547 0.488345 0.431625 0.542381 0.378446 0.526522 0.398970
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",util_preserving_rewrite,0.165179,0.164917 0.185518 0.075183 0.151423 0.130485 0.156922 0.243398 0.178912 0.198491 0.166535
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",util_paraphrase_rewrite,0.126540,0.136021 0.110710 0.101359 0.121097 0.117749 0.118874 0.127855 0.156918 0.146956 0.127857
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",priv_preserving_rewrite,0.344899,0.380288 0.409647 0.313153 0.376741 0.323627 0.263295 0.432473 0.254968 0.322828 0.371973
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",priv_targeted_rewrite,0.371621,0.386268 0.393923 0.364894 0.356720 0.347238 0.348336 0.414429 0.377206 0.361920 0.365277
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",util_broken_rewrite,0.523481,0.489301 0.570036 0.519808 0.563942 0.549522 0.409885 0.598162 0.487157 0.468265 0.578727
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",empty,0.467689,0.412098 0.527720 0.498655 0.491757 0.480872 0.411931 0.487835 0.424919 0.441318 0.499784
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",util_preserving_rewrite,0.415818,0.334619 0.342724 0.482518 0.430514 0.411071 0.386679 0.515314 0.336887 0.553876 0.363981
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",util_paraphrase_rewrite,0.203514,0.209131 0.213453 0.287824 0.190957 0.214444 0.160489 0.229630 0.149828 0.221041 0.158341
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",priv_preserving_rewrite,0.536567,0.492042 0.530241 0.680714 0.498951 0.509308 0.475952 0.666614 0.410268 0.629383 0.472199
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",priv_targeted_rewrite,0.242020,0.349646 0.268417 0.388371 0.126041 0.257674 0.286444 0.172046 0.163482 0.179194 0.228884
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",util_broken_rewrite,0.653695,0.641767 0.758768 0.821067 0.609362 0.592104 0.665028 0.650545 0.517336 0.601304 0.679672
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",empty,0.459256,0.424682 0.547122 0.547359 0.395173 0.412773 0.427909 0.529441 0.370612 0.490751 0.446738
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",util_preserving_rewrite,0.045624,0.038728 0.038293 0.044161 0.046628 0.062207 0.034646 0.053066 0.037791 0.049194 0.051526
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",util_paraphrase_rewrite,0.057236,0.052359 0.043726 0.053583 0.065799 0.070686 0.044428 0.060776 0.064437 0.057977 0.058586
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",priv_preserving_rewrite,0.143147,0.109055 0.055606 0.182067 0.123497 0.208952 0.173379 0.174584 0.167168 0.091573 0.145584
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",priv_targeted_rewrite,0.219351,0.301960 0.192823 0.200587 0.135261 0.224115 0.185481 0.264475 0.228027 0.253320 0.207464
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",util_broken_rewrite,0.441086,0.407558 0.362096 0.502962 0.450377 0.503996 0.449315 0.433229 0.469493 0.360896 0.470941
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",empty,0.378494,0.352700 0.308574 0.402779 0.362001 0.402345 0.366302 0.377717 0.458590 0.333532 0.420400
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",util_preserving_rewrite,0.134216,0.155518 0.152989 0.125467 0.094112 0.167396 0.158741 0.147822 0.076897 0.136552 0.126662
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",util_paraphrase_rewrite,0.185946,0.189042 0.133254 0.184124 0.174398 0.217759 0.190372 0.212914 0.145339 0.228789 0.183465
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",priv_preserving_rewrite,0.525442,0.623235 0.650643 0.651896 0.375291 0.639847 0.448542 0.424778 0.353628 0.617978 0.468581
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",priv_targeted_rewrite,0.386371,0.458167 0.502201 0.445044 0.266051 0.370058 0.344448 0.328071 0.276082 0.488571 0.385019
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",util_broken_rewrite,0.661656,0.715405 0.750105 0.541522 0.532808 0.752495 0.722201 0.707932 0.462346 0.767284 0.664459
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",empty,0.619323,0.646809 0.647802 0.622920 0.488040 0.897562 0.512571 0.561193 0.470166 0.634739 0.711426
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",util_preserving_rewrite,0.157510,0.139014 0.178516 0.119424 0.137246 0.163717 0.180858 0.192706 0.178631 0.149527 0.135463
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",util_paraphrase_rewrite,0.158359,0.139654 0.175942 0.121287 0.163117 0.187910 0.152337 0.169375 0.139069 0.154400 0.180495
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",priv_preserving_rewrite,0.424435,0.356049 0.363916 0.417413 0.417142 0.471927 0.504757 0.469728 0.401752 0.496498 0.345167
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",priv_targeted_rewrite,0.321620,0.371620 0.318969 0.271604 0.354116 0.304857 0.286499 0.289850 0.345934 0.317311 0.355438
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",util_broken_rewrite,0.727950,0.616064 0.719504 0.723342 0.878418 0.686779 0.756526 0.692954 0.713151 0.840672 0.652091
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",empty,0.630156,0.518668 0.540349 0.676910 0.703765 0.693200 0.684273 0.605309 0.589267 0.758423 0.531391
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",util_preserving_rewrite,0.173397,0.150429 0.168578 0.222057 0.188309 0.152001 0.163278 0.157664 0.173465 0.208858 0.149331
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",util_paraphrase_rewrite,0.167817,0.158380 0.196656 0.157555 0.171857 0.196596 0.149754 0.159496 0.169814 0.181816 0.136247
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",priv_preserving_rewrite,0.337131,0.289359 0.428392 0.429372 0.399136 0.339653 0.242425 0.307880 0.360562 0.309773 0.264756
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",priv_targeted_rewrite,0.258648,0.202617 0.366807 0.319080 0.253233 0.285654 0.222718 0.212575 0.249617 0.255975 0.218205
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",util_broken_rewrite,0.563479,0.588912 0.752200 0.586177 0.556539 0.555716 0.477737 0.531775 0.603080 0.498290 0.484363
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",empty,0.460344,0.432236 0.542191 0.515715 0.511742 0.462182 0.374673 0.448272 0.520491 0.410344 0.385598
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",util_preserving_rewrite,0.278668,0.290266 0.274631 0.262167 0.270171 0.289505 0.287763 0.311543 0.228810 0.284721 0.287109
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",util_paraphrase_rewrite,0.183174,0.217391 0.205323 0.160148 0.168203 0.214171 0.187785 0.193277 0.156854 0.174921 0.153663
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",priv_preserving_rewrite,0.224764,0.288674 0.238625 0.198176 0.218461 0.220100 0.210430 0.211294 0.170515 0.286274 0.205091
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",priv_targeted_rewrite,0.425458,0.334637 0.375611 0.405769 0.515603 0.476968 0.318648 0.426225 0.396010 0.542799 0.462316
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",util_broken_rewrite,0.521771,0.527209 0.494869 0.482875 0.505765 0.470148 0.502035 0.513589 0.506953 0.641452 0.572811
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",empty,0.488994,0.505153 0.431985 0.505903 0.446760 0.420360 0.451393 0.450473 0.492403 0.565352 0.620155
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",util_preserving_rewrite,0.120532,0.093411 0.136516 0.111019 0.135757 0.153609 0.124585 0.100248 0.101310 0.140202 0.108665
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",util_paraphrase_rewrite,0.096761,0.082238 0.095278 0.094052 0.106753 0.116419 0.085717 0.076337 0.104294 0.138730 0.067794
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",priv_preserving_rewrite,0.310864,0.317379 0.325592 0.361502 0.372557 0.405961 0.310101 0.239312 0.347357 0.272890 0.155992
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",priv_targeted_rewrite,0.239057,0.263269 0.258652 0.299078 0.248690 0.254746 0.263170 0.174988 0.295054 0.215995 0.116929
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",util_broken_rewrite,0.487176,0.403914 0.489561 0.412293 0.508631 0.591703 0.441381 0.477312 0.593977 0.441432 0.511558
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",empty,0.449933,0.377430 0.421778 0.530483 0.519709 0.446100 0.400471 0.419877 0.510779 0.487107 0.385600
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",util_preserving_rewrite,0.209824,0.206708 0.193340 0.249346 0.180286 0.151787 0.215821 0.210430 0.269950 0.252183 0.168390
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",util_paraphrase_rewrite,0.089767,0.093540 0.087614 0.095668 0.087954 0.056969 0.095345 0.084910 0.111363 0.090541 0.093769
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",priv_preserving_rewrite,0.438989,0.481830 0.360808 0.557438 0.448014 0.200627 0.458749 0.409168 0.556800 0.477533 0.438919
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",priv_targeted_rewrite,0.321610,0.322344 0.255054 0.411211 0.305188 0.165476 0.324522 0.291455 0.420205 0.339754 0.380889
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",util_broken_rewrite,0.668362,0.660162 0.602259 0.802256 0.691494 0.477058 0.634670 0.708265 0.738490 0.741931 0.627036
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",empty,0.580300,0.566336 0.519646 0.678394 0.540636 0.413963 0.595556 0.614914 0.650193 0.673647 0.549711
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",util_preserving_rewrite,0.351720,0.294428 0.265018 0.436202 0.439027 0.402568 0.329322 0.307043 0.274997 0.374175 0.394419
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",util_paraphrase_rewrite,0.197644,0.223706 0.179690 0.298989 0.234323 0.213909 0.126214 0.129866 0.104350 0.207883 0.257510
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",priv_preserving_rewrite,0.363366,0.370466 0.177021 0.480733 0.470136 0.463171 0.316632 0.242706 0.204172 0.424171 0.484453
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",priv_targeted_rewrite,0.386790,0.426234 0.441712 0.440515 0.373821 0.384255 0.298626 0.276377 0.336393 0.470780 0.419184
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",util_broken_rewrite,0.622219,0.627982 0.576342 0.612664 0.641157 0.687770 0.611326 0.524078 0.513632 0.728248 0.698994
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",empty,0.595669,0.600031 0.540947 0.678525 0.608282 0.621865 0.553767 0.550941 0.454857 0.625602 0.721874
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",util_preserving_rewrite,0.379728,0.409595 0.422692 0.377272 0.285134 0.344894 0.353102 0.455193 0.530671 0.397781 0.220941
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",util_paraphrase_rewrite,0.221665,0.220702 0.216332 0.193118 0.198464 0.255645 0.166774 0.229719 0.255452 0.239461 0.240979
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",priv_preserving_rewrite,0.533258,0.571054 0.661067 0.587562 0.372948 0.426895 0.445857 0.686438 0.680465 0.463757 0.436535
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",priv_targeted_rewrite,0.428211,0.487925 0.549560 0.396057 0.299259 0.340576 0.387854 0.540060 0.531843 0.450041 0.298939
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",util_broken_rewrite,0.567834,0.625153 0.633136 0.510983 0.460312 0.553560 0.581232 0.582490 0.634434 0.513081 0.583958
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",empty,0.576956,0.548915 0.669940 0.578023 0.454270 0.591297 0.482817 0.639528 0.675706 0.538064 0.591000
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",util_preserving_rewrite,0.237236,0.199610 0.245330 0.263086 0.203034 0.274490 0.256514 0.160667 0.207992 0.272358 0.289282
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",util_paraphrase_rewrite,0.078751,0.066140 0.084432 0.076630 0.091288 0.083456 0.075643 0.061967 0.067474 0.089717 0.090763
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",priv_preserving_rewrite,0.251864,0.199809 0.220239 0.251825 0.272034 0.398285 0.230436 0.175929 0.302922 0.264480 0.202680
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",priv_targeted_rewrite,0.366244,0.344037 0.319799 0.379865 0.412034 0.384500 0.437906 0.234538 0.328488 0.413758 0.407517
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",util_broken_rewrite,0.633011,0.618754 0.708573 0.585445 0.526252 0.631491 0.634610 0.660727 0.655111 0.748916 0.560232
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",empty,0.436799,0.380129 0.417874 0.402809 0.440207 0.529584 0.424268 0.401496 0.491316 0.453543 0.426768
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",util_preserving_rewrite,0.325565,0.396411 0.435554 0.201812 0.246871 0.205186 0.288059 0.429226 0.434199 0.318534 0.299799
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",util_paraphrase_rewrite,0.197432,0.260279 0.266862 0.137960 0.169085 0.124804 0.159272 0.269581 0.250975 0.182545 0.152956
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",priv_preserving_rewrite,0.445351,0.535492 0.569959 0.351433 0.315691 0.218096 0.472637 0.597615 0.626943 0.358017 0.407628
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",priv_targeted_rewrite,0.400218,0.439393 0.542995 0.322540 0.313913 0.185251 0.411310 0.477206 0.571582 0.325921 0.412073
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",util_broken_rewrite,0.651881,0.669255 0.696471 0.677926 0.574668 0.417733 0.628853 0.745994 0.728149 0.644009 0.735757
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",empty,0.496728,0.573570 0.587071 0.420528 0.390212 0.291955 0.502541 0.600789 0.624964 0.436884 0.538770
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",util_preserving_rewrite,0.194274,0.303878 0.207107 0.216505 0.213644 0.149797 0.171334 0.177909 0.202982 0.152293 0.147291
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",util_paraphrase_rewrite,0.192168,0.270918 0.223063 0.215097 0.192213 0.160425 0.174804 0.182661 0.172426 0.166535 0.163534
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",priv_preserving_rewrite,0.540796,0.636948 0.594508 0.467089 0.554332 0.566121 0.421936 0.548942 0.619796 0.391616 0.606671
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",priv_targeted_rewrite,0.462356,0.578451 0.478386 0.449101 0.452231 0.431239 0.355188 0.473606 0.504812 0.325892 0.574657
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",util_broken_rewrite,0.641386,0.667617 0.652098 0.686508 0.603372 0.657298 0.577099 0.660603 0.650723 0.547593 0.710951
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",empty,0.629988,0.659047 0.675450 0.608787 0.621441 0.739403 0.593519 0.640349 0.598823 0.532218 0.630848
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",util_preserving_rewrite,0.241713,0.277099 0.228175 0.216213 0.214526 0.285648 0.305260 0.212966 0.251097 0.168783 0.257366
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",util_paraphrase_rewrite,0.081350,0.103552 0.076439 0.067040 0.077201 0.087345 0.104338 0.052531 0.075674 0.086718 0.082663
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",priv_preserving_rewrite,0.383296,0.376571 0.379283 0.332598 0.394292 0.391136 0.422055 0.339058 0.528205 0.310408 0.359352
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",priv_targeted_rewrite,0.365105,0.350133 0.272092 0.328733 0.408472 0.481458 0.444942 0.311680 0.329944 0.348779 0.374817
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",util_broken_rewrite,0.713496,0.691248 0.746274 0.647316 0.735990 0.727356 0.797986 0.725448 0.767950 0.666986 0.628404
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",empty,0.544140,0.574208 0.585138 0.511974 0.557885 0.627928 0.615697 0.508836 0.538594 0.421246 0.499895
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",util_preserving_rewrite,0.198435,0.222203 0.238719 0.290436 0.282201 0.169930 0.102905 0.230396 0.101325 0.244433 0.101806
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",util_paraphrase_rewrite,0.182834,0.208557 0.224828 0.262858 0.250313 0.150526 0.098636 0.210786 0.097863 0.222194 0.101775
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",priv_preserving_rewrite,0.509966,0.530846 0.600519 0.568309 0.593344 0.450429 0.451541 0.573144 0.385165 0.578390 0.367968
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",priv_targeted_rewrite,0.384250,0.375659 0.453194 0.405098 0.400663 0.367201 0.389722 0.462697 0.348789 0.361184 0.278297
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",util_broken_rewrite,0.620508,0.720250 0.596694 0.685384 0.728030 0.569606 0.522593 0.704209 0.507733 0.664957 0.505622
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",empty,0.622144,0.672353 0.633468 0.638122 0.704895 0.660385 0.616340 0.590930 0.570877 0.594213 0.539861
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",util_preserving_rewrite,0.231619,0.194398 0.207831 0.232728 0.249241 0.295104 0.157917 0.247865 0.209834 0.272945 0.248329
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",util_paraphrase_rewrite,0.197790,0.204613 0.164237 0.182425 0.192365 0.292643 0.157720 0.149157 0.226229 0.227623 0.180888
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",priv_preserving_rewrite,0.326405,0.306347 0.294226 0.353472 0.353838 0.354786 0.272505 0.310366 0.328870 0.384582 0.305061
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",priv_targeted_rewrite,0.336658,0.322472 0.301084 0.387431 0.313419 0.388173 0.261162 0.337655 0.347727 0.337810 0.369647
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",util_broken_rewrite,0.610179,0.600143 0.461991 0.645082 0.663687 0.684668 0.554040 0.607398 0.582972 0.702498 0.599315
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",empty,0.457894,0.485705 0.371305 0.442344 0.473400 0.528500 0.438817 0.432017 0.431597 0.545766 0.429490
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",util_preserving_rewrite,0.402818,0.451009 0.379555 0.321988 0.377255 0.401672 0.395909 0.411068 0.448420 0.352014 0.489288
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",util_paraphrase_rewrite,0.176657,0.208578 0.198492 0.163112 0.103170 0.108032 0.196732 0.199692 0.237049 0.151648 0.200062
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",priv_preserving_rewrite,0.293050,0.541736 0.343672 0.251786 0.160851 0.168622 0.278663 0.364089 0.311228 0.228472 0.281384
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",priv_targeted_rewrite,0.195588,0.243150 0.268934 0.160359 0.138022 0.155258 0.253729 0.216630 0.210233 0.182500 0.127065
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",util_broken_rewrite,0.663865,0.854537 0.657749 0.585033 0.601402 0.604005 0.656724 0.716424 0.676634 0.629315 0.656829
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",empty,0.495070,0.682567 0.473236 0.399843 0.430538 0.435758 0.439795 0.551843 0.525715 0.495706 0.515703
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",util_preserving_rewrite,0.341816,0.337227 0.345322 0.320795 0.355857 0.381620 0.345223 0.329664 0.294374 0.370360 0.337720
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",util_paraphrase_rewrite,0.202280,0.188861 0.188235 0.196523 0.161275 0.235264 0.222351 0.209250 0.169931 0.229052 0.222055
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",priv_preserving_rewrite,0.392341,0.368241 0.397749 0.368109 0.361506 0.408309 0.478878 0.408189 0.349858 0.379576 0.402997
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",priv_targeted_rewrite,0.540179,0.460640 0.451632 0.428217 0.539437 0.671814 0.806139 0.591125 0.436866 0.453403 0.562518
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",util_broken_rewrite,0.647871,0.592391 0.632047 0.587243 0.671951 0.703094 0.716629 0.730639 0.582366 0.603376 0.658976
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",empty,0.482235,0.433344 0.443979 0.454552 0.450055 0.497825 0.636162 0.566470 0.440238 0.441182 0.458544
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",util_preserving_rewrite,0.240354,0.293142 0.288245 0.279987 0.135824 0.272184 0.173307 0.236080 0.231481 0.312981 0.180304
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",util_paraphrase_rewrite,0.260480,0.312140 0.284837 0.298957 0.213845 0.290644 0.230755 0.251648 0.246566 0.293863 0.181543
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",priv_preserving_rewrite,0.519423,0.492684 0.518902 0.588865 0.272536 0.509155 0.620034 0.583944 0.567774 0.611128 0.429210
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",priv_targeted_rewrite,0.472012,0.477894 0.474080 0.573503 0.236064 0.504708 0.528551 0.501587 0.439724 0.586248 0.397758
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",util_broken_rewrite,0.719386,0.670223 0.676125 0.702363 0.803216 0.609089 0.834663 0.791686 0.799873 0.728834 0.577785
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",empty,0.575575,0.571309 0.585571 0.564551 0.435621 0.537602 0.658105 0.683000 0.617745 0.616696 0.485551
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",util_preserving_rewrite,0.230176,0.362140 0.307515 0.248616 0.237070 0.179588 0.148196 0.183889 0.226392 0.204186 0.204169
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",util_paraphrase_rewrite,0.193957,0.318895 0.229576 0.191377 0.205052 0.170318 0.171866 0.102790 0.188077 0.199250 0.162369
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",priv_preserving_rewrite,0.515402,0.642316 0.591195 0.598764 0.524544 0.414381 0.321999 0.498497 0.506416 0.555589 0.500320
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",priv_targeted_rewrite,0.385050,0.506862 0.453977 0.466053 0.396632 0.316041 0.250821 0.359697 0.372420 0.365251 0.362747
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",util_broken_rewrite,0.649049,0.745409 0.616216 0.712635 0.706950 0.581389 0.601132 0.701735 0.663694 0.608627 0.552699
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",empty,0.518194,0.582603 0.512025 0.544117 0.468236 0.487102 0.518350 0.594200 0.538800 0.488243 0.448268
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",util_preserving_rewrite,0.307756,0.326717 0.273320 0.359548 0.296141 0.286757 0.340659 0.270393 0.359793 0.293514 0.270715
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",util_paraphrase_rewrite,0.202687,0.267486 0.174170 0.222969 0.211342 0.164348 0.180850 0.124495 0.254744 0.213483 0.212985
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",priv_preserving_rewrite,0.481684,0.528683 0.408238 0.459546 0.366578 0.522046 0.627555 0.396608 0.504324 0.551082 0.452183
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",priv_targeted_rewrite,0.387820,0.420548 0.321216 0.446109 0.357371 0.387453 0.439394 0.306107 0.389087 0.392160 0.418760
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",util_broken_rewrite,0.559537,0.617604 0.466050 0.485234 0.388614 0.535057 0.644790 0.456922 0.676783 0.571004 0.753309
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",empty,0.551011,0.645829 0.528390 0.548200 0.475943 0.415153 0.490786 0.409939 0.747504 0.534047 0.714320
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",util_preserving_rewrite,0.540675,0.707707 0.414402 0.449360 0.642616 0.710403 0.550043 0.643843 0.528794 0.368561 0.391020
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",util_paraphrase_rewrite,0.335428,0.461103 0.276546 0.225083 0.384032 0.514247 0.313877 0.390199 0.345256 0.208607 0.235333
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",priv_preserving_rewrite,0.537049,0.648207 0.455246 0.543994 0.627005 0.677246 0.600696 0.472862 0.553569 0.430516 0.361154
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",priv_targeted_rewrite,0.544596,0.675933 0.452847 0.561935 0.653411 0.743512 0.585255 0.500725 0.510626 0.387304 0.374415
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",util_broken_rewrite,0.809675,0.923023 0.883056 0.702790 0.927713 0.941695 0.731712 0.763524 0.834397 0.831427 0.557417
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",empty,0.617938,0.799189 0.532928 0.603929 0.792024 0.714104 0.601848 0.507145 0.658664 0.559684 0.409862
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",util_preserving_rewrite,0.330881,0.374117 0.317014 0.427171 0.314822 0.310221 0.358279 0.390255 0.209038 0.275918 0.331973
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",util_paraphrase_rewrite,0.276500,0.274972 0.289198 0.359014 0.267909 0.301725 0.270362 0.303737 0.185171 0.244226 0.268689
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",priv_preserving_rewrite,0.433876,0.509930 0.430209 0.497404 0.402383 0.471879 0.485351 0.541389 0.311497 0.272469 0.416253
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",priv_targeted_rewrite,0.358941,0.431082 0.311722 0.489968 0.356973 0.374014 0.377545 0.449124 0.241750 0.190641 0.366588
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",util_broken_rewrite,0.707935,0.686713 0.744146 0.691282 0.765602 0.840918 0.729625 0.829275 0.614742 0.586026 0.591023
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",empty,0.545164,0.582940 0.533760 0.557356 0.535667 0.577654 0.605809 0.616027 0.445962 0.463805 0.532663
+"Mohammed, 38, male, imam, Marseille, France, Algerian",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Mohammed, 38, male, imam, Marseille, France, Algerian",util_preserving_rewrite,0.175120,0.182427 0.169209 0.114005 0.155485 0.144488 0.185467 0.137117 0.228724 0.258880 0.175397
+"Mohammed, 38, male, imam, Marseille, France, Algerian",util_paraphrase_rewrite,0.090472,0.100088 0.083447 0.066860 0.070223 0.072734 0.089583 0.076357 0.112636 0.121627 0.111170
+"Mohammed, 38, male, imam, Marseille, France, Algerian",priv_preserving_rewrite,0.388021,0.405526 0.290967 0.383134 0.357173 0.334507 0.404920 0.402887 0.436227 0.482433 0.382433
+"Mohammed, 38, male, imam, Marseille, France, Algerian",priv_targeted_rewrite,0.316454,0.409741 0.226653 0.300831 0.291526 0.248250 0.303782 0.336292 0.364283 0.354126 0.329055
+"Mohammed, 38, male, imam, Marseille, France, Algerian",util_broken_rewrite,0.621672,0.570251 0.838955 0.518278 0.555132 0.633799 0.654442 0.545934 0.567308 0.862445 0.470175
+"Mohammed, 38, male, imam, Marseille, France, Algerian",empty,0.554791,0.559436 0.592119 0.553885 0.511850 0.503871 0.525571 0.539760 0.528637 0.715190 0.517592
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",util_preserving_rewrite,0.246859,0.234477 0.273100 0.215749 0.244219 0.190593 0.271679 0.326823 0.238474 0.227257 0.246214
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",util_paraphrase_rewrite,0.165935,0.148569 0.194452 0.123847 0.192968 0.109743 0.225954 0.258009 0.124111 0.115052 0.166648
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",priv_preserving_rewrite,0.485224,0.428238 0.623035 0.450609 0.414756 0.509142 0.473854 0.636285 0.384282 0.479357 0.452682
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",priv_targeted_rewrite,0.433437,0.441344 0.518060 0.416705 0.385709 0.406240 0.435387 0.528393 0.362854 0.398441 0.441236
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",util_broken_rewrite,0.566262,0.517023 0.734718 0.513659 0.620968 0.606998 0.548240 0.609462 0.436029 0.535146 0.540380
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",empty,0.495458,0.449925 0.611420 0.469282 0.572629 0.519919 0.430586 0.606286 0.383251 0.465395 0.445889
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",util_preserving_rewrite,0.308914,0.301403 0.265764 0.286644 0.323888 0.344224 0.220104 0.367697 0.299879 0.394565 0.284972
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",util_paraphrase_rewrite,0.186259,0.182246 0.187374 0.183409 0.170234 0.217859 0.123762 0.207503 0.155662 0.236677 0.197867
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",priv_preserving_rewrite,0.482515,0.491458 0.407597 0.466197 0.528348 0.520688 0.379170 0.474320 0.549090 0.554388 0.453897
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",priv_targeted_rewrite,0.440952,0.545299 0.356403 0.470441 0.482903 0.513494 0.283889 0.485239 0.445856 0.345684 0.480309
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",util_broken_rewrite,0.582850,0.549514 0.549312 0.586026 0.551061 0.631635 0.525958 0.682750 0.551136 0.583279 0.617827
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",empty,0.558353,0.521047 0.488919 0.600538 0.590598 0.650452 0.430292 0.612525 0.560614 0.543876 0.584674
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",util_preserving_rewrite,0.125057,0.095083 0.129604 0.171330 0.102624 0.100183 0.070473 0.126719 0.122805 0.164055 0.167689
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",util_paraphrase_rewrite,0.091051,0.055727 0.129506 0.165754 0.066854 0.080100 0.042078 0.072175 0.095148 0.099443 0.103722
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",priv_preserving_rewrite,0.337952,0.214914 0.360272 0.408270 0.295501 0.249977 0.298243 0.294158 0.338854 0.370488 0.548846
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",priv_targeted_rewrite,0.138063,0.054783 0.215843 0.232566 0.136242 0.133425 0.136436 0.120831 0.112688 0.119484 0.118335
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",util_broken_rewrite,0.580744,0.552238 0.739920 0.586581 0.448017 0.644310 0.572438 0.544875 0.590830 0.576057 0.552173
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",empty,0.489378,0.515597 0.633309 0.494385 0.402423 0.540770 0.384021 0.460286 0.483608 0.527845 0.451533
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",util_preserving_rewrite,0.186179,0.180352 0.162382 0.150894 0.154063 0.158558 0.177429 0.190143 0.240403 0.301990 0.145580
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",util_paraphrase_rewrite,0.146738,0.147837 0.120587 0.121550 0.120868 0.096582 0.144191 0.130518 0.225362 0.242017 0.117863
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",priv_preserving_rewrite,0.426378,0.410996 0.446378 0.325978 0.370431 0.434460 0.416022 0.396315 0.522152 0.538682 0.402368
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",priv_targeted_rewrite,0.396968,0.383875 0.439199 0.342697 0.291467 0.365884 0.492263 0.340110 0.464566 0.530044 0.319574
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",util_broken_rewrite,0.637463,0.628938 0.721673 0.714059 0.562139 0.525082 0.590245 0.634969 0.719185 0.674156 0.604181
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",empty,0.582551,0.509601 0.701307 0.526909 0.535359 0.477462 0.612598 0.554078 0.644992 0.687759 0.575445
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",util_preserving_rewrite,0.174645,0.216909 0.118749 0.182197 0.184726 0.152177 0.168068 0.198611 0.180268 0.176861 0.167883
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",util_paraphrase_rewrite,0.125447,0.150716 0.089574 0.172413 0.103952 0.133104 0.121146 0.117009 0.142307 0.129727 0.094521
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",priv_preserving_rewrite,0.379024,0.436889 0.231278 0.405712 0.292016 0.437943 0.269630 0.433194 0.411787 0.444181 0.427615
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",priv_targeted_rewrite,0.308335,0.371402 0.182340 0.338658 0.272784 0.403853 0.213565 0.311524 0.337404 0.278303 0.373517
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",util_broken_rewrite,0.677470,0.813430 0.609300 0.572451 0.790933 0.610738 0.518115 0.776627 0.734234 0.562148 0.786721
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",empty,0.570077,0.759689 0.390706 0.540181 0.645080 0.548452 0.447855 0.654867 0.532249 0.502486 0.679209
+"Yara, 40, female, architect, Amman, Jordan, devout",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Yara, 40, female, architect, Amman, Jordan, devout",util_preserving_rewrite,0.256019,0.299951 0.222440 0.266072 0.283100 0.234895 0.287869 0.248878 0.177632 0.284385 0.254967
+"Yara, 40, female, architect, Amman, Jordan, devout",util_paraphrase_rewrite,0.167084,0.224019 0.122598 0.197203 0.183446 0.123162 0.188088 0.093163 0.123966 0.231444 0.183749
+"Yara, 40, female, architect, Amman, Jordan, devout",priv_preserving_rewrite,0.422812,0.510298 0.333531 0.408099 0.474863 0.401942 0.484755 0.386420 0.362020 0.500328 0.365865
+"Yara, 40, female, architect, Amman, Jordan, devout",priv_targeted_rewrite,0.301968,0.382153 0.237491 0.314149 0.348149 0.258438 0.425315 0.184177 0.236565 0.364962 0.268277
+"Yara, 40, female, architect, Amman, Jordan, devout",util_broken_rewrite,0.720298,0.817343 0.648873 0.769724 0.782480 0.725204 0.736635 0.677214 0.582078 0.825832 0.637593
+"Yara, 40, female, architect, Amman, Jordan, devout",empty,0.504153,0.520485 0.490221 0.490646 0.489161 0.493326 0.517585 0.438273 0.519796 0.561100 0.520933
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",util_preserving_rewrite,0.191222,0.140946 0.181422 0.147448 0.172177 0.278714 0.231080 0.225895 0.147583 0.281926 0.105034
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",util_paraphrase_rewrite,0.136084,0.095124 0.126730 0.099301 0.123364 0.239784 0.168132 0.183727 0.102412 0.160783 0.061480
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",priv_preserving_rewrite,0.458543,0.350563 0.534621 0.305355 0.425009 0.634935 0.400464 0.555996 0.565051 0.481057 0.332385
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",priv_targeted_rewrite,0.233331,0.128730 0.372724 0.177683 0.147366 0.314672 0.235321 0.352561 0.248935 0.149146 0.206170
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",util_broken_rewrite,0.472129,0.378076 0.532151 0.319532 0.433231 0.624405 0.491328 0.458627 0.483470 0.599580 0.400893
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",empty,0.518614,0.474235 0.531724 0.393247 0.507564 0.643421 0.492657 0.576735 0.568001 0.571453 0.427099
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",util_preserving_rewrite,0.292812,0.305190 0.286266 0.321072 0.233858 0.266449 0.340650 0.270146 0.280694 0.268852 0.354939
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",util_paraphrase_rewrite,0.246962,0.243152 0.291822 0.289171 0.229312 0.242372 0.263745 0.233742 0.200940 0.182553 0.292814
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",priv_preserving_rewrite,0.482948,0.489775 0.443878 0.400828 0.466797 0.434177 0.525680 0.482971 0.470640 0.477486 0.637250
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",priv_targeted_rewrite,0.457329,0.467811 0.365126 0.396838 0.555247 0.440704 0.458658 0.430355 0.408976 0.422073 0.627501
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",util_broken_rewrite,0.706750,0.634528 0.906200 0.732489 0.519459 0.602459 0.832766 0.671135 0.718774 0.738305 0.711384
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",empty,0.662918,0.671667 0.682949 0.712777 0.615890 0.619177 0.662078 0.651120 0.674766 0.604349 0.734409
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",util_preserving_rewrite,0.121441,0.110473 0.134620 0.098035 0.110447 0.090794 0.089647 0.109922 0.174305 0.155077 0.141090
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",util_paraphrase_rewrite,0.125063,0.116757 0.141435 0.109770 0.139255 0.085056 0.088616 0.131342 0.141181 0.161323 0.135899
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",priv_preserving_rewrite,0.289931,0.202746 0.366316 0.211291 0.254581 0.309519 0.269145 0.194656 0.402931 0.372147 0.315981
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",priv_targeted_rewrite,0.378863,0.549825 0.352944 0.284015 0.356218 0.415318 0.243807 0.312410 0.449626 0.375067 0.449399
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",util_broken_rewrite,0.617999,0.714995 0.549903 0.597588 0.569829 0.782991 0.568315 0.574937 0.561566 0.441897 0.817972
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",empty,0.586053,0.707403 0.552586 0.612172 0.585910 0.638017 0.367888 0.560376 0.678226 0.469938 0.688014
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",util_preserving_rewrite,0.220762,0.230078 0.208679 0.201858 0.212252 0.214325 0.300324 0.171956 0.202810 0.277807 0.187530
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",util_paraphrase_rewrite,0.243679,0.206660 0.178810 0.222852 0.250067 0.198853 0.325243 0.209108 0.250825 0.351478 0.242893
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",priv_preserving_rewrite,0.419176,0.419086 0.344471 0.443418 0.439772 0.320417 0.593093 0.368500 0.381501 0.451505 0.429998
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",priv_targeted_rewrite,0.295337,0.268367 0.289915 0.256143 0.248831 0.362416 0.376399 0.261688 0.279428 0.348389 0.261794
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",util_broken_rewrite,0.597701,0.747437 0.626805 0.604383 0.622617 0.523451 0.684139 0.517858 0.543424 0.561080 0.545812
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",empty,0.567510,0.711492 0.531919 0.523717 0.559621 0.543297 0.692290 0.456867 0.528002 0.577363 0.550531
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",util_preserving_rewrite,0.098206,0.075736 0.090399 0.148271 0.096030 0.092827 0.088065 0.095343 0.119711 0.097231 0.078446
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",util_paraphrase_rewrite,0.070341,0.054159 0.062450 0.122175 0.074877 0.061102 0.049025 0.058001 0.078907 0.085609 0.057109
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",priv_preserving_rewrite,0.233298,0.286620 0.217231 0.317466 0.248625 0.110285 0.235559 0.131548 0.268117 0.306808 0.210720
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",priv_targeted_rewrite,0.143060,0.161561 0.107982 0.174191 0.109093 0.137806 0.102857 0.147561 0.202360 0.143241 0.143950
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",util_broken_rewrite,0.643600,0.652132 0.556488 0.719121 0.622230 0.649071 0.659433 0.678905 0.692709 0.565389 0.640526
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",empty,0.483316,0.464190 0.477338 0.632917 0.492937 0.435712 0.503814 0.439918 0.461664 0.444222 0.480448
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",util_preserving_rewrite,0.189834,0.162493 0.216017 0.146627 0.250760 0.186476 0.209272 0.222312 0.114094 0.157918 0.232371
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",util_paraphrase_rewrite,0.128442,0.097469 0.145143 0.133789 0.147206 0.166791 0.136330 0.115225 0.077706 0.116810 0.147949
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",priv_preserving_rewrite,0.273513,0.145798 0.307806 0.170923 0.391127 0.162779 0.431846 0.228914 0.330857 0.132797 0.432287
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",priv_targeted_rewrite,0.301733,0.208418 0.365669 0.313493 0.348866 0.280484 0.392367 0.232640 0.277515 0.213438 0.384440
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",util_broken_rewrite,0.535732,0.438217 0.645102 0.550849 0.615094 0.430678 0.545933 0.521842 0.538054 0.409219 0.662333
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",empty,0.479298,0.402725 0.502356 0.517827 0.587119 0.397106 0.544217 0.484709 0.448210 0.378716 0.529998
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",util_preserving_rewrite,0.191692,0.189204 0.140927 0.191609 0.256952 0.159511 0.128670 0.247984 0.175546 0.206635 0.219886
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",util_paraphrase_rewrite,0.186082,0.194257 0.142370 0.167580 0.200337 0.178291 0.135560 0.216793 0.194598 0.201448 0.229590
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",priv_preserving_rewrite,0.467233,0.534571 0.499296 0.340255 0.464434 0.358514 0.472935 0.548853 0.353281 0.570004 0.530187
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",priv_targeted_rewrite,0.460667,0.454277 0.436082 0.413628 0.412028 0.387272 0.422440 0.563284 0.455705 0.585226 0.476726
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",util_broken_rewrite,0.646554,0.758996 0.600261 0.513023 0.682169 0.554982 0.575444 0.723250 0.570035 0.749228 0.738152
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",empty,0.587633,0.632866 0.585197 0.454140 0.634127 0.515085 0.554069 0.658940 0.494608 0.690122 0.657175
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",util_preserving_rewrite,0.162843,0.190761 0.118668 0.096693 0.184509 0.111028 0.183416 0.194881 0.213115 0.135682 0.199675
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",util_paraphrase_rewrite,0.122074,0.118959 0.091762 0.106843 0.158198 0.079861 0.125487 0.153400 0.154462 0.096950 0.134820
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",priv_preserving_rewrite,0.293189,0.290359 0.214367 0.207164 0.337810 0.248395 0.335552 0.377150 0.350203 0.249747 0.321143
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",priv_targeted_rewrite,0.215512,0.235860 0.171938 0.195504 0.254426 0.171939 0.221926 0.240809 0.256059 0.197570 0.209090
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",util_broken_rewrite,0.524563,0.488927 0.496867 0.530528 0.529708 0.524062 0.548571 0.519386 0.588114 0.489612 0.529858
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",empty,0.481647,0.461134 0.460470 0.503522 0.519675 0.517822 0.444137 0.502119 0.489124 0.446445 0.472021
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",util_preserving_rewrite,0.134987,0.091067 0.097462 0.139432 0.121309 0.168407 0.079054 0.151832 0.173632 0.182652 0.145023
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",util_paraphrase_rewrite,0.191692,0.154273 0.193186 0.193322 0.169370 0.236779 0.148987 0.180755 0.238000 0.196602 0.205643
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",priv_preserving_rewrite,0.523902,0.491142 0.481416 0.564490 0.577918 0.618868 0.472272 0.494694 0.592544 0.402323 0.543348
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",priv_targeted_rewrite,0.224753,0.151555 0.194924 0.324907 0.198813 0.249651 0.129780 0.280929 0.259622 0.227871 0.229475
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",util_broken_rewrite,0.621387,0.674684 0.587003 0.619174 0.672866 0.654137 0.547862 0.534717 0.685978 0.585970 0.651480
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",empty,0.514044,0.507454 0.455743 0.523528 0.495369 0.510707 0.486663 0.503071 0.594991 0.534375 0.528537
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",util_preserving_rewrite,0.323786,0.172760 0.290032 0.303839 0.403104 0.213581 0.328493 0.367072 0.323780 0.363803 0.471401
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",util_paraphrase_rewrite,0.250526,0.150626 0.220089 0.270803 0.255129 0.170185 0.252609 0.307438 0.194389 0.329560 0.354436
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",priv_preserving_rewrite,0.503461,0.412400 0.501871 0.477185 0.604496 0.402756 0.539060 0.524514 0.445283 0.482772 0.644276
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",priv_targeted_rewrite,0.273903,0.198539 0.244506 0.258328 0.345029 0.217804 0.289125 0.229371 0.246398 0.284890 0.425039
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",util_broken_rewrite,0.637121,0.709055 0.553376 0.580206 0.630630 0.597610 0.699203 0.604397 0.579538 0.679543 0.737652
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",empty,0.584513,0.531739 0.524730 0.583049 0.665480 0.543671 0.625436 0.558958 0.541956 0.573463 0.696651
+"Amelia, 45, female, headhunter, London, England, dyscalculia",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Amelia, 45, female, headhunter, London, England, dyscalculia",util_preserving_rewrite,0.274508,0.226707 0.364702 0.331911 0.241679 0.272544 0.254877 0.246508 0.286838 0.299074 0.220243
+"Amelia, 45, female, headhunter, London, England, dyscalculia",util_paraphrase_rewrite,0.069072,0.055623 0.056076 0.072759 0.054504 0.118399 0.063493 0.121760 0.048697 0.062483 0.036929
+"Amelia, 45, female, headhunter, London, England, dyscalculia",priv_preserving_rewrite,0.492114,0.354534 0.657005 0.541179 0.511892 0.394295 0.532736 0.486147 0.476976 0.610449 0.355923
+"Amelia, 45, female, headhunter, London, England, dyscalculia",priv_targeted_rewrite,0.423553,0.354477 0.477251 0.468765 0.429232 0.419310 0.442141 0.304673 0.451548 0.520601 0.367530
+"Amelia, 45, female, headhunter, London, England, dyscalculia",util_broken_rewrite,0.572054,0.465076 0.603667 0.529067 0.625049 0.580480 0.640015 0.514186 0.687191 0.548012 0.527792
+"Amelia, 45, female, headhunter, London, England, dyscalculia",empty,0.573981,0.469792 0.587119 0.580641 0.626680 0.522581 0.596613 0.547139 0.780050 0.566723 0.462477
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",util_preserving_rewrite,0.163837,0.192808 0.165827 0.127769 0.169764 0.179636 0.111207 0.178736 0.208426 0.131495 0.172698
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",util_paraphrase_rewrite,0.216088,0.162267 0.240980 0.224271 0.194892 0.211857 0.144993 0.242079 0.285668 0.182072 0.271802
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",priv_preserving_rewrite,0.476153,0.489423 0.483659 0.510410 0.502486 0.511979 0.202584 0.517040 0.534885 0.481110 0.527956
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",priv_targeted_rewrite,0.385287,0.380648 0.420068 0.427697 0.371826 0.417162 0.147197 0.423901 0.435359 0.406873 0.422137
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",util_broken_rewrite,0.663300,0.619416 0.645315 0.659510 0.727120 0.654097 0.530659 0.670796 0.798511 0.608113 0.719467
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",empty,0.593983,0.593113 0.587516 0.586564 0.639588 0.606839 0.419660 0.597329 0.719444 0.557934 0.631841
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",util_preserving_rewrite,0.135293,0.183131 0.085603 0.191555 0.108742 0.136516 0.138882 0.156876 0.144652 0.100006 0.106963
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",util_paraphrase_rewrite,0.076810,0.097869 0.092516 0.077336 0.066427 0.073391 0.058148 0.078573 0.083861 0.072576 0.067407
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",priv_preserving_rewrite,0.158920,0.287239 0.083767 0.241682 0.124914 0.089870 0.191281 0.095620 0.076674 0.275575 0.122583
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",priv_targeted_rewrite,0.108281,0.184494 0.028619 0.215194 0.089140 0.028968 0.126387 0.037406 0.037425 0.221977 0.113205
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",util_broken_rewrite,0.494888,0.574648 0.454059 0.509539 0.485435 0.499151 0.453382 0.575170 0.415733 0.519444 0.462322
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",empty,0.342746,0.441893 0.336843 0.386991 0.353443 0.299944 0.316799 0.295877 0.298953 0.411932 0.284788
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",util_preserving_rewrite,0.322209,0.298295 0.365951 0.283754 0.269636 0.312917 0.322872 0.322083 0.414885 0.261259 0.370433
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",util_paraphrase_rewrite,0.186474,0.183134 0.153145 0.139923 0.157211 0.195271 0.176074 0.209462 0.288956 0.164705 0.196862
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",priv_preserving_rewrite,0.463912,0.342595 0.601921 0.268684 0.274385 0.484647 0.592544 0.513638 0.617368 0.323573 0.619762
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",priv_targeted_rewrite,0.302935,0.178301 0.434416 0.240776 0.312034 0.402894 0.299596 0.287705 0.328298 0.222870 0.322460
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",util_broken_rewrite,0.618070,0.520361 0.781508 0.561030 0.614012 0.720609 0.588329 0.612373 0.645205 0.563036 0.574233
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",empty,0.551274,0.451620 0.731399 0.399367 0.442443 0.588903 0.607337 0.627175 0.623413 0.446628 0.594454
+"Nour, 22, female, student, Damascus, Syria, refugee background",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Nour, 22, female, student, Damascus, Syria, refugee background",util_preserving_rewrite,0.350478,0.279350 0.378183 0.422672 0.369769 0.344991 0.388807 0.352006 0.343283 0.297920 0.327803
+"Nour, 22, female, student, Damascus, Syria, refugee background",util_paraphrase_rewrite,0.413752,0.350154 0.431923 0.484709 0.394310 0.516334 0.437522 0.441021 0.324206 0.371554 0.385789
+"Nour, 22, female, student, Damascus, Syria, refugee background",priv_preserving_rewrite,0.433267,0.374552 0.509792 0.536922 0.387163 0.494659 0.503551 0.471429 0.375570 0.335326 0.343711
+"Nour, 22, female, student, Damascus, Syria, refugee background",priv_targeted_rewrite,0.462976,0.404480 0.508499 0.654245 0.389205 0.530291 0.489629 0.462421 0.413119 0.412600 0.365270
+"Nour, 22, female, student, Damascus, Syria, refugee background",util_broken_rewrite,0.905023,0.901166 0.922815 1.052200 0.833467 1.119231 0.979995 1.012031 0.722822 0.805770 0.700737
+"Nour, 22, female, student, Damascus, Syria, refugee background",empty,0.677731,0.596979 0.745043 0.784225 0.614179 0.809585 0.651732 0.697184 0.791976 0.566340 0.520066
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",util_preserving_rewrite,0.120171,0.080956 0.153170 0.199937 0.123706 0.102209 0.169338 0.118426 0.069182 0.071483 0.113300
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",util_paraphrase_rewrite,0.109292,0.092325 0.121190 0.121356 0.120602 0.120190 0.113186 0.112540 0.101232 0.094508 0.095788
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",priv_preserving_rewrite,0.488160,0.502716 0.495809 0.595102 0.613473 0.460571 0.521189 0.432155 0.482603 0.385641 0.392337
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",priv_targeted_rewrite,0.224485,0.296867 0.178382 0.218058 0.301161 0.218513 0.241116 0.190688 0.247464 0.165547 0.187058
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",util_broken_rewrite,0.519921,0.694852 0.447804 0.569201 0.396745 0.393820 0.580539 0.511834 0.345332 0.396710 0.862369
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",empty,0.582474,0.754382 0.471265 0.520873 0.672678 0.483024 0.555113 0.486659 0.590773 0.512415 0.777563
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",util_preserving_rewrite,0.335797,0.326342 0.360417 0.280082 0.374165 0.349226 0.357160 0.351426 0.341968 0.268782 0.348400
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",util_paraphrase_rewrite,0.323884,0.374666 0.298053 0.265153 0.370582 0.296001 0.359318 0.382689 0.287918 0.322599 0.281863
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",priv_preserving_rewrite,0.464824,0.527387 0.490706 0.466363 0.500223 0.464998 0.356758 0.413418 0.486754 0.359781 0.581853
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",priv_targeted_rewrite,0.336134,0.385600 0.357731 0.290422 0.382404 0.365435 0.313195 0.314473 0.351552 0.224158 0.376374
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",util_broken_rewrite,0.597705,0.571116 0.556271 0.616058 0.848136 0.429482 0.529385 0.634902 0.567658 0.529406 0.694641
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",empty,0.515287,0.484751 0.450604 0.519577 0.634197 0.421381 0.445707 0.506471 0.642855 0.512579 0.534745
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",util_preserving_rewrite,0.241572,0.193700 0.209926 0.313856 0.143452 0.221941 0.255581 0.251981 0.246073 0.250223 0.328991
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",util_paraphrase_rewrite,0.241618,0.208418 0.311712 0.274274 0.212936 0.208939 0.190660 0.236376 0.204204 0.237587 0.331079
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",priv_preserving_rewrite,0.498648,0.331246 0.630054 0.604205 0.393570 0.428926 0.582501 0.522138 0.490242 0.395132 0.608461
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",priv_targeted_rewrite,0.274513,0.183965 0.392336 0.333256 0.234774 0.278871 0.318094 0.266740 0.236748 0.202795 0.297553
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",util_broken_rewrite,0.653445,0.553400 0.666414 0.705499 0.609166 0.686913 0.698489 0.676263 0.617670 0.647669 0.672965
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",empty,0.612139,0.473641 0.682794 0.729660 0.632482 0.569192 0.650321 0.606659 0.593530 0.535237 0.647877
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",util_preserving_rewrite,0.233429,0.205774 0.244943 0.221817 0.223302 0.230515 0.238874 0.228131 0.245540 0.237330 0.258064
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",util_paraphrase_rewrite,0.148724,0.152292 0.178958 0.158808 0.106295 0.136172 0.167152 0.145017 0.158459 0.111340 0.172750
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",priv_preserving_rewrite,0.296018,0.268465 0.355822 0.322727 0.139147 0.250445 0.389515 0.405974 0.278571 0.361143 0.188369
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",priv_targeted_rewrite,0.267846,0.317717 0.216739 0.226565 0.236461 0.193857 0.316206 0.342494 0.326455 0.311803 0.190160
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",util_broken_rewrite,0.567025,0.495395 0.581835 0.615309 0.531009 0.583935 0.512084 0.663951 0.642781 0.520400 0.523550
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",empty,0.527442,0.488226 0.526762 0.544133 0.422742 0.543264 0.563885 0.576349 0.594792 0.503736 0.510527
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",util_preserving_rewrite,0.252977,0.207635 0.265629 0.237858 0.330215 0.146730 0.168240 0.261484 0.343009 0.249922 0.319049
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",util_paraphrase_rewrite,0.244776,0.281423 0.228612 0.222054 0.263658 0.184386 0.186583 0.214767 0.361824 0.237533 0.266923
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",priv_preserving_rewrite,0.631536,0.578903 0.682543 0.610666 0.770483 0.495858 0.617101 0.630977 0.644582 0.692237 0.592010
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",priv_targeted_rewrite,0.488968,0.440276 0.553040 0.485650 0.587793 0.367717 0.340026 0.478872 0.611260 0.540223 0.484827
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",util_broken_rewrite,0.717716,0.618066 0.639690 0.701659 0.690937 0.644002 0.811196 0.863910 0.633980 0.736533 0.837186
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",empty,0.638680,0.684386 0.577679 0.710555 0.671764 0.505381 0.623004 0.657459 0.630554 0.659320 0.666696
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",util_preserving_rewrite,0.223212,0.187709 0.160099 0.282998 0.130711 0.169672 0.264651 0.275604 0.284006 0.208015 0.268657
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",util_paraphrase_rewrite,0.219722,0.158052 0.212850 0.223037 0.164354 0.215196 0.219785 0.253084 0.284087 0.217148 0.249626
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",priv_preserving_rewrite,0.455020,0.465006 0.372507 0.478112 0.304031 0.306919 0.405146 0.560911 0.656867 0.427078 0.573620
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",priv_targeted_rewrite,0.466112,0.459245 0.446545 0.474279 0.359654 0.347455 0.427021 0.534228 0.634375 0.432251 0.546067
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",util_broken_rewrite,0.597746,0.561589 0.607042 0.647816 0.552424 0.577532 0.518893 0.646898 0.652783 0.592914 0.619567
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",empty,0.526404,0.566684 0.472147 0.558420 0.422088 0.455318 0.522074 0.635089 0.542786 0.547004 0.542433
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",util_preserving_rewrite,0.203335,0.186092 0.209927 0.234110 0.162861 0.210336 0.191355 0.179561 0.267341 0.223732 0.168036
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",util_paraphrase_rewrite,0.096168,0.085296 0.082885 0.116480 0.062805 0.085605 0.103130 0.084434 0.147018 0.115537 0.078486
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",priv_preserving_rewrite,0.376668,0.278414 0.323127 0.495552 0.423991 0.414350 0.288278 0.403370 0.485346 0.316013 0.338241
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",priv_targeted_rewrite,0.096983,0.018446 0.043823 0.159905 0.153479 0.152084 0.029170 0.138075 0.168192 0.065268 0.041386
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",util_broken_rewrite,0.694395,0.714114 0.642895 0.710837 0.657407 0.786972 0.649058 0.725431 0.811329 0.604973 0.640930
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",empty,0.499417,0.416672 0.467906 0.531491 0.472381 0.525473 0.512397 0.483080 0.614712 0.514423 0.455635
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",util_preserving_rewrite,0.226688,0.257655 0.196390 0.222270 0.191877 0.244855 0.212286 0.234332 0.340560 0.152550 0.214108
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",util_paraphrase_rewrite,0.108963,0.147234 0.101498 0.132494 0.077698 0.077666 0.129753 0.101634 0.160938 0.065494 0.095224
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",priv_preserving_rewrite,0.440663,0.437974 0.370387 0.418434 0.385902 0.528473 0.440310 0.405377 0.579605 0.421555 0.418613
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",priv_targeted_rewrite,0.260530,0.138684 0.266765 0.257253 0.258634 0.357329 0.275491 0.181239 0.364662 0.220522 0.284720
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",util_broken_rewrite,0.632032,0.699483 0.814647 0.619267 0.531103 0.612659 0.625294 0.552517 0.658263 0.563759 0.643333
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",empty,0.573825,0.580232 0.488938 0.623073 0.555107 0.645162 0.531199 0.545919 0.659042 0.510448 0.599131
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",util_preserving_rewrite,0.229501,0.218552 0.248893 0.264854 0.193499 0.244861 0.252224 0.156407 0.318961 0.238442 0.158320
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",util_paraphrase_rewrite,0.180190,0.154823 0.201275 0.208469 0.145103 0.220000 0.215563 0.155906 0.173546 0.196294 0.130925
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",priv_preserving_rewrite,0.396419,0.441671 0.372237 0.384842 0.297960 0.452007 0.416370 0.296730 0.548009 0.371285 0.383075
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",priv_targeted_rewrite,0.332230,0.399917 0.257941 0.312452 0.225974 0.365557 0.312240 0.265753 0.525568 0.377713 0.279184
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",util_broken_rewrite,0.583581,0.610743 0.643480 0.511722 0.553743 0.571602 0.622850 0.532721 0.680013 0.601781 0.507153
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",empty,0.465524,0.505569 0.470713 0.397022 0.428006 0.504255 0.534265 0.380542 0.580403 0.449440 0.405026
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",util_preserving_rewrite,0.155907,0.187091 0.163490 0.123608 0.153094 0.153302 0.137634 0.212036 0.151635 0.128700 0.148485
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",util_paraphrase_rewrite,0.106663,0.137928 0.123951 0.091376 0.087795 0.086914 0.099448 0.119847 0.131575 0.096968 0.090831
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",priv_preserving_rewrite,0.138844,0.133750 0.150835 0.051955 0.176198 0.111569 0.128876 0.281009 0.163017 0.065974 0.125261
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",priv_targeted_rewrite,0.218541,0.222541 0.289668 0.223141 0.187365 0.246194 0.168772 0.324474 0.160937 0.070012 0.292309
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",util_broken_rewrite,0.600657,0.696592 0.657237 0.543126 0.497525 0.604895 0.573606 0.743603 0.671040 0.332668 0.686275
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",empty,0.534857,0.595303 0.559235 0.530973 0.438050 0.573752 0.389885 0.690924 0.658039 0.291362 0.621046
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",util_preserving_rewrite,0.122846,0.124750 0.178200 0.101884 0.099286 0.187259 0.110306 0.097898 0.118921 0.099957 0.109992
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",util_paraphrase_rewrite,0.116814,0.108934 0.187307 0.097411 0.092661 0.172015 0.086524 0.097595 0.129106 0.098179 0.098406
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",priv_preserving_rewrite,0.335512,0.318242 0.340956 0.382659 0.331632 0.361455 0.271538 0.328943 0.366153 0.333608 0.319938
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",priv_targeted_rewrite,0.326839,0.334164 0.357537 0.346024 0.319798 0.355798 0.284422 0.298172 0.361062 0.295150 0.316259
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",util_broken_rewrite,0.485832,0.531697 0.481668 0.536698 0.485271 0.511267 0.498947 0.468160 0.411631 0.445984 0.486999
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",empty,0.400656,0.413592 0.416546 0.443327 0.399007 0.399752 0.371795 0.374058 0.381453 0.381247 0.425784
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",util_preserving_rewrite,0.226795,0.282764 0.167866 0.193624 0.193089 0.134104 0.261804 0.266530 0.255704 0.283236 0.229235
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",util_paraphrase_rewrite,0.155718,0.151594 0.141859 0.154937 0.177644 0.097640 0.166130 0.188580 0.177032 0.179687 0.122082
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",priv_preserving_rewrite,0.415620,0.313491 0.436391 0.315093 0.409297 0.399797 0.391509 0.528764 0.587968 0.334691 0.439195
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",priv_targeted_rewrite,0.403732,0.370770 0.483093 0.351942 0.440172 0.321667 0.456759 0.362317 0.483641 0.388114 0.378850
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",util_broken_rewrite,0.646613,0.666614 0.536394 0.621228 0.563905 0.677550 0.587306 0.675032 0.704910 0.575553 0.857634
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",empty,0.513283,0.502085 0.427200 0.435259 0.414409 0.584002 0.475876 0.580982 0.574129 0.494291 0.644598
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",util_preserving_rewrite,0.397402,0.261139 0.429522 0.345659 0.429922 0.423589 0.458077 0.364245 0.573732 0.218832 0.469306
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",util_paraphrase_rewrite,0.346419,0.253256 0.414420 0.261432 0.325043 0.380539 0.413736 0.327234 0.473139 0.252773 0.362619
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",priv_preserving_rewrite,0.628811,0.486657 0.677124 0.618236 0.614798 0.617185 0.653303 0.586175 0.922245 0.377184 0.735202
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",priv_targeted_rewrite,0.525153,0.451570 0.585823 0.514515 0.475525 0.489683 0.494716 0.479065 0.756254 0.391621 0.612756
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",util_broken_rewrite,0.767681,0.645261 0.762101 0.688377 0.823822 0.834631 0.797702 0.794774 0.888479 0.660488 0.781175
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",empty,0.698070,0.624555 0.662014 0.624867 0.723160 0.780919 0.725565 0.705489 0.849437 0.518616 0.766081
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",util_preserving_rewrite,0.151189,0.184447 0.115227 0.157094 0.142972 0.197216 0.111055 0.169445 0.210265 0.128910 0.095262
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",util_paraphrase_rewrite,0.116110,0.156584 0.076340 0.136104 0.115511 0.127742 0.096821 0.121088 0.163179 0.095728 0.072002
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",priv_preserving_rewrite,0.293119,0.344574 0.295424 0.288336 0.286902 0.286097 0.276202 0.314139 0.370680 0.239370 0.229468
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",priv_targeted_rewrite,0.181463,0.191713 0.186778 0.190148 0.142343 0.194373 0.137676 0.203976 0.247426 0.176723 0.143474
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",util_broken_rewrite,0.538819,0.583492 0.552063 0.557134 0.464652 0.500438 0.536812 0.576031 0.626977 0.547678 0.442910
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",empty,0.443262,0.514437 0.436897 0.412583 0.393268 0.450689 0.405230 0.484958 0.537486 0.393892 0.403177
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",util_preserving_rewrite,0.312043,0.339912 0.305317 0.419183 0.238476 0.217226 0.323332 0.321400 0.354236 0.287481 0.313865
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",util_paraphrase_rewrite,0.336934,0.420502 0.295849 0.414339 0.360546 0.259692 0.313379 0.319000 0.354011 0.296624 0.335394
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",priv_preserving_rewrite,0.515250,0.585923 0.467272 0.578592 0.508084 0.339309 0.489945 0.615004 0.539889 0.564561 0.463918
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",priv_targeted_rewrite,0.570783,0.563885 0.598881 0.652818 0.511001 0.424090 0.632748 0.633173 0.570840 0.577778 0.542613
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",util_broken_rewrite,0.599830,0.536726 0.594033 0.577618 0.518051 0.592419 0.659781 0.643163 0.581336 0.615425 0.679749
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",empty,0.564452,0.564260 0.516876 0.439035 0.542590 0.504757 0.559208 0.637977 0.569970 0.688780 0.621065
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",util_preserving_rewrite,0.261999,0.261179 0.328506 0.259967 0.254412 0.235009 0.302827 0.243028 0.230999 0.213428 0.290633
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",util_paraphrase_rewrite,0.193628,0.117154 0.211130 0.230896 0.209270 0.240759 0.149203 0.242847 0.148975 0.208540 0.177506
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",priv_preserving_rewrite,0.362819,0.374828 0.458612 0.338145 0.274108 0.218976 0.518534 0.340533 0.345609 0.351009 0.407830
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",priv_targeted_rewrite,0.278223,0.284845 0.343152 0.267653 0.273079 0.179398 0.378539 0.262333 0.275737 0.241589 0.275905
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",util_broken_rewrite,0.755674,0.795265 0.774406 0.830091 0.630741 0.784867 0.699454 0.757950 0.799067 0.610000 0.874904
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",empty,0.547956,0.538668 0.573050 0.620631 0.436909 0.521987 0.624077 0.540067 0.550615 0.547398 0.526154
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",util_preserving_rewrite,0.081756,0.078734 0.082036 0.074372 0.074310 0.072889 0.108948 0.088677 0.085618 0.072457 0.079524
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",util_paraphrase_rewrite,0.236674,0.172349 0.174166 0.242122 0.221446 0.183402 0.312470 0.273451 0.216709 0.299768 0.270856
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",priv_preserving_rewrite,0.117494,0.103802 0.097526 0.157464 0.085538 0.103566 0.214145 0.142595 0.098580 0.093031 0.078693
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",priv_targeted_rewrite,0.247522,0.215038 0.228480 0.350624 0.227298 0.194546 0.288635 0.224474 0.294918 0.227820 0.223383
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",util_broken_rewrite,0.711703,0.726002 0.776752 0.696401 0.579486 0.671026 0.816015 0.648905 0.763147 0.746989 0.692303
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",empty,0.599759,0.609124 0.601347 0.601839 0.559084 0.506152 0.644037 0.536096 0.684697 0.598286 0.656928
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",util_preserving_rewrite,0.351575,0.308597 0.274800 0.239224 0.550172 0.370382 0.403924 0.452512 0.310882 0.372682 0.232577
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",util_paraphrase_rewrite,0.238164,0.304904 0.231416 0.272125 0.334820 0.194692 0.189240 0.268808 0.116739 0.251649 0.217247
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",priv_preserving_rewrite,0.527640,0.548547 0.464737 0.480303 0.712801 0.502692 0.559152 0.542026 0.402751 0.659565 0.403826
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",priv_targeted_rewrite,0.233952,0.233383 0.236802 0.207856 0.260874 0.244236 0.234435 0.220556 0.237110 0.263336 0.200933
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",util_broken_rewrite,0.602009,0.696715 0.521985 0.621061 0.697084 0.535554 0.705321 0.636491 0.404630 0.591739 0.609511
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",empty,0.595637,0.617830 0.626151 0.582135 0.753936 0.568687 0.563421 0.524839 0.546575 0.618819 0.553978
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",util_preserving_rewrite,0.222978,0.234181 0.184674 0.142387 0.100186 0.264475 0.270199 0.234598 0.288571 0.249354 0.261156
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",util_paraphrase_rewrite,0.128468,0.114290 0.101548 0.095783 0.093022 0.134350 0.173435 0.096685 0.155800 0.187425 0.132342
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",priv_preserving_rewrite,0.425150,0.457051 0.344235 0.371626 0.167456 0.462082 0.461949 0.423624 0.578389 0.466625 0.518460
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",priv_targeted_rewrite,0.297071,0.365131 0.201454 0.242311 0.147268 0.398270 0.373530 0.344033 0.346582 0.271700 0.280425
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",util_broken_rewrite,0.606459,0.699692 0.646156 0.592306 0.540283 0.481682 0.556245 0.713228 0.649396 0.467230 0.718369
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",empty,0.622841,0.637857 0.755203 0.599755 0.463511 0.600619 0.545830 0.635457 0.760894 0.465903 0.763377
+"Meera, 43, female, professor, Delhi, India, visually impaired",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Meera, 43, female, professor, Delhi, India, visually impaired",util_preserving_rewrite,0.155166,0.150096 0.197913 0.164805 0.135695 0.162851 0.168697 0.130441 0.133686 0.145613 0.161863
+"Meera, 43, female, professor, Delhi, India, visually impaired",util_paraphrase_rewrite,0.072839,0.073362 0.130839 0.067220 0.080973 0.054199 0.103449 0.046735 0.058718 0.061666 0.051226
+"Meera, 43, female, professor, Delhi, India, visually impaired",priv_preserving_rewrite,0.284999,0.259919 0.360894 0.361381 0.260061 0.239963 0.239136 0.311903 0.272994 0.337622 0.206118
+"Meera, 43, female, professor, Delhi, India, visually impaired",priv_targeted_rewrite,0.269170,0.250838 0.343164 0.341061 0.263576 0.259231 0.251562 0.244592 0.240588 0.287398 0.209694
+"Meera, 43, female, professor, Delhi, India, visually impaired",util_broken_rewrite,0.516375,0.466874 0.474952 0.520606 0.685859 0.507216 0.517165 0.489690 0.515866 0.541936 0.443583
+"Meera, 43, female, professor, Delhi, India, visually impaired",empty,0.484646,0.477750 0.446277 0.528527 0.520711 0.526213 0.451068 0.426188 0.517551 0.490249 0.461928
+"Finn, 20, transgender man, student, Wellington, New Zealand",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Finn, 20, transgender man, student, Wellington, New Zealand",util_preserving_rewrite,0.134259,0.121890 0.135588 0.111926 0.164335 0.135730 0.124376 0.111379 0.106384 0.169119 0.161866
+"Finn, 20, transgender man, student, Wellington, New Zealand",util_paraphrase_rewrite,0.152431,0.157433 0.148367 0.148749 0.168038 0.129823 0.186676 0.143241 0.135137 0.184155 0.122694
+"Finn, 20, transgender man, student, Wellington, New Zealand",priv_preserving_rewrite,0.485138,0.385878 0.514630 0.563120 0.431386 0.413044 0.478449 0.505460 0.496902 0.633885 0.428629
+"Finn, 20, transgender man, student, Wellington, New Zealand",priv_targeted_rewrite,0.389045,0.375151 0.401908 0.541809 0.379524 0.270861 0.394279 0.379389 0.373070 0.514440 0.260022
+"Finn, 20, transgender man, student, Wellington, New Zealand",util_broken_rewrite,0.674274,0.761960 0.684894 0.747334 0.788631 0.603394 0.716184 0.568298 0.592047 0.742575 0.537421
+"Finn, 20, transgender man, student, Wellington, New Zealand",empty,0.628756,0.657287 0.562849 0.721865 0.637041 0.465598 0.580015 0.672219 0.652894 0.719025 0.618770
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",util_preserving_rewrite,0.177777,0.194142 0.174581 0.211258 0.156546 0.212956 0.089808 0.115815 0.168756 0.281636 0.172275
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",util_paraphrase_rewrite,0.205114,0.213371 0.172084 0.245045 0.225947 0.180055 0.132540 0.181392 0.170292 0.281449 0.248961
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",priv_preserving_rewrite,0.275207,0.198399 0.273450 0.391906 0.322153 0.200933 0.181629 0.311307 0.201293 0.282178 0.388821
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",priv_targeted_rewrite,0.125714,0.084094 0.066900 0.226965 0.204195 0.056328 0.037960 0.188366 0.092611 0.089284 0.210438
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",util_broken_rewrite,0.644953,0.729693 0.517417 0.786828 0.721678 0.527800 0.552222 0.654405 0.616603 0.702341 0.640546
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",empty,0.569054,0.573066 0.511058 0.735144 0.587707 0.516391 0.403526 0.566878 0.553177 0.628537 0.615056
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",util_preserving_rewrite,0.332762,0.198421 0.250782 0.342926 0.436260 0.323191 0.317297 0.340807 0.371679 0.336477 0.409775
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",util_paraphrase_rewrite,0.322469,0.249161 0.245629 0.301664 0.370108 0.309769 0.421208 0.399851 0.319353 0.292889 0.315059
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",priv_preserving_rewrite,0.617277,0.571056 0.569385 0.613095 0.737463 0.569098 0.635682 0.644626 0.596569 0.639885 0.595907
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",priv_targeted_rewrite,0.524925,0.447089 0.485028 0.489094 0.734069 0.503450 0.499932 0.504315 0.419175 0.514095 0.653004
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",util_broken_rewrite,0.853318,0.756697 0.815016 0.859951 0.856586 0.921489 0.768140 0.815205 0.792975 0.840938 1.106185
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",empty,0.660711,0.648294 0.609771 0.659069 0.609518 0.628043 0.665123 0.672455 0.736301 0.641381 0.737156
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",util_preserving_rewrite,0.230895,0.184605 0.191459 0.286861 0.230621 0.317704 0.195490 0.255601 0.222421 0.226962 0.197225
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",util_paraphrase_rewrite,0.353787,0.331606 0.367604 0.422920 0.240628 0.384419 0.449536 0.359466 0.300844 0.406612 0.274233
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",priv_preserving_rewrite,0.392330,0.336074 0.391984 0.458038 0.327296 0.508238 0.394832 0.374911 0.427213 0.385440 0.319277
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",priv_targeted_rewrite,0.195617,0.186549 0.202274 0.220466 0.196010 0.206913 0.162472 0.180129 0.215660 0.206049 0.179643
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",util_broken_rewrite,0.588522,0.498117 0.569879 0.630734 0.468097 0.600403 0.669009 0.544041 0.610358 0.688789 0.605795
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",empty,0.627282,0.528566 0.700821 0.605296 0.527015 0.594738 0.725297 0.588153 0.594785 0.708041 0.700104
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",util_preserving_rewrite,0.404065,0.471335 0.458262 0.364086 0.433769 0.355772 0.403645 0.346149 0.362693 0.353840 0.491099
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",util_paraphrase_rewrite,0.347254,0.423422 0.371455 0.315208 0.407912 0.307699 0.353362 0.314337 0.292296 0.308993 0.377858
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",priv_preserving_rewrite,0.382180,0.453774 0.301197 0.372339 0.427202 0.298976 0.495725 0.320154 0.289178 0.268897 0.594357
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",priv_targeted_rewrite,0.274901,0.328717 0.286999 0.277795 0.311585 0.183178 0.340209 0.218284 0.177040 0.157852 0.467347
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",util_broken_rewrite,0.666988,0.625541 0.680467 0.645787 0.812815 0.596607 0.809447 0.518701 0.622952 0.531142 0.826424
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",empty,0.541046,0.520909 0.576791 0.578335 0.585257 0.510324 0.587288 0.451797 0.490183 0.419488 0.690089
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",util_preserving_rewrite,0.123802,0.104697 0.128817 0.156434 0.090457 0.180447 0.109219 0.152596 0.111227 0.129292 0.074833
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",util_paraphrase_rewrite,0.137429,0.128767 0.135821 0.165662 0.114796 0.184687 0.143201 0.135472 0.162345 0.108762 0.094778
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",priv_preserving_rewrite,0.309912,0.290035 0.418229 0.395712 0.173482 0.315104 0.309239 0.299834 0.407531 0.235816 0.254135
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",priv_targeted_rewrite,0.205325,0.237470 0.241990 0.241400 0.119903 0.179725 0.236582 0.176825 0.287383 0.136450 0.195520
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",util_broken_rewrite,0.583635,0.633358 0.667524 0.547876 0.492911 0.630688 0.641448 0.665555 0.511360 0.542068 0.503561
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",empty,0.532909,0.623686 0.549181 0.730296 0.338177 0.527781 0.661869 0.498884 0.548525 0.497745 0.352948
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",util_preserving_rewrite,0.155159,0.178066 0.087845 0.149476 0.133357 0.228717 0.124365 0.164364 0.154795 0.142417 0.188188
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",util_paraphrase_rewrite,0.151749,0.168235 0.121305 0.135521 0.144114 0.210713 0.105992 0.132807 0.162086 0.182814 0.153904
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",priv_preserving_rewrite,0.492389,0.484259 0.323460 0.462934 0.608393 0.542563 0.386072 0.528829 0.473803 0.538283 0.575294
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",priv_targeted_rewrite,0.282692,0.294745 0.220364 0.278085 0.324013 0.295539 0.232982 0.206127 0.272056 0.345030 0.357981
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",util_broken_rewrite,0.547915,0.493535 0.479167 0.560693 0.615559 0.520564 0.514692 0.507986 0.583494 0.534629 0.668829
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",empty,0.531425,0.530024 0.492778 0.571723 0.536269 0.606249 0.494246 0.425945 0.570169 0.483847 0.603000
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",util_preserving_rewrite,0.324687,0.293632 0.332517 0.275079 0.344848 0.362736 0.335771 0.268849 0.384120 0.342674 0.306641
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",util_paraphrase_rewrite,0.186994,0.232306 0.195711 0.149800 0.166881 0.213545 0.229971 0.154155 0.176775 0.237655 0.113139
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",priv_preserving_rewrite,0.465778,0.416612 0.552990 0.412937 0.390004 0.593034 0.540750 0.325981 0.505912 0.574610 0.344953
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",priv_targeted_rewrite,0.427636,0.426801 0.485383 0.371304 0.413491 0.489805 0.493346 0.338264 0.440567 0.512981 0.304421
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",util_broken_rewrite,0.492895,0.419238 0.531783 0.551690 0.423093 0.585884 0.463742 0.447400 0.535603 0.530780 0.439742
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",empty,0.443962,0.377557 0.498851 0.448029 0.364701 0.526095 0.487722 0.317590 0.504434 0.516536 0.398110
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",util_preserving_rewrite,0.252479,0.266984 0.207317 0.308487 0.213878 0.268282 0.228130 0.184995 0.298935 0.295887 0.251900
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",util_paraphrase_rewrite,0.210672,0.192813 0.157510 0.302652 0.153464 0.211491 0.180766 0.235790 0.235521 0.258178 0.178533
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",priv_preserving_rewrite,0.563194,0.477484 0.575269 0.572284 0.545736 0.412646 0.535436 0.652718 0.756871 0.657502 0.445991
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",priv_targeted_rewrite,0.227522,0.247315 0.291634 0.147964 0.228351 0.171257 0.196009 0.249439 0.267382 0.279774 0.196098
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",util_broken_rewrite,0.648126,0.585421 0.696210 0.657383 0.640069 0.632812 0.676911 0.644430 0.588688 0.784589 0.574744
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",empty,0.592566,0.510032 0.657398 0.555033 0.591150 0.482356 0.571840 0.654076 0.671097 0.718270 0.514405
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",util_preserving_rewrite,0.296983,0.285046 0.328574 0.247725 0.368901 0.293144 0.303268 0.292486 0.306491 0.226285 0.317910
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",util_paraphrase_rewrite,0.177849,0.158833 0.161831 0.191669 0.207091 0.153488 0.158552 0.169326 0.229325 0.124410 0.223962
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",priv_preserving_rewrite,0.537283,0.519137 0.578629 0.482771 0.654810 0.526223 0.580894 0.536870 0.481051 0.396037 0.616405
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",priv_targeted_rewrite,0.476806,0.438085 0.481525 0.483515 0.554215 0.425712 0.488814 0.466495 0.487154 0.322853 0.619696
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",util_broken_rewrite,0.616693,0.677206 0.683345 0.473666 0.694308 0.661383 0.640898 0.672274 0.553989 0.522262 0.587605
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",empty,0.547880,0.529379 0.626414 0.456214 0.642118 0.543906 0.570616 0.551237 0.466345 0.493218 0.599351
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",util_preserving_rewrite,0.173706,0.189682 0.145350 0.150599 0.160401 0.185946 0.180520 0.165273 0.176218 0.190280 0.192790
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",util_paraphrase_rewrite,0.115790,0.143321 0.108352 0.102596 0.127802 0.131939 0.094428 0.119144 0.107548 0.119409 0.103359
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",priv_preserving_rewrite,0.263377,0.271115 0.300953 0.253711 0.335393 0.295591 0.257967 0.230314 0.290778 0.243942 0.154006
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",priv_targeted_rewrite,0.166820,0.204017 0.162777 0.161537 0.190134 0.169249 0.150861 0.169701 0.153068 0.189561 0.117297
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",util_broken_rewrite,0.618266,0.789898 0.542728 0.633871 0.568315 0.494984 0.586506 0.670486 0.754734 0.652816 0.488324
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",empty,0.527723,0.583616 0.546286 0.486518 0.515240 0.476114 0.569084 0.495218 0.545676 0.512386 0.547093
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",util_preserving_rewrite,0.083672,0.080731 0.094976 0.098750 0.057671 0.064110 0.094410 0.098111 0.080185 0.099723 0.068050
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",util_paraphrase_rewrite,0.242038,0.236991 0.299107 0.239429 0.218540 0.251360 0.258705 0.218112 0.242568 0.316095 0.139470
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",priv_preserving_rewrite,0.286546,0.185199 0.434289 0.413389 0.254022 0.249855 0.304310 0.328519 0.286261 0.248722 0.160889
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",priv_targeted_rewrite,0.211739,0.167522 0.266416 0.244389 0.222317 0.210962 0.180218 0.256728 0.312091 0.182856 0.073895
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",util_broken_rewrite,0.729419,0.587959 0.724735 0.632684 0.692002 0.558707 0.893060 1.019607 0.679851 0.865102 0.640483
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",empty,0.568587,0.431580 0.674503 0.510552 0.511801 0.469682 0.675839 0.645995 0.537211 0.648899 0.579806
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",util_preserving_rewrite,0.125996,0.084169 0.164635 0.109364 0.132730 0.149296 0.111868 0.141689 0.136366 0.093945 0.135894
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",util_paraphrase_rewrite,0.142369,0.105128 0.169212 0.094455 0.139856 0.144484 0.157873 0.162210 0.155421 0.135397 0.159657
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",priv_preserving_rewrite,0.355811,0.367130 0.464529 0.346084 0.458651 0.427993 0.294972 0.301095 0.343659 0.183653 0.370344
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",priv_targeted_rewrite,0.532189,0.467717 0.636873 0.492769 0.555430 0.664756 0.572146 0.471251 0.531468 0.389814 0.539667
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",util_broken_rewrite,0.653590,0.712600 0.634195 0.689002 0.661092 0.640743 0.661563 0.597944 0.623196 0.564357 0.751206
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",empty,0.656390,0.606675 0.773989 0.742171 0.743860 0.693270 0.654403 0.587991 0.639625 0.519527 0.602389
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",original,0.000000,0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",util_preserving_rewrite,0.144658,0.125059 0.154469 0.169286 0.123810 0.172935 0.148446 0.128783 0.127156 0.178579 0.118054
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",util_paraphrase_rewrite,0.082147,0.131995 0.062281 0.074113 0.047070 0.065889 0.071329 0.133478 0.088292 0.103352 0.043667
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",priv_preserving_rewrite,0.414812,0.532478 0.396674 0.387604 0.426482 0.401752 0.380412 0.311730 0.409949 0.507537 0.393506
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",priv_targeted_rewrite,0.554022,0.697941 0.558569 0.540385 0.551181 0.547336 0.526215 0.424549 0.490674 0.644711 0.558663
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",util_broken_rewrite,0.584989,0.711820 0.594046 0.583703 0.560659 0.540921 0.550155 0.504188 0.520889 0.660067 0.623444
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",empty,0.575059,0.654180 0.602240 0.580167 0.549732 0.585528 0.554928 0.447103 0.537847 0.644103 0.594766
