@@ -11,8 +11,8 @@ vets each of its rewrites before it goes in.
        span comes last. After each rewrite the utility check computes
            R = D(rewrite) / D(∅)
        R < --max_share: the rewrite goes in. R >= --max_share: the request is lost, since the
-       answers move as far as for an empty message. The LLM is asked once more, to make the part
-       more general instead of leaving it out; that goes in if its R < --max_share, otherwise the
+       answers move as far as for an empty message. The LLM is asked once more, shown its refused
+       rewrite, to keep the part but make it less specific; that goes in if its R < --max_share, otherwise the
        span stays as it was and is protected, so no later iteration picks it.
     3. leak = max_a max_attacker P_a(final); converged if leak <= --threshold
 

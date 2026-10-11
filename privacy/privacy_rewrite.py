@@ -45,9 +45,15 @@ Each iteration:
            R = D(rewrite) / D(∅)          (utility/metrics/utility_check.py)
        R >= --max_share means the rewrite moves the answers as far as an empty
        message would: the request is lost. The LLM is then asked once more for
-       the same span, told that the request depends on it and to make it more
-       general instead of leaving it out (the first rewrite mostly deletes).
-       That goes in if its R < --max_share. Otherwise the span stays as it was
+       the same span (generalize_prompt): it is shown its refused rewrite as
+       the one that lost the request, and asked to keep the marked part but
+       make it less specific, a broader term of the same kind. This retry does
+       not demand that the attribute can no longer be inferred: where the
+       request depends on the attribute, a less specific mention is the
+       compromise. Asked for both, the LLM repeated its deletion (job 649:
+       "a midwife like me" -> "I" three times out of four). The retry goes in
+       if its R < --max_share; a retry identical to the refused rewrite is not
+       checked again. Otherwise the span stays as it was
        and is protected: its text is kept in a list, and no span that overlaps
        it is picked again for this message, so its attributes fall to their
        next-best spans. Without the list, the next iteration would blame the
@@ -87,10 +93,6 @@ from attribute_probe import (ATTRIBUTES, DEFAULT_MODEL, QUESTION as QWEN_QUESTIO
 from laya_probe import PRIVACY_LAYA, QUESTION as LAYA_QUESTION, LayaProbe
 
 OPEN, CLOSE = "<<", ">>"         # marks the span in the rewrite prompt
-LEAVE_OUT = "Make the marked part more general or leave it out"
-# the retry when the utility check refused the first rewrite
-GENERALIZE = ("The request of the message depends on the marked part, so do not leave it out: "
-              "make it more general, keeping what the request needs")
 REWRITE_MAX_NEW_TOKENS = 1024    # the whole message comes back; greedy decoding stops at its end
 # A leaking attribute whose best span blame is below this looks saturated: its P is pinned near 1
 # by redundant cues, so no single deletion moves it (ROADMAP Phase 3, occlusion on -log(1 - P)).
@@ -194,18 +196,34 @@ def pick(sp, blame, hinge, m):
 
 # ---------------------------------------------------------------- rewriting
 
-def rewrite_prompt(marked, attributes, generalize=False):
-    """generalize: the retry after the utility check refused the first rewrite."""
+def rewrite_prompt(marked, attributes):
     attrs = ", ".join(attributes)
-    how = GENERALIZE if generalize else LEAVE_OUT
     return (
         "The message below was written by a user to an AI assistant. The part marked "
         f"{OPEN} {CLOSE} reveals the writer's {attrs}.\n"
         f"Rewrite the message so that the writer's {attrs} can no longer be inferred from it. "
-        f"{how}; never replace it with a different "
+        "Make the marked part more general or leave it out; never replace it with a different "
         "specific value, and do not add new details. Change the words right around it only "
         "where the sentence needs it to read naturally, and keep the rest of the message word "
         "for word. The request of the message must stay intact.\n"
+        "Output only the rewritten message, without the marks, and nothing else.\n\n"
+        f"Message: {marked}"
+    )
+
+
+def generalize_prompt(marked, attributes, refused):
+    """The retry after the utility check refused a rewrite: keep the part, less specific."""
+    attrs = ", ".join(attributes)
+    return (
+        "The message below was written by a user to an AI assistant. The part marked "
+        f"{OPEN} {CLOSE} reveals the writer's {attrs}, and the request of the message depends "
+        "on it. An earlier rewrite left it out, and the request lost what it needs:\n"
+        f"Earlier rewrite: {refused}\n"
+        "Rewrite the message again. Keep the marked part, but make it less specific: replace it "
+        "with a broader term of the same kind, so that the request still gets what it needs. Do "
+        "not leave it out, never replace it with a different specific value, and do not add new "
+        "details. Change the words right around it only where the sentence needs it to read "
+        "naturally, and keep the rest of the message word for word.\n"
         "Output only the rewritten message, without the marks, and nothing else.\n\n"
         f"Message: {marked}"
     )
@@ -224,26 +242,38 @@ def generate_message(model, tok, prompt):
     return answer.replace(OPEN, "").replace(CLOSE, "").strip()
 
 
-def llm_rewrite(model, tok, text, s, e, attributes, generalize=False):
+def llm_rewrite(model, tok, text, s, e, attributes):
     """The message rewritten around text[s:e] by one greedy generation."""
     marked = text[:s] + OPEN + text[s:e] + CLOSE + text[e:]
-    return generate_message(model, tok, rewrite_prompt(marked, attributes, generalize))
+    return generate_message(model, tok, rewrite_prompt(marked, attributes))
+
+
+def llm_generalize(model, tok, text, s, e, attributes, refused):
+    """The retry: text rewritten around text[s:e] with the part kept but less specific."""
+    marked = text[:s] + OPEN + text[s:e] + CLOSE + text[e:]
+    return generate_message(model, tok, generalize_prompt(marked, attributes, refused))
 
 
 # ---------------------------------------------------------------- utility check
 
 def utility_vetted(model, tok, text, s, e, attributes, new, utility_share, max_share):
-    """new if the utility check passes it (R < max_share); else the LLM's second rewrite of
-    text around text[s:e], told to make the part more general instead of leaving it out, if
-    that passes; else None: the span stays as it was."""
+    """new if the utility check passes it (R < max_share); else the LLM's retry of text
+    around text[s:e], shown new as the refused rewrite and asked to keep the part less
+    specific, if that passes; else None: the span stays as it was."""
     R = utility_share(new)
     if R < max_share:
         print(f"      utility R {R:.0%}: in")
         return new
-    general = llm_rewrite(model, tok, text, s, e, attributes, generalize=True)
-    if not general or general == text:
-        print(f"      utility R {R:.0%} >= {max_share:.0%}: request lost; "
-              "the retry to generalize changed nothing")
+    general = llm_generalize(model, tok, text, s, e, attributes, new)
+    failed = None
+    if not general:
+        failed = "gave an empty answer"
+    elif general == text:
+        failed = "changed nothing"
+    elif general == new:
+        failed = "repeated the refused rewrite"
+    if failed:
+        print(f"      utility R {R:.0%} >= {max_share:.0%}: request lost; the retry to generalize {failed}")
         return None
     R_general = utility_share(general)
     print(f"      utility R {R:.0%} >= {max_share:.0%}: request lost; more general:\n"
