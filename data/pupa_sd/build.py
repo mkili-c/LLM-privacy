@@ -9,9 +9,17 @@ Output: pupa_sd_eval.csv with
                     values verbatim, for the judge that decides whether each is still inferable
 
 Only rows are selected; labels are never edited. A row is kept if its prompt has at most
-MAX_LAYA_TOKENS tokens and it has at least one disclosure in a category that corresponds
-to one of our attributes (ATTRIBUTES in privacy/attribute_probe.py); disclosures in other
-categories are left out. Longer prompts are dropped, not truncated.
+MAX_LAYA_TOKENS tokens and at most MAX_WORDS words, and it has at least one disclosure in a
+category that corresponds to one of our attributes (ATTRIBUTES in privacy/attribute_probe.py);
+disclosures in other categories are left out. Longer prompts are dropped, not truncated.
+
+MAX_WORDS (2026-10-12) sets the scope of this first evaluation: prompts of at most 100 words,
+so that the algorithm's behaviour can be diagnosed without the effects of long prompts, which
+are to be studied separately at a later stage. Runtime adds to it: the loop's cost grows roughly
+with the number of spans times their length, and the 29 prompts over 100 words would have taken
+~60% of its GPU time on PUPA-SD (~32 of ~52 h). Fixed before any output was scored. It drops 63
+of 207 (row, category) pairs and 122 of 311 values, among them 8 of the 15 health pairs; the
+thesis reports the scope and its cost. (Laya's input bound is covered by MAX_LAYA_TOKENS.)
 
 Run from this folder with ~/.llmvenv active (it needs Laya's tokenizer): python build.py
 """
@@ -28,6 +36,7 @@ LAYA_TOKENIZER = "/work/projects/mkilic/models/laya/tokenizer"
 # questions takes 37 and [SEP] 1, leaving 474 for the message (laya_probe.py raises above).
 # 50 tokens of headroom because the loop's edits can lengthen the text.
 MAX_LAYA_TOKENS = 474 - 50
+MAX_WORDS = 100                # scope of the first evaluation, see the docstring
 
 # PUPA-SD categories that correspond to our attributes: occupation (and its typo) ->
 # profession, location -> geographic location, the three health ones -> health condition,
@@ -63,11 +72,12 @@ def count_tokens(raw):
 
 
 def select_rows(raw, n_tokens):
-    """Rows within MAX_LAYA_TOKENS that disclose at least one of our attributes, with their labels."""
+    """Rows within MAX_LAYA_TOKENS and MAX_WORDS that disclose at least one of our attributes,
+    with their labels."""
     selected = []
     for row in raw:
         labels = parse_labels(row["pii_units"])
-        if labels and n_tokens[row["index"]] <= MAX_LAYA_TOKENS:
+        if labels and n_tokens[row["index"]] <= MAX_LAYA_TOKENS and len(row["user_query"].split()) <= MAX_WORDS:
             selected.append((row, labels))
     return selected
 
@@ -82,10 +92,11 @@ def write_eval(selected):
 
 def print_statistics(raw, n_tokens, selected):
     too_long = sum(n > MAX_LAYA_TOKENS for n in n_tokens.values())
+    too_many_words = sum(len(r["user_query"].split()) > MAX_WORDS for r in raw)
     per_category = Counter(c for _, labels in selected for c in labels)
     values = sum(len(v) for _, labels in selected for v in labels.values())
     print(f"{len(raw)} rows read, {too_long} longer than {MAX_LAYA_TOKENS} Laya tokens, "
-          f"{len(selected)} written to {OUT}")
+          f"{too_many_words} longer than {MAX_WORDS} words, {len(selected)} written to {OUT}")
     print(f"(row, category) pairs: {sum(per_category.values())}, values: {values}")
     for category, count in per_category.most_common():
         print(f"  {category}: {count}")

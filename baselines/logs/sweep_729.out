@@ -1,0 +1,6 @@
+Job 729 on studgpu-spark01.inf.ethz.ch (aarch64), methods: loiseau_pupa
+server up Tue Oct 13 00:40:32 CEST 2026
+== loiseau_pupa (venv loiseau) Tue Oct 13 00:40:32 CEST 2026
+loiseau_pupa: 140 rows already done, 1 to go -> results/rewrites/pupa_sd_loiseau_pupa.csv
+  1/1 (0 failed)
+Done Tue Oct 13 00:42:32 CEST 2026

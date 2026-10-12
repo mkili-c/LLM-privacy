@@ -1,0 +1,186 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+3,loop,create a 7-day itinerary for a family of 4 to Japan. We want to spend some time in Tokyo and see Mt. Fuji.,,284.09,5,799,1400
+4,loop,"Write me a bio
+My Name is NAME_1 I am a student who is currently a beginner in freelance services such as
+logo designing
+Social Media Management",,390.74,7,1191,1159
+8,loop,What should I do if I had 75 USD in non-agreement spend in the IT-Support Services category last month? Answer in 5 points,,237.99,4,623,1270
+12,loop,"As an expert, write a post on 4 reasons for using a low-code BPM integrated with Power Platform to avoid project failure.",,384.93,6,967,1419
+15,loop,I have a video from last Christmas. Now it is already May. Do you have any idea to combine the topic of Christmas with Star Wars and decorate the video?,,204.59,2,255,1314
+17,loop,"I have a website. I need to write SEO-optimized content that is very engaging, and has local keywords in it for the area.",,356.04,5,806,1406
+36,loop,Suggest 20 domain names based on the following input: Emily's Flower Store in New Location,,214.29,4,567,1213
+37,loop,"Extract the key value pairs of the following text for the following exact keys in json format
+vendorName:
+customerName:
+billingAddress: 
+supplyAddress:
+dueAmount:
+dueDate:
+electricityUsage:
+averageDailyUsage:
+
+
+1
+Balance Due StatementFROM: The NAME_1 Management OfficeDATE: 2/17/2023TO: NAME_2 and all other occupants of UNIT: 305ADDRESS:11 E Bell Road 305 Phoenix, AZ 85022Dear NAME_2,Our records indicate that you have a balance / (credit) due in the amount of $2,029.26. The amounts are as of the date of this notice. Costs and fees can/will continue to accrue in accordance with your lease agreement. Please consult with the management office to determine the total amount due at time of payment. Thank you in advance for your cooperation. If this notice is in error, we apologize for any inconvenience and appreciate your understanding and assistance in correcting our records. Sincerely,NAME_1 Management Office",,1778.12,7,2507,2276
+38,loop,"I can you write an email to the customer asking them to send pictures of their damaged vehicle from the accident that happened on February 1st, 2022?",,400.86,5,834,1427
+40,loop,Write some feedback about a Product Manager that you work with. What are some things the Product Manager does well? How could this Product Manager improve?,,266.81,3,429,1340
+51,loop,"What is a good ""doing business"" name for a teenager who makes TikTok videos about k-pop dances?",,324.71,7,1123,1429
+57,loop,Resume for a Business Analyst,,115.63,2,198,1286
+58,loop,"being a person, can you help to lower the matches on a dating app, given there are way too many matches coming in.",,469.01,7,1158,1449
+62,loop,"Hey, I need to write an email regarding a leave.",,145.18,2,210,1293
+66,loop,Could you please give me a thesis title for my degree?,,400.96,11,1721,1394
+78,loop,Give a summary and some high-level features of what prerequisite knowledge one should have if they want to use LLMs in applications as a professional.,,359.74,6,976,1431
+88,loop,I want to open a Charitable Organization in a state. Do I need a permit?,,229.62,4,563,1337
+90,loop,"Split the following medical transcript and provide output in a past tense format:
+SUBJECTIVE: This individual presented with a complaint of allergies. They used to have allergies when they lived somewhere but thought they were worse there. In the past, they had tried Claritin and Zyrtec. Both worked for a short time but then seemed to lose effectiveness. They had also used Allegra. They used that last summer and started using it again two weeks ago. It did not appear to be working very well. They had used over-the-counter sprays but no prescription nasal sprays. They do have asthma but do not require daily medication for this and do not think it is flaring up.
+MEDICATIONS: Their only medication at the time was Ortho Tri-Cyclen and Allegra.
+ALLERGIES: They have no known medicine allergies.
+OBJECTIVE: Vitals: Weight was 130 pounds and blood pressure 124/78.
+HEENT: Throat was mildly erythematous without exudate. Nasal mucosa was erythematous and swollen. Only clear drainage was seen. TMs were clear.
+Neck: Supple without adenopathy.
+Lungs: Clear.
+ASSESSMENT: Allergic rhinitis.
+PLAN: 1. They were advised to try Zyrtec instead of Allegra again. Another option would be to use loratadine. They did not think they had prescription coverage so that might be cheaper. 2. Samples of Nasonex two sprays in each nostril were given for three weeks. A prescription was written as well.",,4613.03,11,5241,4620
+94,loop,"I organize events both online and offline, and create marketing campaigns to promote them. What are some good unique selling points that I can highlight to my potential clients/customers? Feel free to ask me more questions to provide you with more context.",,575.98,4,691,1432
+99,loop,"My partner bought a vehicle that is having brake issues, we bought insurance because we need it if it was totaled. Under what conditions would insurance pay off the loan in the event of it being totaled?",,849.61,16,3043,1924
+103,loop,I am looking for SMART goals that I can complete to become a person that more people would want to be engaged with. The goals you suggest must not be something a human would think of; only an AI could come up with them.,,759.62,8,1512,1633
+108,loop,Can you share an email asking to be a speaker at the telecom summit in an indirect way? Noting that I am a professional in my company.,,349.54,4,610,1372
+125,loop,I am transgender and I want to sound more female. Are there resources to help me?,,199.32,3,388,1318
+129,loop,I'm selling a house that I bought because we had to make a change in our living situation. Do you think we will sell the house for the same amount we bought it for? Keep in mind we also added an acre of land so we will have a 2.95-acre lot compared to when we bought it with 1 acre.,,537.2,4,781,1491
+130,loop,"summarize all of these titles into a short category: small gift - Looking for Advice, What should I do with my help to buy ISA and Savings setup, 30k - ISA or fixed rate savings, S&SS ISA Allowance, What to do?, *HELP* in an ISA. What to do now?, Opened to buy ISA, looking for advice., Switching from an ISA to a Cash ISA & Islamic Finance Savings Advice",,2371.09,16,4057,1916
+134,loop,"As a professional, what is the best way to ask for a raise?",,196.13,3,384,1312
+137,loop,"How could I incorporate the usage of Tiimo and Logseq into my productivity system? Make suggestions on effective usage and harmonization of the different tools (Physical bullet journal, Google Calendar, Tiimo, Logseq, ...), given that I struggle with certain challenges and need support in managing them. Also explore if omitting tools could be a good call.",,546.31,3,573,1424
+140,loop,"Name: Date Collected: Accession Number: NAME_1 12/26/2022 R22-069510 DOB: Date Received: Requesting Facility: 11/XX/XXXX (30) 12/28/2022 Swift Urgent Care: Date Reported: Requesting Physician: 12/29/2022 NAME_2   Code(s): Z20.828, 10:00AM",,1122.96,9,2390,1821
+150,loop,"As someone with relevant experience, give your reasons for applying to work with CARE International and for applying to this particular position. Bearing in mind the following job description and person specification, please indicate what experience, skills, and interest you would bring to the job. Planning/Design, Monitoring, Evaluation and Reporting, Information Management, Program and Data Quality Assurance, Learning, sharing/networking, Staff management and mentoring",,920.64,5,1055,1606
+153,loop,"Please give me 5 general FAQ that real people would ask, and provide the answer that's about 100 words long. The question must include the keyword ""Milwaukee uncontested divorce lawyer"". It's optional to add ""WI"" after Milwaukee, like ""Milwaukee, WI"". Do not duplicate any questions.",,526.2,9,1869,1767
+162,loop,"Hello, it is the first spring data, finally. March was one of the coldest on record, with temperatures never reaching 50 degrees. It is April 8th, and the temp is finally going to be above 50, almost 60 today. Do you have any ideas about how we could celebrate?",,652.28,6,1231,1624
+171,loop,How to upgrade my license to a multi-state nursing license?,,254.0,5,719,1342
+175,loop,"As an administrator, I would like to configure the system to accept leads from an upstream system and route them to appropriate parties for processing.",,264.92,3,415,1336
+176,loop,write a humorous retirement speech in the first person about a person who started here working at the university as a college student in a field back in the 1970s. Tell them that you were thinking to just keep working here until your vacation days exceeded 52 weeks. Tell the audience about the how you paid a significant amount for the first calculator to hit the market. Tell everyone that you were on the internet before it was even invented. Explain how we used to load large tapes onto the reels and the funniest problem with them. Use a funny quote from a classic rock song. Make a funny joke about being so old that... tell the audience that you are leaving this place in good hands and may they continue towards their own success in the future. Give them a positive but funny motivational quote from a famous person.,,4030.17,24,7732,5259
+183,loop,"Write a personal statement for medicine, a person who did research and then switched to a computational setting. Include a volunteer experience in South America, and integrate how it impacted their overall interest in medicine.",,511.07,7,1239,1525
+186,loop,act as an applicant for a job in the agriculture sector in the province. elaborate a CV that shows 3 years of experience doing summer work as an agricultural worker on a farm.,,222.85,2,259,1317
+192,loop,I want to open a bottling plant in a state. Do I need a business permit?,,277.4,4,562,1340
+198,loop,"I hope you're doing well! NAME_2 is a tool that helps teams increase their conversion rates with highly effective outreach sequencing.
+I think your company would really benefit from trying it out!
+Best, NAME_3",,682.11,4,801,708
+199,loop,I want you to act as my personal media marketing assistant for a music tech company that specializes in making MIDI instruments. The company is based in a location and is called NAME_1. I would like to know some marketing strategies that we could implement from the start. Possibly a list of certain action steps we could take as a company.,,556.19,4,759,1484
+214,loop,"I'm a professional, please parse the data into JSON format. ""Twin, Guest Room, High, High Marriott Senior Discount, Include, Deluxe Floor""",,586.71,9,1597,1165
+219,loop,"It's very warm here, May last year wasn't so bad, is the weather changing in general?",,505.17,12,1990,1449
+221,loop,Write a more eloquent and succinct version of the following: I am dedicated to continuous improvement and study F# rapidly. For that reason.,,298.15,5,804,243
+234,loop,Resume for Experience,,241.76,7,992,1318
+247,loop,"hi, I am preparing the portfolio.",,153.26,3,370,1298
+255,loop,"I have a condition, why does alcohol help me start and continue tasks? Is there an alternative for it that is less harmful?",,230.91,4,593,1361
+258,loop,How can a student earn and cover expenses in Australia? Give some money-making ideas.,,201.43,3,398,1316
+266,loop,"extract the information in bullet form  
+- Patient Name:  
+- Date Collected: 12/07/2022  
+- Accession Number: R22-068629  
+- DOB: 01/30/19XX  
+- Date Received: 12/09/2022  
+- Requesting Facility: Swift Health Care  
+- Gender:  
+- Date Reported: 12/09/2022  
+- Requesting Physician: NAME_2 #: 44D2111056  
+- Lab Director: NAME_3  
+- ICD Code(s): Z20.828, J06.9  
+- Collection Time: 10:00AM  
+- Status: Final",,915.56,6,1787,1830
+274,loop,"Give Description for Rental listing in a city, 2 bedrooms, 1 bathroom, heat and hot water included, on a high floor with a nice view and in-suite laundry for $3000 per month",,343.7,4,659,1411
+286,loop,What's there to do for young kids in the area?,,176.0,4,550,1322
+287,loop,I have a takeout and dine-in service. We don't have enough staff in the kitchen for our current capacity. What to do with the building or restaurant?,,262.83,3,434,1348
+290,loop,"I run a design agency. We offer optimized, conversion-focused, mobile-friendly, SEO-optimized, content-rich websites with booking and reputation management for monitoring reviews and reporting as well as a system for deflecting negative reviews. We make website creation simple for the business owner, with clear pricing, half the price of all agencies in my area with the same quality.
+
+I have to choose between two business names:
+
+-WebRep Pros
+-WebClick
+
+Which one is better and why. You must choose 1.",,1576.96,13,3228,2536
+298,loop,"I want to go to new york city for 3 days and eat lunch at a new place every day. i'm a vegan, where should I go?",,101.97,1,61,1280
+300,loop,"act as an applicant for a customer management role at a company. With 6 years of experience in this type of position in the industry, leading customer teams in several companies, and now briefly imagine how you would approach driving retention with a multifaceted team across the customer journey.",,974.89,6,1122,1559
+306,loop,What is the weather like today?,,123.94,2,202,917
+313,loop,I recently gave a presentation on how to use ChatGPT in software engineering. Could I use this as a reason for promotion from senior to staff software engineer?,,288.29,5,799,1412
+327,loop,"I'm working in a foreign country. My company bought me a stamp so I can send my hardware to the office. After I weighed the box, it's 5.4 kg, but the stamp says it's for up to 5 kg. What are my options?",,597.6,9,1758,1738
+337,loop,Give me a plan for public transport route from my current location to Sushi Express Point.,,219.77,3,401,1320
+339,loop,"A patient presents to the clinic with generalized lymphadenopathy, night sweats, fever, and weight loss. The patient has noticed that the swelling in the neck becomes tender when drinking alcohol. After workup and lymph node biopsy, NAME_1’s lymphoma was diagnosed. Imaging shows the involved lymph nodes are present on both sides of the diaphragm but do not involve any other organs.",,1101.01,9,2127,1981
+340,loop,"Give me 2 very specific, creative and crazy challenges focused on nightlife to try on a solo Japan trip to improve my social skills. Give detailed exhaustive descriptions for each. The challenges should be more creative than just ""go there and talk to strangers."" I don't know any Japanese.",,652.84,6,1142,1572
+355,loop,"My name is John, should I get married now or should I wait?",,221.41,6,909,1368
+359,loop,tell me how to organize a hackathon,,140.21,3,374,1301
+368,loop,"I eat a lot every day, but I am still underweight. How can I gain weight?",,211.37,4,579,1343
+415,loop,"As a professional, write the problem statement of executing regression testing manually.",,246.51,6,876,1353
+429,loop,"I want to go to the gym daily to do only treadmill. Give me a workout routine for the treadmill that will permit me to lose 2Kg in a month. Specify which days I should exercise and which days I should rest. Give me precise walking speed, running speed, and incline for every workout. I am used to doing 7000 steps daily and my average pace is 10 minutes per kilometer.",,919.96,4,862,1550
+433,loop,please help write a social media post to call for more attention in the last day of the conference and highlight the passions received for Mindray's new solution in the past few days. can be started with: #EA22 is now in full swing with another great sunny day. We are thrilled to meet so many fellow practitioners and,,758.97,5,995,1063
+447,loop,I am having pain.,,146.38,3,351,909
+454,loop,"How much would the fuel cost be per week if I drove a vehicle, round trip, twice a week, from one address to another. Assume gas costs $3.50 a gallon.",,552.85,7,1336,1545
+458,loop,"Please give me a profile summary based on my work experience: currently 4 months as a leader at an international school. Previously, I had 19 years in various marketing roles, including Brand NAME_2 to Marketing Director Asia and then to Marketing Director for ASIA-EMEA. I also worked as a marketing manager at Procter and Gamble for 2 years and at Adidas for 3 years. Degrees: BBA from an unspecified university, MBA from UW-Madison.",,1184.29,13,3202,2448
+473,loop,"As an individual from my country, I can enter Sinai for 2 weeks without a visa. Is it possible to stay for 2 weeks in Sinai and then do a border run to stay another 2 weeks in Sinai?",,484.46,5,872,1437
+474,loop,"Good morning:wave: I’m looking to apply to two online universities to complete my Bachelor of Science in Computer Science part-time alongside my work. The applications require an employer reference, and I’d like to ask if you are willing to provide one?",,589.19,9,1743,839
+507,loop,"I have an IUD but have experienced some irregular bleeding mid-cycle. An over-the-counter pregnancy test shows positive, what's happening?",,354.98,7,1163,1457
+510,loop,Where is the pickup location in the international airport?,,135.18,2,202,1190
+514,loop,"I have a new product that just released, please make a tweet for me that allows me to announce this to the people following the Twitter page?",,475.28,7,1215,787
+527,loop,utilising safety guidelines please create a management plan for a business.,,488.83,12,1990,1522
+539,loop,I could not take any more math classes because I failed them several times. This was a requirement for me to transfer to a school in hopes of getting a Computer Science degree. My parents want me to get some other degree. What liberal arts degree would you recommend for someone who wanted to become a programmer and has spent many hours practicing this skill?,,597.36,5,1009,1560
+542,loop,"Write me a cover letter for a bar tender position at Private Company that incorporates ""can do attitude, typing speed, and absolute beast"" into the cover letter. Only write 150 words. Sign it with the name ""NAME_1""",,338.23,4,699,652
+564,loop,"Hello there! I'm starting a business, selling cupcakes and pastries, but i dont know much about sales and accounting. ¿What should i do to make sure my investment is paid back?",,103.24,1,68,1280
+593,loop,what should I do to quit smoking,,113.71,2,198,1288
+598,loop,Person who has YouTube videos to show what mental health disorders and testing look like for adults,,399.84,8,1261,1375
+604,loop,"hello,I am a mtf,how can I get medicine?how can i srs",,101.69,1,47,1280
+609,loop,"I have a personal issue and seek to transition, and there is something weird about all the associations that help people who identify differently regarding gender: it seems there is a big reinforcing of stereotypical gender expressions and roles. For example, I'd like to feminize my voice, but a lot of the resources focus on acting stereotypically as a submissive woman and how much women are victims of men. It was almost not at all about voice training; the resources only wanted us to have a victimhood mentality and to behave like a cliche... Do you have any ideas why it's like that?",,1350.8,6,1520,1888
+610,loop,Where is a nice place to get a drink outside in the West Village of NYC?,,144.66,2,217,1282
+637,loop,How do I deal with the paralyzing anxiety that an overwhelming amount of tasks gives me?,,276.35,4,572,1342
+640,loop,"Rewrite the quote as the CEO of a tech company who is happy to have won Analytics India Certification for Great Firm for Data Scientists, 'Before starting the company, I was a researcher and a data scientist myself. That helped me create a culture of learning and experimentation and taking bold steps and all the other good stuff which any good data scientist looks for. I created a company where I would like to work as a data scientist myself.'",,687.04,5,1073,1119
+653,loop,"Please explain my knee pain. I'm young and very sedentary so it can't be from overuse. The pain doesn't increase when walking, in fact it lessens. Bending my knees has no effect on the pain.",,240.28,2,286,1329
+661,loop,How was the weather on the 12th of February in the last few years?,,245.65,4,587,1339
+682,loop,"I am writing an application to get a scholarship. In my application, I have to describe the research problems of the field and the long-term perspective of my topic (and problems). Can you help me write some paragraphs about that please for my application so I get funded?",,1103.26,9,1885,1783
+691,loop,"I am fluent in a language, have advanced education, have been a carer for six years and have a background in healthcare. I am also active in my local church and an environmental activist. Suggest possible career paths and business ideas to me.",,823.64,12,2379,1872
+692,loop,"You are a guy with one year of work experience, wanting to do Amazon. What conditions need to prepare?",,171.24,2,230,1303
+707,loop,I am a professional preparing a unit with the theme “People are responsible for the planet.” What are some questions I can ask the students to inspire more purposeful play on this topic?,,447.09,7,1213,1509
+712,loop,Appreciation reply to accepting the offer,,163.21,3,371,1111
+724,loop,I'm graduating in December. I'm really skilled in frontend and fullstack development. I have an entrepreneur mindset and have already tried launching small projects but never was able to get traction or make any sales. What unique business idea could I launch that you believe has a market?,,486.1,5,931,1504
+734,loop,"Continue writing whatever content contains. You are a writer who must produce detailed descriptions. Use vivid language but avoid overly flowery prose. Write in great detail the sensations you feel at key moments, including combinations of sight, sound, taste, touch, and smell. Do not rush through the story, and do not summarize. This story is written in second person, present tense. Use lots of well-written dialogue that blends the action into the story. Write a story in which you, a human Pokémon trainer, spend the night with your Vaporeon, who is in heat.",,961.95,4,975,1632
+735,loop,"a different question regarding body structure and workouts please. I’m currently in my late 20s, 63kgs in weight, and 5’11 in height. I am pretty thin and lean. I have tried doing a bit of Freeletics to try to build some muscle as well as some good protein-rich diet but I have not been able to build up any proper visible muscle. How do I go about it?",,594.05,3,594,1460
+744,loop,"Suppose you are me. Write an academic and formal letter to the University of [Redacted] and express my enthusiasm to continue my studies in Language and Mind: Linguistics and Cognitive Studies. Kindly ask them if this program offers any funding, fellowship, or scholarship positions for international students. In the end, thank them for their time and consideration.",,1183.96,7,1577,1734
+747,loop,"Working on a volleyball script.
+I'm trying to create a user interface allowing players to select teams.
+Could you show me an example of how I could make something that looks like the image attached?
+![image](https://cdn.discordapp.com/attachments/image.png)",,1082.5,9,2046,1942
+761,loop,"write a bio for a product manager who loves travelling, photography, has a passion for adventure sports and approaches problem-solving with enthusiasm every day. write in first person. make it fun, smart, and engaging. this is for LinkedIn.",,399.36,5,880,1472
+789,loop,"I am a geospatial team leader and please help to draft an email to another geospatial team leader to propose a meeting to discuss:
+1. Syncing the projects and opportunities we have.
+2. Sharing marketing experiences for geospatial services.
+3. Following up on the establishment of a regional geospatial community and the actions needed for organizing the first group meeting.
+4. Proposing to have regular check-ins – monthly?",,707.34,4,887,1549
+841,loop,"Hi there, I am a partner promoting Central Market. My team has come up with three activities starting with the letters M, A, and F respectively. My colleague asks me to make something like CMP, which stands for Central Market Promotion. Now, how can I use the letters M, A, and F to make something similar?",,762.51,7,1424,1694
+848,loop,"Hello I am Shahin from 5r and I am from a country.
+#This is my second programm named ""Calc""
+#Calc Version: 0.2
+#I am your OFLINE Calculator
+print(""Hello! It`s your Offline Calculator"")
+print(""Enter some math Operation!"")
+print(""Enter 0 in start to skip this"")
+while True:
+    n = str(input())
+    if n == ""0"":
+    elif n == ""P"":",,622.7,4,886,1572
+851,loop,how to improve bad circulation during pregnancy,,196.27,7,1018,1329
+908,loop,Need help writing a formal letter to the university on considering me for the fall program.,,329.72,5,776,1372
+914,loop,I have quality and experience. What would you advise me to do in my doctorate?,,321.59,8,1323,1426
+916,loop,"I have the basis for my brand: It is called sans inspiration, it is street and culture inspired and will have its own product line. It'll be located in a city. Help me get this brand off the ground as fast as possible with the highest profit margin. For inspiration, think: ""off white, wasted, paris, palace, huf, supreme, anti social social club,... "" use guerilla marketing strategies",,1183.54,10,2254,2056
+933,loop,"I wake up after every sleep cycle when quitting cannabis. I am in a pool of sweat. In the morning, I feel groggy and like I got no sleep because my dreams were vivid. Use science data and research.",,428.16,4,726,1429
+934,loop,Cost of living in a city for a small apartment,,234.16,6,864,1335
+966,loop,"I am a graduate student and I want to write a thesis on Gorz, can you help me think of some new ideas?",,253.98,3,425,1334
+973,loop,How can I get recognition as an individual with great stories? I have really cool stories but I don't know the best way to access the market.,,274.17,3,417,1339
+993,loop,"I have published the following courses on various platforms, but sales are not that good. I need to have a solid detailed plan to increase sales for the following course
+Mastering python - From Scratch
+The complete Python GUI with PySimpleGUI
+Mastering MongoDB with python
+Create Desktop applications with Python
+The Productivity Booster: Automating with Power Automate
+
+I am trying to build my own website and sell the courses there. Can you help me construct a website for those courses?",,1083.38,6,1377,1775
+1007,loop,Write a professional and friendly email asking if a researcher in the field of microbiome studies would be willing to join my committee. Begin with an introduction that explains I will be entering my third year of the program with a focus on my area of study.,,754.58,9,1703,1688
+1010,loop,"I want to lose weight and gain some muscles. I have a low level fitness performance. I am an adult, 185 cm tall, weighing 79 kg. How do I start training?",,334.24,4,669,1414
+1022,loop,What is the biggest salary for an experienced professional in the Automotive industry with 7 years of experience?,,215.77,3,385,1283
+1074,loop,"Rework in an attractive manner: I am a professional working for an international firm, managing projects.",,720.52,25,4738,891
+1078,loop,Write me a cover letter for pets at home. I am currently pursuing a degree.,,480.47,8,1303,1434
+1121,loop,"As an expert, I've received a copy of T.O.1F-22AA-34-1-1, what page can I find about AIM-120 operation procedure?",,421.77,6,1043,1491
