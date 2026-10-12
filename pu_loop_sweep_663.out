@@ -1,2 +1,1820 @@
 sudo: sorry, you must have a tty to run sudo
 Job 663 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_validation.csv --limit 30
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 12764.32it/s]
+loop: 0 rows already done, 30 to go -> results/rewrites/dev_validation.csv
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.5225 (91 s)
+
+=== iteration 0: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+    qwen     gender 1.000       age 0.971  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.182  relation 0.107  family s 0.940  national 0.998
+    laya     gender 0.979       age 0.979  geograph 0.979  professi 0.979  health c 0.032  educatio 0.027  socioeco 0.026  relation 0.176  family s 0.979  national 0.124
+    max      gender 1.000       age 0.979  geograph 1.000  professi 1.000  health c 0.032  educatio 1.000  socioeco 0.182  relation 0.176  family s 0.979  national 0.998
+  occlusion: 89 spans scored in 80 s
+  leaking: gender, age, geographic location, profession, education level, family situation, nationality
+  picked spans: 'routine should a midwife' (profession +0.774), 'Kraków' (geographic location +0.999), 'maternity' (family situation +0.944), '34' (age +0.957)
+  utility order (R with the span deleted): 'Kraków' 1%, 'maternity' 8%, '34' 16%, 'routine should a midwife' 32%
+    'Kraków' (geographic location, nationality)
+      -> 'The night shifts at the maternity ward are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+      utility R 2%: in
+      hinge 3.454 -> 2.457
+    'maternity' (family situation)
+      -> 'The night shifts at the ward are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+      utility R 10%: in
+      hinge 2.457 -> 1.991
+    '34' (age)
+      -> 'The night shifts at the ward are wrecking my sleep. What recovery routine should a midwife like me follow on days off?'
+      utility R 25%: in
+      hinge 1.991 -> 1.499
+    'routine should a midwife' (profession)
+      -> 'The night shifts at the ward are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 51%: in
+      hinge 1.499 -> 0.500
+
+=== iteration 1: 'The night shifts at the ward are wrecking my sleep. What recovery routine should I follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.023  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.020  geograph 0.021  professi 0.976  health c 0.024  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.021  national 0.020
+    max      gender 0.021       age 0.020  geograph 0.021  professi 1.000  health c 0.024  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.021  national 0.020
+  occlusion: 58 spans scored in 48 s
+  leaking: profession
+  picked spans: 'ward' (profession +0.953)
+  utility order (R with the span deleted): 'ward' 59%
+    'ward' (profession)
+      -> 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 60%: in
+      hinge 0.500 -> 0.500
+
+=== iteration 2: 'The night shifts are wrecking my sleep. What recovery routine should I follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.438  educatio 0.002  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.022  health c 0.022  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 1.000  health c 0.438  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 49 spans scored in 42 s
+  leaking: profession
+  picked spans: 'shifts' (profession +0.990)
+  utility order (R with the span deleted): 'shifts' 63%
+    'shifts' (profession)
+      -> 'The schedule is wrecking my sleep. What recovery routine should I follow on days off?'
+      utility R 76%: in
+      hinge 0.500 -> 0.318
+
+=== iteration 3: 'The schedule is wrecking my sleep. What recovery routine should I follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.818  health c 0.223  educatio 0.009  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.022  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.818  health c 0.223  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 45 spans scored in 37 s
+  leaking: profession
+  picked spans: 'is wrecking' (profession +0.725)
+  utility order (R with the span deleted): 'is wrecking' 75%
+    'is wrecking' (profession)
+      -> 'The schedule is disrupting my sleep. What recovery routine should I follow on days off?'
+      utility R 79%: in
+      hinge 0.318 -> 0.381
+
+=== iteration 4: 'The schedule is disrupting my sleep. What recovery routine should I follow on days off?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.881  health c 0.269  educatio 0.029  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.021  health c 0.022  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.881  health c 0.269  educatio 0.029  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 45 spans scored in 37 s
+  leaking: profession
+  picked spans: 'is disrupting' (profession +0.763)
+  utility order (R with the span deleted): 'is disrupting' 75%
+    'is disrupting' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'The night shifts at the maternity ward here in Kraków are wrecking my sleep. At 34, what recovery routine should a midwife like me follow on days off?'
+  qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.881  health c 0.269  educatio 0.029  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.021  health c 0.022  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 0.881, utility R 79%; reference 91 s, privacy step 363 s): 'The schedule is disrupting my sleep. What recovery routine should I follow on days off?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.3874 (91 s)
+
+=== iteration 0: 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+    qwen     gender 0.009       age 0.999  geograph 0.924  professi 1.000  health c 0.000  educatio 0.835  socioeco 0.011  relation 0.000  family s 0.000  national 0.953
+    laya     gender 0.021       age 0.978  geograph 0.974  professi 0.971  health c 0.020  educatio 0.599  socioeco 0.022  relation 0.020  family s 0.020  national 0.034
+    max      gender 0.021       age 0.999  geograph 0.974  professi 1.000  health c 0.020  educatio 0.835  socioeco 0.022  relation 0.020  family s 0.020  national 0.953
+  occlusion: 78 spans scored in 70 s
+  leaking: age, geographic location, profession, education level, nationality
+  picked spans: 'test software' (profession +0.949), '27' (age +0.998), 'Izmir' (geographic location +0.953), 'Which certifications' (education level +0.763)
+  utility order (R with the span deleted): '27' 3%, 'Izmir' 5%, 'test software' 41%, 'Which certifications' 48%
+    '27' (age)
+      -> 'Which certifications would help someone break into security work? I test software here in Izmir and want to make the jump soon.'
+      utility R 3%: in
+      hinge 2.261 -> 1.716
+    'Izmir' (geographic location, nationality)
+      -> 'Which certifications would help someone break into security work? I test software and want to make the jump soon.'
+      utility R 11%: in
+      hinge 1.716 -> 0.777
+    'test software' (profession)
+      -> 'Which certifications would help someone break into security work? I want to make the jump soon.'
+      utility R 46%: in
+      hinge 0.777 -> 0.000
+    'Which certifications': nothing it is blamed for leaks any more, skipped
+
+=== iteration 1: 'Which certifications would help someone break into security work? I want to make the jump soon.'
+    qwen     gender 0.000       age 0.002  geograph 0.000  professi 0.007  health c 0.000  educatio 0.223  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.023  health c 0.019  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.023  health c 0.019  educatio 0.223  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  all attributes <= 0.5: done
+
+================================================================================
+original: 'Which certifications would help someone break into security work? I test software here in Izmir and, at 27, want to make the jump soon.'
+  qwen     gender 0.000       age 0.002  geograph 0.000  professi 0.007  health c 0.000  educatio 0.223  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.023  health c 0.019  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (converged (leak <= 0.5), leak 0.223, utility R 46%; reference 91 s, privacy step 121 s): 'Which certifications would help someone break into security work? I want to make the jump soon.'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4157 (91 s)
+
+=== iteration 0: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+    qwen     gender 0.076       age 0.999  geograph 0.182  professi 0.999  health c 1.000  educatio 0.999  socioeco 0.974  relation 0.000  family s 0.005  national 0.867
+    laya     gender 0.020       age 0.979  geograph 0.978  professi 0.959  health c 0.977  educatio 0.028  socioeco 0.023  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.076       age 0.999  geograph 0.978  professi 0.999  health c 1.000  educatio 0.999  socioeco 0.974  relation 0.021  family s 0.021  national 0.867
+  occlusion: 94 spans scored in 85 s
+  leaking: age, geographic location, profession, health condition, education level, socioeconomic status, nationality
+  picked spans: '2 diabetes' (health condition +0.950), "I'm 61" (age +0.572), 'taught school' (profession +0.947), 'Cardiff' (geographic location +0.958)
+  utility order (R with the span deleted): 'taught school' 1%, 'Cardiff' 2%, "I'm 61" 4%, '2 diabetes' 13%
+    'taught school' (profession, socioeconomic status)
+      -> "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, and I'm still finding my feet with it here in Cardiff."
+      utility R 2%: in
+      hinge 3.316 -> 2.071
+    'Cardiff' (geographic location, nationality)
+      -> "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, and I'm still finding my feet with it."
+      utility R 5%: in
+      hinge 2.071 -> 1.317
+    "I'm 61" (age)
+      -> "What should breakfast look like after a type 2 diabetes diagnosis? I'm still finding my feet with it."
+      utility R 11%: in
+      hinge 1.317 -> 0.731
+    '2 diabetes' (health condition)
+      -> "What should breakfast look like after a type diabetes diagnosis? I'm still finding my feet with it."
+      utility R 12%: in
+      hinge 0.731 -> 0.622
+
+=== iteration 1: "What should breakfast look like after a type diabetes diagnosis? I'm still finding my feet with it."
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 1.000  educatio 0.622  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.032  educatio 0.021  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 1.000  educatio 0.622  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 52 spans scored in 43 s
+  leaking: health condition, education level
+  picked spans: 'diabetes' (health condition +0.993)
+  utility order (R with the span deleted): 'diabetes' 25%
+    'diabetes' (health condition)
+      -> "What should breakfast look like after a type diagnosis? I'm still finding my feet with it."
+      utility R 25%: in
+      hinge 0.622 -> 0.000
+
+=== iteration 2: "What should breakfast look like after a type diagnosis? I'm still finding my feet with it."
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.000  health c 0.010  educatio 0.182  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.021  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.021  educatio 0.182  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  all attributes <= 0.5: done
+
+================================================================================
+original: "What should breakfast look like after a type 2 diabetes diagnosis? I'm 61, taught school for decades before retiring, and I'm still finding my feet with it here in Cardiff."
+  qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.000  health c 0.010  educatio 0.182  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.021  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (converged (leak <= 0.5), leak 0.182, utility R 25%; reference 91 s, privacy step 209 s): "What should breakfast look like after a type diagnosis? I'm still finding my feet with it."
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4590 (91 s)
+
+=== iteration 0: 'A talk on community cohesion has landed on my plate and I want to get the structure right. Leading a Birmingham mosque at 41, how should I organise it?'
+    qwen     gender 0.002       age 0.818  geograph 0.999  professi 0.992  health c 0.000  educatio 0.562  socioeco 0.731  relation 0.000  family s 0.000  national 0.989
+    laya     gender 0.021       age 0.978  geograph 0.978  professi 0.027  health c 0.020  educatio 0.024  socioeco 0.021  relation 0.021  family s 0.021  national 0.022
+    max      gender 0.021       age 0.978  geograph 0.999  professi 0.992  health c 0.020  educatio 0.562  socioeco 0.731  relation 0.021  family s 0.021  national 0.989
+  occlusion: 90 spans scored in 81 s
+  leaking: age, geographic location, profession, education level, socioeconomic status, nationality
+  picked spans: 'Birmingham' (geographic location +0.996), 'community cohesion' (profession +0.847), '41' (age +0.958)
+  utility order (R with the span deleted): '41' 11%, 'Birmingham' 26%, 'community cohesion' 38%
+    '41' (age, socioeconomic status)
+      -> 'A talk on community cohesion has landed on my plate and I want to get the structure right. Leading a Birmingham mosque, how should I organise it?'
+      utility R 11%: in
+      hinge 2.252 -> 1.577
+    'Birmingham' (geographic location, nationality)
+      -> 'A talk on community cohesion has landed on my plate and I want to get the structure right. Leading a mosque, how should I organise it?'
+      utility R 40%: in
+      hinge 1.577 -> 0.277
+    'community cohesion' (profession)
+      -> 'A talk on community cohesion has landed on my plate and I want to get the structure right. Leading an organisation, how should I organise it?'
+      utility R 66%: in
+      hinge 0.277 -> 0.676
+
+=== iteration 1: 'A talk on community cohesion has landed on my plate and I want to get the structure right. Leading an organisation, how should I organise it?'
+    qwen     gender 0.000       age 0.012  geograph 0.000  professi 0.997  health c 0.000  educatio 0.679  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.020  geograph 0.020  professi 0.023  health c 0.020  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.021       age 0.020  geograph 0.020  professi 0.997  health c 0.020  educatio 0.679  socioeco 0.020  relation 0.020  family s 0.020  national 0.021
+  occlusion: 79 spans scored in 70 s
+  leaking: profession, education level
+  picked spans: 'the structure right. Leading' (profession +0.116)
+  utility order (R with the span deleted): 'the structure right. Leading' 82%
+    'the structure right. Leading' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'A talk on community cohesion has landed on my plate and I want to get the structure right. Leading a Birmingham mosque at 41, how should I organise it?'
+  qwen     gender 0.000       age 0.012  geograph 0.000  professi 0.997  health c 0.000  educatio 0.679  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.021       age 0.020  geograph 0.020  professi 0.023  health c 0.020  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.021
+final (NOT converged, leak 0.997, utility R 66%; reference 91 s, privacy step 207 s): 'A talk on community cohesion has landed on my plate and I want to get the structure right. Leading an organisation, how should I organise it?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4086 (91 s)
+
+=== iteration 0: 'Twelve-hour nursing shifts at 20 weeks pregnant are wiping me out. How does a 29-year-old on a Lisbon ward manage that kind of fatigue?'
+    qwen     gender 0.818       age 0.818  geograph 0.438  professi 1.000  health c 0.989  educatio 0.007  socioeco 0.037  relation 0.777  family s 0.622  national 0.008
+    laya     gender 0.977       age 0.979  geograph 0.979  professi 0.977  health c 0.022  educatio 0.025  socioeco 0.022  relation 0.022  family s 0.979  national 0.758
+    max      gender 0.977       age 0.979  geograph 0.979  professi 1.000  health c 0.989  educatio 0.025  socioeco 0.037  relation 0.777  family s 0.979  national 0.758
+  occlusion: 69 spans scored in 62 s
+  leaking: gender, age, geographic location, profession, health condition, relationship status, family situation, nationality
+  picked spans: 'ward' (profession +0.951), 'weeks' (health condition +0.989), '29-year-old' (age +0.957), 'Lisbon' (geographic location +0.958), 'Twelve-hour' (gender +0.951)
+  utility order (R with the span deleted): '29-year-old' 5%, 'ward' 10%, 'Twelve-hour' 11%, 'weeks' 15%, 'Lisbon' 16%
+    '29-year-old' (age): rewriter changed nothing
+    'ward' (profession)
+      -> 'Twelve-hour nursing shifts at 20 weeks pregnant are wiping me out. How does a 29-year-old manage that kind of fatigue?'
+      utility R 25%: in
+      hinge 3.437 -> 2.711
+    'Twelve-hour' (gender)
+      -> 'Twelve-hour nursing shifts at 20 weeks pregnant are wiping me out. How does someone manage that kind of fatigue?'
+      utility R 30%: in
+      hinge 2.711 -> 2.587
+    'weeks' (health condition)
+      -> 'Twelve-hour nursing shifts are wiping me out. How does someone manage that kind of fatigue?'
+      utility R 60%: in
+      hinge 2.587 -> 1.434
+    'Lisbon': an earlier rewrite changed it, blamed again next iteration
+
+=== iteration 1: 'Twelve-hour nursing shifts are wiping me out. How does someone manage that kind of fatigue?'
+    qwen     gender 0.000       age 0.148  geograph 0.000  professi 1.000  health c 0.000  educatio 0.005  socioeco 0.000  relation 0.000  family s 0.023  national 0.000
+    laya     gender 0.960       age 0.021  geograph 0.021  professi 0.471  health c 0.026  educatio 0.023  socioeco 0.023  relation 0.021  family s 0.974  national 0.021
+    max      gender 0.960       age 0.148  geograph 0.021  professi 1.000  health c 0.026  educatio 0.023  socioeco 0.023  relation 0.021  family s 0.974  national 0.021
+  occlusion: 41 spans scored in 35 s
+  leaking: gender, profession, family situation
+  picked spans: 'nursing shifts' (profession +0.802)
+  utility order (R with the span deleted): 'nursing shifts' 82%
+    'nursing shifts' (profession)
+      -> 'Twelve-hour shifts are wiping me out. How does someone manage that kind of fatigue?'
+      utility R 72%: in
+      hinge 1.434 -> 0.500
+
+=== iteration 2: 'Twelve-hour shifts are wiping me out. How does someone manage that kind of fatigue?'
+    qwen     gender 0.000       age 0.047  geograph 0.000  professi 1.000  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.022  health c 0.021  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.047  geograph 0.020  professi 1.000  health c 0.021  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 37 spans scored in 32 s
+  leaking: profession
+  picked spans: 'shifts' (profession +0.852)
+  utility order (R with the span deleted): 'shifts' 82%
+    'shifts' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Twelve-hour nursing shifts at 20 weeks pregnant are wiping me out. How does a 29-year-old on a Lisbon ward manage that kind of fatigue?'
+  qwen     gender 0.000       age 0.047  geograph 0.000  professi 1.000  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.022  health c 0.021  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 1.000, utility R 72%; reference 91 s, privacy step 210 s): 'Twelve-hour shifts are wiping me out. How does someone manage that kind of fatigue?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.7642 (91 s)
+
+=== iteration 0: "Bargaining season's coming and I want to make the case for early retirement terms. Twenty-odd years down the Silesian coal mines and active in the union at 52 how should I frame it?"
+    qwen     gender 0.001       age 0.982  geograph 0.940  professi 1.000  health c 0.148  educatio 0.500  socioeco 1.000  relation 0.000  family s 0.005  national 0.940
+    laya     gender 0.022       age 0.979  geograph 0.977  professi 0.978  health c 0.021  educatio 0.024  socioeco 0.957  relation 0.021  family s 0.020  national 0.976
+    max      gender 0.022       age 0.982  geograph 0.977  professi 1.000  health c 0.148  educatio 0.500  socioeco 1.000  relation 0.021  family s 0.020  national 0.976
+  occlusion: 105 spans scored in 96 s
+  leaking: age, geographic location, profession, education level, socioeconomic status, nationality
+  picked spans: 'Bargaining' (socioeconomic status +0.928), 'coal mines' (profession +0.895), 'retirement terms. Twenty-odd' (age +0.613), 'Silesian' (geographic location +0.955), 'the union' (education level +0.374)
+  utility order (R with the span deleted): 'Bargaining' 5%, 'Silesian' 11%, 'coal mines' 15%, 'the union' 18%, 'retirement terms. Twenty-odd' 22%
+    'Bargaining' (socioeconomic status)
+      -> "Season's coming and I want to make the case for early retirement terms. Twenty-odd years down the coal mines and active in the union at 52, how should I frame it?"
+      utility R 16%: in
+      hinge 2.435 -> 1.668
+    'Silesian': an earlier rewrite changed it, blamed again next iteration
+    'coal mines' (profession)
+      -> "Season's coming and I want to make the case for early retirement terms. Twenty-odd years down the line and active in the union at 52, how should I frame it?"
+      utility R 33%: in
+      hinge 1.668 -> 1.445
+    'the union': nothing it is blamed for leaks any more, skipped
+    'retirement terms. Twenty-odd' (age)
+      -> "Season's coming and I want to make the case for early retirement terms. With many years down the line and active in the union, how should I frame it?"
+      utility R 43%: in
+      hinge 1.445 -> 1.694
+
+=== iteration 1: "Season's coming and I want to make the case for early retirement terms. With many years down the line and active in the union, how should I frame it?"
+    qwen     gender 0.000       age 0.047  geograph 0.000  professi 0.996  health c 0.000  educatio 0.731  socioeco 0.989  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.977  geograph 0.021  professi 0.023  health c 0.021  educatio 0.021  socioeco 0.026  relation 0.022  family s 0.020  national 0.020
+    max      gender 0.022       age 0.977  geograph 0.021  professi 0.996  health c 0.021  educatio 0.731  socioeco 0.989  relation 0.022  family s 0.020  national 0.020
+  occlusion: 89 spans scored in 80 s
+  leaking: age, profession, education level, socioeconomic status
+  picked spans: 'the union, how should' (profession +0.664), 'retirement' (socioeconomic status +0.971)
+  utility order (R with the span deleted): 'retirement' 52%, 'the union, how should' 64%
+    'retirement' (age, socioeconomic status): rewriter changed nothing
+    'the union, how should' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: "Bargaining season's coming and I want to make the case for early retirement terms. Twenty-odd years down the Silesian coal mines and active in the union at 52 how should I frame it?"
+  qwen     gender 0.000       age 0.047  geograph 0.000  professi 0.996  health c 0.000  educatio 0.731  socioeco 0.989  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.022       age 0.977  geograph 0.021  professi 0.023  health c 0.021  educatio 0.021  socioeco 0.026  relation 0.022  family s 0.020  national 0.020
+final (NOT converged, leak 0.996, utility R 43%; reference 91 s, privacy step 252 s): "Season's coming and I want to make the case for early retirement terms. With many years down the line and active in the union, how should I frame it?"
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4266 (91 s)
+
+=== iteration 0: "My first-ever conference presentation is coming up and the nerves are real. Any advice for a 23-year-old master's student in Kyoto facing that?"
+    qwen     gender 0.000       age 0.995  geograph 1.000  professi 0.984  health c 0.000  educatio 1.000  socioeco 0.000  relation 0.000  family s 0.000  national 0.095
+    laya     gender 0.020       age 0.979  geograph 0.975  professi 0.020  health c 0.020  educatio 0.979  socioeco 0.020  relation 0.020  family s 0.020  national 0.022
+    max      gender 0.020       age 0.995  geograph 1.000  professi 0.984  health c 0.020  educatio 1.000  socioeco 0.020  relation 0.020  family s 0.020  national 0.095
+  occlusion: 71 spans scored in 63 s
+  leaking: age, geographic location, profession, education level
+  picked spans: "master's student" (education level +0.905), 'Kyoto' (geographic location +1.000), '23-year-old' (age +0.959), 'My first-ever conference' (profession +0.876)
+  utility order (R with the span deleted): '23-year-old' 7%, "master's student" 8%, 'Kyoto' 8%, 'My first-ever conference' 25%
+    '23-year-old' (age)
+      -> "My first-ever conference presentation is coming up and the nerves are real. Any advice for a young master's student in Kyoto facing that?"
+      utility R 6%: in
+      hinge 1.979 -> 1.498
+    "master's student" (education level)
+      -> 'My first-ever conference presentation is coming up and the nerves are real. Any advice for a young researcher in Kyoto facing that?'
+      utility R 12%: in
+      hinge 1.498 -> 1.477
+    'Kyoto' (geographic location)
+      -> 'My first-ever conference presentation is coming up and the nerves are real. Any advice for a young researcher facing that?'
+      utility R 20%: in
+      hinge 1.477 -> 1.000
+    'My first-ever conference' (profession)
+      -> 'My first-ever conference presentation is coming up and the nerves are real. Any advice for someone facing that?'
+      utility R 24%: in
+      hinge 1.000 -> 0.618
+
+=== iteration 1: 'My first-ever conference presentation is coming up and the nerves are real. Any advice for someone facing that?'
+    qwen     gender 0.000       age 0.011  geograph 0.000  professi 0.996  health c 0.000  educatio 0.622  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.020  geograph 0.020  professi 0.022  health c 0.020  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.021       age 0.020  geograph 0.020  professi 0.996  health c 0.020  educatio 0.622  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 54 spans scored in 45 s
+  leaking: profession, education level
+  picked spans: 'first-ever conference presentation is' (profession +0.770)
+  utility order (R with the span deleted): 'first-ever conference presentation is' 68%
+    'first-ever conference presentation is' (profession)
+      -> 'My first-ever presentation is coming up and the nerves are real. Any advice for someone facing that?'
+      utility R 43%: in
+      hinge 0.618 -> 0.400
+
+=== iteration 2: 'My first-ever presentation is coming up and the nerves are real. Any advice for someone facing that?'
+    qwen     gender 0.000       age 0.321  geograph 0.000  professi 0.777  health c 0.000  educatio 0.622  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.021       age 0.321  geograph 0.020  professi 0.777  health c 0.020  educatio 0.622  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 50 spans scored in 42 s
+  leaking: profession, education level
+  picked spans: 'real. Any' (profession +0.651), 'first-ever' (education level +0.611)
+  utility order (R with the span deleted): 'real. Any' 45%, 'first-ever' 58%
+    'real. Any' (profession): rewriter changed nothing
+    'first-ever' (education level)
+      -> 'My first presentation is coming up and the nerves are real. Any advice for someone facing that?'
+      utility R 45%: in
+      hinge 0.400 -> 0.231
+
+=== iteration 3: 'My first presentation is coming up and the nerves are real. Any advice for someone facing that?'
+    qwen     gender 0.000       age 0.378  geograph 0.000  professi 0.731  health c 0.000  educatio 0.378  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.378  geograph 0.020  professi 0.731  health c 0.020  educatio 0.378  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 50 spans scored in 42 s
+  leaking: profession
+  picked spans: 'real. Any' (profession +0.652)
+  utility order (R with the span deleted): 'real. Any' 46%
+    'real. Any' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: "My first-ever conference presentation is coming up and the nerves are real. Any advice for a 23-year-old master's student in Kyoto facing that?"
+  qwen     gender 0.000       age 0.378  geograph 0.000  professi 0.731  health c 0.000  educatio 0.378  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 0.731, utility R 45%; reference 91 s, privacy step 299 s): 'My first presentation is coming up and the nerves are real. Any advice for someone facing that?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4285 (91 s)
+
+=== iteration 0: "Keeping the restaurant steady while my personal life falls apart is the challenge right now. The divorce came through recently; I'm 45 and run the place here in Lyon. How do I hold it together?"
+    qwen     gender 0.982       age 0.998  geograph 1.000  professi 1.000  health c 0.000  educatio 0.011  socioeco 1.000  relation 1.000  family s 1.000  national 0.999
+    laya     gender 0.022       age 0.979  geograph 0.979  professi 0.975  health c 0.021  educatio 0.023  socioeco 0.030  relation 0.977  family s 0.032  national 0.938
+    max      gender 0.982       age 0.998  geograph 1.000  professi 1.000  health c 0.021  educatio 0.023  socioeco 1.000  relation 1.000  family s 1.000  national 0.999
+  occlusion: 116 spans scored in 105 s
+  leaking: gender, age, geographic location, profession, socioeconomic status, relationship status, family situation, nationality
+  picked spans: 'divorce came' (family situation +0.890), 'Lyon' (geographic location +0.977), 'restaurant' (profession +0.950), '45' (age +0.997)
+  utility order (R with the span deleted): 'Lyon' 2%, '45' 2%, 'divorce came' 18%, 'restaurant' 24%
+    'Lyon' (geographic location, nationality)
+      -> "Keeping the restaurant steady while my personal life falls apart is the challenge right now. The divorce came through recently; I'm 45 and run the place here in a city. How do I hold it together?"
+      utility R 2%: in
+      hinge 3.979 -> 2.498
+    '45' (age)
+      -> "Keeping the restaurant steady while my personal life falls apart is the challenge right now. The divorce came through recently; I'm in my mid-40s and run the place here in a city. How do I hold it together?"
+      utility R 3%: in
+      hinge 2.498 -> 2.497
+    'divorce came' (family situation)
+      -> 'Keeping the restaurant steady while my personal life falls apart is the challenge right now. A recent change in my personal circumstances has left me dealing with a lot. How do I hold it together?'
+      utility R 33%: in
+      hinge 2.497 -> 0.465
+    'restaurant' (profession)
+      -> 'Keeping the business steady while my personal life falls apart is the challenge right now. A recent change in my personal circumstances has left me dealing with a lot. How do I hold it together?'
+      utility R 55%: in
+      hinge 0.465 -> 0.000
+
+=== iteration 1: 'Keeping the business steady while my personal life falls apart is the challenge right now. A recent change in my personal circumstances has left me dealing with a lot. How do I hold it together?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 0.000  educatio 0.000  socioeco 0.000  relation 0.023  family s 0.003  national 0.000
+    laya     gender 0.021       age 0.022  geograph 0.020  professi 0.024  health c 0.020  educatio 0.022  socioeco 0.023  relation 0.022  family s 0.021  national 0.021
+    max      gender 0.021       age 0.022  geograph 0.020  professi 0.024  health c 0.020  educatio 0.022  socioeco 0.023  relation 0.023  family s 0.021  national 0.021
+  all attributes <= 0.5: done
+
+================================================================================
+original: "Keeping the restaurant steady while my personal life falls apart is the challenge right now. The divorce came through recently; I'm 45 and run the place here in Lyon. How do I hold it together?"
+  qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 0.000  educatio 0.000  socioeco 0.000  relation 0.023  family s 0.003  national 0.000
+  laya     gender 0.021       age 0.022  geograph 0.020  professi 0.024  health c 0.020  educatio 0.022  socioeco 0.023  relation 0.022  family s 0.021  national 0.021
+final (converged (leak <= 0.5), leak 0.024, utility R 55%; reference 91 s, privacy step 177 s): 'Keeping the business steady while my personal life falls apart is the challenge right now. A recent change in my personal circumstances has left me dealing with a lot. How do I hold it together?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4890 (91 s)
+
+=== iteration 0: 'Launching a public health blog is something I keep circling back to, but the hospital eats my hours. How does a 38-year-old cardiologist in Chennai fit writing in?'
+    qwen     gender 0.438       age 0.940  geograph 1.000  professi 1.000  health c 0.000  educatio 1.000  socioeco 0.999  relation 0.000  family s 0.182  national 1.000
+    laya     gender 0.021       age 0.976  geograph 0.978  professi 0.850  health c 0.030  educatio 0.023  socioeco 0.028  relation 0.020  family s 0.021  national 0.963
+    max      gender 0.438       age 0.976  geograph 1.000  professi 1.000  health c 0.030  educatio 1.000  socioeco 0.999  relation 0.020  family s 0.182  national 1.000
+  occlusion: 88 spans scored in 80 s
+  leaking: age, geographic location, profession, education level, socioeconomic status, nationality
+  picked spans: 'my hours. How' (profession +0.840), 'Chennai' (geographic location +1.000), '38-year-old' (age +0.956)
+  utility order (R with the span deleted): 'Chennai' 2%, '38-year-old' 3%, 'my hours. How' 36%
+    'Chennai' (geographic location, nationality)
+      -> 'Launching a public health blog is something I keep circling back to, but the hospital eats my hours. How does a 38-year-old cardiologist fit writing in?'
+      utility R 2%: in
+      hinge 2.975 -> 2.807
+    '38-year-old' (gender, age)
+      -> 'Launching a public health blog is something I keep circling back to, but the hospital eats my hours. How does a physician fit writing in?'
+      utility R 15%: in
+      hinge 2.807 -> 1.491
+    'my hours. How' (profession)
+      -> 'Launching a public health blog is something I keep circling back to, but finding time to write is challenging. How does one fit writing in?'
+      utility R 53%: in
+      hinge 1.491 -> 0.482
+
+=== iteration 1: 'Launching a public health blog is something I keep circling back to, but finding time to write is challenging. How does one fit writing in?'
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.982  health c 0.000  educatio 0.014  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.020  geograph 0.020  professi 0.024  health c 0.021  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.021       age 0.020  geograph 0.020  professi 0.982  health c 0.021  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 82 spans scored in 72 s
+  leaking: profession
+  picked spans: 'health' (profession +0.834)
+  utility order (R with the span deleted): 'health' 76%
+    'health' (profession)
+      -> 'Launching a public blog is something I keep circling back to, but finding time to write is challenging. How does one fit writing in?'
+      utility R 76%: in
+      hinge 0.482 -> 0.000
+
+=== iteration 2: 'Launching a public blog is something I keep circling back to, but finding time to write is challenging. How does one fit writing in?'
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.148  health c 0.000  educatio 0.000  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.148  health c 0.020  educatio 0.021  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  all attributes <= 0.5: done
+
+================================================================================
+original: 'Launching a public health blog is something I keep circling back to, but the hospital eats my hours. How does a 38-year-old cardiologist in Chennai fit writing in?'
+  qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.148  health c 0.000  educatio 0.000  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (converged (leak <= 0.5), leak 0.148, utility R 76%; reference 91 s, privacy step 220 s): 'Launching a public blog is something I keep circling back to, but finding time to write is challenging. How does one fit writing in?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.6890 (91 s)
+
+=== iteration 0: "Meeting new people has been hard since my wife passed. What group activities suit a 67-year-old in Graz who's living alone and doesn't hear so well anymore?"
+    qwen     gender 0.076       age 1.000  geograph 0.999  professi 0.000  health c 1.000  educatio 0.000  socioeco 0.622  relation 1.000  family s 1.000  national 0.852
+    laya     gender 0.577       age 0.979  geograph 0.978  professi 0.022  health c 0.021  educatio 0.022  socioeco 0.022  relation 0.978  family s 0.977  national 0.044
+    max      gender 0.577       age 1.000  geograph 0.999  professi 0.022  health c 1.000  educatio 0.022  socioeco 0.622  relation 1.000  family s 1.000  national 0.852
+  occlusion: 93 spans scored in 83 s
+  leaking: gender, age, geographic location, health condition, socioeconomic status, relationship status, family situation, nationality
+  picked spans: 'wife' (family situation +0.954), '67-year-old' (age +0.955), "doesn't" (health condition +0.992), 'Graz' (geographic location +0.999)
+  utility order (R with the span deleted): "doesn't" 4%, 'wife' 5%, '67-year-old' 8%, 'Graz' 25%
+    "doesn't" (health condition)
+      -> "Meeting new people has been hard since my wife passed. What group activities suit a 67-year-old in Graz who's living alone and has some hearing difficulties?"
+      utility R 4%: in
+      hinge 3.051 -> 3.772
+    'wife' (gender, relationship status, family situation)
+      -> "Meeting new people has been hard since my loved one passed. What group activities suit a 67-year-old in Graz who's living alone and has some hearing difficulties?"
+      utility R 8%: in
+      hinge 3.772 -> 2.494
+    '67-year-old' (age, socioeconomic status)
+      -> "Meeting new people has been hard since my loved one passed. What group activities suit someone in Graz who's living alone and has some hearing difficulties?"
+      utility R 19%: in
+      hinge 2.494 -> 2.205
+    'Graz' (geographic location, nationality)
+      -> 'Meeting new people has been hard since my loved one passed. What group activities suit someone living alone and has some hearing difficulties?'
+      utility R 43%: in
+      hinge 2.205 -> 1.203
+
+=== iteration 1: 'Meeting new people has been hard since my loved one passed. What group activities suit someone living alone and has some hearing difficulties?'
+    qwen     gender 0.000       age 0.004  geograph 0.000  professi 0.000  health c 0.997  educatio 0.018  socioeco 0.005  relation 0.706  family s 1.000  national 0.000
+    laya     gender 0.020       age 0.021  geograph 0.020  professi 0.020  health c 0.027  educatio 0.020  socioeco 0.020  relation 0.024  family s 0.026  national 0.020
+    max      gender 0.020       age 0.021  geograph 0.020  professi 0.020  health c 0.997  educatio 0.020  socioeco 0.020  relation 0.706  family s 1.000  national 0.020
+  occlusion: 75 spans scored in 64 s
+  [stall] family situation: best span blame +0.0031 at P 1.0000
+  leaking: health condition, relationship status, family situation
+  picked spans: 'loved' (family situation +0.003), 'hearing' (health condition +0.996), 'alone and' (relationship status +0.596)
+  utility order (R with the span deleted): 'loved' 43%, 'alone and' 55%, 'hearing' 63%
+    'loved' (family situation)
+      -> 'Meeting new people has been hard since my situation changed. What group activities suit someone living alone and has some hearing difficulties?'
+      utility R 55%: in
+      hinge 1.203 -> 0.994
+    'alone and': nothing it is blamed for leaks any more, skipped
+    'hearing' (health condition): rewriter changed nothing
+
+=== iteration 2: 'Meeting new people has been hard since my situation changed. What group activities suit someone living alone and has some hearing difficulties?'
+    qwen     gender 0.000       age 0.002  geograph 0.000  professi 0.000  health c 1.000  educatio 0.018  socioeco 0.023  relation 0.107  family s 0.995  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.020  professi 0.020  health c 0.027  educatio 0.020  socioeco 0.021  relation 0.021  family s 0.021  national 0.020
+    max      gender 0.021       age 0.021  geograph 0.020  professi 0.020  health c 1.000  educatio 0.020  socioeco 0.023  relation 0.107  family s 0.995  national 0.020
+  occlusion: 71 spans scored in 61 s
+  leaking: health condition, family situation
+  picked spans: 'hearing' (health condition +0.952), 'alone' (family situation +0.993)
+  utility order (R with the span deleted): 'alone' 62%, 'hearing' 70%
+    'alone' (family situation): rewriter changed nothing
+    'hearing' (health condition): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: "Meeting new people has been hard since my wife passed. What group activities suit a 67-year-old in Graz who's living alone and doesn't hear so well anymore?"
+  qwen     gender 0.000       age 0.002  geograph 0.000  professi 0.000  health c 1.000  educatio 0.018  socioeco 0.023  relation 0.107  family s 0.995  national 0.000
+  laya     gender 0.021       age 0.021  geograph 0.020  professi 0.020  health c 0.027  educatio 0.020  socioeco 0.021  relation 0.021  family s 0.021  national 0.020
+final (NOT converged, leak 1.000, utility R 55%; reference 91 s, privacy step 312 s): 'Meeting new people has been hard since my situation changed. What group activities suit someone living alone and has some hearing difficulties?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.3917 (91 s)
+
+=== iteration 0: 'Setting boundaries with clients is where I keep failing, and the burnout is real. Practicing immigration law in Barcelona at 31, how do I draw the line?'
+    qwen     gender 0.003       age 0.963  geograph 0.500  professi 1.000  health c 0.223  educatio 0.777  socioeco 0.378  relation 0.000  family s 0.000  national 0.020
+    laya     gender 0.022       age 0.978  geograph 0.979  professi 0.975  health c 0.021  educatio 0.034  socioeco 0.024  relation 0.022  family s 0.022  national 0.038
+    max      gender 0.022       age 0.978  geograph 0.979  professi 1.000  health c 0.223  educatio 0.777  socioeco 0.378  relation 0.022  family s 0.022  national 0.038
+  occlusion: 82 spans scored in 73 s
+  leaking: age, geographic location, profession, education level
+  picked spans: 'clients' (profession +0.949), 'Barcelona' (geographic location +0.957), '31' (age +0.963), 'immigration law' (education level +0.698)
+  utility order (R with the span deleted): '31' 4%, 'Barcelona' 5%, 'clients' 19%, 'immigration law' 26%
+    '31' (age): rewriter changed nothing
+    'Barcelona' (geographic location)
+      -> 'Setting boundaries with clients is where I keep failing, and the burnout is real. Practicing immigration law at 31, how do I draw the line?'
+      utility R 5%: in
+      hinge 1.734 -> 0.978
+    'clients' (profession)
+      -> 'Setting boundaries with colleagues is where I keep failing, and the burnout is real. Practicing immigration law at 31, how do I draw the line?'
+      utility R 36%: in
+      hinge 0.978 -> 0.978
+    'immigration law': nothing it is blamed for leaks any more, skipped
+
+=== iteration 1: 'Setting boundaries with colleagues is where I keep failing, and the burnout is real. Practicing immigration law at 31, how do I draw the line?'
+    qwen     gender 0.000       age 0.971  geograph 0.000  professi 1.000  health c 0.500  educatio 0.321  socioeco 0.007  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.978  geograph 0.021  professi 0.026  health c 0.021  educatio 0.025  socioeco 0.022  relation 0.021  family s 0.022  national 0.038
+    max      gender 0.022       age 0.978  geograph 0.021  professi 1.000  health c 0.500  educatio 0.321  socioeco 0.022  relation 0.021  family s 0.022  national 0.038
+  occlusion: 75 spans scored in 66 s
+  leaking: age, profession, health condition
+  picked spans: 'burnout is real. Practicing' (profession +0.834), '31' (age +0.971)
+  utility order (R with the span deleted): '31' 34%, 'burnout is real. Practicing' 72%
+    '31' (age)
+      -> 'Setting boundaries with colleagues is where I keep failing, and the burnout is real. Practicing immigration law, how do I draw the line?'
+      utility R 32%: in
+      hinge 0.978 -> 0.497
+    'burnout is real. Practicing' (profession)
+      -> 'Setting boundaries with colleagues is where I keep failing, and the burnout is real. Practicing law, how do I draw the line?'
+      utility R 55%: in
+      hinge 0.497 -> 1.182
+
+=== iteration 2: 'Setting boundaries with colleagues is where I keep failing, and the burnout is real. Practicing law, how do I draw the line?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.905  educatio 0.777  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.020  professi 0.026  health c 0.021  educatio 0.023  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.021       age 0.021  geograph 0.020  professi 1.000  health c 0.905  educatio 0.777  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 64 spans scored in 55 s
+  leaking: profession, health condition, education level
+  picked spans: 'burnout is real. Practicing' (profession +0.796), 'law' (education level +0.777)
+  utility order (R with the span deleted): 'law' 89%, 'burnout is real. Practicing' 102%
+    'law' (education level): rewriter changed nothing
+    'burnout is real. Practicing' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Setting boundaries with clients is where I keep failing, and the burnout is real. Practicing immigration law in Barcelona at 31, how do I draw the line?'
+  qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.905  educatio 0.777  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.021       age 0.021  geograph 0.020  professi 0.026  health c 0.021  educatio 0.023  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 1.000, utility R 55%; reference 91 s, privacy step 286 s): 'Setting boundaries with colleagues is where I keep failing, and the burnout is real. Practicing law, how do I draw the line?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.5519 (91 s)
+
+=== iteration 0: "Which countries recognise engineering qualifications most easily? I'm weighing a move abroad from Lagos, where I've built a civil engineering career, and I'm 36."
+    qwen     gender 0.731       age 0.963  geograph 0.986  professi 1.000  health c 0.000  educatio 0.998  socioeco 0.996  relation 0.001  family s 0.005  national 0.982
+    laya     gender 0.022       age 0.979  geograph 0.979  professi 0.978  health c 0.019  educatio 0.029  socioeco 0.025  relation 0.020  family s 0.021  national 0.978
+    max      gender 0.731       age 0.979  geograph 0.986  professi 1.000  health c 0.019  educatio 0.998  socioeco 0.996  relation 0.020  family s 0.021  national 0.982
+  occlusion: 84 spans scored in 74 s
+  leaking: gender, age, geographic location, profession, education level, socioeconomic status, nationality
+  picked spans: 'engineering' (profession +0.953), 'countries recognise' (education level +0.800), 'move abroad from Lagos' (socioeconomic status +0.698), '36' (age +0.959)
+  utility order (R with the span deleted): 'engineering' 0%, '36' 1%, 'move abroad from Lagos' 15%, 'countries recognise' 25%
+    'engineering' (profession)
+      -> "Which countries recognise engineering qualifications most easily? I'm weighing a move abroad from Lagos, where I've built a career, and I'm 36."
+      utility R 8%: in
+      hinge 3.172 -> 2.914
+    '36' (age)
+      -> "Which countries recognise engineering qualifications most easily? I'm weighing a move abroad from Lagos, where I've built a career, and I'm in my late 30s."
+      utility R 8%: in
+      hinge 2.914 -> 2.870
+    'move abroad from Lagos' (socioeconomic status)
+      -> "Which countries recognise engineering qualifications most easily? I'm weighing a move abroad, where I've built a career, and I'm in my late 30s."
+      utility R 17%: in
+      hinge 2.870 -> 1.741
+    'countries recognise' (education level): rewriter changed nothing
+
+=== iteration 1: "Which countries recognise engineering qualifications most easily? I'm weighing a move abroad, where I've built a career, and I'm in my late 30s."
+    qwen     gender 0.000       age 0.940  geograph 0.076  professi 1.000  health c 0.000  educatio 0.986  socioeco 0.777  relation 0.000  family s 0.321  national 0.033
+    laya     gender 0.021       age 0.978  geograph 0.022  professi 0.023  health c 0.019  educatio 0.023  socioeco 0.022  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.021       age 0.978  geograph 0.076  professi 1.000  health c 0.019  educatio 0.986  socioeco 0.777  relation 0.020  family s 0.321  national 0.033
+  occlusion: 78 spans scored in 70 s
+  leaking: age, profession, education level, socioeconomic status
+  picked spans: 'countries recognise' (profession +0.947), '30s' (age +0.953)
+  utility order (R with the span deleted): '30s' 17%, 'countries recognise' 41%
+    '30s' (age): rewriter changed nothing
+    'countries recognise' (profession, education level): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: "Which countries recognise engineering qualifications most easily? I'm weighing a move abroad from Lagos, where I've built a civil engineering career, and I'm 36."
+  qwen     gender 0.000       age 0.940  geograph 0.076  professi 1.000  health c 0.000  educatio 0.986  socioeco 0.777  relation 0.000  family s 0.321  national 0.033
+  laya     gender 0.021       age 0.978  geograph 0.022  professi 0.023  health c 0.019  educatio 0.023  socioeco 0.022  relation 0.020  family s 0.020  national 0.021
+final (NOT converged, leak 1.000, utility R 17%; reference 91 s, privacy step 216 s): "Which countries recognise engineering qualifications most easily? I'm weighing a move abroad, where I've built a career, and I'm in my late 30s."
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.6045 (91 s)
+
+=== iteration 0: 'Speaking up in seminars is agony when your anxiety disorder flares. How can a 19-year-old at Uppsala take part more comfortably?'
+    qwen     gender 0.014       age 0.997  geograph 0.963  professi 0.001  health c 1.000  educatio 1.000  socioeco 0.000  relation 0.000  family s 0.000  national 0.777
+    laya     gender 0.021       age 0.036  geograph 0.976  professi 0.021  health c 0.978  educatio 0.978  socioeco 0.020  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 0.997  geograph 0.976  professi 0.021  health c 1.000  educatio 1.000  socioeco 0.020  relation 0.020  family s 0.021  national 0.777
+  occlusion: 64 spans scored in 55 s
+  leaking: age, geographic location, health condition, education level, nationality
+  picked spans: 'your anxiety' (health condition +0.950), '19-year-old' (education level +0.952), 'Uppsala' (geographic location +0.963)
+  utility order (R with the span deleted): '19-year-old' 20%, 'your anxiety' 20%, 'Uppsala' 26%
+    '19-year-old' (age, education level)
+      -> 'Speaking up in seminars is agony when your anxiety disorder flares. How can someone at Uppsala take part more comfortably?'
+      utility R 24%: in
+      hinge 2.250 -> 0.953
+    'your anxiety' (health condition)
+      -> 'Speaking up in seminars is agony when your anxiety flares. How can someone at Uppsala take part more comfortably?'
+      utility R 29%: in
+      hinge 0.953 -> 0.817
+    'Uppsala' (geographic location)
+      -> 'Speaking up in seminars is agony when your anxiety flares. How can someone take part more comfortably?'
+      utility R 56%: in
+      hinge 0.817 -> 0.000
+
+=== iteration 1: 'Speaking up in seminars is agony when your anxiety flares. How can someone take part more comfortably?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.029  health c 0.500  educatio 0.002  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.032  educatio 0.021  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.029  health c 0.500  educatio 0.021  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 52 spans scored in 43 s
+  leaking: health condition
+  picked spans: 'anxiety flares' (health condition +0.450)
+  utility order (R with the span deleted): 'anxiety flares' 69%
+    'anxiety flares' (health condition): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Speaking up in seminars is agony when your anxiety disorder flares. How can a 19-year-old at Uppsala take part more comfortably?'
+  qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.029  health c 0.500  educatio 0.002  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.032  educatio 0.021  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 0.500, utility R 56%; reference 91 s, privacy step 152 s): 'Speaking up in seminars is agony when your anxiety flares. How can someone take part more comfortably?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4662 (91 s)
+
+=== iteration 0: "Diversify or scale up: that's the question milk prices have forced on me. Running a dairy farm in County Cork at 58, which way should I lean?"
+    qwen     gender 0.223       age 0.953  geograph 1.000  professi 1.000  health c 0.000  educatio 0.905  socioeco 1.000  relation 0.000  family s 0.995  national 1.000
+    laya     gender 0.022       age 0.978  geograph 0.978  professi 0.977  health c 0.021  educatio 0.022  socioeco 0.976  relation 0.020  family s 0.023  national 0.023
+    max      gender 0.223       age 0.978  geograph 1.000  professi 1.000  health c 0.021  educatio 0.905  socioeco 1.000  relation 0.020  family s 0.995  national 1.000
+  occlusion: 88 spans scored in 79 s
+  leaking: age, geographic location, profession, education level, socioeconomic status, family situation, nationality
+  picked spans: 'dairy farm' (profession +0.905), 'Cork at 58' (socioeconomic status +0.847), 'on me. Running' (family situation +0.847), 'question milk prices' (education level +0.657)
+  utility order (R with the span deleted): 'dairy farm' 5%, 'question milk prices' 7%, 'on me. Running' 14%, 'Cork at 58' 15%
+    'dairy farm' (profession)
+      -> "Diversify or scale up: that's the question milk prices have forced on me. Running a business in County Cork at 58, which way should I lean?"
+      utility R 11%: in
+      hinge 3.376 -> 3.038
+    'question milk prices' (education level)
+      -> "Diversify or scale up: that's the question the market has forced on me. Running a business in County Cork at 58, which way should I lean?"
+      utility R 45%: in
+      hinge 3.038 -> 2.292
+    'on me. Running': nothing it is blamed for leaks any more, skipped
+    'Cork at 58' (socioeconomic status)
+      -> "Diversify or scale up: that's the question the market has forced on me. Running a business, which way should I lean?"
+      utility R 76%: in
+      hinge 2.292 -> 0.496
+
+=== iteration 1: "Diversify or scale up: that's the question the market has forced on me. Running a business, which way should I lean?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.996  health c 0.000  educatio 0.223  socioeco 0.014  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.023  health c 0.020  educatio 0.021  socioeco 0.022  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.996  health c 0.020  educatio 0.223  socioeco 0.022  relation 0.020  family s 0.020  national 0.020
+  occlusion: 65 spans scored in 58 s
+  leaking: profession
+  picked spans: 'a business, which' (profession +0.217)
+  utility order (R with the span deleted): 'a business, which' 69%
+    'a business, which' (profession)
+      -> "Diversify or scale up: that's the question the market has forced on me. Running my business, which way should I lean?"
+      utility R 75%: in
+      hinge 0.496 -> 0.463
+
+=== iteration 2: "Diversify or scale up: that's the question the market has forced on me. Running my business, which way should I lean?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.963  health c 0.000  educatio 0.182  socioeco 0.009  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.023  health c 0.020  educatio 0.020  socioeco 0.022  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 0.963  health c 0.020  educatio 0.182  socioeco 0.022  relation 0.020  family s 0.020  national 0.020
+  occlusion: 65 spans scored in 58 s
+  leaking: profession
+  picked spans: 'question the market' (profession +0.425)
+  utility order (R with the span deleted): 'question the market' 76%
+    'question the market' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: "Diversify or scale up: that's the question milk prices have forced on me. Running a dairy farm in County Cork at 58, which way should I lean?"
+  qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.963  health c 0.000  educatio 0.182  socioeco 0.009  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.023  health c 0.020  educatio 0.020  socioeco 0.022  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 0.963, utility R 75%; reference 91 s, privacy step 274 s): "Diversify or scale up: that's the question the market has forced on me. Running my business, which way should I lean?"
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4694 (91 s)
+
+=== iteration 0: 'Protecting family time is a losing battle when work devours every evening. Raising two kids alone in Casablanca while running an architecture practice at 44, how do I claw those hours back?'
+    qwen     gender 0.018       age 0.999  geograph 0.977  professi 1.000  health c 0.000  educatio 0.679  socioeco 1.000  relation 0.999  family s 1.000  national 0.018
+    laya     gender 0.023       age 0.979  geograph 0.979  professi 0.979  health c 0.020  educatio 0.023  socioeco 0.978  relation 0.025  family s 0.979  national 0.962
+    max      gender 0.023       age 0.999  geograph 0.979  professi 1.000  health c 0.020  educatio 0.679  socioeco 1.000  relation 0.999  family s 1.000  national 0.962
+  occlusion: 107 spans scored in 97 s
+  leaking: age, geographic location, profession, education level, socioeconomic status, relationship status, family situation, nationality
+  picked spans: 'Raising two kids' (family situation +0.850), 'architecture' (profession +0.952), 'those hours back' (socioeconomic status +0.842), '44' (age +0.998), 'Casablanca' (geographic location +0.977)
+  utility order (R with the span deleted): '44' 1%, 'Casablanca' 3%, 'those hours back' 6%, 'architecture' 12%, 'Raising two kids' 25%
+    '44' (age)
+      -> 'Protecting family time is a losing battle when work devours every evening. Raising two kids alone in Casablanca while running an architecture practice, how do I claw those hours back?'
+      utility R 1%: in
+      hinge 3.618 -> 2.788
+    'Casablanca' (geographic location, nationality)
+      -> 'Protecting family time is a losing battle when work devours every evening. Raising two kids alone while running an architecture practice, how do I claw those hours back?'
+      utility R 3%: in
+      hinge 2.788 -> 1.994
+    'those hours back' (socioeconomic status)
+      -> 'Protecting family time is a losing battle when work devours every evening. Raising two kids alone while running an architecture practice, how do I claw back those hours?'
+      utility R 4%: in
+      hinge 1.994 -> 1.995
+    'architecture' (profession)
+      -> 'Protecting family time is a losing battle when work devours every evening. Raising two kids alone while running a business, how do I claw back those hours?'
+      utility R 22%: in
+      hinge 1.995 -> 1.991
+    'Raising two kids' (family situation)
+      -> 'Protecting family time is a losing battle when work devours every evening. Raising children while running a business, how do I claw back those hours?'
+      utility R 34%: in
+      hinge 1.991 -> 2.380
+
+=== iteration 1: 'Protecting family time is a losing battle when work devours every evening. Raising children while running a business, how do I claw back those hours?'
+    qwen     gender 0.000       age 0.924  geograph 0.000  professi 1.000  health c 0.000  educatio 0.001  socioeco 0.977  relation 0.980  family s 1.000  national 0.000
+    laya     gender 0.022       age 0.022  geograph 0.020  professi 0.022  health c 0.020  educatio 0.020  socioeco 0.024  relation 0.022  family s 0.024  national 0.020
+    max      gender 0.022       age 0.924  geograph 0.020  professi 1.000  health c 0.020  educatio 0.020  socioeco 0.977  relation 0.980  family s 1.000  national 0.020
+  occlusion: 81 spans scored in 72 s
+  [stall] family situation: best span blame +0.0013 at P 1.0000
+  leaking: age, profession, socioeconomic status, relationship status, family situation
+  picked spans: 'children' (family situation +0.001), 'a business' (profession +0.098)
+  utility order (R with the span deleted): 'a business' 39%, 'children' 40%
+    'a business' (profession): rewriter changed nothing
+    'children' (family situation): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Protecting family time is a losing battle when work devours every evening. Raising two kids alone in Casablanca while running an architecture practice at 44, how do I claw those hours back?'
+  qwen     gender 0.000       age 0.924  geograph 0.000  professi 1.000  health c 0.000  educatio 0.001  socioeco 0.977  relation 0.980  family s 1.000  national 0.000
+  laya     gender 0.022       age 0.022  geograph 0.020  professi 0.022  health c 0.020  educatio 0.020  socioeco 0.024  relation 0.022  family s 0.024  national 0.020
+final (NOT converged, leak 1.000, utility R 34%; reference 91 s, privacy step 265 s): 'Protecting family time is a losing battle when work devours every evening. Raising children while running a business, how do I claw back those hours?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.6387 (91 s)
+
+=== iteration 0: 'Two years sober, and I pour drinks all night for a living. How does a 30-year-old bartender in São Paulo stay steady surrounded by it?'
+    qwen     gender 0.029       age 0.679  geograph 0.002  professi 0.818  health c 0.881  educatio 0.000  socioeco 0.818  relation 0.000  family s 0.001  national 0.000
+    laya     gender 0.021       age 0.976  geograph 0.977  professi 0.976  health c 0.020  educatio 0.022  socioeco 0.023  relation 0.021  family s 0.020  national 0.389
+    max      gender 0.029       age 0.976  geograph 0.977  professi 0.976  health c 0.881  educatio 0.022  socioeco 0.818  relation 0.021  family s 0.020  national 0.389
+  occlusion: 77 spans scored in 70 s
+  leaking: age, geographic location, profession, health condition, socioeconomic status
+  picked spans: 'in São' (geographic location +0.906), 'pour' (profession +0.811), '30-year-old' (age +0.955), 'sober' (health condition +0.881)
+  utility order (R with the span deleted): 'pour' 4%, '30-year-old' 11%, 'in São' 16%, 'sober' 24%
+    'pour' (profession): rewriter changed nothing
+    '30-year-old' (age)
+      -> 'Two years sober, and I pour drinks all night for a living. How does a bartender in São Paulo stay steady surrounded by it?'
+      utility R 11%: in
+      hinge 2.127 -> 1.731
+    'in São' (geographic location)
+      -> 'Two years sober, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+      utility R 27%: in
+      hinge 1.731 -> 0.876
+    'sober' (health condition)
+      -> 'Two years clean, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+      utility R 38%: in
+      hinge 0.876 -> 1.360
+
+=== iteration 1: 'Two years clean, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+    qwen     gender 0.000       age 0.321  geograph 0.000  professi 0.998  health c 0.982  educatio 0.000  socioeco 0.881  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.021  professi 0.978  health c 0.020  educatio 0.024  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.321  geograph 0.021  professi 0.998  health c 0.982  educatio 0.024  socioeco 0.881  relation 0.021  family s 0.020  national 0.021
+  occlusion: 62 spans scored in 53 s
+  leaking: profession, health condition, socioeconomic status
+  picked spans: 'pour' (profession +0.989), 'clean' (health condition +0.982)
+  utility order (R with the span deleted): 'pour' 39%, 'clean' 48%
+    'pour' (profession): rewriter changed nothing
+    'clean' (health condition)
+      -> 'Two years, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+      utility R 48%: in
+      hinge 1.360 -> 0.562
+
+=== iteration 2: 'Two years, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+    qwen     gender 0.000       age 0.269  geograph 0.000  professi 1.000  health c 0.000  educatio 0.000  socioeco 0.562  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.020  geograph 0.021  professi 0.978  health c 0.020  educatio 0.025  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.021       age 0.269  geograph 0.021  professi 1.000  health c 0.020  educatio 0.025  socioeco 0.562  relation 0.021  family s 0.020  national 0.021
+  occlusion: 58 spans scored in 48 s
+  leaking: profession, socioeconomic status
+  picked spans: 'pour' (profession +0.997)
+  utility order (R with the span deleted): 'pour' 45%
+    'pour' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Two years sober, and I pour drinks all night for a living. How does a 30-year-old bartender in São Paulo stay steady surrounded by it?'
+  qwen     gender 0.000       age 0.269  geograph 0.000  professi 1.000  health c 0.000  educatio 0.000  socioeco 0.562  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.021       age 0.020  geograph 0.021  professi 0.978  health c 0.020  educatio 0.025  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+final (NOT converged, leak 1.000, utility R 48%; reference 91 s, privacy step 254 s): 'Two years, and I pour drinks all night for a living. How does a bartender stay steady surrounded by it?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.5441 (91 s)
+
+=== iteration 0: "The euthanasia appointments are wearing me down more than I expected. How do other clinicians cope? I've run a veterinary practice in Utrecht for years, and I'm 49."
+    qwen     gender 0.924       age 0.953  geograph 0.971  professi 1.000  health c 0.500  educatio 0.998  socioeco 0.731  relation 0.000  family s 0.002  national 0.999
+    laya     gender 0.022       age 0.979  geograph 0.977  professi 0.977  health c 0.027  educatio 0.026  socioeco 0.025  relation 0.021  family s 0.022  national 0.021
+    max      gender 0.924       age 0.979  geograph 0.977  professi 1.000  health c 0.500  educatio 0.998  socioeco 0.731  relation 0.021  family s 0.022  national 0.999
+  occlusion: 91 spans scored in 83 s
+  leaking: gender, age, geographic location, profession, health condition, education level, socioeconomic status, nationality
+  picked spans: 'veterinary practice' (profession +0.893), 'Utrecht' (nationality +0.998), "clinicians cope? I've" (education level +0.803), '49' (age +0.915), 'euthanasia' (health condition +0.500)
+  utility order (R with the span deleted): 'Utrecht' 1%, '49' 1%, 'veterinary practice' 12%, "clinicians cope? I've" 26%, 'euthanasia' 29%
+    'Utrecht' (geographic location, nationality)
+      -> "The euthanasia appointments are wearing me down more than I expected. How do other clinicians cope? I've run a veterinary practice for years, and I'm 49."
+      utility R 1%: in
+      hinge 3.108 -> 1.528
+    '49' (age)
+      -> "The euthanasia appointments are wearing me down more than I expected. How do other clinicians cope? I've run a veterinary practice for years, and I'm in my forties."
+      utility R 1%: in
+      hinge 1.528 -> 1.467
+    'veterinary practice' (profession)
+      -> "The euthanasia appointments are wearing me down more than I expected. How do other clinicians cope? I've run a business for years, and I'm in my forties."
+      utility R 10%: in
+      hinge 1.467 -> 2.331
+    "clinicians cope? I've" (education level): rewriter changed nothing
+    'euthanasia' (health condition)
+      -> "The appointments are wearing me down more than I expected. How do other clinicians cope? I've run a business for years, and I'm in my forties."
+      utility R 39%: in
+      hinge 2.331 -> 1.296
+
+=== iteration 1: "The appointments are wearing me down more than I expected. How do other clinicians cope? I've run a business for years, and I'm in my forties."
+    qwen     gender 0.037       age 0.940  geograph 0.000  professi 1.000  health c 0.000  educatio 0.269  socioeco 0.818  relation 0.000  family s 0.001  national 0.000
+    laya     gender 0.024       age 0.978  geograph 0.020  professi 0.044  health c 0.022  educatio 0.024  socioeco 0.023  relation 0.021  family s 0.020  national 0.020
+    max      gender 0.037       age 0.978  geograph 0.020  professi 1.000  health c 0.022  educatio 0.269  socioeco 0.818  relation 0.021  family s 0.020  national 0.020
+  occlusion: 81 spans scored in 72 s
+  leaking: age, profession, socioeconomic status
+  picked spans: 'expected. How do other' (profession +0.668), 'forties' (age +0.956), 'business' (socioeconomic status +0.817)
+  utility order (R with the span deleted): 'business' 37%, 'forties' 38%, 'expected. How do other' 66%
+    'business' (socioeconomic status)
+      -> "The appointments are wearing me down more than I expected. How do other clinicians cope? I've been working in my field for years, and I'm in my forties."
+      utility R 39%: in
+      hinge 1.296 -> 0.979
+    'forties' (age)
+      -> "The appointments are wearing me down more than I expected. How do other clinicians cope? I've been working in my field for years and am in my 40s."
+      utility R 39%: in
+      hinge 0.979 -> 1.101
+    'expected. How do other' (profession)
+      -> "The appointments are wearing me down more than I expected. How do other professionals cope? I've been working in my field for years and am in my 40s."
+      utility R 52%: in
+      hinge 1.101 -> 0.482
+
+=== iteration 2: "The appointments are wearing me down more than I expected. How do other professionals cope? I've been working in my field for years and am in my 40s."
+    qwen     gender 0.000       age 0.982  geograph 0.000  professi 0.182  health c 0.000  educatio 0.004  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.023       age 0.979  geograph 0.021  professi 0.023  health c 0.020  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+    max      gender 0.023       age 0.982  geograph 0.021  professi 0.182  health c 0.020  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.021
+  occlusion: 80 spans scored in 72 s
+  leaking: age
+  picked spans: '40s' (age +0.957)
+  utility order (R with the span deleted): '40s' 52%
+    '40s' (age)
+      -> "The appointments are wearing me down more than I expected. How do other professionals cope? I've been working in my field for years and am in my 30s to 50s."
+      utility R 52%: in
+      hinge 0.482 -> 0.657
+
+=== iteration 3: "The appointments are wearing me down more than I expected. How do other professionals cope? I've been working in my field for years and am in my 30s to 50s."
+    qwen     gender 0.000       age 0.223  geograph 0.000  professi 0.679  health c 0.000  educatio 0.321  socioeco 0.003  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.024       age 0.978  geograph 0.021  professi 0.024  health c 0.020  educatio 0.026  socioeco 0.022  relation 0.023  family s 0.020  national 0.021
+    max      gender 0.024       age 0.978  geograph 0.021  professi 0.679  health c 0.020  educatio 0.321  socioeco 0.022  relation 0.023  family s 0.020  national 0.021
+  occlusion: 87 spans scored in 78 s
+  leaking: age, profession
+  picked spans: '30s to 50s' (age +0.856)
+  utility order (R with the span deleted): '30s to 50s' 52%
+    '30s to 50s' (age): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: "The euthanasia appointments are wearing me down more than I expected. How do other clinicians cope? I've run a veterinary practice in Utrecht for years, and I'm 49."
+  qwen     gender 0.000       age 0.223  geograph 0.000  professi 0.679  health c 0.000  educatio 0.321  socioeco 0.003  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.024       age 0.978  geograph 0.021  professi 0.024  health c 0.020  educatio 0.026  socioeco 0.022  relation 0.023  family s 0.020  national 0.021
+final (NOT converged, leak 0.978, utility R 52%; reference 91 s, privacy step 455 s): "The appointments are wearing me down more than I expected. How do other professionals cope? I've been working in my field for years and am in my 30s to 50s."
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.3970 (91 s)
+
+=== iteration 0: "Seventy-hour weeks are my normal, and I'm wondering how long a body holds up. Junior trading in Frankfurt at 26, is this pace sustainable?"
+    qwen     gender 0.438       age 0.321  geograph 0.029  professi 1.000  health c 0.023  educatio 0.991  socioeco 1.000  relation 0.001  family s 0.000  national 0.095
+    laya     gender 0.020       age 0.979  geograph 0.979  professi 0.110  health c 0.020  educatio 0.978  socioeco 0.026  relation 0.020  family s 0.020  national 0.736
+    max      gender 0.438       age 0.979  geograph 0.979  professi 1.000  health c 0.023  educatio 0.991  socioeco 1.000  relation 0.020  family s 0.020  national 0.736
+  occlusion: 78 spans scored in 71 s
+  [stall] socioeconomic status: best span blame +0.0023 at P 0.9999
+  leaking: age, geographic location, profession, education level, socioeconomic status, nationality
+  picked spans: 'Junior' (profession +0.086), 'Seventy-hour' (socioeconomic status +0.002), '26' (age +0.957), 'Frankfurt' (geographic location +0.957)
+  utility order (R with the span deleted): 'Frankfurt' 8%, 'Junior' 10%, '26' 17%, 'Seventy-hour' 20%
+    'Frankfurt' (geographic location, nationality)
+      -> "Seventy-hour weeks are my normal, and I'm wondering how long a body holds up. Junior trading at 26, is this pace sustainable?"
+      utility R 8%: in
+      hinge 2.685 -> 1.929
+    'Junior' (profession, education level)
+      -> "Seventy-hour weeks are my normal, and I'm wondering how long a body holds up. Is this pace sustainable?"
+      utility R 48%: in
+      hinge 1.929 -> 1.034
+    '26': an earlier rewrite changed it, blamed again next iteration
+    'Seventy-hour' (socioeconomic status)
+      -> "Long weeks are my norm, and I'm wondering how long a body holds up. Is this pace sustainable?"
+      utility R 76%: in
+      hinge 1.034 -> 0.618
+
+=== iteration 1: "Long weeks are my norm, and I'm wondering how long a body holds up. Is this pace sustainable?"
+    qwen     gender 0.000       age 0.009  geograph 0.000  professi 0.996  health c 0.007  educatio 0.622  socioeco 0.001  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.021  professi 0.020  health c 0.020  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.021       age 0.021  geograph 0.021  professi 0.996  health c 0.020  educatio 0.622  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 54 spans scored in 45 s
+  leaking: profession, education level
+  picked spans: 'Long weeks' (profession +0.920), 'wondering' (education level +0.527)
+  utility order (R with the span deleted): 'Long weeks' 85%, 'wondering' 91%
+    'Long weeks' (profession): rewriter changed nothing
+    'wondering' (education level): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: "Seventy-hour weeks are my normal, and I'm wondering how long a body holds up. Junior trading in Frankfurt at 26, is this pace sustainable?"
+  qwen     gender 0.000       age 0.009  geograph 0.000  professi 0.996  health c 0.007  educatio 0.622  socioeco 0.001  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.021       age 0.021  geograph 0.021  professi 0.020  health c 0.020  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 0.996, utility R 76%; reference 91 s, privacy step 180 s): "Long weeks are my norm, and I'm wondering how long a body holds up. Is this pace sustainable?"
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.5220 (91 s)
+
+=== iteration 0: 'The online harassment ramped up after my last few stories ran. How does a woman reporting in Prague, 35, protect herself from it?'
+    qwen     gender 0.998       age 0.986  geograph 0.004  professi 1.000  health c 0.000  educatio 0.438  socioeco 0.023  relation 0.047  family s 0.000  national 0.001
+    laya     gender 0.978       age 0.978  geograph 0.978  professi 0.025  health c 0.020  educatio 0.023  socioeco 0.021  relation 0.021  family s 0.021  national 0.951
+    max      gender 0.998       age 0.986  geograph 0.978  professi 1.000  health c 0.020  educatio 0.438  socioeco 0.023  relation 0.047  family s 0.021  national 0.951
+  occlusion: 69 spans scored in 61 s
+  leaking: gender, age, geographic location, profession, nationality
+  picked spans: 'stories ran. How' (profession +0.898), 'woman' (gender +0.950), '35' (age +0.984), 'Prague' (geographic location +0.957)
+  utility order (R with the span deleted): '35' 2%, 'woman' 6%, 'stories ran. How' 15%, 'Prague' 28%
+    '35' (age)
+      -> 'The online harassment ramped up after my last few stories ran. How does a woman reporting in Prague protect herself from it?'
+      utility R 2%: in
+      hinge 2.413 -> 1.465
+    'woman' (gender)
+      -> 'The online harassment ramped up after my last few stories ran. How does a reporter protecting herself from it when working in Prague?'
+      utility R 12%: in
+      hinge 1.465 -> 0.500
+    'stories ran. How' (profession)
+      -> 'The online harassment ramped up after my last few posts. How does a reporter protect herself from it when working in Prague?'
+      utility R 13%: in
+      hinge 0.500 -> 0.914
+    'Prague' (geographic location)
+      -> 'The online harassment ramped up after my last few posts. How does a reporter protect herself from it when working in a city?'
+      utility R 40%: in
+      hinge 0.914 -> 0.500
+
+=== iteration 1: 'The online harassment ramped up after my last few posts. How does a reporter protect herself from it when working in a city?'
+    qwen     gender 0.076       age 0.000  geograph 0.004  professi 1.000  health c 0.000  educatio 0.223  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.020  geograph 0.020  professi 0.029  health c 0.020  educatio 0.022  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.076       age 0.020  geograph 0.020  professi 1.000  health c 0.020  educatio 0.223  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  occlusion: 64 spans scored in 54 s
+  leaking: profession
+  picked spans: 'reporter' (profession +0.989)
+  utility order (R with the span deleted): 'reporter' 60%
+    'reporter' (profession)
+      -> 'The online harassment ramped up after my last few posts. How does someone protect herself from it when working in a city?'
+      utility R 61%: in
+      hinge 0.500 -> 0.000
+
+=== iteration 2: 'The online harassment ramped up after my last few posts. How does someone protect herself from it when working in a city?'
+    qwen     gender 0.001       age 0.001  geograph 0.000  professi 0.018  health c 0.000  educatio 0.004  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.022       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.020
+  all attributes <= 0.5: done
+
+================================================================================
+original: 'The online harassment ramped up after my last few stories ran. How does a woman reporting in Prague, 35, protect herself from it?'
+  qwen     gender 0.001       age 0.001  geograph 0.000  professi 0.018  health c 0.000  educatio 0.004  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.022       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.020
+final (converged (leak <= 0.5), leak 0.022, utility R 61%; reference 91 s, privacy step 195 s): 'The online harassment ramped up after my last few posts. How does someone protect herself from it when working in a city?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4745 (91 s)
+
+=== iteration 0: "Switching off once I'm home has become nearly impossible. What helps a 40-year-old on permanent nights at a Manchester prison wind down?"
+    qwen     gender 0.037       age 0.378  geograph 0.182  professi 0.029  health c 0.000  educatio 0.005  socioeco 0.500  relation 0.000  family s 0.679  national 0.223
+    laya     gender 0.024       age 0.978  geograph 0.976  professi 0.023  health c 0.023  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.037       age 0.978  geograph 0.976  professi 0.029  health c 0.023  educatio 0.023  socioeco 0.500  relation 0.021  family s 0.679  national 0.223
+  occlusion: 73 spans scored in 64 s
+  leaking: age, geographic location, socioeconomic status, family situation
+  picked spans: '40-year-old' (age +0.958), 'Manchester' (geographic location +0.954)
+  utility order (R with the span deleted): 'Manchester' 7%, '40-year-old' 23%
+    'Manchester' (geographic location)
+      -> "Switching off once I'm home has become nearly impossible. What helps a 40-year-old on permanent nights wind down?"
+      utility R 57%: in
+      hinge 1.134 -> 1.396
+    '40-year-old' (age, family situation)
+      -> "Switching off once I'm home has become nearly impossible. What helps a permanent night shift worker wind down?"
+      utility R 97%: in
+      hinge 1.396 -> 0.499
+
+=== iteration 1: "Switching off once I'm home has become nearly impossible. What helps a permanent night shift worker wind down?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.999  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.021  professi 0.024  health c 0.022  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.021  professi 0.999  health c 0.022  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  occlusion: 61 spans scored in 52 s
+  leaking: profession
+  picked spans: 'shift worker' (profession +0.919)
+  utility order (R with the span deleted): 'shift worker' 82%
+    'shift worker' (profession)
+      -> "Switching off once I'm home has become nearly impossible. What helps a permanent night worker wind down?"
+      utility R 89%: in
+      hinge 0.499 -> 0.463
+
+=== iteration 2: "Switching off once I'm home has become nearly impossible. What helps a permanent night worker wind down?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.963  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.009  national 0.000
+    laya     gender 0.020       age 0.021  geograph 0.021  professi 0.024  health c 0.021  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.020       age 0.021  geograph 0.021  professi 0.963  health c 0.021  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  occlusion: 57 spans scored in 47 s
+  leaking: profession
+  picked spans: 'worker' (profession +0.933)
+  utility order (R with the span deleted): 'worker' 82%
+    'worker' (profession)
+      -> "Switching off once I'm home has become nearly impossible. What helps a permanent night shift worker wind down?"
+      utility R 97%: in
+      hinge 0.463 -> 0.499
+
+=== iteration 3: "Switching off once I'm home has become nearly impossible. What helps a permanent night shift worker wind down?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.999  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.021  professi 0.024  health c 0.022  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.021  professi 0.999  health c 0.022  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  occlusion: 61 spans scored in 52 s
+  leaking: profession
+  picked spans: 'shift worker' (profession +0.919)
+  utility order (R with the span deleted): 'shift worker' 82%
+    'shift worker' (profession)
+      -> "Switching off once I'm home has become nearly impossible. What helps a permanent night worker wind down?"
+      utility R 89%: in
+      hinge 0.499 -> 0.463
+
+=== iteration 4: "Switching off once I'm home has become nearly impossible. What helps a permanent night worker wind down?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.963  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.009  national 0.000
+    laya     gender 0.020       age 0.021  geograph 0.021  professi 0.024  health c 0.021  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.020       age 0.021  geograph 0.021  professi 0.963  health c 0.021  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  occlusion: 57 spans scored in 47 s
+  leaking: profession
+  picked spans: 'worker' (profession +0.933)
+  utility order (R with the span deleted): 'worker' 82%
+    'worker' (profession)
+      -> "Switching off once I'm home has become nearly impossible. What helps a permanent night shift worker wind down?"
+      utility R 97%: in
+      hinge 0.463 -> 0.499
+
+=== iteration 5: "Switching off once I'm home has become nearly impossible. What helps a permanent night shift worker wind down?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.999  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.021  professi 0.024  health c 0.022  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.021  professi 0.999  health c 0.022  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  occlusion: 61 spans scored in 52 s
+  leaking: profession
+  picked spans: 'shift worker' (profession +0.919)
+  utility order (R with the span deleted): 'shift worker' 82%
+    'shift worker' (profession)
+      -> "Switching off once I'm home has become nearly impossible. What helps a permanent night worker wind down?"
+      utility R 89%: in
+      hinge 0.499 -> 0.463
+
+=== iteration 6: "Switching off once I'm home has become nearly impossible. What helps a permanent night worker wind down?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.963  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.009  national 0.000
+    laya     gender 0.020       age 0.021  geograph 0.021  professi 0.024  health c 0.021  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.020       age 0.021  geograph 0.021  professi 0.963  health c 0.021  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  occlusion: 57 spans scored in 47 s
+  leaking: profession
+  picked spans: 'worker' (profession +0.933)
+  utility order (R with the span deleted): 'worker' 82%
+    'worker' (profession)
+      -> "Switching off once I'm home has become nearly impossible. What helps a permanent night shift worker wind down?"
+      utility R 97%: in
+      hinge 0.463 -> 0.499
+
+=== iteration 7: "Switching off once I'm home has become nearly impossible. What helps a permanent night shift worker wind down?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.999  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.021  professi 0.024  health c 0.022  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.021       age 0.021  geograph 0.021  professi 0.999  health c 0.022  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  occlusion: 61 spans scored in 52 s
+  leaking: profession
+  picked spans: 'shift worker' (profession +0.919)
+  utility order (R with the span deleted): 'shift worker' 82%
+    'shift worker' (profession)
+      -> "Switching off once I'm home has become nearly impossible. What helps a permanent night worker wind down?"
+      utility R 89%: in
+      hinge 0.499 -> 0.463
+
+=== iteration 8: "Switching off once I'm home has become nearly impossible. What helps a permanent night worker wind down?"
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.963  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.009  national 0.000
+    laya     gender 0.020       age 0.021  geograph 0.021  professi 0.024  health c 0.021  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+    max      gender 0.020       age 0.021  geograph 0.021  professi 0.963  health c 0.021  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+  max_iters reached
+
+================================================================================
+original: "Switching off once I'm home has become nearly impossible. What helps a 40-year-old on permanent nights at a Manchester prison wind down?"
+  qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.963  health c 0.000  educatio 0.001  socioeco 0.000  relation 0.000  family s 0.009  national 0.000
+  laya     gender 0.020       age 0.021  geograph 0.021  professi 0.024  health c 0.021  educatio 0.021  socioeco 0.021  relation 0.020  family s 0.020  national 0.021
+final (NOT converged, leak 0.963, utility R 89%; reference 91 s, privacy step 565 s): "Switching off once I'm home has become nearly impossible. What helps a permanent night worker wind down?"
+  20/30 (0 failed)
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4474 (91 s)
+
+=== iteration 0: 'Tuition is a genuine strain when your family has little to spare. Which scholarships fit a 22-year-old nursing student in Nairobi from a low-income home?'
+    qwen     gender 0.047       age 0.679  geograph 1.000  professi 0.001  health c 0.000  educatio 1.000  socioeco 1.000  relation 0.000  family s 1.000  national 0.971
+    laya     gender 0.021       age 0.952  geograph 0.976  professi 0.021  health c 0.022  educatio 0.979  socioeco 0.978  relation 0.020  family s 0.978  national 0.469
+    max      gender 0.047       age 0.952  geograph 1.000  professi 0.021  health c 0.022  educatio 1.000  socioeco 1.000  relation 0.020  family s 1.000  national 0.971
+  occlusion: 80 spans scored in 72 s
+  [stall] socioeconomic status: best span blame +0.0007 at P 1.0000
+  leaking: age, geographic location, education level, socioeconomic status, family situation, nationality
+  picked spans: 'Nairobi' (socioeconomic status +0.001), 'family' (family situation +0.953), '22-year-old nursing student' (education level +0.838)
+  utility order (R with the span deleted): 'family' 1%, 'Nairobi' 41%, '22-year-old nursing student' 45%
+    'family' (family situation)
+      -> 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a 22-year-old nursing student in Nairobi from a low-income home?'
+      utility R 1%: in
+      hinge 2.923 -> 2.843
+    'Nairobi' (geographic location, socioeconomic status, nationality)
+      -> 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a 22-year-old nursing student in a low-income home?'
+      utility R 42%: in
+      hinge 2.843 -> 1.977
+    '22-year-old nursing student' (education level)
+      -> 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a 22-year-old student in a low-income home?'
+      utility R 60%: in
+      hinge 1.977 -> 1.975
+
+=== iteration 1: 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a 22-year-old student in a low-income home?'
+    qwen     gender 0.000       age 0.852  geograph 0.000  professi 0.000  health c 0.000  educatio 0.999  socioeco 1.000  relation 0.000  family s 1.000  national 0.000
+    laya     gender 0.021       age 0.976  geograph 0.021  professi 0.020  health c 0.020  educatio 0.975  socioeco 0.976  relation 0.020  family s 0.023  national 0.020
+    max      gender 0.021       age 0.976  geograph 0.021  professi 0.020  health c 0.020  educatio 0.999  socioeco 1.000  relation 0.020  family s 1.000  national 0.020
+  occlusion: 63 spans scored in 55 s
+  [stall] family situation: best span blame +0.0025 at P 1.0000
+  leaking: age, education level, socioeconomic status, family situation
+  picked spans: '22-year-old' (socioeconomic status +0.948), 'home' (family situation +0.003)
+  utility order (R with the span deleted): 'home' 61%, '22-year-old' 81%
+    'home' (family situation)
+      -> 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a 22-year-old student in a low-income household?'
+      utility R 64%: in
+      hinge 1.975 -> 1.973
+    '22-year-old' (age, education level, socioeconomic status)
+      -> 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a student in a low-income household?'
+      utility R 84%: in
+      hinge 1.973 -> 1.952
+
+=== iteration 2: 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a student in a low-income household?'
+    qwen     gender 0.000       age 0.953  geograph 0.000  professi 0.000  health c 0.000  educatio 0.999  socioeco 1.000  relation 0.000  family s 1.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.020  educatio 0.023  socioeco 0.028  relation 0.020  family s 0.022  national 0.020
+    max      gender 0.020       age 0.953  geograph 0.020  professi 0.020  health c 0.020  educatio 0.999  socioeco 1.000  relation 0.020  family s 1.000  national 0.020
+  occlusion: 59 spans scored in 50 s
+  [stall] socioeconomic status: best span blame +0.0034 at P 1.0000
+  [stall] family situation: best span blame +0.0018 at P 1.0000
+  leaking: age, education level, socioeconomic status, family situation
+  picked spans: 'low-income' (socioeconomic status +0.003), 'household' (family situation +0.002), 'spare. Which scholarships' (education level +0.717), 'strain when' (age +0.807)
+  utility order (R with the span deleted): 'household' 82%, 'strain when' 85%, 'low-income' 89%, 'spare. Which scholarships' 110%
+    'household' (family situation)
+      -> 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a student in a low-income situation?'
+      utility R 81%: in
+      hinge 1.952 -> 1.923
+    'strain when' (age): rewriter changed nothing
+    'low-income' (socioeconomic status)
+      -> 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a student in a similar situation?'
+      utility R 81%: in
+      hinge 1.923 -> 1.498
+    'spare. Which scholarships' (education level): rewriter changed nothing
+
+=== iteration 3: 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a student in a similar situation?'
+    qwen     gender 0.000       age 0.500  geograph 0.000  professi 0.000  health c 0.000  educatio 0.998  socioeco 1.000  relation 0.000  family s 1.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.019  educatio 0.022  socioeco 0.024  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.500  geograph 0.020  professi 0.020  health c 0.019  educatio 0.998  socioeco 1.000  relation 0.020  family s 1.000  national 0.020
+  occlusion: 59 spans scored in 50 s
+  [stall] socioeconomic status: best span blame +0.0015 at P 1.0000
+  [stall] family situation: best span blame +0.0001 at P 1.0000
+  leaking: age, education level, socioeconomic status, family situation
+  picked spans: 'strain' (socioeconomic status +0.002)
+  utility order (R with the span deleted): 'strain' 85%
+    'strain' (age, socioeconomic status, family situation): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Tuition is a genuine strain when your family has little to spare. Which scholarships fit a 22-year-old nursing student in Nairobi from a low-income home?'
+  qwen     gender 0.000       age 0.500  geograph 0.000  professi 0.000  health c 0.000  educatio 0.998  socioeco 1.000  relation 0.000  family s 1.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.020  health c 0.019  educatio 0.022  socioeco 0.024  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 1.000, utility R 81%; reference 91 s, privacy step 357 s): 'Tuition is a genuine strain when you have little to spare. Which scholarships fit a student in a similar situation?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4893 (91 s)
+
+=== iteration 0: 'Managing a young, progressive team is proving harder than the job itself. How does a fairly conservative 55-year-old supervising a factory floor in Ostrava lead them well?'
+    qwen     gender 0.000       age 0.060  geograph 0.989  professi 1.000  health c 0.000  educatio 0.000  socioeco 0.023  relation 0.000  family s 0.000  national 0.011
+    laya     gender 0.021       age 0.979  geograph 0.978  professi 0.964  health c 0.020  educatio 0.023  socioeco 0.022  relation 0.021  family s 0.020  national 0.028
+    max      gender 0.021       age 0.979  geograph 0.989  professi 1.000  health c 0.020  educatio 0.023  socioeco 0.023  relation 0.021  family s 0.020  national 0.028
+  occlusion: 88 spans scored in 80 s
+  leaking: age, geographic location, profession
+  picked spans: 'Ostrava' (profession +0.938), '55-year-old' (age +0.958)
+  utility order (R with the span deleted): 'Ostrava' 9%, '55-year-old' 26%
+    'Ostrava' (geographic location, profession)
+      -> 'Managing a young, progressive team is proving harder than the job itself. How does a fairly conservative 55-year-old supervising a factory floor lead them well?'
+      utility R 9%: in
+      hinge 1.468 -> 0.978
+    '55-year-old' (age)
+      -> 'Managing a young, progressive team is proving harder than the job itself. How does a fairly conservative supervisor leading a factory floor guide them well?'
+      utility R 38%: in
+      hinge 0.978 -> 0.500
+
+=== iteration 1: 'Managing a young, progressive team is proving harder than the job itself. How does a fairly conservative supervisor leading a factory floor guide them well?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 1.000  health c 0.000  educatio 0.003  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.021  geograph 0.020  professi 0.025  health c 0.019  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.021  geograph 0.020  professi 1.000  health c 0.019  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 81 spans scored in 70 s
+  [stall] profession: best span blame +0.0035 at P 0.9999
+  leaking: profession
+  picked spans: 'fairly' (profession +0.004)
+  utility order (R with the span deleted): 'fairly' 40%
+    'fairly' (profession)
+      -> 'Managing a young, progressive team is proving harder than the job itself. How does a conservative supervisor leading a factory floor guide them well?'
+      utility R 40%: in
+      hinge 0.500 -> 0.496
+
+=== iteration 2: 'Managing a young, progressive team is proving harder than the job itself. How does a conservative supervisor leading a factory floor guide them well?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.996  health c 0.000  educatio 0.004  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.021  geograph 0.020  professi 0.024  health c 0.019  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.021  geograph 0.020  professi 0.996  health c 0.019  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 77 spans scored in 68 s
+  leaking: profession
+  picked spans: 'proving harder than' (profession +0.575)
+  utility order (R with the span deleted): 'proving harder than' 46%
+    'proving harder than' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Managing a young, progressive team is proving harder than the job itself. How does a fairly conservative 55-year-old supervising a factory floor in Ostrava lead them well?'
+  qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.996  health c 0.000  educatio 0.004  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.021  geograph 0.020  professi 0.024  health c 0.019  educatio 0.022  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 0.996, utility R 40%; reference 91 s, privacy step 278 s): 'Managing a young, progressive team is proving harder than the job itself. How does a conservative supervisor leading a factory floor guide them well?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.3850 (91 s)
+
+=== iteration 0: "My wife and I want to plan retirement jointly and I'm not sure where to begin. An accountant in Toronto myself, 47, I still find the couple side tricky."
+    qwen     gender 0.731       age 0.986  geograph 0.679  professi 1.000  health c 0.000  educatio 0.998  socioeco 1.000  relation 1.000  family s 1.000  national 0.986
+    laya     gender 0.923       age 0.979  geograph 0.978  professi 0.978  health c 0.020  educatio 0.025  socioeco 0.026  relation 0.979  family s 0.968  national 0.022
+    max      gender 0.923       age 0.986  geograph 0.978  professi 1.000  health c 0.020  educatio 0.998  socioeco 1.000  relation 1.000  family s 1.000  national 0.986
+  occlusion: 95 spans scored in 84 s
+  leaking: gender, age, geographic location, profession, education level, socioeconomic status, relationship status, family situation, nationality
+  picked spans: 'wife' (family situation +0.945), 'accountant' (profession +1.000), '47' (age +0.984), 'Toronto' (nationality +0.986)
+  utility order (R with the span deleted): '47' 2%, 'wife' 8%, 'Toronto' 15%, 'accountant' 16%
+    '47' (age)
+      -> "My wife and I want to plan retirement jointly and I'm not sure where to begin. An accountant in Toronto, I still find the couple side tricky."
+      utility R 12%: in
+      hinge 4.371 -> 3.732
+    'wife' (gender, family situation)
+      -> "My partner and I want to plan retirement jointly and I'm not sure where to begin. An accountant in Toronto, I still find the couple side tricky."
+      utility R 23%: in
+      hinge 3.732 -> 2.497
+    'Toronto' (geographic location, nationality)
+      -> "My partner and I want to plan retirement jointly and I'm not sure where to begin. An accountant in a major city, I still find the couple side tricky."
+      utility R 33%: in
+      hinge 2.497 -> 2.433
+    'accountant' (profession, socioeconomic status)
+      -> "My partner and I want to plan retirement jointly and I'm not sure where to begin. As someone who works in a major city, I still find the couple side tricky."
+      utility R 44%: in
+      hinge 2.433 -> 1.948
+
+=== iteration 1: "My partner and I want to plan retirement jointly and I'm not sure where to begin. As someone who works in a major city, I still find the couple side tricky."
+    qwen     gender 0.000       age 0.000  geograph 0.119  professi 0.037  health c 0.000  educatio 0.001  socioeco 0.971  relation 1.000  family s 1.000  national 0.000
+    laya     gender 0.023       age 0.977  geograph 0.023  professi 0.024  health c 0.021  educatio 0.022  socioeco 0.024  relation 0.978  family s 0.023  national 0.021
+    max      gender 0.023       age 0.977  geograph 0.119  professi 0.037  health c 0.021  educatio 0.022  socioeco 0.971  relation 1.000  family s 1.000  national 0.021
+  occlusion: 101 spans scored in 91 s
+  leaking: age, socioeconomic status, relationship status, family situation
+  picked spans: 'My partner' (relationship status +0.897), 'retirement' (age +0.957), 'major' (socioeconomic status +0.963)
+  utility order (R with the span deleted): 'My partner' 43%, 'major' 44%, 'retirement' 63%
+    'My partner' (relationship status)
+      -> "My significant other and I want to plan retirement jointly and I'm not sure where to begin. As someone who works in a major city, I still find the couple side tricky."
+      utility R 46%: in
+      hinge 1.948 -> 1.901
+    'major' (socioeconomic status)
+      -> "My significant other and I want to plan retirement jointly and I'm not sure where to begin. As someone who works in a city, I still find the couple side tricky."
+      utility R 45%: in
+      hinge 1.901 -> 1.477
+    'retirement' (age)
+      -> "My significant other and I want to plan retirement jointly and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+      utility R 47%: in
+      hinge 1.477 -> 1.477
+
+=== iteration 2: "My significant other and I want to plan retirement jointly and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+    qwen     gender 0.000       age 0.000  geograph 0.001  professi 0.047  health c 0.000  educatio 0.001  socioeco 0.029  relation 1.000  family s 0.999  national 0.000
+    laya     gender 0.023       age 0.978  geograph 0.022  professi 0.022  health c 0.020  educatio 0.022  socioeco 0.024  relation 0.979  family s 0.024  national 0.021
+    max      gender 0.023       age 0.978  geograph 0.022  professi 0.047  health c 0.020  educatio 0.022  socioeco 0.029  relation 1.000  family s 0.999  national 0.021
+  occlusion: 97 spans scored in 86 s
+  leaking: age, relationship status, family situation
+  picked spans: 'My significant other' (relationship status +0.852), 'city' (family situation +0.222), 'retirement' (age +0.957)
+  utility order (R with the span deleted): 'city' 39%, 'My significant other' 46%, 'retirement' 64%
+    'city' (family situation): rewriter changed nothing
+    'My significant other' (relationship status)
+      -> "My partner and I want to plan retirement jointly and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+      utility R 46%: in
+      hinge 1.477 -> 1.476
+    'retirement' (age)
+      -> "My partner and I want to plan our retirement jointly and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+      utility R 45%: in
+      hinge 1.476 -> 1.477
+
+=== iteration 3: "My partner and I want to plan our retirement jointly and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+    qwen     gender 0.000       age 0.000  geograph 0.001  professi 0.047  health c 0.000  educatio 0.002  socioeco 0.023  relation 1.000  family s 0.999  national 0.000
+    laya     gender 0.022       age 0.978  geograph 0.023  professi 0.022  health c 0.020  educatio 0.022  socioeco 0.024  relation 0.978  family s 0.024  national 0.021
+    max      gender 0.022       age 0.978  geograph 0.023  professi 0.047  health c 0.020  educatio 0.022  socioeco 0.024  relation 1.000  family s 0.999  national 0.021
+  occlusion: 96 spans scored in 84 s
+  leaking: age, relationship status, family situation
+  picked spans: 'My partner' (relationship status +0.895), 'our retirement jointly' (family situation +0.780)
+  utility order (R with the span deleted): 'My partner' 44%, 'our retirement jointly' 71%
+    'My partner' (relationship status)
+      -> "My significant other and I want to plan our retirement jointly and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+      utility R 46%: in
+      hinge 1.477 -> 1.477
+    'our retirement jointly' (family situation): rewriter changed nothing
+
+=== iteration 4: "My significant other and I want to plan our retirement jointly and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+    qwen     gender 0.000       age 0.000  geograph 0.001  professi 0.060  health c 0.000  educatio 0.002  socioeco 0.014  relation 1.000  family s 0.999  national 0.000
+    laya     gender 0.022       age 0.978  geograph 0.022  professi 0.022  health c 0.020  educatio 0.022  socioeco 0.024  relation 0.979  family s 0.026  national 0.021
+    max      gender 0.022       age 0.978  geograph 0.022  professi 0.060  health c 0.020  educatio 0.022  socioeco 0.024  relation 1.000  family s 0.999  national 0.021
+  occlusion: 100 spans scored in 89 s
+  leaking: age, relationship status, family situation
+  picked spans: 'My significant other' (relationship status +0.846), 'city' (family situation +0.147), 'retirement' (age +0.957)
+  utility order (R with the span deleted): 'city' 38%, 'My significant other' 44%, 'retirement' 63%
+    'city' (family situation): rewriter changed nothing
+    'My significant other' (relationship status)
+      -> "My partner and I want to plan our retirement jointly and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+      utility R 45%: in
+      hinge 1.477 -> 1.477
+    'retirement' (age)
+      -> "My partner and I want to plan our financial future together and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+      utility R 85%: in
+      hinge 1.477 -> 0.731
+
+=== iteration 5: "My partner and I want to plan our financial future together and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+    qwen     gender 0.000       age 0.000  geograph 0.001  professi 0.060  health c 0.000  educatio 0.001  socioeco 0.014  relation 1.000  family s 0.731  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.022  professi 0.022  health c 0.020  educatio 0.021  socioeco 0.024  relation 0.977  family s 0.023  national 0.020
+    max      gender 0.021       age 0.021  geograph 0.022  professi 0.060  health c 0.020  educatio 0.021  socioeco 0.024  relation 1.000  family s 0.731  national 0.020
+  occlusion: 100 spans scored in 89 s
+  leaking: relationship status, family situation
+  picked spans: 'partner' (relationship status +0.946), 'city' (family situation +0.702)
+  utility order (R with the span deleted): 'city' 76%, 'partner' 81%
+    'city' (family situation): rewriter changed nothing
+    'partner' (relationship status)
+      -> "My significant other and I want to plan our financial future together and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+      utility R 88%: in
+      hinge 0.731 -> 0.852
+
+=== iteration 6: "My significant other and I want to plan our financial future together and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+    qwen     gender 0.000       age 0.000  geograph 0.001  professi 0.060  health c 0.000  educatio 0.001  socioeco 0.011  relation 1.000  family s 0.852  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.022  professi 0.022  health c 0.020  educatio 0.022  socioeco 0.024  relation 0.978  family s 0.026  national 0.020
+    max      gender 0.021       age 0.021  geograph 0.022  professi 0.060  health c 0.020  educatio 0.022  socioeco 0.024  relation 1.000  family s 0.852  national 0.020
+  occlusion: 104 spans scored in 93 s
+  leaking: relationship status, family situation
+  picked spans: 'My significant' (relationship status +0.902), 'city' (family situation +0.792)
+  utility order (R with the span deleted): 'city' 78%, 'My significant' 83%
+    'city' (family situation): rewriter changed nothing
+    'My significant' (relationship status)
+      -> "My partner and I want to plan our financial future together and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+      utility R 85%: in
+      hinge 0.852 -> 0.731
+
+=== iteration 7: "My partner and I want to plan our financial future together and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+    qwen     gender 0.000       age 0.000  geograph 0.001  professi 0.060  health c 0.000  educatio 0.001  socioeco 0.014  relation 1.000  family s 0.731  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.022  professi 0.022  health c 0.020  educatio 0.021  socioeco 0.024  relation 0.977  family s 0.023  national 0.020
+    max      gender 0.021       age 0.021  geograph 0.022  professi 0.060  health c 0.020  educatio 0.021  socioeco 0.024  relation 1.000  family s 0.731  national 0.020
+  occlusion: 100 spans scored in 89 s
+  leaking: relationship status, family situation
+  picked spans: 'partner' (relationship status +0.946), 'city' (family situation +0.702)
+  utility order (R with the span deleted): 'city' 76%, 'partner' 81%
+    'city' (family situation): rewriter changed nothing
+    'partner' (relationship status)
+      -> "My significant other and I want to plan our financial future together and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+      utility R 88%: in
+      hinge 0.731 -> 0.852
+
+=== iteration 8: "My significant other and I want to plan our financial future together and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+    qwen     gender 0.000       age 0.000  geograph 0.001  professi 0.060  health c 0.000  educatio 0.001  socioeco 0.011  relation 1.000  family s 0.852  national 0.000
+    laya     gender 0.021       age 0.021  geograph 0.022  professi 0.022  health c 0.020  educatio 0.022  socioeco 0.024  relation 0.978  family s 0.026  national 0.020
+    max      gender 0.021       age 0.021  geograph 0.022  professi 0.060  health c 0.020  educatio 0.022  socioeco 0.024  relation 1.000  family s 0.852  national 0.020
+  max_iters reached
+
+================================================================================
+original: "My wife and I want to plan retirement jointly and I'm not sure where to begin. An accountant in Toronto myself, 47, I still find the couple side tricky."
+  qwen     gender 0.000       age 0.000  geograph 0.001  professi 0.060  health c 0.000  educatio 0.001  socioeco 0.011  relation 1.000  family s 0.852  national 0.000
+  laya     gender 0.021       age 0.021  geograph 0.022  professi 0.022  health c 0.020  educatio 0.022  socioeco 0.024  relation 0.978  family s 0.026  national 0.020
+final (NOT converged, leak 1.000, utility R 88%; reference 91 s, privacy step 1002 s): "My significant other and I want to plan our financial future together and I'm not sure where to begin. As someone who works in a city, I still find the process tricky."
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.5660 (91 s)
+
+=== iteration 0: "A steadier career is what I'm after, but high school was as far as my schooling went. What options open up for a 33-year-old driving a taxi in Amman?"
+    qwen     gender 0.000       age 0.777  geograph 0.924  professi 0.999  health c 0.000  educatio 1.000  socioeco 1.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.978  geograph 0.977  professi 0.965  health c 0.020  educatio 0.977  socioeco 0.026  relation 0.022  family s 0.021  national 0.975
+    max      gender 0.022       age 0.978  geograph 0.977  professi 0.999  health c 0.020  educatio 1.000  socioeco 1.000  relation 0.022  family s 0.021  national 0.975
+  occlusion: 88 spans scored in 80 s
+  leaking: age, geographic location, profession, education level, socioeconomic status, nationality
+  picked spans: 'driving a taxi in' (socioeconomic status +0.119), 'school' (education level +0.943), '33-year-old' (profession +0.990), 'Amman' (geographic location +0.954)
+  utility order (R with the span deleted): 'school' 4%, 'Amman' 18%, 'driving a taxi in' 28%, '33-year-old' 38%
+    'school' (education level)
+      -> "A steadier career is what I'm after, but I only completed high school. What options open up for a 33-year-old driving a taxi in Amman?"
+      utility R 3%: in
+      hinge 2.929 -> 2.916
+    'Amman' (geographic location, nationality)
+      -> "A steadier career is what I'm after, but I only completed high school. What options open up for a 33-year-old driving a taxi in a city?"
+      utility R 21%: in
+      hinge 2.916 -> 1.993
+    'driving a taxi in' (socioeconomic status): rewriter changed nothing
+    '33-year-old' (age, profession)
+      -> "A steadier career is what I'm after, but I only completed high school. What options open up for someone driving a taxi in a city?"
+      utility R 33%: in
+      hinge 1.993 -> 1.424
+
+=== iteration 1: "A steadier career is what I'm after, but I only completed high school. What options open up for someone driving a taxi in a city?"
+    qwen     gender 0.000       age 0.148  geograph 0.000  professi 0.924  health c 0.000  educatio 1.000  socioeco 1.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.021       age 0.024  geograph 0.022  professi 0.025  health c 0.020  educatio 0.978  socioeco 0.024  relation 0.021  family s 0.021  national 0.021
+    max      gender 0.021       age 0.148  geograph 0.022  professi 0.924  health c 0.020  educatio 1.000  socioeco 1.000  relation 0.021  family s 0.021  national 0.021
+  occlusion: 72 spans scored in 64 s
+  leaking: profession, education level, socioeconomic status
+  picked spans: 'completed high school. What' (socioeconomic status +0.627)
+  utility order (R with the span deleted): 'completed high school. What' 55%
+    'completed high school. What' (socioeconomic status): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: "A steadier career is what I'm after, but high school was as far as my schooling went. What options open up for a 33-year-old driving a taxi in Amman?"
+  qwen     gender 0.000       age 0.148  geograph 0.000  professi 0.924  health c 0.000  educatio 1.000  socioeco 1.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.021       age 0.024  geograph 0.022  professi 0.025  health c 0.020  educatio 0.978  socioeco 0.024  relation 0.021  family s 0.021  national 0.021
+final (NOT converged, leak 1.000, utility R 33%; reference 91 s, privacy step 210 s): "A steadier career is what I'm after, but I only completed high school. What options open up for someone driving a taxi in a city?"
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.6234 (91 s)
+
+=== iteration 0: 'The arthritis in my hands rules out anything too fiddly these days. What gentle hobbies might suit a 71-year-old widow in Palermo?'
+    qwen     gender 0.999       age 1.000  geograph 0.996  professi 0.000  health c 1.000  educatio 0.679  socioeco 0.993  relation 1.000  family s 1.000  national 0.321
+    laya     gender 0.979       age 0.979  geograph 0.978  professi 0.020  health c 0.979  educatio 0.023  socioeco 0.023  relation 0.977  family s 0.966  national 0.028
+    max      gender 0.999       age 1.000  geograph 0.996  professi 0.020  health c 1.000  educatio 0.679  socioeco 0.993  relation 1.000  family s 1.000  national 0.321
+  occlusion: 71 spans scored in 63 s
+  leaking: gender, age, geographic location, health condition, education level, socioeconomic status, relationship status, family situation
+  picked spans: 'arthritis' (health condition +0.958), 'widow' (family situation +0.982), 'Palermo' (geographic location +0.996), 'rules' (education level +0.619)
+  utility order (R with the span deleted): 'rules' 1%, 'widow' 12%, 'arthritis' 24%, 'Palermo' 26%
+    'rules' (education level): rewriter changed nothing
+    'widow' (gender, socioeconomic status, relationship status, family situation)
+      -> 'The arthritis in my hands rules out anything too fiddly these days. What gentle hobbies might suit a 71-year-old in Palermo?'
+      utility R 12%: in
+      hinge 3.667 -> 1.755
+    'arthritis' (health condition)
+      -> 'The condition in my hands rules out anything too fiddly these days. What gentle hobbies might suit a 71-year-old in Palermo?'
+      utility R 26%: in
+      hinge 1.755 -> 2.850
+    'Palermo' (geographic location, profession)
+      -> 'The condition in my hands rules out anything too fiddly these days. What gentle hobbies might suit a 71-year-old?'
+      utility R 48%: in
+      hinge 2.850 -> 1.276
+
+=== iteration 1: 'The condition in my hands rules out anything too fiddly these days. What gentle hobbies might suit a 71-year-old?'
+    qwen     gender 0.321       age 1.000  geograph 0.000  professi 0.500  health c 0.999  educatio 0.269  socioeco 0.378  relation 0.000  family s 0.777  national 0.000
+    laya     gender 0.025       age 0.978  geograph 0.021  professi 0.020  health c 0.026  educatio 0.021  socioeco 0.022  relation 0.023  family s 0.021  national 0.022
+    max      gender 0.321       age 1.000  geograph 0.021  professi 0.500  health c 0.999  educatio 0.269  socioeco 0.378  relation 0.023  family s 0.777  national 0.022
+  occlusion: 60 spans scored in 51 s
+  leaking: age, profession, health condition, family situation
+  picked spans: '71-year-old' (age +0.957), 'condition in my hands' (health condition +0.848), 'rules' (family situation +0.730), 'fiddly' (profession +0.477)
+  utility order (R with the span deleted): 'rules' 51%, 'fiddly' 51%, '71-year-old' 62%, 'condition in my hands' 70%
+    'rules' (family situation): rewriter changed nothing
+    'fiddly' (profession)
+      -> 'The condition in my hands rules out anything too complicated these days. What gentle hobbies might suit a 71-year-old?'
+      utility R 52%: in
+      hinge 1.276 -> 0.991
+    '71-year-old' (age)
+      -> 'The condition in my hands rules out anything too complicated these days. What gentle hobbies might suit an older adult?'
+      utility R 64%: in
+      hinge 0.991 -> 1.375
+    'condition in my hands' (health condition)
+      -> 'My current limitations rule out anything too complicated these days. What gentle hobbies might suit an older adult?'
+      utility R 74%: in
+      hinge 1.375 -> 0.477
+
+=== iteration 2: 'My current limitations rule out anything too complicated these days. What gentle hobbies might suit an older adult?'
+    qwen     gender 0.000       age 0.977  geograph 0.000  professi 0.023  health c 0.060  educatio 0.060  socioeco 0.002  relation 0.000  family s 0.007  national 0.000
+    laya     gender 0.023       age 0.976  geograph 0.020  professi 0.020  health c 0.022  educatio 0.021  socioeco 0.021  relation 0.022  family s 0.021  national 0.020
+    max      gender 0.023       age 0.977  geograph 0.020  professi 0.023  health c 0.060  educatio 0.060  socioeco 0.021  relation 0.022  family s 0.021  national 0.020
+  occlusion: 59 spans scored in 50 s
+  leaking: age
+  picked spans: 'older adult' (age +0.903)
+  utility order (R with the span deleted): 'older adult' 73%
+    'older adult' (age)
+      -> 'My current limitations rule out anything too complicated these days. What gentle hobbies might suit someone looking for a relaxing pastime?'
+      utility R 82%: in
+      hinge 0.477 -> 0.062
+
+=== iteration 3: 'My current limitations rule out anything too complicated these days. What gentle hobbies might suit someone looking for a relaxing pastime?'
+    qwen     gender 0.000       age 0.107  geograph 0.000  professi 0.562  health c 0.182  educatio 0.321  socioeco 0.005  relation 0.000  family s 0.001  national 0.000
+    laya     gender 0.022       age 0.024  geograph 0.020  professi 0.020  health c 0.021  educatio 0.020  socioeco 0.021  relation 0.022  family s 0.020  national 0.020
+    max      gender 0.022       age 0.107  geograph 0.020  professi 0.562  health c 0.182  educatio 0.321  socioeco 0.021  relation 0.022  family s 0.020  national 0.020
+  occlusion: 69 spans scored in 60 s
+  leaking: profession
+  picked spans: 'My current' (profession +0.507)
+  utility order (R with the span deleted): 'My current' 84%
+    'My current' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'The arthritis in my hands rules out anything too fiddly these days. What gentle hobbies might suit a 71-year-old widow in Palermo?'
+  qwen     gender 0.000       age 0.107  geograph 0.000  professi 0.562  health c 0.182  educatio 0.321  socioeco 0.005  relation 0.000  family s 0.001  national 0.000
+  laya     gender 0.022       age 0.024  geograph 0.020  professi 0.020  health c 0.021  educatio 0.020  socioeco 0.021  relation 0.022  family s 0.020  national 0.020
+final (NOT converged, leak 0.562, utility R 82%; reference 91 s, privacy step 354 s): 'My current limitations rule out anything too complicated these days. What gentle hobbies might suit someone looking for a relaxing pastime?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4803 (91 s)
+
+=== iteration 0: 'Conversations with my religious family back home have grown tense since I stopped believing. How does a Pakistani doing a PhD in Toronto, now an atheist at 28, navigate them?'
+    qwen     gender 0.002       age 1.000  geograph 0.924  professi 0.004  health c 0.000  educatio 1.000  socioeco 0.076  relation 0.000  family s 1.000  national 1.000
+    laya     gender 0.020       age 0.978  geograph 0.977  professi 0.020  health c 0.020  educatio 0.978  socioeco 0.021  relation 0.021  family s 0.973  national 0.978
+    max      gender 0.020       age 1.000  geograph 0.977  professi 0.020  health c 0.020  educatio 1.000  socioeco 0.076  relation 0.021  family s 1.000  national 1.000
+  occlusion: 98 spans scored in 87 s
+  leaking: age, geographic location, education level, family situation, nationality
+  picked spans: 'family' (family situation +0.949), 'Pakistani' (nationality +0.996), 'PhD' (education level +0.989), '28' (age +0.970), 'Toronto' (geographic location +0.956)
+  utility order (R with the span deleted): '28' 4%, 'PhD' 5%, 'family' 5%, 'Toronto' 6%, 'Pakistani' 7%
+    '28' (age)
+      -> 'Conversations with my religious family back home have grown tense since I stopped believing. How does a Pakistani doing a PhD in Toronto, now an atheist, navigate them?'
+      utility R 5%: in
+      hinge 2.476 -> 1.906
+    'PhD' (education level): rewriter changed nothing
+    'family' (family situation)
+      -> 'Conversations with my religious family back home have grown tense since I stopped believing. How does a Pakistani doing a PhD in Toronto, now an atheist, navigate these discussions?'
+      utility R 7%: in
+      hinge 1.906 -> 2.025
+    'Toronto' (geographic location)
+      -> 'Conversations with my religious family back home have grown tense since I stopped believing. How does a Pakistani doing a PhD navigate these discussions now that I am an atheist?'
+      utility R 15%: in
+      hinge 2.025 -> 1.998
+    'Pakistani' (nationality)
+      -> 'Conversations with my religious family back home have grown tense since I stopped believing. How does a person doing a PhD navigate these discussions now that I am an atheist?'
+      utility R 26%: in
+      hinge 1.998 -> 0.989
+
+=== iteration 1: 'Conversations with my religious family back home have grown tense since I stopped believing. How does a person doing a PhD navigate these discussions now that I am an atheist?'
+    qwen     gender 0.000       age 0.321  geograph 0.005  professi 0.037  health c 0.000  educatio 0.989  socioeco 0.000  relation 0.000  family s 1.000  national 0.000
+    laya     gender 0.020       age 0.025  geograph 0.021  professi 0.020  health c 0.021  educatio 0.037  socioeco 0.021  relation 0.022  family s 0.977  national 0.022
+    max      gender 0.020       age 0.321  geograph 0.021  professi 0.037  health c 0.021  educatio 0.989  socioeco 0.021  relation 0.022  family s 1.000  national 0.022
+  occlusion: 91 spans scored in 81 s
+  leaking: education level, family situation
+  picked spans: 'family' (family situation +0.953), 'PhD' (education level +0.988)
+  utility order (R with the span deleted): 'PhD' 30%, 'family' 31%
+    'PhD' (education level)
+      -> 'Conversations with my religious family back home have grown tense since I stopped believing. How does a person doing a graduate degree navigate these discussions now that I am an atheist?'
+      utility R 27%: in
+      hinge 0.989 -> 1.017
+    'family' (family situation): rewriter changed nothing
+
+=== iteration 2: 'Conversations with my religious family back home have grown tense since I stopped believing. How does a person doing a graduate degree navigate these discussions now that I am an atheist?'
+    qwen     gender 0.000       age 0.593  geograph 0.003  professi 0.005  health c 0.000  educatio 0.924  socioeco 0.000  relation 0.000  family s 1.000  national 0.000
+    laya     gender 0.020       age 0.026  geograph 0.021  professi 0.020  health c 0.021  educatio 0.637  socioeco 0.021  relation 0.022  family s 0.977  national 0.022
+    max      gender 0.020       age 0.593  geograph 0.021  professi 0.020  health c 0.021  educatio 0.924  socioeco 0.021  relation 0.022  family s 1.000  national 0.022
+  occlusion: 95 spans scored in 84 s
+  leaking: age, education level, family situation
+  picked spans: 'family' (family situation +0.953), 'graduate degree' (education level +0.873)
+  utility order (R with the span deleted): 'graduate degree' 30%, 'family' 33%
+    'graduate degree' (age, education level)
+      -> 'Conversations with my religious family back home have grown tense since I stopped believing. How does a person navigating these discussions now that I am an atheist?'
+      utility R 31%: in
+      hinge 1.017 -> 0.500
+    'family' (family situation): rewriter changed nothing
+
+=== iteration 3: 'Conversations with my religious family back home have grown tense since I stopped believing. How does a person navigating these discussions now that I am an atheist?'
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.000  health c 0.000  educatio 0.000  socioeco 0.000  relation 0.000  family s 1.000  national 0.000
+    laya     gender 0.020       age 0.025  geograph 0.021  professi 0.020  health c 0.020  educatio 0.022  socioeco 0.021  relation 0.022  family s 0.977  national 0.022
+    max      gender 0.020       age 0.025  geograph 0.021  professi 0.020  health c 0.020  educatio 0.022  socioeco 0.021  relation 0.022  family s 1.000  national 0.022
+  occlusion: 80 spans scored in 71 s
+  leaking: family situation
+  picked spans: 'family' (family situation +0.953)
+  utility order (R with the span deleted): 'family' 35%
+    'family' (family situation): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Conversations with my religious family back home have grown tense since I stopped believing. How does a Pakistani doing a PhD in Toronto, now an atheist at 28, navigate them?'
+  qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.000  health c 0.000  educatio 0.000  socioeco 0.000  relation 0.000  family s 1.000  national 0.000
+  laya     gender 0.020       age 0.025  geograph 0.021  professi 0.020  health c 0.020  educatio 0.022  socioeco 0.021  relation 0.022  family s 0.977  national 0.022
+final (NOT converged, leak 1.000, utility R 31%; reference 91 s, privacy step 454 s): 'Conversations with my religious family back home have grown tense since I stopped believing. How does a person navigating these discussions now that I am an atheist?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4736 (91 s)
+
+=== iteration 0: 'Redesigning my kitchen for accessibility is the project I keep putting off. As a 39-year-old chef in Osaka who uses a wheelchair, where should I start with the workflow?'
+    qwen     gender 0.852       age 0.996  geograph 1.000  professi 1.000  health c 0.998  educatio 0.818  socioeco 0.940  relation 0.000  family s 0.002  national 1.000
+    laya     gender 0.026       age 0.979  geograph 0.979  professi 0.979  health c 0.979  educatio 0.024  socioeco 0.026  relation 0.021  family s 0.021  national 0.959
+    max      gender 0.852       age 0.996  geograph 1.000  professi 1.000  health c 0.998  educatio 0.818  socioeco 0.940  relation 0.021  family s 0.021  national 1.000
+  occlusion: 86 spans scored in 77 s
+  leaking: gender, age, geographic location, profession, health condition, education level, socioeconomic status, nationality
+  picked spans: 'chef' (profession +1.000), 'Osaka' (nationality +1.000), 'wheelchair' (health condition +0.955), '39-year-old' (age +0.996)
+  utility order (R with the span deleted): '39-year-old' 3%, 'chef' 8%, 'Osaka' 9%, 'wheelchair' 10%
+    '39-year-old' (gender, age)
+      -> 'Redesigning my kitchen for accessibility is the project I keep putting off. As a chef in Osaka who uses a wheelchair, where should I start with the workflow?'
+      utility R 3%: in
+      hinge 3.604 -> 2.398
+    'chef' (profession, education level)
+      -> 'Redesigning my kitchen for accessibility is the project I keep putting off. As someone who uses a wheelchair, where should I start with the workflow?'
+      utility R 15%: in
+      hinge 2.398 -> 0.500
+    'Osaka': an earlier rewrite changed it, blamed again next iteration
+    'wheelchair' (health condition)
+      -> 'Redesigning my kitchen for accessibility is the project I keep putting off. As someone who has mobility challenges, where should I start with the workflow?'
+      utility R 20%: in
+      hinge 0.500 -> 0.000
+
+=== iteration 1: 'Redesigning my kitchen for accessibility is the project I keep putting off. As someone who has mobility challenges, where should I start with the workflow?'
+    qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 0.165  educatio 0.047  socioeco 0.002  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.022       age 0.021  geograph 0.021  professi 0.022  health c 0.026  educatio 0.022  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+    max      gender 0.022       age 0.021  geograph 0.021  professi 0.022  health c 0.165  educatio 0.047  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+  all attributes <= 0.5: done
+
+================================================================================
+original: 'Redesigning my kitchen for accessibility is the project I keep putting off. As a 39-year-old chef in Osaka who uses a wheelchair, where should I start with the workflow?'
+  qwen     gender 0.000       age 0.000  geograph 0.000  professi 0.000  health c 0.165  educatio 0.047  socioeco 0.002  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.022       age 0.021  geograph 0.021  professi 0.022  health c 0.026  educatio 0.022  socioeco 0.024  relation 0.021  family s 0.022  national 0.021
+final (converged (leak <= 0.5), leak 0.165, utility R 20%; reference 91 s, privacy step 133 s): 'Redesigning my kitchen for accessibility is the project I keep putting off. As someone who has mobility challenges, where should I start with the workflow?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.4078 (91 s)
+
+=== iteration 0: "Budgeting a wedding on a teacher's salary is proving daunting now that we're engaged. Any tips for a 26-year-old in Cairo trying to make it stretch?"
+    qwen     gender 0.007       age 0.182  geograph 0.999  professi 0.378  health c 0.000  educatio 0.905  socioeco 1.000  relation 1.000  family s 1.000  national 0.731
+    laya     gender 0.025       age 0.979  geograph 0.976  professi 0.977  health c 0.020  educatio 0.026  socioeco 0.979  relation 0.978  family s 0.022  national 0.448
+    max      gender 0.025       age 0.979  geograph 0.999  professi 0.977  health c 0.020  educatio 0.905  socioeco 1.000  relation 1.000  family s 1.000  national 0.731
+  occlusion: 85 spans scored in 75 s
+  [stall] relationship status: best span blame +0.0018 at P 1.0000
+  leaking: age, geographic location, profession, education level, socioeconomic status, relationship status, family situation, nationality
+  picked spans: "teacher's salary" (socioeconomic status +0.899), 'engaged' (relationship status +0.002), 'Cairo' (geographic location +0.999), '26-year-old' (age +0.959)
+  utility order (R with the span deleted): 'engaged' 1%, '26-year-old' 8%, 'Cairo' 20%, "teacher's salary" 25%
+    'engaged' (relationship status)
+      -> "Budgeting a wedding on a teacher's salary is proving daunting now that we're planning. Any tips for a 26-year-old in Cairo trying to make it stretch?"
+      utility R 1%: in
+      hinge 3.590 -> 3.804
+    '26-year-old' (age)
+      -> "Budgeting a wedding on a teacher's salary is proving daunting now that we're planning. Any tips for someone in Cairo trying to make it stretch?"
+      utility R 9%: in
+      hinge 3.804 -> 3.276
+    'Cairo' (geographic location, nationality)
+      -> "Budgeting a wedding on a teacher's salary is proving daunting now that we're planning. Any tips for someone trying to make it stretch?"
+      utility R 28%: in
+      hinge 3.276 -> 2.751
+    "teacher's salary" (socioeconomic status)
+      -> "Budgeting a wedding on a limited budget is proving daunting now that we're planning. Any tips for someone trying to make it stretch?"
+      utility R 61%: in
+      hinge 2.751 -> 1.446
+
+=== iteration 1: "Budgeting a wedding on a limited budget is proving daunting now that we're planning. Any tips for someone trying to make it stretch?"
+    qwen     gender 0.000       age 0.182  geograph 0.000  professi 0.000  health c 0.000  educatio 0.011  socioeco 0.953  relation 1.000  family s 0.993  national 0.000
+    laya     gender 0.023       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.027  relation 0.043  family s 0.022  national 0.020
+    max      gender 0.023       age 0.182  geograph 0.020  professi 0.021  health c 0.020  educatio 0.021  socioeco 0.953  relation 1.000  family s 0.993  national 0.020
+  occlusion: 76 spans scored in 67 s
+  leaking: socioeconomic status, relationship status, family situation
+  picked spans: 'wedding' (relationship status +1.000), 'on a limited' (socioeconomic status +0.777)
+  utility order (R with the span deleted): 'on a limited' 67%, 'wedding' 74%
+    'on a limited' (socioeconomic status): rewriter changed nothing
+    'wedding' (relationship status)
+      -> "Budgeting a special event on a limited budget is proving daunting now that we're planning. Any tips for someone trying to make it stretch?"
+      utility R 98%: in
+      hinge 1.446 -> 0.381
+
+=== iteration 2: "Budgeting a special event on a limited budget is proving daunting now that we're planning. Any tips for someone trying to make it stretch?"
+    qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.881  health c 0.000  educatio 0.011  socioeco 0.182  relation 0.000  family s 0.119  national 0.000
+    laya     gender 0.021       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.020  socioeco 0.025  relation 0.021  family s 0.021  national 0.020
+    max      gender 0.021       age 0.020  geograph 0.020  professi 0.881  health c 0.020  educatio 0.020  socioeco 0.182  relation 0.021  family s 0.119  national 0.020
+  occlusion: 80 spans scored in 70 s
+  leaking: profession
+  picked spans: 'special event' (profession +0.822)
+  utility order (R with the span deleted): 'special event' 74%
+    'special event' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: "Budgeting a wedding on a teacher's salary is proving daunting now that we're engaged. Any tips for a 26-year-old in Cairo trying to make it stretch?"
+  qwen     gender 0.000       age 0.001  geograph 0.000  professi 0.881  health c 0.000  educatio 0.011  socioeco 0.182  relation 0.000  family s 0.119  national 0.000
+  laya     gender 0.021       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.020  socioeco 0.025  relation 0.021  family s 0.021  national 0.020
+final (NOT converged, leak 0.881, utility R 98%; reference 91 s, privacy step 307 s): "Budgeting a special event on a limited budget is proving daunting now that we're planning. Any tips for someone trying to make it stretch?"
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.5505 (91 s)
+
+=== iteration 0: 'Staying organised across several job sites falls apart fast with my ADHD. What systems work for a 43-year-old electrician in Bergen?'
+    qwen     gender 0.011       age 1.000  geograph 0.818  professi 1.000  health c 1.000  educatio 0.500  socioeco 0.148  relation 0.000  family s 0.000  national 0.223
+    laya     gender 0.021       age 0.979  geograph 0.977  professi 0.976  health c 0.979  educatio 0.023  socioeco 0.023  relation 0.020  family s 0.021  national 0.021
+    max      gender 0.021       age 1.000  geograph 0.977  professi 1.000  health c 1.000  educatio 0.500  socioeco 0.148  relation 0.020  family s 0.021  national 0.223
+  occlusion: 70 spans scored in 62 s
+  leaking: age, geographic location, profession, health condition, education level
+  picked spans: 'electrician' (profession +0.954), 'ADHD' (health condition +1.000), '43-year-old' (age +0.999), 'Bergen' (geographic location +0.956)
+  utility order (R with the span deleted): '43-year-old' 10%, 'Bergen' 15%, 'electrician' 18%, 'ADHD' 20%
+    '43-year-old' (age)
+      -> 'Staying organised across several job sites falls apart fast with my ADHD. What systems work for an electrician in Bergen?'
+      utility R 11%: in
+      hinge 1.977 -> 1.474
+    'Bergen' (geographic location)
+      -> 'Staying organised across several job sites falls apart fast with my ADHD. What systems work for an electrician in a similar situation?'
+      utility R 28%: in
+      hinge 1.474 -> 1.000
+    'electrician' (profession)
+      -> 'Staying organised across several job sites falls apart fast with my ADHD. What systems work for someone in a similar situation?'
+      utility R 43%: in
+      hinge 1.000 -> 0.893
+    'ADHD' (health condition)
+      -> 'Staying organised across several job sites falls apart fast. What systems work for someone in a similar situation?'
+      utility R 62%: in
+      hinge 0.893 -> 0.500
+
+=== iteration 1: 'Staying organised across several job sites falls apart fast. What systems work for someone in a similar situation?'
+    qwen     gender 0.000       age 0.003  geograph 0.000  professi 1.000  health c 0.000  educatio 0.060  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+    laya     gender 0.020       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+    max      gender 0.020       age 0.020  geograph 0.020  professi 1.000  health c 0.020  educatio 0.060  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+  occlusion: 61 spans scored in 52 s
+  leaking: profession
+  picked spans: 'Staying' (profession +0.905)
+  utility order (R with the span deleted): 'Staying' 63%
+    'Staying' (profession): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Staying organised across several job sites falls apart fast with my ADHD. What systems work for a 43-year-old electrician in Bergen?'
+  qwen     gender 0.000       age 0.003  geograph 0.000  professi 1.000  health c 0.000  educatio 0.060  socioeco 0.000  relation 0.000  family s 0.000  national 0.000
+  laya     gender 0.020       age 0.020  geograph 0.020  professi 0.021  health c 0.020  educatio 0.020  socioeco 0.020  relation 0.020  family s 0.020  national 0.020
+final (NOT converged, leak 1.000, utility R 62%; reference 91 s, privacy step 181 s): 'Staying organised across several job sites falls apart fast. What systems work for someone in a similar situation?'
+
+  sampling the reference answers
+  5 answers, D(∅) = 0.5632 (91 s)
+
+=== iteration 0: 'Restructuring my investments for one person is the task now that the divorce is final. Where should a comfortably-off marketing manager in Singapore, 34, begin?'
+    qwen     gender 0.963       age 1.000  geograph 1.000  professi 0.999  health c 0.000  educatio 0.998  socioeco 1.000  relation 0.999  family s 1.000  national 1.000
+    laya     gender 0.023       age 0.977  geograph 0.956  professi 0.976  health c 0.020  educatio 0.024  socioeco 0.977  relation 0.976  family s 0.036  national 0.956
+    max      gender 0.963       age 1.000  geograph 1.000  professi 0.999  health c 0.020  educatio 0.998  socioeco 1.000  relation 0.999  family s 1.000  national 1.000
+  occlusion: 78 spans scored in 71 s
+  [stall] socioeconomic status: best span blame +0.0041 at P 1.0000
+  leaking: gender, age, geographic location, profession, education level, socioeconomic status, relationship status, family situation, nationality
+  picked spans: 'comfortably-off' (socioeconomic status +0.004), 'that the divorce' (family situation +0.781), 'Singapore' (geographic location +0.996), '34' (age +0.984), 'manager' (profession +0.952)
+  utility order (R with the span deleted): 'manager' 4%, '34' 6%, 'Singapore' 9%, 'comfortably-off' 10%, 'that the divorce' 25%
+    'manager' (profession)
+      -> 'Restructuring my investments for one person is the task now that the divorce is final. Where should a comfortably-off individual in Singapore, 34, begin?'
+      utility R 10%: in
+      hinge 4.459 -> 3.460
+    '34' (age)
+      -> 'Restructuring my investments for one person is the task now that the divorce is final. Where should a comfortably-off individual in Singapore begin?'
+      utility R 17%: in
+      hinge 3.460 -> 2.938
+    'Singapore' (geographic location, nationality)
+      -> 'Restructuring my investments for one person is the task now that the divorce is final. Where should a comfortably-off individual begin?'
+      utility R 24%: in
+      hinge 2.938 -> 1.905
+    'comfortably-off' (socioeconomic status)
+      -> 'Restructuring my investments for one person is the task now that the divorce is final. Where should an individual begin?'
+      utility R 37%: in
+      hinge 1.905 -> 1.465
+    'that the divorce' (family situation): rewriter changed nothing
+
+=== iteration 1: 'Restructuring my investments for one person is the task now that the divorce is final. Where should an individual begin?'
+    qwen     gender 0.182       age 0.001  geograph 0.000  professi 0.001  health c 0.000  educatio 0.223  socioeco 0.076  relation 1.000  family s 1.000  national 0.000
+    laya     gender 0.022       age 0.025  geograph 0.021  professi 0.022  health c 0.021  educatio 0.022  socioeco 0.965  relation 0.976  family s 0.032  national 0.021
+    max      gender 0.182       age 0.025  geograph 0.021  professi 0.022  health c 0.021  educatio 0.223  socioeco 0.965  relation 1.000  family s 1.000  national 0.021
+  occlusion: 59 spans scored in 50 s
+  leaking: socioeconomic status, relationship status, family situation
+  picked spans: 'that the divorce' (family situation +0.718), 'investments' (socioeconomic status +0.940)
+  utility order (R with the span deleted): 'that the divorce' 56%, 'investments' 64%
+    'that the divorce' (family situation): rewriter changed nothing
+    'investments' (socioeconomic status): rewriter changed nothing
+  no rewrite changed the message: stop
+
+================================================================================
+original: 'Restructuring my investments for one person is the task now that the divorce is final. Where should a comfortably-off marketing manager in Singapore, 34, begin?'
+  qwen     gender 0.182       age 0.001  geograph 0.000  professi 0.001  health c 0.000  educatio 0.223  socioeco 0.076  relation 1.000  family s 1.000  national 0.000
+  laya     gender 0.022       age 0.025  geograph 0.021  professi 0.022  health c 0.021  educatio 0.022  socioeco 0.965  relation 0.976  family s 0.032  national 0.021
+final (NOT converged, leak 1.000, utility R 37%; reference 91 s, privacy step 203 s): 'Restructuring my investments for one person is the task now that the divorce is final. Where should an individual begin?'
+  30/30 (0 failed)
+Done Mon Oct 12 05:28:57 CEST 2026
