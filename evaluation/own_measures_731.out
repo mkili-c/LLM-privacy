@@ -1,0 +1,9 @@
+sudo: sorry, you must have a tty to run sudo
+Job 731 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out_dir results/evaluation_smoke --limit 2
+112 prompts x 7 versions; 0 prompts done, 2 to go -> results/evaluation_smoke/own_measures.csv
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 10052.59it/s]
+  1/2 id 3 (125 s): original R=0%  loop R=3%  presidio R=38%  loiseau_pupa R=5%  loiseau_synthpai R=3%  papillon R=27%  staab R=2%
+  2/2 id 4 (117 s): original R=0%  loop R=7%  presidio R=0%  loiseau_pupa R=44%  loiseau_synthpai R=43%  papillon R=47%  staab R=15%
+Done Tue Oct 13 01:10:32 CEST 2026

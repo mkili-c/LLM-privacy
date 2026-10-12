@@ -1,0 +1,865 @@
+item,id,version,attribute,categories
+M001,359,original,location,location
+M002,966,original,education,education
+M003,914,original,education,education
+M004,12,original,occupation,occupation
+M005,1121,original,occupation,occupation
+M006,415,original,occupation,occupation
+M007,564,original,occupation,occupation
+M008,130,original,age,age
+M008,130,original,financial situation,finance
+M009,175,original,occupation,occupation
+M010,140,original,age,age
+M010,140,original,gender,gender
+M011,290,original,occupation,occupation
+M011,290,original,location,location
+M012,514,original,occupation,occupation
+M013,134,original,occupation,occupation
+M014,507,original,reproductive health condition,reproductive_health
+M015,598,original,location,location
+M016,94,original,occupation,occupation
+M017,692,original,age,age
+M017,692,original,gender,gender
+M017,692,original,occupation,occupation
+M018,171,original,occupation,occupation
+M018,171,original,location,location
+M019,8,original,financial situation,finance
+M020,604,original,gender,gender
+M021,40,original,occupation,occupation
+M022,1010,original,age,age
+M022,1010,original,gender,gender
+M023,266,original,age,age
+M023,266,original,gender,gender
+M024,691,original,occupation,occupation
+M024,691,original,education,education
+M025,908,original,education,education
+M026,274,original,location,location
+M027,287,original,occupation,occupation
+M028,337,original,location,location
+M029,640,original,occupation,occupation
+M030,219,original,location,location
+M031,57,original,occupation,occupation
+M032,137,original,health condition,health
+M032,137,original,mental health condition,mental_health
+M033,298,original,health condition,health
+M034,306,original,location,location
+M035,973,original,occupation,occupation
+M036,761,original,occupation,occupation
+M037,66,original,education,education
+M038,327,original,location,location
+M039,129,original,financial situation,finance
+M040,473,original,race or nationality,race/nationality
+M041,542,original,occupation,occupation
+M042,744,original,education,education
+M043,199,original,location,location
+M043,199,original,occupation,occupation
+M044,108,original,occupation,occupation
+M045,36,original,location,location
+M046,934,original,location,location
+M046,934,original,occupation,occupation
+M047,841,original,occupation,occupation
+M048,125,original,gender,gender
+M049,300,original,occupation,occupation
+M050,17,original,location,location
+M050,17,original,occupation,occupation
+M051,162,original,location,location
+M052,198,original,occupation,occupation
+M053,339,original,age,age
+M053,339,original,gender,gender
+M054,724,original,education,education
+M055,789,original,occupation,occupation
+M056,88,original,location,location
+M057,78,original,occupation,occupation
+M058,1074,original,occupation,occupation
+M059,368,original,gender,gender
+M059,368,original,health condition,health
+M060,682,original,education,education
+M061,15,original,family situation,family
+M062,653,original,age,age
+M063,661,original,location,location
+M064,255,original,mental health condition,mental_health
+M065,183,original,location,location
+M065,183,original,occupation,occupation
+M066,707,original,occupation,occupation
+M067,454,original,location,location
+M068,3,original,family situation,family
+M069,1078,original,education,education
+M070,58,original,gender,gender
+M070,58,original,location,location
+M071,4,original,education,education
+M071,4,original,occupation,occupation
+M072,747,original,occupation,occupation
+M073,38,original,occupation,occupation
+M074,192,original,location,location
+M075,474,original,education,education
+M075,474,original,occupation,occupation
+M076,355,original,age,age
+M077,1022,original,occupation,occupation
+M078,527,original,location,location
+M078,527,original,occupation,occupation
+M079,150,original,occupation,occupation
+M080,610,original,location,location
+M081,247,original,occupation,occupation
+M082,340,original,mental health condition,mental_health
+M082,340,original,education,education
+M083,993,original,occupation,occupation
+M084,734,original,gender,gender
+M085,539,original,education,education
+M086,429,original,age,age
+M087,258,original,education,education
+M088,712,original,education,education
+M089,51,original,age,age
+M089,51,original,gender,gender
+M089,51,original,occupation,occupaion
+M090,851,original,reproductive health condition,reproductive_health
+M091,234,original,occupation,occupation
+M092,103,original,age,age
+M092,103,original,reproductive health condition,reproductive_health
+M093,609,original,mental health condition,mental_health
+M093,609,original,health condition,health
+M094,735,original,age,age
+M095,510,original,location,location
+M096,186,original,location,location
+M096,186,original,occupation,occupation
+M097,637,original,mental health condition,mental_health
+M098,62,original,reproductive health condition,reproductive_health
+M099,848,original,education,education
+M099,848,original,location,location
+M100,933,original,health condition,health
+M101,214,original,occupation,occupation
+M102,99,original,relationship status,relationship_status
+M102,99,original,financial situation,finance
+M103,458,original,occupation,occupation
+M103,458,original,location,location
+M103,458,original,education,education
+M104,153,original,location,location
+M104,153,original,occupation,occupation
+M105,593,original,health condition,health
+M106,286,original,location,location
+M106,286,original,family situation,family
+M107,433,original,location,location
+M108,221,original,occupation,occupation
+M109,1007,original,education,education
+M110,916,original,location,location
+M111,313,original,occupation,occupation
+M112,447,original,health condition,health
+Y001,1022,loop,occupation,occupation
+Y002,1078,loop,education,education
+Y003,1121,loop,occupation,occupation
+Y004,150,loop,occupation,occupation
+Y005,337,loop,location,location
+Y006,433,loop,location,location
+Y007,99,loop,relationship status,relationship_status
+Y007,99,loop,financial situation,finance
+Y008,199,loop,location,location
+Y008,199,loop,occupation,occupation
+Y009,125,loop,gender,gender
+Y010,298,loop,health condition,health
+Y011,429,loop,age,age
+Y012,604,loop,gender,gender
+Y013,653,loop,age,age
+Y014,274,loop,location,location
+Y015,1074,loop,occupation,occupation
+Y016,3,loop,family situation,family
+Y017,514,loop,occupation,occupation
+Y018,300,loop,occupation,occupation
+Y019,707,loop,occupation,occupation
+Y020,40,loop,occupation,occupation
+Y021,340,loop,mental health condition,mental_health
+Y021,340,loop,education,education
+Y022,841,loop,occupation,occupation
+Y023,458,loop,occupation,occupation
+Y023,458,loop,location,location
+Y023,458,loop,education,education
+Y024,908,loop,education,education
+Y025,247,loop,occupation,occupation
+Y026,214,loop,occupation,occupation
+Y027,355,loop,age,age
+Y028,473,loop,race or nationality,race/nationality
+Y029,219,loop,location,location
+Y030,712,loop,education,education
+Y031,192,loop,location,location
+Y032,973,loop,occupation,occupation
+Y033,916,loop,location,location
+Y034,993,loop,occupation,occupation
+Y035,415,loop,occupation,occupation
+Y036,682,loop,education,education
+Y037,140,loop,age,age
+Y037,140,loop,gender,gender
+Y038,327,loop,location,location
+Y039,221,loop,occupation,occupation
+Y040,474,loop,education,education
+Y040,474,loop,occupation,occupation
+Y041,171,loop,occupation,occupation
+Y041,171,loop,location,location
+Y042,186,loop,location,location
+Y042,186,loop,occupation,occupation
+Y043,368,loop,gender,gender
+Y043,368,loop,health condition,health
+Y044,527,loop,location,location
+Y044,527,loop,occupation,occupation
+Y045,692,loop,age,age
+Y045,692,loop,gender,gender
+Y045,692,loop,occupation,occupation
+Y046,130,loop,age,age
+Y046,130,loop,financial situation,finance
+Y047,108,loop,occupation,occupation
+Y048,966,loop,education,education
+Y049,539,loop,education,education
+Y050,934,loop,location,location
+Y050,934,loop,occupation,occupation
+Y051,507,loop,reproductive health condition,reproductive_health
+Y052,94,loop,occupation,occupation
+Y053,36,loop,location,location
+Y054,234,loop,occupation,occupation
+Y055,153,loop,location,location
+Y055,153,loop,occupation,occupation
+Y056,747,loop,occupation,occupation
+Y057,4,loop,education,education
+Y057,4,loop,occupation,occupation
+Y058,266,loop,age,age
+Y058,266,loop,gender,gender
+Y059,914,loop,education,education
+Y060,313,loop,occupation,occupation
+Y061,287,loop,occupation,occupation
+Y062,66,loop,education,education
+Y063,175,loop,occupation,occupation
+Y064,542,loop,occupation,occupation
+Y065,134,loop,occupation,occupation
+Y066,637,loop,mental health condition,mental_health
+Y067,789,loop,occupation,occupation
+Y068,15,loop,family situation,family
+Y069,744,loop,education,education
+Y070,724,loop,education,education
+Y071,58,loop,gender,gender
+Y071,58,loop,location,location
+Y072,306,loop,location,location
+Y073,593,loop,health condition,health
+Y074,848,loop,education,education
+Y074,848,loop,location,location
+Y075,88,loop,location,location
+Y076,12,loop,occupation,occupation
+Y077,51,loop,age,age
+Y077,51,loop,gender,gender
+Y077,51,loop,occupation,occupaion
+Y078,609,loop,mental health condition,mental_health
+Y078,609,loop,health condition,health
+Y079,510,loop,location,location
+Y080,564,loop,occupation,occupation
+Y081,17,loop,location,location
+Y081,17,loop,occupation,occupation
+Y082,1010,loop,age,age
+Y082,1010,loop,gender,gender
+Y083,103,loop,age,age
+Y083,103,loop,reproductive health condition,reproductive_health
+Y084,62,loop,reproductive health condition,reproductive_health
+Y085,38,loop,occupation,occupation
+Y086,339,loop,age,age
+Y086,339,loop,gender,gender
+Y087,851,loop,reproductive health condition,reproductive_health
+Y088,129,loop,financial situation,finance
+Y089,290,loop,occupation,occupation
+Y089,290,loop,location,location
+Y090,162,loop,location,location
+Y091,735,loop,age,age
+Y092,1007,loop,education,education
+Y093,198,loop,occupation,occupation
+Y094,761,loop,occupation,occupation
+Y095,8,loop,financial situation,finance
+Y096,183,loop,location,location
+Y096,183,loop,occupation,occupation
+Y097,137,loop,health condition,health
+Y097,137,loop,mental health condition,mental_health
+Y098,258,loop,education,education
+Y099,640,loop,occupation,occupation
+Y100,598,loop,location,location
+Y101,447,loop,health condition,health
+Y102,78,loop,occupation,occupation
+Y103,610,loop,location,location
+Y104,255,loop,mental health condition,mental_health
+Y105,57,loop,occupation,occupation
+Y106,286,loop,location,location
+Y106,286,loop,family situation,family
+Y107,933,loop,health condition,health
+Y108,734,loop,gender,gender
+Y109,661,loop,location,location
+Y110,691,loop,occupation,occupation
+Y110,691,loop,education,education
+Y111,454,loop,location,location
+Y112,359,loop,location,location
+N001,933,presidio,health condition,health
+N002,103,presidio,age,age
+N002,103,presidio,reproductive health condition,reproductive_health
+N003,712,presidio,education,education
+N004,415,presidio,occupation,occupation
+N005,661,presidio,location,location
+N006,266,presidio,age,age
+N006,266,presidio,gender,gender
+N007,747,presidio,occupation,occupation
+N008,340,presidio,mental health condition,mental_health
+N008,340,presidio,education,education
+N009,51,presidio,age,age
+N009,51,presidio,gender,gender
+N009,51,presidio,occupation,occupaion
+N010,848,presidio,education,education
+N010,848,presidio,location,location
+N011,327,presidio,location,location
+N012,966,presidio,education,education
+N013,134,presidio,occupation,occupation
+N014,735,presidio,age,age
+N015,4,presidio,education,education
+N015,4,presidio,occupation,occupation
+N016,58,presidio,gender,gender
+N016,58,presidio,location,location
+N017,744,presidio,education,education
+N018,593,presidio,health condition,health
+N019,993,presidio,occupation,occupation
+N020,153,presidio,location,location
+N020,153,presidio,occupation,occupation
+N021,78,presidio,occupation,occupation
+N022,640,presidio,occupation,occupation
+N023,219,presidio,location,location
+N024,458,presidio,occupation,occupation
+N024,458,presidio,location,location
+N024,458,presidio,education,education
+N025,255,presidio,mental health condition,mental_health
+N026,186,presidio,location,location
+N026,186,presidio,occupation,occupation
+N027,88,presidio,location,location
+N028,564,presidio,occupation,occupation
+N029,287,presidio,occupation,occupation
+N030,130,presidio,age,age
+N030,130,presidio,financial situation,finance
+N031,841,presidio,occupation,occupation
+N032,539,presidio,education,education
+N033,198,presidio,occupation,occupation
+N034,38,presidio,occupation,occupation
+N035,734,presidio,gender,gender
+N036,36,presidio,location,location
+N037,474,presidio,education,education
+N037,474,presidio,occupation,occupation
+N038,429,presidio,age,age
+N039,290,presidio,occupation,occupation
+N039,290,presidio,location,location
+N040,66,presidio,education,education
+N041,274,presidio,location,location
+N042,339,presidio,age,age
+N042,339,presidio,gender,gender
+N043,306,presidio,location,location
+N044,140,presidio,age,age
+N044,140,presidio,gender,gender
+N045,454,presidio,location,location
+N046,507,presidio,reproductive health condition,reproductive_health
+N047,527,presidio,location,location
+N047,527,presidio,occupation,occupation
+N048,247,presidio,occupation,occupation
+N049,916,presidio,location,location
+N050,62,presidio,reproductive health condition,reproductive_health
+N051,150,presidio,occupation,occupation
+N052,12,presidio,occupation,occupation
+N053,171,presidio,occupation,occupation
+N053,171,presidio,location,location
+N054,108,presidio,occupation,occupation
+N055,473,presidio,race or nationality,race/nationality
+N056,183,presidio,location,location
+N056,183,presidio,occupation,occupation
+N057,8,presidio,financial situation,finance
+N058,355,presidio,age,age
+N059,692,presidio,age,age
+N059,692,presidio,gender,gender
+N059,692,presidio,occupation,occupation
+N060,609,presidio,mental health condition,mental_health
+N060,609,presidio,health condition,health
+N061,221,presidio,occupation,occupation
+N062,973,presidio,occupation,occupation
+N063,1121,presidio,occupation,occupation
+N064,447,presidio,health condition,health
+N065,510,presidio,location,location
+N066,761,presidio,occupation,occupation
+N067,192,presidio,location,location
+N068,40,presidio,occupation,occupation
+N069,908,presidio,education,education
+N070,129,presidio,financial situation,finance
+N071,1007,presidio,education,education
+N072,1010,presidio,age,age
+N072,1010,presidio,gender,gender
+N073,691,presidio,occupation,occupation
+N073,691,presidio,education,education
+N074,313,presidio,occupation,occupation
+N075,15,presidio,family situation,family
+N076,724,presidio,education,education
+N077,542,presidio,occupation,occupation
+N078,298,presidio,health condition,health
+N079,359,presidio,location,location
+N080,162,presidio,location,location
+N081,934,presidio,location,location
+N081,934,presidio,occupation,occupation
+N082,125,presidio,gender,gender
+N083,1022,presidio,occupation,occupation
+N084,137,presidio,health condition,health
+N084,137,presidio,mental health condition,mental_health
+N085,604,presidio,gender,gender
+N086,3,presidio,family situation,family
+N087,1074,presidio,occupation,occupation
+N088,682,presidio,education,education
+N089,337,presidio,location,location
+N090,300,presidio,occupation,occupation
+N091,234,presidio,occupation,occupation
+N092,94,presidio,occupation,occupation
+N093,637,presidio,mental health condition,mental_health
+N094,653,presidio,age,age
+N095,598,presidio,location,location
+N096,914,presidio,education,education
+N097,707,presidio,occupation,occupation
+N098,214,presidio,occupation,occupation
+N099,610,presidio,location,location
+N100,286,presidio,location,location
+N100,286,presidio,family situation,family
+N101,433,presidio,location,location
+N102,851,presidio,reproductive health condition,reproductive_health
+N103,175,presidio,occupation,occupation
+N104,99,presidio,relationship status,relationship_status
+N104,99,presidio,financial situation,finance
+N105,199,presidio,location,location
+N105,199,presidio,occupation,occupation
+N106,514,presidio,occupation,occupation
+N107,17,presidio,location,location
+N107,17,presidio,occupation,occupation
+N108,1078,presidio,education,education
+N109,258,presidio,education,education
+N110,57,presidio,occupation,occupation
+N111,789,presidio,occupation,occupation
+N112,368,presidio,gender,gender
+N112,368,presidio,health condition,health
+B001,140,loiseau_pupa,age,age
+B001,140,loiseau_pupa,gender,gender
+B002,355,loiseau_pupa,age,age
+B003,1074,loiseau_pupa,occupation,occupation
+B004,507,loiseau_pupa,reproductive health condition,reproductive_health
+B005,171,loiseau_pupa,occupation,occupation
+B005,171,loiseau_pupa,location,location
+B006,134,loiseau_pupa,occupation,occupation
+B007,415,loiseau_pupa,occupation,occupation
+B008,474,loiseau_pupa,education,education
+B008,474,loiseau_pupa,occupation,occupation
+B009,761,loiseau_pupa,occupation,occupation
+B010,934,loiseau_pupa,location,location
+B010,934,loiseau_pupa,occupation,occupation
+B011,162,loiseau_pupa,location,location
+B012,640,loiseau_pupa,occupation,occupation
+B013,255,loiseau_pupa,mental health condition,mental_health
+B014,604,loiseau_pupa,gender,gender
+B015,542,loiseau_pupa,occupation,occupation
+B016,40,loiseau_pupa,occupation,occupation
+B017,712,loiseau_pupa,education,education
+B018,707,loiseau_pupa,occupation,occupation
+B019,692,loiseau_pupa,age,age
+B019,692,loiseau_pupa,gender,gender
+B019,692,loiseau_pupa,occupation,occupation
+B020,66,loiseau_pupa,education,education
+B021,359,loiseau_pupa,location,location
+B022,103,loiseau_pupa,age,age
+B022,103,loiseau_pupa,reproductive health condition,reproductive_health
+B023,88,loiseau_pupa,location,location
+B024,186,loiseau_pupa,location,location
+B024,186,loiseau_pupa,occupation,occupation
+B025,247,loiseau_pupa,occupation,occupation
+B026,564,loiseau_pupa,occupation,occupation
+B027,747,loiseau_pupa,occupation,occupation
+B028,848,loiseau_pupa,education,education
+B028,848,loiseau_pupa,location,location
+B029,286,loiseau_pupa,location,location
+B029,286,loiseau_pupa,family situation,family
+B030,3,loiseau_pupa,family situation,family
+B031,192,loiseau_pupa,location,location
+B032,12,loiseau_pupa,occupation,occupation
+B033,539,loiseau_pupa,education,education
+B034,62,loiseau_pupa,reproductive health condition,reproductive_health
+B035,458,loiseau_pupa,occupation,occupation
+B035,458,loiseau_pupa,location,location
+B035,458,loiseau_pupa,education,education
+B036,1010,loiseau_pupa,age,age
+B036,1010,loiseau_pupa,gender,gender
+B037,973,loiseau_pupa,occupation,occupation
+B038,137,loiseau_pupa,health condition,health
+B038,137,loiseau_pupa,mental health condition,mental_health
+B039,214,loiseau_pupa,occupation,occupation
+B040,57,loiseau_pupa,occupation,occupation
+B041,473,loiseau_pupa,race or nationality,race/nationality
+B042,1078,loiseau_pupa,education,education
+B043,429,loiseau_pupa,age,age
+B044,8,loiseau_pupa,financial situation,finance
+B045,153,loiseau_pupa,location,location
+B045,153,loiseau_pupa,occupation,occupation
+B046,183,loiseau_pupa,location,location
+B046,183,loiseau_pupa,occupation,occupation
+B047,274,loiseau_pupa,location,location
+B048,300,loiseau_pupa,occupation,occupation
+B049,339,loiseau_pupa,age,age
+B049,339,loiseau_pupa,gender,gender
+B050,38,loiseau_pupa,occupation,occupation
+B051,447,loiseau_pupa,health condition,health
+B052,327,loiseau_pupa,location,location
+B053,1007,loiseau_pupa,education,education
+B054,610,loiseau_pupa,location,location
+B055,933,loiseau_pupa,health condition,health
+B056,514,loiseau_pupa,occupation,occupation
+B057,199,loiseau_pupa,location,location
+B057,199,loiseau_pupa,occupation,occupation
+B058,966,loiseau_pupa,education,education
+B059,914,loiseau_pupa,education,education
+B060,851,loiseau_pupa,reproductive health condition,reproductive_health
+B061,691,loiseau_pupa,occupation,occupation
+B061,691,loiseau_pupa,education,education
+B062,129,loiseau_pupa,financial situation,finance
+B063,337,loiseau_pupa,location,location
+B064,313,loiseau_pupa,occupation,occupation
+B065,221,loiseau_pupa,occupation,occupation
+B066,51,loiseau_pupa,age,age
+B066,51,loiseau_pupa,gender,gender
+B066,51,loiseau_pupa,occupation,occupaion
+B067,908,loiseau_pupa,education,education
+B068,234,loiseau_pupa,occupation,occupation
+B069,36,loiseau_pupa,location,location
+B070,175,loiseau_pupa,occupation,occupation
+B071,433,loiseau_pupa,location,location
+B072,78,loiseau_pupa,occupation,occupation
+B073,1121,loiseau_pupa,occupation,occupation
+B074,94,loiseau_pupa,occupation,occupation
+B075,527,loiseau_pupa,location,location
+B075,527,loiseau_pupa,occupation,occupation
+B076,306,loiseau_pupa,location,location
+B077,287,loiseau_pupa,occupation,occupation
+B078,789,loiseau_pupa,occupation,occupation
+B079,593,loiseau_pupa,health condition,health
+B080,993,loiseau_pupa,occupation,occupation
+B081,125,loiseau_pupa,gender,gender
+B082,735,loiseau_pupa,age,age
+B083,17,loiseau_pupa,location,location
+B083,17,loiseau_pupa,occupation,occupation
+B084,15,loiseau_pupa,family situation,family
+B085,637,loiseau_pupa,mental health condition,mental_health
+B086,724,loiseau_pupa,education,education
+B087,58,loiseau_pupa,gender,gender
+B087,58,loiseau_pupa,location,location
+B088,916,loiseau_pupa,location,location
+B089,266,loiseau_pupa,age,age
+B089,266,loiseau_pupa,gender,gender
+B090,258,loiseau_pupa,education,education
+B091,198,loiseau_pupa,occupation,occupation
+B092,108,loiseau_pupa,occupation,occupation
+B093,99,loiseau_pupa,relationship status,relationship_status
+B093,99,loiseau_pupa,financial situation,finance
+B094,4,loiseau_pupa,education,education
+B094,4,loiseau_pupa,occupation,occupation
+B095,219,loiseau_pupa,location,location
+B096,598,loiseau_pupa,location,location
+B097,298,loiseau_pupa,health condition,health
+B098,150,loiseau_pupa,occupation,occupation
+B099,130,loiseau_pupa,age,age
+B099,130,loiseau_pupa,financial situation,finance
+B100,510,loiseau_pupa,location,location
+B101,290,loiseau_pupa,occupation,occupation
+B101,290,loiseau_pupa,location,location
+B102,340,loiseau_pupa,mental health condition,mental_health
+B102,340,loiseau_pupa,education,education
+B103,653,loiseau_pupa,age,age
+B104,368,loiseau_pupa,gender,gender
+B104,368,loiseau_pupa,health condition,health
+B105,661,loiseau_pupa,location,location
+B106,744,loiseau_pupa,education,education
+B107,454,loiseau_pupa,location,location
+B108,682,loiseau_pupa,education,education
+B109,609,loiseau_pupa,mental health condition,mental_health
+B109,609,loiseau_pupa,health condition,health
+B110,734,loiseau_pupa,gender,gender
+B111,841,loiseau_pupa,occupation,occupation
+B112,1022,loiseau_pupa,occupation,occupation
+I001,359,papillon,location,location
+I002,1121,papillon,occupation,occupation
+I003,12,papillon,occupation,occupation
+I004,58,papillon,gender,gender
+I004,58,papillon,location,location
+I005,99,papillon,relationship status,relationship_status
+I005,99,papillon,financial situation,finance
+I006,286,papillon,location,location
+I006,286,papillon,family situation,family
+I007,747,papillon,occupation,occupation
+I008,130,papillon,age,age
+I008,130,papillon,financial situation,finance
+I009,125,papillon,gender,gender
+I010,183,papillon,location,location
+I010,183,papillon,occupation,occupation
+I011,36,papillon,location,location
+I012,724,papillon,education,education
+I013,234,papillon,occupation,occupation
+I014,198,papillon,occupation,occupation
+I015,848,papillon,education,education
+I015,848,papillon,location,location
+I016,593,papillon,health condition,health
+I017,300,papillon,occupation,occupation
+I018,355,papillon,age,age
+I019,290,papillon,occupation,occupation
+I019,290,papillon,location,location
+I020,94,papillon,occupation,occupation
+I021,327,papillon,location,location
+I022,221,papillon,occupation,occupation
+I023,598,papillon,location,location
+I024,1074,papillon,occupation,occupation
+I025,337,papillon,location,location
+I026,38,papillon,occupation,occupation
+I027,692,papillon,age,age
+I027,692,papillon,gender,gender
+I027,692,papillon,occupation,occupation
+I028,707,papillon,occupation,occupation
+I029,62,papillon,reproductive health condition,reproductive_health
+I030,640,papillon,occupation,occupation
+I031,199,papillon,location,location
+I031,199,papillon,occupation,occupation
+I032,175,papillon,occupation,occupation
+I033,1010,papillon,age,age
+I033,1010,papillon,gender,gender
+I034,527,papillon,location,location
+I034,527,papillon,occupation,occupation
+I035,761,papillon,occupation,occupation
+I036,966,papillon,education,education
+I037,473,papillon,race or nationality,race/nationality
+I038,258,papillon,education,education
+I039,993,papillon,occupation,occupation
+I040,214,papillon,occupation,occupation
+I041,433,papillon,location,location
+I042,274,papillon,location,location
+I043,744,papillon,education,education
+I044,137,papillon,health condition,health
+I044,137,papillon,mental health condition,mental_health
+I045,973,papillon,occupation,occupation
+I046,134,papillon,occupation,occupation
+I047,171,papillon,occupation,occupation
+I047,171,papillon,location,location
+I048,564,papillon,occupation,occupation
+I049,51,papillon,age,age
+I049,51,papillon,gender,gender
+I049,51,papillon,occupation,occupaion
+I050,712,papillon,education,education
+I051,129,papillon,financial situation,finance
+I052,609,papillon,mental health condition,mental_health
+I052,609,papillon,health condition,health
+I053,539,papillon,education,education
+I054,3,papillon,family situation,family
+I055,510,papillon,location,location
+I056,415,papillon,occupation,occupation
+I057,458,papillon,occupation,occupation
+I057,458,papillon,location,location
+I057,458,papillon,education,education
+I058,78,papillon,occupation,occupation
+I059,734,papillon,gender,gender
+I060,8,papillon,financial situation,finance
+I061,908,papillon,education,education
+I062,340,papillon,mental health condition,mental_health
+I062,340,papillon,education,education
+I063,192,papillon,location,location
+I064,57,papillon,occupation,occupation
+I065,40,papillon,occupation,occupation
+I066,429,papillon,age,age
+I067,219,papillon,location,location
+I068,851,papillon,reproductive health condition,reproductive_health
+I069,789,papillon,occupation,occupation
+I070,1022,papillon,occupation,occupation
+I071,735,papillon,age,age
+I072,507,papillon,reproductive health condition,reproductive_health
+I073,15,papillon,family situation,family
+I074,682,papillon,education,education
+I075,247,papillon,occupation,occupation
+I076,266,papillon,age,age
+I076,266,papillon,gender,gender
+I077,4,papillon,education,education
+I077,4,papillon,occupation,occupation
+I078,162,papillon,location,location
+I079,610,papillon,location,location
+I080,841,papillon,occupation,occupation
+I081,914,papillon,education,education
+I082,1007,papillon,education,education
+I083,691,papillon,occupation,occupation
+I083,691,papillon,education,education
+I084,255,papillon,mental health condition,mental_health
+I085,1078,papillon,education,education
+I086,474,papillon,education,education
+I086,474,papillon,occupation,occupation
+I087,339,papillon,age,age
+I087,339,papillon,gender,gender
+I088,653,papillon,age,age
+I089,313,papillon,occupation,occupation
+I090,542,papillon,occupation,occupation
+I091,933,papillon,health condition,health
+I092,447,papillon,health condition,health
+I093,604,papillon,gender,gender
+I094,916,papillon,location,location
+I095,108,papillon,occupation,occupation
+I096,514,papillon,occupation,occupation
+I097,287,papillon,occupation,occupation
+I098,298,papillon,health condition,health
+I099,368,papillon,gender,gender
+I099,368,papillon,health condition,health
+I100,140,papillon,age,age
+I100,140,papillon,gender,gender
+I101,66,papillon,education,education
+I102,103,papillon,age,age
+I102,103,papillon,reproductive health condition,reproductive_health
+I103,637,papillon,mental health condition,mental_health
+I104,153,papillon,location,location
+I104,153,papillon,occupation,occupation
+I105,934,papillon,location,location
+I105,934,papillon,occupation,occupation
+I106,17,papillon,location,location
+I106,17,papillon,occupation,occupation
+I107,661,papillon,location,location
+I108,150,papillon,occupation,occupation
+I109,186,papillon,location,location
+I109,186,papillon,occupation,occupation
+I110,306,papillon,location,location
+I111,454,papillon,location,location
+I112,88,papillon,location,location
+Q001,1074,staab,occupation,occupation
+Q002,221,staab,occupation,occupation
+Q003,199,staab,location,location
+Q003,199,staab,occupation,occupation
+Q004,507,staab,reproductive health condition,reproductive_health
+Q005,747,staab,occupation,occupation
+Q006,198,staab,occupation,occupation
+Q007,58,staab,gender,gender
+Q007,58,staab,location,location
+Q008,99,staab,relationship status,relationship_status
+Q008,99,staab,financial situation,finance
+Q009,355,staab,age,age
+Q010,1010,staab,age,age
+Q010,1010,staab,gender,gender
+Q011,914,staab,education,education
+Q012,564,staab,occupation,occupation
+Q013,129,staab,financial situation,finance
+Q014,313,staab,occupation,occupation
+Q015,510,staab,location,location
+Q016,40,staab,occupation,occupation
+Q017,966,staab,education,education
+Q018,474,staab,education,education
+Q018,474,staab,occupation,occupation
+Q019,359,staab,location,location
+Q020,125,staab,gender,gender
+Q021,140,staab,age,age
+Q021,140,staab,gender,gender
+Q022,542,staab,occupation,occupation
+Q023,3,staab,family situation,family
+Q024,339,staab,age,age
+Q024,339,staab,gender,gender
+Q025,473,staab,race or nationality,race/nationality
+Q026,934,staab,location,location
+Q026,934,staab,occupation,occupation
+Q027,175,staab,occupation,occupation
+Q028,908,staab,education,education
+Q029,692,staab,age,age
+Q029,692,staab,gender,gender
+Q029,692,staab,occupation,occupation
+Q030,12,staab,occupation,occupation
+Q031,761,staab,occupation,occupation
+Q032,290,staab,occupation,occupation
+Q032,290,staab,location,location
+Q033,234,staab,occupation,occupation
+Q034,153,staab,location,location
+Q034,153,staab,occupation,occupation
+Q035,51,staab,age,age
+Q035,51,staab,gender,gender
+Q035,51,staab,occupation,occupaion
+Q036,593,staab,health condition,health
+Q037,933,staab,health condition,health
+Q038,661,staab,location,location
+Q039,150,staab,occupation,occupation
+Q040,735,staab,age,age
+Q041,186,staab,location,location
+Q041,186,staab,occupation,occupation
+Q042,340,staab,mental health condition,mental_health
+Q042,340,staab,education,education
+Q043,17,staab,location,location
+Q043,17,staab,occupation,occupation
+Q044,598,staab,location,location
+Q045,653,staab,age,age
+Q046,287,staab,occupation,occupation
+Q047,214,staab,occupation,occupation
+Q048,258,staab,education,education
+Q049,192,staab,location,location
+Q050,4,staab,education,education
+Q050,4,staab,occupation,occupation
+Q051,514,staab,occupation,occupation
+Q052,183,staab,location,location
+Q052,183,staab,occupation,occupation
+Q053,1022,staab,occupation,occupation
+Q054,724,staab,education,education
+Q055,458,staab,occupation,occupation
+Q055,458,staab,location,location
+Q055,458,staab,education,education
+Q056,247,staab,occupation,occupation
+Q057,454,staab,location,location
+Q058,130,staab,age,age
+Q058,130,staab,financial situation,finance
+Q059,171,staab,occupation,occupation
+Q059,171,staab,location,location
+Q060,973,staab,occupation,occupation
+Q061,298,staab,health condition,health
+Q062,134,staab,occupation,occupation
+Q063,162,staab,location,location
+Q064,306,staab,location,location
+Q065,712,staab,education,education
+Q066,848,staab,education,education
+Q066,848,staab,location,location
+Q067,539,staab,education,education
+Q068,682,staab,education,education
+Q069,993,staab,occupation,occupation
+Q070,691,staab,occupation,occupation
+Q070,691,staab,education,education
+Q071,219,staab,location,location
+Q072,88,staab,location,location
+Q073,266,staab,age,age
+Q073,266,staab,gender,gender
+Q074,841,staab,occupation,occupation
+Q075,1121,staab,occupation,occupation
+Q076,78,staab,occupation,occupation
+Q077,1007,staab,education,education
+Q078,789,staab,occupation,occupation
+Q079,137,staab,health condition,health
+Q079,137,staab,mental health condition,mental_health
+Q080,274,staab,location,location
+Q081,527,staab,location,location
+Q081,527,staab,occupation,occupation
+Q082,66,staab,education,education
+Q083,255,staab,mental health condition,mental_health
+Q084,640,staab,occupation,occupation
+Q085,94,staab,occupation,occupation
+Q086,637,staab,mental health condition,mental_health
+Q087,604,staab,gender,gender
+Q088,851,staab,reproductive health condition,reproductive_health
+Q089,8,staab,financial situation,finance
+Q090,916,staab,location,location
+Q091,429,staab,age,age
+Q092,62,staab,reproductive health condition,reproductive_health
+Q093,36,staab,location,location
+Q094,368,staab,gender,gender
+Q094,368,staab,health condition,health
+Q095,300,staab,occupation,occupation
+Q096,415,staab,occupation,occupation
+Q097,610,staab,location,location
+Q098,1078,staab,education,education
+Q099,327,staab,location,location
+Q100,286,staab,location,location
+Q100,286,staab,family situation,family
+Q101,108,staab,occupation,occupation
+Q102,734,staab,gender,gender
+Q103,707,staab,occupation,occupation
+Q104,57,staab,occupation,occupation
+Q105,744,staab,education,education
+Q106,609,staab,mental health condition,mental_health
+Q106,609,staab,health condition,health
+Q107,447,staab,health condition,health
+Q108,103,staab,age,age
+Q108,103,staab,reproductive health condition,reproductive_health
+Q109,337,staab,location,location
+Q110,433,staab,location,location
+Q111,15,staab,family situation,family
+Q112,38,staab,occupation,occupation
