@@ -114,7 +114,7 @@ def main():
                    help="cap on spans the privacy step rewrites per iteration (one per leaking attribute)")
     p.add_argument("--privacy_max_n", type=int, default=4)
     p.add_argument("--privacy_span_penalty", type=float, default=0.05)
-    p.add_argument("--privacy_max_iters", type=int, default=8)
+    p.add_argument("--privacy_max_iters", type=int, default=6)
     # 1.0: as far as an empty message, the rule calibrated on the dev set
     p.add_argument("--max_share", type=float, default=1.0,
                    help="utility check: a rewrite with D >= this share of D(∅) loses the request")

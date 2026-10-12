@@ -1,0 +1,2 @@
+sudo: sorry, you must have a tty to run sudo
+Job 663 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out results/rewrites/dev_validation.csv --limit 30

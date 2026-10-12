@@ -1,0 +1,70 @@
+sudo: sorry, you must have a tty to run sudo
+Job 662 on studgpu-spark01.inf.ethz.ch (aarch64)
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct (bfloat16) and Laya ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 9168.97it/s]
+=== 1. setup
+  GPU NVIDIA GB10 (capability (12, 1)), torch 2.11.0+cu128, transformers 5.8.0
+  attention implementation: sdpa, dtype torch.bfloat16
+  SDPA backends enabled: flash True, efficient True, cudnn True, math True
+
+=== 2. reference bf16 matmul (8192 x 3584) @ (3584 x 18944): 7.2 TFLOPS
+
+=== 3. dev message: 28 words, 89 span variants, 10 attributes, 35298 probe tokens
+  building the inputs   0.00 s | Qwen probe   70.0 s (504 tokens/s, 6.6 TFLOPS) | Laya   10.8 s
+/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/torch/profiler/profiler.py:224: UserWarning: Warning: Profiler clears events at the end of each cycle.Only events from the current cycle will be reported.To keep events across cycles, set acc_events=True.
+  _warn_once(
+WARNING:2026-10-12 01:40:54 3681128:3681128 init.cpp:116] function cbapi->getCuptiStatus() failed with error CUPTI_ERROR_INVALID_DEVICE (2)
+WARNING:2026-10-12 01:40:54 3681128:3681128 init.cpp:117] CUPTI initialization failed - CUDA profiler activities will be missing
+INFO:2026-10-12 01:40:54 3681128:3681128 init.cpp:119] If you see CUPTI_ERROR_INSUFFICIENT_PRIVILEGES, refer to https://developer.nvidia.com/nvidia-development-tools-solutions-err-nvgpuctrperm-cupti
+
+=== 4. torch.profiler, one batch of 64 variants x 10 attributes
+-------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                             Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg    # of Calls  
+-------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                      aten::empty         0.00%       1.958ms         0.00%       1.958ms       0.581us          3372  
+                                         aten::to         0.00%     462.496us        80.65%       39.577s      16.220ms          2440  
+                                   aten::_to_copy         0.00%       1.266ms        80.65%       39.577s      27.503ms          1439  
+                              aten::empty_strided         0.00%       1.046ms         0.00%       1.046ms       0.722us          1450  
+                                      aten::copy_        87.51%       42.942s        87.51%       42.942s      17.463ms          2459  
+                                 aten::lift_fresh         0.00%      15.280us         0.00%      15.280us       0.078us           195  
+                                    aten::detach_         0.00%      38.528us         0.00%      63.248us       0.483us           131  
+                                          detach_         0.00%      24.720us         0.00%      24.720us       0.189us           131  
+                                        aten::max         0.00%      43.312us         0.00%      48.880us      48.880us             1  
+                                 aten::as_strided         0.00%       1.991ms         0.00%       1.991ms       0.201us          9894  
+                                       aten::item         0.00%      17.968us         0.00%      60.288us       0.913us            66  
+                        aten::_local_scalar_dense         0.00%      42.320us         0.00%      42.320us       0.641us            66  
+                                       aten::full         0.00%       8.304us         0.00%      19.057us      19.057us             1  
+                                      aten::fill_         0.05%      25.288ms         0.05%      25.309ms      25.033us          1011  
+                                 aten::zeros_like         0.00%       2.864us         0.00%      10.144us      10.144us             1  
+-------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 49.072s
+
+
+=== 5. attention variants (dev message)
+  eager                    70.5 s   |P - P_default| max 0.8249
+  sdpa                     70.0 s   |P - P_default| max 0.0000
+/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/transformers/integrations/sdpa_attention.py:92: UserWarning: Memory efficient kernel not used because: (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/sdp_utils.cpp:986.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/transformers/integrations/sdpa_attention.py:92: UserWarning: Memory Efficient attention has been runtime disabled. (Triggered internally at /pytorch/aten/src/ATen/native/transformers/sdp_utils_cpp.h:552.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/transformers/integrations/sdpa_attention.py:92: UserWarning: Flash attention kernel not used because: (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/sdp_utils.cpp:988.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/transformers/integrations/sdpa_attention.py:92: UserWarning: Flash Attention does not support non-null attn_mask. (Triggered internally at /pytorch/aten/src/ATen/native/transformers/sdp_utils_cpp.h:262.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/transformers/integrations/sdpa_attention.py:92: UserWarning: cuDNN attention kernel not used because: (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/sdp_utils.cpp:990.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/transformers/integrations/sdpa_attention.py:92: UserWarning: cuDNN attention has been runtime disabled. (Triggered internally at /pytorch/aten/src/ATen/native/transformers/cuda/sdp_utils.cpp:706.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+  sdpa forced FLASH_ATTENTION not available: No available kernel. Aborting execution.
+  sdpa forced EFFICIENT_ATTENTION   69.9 s   |P - P_default| max 0.0000
+  sdpa forced CUDNN_ATTENTION not available: cuDNN Frontend error: [cudnn_frontend] Error: No valid execution plans built.
+  sdpa forced MATH         72.0 s   |P - P_default| max 0.1225
+
+=== 6. dev message: 3.3% of the prefix + message batch tokens are padding; sorted by length:   69.8 s, |P - P_default| max 0.1225
+
+=== 3. PUPA-SD id 331: 119 words, 396 span variants, 10 attributes, 203792 probe tokens
+  building the inputs   0.06 s | Qwen probe  394.0 s (517 tokens/s, 6.8 TFLOPS) | Laya  128.0 s
+
+=== 6. PUPA-SD id 331: 1.2% of the prefix + message batch tokens are padding; sorted by length:  392.8 s, |P - P_default| max 0.0865
+Done Mon Oct 12 02:02:56 CEST 2026
