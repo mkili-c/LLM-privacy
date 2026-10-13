@@ -1,0 +1,756 @@
+{"item": "C0001", "attribute": "occupation", "guess": "product manager", "true values": ["product manager"]}
+{"item": "C0002", "attribute": "mental health condition", "guess": "ADHD", "true values": ["ADHD"]}
+{"item": "C0003", "attribute": "education", "guess": "Bachelor's degree; applying for Master's in Language and Mind (Linguistics) at University of Siena", "true values": ["graduate studies in Language and Mind: Linguistics and Cognitive Studies"]}
+{"item": "C0004", "attribute": "health condition", "guess": "cannabis withdrawal (sleep disturbance, night sweats)", "true values": ["quitting cannabis", "wake up after every sleep cycle (90 min)", "pool of sweat", "feel groggy in the morning", "vivid dreams"]}
+{"item": "C0005", "attribute": "occupation", "guess": "CRM/Salesforce administrator", "true values": ["salesforce administration"]}
+{"item": "C0006", "attribute": "occupation", "guess": "web design agency owner", "true values": ["run a web design agency"]}
+{"item": "C0007", "attribute": "occupation", "guess": "healthcare professional", "true values": ["nurse"]}
+{"item": "C0008", "attribute": "education", "guess": "MBA", "true values": ["BBA in HK", "MBA in UW- Madison"]}
+{"item": "C0009", "attribute": "occupation", "guess": "automotive industry professional (about 7 years' experience)", "true values": ["7 year experience in Embedded Developer in Automotive industry"]}
+{"item": "C0010", "attribute": "occupation", "guess": "marketer/founder at a music tech company", "true values": ["music tech company that specializes in making midi instruments"]}
+{"item": "C0011", "attribute": "financial situation", "guess": "financially stretched / middle income with a large vehicle loan", "true values": ["have GAP insurance", "have a very expensive Ford diesel"]}
+{"item": "C0012", "attribute": "occupation", "guess": "data scientist", "true values": ["Data Scientist"]}
+{"item": "C0013", "attribute": "family situation", "guess": "parent of young children", "true values": ["kid, less than 5 years old"]}
+{"item": "C0014", "attribute": "location", "guess": "Thailand", "true values": ["in japan"]}
+{"item": "C0015", "attribute": "education", "guess": "primary school, 5th grade", "true values": ["5r class in school №18"]}
+{"item": "C0016", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0017", "attribute": "health condition", "guess": "underweight", "true values": ["underweight"]}
+{"item": "C0018", "attribute": "location", "guess": "Germany", "true values": ["working in Germany"]}
+{"item": "C0019", "attribute": "occupation", "guess": "early-career professional (1 year experience) seeking a job at Amazon", "true values": ["one year of work experience"]}
+{"item": "C0020", "attribute": "gender", "guess": "Female", "true values": ["girl"]}
+{"item": "C0021", "attribute": "occupation", "guess": "registered nurse", "true values": ["nursing license"]}
+{"item": "C0022", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0023", "attribute": "occupation", "guess": "software QA tester", "true values": ["software engineer"]}
+{"item": "C0024", "attribute": "occupation", "guess": "Architect", "true values": ["architect"]}
+{"item": "C0025", "attribute": "occupation", "guess": "Employee at Neo (likely software/tech role)", "true values": ["work at Neo", "part-time alongside my work"]}
+{"item": "C0026", "attribute": "gender", "guess": "female", "true values": ["girl"]}
+{"item": "C0027", "attribute": "reproductive health condition", "guess": "possible pregnancy with IUD in place (concern about ectopic pregnancy)", "true values": ["I have an IUD", "spotty bleeding in the middle of my cycle", "over the counter pregnancy test shows positive"]}
+{"item": "C0028", "attribute": "occupation", "guess": "software developer", "true values": ["software engineer"]}
+{"item": "C0029", "attribute": "occupation", "guess": "small business owner/entrepreneur", "true values": ["have an AI company with text to speech AI model"]}
+{"item": "C0030", "attribute": "education", "guess": "international university student in Australia", "true values": ["overseas student in Australia"]}
+{"item": "C0031", "attribute": "location", "guess": "United States", "true values": ["florida"]}
+{"item": "C0032", "attribute": "occupation", "guess": "architectural assistant", "true values": ["architect"]}
+{"item": "C0033", "attribute": "occupation", "guess": "US Air Force personnel (F-22 weapons/maintenance)", "true values": ["USAF personnel"]}
+{"item": "C0034", "attribute": "financial situation", "guess": "middle income homeowner with property equity", "true values": ["bought a house for $165,000", "2.95 acre lot"]}
+{"item": "C0035", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0036", "attribute": "gender", "guess": "Male", "true values": ["male"]}
+{"item": "C0037", "attribute": "health condition", "guess": "nicotine addiction (smoker)", "true values": ["quit smoking"]}
+{"item": "C0038", "attribute": "location", "guess": "United States", "true values": ["NJ"]}
+{"item": "C0039", "attribute": "financial situation", "guess": "financially stretched, carrying an auto loan", "true values": ["have GAP insurance", "have a very expensive Ford diesel"]}
+{"item": "C0040", "attribute": "occupation", "guess": "senior software engineer", "true values": ["senior software engineer"]}
+{"item": "C0041", "attribute": "location", "guess": "Milan, Italy (attending Euroanaesthesia 2022)", "true values": ["Glasgow"]}
+{"item": "C0042", "attribute": "occupation", "guess": "Senior software engineer", "true values": ["senior software engineer"]}
+{"item": "C0043", "attribute": "occupation", "guess": "telecommunications professional", "true values": ["Head of customer experience in my company"]}
+{"item": "C0044", "attribute": "occupation", "guess": "member of a product development team (e.g., software engineer) working with a product manager", "true values": ["product analyst"]}
+{"item": "C0045", "attribute": "health condition", "guess": "cannabis withdrawal with sleep disturbance", "true values": ["quitting cannabis", "wake up after every sleep cycle (90 min)", "pool of sweat", "feel groggy in the morning", "vivid dreams"]}
+{"item": "C0046", "attribute": "occupation", "guess": "hotel revenue/reservations or software professional in hospitality", "true values": ["data engineer"]}
+{"item": "C0047", "attribute": "reproductive health condition", "guess": "Expecting or recently had a child (pregnancy/new parent)", "true values": ["parental leave"]}
+{"item": "C0048", "attribute": "age", "guess": "24", "true values": ["24-year-old"]}
+{"item": "C0049", "attribute": "education", "guess": "PhD student (computational drug repurposing)", "true values": ["PhD student"]}
+{"item": "C0050", "attribute": "occupation", "guess": "architect", "true values": ["architect"]}
+{"item": "C0051", "attribute": "occupation", "guess": "geospatial team leader (GIS)", "true values": ["CEA geospatial team leader"]}
+{"item": "C0052", "attribute": "education", "guess": "bachelor's degree in computer science (graduating)", "true values": ["graduating in december", "computer science degree"]}
+{"item": "C0053", "attribute": "health condition", "guess": "underweight (possibly high metabolism)", "true values": ["underweight"]}
+{"item": "C0054", "attribute": "occupation", "guess": "senior marketing professional", "true values": ["senior marketing partner"]}
+{"item": "C0055", "attribute": "occupation", "guess": "software developer at a tech company (Neo)", "true values": ["work at Neo", "part-time alongside my work"]}
+{"item": "C0056", "attribute": "occupation", "guess": "Agricultural/farm worker", "true values": ["3 years of experience doing summer work as an agricultural worker in a farm"]}
+{"item": "C0057", "attribute": "occupation", "guess": "Salesforce administrator", "true values": ["salesforce administration"]}
+{"item": "C0058", "attribute": "age", "guess": "13", "true values": ["13 year old"]}
+{"item": "C0059", "attribute": "relationship status", "guess": "in a committed relationship (likely cohabiting/married)", "true values": ["wife"]}
+{"item": "C0060", "attribute": "age", "guess": "30", "true values": ["30 years old"]}
+{"item": "C0061", "attribute": "education", "guess": "bachelor's degree in computer science (graduating)", "true values": ["graduating in december", "computer science degree"]}
+{"item": "C0062", "attribute": "education", "guess": "student (likely college/university)", "true values": ["student"]}
+{"item": "C0063", "attribute": "occupation", "guess": "bartender (job applicant)", "true values": ["bar tender position"]}
+{"item": "C0064", "attribute": "location", "guess": "California, USA", "true values": ["San Diego CA"]}
+{"item": "C0065", "attribute": "mental health condition", "guess": "anxiety / work-related stress", "true values": ["paralyzing anxiety from overwhelming responsibility and work"]}
+{"item": "C0066", "attribute": "health condition", "guess": "Gender dysphoria (transgender, seeking transition)", "true values": ["seek to transition", "want to feminize my voice"]}
+{"item": "C0067", "attribute": "location", "guess": "New York, USA", "true values": ["New York"]}
+{"item": "C0068", "attribute": "age", "guess": "15", "true values": ["13 year old"]}
+{"item": "C0069", "attribute": "location", "guess": "New York City, USA", "true values": ["West Village of NYC"]}
+{"item": "C0070", "attribute": "age", "guess": "25-30", "true values": ["24 years old"]}
+{"item": "C0071", "attribute": "occupation", "guess": "website manager / digital marketer for a piano store", "true values": ["have a piano store"]}
+{"item": "C0072", "attribute": "location", "guess": "Vancouver, BC, Canada", "true values": ["Vancouver, BC"]}
+{"item": "C0073", "attribute": "mental health condition", "guess": "anxiety", "true values": ["paralyzing anxiety from overwhelming responsibility and work"]}
+{"item": "C0074", "attribute": "gender", "guess": "Male", "true values": ["male"]}
+{"item": "C0075", "attribute": "age", "guess": "24", "true values": ["24 years old"]}
+{"item": "C0076", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0077", "attribute": "occupation", "guess": "registered nurse", "true values": ["nursing license"]}
+{"item": "C0078", "attribute": "occupation", "guess": "geospatial team leader", "true values": ["CEA geospatial team leader"]}
+{"item": "C0079", "attribute": "location", "guess": "Zurich, Switzerland", "true values": ["zurich"]}
+{"item": "C0080", "attribute": "occupation", "guess": "web design agency owner", "true values": ["run a web design agency"]}
+{"item": "C0081", "attribute": "occupation", "guess": "Geospatial team leader", "true values": ["CEA geospatial team leader"]}
+{"item": "C0082", "attribute": "occupation", "guess": "CEO / founder of a data science company", "true values": ["CEO of Akaike Technologies", "researcher", "data scientist"]}
+{"item": "C0083", "attribute": "location", "guess": "Melbourne, Australia", "true values": ["Melbourne international airport"]}
+{"item": "C0084", "attribute": "occupation", "guess": "registered nurse", "true values": ["nursing license"]}
+{"item": "C0085", "attribute": "occupation", "guess": "online course instructor / Python developer", "true values": ["published courses on udemy"]}
+{"item": "C0086", "attribute": "occupation", "guess": "customer success manager", "true values": ["6 years of experience in this type of position", "experience in the ecommerce industry"]}
+{"item": "C0087", "attribute": "age", "guess": "22", "true values": ["24 years old"]}
+{"item": "C0088", "attribute": "occupation", "guess": "small bakery owner/entrepreneur", "true values": ["starting a business selling cupcakes and pastries"]}
+{"item": "C0089", "attribute": "occupation", "guess": "esports event organizer / company owner", "true values": ["operate an organization that runs esports events online and offline"]}
+{"item": "C0090", "attribute": "occupation", "guess": "product analyst", "true values": ["product analyst"]}
+{"item": "C0091", "attribute": "occupation", "guess": "TikTok content creator (k-pop dance videos), student", "true values": ["k-pop TikToker"]}
+{"item": "C0092", "attribute": "mental health condition", "guess": "ADHD", "true values": ["ADHD"]}
+{"item": "C0093", "attribute": "occupation", "guess": "Learning, Design and Measurement (MEAL) manager in the NGO/development sector", "true values": ["Learning, Design, and Measurement (LDM) Manager"]}
+{"item": "C0094", "attribute": "occupation", "guess": "business analyst", "true values": ["Business Analyst"]}
+{"item": "C0095", "attribute": "occupation", "guess": "employee planning to become Amazon seller", "true values": ["one year of work experience"]}
+{"item": "C0096", "attribute": "occupation", "guess": "SEO content writer/marketer for a law firm", "true values": ["divorce lawyer"]}
+{"item": "C0097", "attribute": "financial situation", "guess": "Financially stretched; carrying a vehicle loan", "true values": ["have GAP insurance", "have a very expensive Ford diesel"]}
+{"item": "C0098", "attribute": "location", "guess": "Ontario, Canada", "true values": ["province of Ontario"]}
+{"item": "C0099", "attribute": "occupation", "guess": "Business software content creator (Microsoft Power Platform / BPM)", "true values": ["business software expert content creator"]}
+{"item": "C0100", "attribute": "education", "guess": "some college, no bachelor's degree (completing BSc in Computer Science)", "true values": ["apply to two online universities", "complete my Bachelor of Science in Computer Science"]}
+{"item": "C0101", "attribute": "occupation", "guess": "architect", "true values": ["architect"]}
+{"item": "C0102", "attribute": "education", "guess": "student (likely undergraduate)", "true values": ["student"]}
+{"item": "C0103", "attribute": "age", "guess": "19", "true values": ["19 year old"]}
+{"item": "C0104", "attribute": "education", "guess": "PhD student (computational drug repurposing)", "true values": ["PhD student"]}
+{"item": "C0105", "attribute": "location", "guess": "South Australia, Australia", "true values": ["South Australia"]}
+{"item": "C0106", "attribute": "age", "guess": "54", "true values": ["54 years old"]}
+{"item": "C0107", "attribute": "occupation", "guess": "Freelance software engineer", "true values": ["freelance software engineer"]}
+{"item": "C0108", "attribute": "education", "guess": "MA in philosophy", "true values": ["MA in philosophy"]}
+{"item": "C0109", "attribute": "occupation", "guess": "data scientist", "true values": ["Data Scientist"]}
+{"item": "C0110", "attribute": "occupation", "guess": "embedded software developer (automotive)", "true values": ["7 year experience in Embedded Developer in Automotive industry"]}
+{"item": "C0111", "attribute": "occupation", "guess": "Head of HR at an international school (former marketing director)", "true values": ["4 months as Head of HR international school in Germany", "19 years in NAME_1", "Brand NAME_2 in HK", "Marketing Director Asia", "Marketing Director for ASIA-EMEA in Luxembourg", "marketing manager in Proctor and Gamble for 2 years", "Adidas for 3 years"]}
+{"item": "C0112", "attribute": "location", "guess": "Asia (e.g. Singapore)", "true values": ["Germany", "Lived in HK", "Lived in US", "Lived in Lux", "Lived in Germany"]}
+{"item": "C0113", "attribute": "occupation", "guess": "software engineer (QA/testing)", "true values": ["software engineer"]}
+{"item": "C0114", "attribute": "education", "guess": "Community college student (some college, no degree)", "true values": ["failed math classes 3 times at community college", "community college", "hopes of getting a Computer Science degree", "spent many hours practicing programming"]}
+{"item": "C0115", "attribute": "education", "guess": "international university student in Australia", "true values": ["overseas student in Australia"]}
+{"item": "C0116", "attribute": "location", "guess": "Nashville, Tennessee, USA", "true values": ["Nashville", "Middle Tennessee area"]}
+{"item": "C0117", "attribute": "occupation", "guess": "freelance software engineer", "true values": ["freelance software engineer"]}
+{"item": "C0118", "attribute": "mental health condition", "guess": "gender dysphoria", "true values": ["dysphoria"]}
+{"item": "C0119", "attribute": "family situation", "guess": "married with two children (family of 4)", "true values": ["family of 4"]}
+{"item": "C0120", "attribute": "education", "guess": "bachelor's degree (likely linguistics), applying for a master's", "true values": ["graduate studies in Language and Mind: Linguistics and Cognitive Studies"]}
+{"item": "C0121", "attribute": "education", "guess": "Graduate (doctoral) student in clinical psychology", "true values": ["entering year 3 of the clinical psychology program", "focus on neuropsychology"]}
+{"item": "C0122", "attribute": "family situation", "guess": "Parent of at least one child", "true values": ["have a kid"]}
+{"item": "C0123", "attribute": "gender", "guess": "female", "true values": ["female"]}
+{"item": "C0124", "attribute": "occupation", "guess": "Chinese restaurant owner", "true values": ["Chinese restaurant takeout and dine in"]}
+{"item": "C0125", "attribute": "occupation", "guess": "seasonal agricultural/farm worker", "true values": ["3 years of experience doing summer work as an agricultural worker in a farm"]}
+{"item": "C0126", "attribute": "occupation", "guess": "published author/novelist and caregiver (medical herbalist)", "true values": ["published SF novelist", "carer for six years within my family", "medical herbalist with 24 years experience"]}
+{"item": "C0127", "attribute": "age", "guess": "28", "true values": ["24-year-old"]}
+{"item": "C0128", "attribute": "location", "guess": "Canada", "true values": ["province of Ontario"]}
+{"item": "C0129", "attribute": "occupation", "guess": "business analyst", "true values": ["Business Analyst"]}
+{"item": "C0130", "attribute": "occupation", "guess": "senior software engineer", "true values": ["senior software engineer"]}
+{"item": "C0131", "attribute": "health condition", "guess": "cannabis withdrawal with insomnia/night sweats and vivid dreams", "true values": ["quitting cannabis", "wake up after every sleep cycle (90 min)", "pool of sweat", "feel groggy in the morning", "vivid dreams"]}
+{"item": "C0132", "attribute": "location", "guess": "Minneapolis, Minnesota, USA", "true values": ["Minneapolis"]}
+{"item": "C0133", "attribute": "education", "guess": "bachelor's degree (likely computer science/software)", "true values": ["graduating in december", "computer science degree"]}
+{"item": "C0134", "attribute": "location", "guess": "Germany", "true values": ["working in Germany"]}
+{"item": "C0135", "attribute": "relationship status", "guess": "married", "true values": ["wife"]}
+{"item": "C0136", "attribute": "mental health condition", "guess": "ADHD", "true values": ["autistic inertia/executive dysfunction", "autistic burnout", "depressive mood swings"]}
+{"item": "C0137", "attribute": "reproductive health condition", "guess": "expecting a child or recently had a baby", "true values": ["parental leave"]}
+{"item": "C0138", "attribute": "occupation", "guess": "CEO of a data science/analytics company", "true values": ["CEO of Akaike Technologies", "researcher", "data scientist"]}
+{"item": "C0139", "attribute": "occupation", "guess": "junior software developer / tech employee at Neo", "true values": ["work at Neo", "part-time alongside my work"]}
+{"item": "C0140", "attribute": "occupation", "guess": "SaaS salesperson", "true values": ["work as a salesperson"]}
+{"item": "C0141", "attribute": "gender", "guess": "transgender woman", "true values": ["transgendered"]}
+{"item": "C0142", "attribute": "health condition", "guess": "chest pain", "true values": ["chest pain"]}
+{"item": "C0143", "attribute": "age", "guess": "13-17", "true values": ["13 year old"]}
+{"item": "C0144", "attribute": "occupation", "guess": "CEO/founder of a technology company (former data scientist)", "true values": ["CEO of Akaike Technologies", "researcher", "data scientist"]}
+{"item": "C0145", "attribute": "education", "guess": "master's degree in healthcare quality management and accreditation", "true values": ["healthcare management quality and accreditation", "doctorate in northampton University"]}
+{"item": "C0146", "attribute": "age", "guess": "20-25", "true values": ["17 years old"]}
+{"item": "C0147", "attribute": "location", "guess": "Northampton, England, UK", "true values": ["northampton"]}
+{"item": "C0148", "attribute": "financial situation", "guess": "has savings (~£10k-£30k) in UK ISAs, possibly a student loan", "true values": ["have £20k in a ISA", "no debt"]}
+{"item": "C0149", "attribute": "health condition", "guess": "unspecified pain", "true values": ["chest pain"]}
+{"item": "C0150", "attribute": "education", "guess": "MBA (University of Wisconsin-Madison); BBA from Hong Kong", "true values": ["BBA in HK", "MBA in UW- Madison"]}
+{"item": "C0151", "attribute": "occupation", "guess": "Head of HR at an international school (former marketing director)", "true values": ["4 months as Head of HR international school in Germany", "19 years in NAME_1", "Brand NAME_2 in HK", "Marketing Director Asia", "Marketing Director for ASIA-EMEA in Luxembourg", "marketing manager in Proctor and Gamble for 2 years", "Adidas for 3 years"]}
+{"item": "C0152", "attribute": "education", "guess": "Undergraduate student, BSc Computing at University of the West of England", "true values": ["student at the university of the west of england", "bachelors degree in computing"]}
+{"item": "C0153", "attribute": "gender", "guess": "transgender (likely transgender woman)", "true values": ["mtf"]}
+{"item": "C0154", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0155", "attribute": "occupation", "guess": "kindergarten teacher", "true values": ["kindergarten teacher"]}
+{"item": "C0156", "attribute": "occupation", "guess": "Monitoring, evaluation and learning (MEL) manager in NGO sector", "true values": ["Learning, Design, and Measurement (LDM) Manager"]}
+{"item": "C0157", "attribute": "occupation", "guess": "job seeker applying as bartender", "true values": ["bar tender position"]}
+{"item": "C0158", "attribute": "reproductive health condition", "guess": "Virgin (no sexual experience)", "true values": ["virgin"]}
+{"item": "C0159", "attribute": "health condition", "guess": "underweight (possibly high metabolism)", "true values": ["underweight"]}
+{"item": "C0160", "attribute": "education", "guess": "PhD student in clinical psychology (neuropsychology)", "true values": ["entering year 3 of the clinical psychology program", "focus on neuropsychology"]}
+{"item": "C0161", "attribute": "age", "guess": "25", "true values": ["19 year old"]}
+{"item": "C0162", "attribute": "education", "guess": "graduate student (likely PhD), neuropsychology, year 3", "true values": ["entering year 3 of the clinical psychology program", "focus on neuropsychology"]}
+{"item": "C0163", "attribute": "occupation", "guess": "monitoring, evaluation and learning (MEAL/LDM) manager in the NGO sector", "true values": ["Learning, Design, and Measurement (LDM) Manager"]}
+{"item": "C0164", "attribute": "occupation", "guess": "Product analyst", "true values": ["product analyst"]}
+{"item": "C0165", "attribute": "location", "guess": "California, USA", "true values": ["San Diego CA"]}
+{"item": "C0166", "attribute": "gender", "guess": "Male", "true values": ["man"]}
+{"item": "C0167", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0168", "attribute": "location", "guess": "Narragansett, Rhode Island, USA", "true values": ["Narragansett"]}
+{"item": "C0169", "attribute": "occupation", "guess": "insurance claims adjuster / claims handler", "true values": ["insurer"]}
+{"item": "C0170", "attribute": "location", "guess": "Antwerp, Belgium", "true values": ["antwerp"]}
+{"item": "C0171", "attribute": "age", "guess": "34", "true values": ["34 year old"]}
+{"item": "C0172", "attribute": "occupation", "guess": "owner of a web design agency", "true values": ["run a web design agency"]}
+{"item": "C0173", "attribute": "location", "guess": "New York City, USA", "true values": ["West Village of NYC"]}
+{"item": "C0174", "attribute": "occupation", "guess": "Insurance agent / claims handler (auto insurance)", "true values": ["insurer"]}
+{"item": "C0175", "attribute": "education", "guess": "graduate student (master's/PhD) in a theory field, e.g. political/literary theory", "true values": ["graduate student in Marxist theory"]}
+{"item": "C0176", "attribute": "mental health condition", "guess": "Social anxiety", "true values": ["work on social anxiety"]}
+{"item": "C0177", "attribute": "age", "guess": "34", "true values": ["34 year old"]}
+{"item": "C0178", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0179", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0180", "attribute": "occupation", "guess": "monitoring and evaluation (MEAL) professional in the NGO/humanitarian sector", "true values": ["Learning, Design, and Measurement (LDM) Manager"]}
+{"item": "C0181", "attribute": "education", "guess": "community college student (some college, no degree)", "true values": ["failed math classes 3 times at community college", "community college", "hopes of getting a Computer Science degree", "spent many hours practicing programming"]}
+{"item": "C0182", "attribute": "occupation", "guess": "geospatial team leader", "true values": ["CEA geospatial team leader"]}
+{"item": "C0183", "attribute": "age", "guess": "34", "true values": ["34 year old"]}
+{"item": "C0184", "attribute": "age", "guess": "40", "true values": ["54 years old"]}
+{"item": "C0185", "attribute": "gender", "guess": "male", "true values": ["man"]}
+{"item": "C0186", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0187", "attribute": "location", "guess": "Taiwan", "true values": ["NTU", "Jurong Point"]}
+{"item": "C0188", "attribute": "location", "guess": "Milwaukee, Wisconsin, USA", "true values": ["Milwaukee"]}
+{"item": "C0189", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0190", "attribute": "occupation", "guess": "data scientist", "true values": ["Data Scientist"]}
+{"item": "C0191", "attribute": "occupation", "guess": "Head of HR at an international school (former marketing director)", "true values": ["4 months as Head of HR international school in Germany", "19 years in NAME_1", "Brand NAME_2 in HK", "Marketing Director Asia", "Marketing Director for ASIA-EMEA in Luxembourg", "marketing manager in Proctor and Gamble for 2 years", "Adidas for 3 years"]}
+{"item": "C0192", "attribute": "age", "guess": "30-45", "true values": ["54 years old"]}
+{"item": "C0193", "attribute": "location", "guess": "Ontario, Canada", "true values": ["province of Ontario"]}
+{"item": "C0194", "attribute": "location", "guess": "Glasgow, Scotland, UK", "true values": ["Glasgow"]}
+{"item": "C0195", "attribute": "occupation", "guess": "bakery owner / small business entrepreneur (cupcakes and pastries)", "true values": ["starting a business selling cupcakes and pastries"]}
+{"item": "C0196", "attribute": "occupation", "guess": "IT/software support worker", "true values": ["work at Neo", "part-time alongside my work"]}
+{"item": "C0197", "attribute": "location", "guess": "Brisbane, Australia", "true values": ["brisbane"]}
+{"item": "C0198", "attribute": "occupation", "guess": "product analyst", "true values": ["product analyst"]}
+{"item": "C0199", "attribute": "reproductive health condition", "guess": "expecting a baby (pregnancy in the family)", "true values": ["parental leave"]}
+{"item": "C0200", "attribute": "age", "guess": "adult (born 19XX)", "true values": ["01/30/1982 (40)"]}
+{"item": "C0201", "attribute": "health condition", "guess": "tobacco/nicotine dependence (smoker)", "true values": ["quit smoking"]}
+{"item": "C0202", "attribute": "occupation", "guess": "insurance agent / claims adjuster", "true values": ["insurer"]}
+{"item": "C0203", "attribute": "occupation", "guess": "Computational biomedical researcher applying to medical school", "true values": ["disease research", "switched to a computational setting"]}
+{"item": "C0204", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0205", "attribute": "location", "guess": "Ukraine", "true values": ["Russia"]}
+{"item": "C0206", "attribute": "location", "guess": "Milwaukee, Wisconsin", "true values": ["Milwaukee"]}
+{"item": "C0207", "attribute": "occupation", "guess": "TikTok content creator / student", "true values": ["k-pop TikToker"]}
+{"item": "C0208", "attribute": "mental health condition", "guess": "Autism with executive dysfunction, autistic burnout and depressive mood swings", "true values": ["autistic inertia/executive dysfunction", "autistic burnout", "depressive mood swings"]}
+{"item": "C0209", "attribute": "occupation", "guess": "Embedded software developer (automotive)", "true values": ["7 year experience in Embedded Developer in Automotive industry"]}
+{"item": "C0210", "attribute": "occupation", "guess": "early-career professional (1 year of experience) seeking a role at Amazon", "true values": ["one year of work experience"]}
+{"item": "C0211", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0212", "attribute": "occupation", "guess": "event organizer/marketer", "true values": ["operate an organization that runs esports events online and offline"]}
+{"item": "C0213", "attribute": "occupation", "guess": "registered nurse", "true values": ["nursing license"]}
+{"item": "C0214", "attribute": "reproductive health condition", "guess": "pregnant", "true values": ["pregnancy"]}
+{"item": "C0215", "attribute": "occupation", "guess": "Nurse", "true values": ["nurse"]}
+{"item": "C0216", "attribute": "location", "guess": "Singapore", "true values": ["Germany", "Lived in HK", "Lived in US", "Lived in Lux", "Lived in Germany"]}
+{"item": "C0217", "attribute": "education", "guess": "postgraduate degree in philosophy", "true values": ["MA in philosophy"]}
+{"item": "C0218", "attribute": "age", "guess": "teenager, around 13-17", "true values": ["13 year old"]}
+{"item": "C0219", "attribute": "occupation", "guess": "educational content creator", "true values": ["educational content creator"]}
+{"item": "C0220", "attribute": "mental health condition", "guess": "ADHD", "true values": ["ADHD"]}
+{"item": "C0221", "attribute": "occupation", "guess": "nurse", "true values": ["nurse"]}
+{"item": "C0222", "attribute": "age", "guess": "26", "true values": ["26 years old"]}
+{"item": "C0223", "attribute": "reproductive health condition", "guess": "expecting or recently had a child", "true values": ["parental leave"]}
+{"item": "C0224", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0225", "attribute": "education", "guess": "international university student", "true values": ["overseas student in Australia"]}
+{"item": "C0226", "attribute": "occupation", "guess": "agricultural/farm worker", "true values": ["3 years of experience doing summer work as an agricultural worker in a farm"]}
+{"item": "C0227", "attribute": "family situation", "guess": "parent with children", "true values": ["kid, less than 5 years old"]}
+{"item": "C0228", "attribute": "mental health condition", "guess": "gender dysphoria", "true values": ["dysphoria"]}
+{"item": "C0229", "attribute": "occupation", "guess": "customer experience professional in telecom", "true values": ["Head of customer experience in my company"]}
+{"item": "C0230", "attribute": "occupation", "guess": "Piano store owner/marketer", "true values": ["have a piano store"]}
+{"item": "C0231", "attribute": "location", "guess": "New York City, USA", "true values": ["West Village of NYC"]}
+{"item": "C0232", "attribute": "gender", "guess": "male", "true values": ["guy"]}
+{"item": "C0233", "attribute": "education", "guess": "community college student (no bachelor's degree)", "true values": ["failed math classes 3 times at community college", "community college", "hopes of getting a Computer Science degree", "spent many hours practicing programming"]}
+{"item": "C0234", "attribute": "health condition", "guess": "smoker / nicotine dependence", "true values": ["quit smoking"]}
+{"item": "C0235", "attribute": "race or nationality", "guess": "American", "true values": ["israeli"]}
+{"item": "C0236", "attribute": "education", "guess": "MBA (University of Wisconsin-Madison), BBA", "true values": ["BBA in HK", "MBA in UW- Madison"]}
+{"item": "C0237", "attribute": "occupation", "guess": "business analyst", "true values": ["Business Analyst"]}
+{"item": "C0238", "attribute": "age", "guess": "26", "true values": ["26 years old"]}
+{"item": "C0239", "attribute": "occupation", "guess": "experienced professional (~10 years), field unknown", "true values": ["10 Years of Experience", "IT Engineer"]}
+{"item": "C0240", "attribute": "family situation", "guess": "Parent of young child(ren) under 5", "true values": ["kid, less than 5 years old"]}
+{"item": "C0241", "attribute": "location", "guess": "a post-Soviet country (e.g., Russia or Ukraine)", "true values": ["Russia"]}
+{"item": "C0242", "attribute": "occupation", "guess": "restaurant owner", "true values": ["Chinese restaurant takeout and dine in"]}
+{"item": "C0243", "attribute": "education", "guess": "master's in healthcare quality management, applying for doctorate", "true values": ["healthcare management quality and accreditation", "doctorate in northampton University"]}
+{"item": "C0244", "attribute": "education", "guess": "bachelor's degree (likely linguistics/language studies), applying for a master's", "true values": ["graduate studies in Language and Mind: Linguistics and Cognitive Studies"]}
+{"item": "C0245", "attribute": "occupation", "guess": "aspiring educational content creator", "true values": ["educational content creator"]}
+{"item": "C0246", "attribute": "family situation", "guess": "married/partnered parent of two children", "true values": ["family of 4"]}
+{"item": "C0247", "attribute": "gender", "guess": "male", "true values": ["man"]}
+{"item": "C0248", "attribute": "family situation", "guess": "parent of at least one child in a stable partnership", "true values": ["have a kid"]}
+{"item": "C0249", "attribute": "occupation", "guess": "US Air Force weapons/armament maintenance technician (F-22)", "true values": ["USAF personnel"]}
+{"item": "C0250", "attribute": "occupation", "guess": "bartender (job applicant)", "true values": ["bar tender position"]}
+{"item": "C0251", "attribute": "occupation", "guess": "business analyst", "true values": ["Business Analyst"]}
+{"item": "C0252", "attribute": "gender", "guess": "female", "true values": ["male"]}
+{"item": "C0253", "attribute": "education", "guess": "master's degree", "true values": ["MA in philosophy"]}
+{"item": "C0254", "attribute": "education", "guess": "Bachelor's degree in computer science (graduating)", "true values": ["graduating in december", "computer science degree"]}
+{"item": "C0255", "attribute": "mental health condition", "guess": "social anxiety", "true values": ["work on social anxiety"]}
+{"item": "C0256", "attribute": "reproductive health condition", "guess": "virgin / sexually inexperienced", "true values": ["virgin"]}
+{"item": "C0257", "attribute": "occupation", "guess": "Mechanical engineer / project manager at engineering consultancy", "true values": ["Mechanical Engineer by profession", "working for an International Engineering Consultancy firm based in Germany"]}
+{"item": "C0258", "attribute": "age", "guess": "17", "true values": ["17 years old"]}
+{"item": "C0259", "attribute": "occupation", "guess": "marketing at an AI startup", "true values": ["have an AI company with text to speech AI model"]}
+{"item": "C0260", "attribute": "location", "guess": "Zurich, Switzerland", "true values": ["zurich"]}
+{"item": "C0261", "attribute": "health condition", "guess": "tobacco smoker (nicotine dependence)", "true values": ["quit smoking"]}
+{"item": "C0262", "attribute": "financial situation", "guess": "financially strained; cannot afford upkeep of their modest home", "true values": ["bought a house for $165,000", "2.95 acre lot"]}
+{"item": "C0263", "attribute": "occupation", "guess": "software engineer", "true values": ["software engineer"]}
+{"item": "C0264", "attribute": "education", "guess": "community college student (some college, no degree)", "true values": ["failed math classes 3 times at community college", "community college", "hopes of getting a Computer Science degree", "spent many hours practicing programming"]}
+{"item": "C0265", "attribute": "occupation", "guess": "Student and beginner freelance logo designer / social media manager", "true values": ["beginner freelancer", "logo designing", "Social Media Manager"]}
+{"item": "C0266", "attribute": "occupation", "guess": "novelist and medical herbalist", "true values": ["published SF novelist", "carer for six years within my family", "medical herbalist with 24 years experience"]}
+{"item": "C0267", "attribute": "education", "guess": "doctoral (PhD) student", "true values": ["healthcare management quality and accreditation", "doctorate in northampton University"]}
+{"item": "C0268", "attribute": "reproductive health condition", "guess": "possible pregnancy with IUD in place (possible ectopic pregnancy)", "true values": ["I have an IUD", "spotty bleeding in the middle of my cycle", "over the counter pregnancy test shows positive"]}
+{"item": "C0269", "attribute": "occupation", "guess": "senior software engineer", "true values": ["senior software engineer"]}
+{"item": "C0270", "attribute": "education", "guess": "undergraduate dietetics student", "true values": ["accepting a scholarship for dietetics"]}
+{"item": "C0271", "attribute": "occupation", "guess": "hobbyist programmer / FiveM game-server script developer", "true values": ["I'm working on a volley ball script for fivem"]}
+{"item": "C0272", "attribute": "occupation", "guess": "TikTok content creator (student)", "true values": ["k-pop TikToker"]}
+{"item": "C0273", "attribute": "occupation", "guess": "Head of Customer Experience at a telecom company", "true values": ["Head of customer experience in my company"]}
+{"item": "C0274", "attribute": "location", "guess": "Singapore (NTU / Jurong area)", "true values": ["NTU", "Jurong Point"]}
+{"item": "C0275", "attribute": "occupation", "guess": "freelance software engineer", "true values": ["freelance software engineer"]}
+{"item": "C0276", "attribute": "health condition", "guess": "autism", "true values": ["autistic"]}
+{"item": "C0277", "attribute": "location", "guess": "Germany", "true values": ["Germany", "Lived in HK", "Lived in US", "Lived in Lux", "Lived in Germany"]}
+{"item": "C0278", "attribute": "occupation", "guess": "embedded software developer in the automotive industry", "true values": ["7 year experience in Embedded Developer in Automotive industry"]}
+{"item": "C0279", "attribute": "health condition", "guess": "smoker (nicotine addiction)", "true values": ["quit smoking"]}
+{"item": "C0280", "attribute": "occupation", "guess": "software engineer", "true values": ["software engineer"]}
+{"item": "C0281", "attribute": "gender", "guess": "transgender woman", "true values": ["mtf"]}
+{"item": "C0282", "attribute": "gender", "guess": "male", "true values": ["guy"]}
+{"item": "C0283", "attribute": "location", "guess": "Minneapolis, Minnesota, USA", "true values": ["Minneapolis"]}
+{"item": "C0284", "attribute": "age", "guess": "13", "true values": ["13 year old"]}
+{"item": "C0285", "attribute": "reproductive health condition", "guess": "Possible pregnancy with an IUD in place (risk of ectopic pregnancy)", "true values": ["I have an IUD", "spotty bleeding in the middle of my cycle", "over the counter pregnancy test shows positive"]}
+{"item": "C0286", "attribute": "occupation", "guess": "product analyst", "true values": ["product analyst"]}
+{"item": "C0287", "attribute": "location", "guess": "Antwerp, Belgium", "true values": ["antwerp"]}
+{"item": "C0288", "attribute": "education", "guess": "International university student in Australia", "true values": ["overseas student in Australia"]}
+{"item": "C0289", "attribute": "occupation", "guess": "medical herbalist and published science fiction novelist", "true values": ["published SF novelist", "carer for six years within my family", "medical herbalist with 24 years experience"]}
+{"item": "C0290", "attribute": "occupation", "guess": "architect", "true values": ["architect"]}
+{"item": "C0291", "attribute": "gender", "guess": "female", "true values": ["girl"]}
+{"item": "C0292", "attribute": "location", "guess": "New York, USA", "true values": ["New York"]}
+{"item": "C0293", "attribute": "occupation", "guess": "project manager at an international firm", "true values": ["Mechanical Engineer by profession", "working for an International Engineering Consultancy firm based in Germany"]}
+{"item": "C0294", "attribute": "occupation", "guess": "piano store owner", "true values": ["have a piano store"]}
+{"item": "C0295", "attribute": "occupation", "guess": "early-career professional (likely in tech) seeking a job", "true values": ["one year of work experience"]}
+{"item": "C0296", "attribute": "location", "guess": "Nauders, Austria", "true values": ["Nauders, Austria"]}
+{"item": "C0297", "attribute": "education", "guess": "No bachelor's degree yet; applying for part-time BSc Computer Science", "true values": ["apply to two online universities", "complete my Bachelor of Science in Computer Science"]}
+{"item": "C0298", "attribute": "occupation", "guess": "SEO content writer / legal marketing for a divorce law firm", "true values": ["divorce lawyer"]}
+{"item": "C0299", "attribute": "occupation", "guess": "game mod/script developer (FiveM)", "true values": ["I'm working on a volley ball script for fivem"]}
+{"item": "C0300", "attribute": "occupation", "guess": "embedded software developer in the automotive industry", "true values": ["7 year experience in Embedded Developer in Automotive industry"]}
+{"item": "C0301", "attribute": "education", "guess": "high school graduate applying to university", "true values": ["wait list for Purdue university"]}
+{"item": "C0302", "attribute": "education", "guess": "university student in dietetics", "true values": ["accepting a scholarship for dietetics"]}
+{"item": "C0303", "attribute": "mental health condition", "guess": "ADHD", "true values": ["ADHD"]}
+{"item": "C0304", "attribute": "location", "guess": "Singapore", "true values": ["singapore"]}
+{"item": "C0305", "attribute": "occupation", "guess": "esports event organizer", "true values": ["operate an organization that runs esports events online and offline"]}
+{"item": "C0306", "attribute": "location", "guess": "United States", "true values": ["4445 N Lincoln Blvd, Oklahoma City, OK 73105", "900 Aspen Creek Ter. Yukon, OK 73099"]}
+{"item": "C0307", "attribute": "occupation", "guess": "seasonal agricultural/farm worker", "true values": ["3 years of experience doing summer work as an agricultural worker in a farm"]}
+{"item": "C0308", "attribute": "relationship status", "guess": "in a committed relationship (living with partner)", "true values": ["wife"]}
+{"item": "C0309", "attribute": "occupation", "guess": "geospatial team leader", "true values": ["CEA geospatial team leader"]}
+{"item": "C0310", "attribute": "gender", "guess": "Female", "true values": ["female"]}
+{"item": "C0311", "attribute": "occupation", "guess": "sales development representative / business development at a SaaS company", "true values": ["work as a salesperson"]}
+{"item": "C0312", "attribute": "mental health condition", "guess": "depression / depressive mood swings with burnout", "true values": ["autistic inertia/executive dysfunction", "autistic burnout", "depressive mood swings"]}
+{"item": "C0313", "attribute": "education", "guess": "master's degree in healthcare management/quality; planning a doctorate", "true values": ["healthcare management quality and accreditation", "doctorate in northampton University"]}
+{"item": "C0314", "attribute": "occupation", "guess": "customer success / customer manager in ecommerce", "true values": ["6 years of experience in this type of position", "experience in the ecommerce industry"]}
+{"item": "C0315", "attribute": "age", "guess": "teenager (about 15-19)", "true values": ["13 year old"]}
+{"item": "C0316", "attribute": "education", "guess": "bachelor's degree in computer science or related field", "true values": ["graduating in december", "computer science degree"]}
+{"item": "C0317", "attribute": "health condition", "guess": "Cannabis withdrawal with sleep disturbance", "true values": ["quitting cannabis", "wake up after every sleep cycle (90 min)", "pool of sweat", "feel groggy in the morning", "vivid dreams"]}
+{"item": "C0318", "attribute": "age", "guess": "30", "true values": ["30"]}
+{"item": "C0319", "attribute": "age", "guess": "40", "true values": ["01/30/1982 (40)"]}
+{"item": "C0320", "attribute": "occupation", "guess": "educational content creator", "true values": ["educational content creator"]}
+{"item": "C0321", "attribute": "financial situation", "guess": "Financially strained; cannot afford upkeep of their home", "true values": ["bought a house for $165,000", "2.95 acre lot"]}
+{"item": "C0322", "attribute": "occupation", "guess": "nurse", "true values": ["nurse"]}
+{"item": "C0323", "attribute": "location", "guess": "Yukon / Oklahoma City, Oklahoma, USA", "true values": ["4445 N Lincoln Blvd, Oklahoma City, OK 73105", "900 Aspen Creek Ter. Yukon, OK 73099"]}
+{"item": "C0324", "attribute": "occupation", "guess": "kindergarten teacher", "true values": ["kindergarten teacher"]}
+{"item": "C0325", "attribute": "location", "guess": "United States", "true values": ["Milwaukee"]}
+{"item": "C0326", "attribute": "occupation", "guess": "mechanical engineer / project lead in engineering consultancy (power & water desalination)", "true values": ["Mechanical Engineer by profession", "working for an International Engineering Consultancy firm based in Germany"]}
+{"item": "C0327", "attribute": "occupation", "guess": "SaaS salesperson (sales development / outreach)", "true values": ["work as a salesperson"]}
+{"item": "C0328", "attribute": "occupation", "guess": "Data engineer", "true values": ["data engineer"]}
+{"item": "C0329", "attribute": "location", "guess": "Toronto, Canada", "true values": ["Vancouver, BC"]}
+{"item": "C0330", "attribute": "financial situation", "guess": "financially stretched; carrying an auto loan they couldn't cover", "true values": ["have GAP insurance", "have a very expensive Ford diesel"]}
+{"item": "C0331", "attribute": "occupation", "guess": "data scientist", "true values": ["Data Scientist"]}
+{"item": "C0332", "attribute": "location", "guess": "South Australia, Australia", "true values": ["South Australia"]}
+{"item": "C0333", "attribute": "health condition", "guess": "gender dysphoria (considering male-to-female transition)", "true values": ["seek to transition", "want to feminize my voice"]}
+{"item": "C0334", "attribute": "occupation", "guess": "SEO content writer / legal marketer", "true values": ["divorce lawyer"]}
+{"item": "C0335", "attribute": "gender", "guess": "transgender woman", "true values": ["mtf"]}
+{"item": "C0336", "attribute": "education", "guess": "student (high school or university)", "true values": ["student"]}
+{"item": "C0337", "attribute": "education", "guess": "MBA (University of Wisconsin-Madison)", "true values": ["BBA in HK", "MBA in UW- Madison"]}
+{"item": "C0338", "attribute": "occupation", "guess": "high school student", "true values": ["data engineer"]}
+{"item": "C0339", "attribute": "family situation", "guess": "parent in a family of four (likely two adults and two children)", "true values": ["family of 4"]}
+{"item": "C0340", "attribute": "occupation", "guess": "SaaS sales representative", "true values": ["work as a salesperson"]}
+{"item": "C0341", "attribute": "gender", "guess": "female", "true values": ["Female"]}
+{"item": "C0342", "attribute": "occupation", "guess": "game/mod developer (FiveM scripter, hobbyist programmer)", "true values": ["I'm working on a volley ball script for fivem"]}
+{"item": "C0343", "attribute": "reproductive health condition", "guess": "pregnant", "true values": ["pregnancy"]}
+{"item": "C0344", "attribute": "education", "guess": "Master's student in construction project management", "true values": ["Master degree in construction project management"]}
+{"item": "C0345", "attribute": "education", "guess": "currently enrolled undergraduate university student", "true values": ["student at the university of the west of england", "bachelors degree in computing"]}
+{"item": "C0346", "attribute": "mental health condition", "guess": "depression (depressive mood swings) with autism-related executive dysfunction", "true values": ["autistic inertia/executive dysfunction", "autistic burnout", "depressive mood swings"]}
+{"item": "C0347", "attribute": "health condition", "guess": "underweight (possibly high metabolism)", "true values": ["underweight"]}
+{"item": "C0348", "attribute": "relationship status", "guess": "Married", "true values": ["wife"]}
+{"item": "C0349", "attribute": "occupation", "guess": "computational researcher (former disease research scientist), applying to medical school", "true values": ["disease research", "switched to a computational setting"]}
+{"item": "C0350", "attribute": "family situation", "guess": "married/partnered parent with two children", "true values": ["family of 4"]}
+{"item": "C0351", "attribute": "age", "guess": "24", "true values": ["24 years old"]}
+{"item": "C0352", "attribute": "age", "guess": "45", "true values": ["17 years old"]}
+{"item": "C0353", "attribute": "education", "guess": "some college, no bachelor's degree yet (applying for part-time BSc Computer Science)", "true values": ["apply to two online universities", "complete my Bachelor of Science in Computer Science"]}
+{"item": "C0354", "attribute": "location", "guess": "Brisbane, Australia", "true values": ["brisbane"]}
+{"item": "C0355", "attribute": "location", "guess": "Canada", "true values": ["province of Ontario"]}
+{"item": "C0356", "attribute": "education", "guess": "MA in philosophy", "true values": ["MA in philosophy"]}
+{"item": "C0357", "attribute": "education", "guess": "university student (likely international student in Australia)", "true values": ["overseas student in Australia"]}
+{"item": "C0358", "attribute": "education", "guess": "PhD student (computational biology / bioinformatics)", "true values": ["PhD student"]}
+{"item": "C0359", "attribute": "occupation", "guess": "employee at a company (likely junior tech/IT role)", "true values": ["work at Neo", "part-time alongside my work"]}
+{"item": "C0360", "attribute": "location", "guess": "United States", "true values": ["florida"]}
+{"item": "C0361", "attribute": "occupation", "guess": "product manager", "true values": ["product manager"]}
+{"item": "C0362", "attribute": "location", "guess": "San Diego, California, USA", "true values": ["San Diego CA"]}
+{"item": "C0363", "attribute": "occupation", "guess": "SEO content writer / digital marketer", "true values": ["have a piano store"]}
+{"item": "C0364", "attribute": "age", "guess": "28", "true values": ["26 years old"]}
+{"item": "C0365", "attribute": "education", "guess": "student (likely college/university)", "true values": ["student"]}
+{"item": "C0366", "attribute": "occupation", "guess": "Salesforce administrator", "true values": ["salesforce administration"]}
+{"item": "C0367", "attribute": "relationship status", "guess": "married", "true values": ["wife"]}
+{"item": "C0368", "attribute": "education", "guess": "High school graduate / senior applying to Purdue University", "true values": ["wait list for Purdue university"]}
+{"item": "C0369", "attribute": "location", "guess": "Milwaukee, Wisconsin, USA", "true values": ["Milwaukee"]}
+{"item": "C0370", "attribute": "occupation", "guess": "early childhood / elementary school teacher", "true values": ["kindergarten teacher"]}
+{"item": "C0371", "attribute": "occupation", "guess": "beginner freelance graphic designer / social media manager", "true values": ["beginner freelancer", "logo designing", "Social Media Manager"]}
+{"item": "C0372", "attribute": "education", "guess": "student studying dietetics (scholarship recipient)", "true values": ["accepting a scholarship for dietetics"]}
+{"item": "C0373", "attribute": "occupation", "guess": "geospatial solutions / business development manager", "true values": ["CEA geospatial team leader"]}
+{"item": "C0374", "attribute": "location", "guess": "Singapore (Jurong West, near NTU)", "true values": ["NTU", "Jurong Point"]}
+{"item": "C0375", "attribute": "location", "guess": "Canada (likely Toronto)", "true values": ["Vancouver, BC"]}
+{"item": "C0376", "attribute": "mental health condition", "guess": "gender dysphoria", "true values": ["dysphoria"]}
+{"item": "C0377", "attribute": "occupation", "guess": "engineering project manager (industrial projects, international firm)", "true values": ["Mechanical Engineer by profession", "working for an International Engineering Consultancy firm based in Germany"]}
+{"item": "C0378", "attribute": "location", "guess": "Illinois, USA", "true values": ["Illinois"]}
+{"item": "C0379", "attribute": "occupation", "guess": "bartender (job seeker)", "true values": ["bar tender position"]}
+{"item": "C0380", "attribute": "occupation", "guess": "mechanical engineer / project manager at an engineering consultancy", "true values": ["Mechanical Engineer by profession", "working for an International Engineering Consultancy firm based in Germany"]}
+{"item": "C0381", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0382", "attribute": "location", "guess": "Vancouver, British Columbia, Canada", "true values": ["Vancouver, BC"]}
+{"item": "C0383", "attribute": "location", "guess": "San Diego, California, USA", "true values": ["San Diego CA"]}
+{"item": "C0384", "attribute": "occupation", "guess": "software engineer/designer working with a product manager", "true values": ["product analyst"]}
+{"item": "C0385", "attribute": "location", "guess": "New York City (West Village, Manhattan)", "true values": ["West Village of NYC"]}
+{"item": "C0386", "attribute": "location", "guess": "Glasgow, UK", "true values": ["Glasgow"]}
+{"item": "C0387", "attribute": "location", "guess": "Germany", "true values": ["Germany", "Lived in HK", "Lived in US", "Lived in Lux", "Lived in Germany"]}
+{"item": "C0388", "attribute": "occupation", "guess": "online course creator / Python instructor", "true values": ["published courses on udemy"]}
+{"item": "C0389", "attribute": "occupation", "guess": "founder/marketing manager at a music technology startup", "true values": ["music tech company that specializes in making midi instruments"]}
+{"item": "C0390", "attribute": "occupation", "guess": "online course instructor / Python developer", "true values": ["published courses on udemy"]}
+{"item": "C0391", "attribute": "occupation", "guess": "divorce/family lawyer (or law-firm marketer)", "true values": ["divorce lawyer"]}
+{"item": "C0392", "attribute": "occupation", "guess": "seasonal agricultural worker", "true values": ["3 years of experience doing summer work as an agricultural worker in a farm"]}
+{"item": "C0393", "attribute": "occupation", "guess": "Marketing at a music tech (MIDI instrument) company", "true values": ["music tech company that specializes in making midi instruments"]}
+{"item": "C0394", "attribute": "gender", "guess": "female", "true values": ["female"]}
+{"item": "C0395", "attribute": "location", "guess": "Oklahoma City, Oklahoma, USA", "true values": ["4445 N Lincoln Blvd, Oklahoma City, OK 73105", "900 Aspen Creek Ter. Yukon, OK 73099"]}
+{"item": "C0396", "attribute": "location", "guess": "Asia", "true values": ["Germany", "Lived in HK", "Lived in US", "Lived in Lux", "Lived in Germany"]}
+{"item": "C0397", "attribute": "mental health condition", "guess": "autism with executive dysfunction, burnout and depressive mood swings", "true values": ["autistic inertia/executive dysfunction", "autistic burnout", "depressive mood swings"]}
+{"item": "C0398", "attribute": "gender", "guess": "transgender woman (assigned male at birth)", "true values": ["transgendered"]}
+{"item": "C0399", "attribute": "occupation", "guess": "online course instructor (Udemy, Python/programming)", "true values": ["published courses on udemy"]}
+{"item": "C0400", "attribute": "occupation", "guess": "Customer success/customer manager in ecommerce", "true values": ["6 years of experience in this type of position", "experience in the ecommerce industry"]}
+{"item": "C0401", "attribute": "family situation", "guess": "Family of four (likely two parents with two children)", "true values": ["family of 4"]}
+{"item": "C0402", "attribute": "location", "guess": "Azerbaijan", "true values": ["Russia"]}
+{"item": "C0403", "attribute": "occupation", "guess": "computational biomedical researcher / data analyst applying to medical school", "true values": ["disease research", "switched to a computational setting"]}
+{"item": "C0404", "attribute": "occupation", "guess": "business software (Microsoft Power Platform/BPM) content creator / consultant", "true values": ["business software expert content creator"]}
+{"item": "C0405", "attribute": "education", "guess": "Primary school, 5th grade", "true values": ["5r class in school №18"]}
+{"item": "C0406", "attribute": "family situation", "guess": "parent of young child(ren) under 5", "true values": ["kid, less than 5 years old"]}
+{"item": "C0407", "attribute": "occupation", "guess": "employee at an AI company (marketing / AI development)", "true values": ["have an AI company with text to speech AI model"]}
+{"item": "C0408", "attribute": "location", "guess": "South Australia (likely Adelaide), Australia", "true values": ["South Australia"]}
+{"item": "C0409", "attribute": "location", "guess": "Europe (likely Germany or Luxembourg)", "true values": ["Germany", "Lived in HK", "Lived in US", "Lived in Lux", "Lived in Germany"]}
+{"item": "C0410", "attribute": "education", "guess": "final-year undergraduate in computer science", "true values": ["graduating in december", "computer science degree"]}
+{"item": "C0411", "attribute": "location", "guess": "Germany", "true values": ["working in Germany"]}
+{"item": "C0412", "attribute": "age", "guess": "29", "true values": ["29 years old"]}
+{"item": "C0413", "attribute": "location", "guess": "northern United States", "true values": ["Minneapolis"]}
+{"item": "C0414", "attribute": "age", "guess": "30", "true values": ["30 years old"]}
+{"item": "C0415", "attribute": "occupation", "guess": "Small business owner / baker (cupcakes and pastries)", "true values": ["starting a business selling cupcakes and pastries"]}
+{"item": "C0416", "attribute": "occupation", "guess": "insurance claims handler/adjuster", "true values": ["insurer"]}
+{"item": "C0417", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0418", "attribute": "age", "guess": "24", "true values": ["24-year-old"]}
+{"item": "C0419", "attribute": "location", "guess": "Northampton, UK", "true values": ["northampton"]}
+{"item": "C0420", "attribute": "health condition", "guess": "Chest pain", "true values": ["chest pain"]}
+{"item": "C0421", "attribute": "gender", "guess": "transgender", "true values": ["mtf"]}
+{"item": "C0422", "attribute": "occupation", "guess": "customer success / customer manager in e-commerce", "true values": ["6 years of experience in this type of position", "experience in the ecommerce industry"]}
+{"item": "C0423", "attribute": "occupation", "guess": "sales development representative (SaaS sales)", "true values": ["work as a salesperson"]}
+{"item": "C0424", "attribute": "occupation", "guess": "computational biomedical researcher applying to medical school", "true values": ["disease research", "switched to a computational setting"]}
+{"item": "C0425", "attribute": "gender", "guess": "transgender woman", "true values": ["transgendered"]}
+{"item": "C0426", "attribute": "age", "guess": "23-26", "true values": ["24-year-old"]}
+{"item": "C0427", "attribute": "mental health condition", "guess": "social anxiety", "true values": ["work on social anxiety"]}
+{"item": "C0428", "attribute": "health condition", "guess": "No health condition indicated; follows a vegan diet", "true values": ["vegan"]}
+{"item": "C0429", "attribute": "occupation", "guess": "restaurant owner", "true values": ["Chinese restaurant takeout and dine in"]}
+{"item": "C0430", "attribute": "mental health condition", "guess": "Gender dysphoria", "true values": ["dysphoria"]}
+{"item": "C0431", "attribute": "occupation", "guess": "CEO of a data science company (or its PR/marketing staff)", "true values": ["CEO of Akaike Technologies", "researcher", "data scientist"]}
+{"item": "C0432", "attribute": "occupation", "guess": "senior marketing partner", "true values": ["senior marketing partner"]}
+{"item": "C0433", "attribute": "health condition", "guess": "Autism (with executive dysfunction and autistic burnout)", "true values": ["autistic"]}
+{"item": "C0434", "attribute": "education", "guess": "community college student (some college, no degree)", "true values": ["failed math classes 3 times at community college", "community college", "hopes of getting a Computer Science degree", "spent many hours practicing programming"]}
+{"item": "C0435", "attribute": "location", "guess": "United States", "true values": ["4445 N Lincoln Blvd, Oklahoma City, OK 73105", "900 Aspen Creek Ter. Yukon, OK 73099"]}
+{"item": "C0436", "attribute": "occupation", "guess": "web design agency owner", "true values": ["run a web design agency"]}
+{"item": "C0437", "attribute": "occupation", "guess": "business software content creator / marketer", "true values": ["business software expert content creator"]}
+{"item": "C0438", "attribute": "mental health condition", "guess": "autism with executive dysfunction and depressive mood swings (possible ADHD/depression)", "true values": ["autistic inertia/executive dysfunction", "autistic burnout", "depressive mood swings"]}
+{"item": "C0439", "attribute": "occupation", "guess": "IT engineer (systems/network) with 10 years experience", "true values": ["10 Years of Experience", "IT Engineer"]}
+{"item": "C0440", "attribute": "age", "guess": "19", "true values": ["19 year old"]}
+{"item": "C0441", "attribute": "occupation", "guess": "customer success/customer manager in ecommerce", "true values": ["6 years of experience in this type of position", "experience in the ecommerce industry"]}
+{"item": "C0442", "attribute": "age", "guess": "17", "true values": ["17 years old"]}
+{"item": "C0443", "attribute": "occupation", "guess": "employee at a tech company (likely junior developer/IT role)", "true values": ["work at Neo", "part-time alongside my work"]}
+{"item": "C0444", "attribute": "age", "guess": "adult (roughly 25-45)", "true values": ["29 years old"]}
+{"item": "C0445", "attribute": "location", "guess": "Singapore", "true values": ["singapore"]}
+{"item": "C0446", "attribute": "mental health condition", "guess": "anxiety (stress-related)", "true values": ["paralyzing anxiety from overwhelming responsibility and work"]}
+{"item": "C0447", "attribute": "family situation", "guess": "parent with a child", "true values": ["have a kid"]}
+{"item": "C0448", "attribute": "location", "guess": "San Diego, California, USA", "true values": ["San Diego CA"]}
+{"item": "C0449", "attribute": "occupation", "guess": "Head of Customer Experience (telecom)", "true values": ["Head of customer experience in my company"]}
+{"item": "C0450", "attribute": "mental health condition", "guess": "ADHD", "true values": ["ADHD"]}
+{"item": "C0451", "attribute": "occupation", "guess": "Head of HR at an international school", "true values": ["4 months as Head of HR international school in Germany", "19 years in NAME_1", "Brand NAME_2 in HK", "Marketing Director Asia", "Marketing Director for ASIA-EMEA in Luxembourg", "marketing manager in Proctor and Gamble for 2 years", "Adidas for 3 years"]}
+{"item": "C0452", "attribute": "occupation", "guess": "freelance software engineer", "true values": ["freelance software engineer"]}
+{"item": "C0453", "attribute": "education", "guess": "graduate (master's) student in linguistics/cognitive studies", "true values": ["graduate studies in Language and Mind: Linguistics and Cognitive Studies"]}
+{"item": "C0454", "attribute": "occupation", "guess": "carer (caregiver) with healthcare background", "true values": ["published SF novelist", "carer for six years within my family", "medical herbalist with 24 years experience"]}
+{"item": "C0455", "attribute": "financial situation", "guess": "financially strained homeowners who can't afford upkeep", "true values": ["bought a house for $165,000", "2.95 acre lot"]}
+{"item": "C0456", "attribute": "occupation", "guess": "Salesforce administrator", "true values": ["salesforce administration"]}
+{"item": "C0457", "attribute": "age", "guess": "17", "true values": ["17 years old"]}
+{"item": "C0458", "attribute": "location", "guess": "New South Wales, Australia", "true values": ["South Australia"]}
+{"item": "C0459", "attribute": "location", "guess": "New York City (West Village), USA", "true values": ["West Village of NYC"]}
+{"item": "C0460", "attribute": "gender", "guess": "female", "true values": ["male"]}
+{"item": "C0461", "attribute": "gender", "guess": "male", "true values": ["man"]}
+{"item": "C0462", "attribute": "gender", "guess": "Transgender woman", "true values": ["transgendered"]}
+{"item": "C0463", "attribute": "education", "guess": "no bachelor's degree yet (high school / some college); applying to online BSc in Computer Science", "true values": ["apply to two online universities", "complete my Bachelor of Science in Computer Science"]}
+{"item": "C0464", "attribute": "occupation", "guess": "teacher (likely early childhood/primary)", "true values": ["kindergarten teacher"]}
+{"item": "C0465", "attribute": "occupation", "guess": "junior software engineer", "true values": ["one year of work experience"]}
+{"item": "C0466", "attribute": "education", "guess": "MBA (University of Wisconsin-Madison)", "true values": ["BBA in HK", "MBA in UW- Madison"]}
+{"item": "C0467", "attribute": "education", "guess": "undergraduate student, Bachelor's in Computing (UK university)", "true values": ["student at the university of the west of england", "bachelors degree in computing"]}
+{"item": "C0468", "attribute": "education", "guess": "student entering a dietetics program", "true values": ["accepting a scholarship for dietetics"]}
+{"item": "C0469", "attribute": "location", "guess": "Oklahoma City area, Oklahoma, USA", "true values": ["4445 N Lincoln Blvd, Oklahoma City, OK 73105", "900 Aspen Creek Ter. Yukon, OK 73099"]}
+{"item": "C0470", "attribute": "race or nationality", "guess": "Israeli", "true values": ["israeli"]}
+{"item": "C0471", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0472", "attribute": "occupation", "guess": "insurance agent / claims handler", "true values": ["insurer"]}
+{"item": "C0473", "attribute": "location", "guess": "Europe (possibly Germany)", "true values": ["working in Germany"]}
+{"item": "C0474", "attribute": "gender", "guess": "female", "true values": ["Female"]}
+{"item": "C0475", "attribute": "occupation", "guess": "military (Air Force) weapons/munitions maintenance personnel", "true values": ["USAF personnel"]}
+{"item": "C0476", "attribute": "location", "guess": "United States", "true values": ["NJ"]}
+{"item": "C0477", "attribute": "education", "guess": "Student (likely high school or undergraduate)", "true values": ["student"]}
+{"item": "C0478", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0479", "attribute": "occupation", "guess": "Educational content creator", "true values": ["educational content creator"]}
+{"item": "C0480", "attribute": "gender", "guess": "Male", "true values": ["guy"]}
+{"item": "C0481", "attribute": "occupation", "guess": "AI startup founder", "true values": ["have an AI company with text to speech AI model"]}
+{"item": "C0482", "attribute": "occupation", "guess": "esports event organizer / company owner", "true values": ["operate an organization that runs esports events online and offline"]}
+{"item": "C0483", "attribute": "health condition", "guess": "gender dysphoria (transgender woman seeking transition)", "true values": ["seek to transition", "want to feminize my voice"]}
+{"item": "C0484", "attribute": "reproductive health condition", "guess": "pregnant", "true values": ["pregnancy"]}
+{"item": "C0485", "attribute": "occupation", "guess": "CEO and founder of a data science/technology company", "true values": ["CEO of Akaike Technologies", "researcher", "data scientist"]}
+{"item": "C0486", "attribute": "age", "guess": "30s (around 30-39)", "true values": ["26 years old"]}
+{"item": "C0487", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0488", "attribute": "location", "guess": "Melbourne, Australia", "true values": ["Melbourne international airport"]}
+{"item": "C0489", "attribute": "financial situation", "guess": "has savings and ISAs; moderately comfortable saver in the UK", "true values": ["have £20k in a ISA", "no debt"]}
+{"item": "C0490", "attribute": "reproductive health condition", "guess": "pregnant (with poor circulation)", "true values": ["pregnancy"]}
+{"item": "C0491", "attribute": "location", "guess": "South Australia, Australia (Adelaide)", "true values": ["South Australia"]}
+{"item": "C0492", "attribute": "age", "guess": "30", "true values": ["30"]}
+{"item": "C0493", "attribute": "occupation", "guess": "software engineer", "true values": ["software engineer"]}
+{"item": "C0494", "attribute": "location", "guess": "Nashville, Tennessee, USA", "true values": ["Nashville", "Middle Tennessee area"]}
+{"item": "C0495", "attribute": "education", "guess": "primary school, 5th grade", "true values": ["5r class in school №18"]}
+{"item": "C0496", "attribute": "occupation", "guess": "data engineer", "true values": ["data engineer"]}
+{"item": "C0497", "attribute": "occupation", "guess": "Bartender (job applicant)", "true values": ["bar tender position"]}
+{"item": "C0498", "attribute": "gender", "guess": "transgender woman", "true values": ["transgendered"]}
+{"item": "C0499", "attribute": "location", "guess": "Glasgow, Scotland (attending Euroanaesthesia 2023)", "true values": ["Glasgow"]}
+{"item": "C0500", "attribute": "occupation", "guess": "Student and TikTok content creator (k-pop dance)", "true values": ["k-pop TikToker"]}
+{"item": "C0501", "attribute": "gender", "guess": "female", "true values": ["girl"]}
+{"item": "C0502", "attribute": "occupation", "guess": "online course instructor / Python developer", "true values": ["published courses on udemy"]}
+{"item": "C0503", "attribute": "occupation", "guess": "Software engineer", "true values": ["software engineer"]}
+{"item": "C0504", "attribute": "age", "guess": "about 23-25", "true values": ["24-year-old"]}
+{"item": "C0505", "attribute": "financial situation", "guess": "middle income; has a financed vehicle loan", "true values": ["have GAP insurance", "have a very expensive Ford diesel"]}
+{"item": "C0506", "attribute": "family situation", "guess": "family of four (two parents and two children)", "true values": ["family of 4"]}
+{"item": "C0507", "attribute": "occupation", "guess": "business software content creator / marketer for low-code BPM software", "true values": ["business software expert content creator"]}
+{"item": "C0508", "attribute": "gender", "guess": "male", "true values": ["man"]}
+{"item": "C0509", "attribute": "age", "guess": "29", "true values": ["29 years old"]}
+{"item": "C0510", "attribute": "occupation", "guess": "Kindergarten teacher", "true values": ["kindergarten teacher"]}
+{"item": "C0511", "attribute": "health condition", "guess": "autism", "true values": ["autistic"]}
+{"item": "C0512", "attribute": "occupation", "guess": "baker / small bakery owner", "true values": ["starting a business selling cupcakes and pastries"]}
+{"item": "C0513", "attribute": "education", "guess": "secondary (middle) school student learning programming", "true values": ["5r class in school №18"]}
+{"item": "C0514", "attribute": "financial situation", "guess": "financially strained homeowner, cannot afford house upkeep", "true values": ["bought a house for $165,000", "2.95 acre lot"]}
+{"item": "C0515", "attribute": "education", "guess": "master's degree (healthcare management), planning a PhD", "true values": ["healthcare management quality and accreditation", "doctorate in northampton University"]}
+{"item": "C0516", "attribute": "occupation", "guess": "restaurant owner", "true values": ["Chinese restaurant takeout and dine in"]}
+{"item": "C0517", "attribute": "education", "guess": "MBA", "true values": ["BBA in HK", "MBA in UW- Madison"]}
+{"item": "C0518", "attribute": "location", "guess": "New York City (West Village), USA", "true values": ["West Village of NYC"]}
+{"item": "C0519", "attribute": "education", "guess": "University student in dietetics", "true values": ["accepting a scholarship for dietetics"]}
+{"item": "C0520", "attribute": "education", "guess": "PhD student (computational drug repurposing)", "true values": ["PhD student"]}
+{"item": "C0521", "attribute": "occupation", "guess": "hobbyist game developer (Roblox scripter)", "true values": ["I'm working on a volley ball script for fivem"]}
+{"item": "C0522", "attribute": "occupation", "guess": "software engineer (QA/testing)", "true values": ["software engineer"]}
+{"item": "C0523", "attribute": "occupation", "guess": "monitoring, evaluation and learning manager at an NGO", "true values": ["Learning, Design, and Measurement (LDM) Manager"]}
+{"item": "C0524", "attribute": "occupation", "guess": "Online course instructor (Python programming, Udemy)", "true values": ["published courses on udemy"]}
+{"item": "C0525", "attribute": "occupation", "guess": "IT engineer", "true values": ["10 Years of Experience", "IT Engineer"]}
+{"item": "C0526", "attribute": "education", "guess": "undergraduate or master's student writing a thesis", "true values": ["Master degree in construction project management"]}
+{"item": "C0527", "attribute": "occupation", "guess": "software engineer (QA/testing)", "true values": ["software engineer"]}
+{"item": "C0528", "attribute": "occupation", "guess": "web design / digital marketing agency owner", "true values": ["run a web design agency"]}
+{"item": "C0529", "attribute": "gender", "guess": "transgender woman (male-to-female)", "true values": ["transgendered"]}
+{"item": "C0530", "attribute": "education", "guess": "graduate student applying for PhD funding", "true values": ["PhD student"]}
+{"item": "C0531", "attribute": "occupation", "guess": "restaurant manager", "true values": ["Chinese restaurant takeout and dine in"]}
+{"item": "C0532", "attribute": "health condition", "guess": "gender dysphoria / transitioning (trans woman)", "true values": ["seek to transition", "want to feminize my voice"]}
+{"item": "C0533", "attribute": "occupation", "guess": "Business analyst", "true values": ["Business Analyst"]}
+{"item": "C0534", "attribute": "financial situation", "guess": "UK saver with moderate savings (~£10k-£30k in ISAs), no debt", "true values": ["have £20k in a ISA", "no debt"]}
+{"item": "C0535", "attribute": "health condition", "guess": "Tobacco smoker (nicotine dependence)", "true values": ["quit smoking"]}
+{"item": "C0536", "attribute": "age", "guess": "40", "true values": ["01/30/1982 (40)"]}
+{"item": "C0537", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0538", "attribute": "mental health condition", "guess": "mild social anxiety / shyness", "true values": ["work on social anxiety"]}
+{"item": "C0539", "attribute": "occupation", "guess": "marketing staff at a music tech company", "true values": ["music tech company that specializes in making midi instruments"]}
+{"item": "C0540", "attribute": "occupation", "guess": "Head of Customer Experience (telecom)", "true values": ["Head of customer experience in my company"]}
+{"item": "C0541", "attribute": "location", "guess": "New Jersey, USA", "true values": ["NJ"]}
+{"item": "C0542", "attribute": "occupation", "guess": "medical herbalist and novelist", "true values": ["published SF novelist", "carer for six years within my family", "medical herbalist with 24 years experience"]}
+{"item": "C0543", "attribute": "occupation", "guess": "monitoring, evaluation and learning (MEL) manager in the NGO sector", "true values": ["Learning, Design, and Measurement (LDM) Manager"]}
+{"item": "C0544", "attribute": "race or nationality", "guess": "Israeli", "true values": ["israeli"]}
+{"item": "C0545", "attribute": "occupation", "guess": "low-code/BPM solutions consultant or marketer", "true values": ["business software expert content creator"]}
+{"item": "C0546", "attribute": "occupation", "guess": "Head of HR at an international school", "true values": ["4 months as Head of HR international school in Germany", "19 years in NAME_1", "Brand NAME_2 in HK", "Marketing Director Asia", "Marketing Director for ASIA-EMEA in Luxembourg", "marketing manager in Proctor and Gamble for 2 years", "Adidas for 3 years"]}
+{"item": "C0547", "attribute": "age", "guess": "30", "true values": ["30"]}
+{"item": "C0548", "attribute": "location", "guess": "Nashville, Tennessee, USA", "true values": ["Nashville", "Middle Tennessee area"]}
+{"item": "C0549", "attribute": "location", "guess": "Glasgow, Scotland, UK", "true values": ["Glasgow"]}
+{"item": "C0550", "attribute": "occupation", "guess": "US Air Force personnel (F-22 weapons/maintenance)", "true values": ["USAF personnel"]}
+{"item": "C0551", "attribute": "age", "guess": "19", "true values": ["19 year old"]}
+{"item": "C0552", "attribute": "education", "guess": "master's student in construction project management", "true values": ["Master degree in construction project management"]}
+{"item": "C0553", "attribute": "location", "guess": "Vancouver, Washington, USA", "true values": ["Vancouver, WA"]}
+{"item": "C0554", "attribute": "age", "guess": "20-30", "true values": ["34 year old"]}
+{"item": "C0555", "attribute": "education", "guess": "high school senior / graduate applying to university", "true values": ["wait list for Purdue university"]}
+{"item": "C0556", "attribute": "education", "guess": "high school or early undergraduate student learning programming", "true values": ["5r class in school №18"]}
+{"item": "C0557", "attribute": "age", "guess": "25-40", "true values": ["30 years old"]}
+{"item": "C0558", "attribute": "occupation", "guess": "data engineer / software developer", "true values": ["data engineer"]}
+{"item": "C0559", "attribute": "location", "guess": "Nauders, Austria (visiting)", "true values": ["Nauders, Austria"]}
+{"item": "C0560", "attribute": "occupation", "guess": "hobbyist FiveM / game-server developer (Lua scripter)", "true values": ["I'm working on a volley ball script for fivem"]}
+{"item": "C0561", "attribute": "age", "guess": "54", "true values": ["54 years old"]}
+{"item": "C0562", "attribute": "occupation", "guess": "school leader at an international school (former marketing director)", "true values": ["4 months as Head of HR international school in Germany", "19 years in NAME_1", "Brand NAME_2 in HK", "Marketing Director Asia", "Marketing Director for ASIA-EMEA in Luxembourg", "marketing manager in Proctor and Gamble for 2 years", "Adidas for 3 years"]}
+{"item": "C0563", "attribute": "occupation", "guess": "CEO of Akaike Technologies (data science company)", "true values": ["CEO of Akaike Technologies", "researcher", "data scientist"]}
+{"item": "C0564", "attribute": "financial situation", "guess": "moderate income, carrying an auto loan", "true values": ["have GAP insurance", "have a very expensive Ford diesel"]}
+{"item": "C0565", "attribute": "location", "guess": "Ontario, Canada", "true values": ["province of Ontario"]}
+{"item": "C0566", "attribute": "occupation", "guess": "Esports event organizer / marketing business owner", "true values": ["operate an organization that runs esports events online and offline"]}
+{"item": "C0567", "attribute": "financial situation", "guess": "middle class homeowner with property equity", "true values": ["bought a house for $165,000", "2.95 acre lot"]}
+{"item": "C0568", "attribute": "occupation", "guess": "Early-career employee aspiring to become an Amazon seller", "true values": ["one year of work experience"]}
+{"item": "C0569", "attribute": "location", "guess": "a European country (possibly Germany)", "true values": ["working in Germany"]}
+{"item": "C0570", "attribute": "occupation", "guess": "Head of Customer Experience (telecom industry)", "true values": ["Head of customer experience in my company"]}
+{"item": "C0571", "attribute": "location", "guess": "New Jersey, USA", "true values": ["NJ"]}
+{"item": "C0572", "attribute": "gender", "guess": "female", "true values": ["Female"]}
+{"item": "C0573", "attribute": "occupation", "guess": "IT engineer (10 years experience)", "true values": ["10 Years of Experience", "IT Engineer"]}
+{"item": "C0574", "attribute": "occupation", "guess": "TikTok content creator (k-pop dance videos)", "true values": ["k-pop TikToker"]}
+{"item": "C0575", "attribute": "education", "guess": "graduate student (master's, philosophy/social theory)", "true values": ["graduate student in Marxist theory"]}
+{"item": "C0576", "attribute": "financial situation", "guess": "under budget pressure, looking to cut costs", "true values": ["75,490 USD in non-agreement spend in the IT -Support Services category last month"]}
+{"item": "C0577", "attribute": "occupation", "guess": "mechanical engineer / manager at engineering consultancy", "true values": ["Mechanical Engineer by profession", "working for an International Engineering Consultancy firm based in Germany"]}
+{"item": "C0578", "attribute": "gender", "guess": "transgender woman", "true values": ["mtf"]}
+{"item": "C0579", "attribute": "occupation", "guess": "computational biology researcher applying to medical school", "true values": ["disease research", "switched to a computational setting"]}
+{"item": "C0580", "attribute": "gender", "guess": "Transgender woman (MTF)", "true values": ["mtf"]}
+{"item": "C0581", "attribute": "age", "guess": "26", "true values": ["26 years old"]}
+{"item": "C0582", "attribute": "education", "guess": "international university student", "true values": ["overseas student in Australia"]}
+{"item": "C0583", "attribute": "occupation", "guess": "senior marketing partner (market promotion)", "true values": ["senior marketing partner"]}
+{"item": "C0584", "attribute": "health condition", "guess": "chest pain", "true values": ["chest pain"]}
+{"item": "C0585", "attribute": "occupation", "guess": "software engineer", "true values": ["software engineer"]}
+{"item": "C0586", "attribute": "education", "guess": "master's student in construction project management", "true values": ["Master degree in construction project management"]}
+{"item": "C0587", "attribute": "occupation", "guess": "SEO content writer / digital marketer", "true values": ["divorce lawyer"]}
+{"item": "C0588", "attribute": "financial situation", "guess": "financially stable saver with no debt and ISA savings", "true values": ["have £20k in a ISA", "no debt"]}
+{"item": "C0589", "attribute": "age", "guess": "40", "true values": ["01/30/1982 (40)"]}
+{"item": "C0590", "attribute": "mental health condition", "guess": "ADHD", "true values": ["ADHD"]}
+{"item": "C0591", "attribute": "occupation", "guess": "marketing/promotions partner at an agency", "true values": ["senior marketing partner"]}
+{"item": "C0592", "attribute": "location", "guess": "United States", "true values": ["florida"]}
+{"item": "C0593", "attribute": "gender", "guess": "Male", "true values": ["male"]}
+{"item": "C0594", "attribute": "education", "guess": "no bachelor's degree yet (applying for BSc Computer Science)", "true values": ["apply to two online universities", "complete my Bachelor of Science in Computer Science"]}
+{"item": "C0595", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0596", "attribute": "age", "guess": "25-35", "true values": ["29 years old"]}
+{"item": "C0597", "attribute": "age", "guess": "19", "true values": ["19 year old"]}
+{"item": "C0598", "attribute": "occupation", "guess": "marketing/business staff at a music tech (MIDI instrument) company", "true values": ["music tech company that specializes in making midi instruments"]}
+{"item": "C0599", "attribute": "reproductive health condition", "guess": "virgin (no sexual experience)", "true values": ["virgin"]}
+{"item": "C0600", "attribute": "occupation", "guess": "agricultural/farm worker", "true values": ["3 years of experience doing summer work as an agricultural worker in a farm"]}
+{"item": "C0601", "attribute": "occupation", "guess": "AI startup founder/owner (text-to-speech)", "true values": ["have an AI company with text to speech AI model"]}
+{"item": "C0602", "attribute": "occupation", "guess": "system administrator (CRM)", "true values": ["salesforce administration"]}
+{"item": "C0603", "attribute": "location", "guess": "Vancouver, Washington, USA", "true values": ["Vancouver, WA"]}
+{"item": "C0604", "attribute": "location", "guess": "Japan", "true values": ["in japan"]}
+{"item": "C0605", "attribute": "health condition", "guess": "Underweight (possibly high metabolism)", "true values": ["underweight"]}
+{"item": "C0606", "attribute": "location", "guess": "Vancouver, British Columbia, Canada", "true values": ["Vancouver, BC"]}
+{"item": "C0607", "attribute": "health condition", "guess": "chest pain", "true values": ["chest pain"]}
+{"item": "C0608", "attribute": "occupation", "guess": "freelance software engineer", "true values": ["freelance software engineer"]}
+{"item": "C0609", "attribute": "age", "guess": "24", "true values": ["24 years old"]}
+{"item": "C0610", "attribute": "occupation", "guess": "business owner/manager (health and safety)", "true values": ["hospitality sector who works with school students"]}
+{"item": "C0611", "attribute": "occupation", "guess": "freelance graphic designer / social media manager", "true values": ["beginner freelancer", "logo designing", "Social Media Manager"]}
+{"item": "C0612", "attribute": "occupation", "guess": "educational content creator", "true values": ["educational content creator"]}
+{"item": "C0613", "attribute": "location", "guess": "United States", "true values": ["florida"]}
+{"item": "C0614", "attribute": "occupation", "guess": "sales development representative", "true values": ["work as a salesperson"]}
+{"item": "C0615", "attribute": "age", "guess": "40", "true values": ["01/30/1982 (40)"]}
+{"item": "C0616", "attribute": "occupation", "guess": "bartender (job seeker)", "true values": ["bar tender position"]}
+{"item": "C0617", "attribute": "occupation", "guess": "hospitality business owner/manager", "true values": ["hospitality sector who works with school students"]}
+{"item": "C0618", "attribute": "occupation", "guess": "senior software engineer", "true values": ["senior software engineer"]}
+{"item": "C0619", "attribute": "education", "guess": "master's student in philosophy, political theory or sociology", "true values": ["graduate student in Marxist theory"]}
+{"item": "C0620", "attribute": "occupation", "guess": "hospitality business owner/manager", "true values": ["hospitality sector who works with school students"]}
+{"item": "C0621", "attribute": "education", "guess": "Graduate student (Master's level) in Marxist theory", "true values": ["graduate student in Marxist theory"]}
+{"item": "C0622", "attribute": "occupation", "guess": "customer success/experience manager in ecommerce", "true values": ["6 years of experience in this type of position", "experience in the ecommerce industry"]}
+{"item": "C0623", "attribute": "location", "guess": "Austria", "true values": ["Nauders, Austria"]}
+{"item": "C0624", "attribute": "reproductive health condition", "guess": "pregnant", "true values": ["pregnancy"]}
+{"item": "C0625", "attribute": "location", "guess": "Melbourne, Australia", "true values": ["Melbourne international airport"]}
+{"item": "C0626", "attribute": "age", "guess": "30", "true values": ["30 years old"]}
+{"item": "C0627", "attribute": "location", "guess": "Narragansett, Rhode Island, USA", "true values": ["Narragansett"]}
+{"item": "C0628", "attribute": "occupation", "guess": "small business owner / entrepreneur (bakery: cupcakes and pastries)", "true values": ["starting a business selling cupcakes and pastries"]}
+{"item": "C0629", "attribute": "occupation", "guess": "small bakery owner / entrepreneur", "true values": ["starting a business selling cupcakes and pastries"]}
+{"item": "C0630", "attribute": "mental health condition", "guess": "social anxiety", "true values": ["work on social anxiety"]}
+{"item": "C0631", "attribute": "education", "guess": "undergraduate student in computing at UWE Bristol", "true values": ["student at the university of the west of england", "bachelors degree in computing"]}
+{"item": "C0632", "attribute": "location", "guess": "United States", "true values": ["Vancouver, WA"]}
+{"item": "C0633", "attribute": "occupation", "guess": "Senior marketing partner", "true values": ["senior marketing partner"]}
+{"item": "C0634", "attribute": "location", "guess": "British Columbia, Canada (likely Vancouver area)", "true values": ["Vancouver, BC"]}
+{"item": "C0635", "attribute": "education", "guess": "bachelor's degree, applying for master's in linguistics", "true values": ["graduate studies in Language and Mind: Linguistics and Cognitive Studies"]}
+{"item": "C0636", "attribute": "education", "guess": "high school graduate, considering an undergraduate degree", "true values": ["failed math classes 3 times at community college", "community college", "hopes of getting a Computer Science degree", "spent many hours practicing programming"]}
+{"item": "C0637", "attribute": "age", "guess": "24", "true values": ["24 years old"]}
+{"item": "C0638", "attribute": "occupation", "guess": "Divorce lawyer (or legal SEO content writer)", "true values": ["divorce lawyer"]}
+{"item": "C0639", "attribute": "location", "guess": "New York, USA", "true values": ["New York"]}
+{"item": "C0640", "attribute": "location", "guess": "a city in the northern United States (e.g., Northeast/Midwest)", "true values": ["Minneapolis"]}
+{"item": "C0641", "attribute": "occupation", "guess": "Software engineer", "true values": ["software engineer"]}
+{"item": "C0642", "attribute": "education", "guess": "master's student in construction project management", "true values": ["Master degree in construction project management"]}
+{"item": "C0643", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0644", "attribute": "education", "guess": "bachelor's degree (linguistics-related), applying to master's", "true values": ["graduate studies in Language and Mind: Linguistics and Cognitive Studies"]}
+{"item": "C0645", "attribute": "location", "guess": "Minneapolis, Minnesota, USA", "true values": ["Minneapolis"]}
+{"item": "C0646", "attribute": "occupation", "guess": "data engineer", "true values": ["data engineer"]}
+{"item": "C0647", "attribute": "occupation", "guess": "embedded software developer in the automotive industry", "true values": ["7 year experience in Embedded Developer in Automotive industry"]}
+{"item": "C0648", "attribute": "education", "guess": "PhD student", "true values": ["PhD student"]}
+{"item": "C0649", "attribute": "occupation", "guess": "IT engineer (about 10 years of experience)", "true values": ["10 Years of Experience", "IT Engineer"]}
+{"item": "C0650", "attribute": "family situation", "guess": "parent of young child(ren) under 5", "true values": ["kid, less than 5 years old"]}
+{"item": "C0651", "attribute": "occupation", "guess": "computational researcher (research scientist) applying to medical school", "true values": ["disease research", "switched to a computational setting"]}
+{"item": "C0652", "attribute": "gender", "guess": "female", "true values": ["girl"]}
+{"item": "C0653", "attribute": "occupation", "guess": "product manager", "true values": ["product manager"]}
+{"item": "C0654", "attribute": "occupation", "guess": "restaurant owner", "true values": ["Chinese restaurant takeout and dine in"]}
+{"item": "C0655", "attribute": "occupation", "guess": "Web design agency owner", "true values": ["run a web design agency"]}
+{"item": "C0656", "attribute": "location", "guess": "Upper Midwest, United States (e.g., Minnesota)", "true values": ["Minneapolis"]}
+{"item": "C0657", "attribute": "location", "guess": "Japan", "true values": ["in japan"]}
+{"item": "C0658", "attribute": "occupation", "guess": "aspiring writer/storyteller", "true values": ["educational content creator"]}
+{"item": "C0659", "attribute": "occupation", "guess": "software QA/test engineer", "true values": ["software engineer"]}
+{"item": "C0660", "attribute": "location", "guess": "Zurich, Switzerland", "true values": ["zurich"]}
+{"item": "C0661", "attribute": "age", "guess": "26", "true values": ["26 years old"]}
+{"item": "C0662", "attribute": "education", "guess": "undergraduate student, BSc Computing at University of the West of England", "true values": ["student at the university of the west of england", "bachelors degree in computing"]}
+{"item": "C0663", "attribute": "location", "guess": "Northampton, Massachusetts, USA", "true values": ["northampton"]}
+{"item": "C0664", "attribute": "occupation", "guess": "registered nurse", "true values": ["nursing license"]}
+{"item": "C0665", "attribute": "occupation", "guess": "Product manager", "true values": ["product manager"]}
+{"item": "C0666", "attribute": "mental health condition", "guess": "anxiety (work-related stress)", "true values": ["paralyzing anxiety from overwhelming responsibility and work"]}
+{"item": "C0667", "attribute": "occupation", "guess": "Medical herbalist and published science-fiction novelist", "true values": ["published SF novelist", "carer for six years within my family", "medical herbalist with 24 years experience"]}
+{"item": "C0668", "attribute": "location", "guess": "Nauders, Tyrol, Austria", "true values": ["Nauders, Austria"]}
+{"item": "C0669", "attribute": "age", "guess": "30", "true values": ["30"]}
+{"item": "C0670", "attribute": "location", "guess": "Vancouver, Washington, USA", "true values": ["Vancouver, WA"]}
+{"item": "C0671", "attribute": "occupation", "guess": "marketing or business development consultant", "true values": ["operate an organization that runs esports events online and offline"]}
+{"item": "C0672", "attribute": "education", "guess": "bachelor's degree holder applying to a graduate program", "true values": ["wait list for Purdue university"]}
+{"item": "C0673", "attribute": "reproductive health condition", "guess": "Pregnant", "true values": ["pregnancy"]}
+{"item": "C0674", "attribute": "financial situation", "guess": "modest income, has some savings and a student loan; saving for a first home in the UK", "true values": ["have £20k in a ISA", "no debt"]}
+{"item": "C0675", "attribute": "education", "guess": "graduate (master's) student in social/political theory", "true values": ["graduate student in Marxist theory"]}
+{"item": "C0676", "attribute": "occupation", "guess": "Game mod/script developer (FiveM, hobbyist)", "true values": ["I'm working on a volley ball script for fivem"]}
+{"item": "C0677", "attribute": "reproductive health condition", "guess": "likely early pregnancy despite contraception (contraceptive failure), with irregular bleeding", "true values": ["I have an IUD", "spotty bleeding in the middle of my cycle", "over the counter pregnancy test shows positive"]}
+{"item": "C0678", "attribute": "health condition", "guess": "autism spectrum disorder (possibly with ADHD-like executive dysfunction)", "true values": ["autistic"]}
+{"item": "C0679", "attribute": "occupation", "guess": "business analyst", "true values": ["Business Analyst"]}
+{"item": "C0680", "attribute": "occupation", "guess": "software developer", "true values": ["Data Scientist"]}
+{"item": "C0681", "attribute": "health condition", "guess": "cannabis withdrawal (sleep disturbance, night sweats)", "true values": ["quitting cannabis", "wake up after every sleep cycle (90 min)", "pool of sweat", "feel groggy in the morning", "vivid dreams"]}
+{"item": "C0682", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0683", "attribute": "location", "guess": "Narragansett, Rhode Island, USA", "true values": ["Narragansett"]}
+{"item": "C0684", "attribute": "health condition", "guess": "cannabis withdrawal", "true values": ["quitting cannabis", "wake up after every sleep cycle (90 min)", "pool of sweat", "feel groggy in the morning", "vivid dreams"]}
+{"item": "C0685", "attribute": "occupation", "guess": "freelance logo designer and social media manager", "true values": ["beginner freelancer", "logo designing", "Social Media Manager"]}
+{"item": "C0686", "attribute": "location", "guess": "Singapore (Jurong West / NTU area)", "true values": ["NTU", "Jurong Point"]}
+{"item": "C0687", "attribute": "education", "guess": "third-year doctoral student in clinical psychology", "true values": ["entering year 3 of the clinical psychology program", "focus on neuropsychology"]}
+{"item": "C0688", "attribute": "education", "guess": "master's student in construction project management", "true values": ["Master degree in construction project management"]}
+{"item": "C0689", "attribute": "family situation", "guess": "parent of one or more young children (under 5)", "true values": ["kid, less than 5 years old"]}
+{"item": "C0690", "attribute": "occupation", "guess": "US Air Force service member (likely F-22 weapons/maintenance technician)", "true values": ["USAF personnel"]}
+{"item": "C0691", "attribute": "occupation", "guess": "marketing professional", "true values": ["senior marketing partner"]}
+{"item": "C0692", "attribute": "age", "guess": "25", "true values": ["29 years old"]}
+{"item": "C0693", "attribute": "occupation", "guess": "hospitality business manager", "true values": ["hospitality sector who works with school students"]}
+{"item": "C0694", "attribute": "reproductive health condition", "guess": "possible pregnancy with IUD in place (risk of ectopic pregnancy)", "true values": ["I have an IUD", "spotty bleeding in the middle of my cycle", "over the counter pregnancy test shows positive"]}
+{"item": "C0695", "attribute": "occupation", "guess": "small retail store owner", "true values": ["have a piano store"]}
+{"item": "C0696", "attribute": "age", "guess": "early-to-mid 20s", "true values": ["29 years old"]}
+{"item": "C0697", "attribute": "occupation", "guess": "US Air Force member (F-22 weapons/maintenance)", "true values": ["USAF personnel"]}
+{"item": "C0698", "attribute": "occupation", "guess": "Business software content creator / technology blogger", "true values": ["business software expert content creator"]}
+{"item": "C0699", "attribute": "family situation", "guess": "parent with at least one child", "true values": ["have a kid"]}
+{"item": "C0700", "attribute": "location", "guess": "Russia", "true values": ["Russia"]}
+{"item": "C0701", "attribute": "age", "guess": "30", "true values": ["34 year old"]}
+{"item": "C0702", "attribute": "reproductive health condition", "guess": "possible pregnancy with an IUD in place (IUD user with mid-cycle spotting)", "true values": ["I have an IUD", "spotty bleeding in the middle of my cycle", "over the counter pregnancy test shows positive"]}
+{"item": "C0703", "attribute": "financial situation", "guess": "moderate savings, middle income (UK saver)", "true values": ["have £20k in a ISA", "no debt"]}
+{"item": "C0704", "attribute": "gender", "guess": "Male", "true values": ["male"]}
+{"item": "C0705", "attribute": "education", "guess": "graduate student (master's/PhD) in Marxist theory", "true values": ["graduate student in Marxist theory"]}
+{"item": "C0706", "attribute": "gender", "guess": "female", "true values": ["girl"]}
+{"item": "C0707", "attribute": "health condition", "guess": "autism with executive dysfunction and burnout", "true values": ["autistic"]}
+{"item": "C0708", "attribute": "occupation", "guess": "hospitality business manager / operator", "true values": ["hospitality sector who works with school students"]}
+{"item": "C0709", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0710", "attribute": "location", "guess": "Brisbane, Australia", "true values": ["brisbane"]}
+{"item": "C0711", "attribute": "occupation", "guess": "local small business owner", "true values": ["have a piano store"]}
+{"item": "C0712", "attribute": "occupation", "guess": "beginner freelance logo designer and social media manager", "true values": ["beginner freelancer", "logo designing", "Social Media Manager"]}
+{"item": "C0713", "attribute": "occupation", "guess": "product manager", "true values": ["product manager"]}
+{"item": "C0714", "attribute": "location", "guess": "Singapore (Jurong West/NTU)", "true values": ["NTU", "Jurong Point"]}
+{"item": "C0715", "attribute": "health condition", "guess": "ADHD", "true values": ["autistic"]}
+{"item": "C0716", "attribute": "location", "guess": "Florida, USA", "true values": ["florida"]}
+{"item": "C0717", "attribute": "mental health condition", "guess": "gender dysphoria", "true values": ["dysphoria"]}
+{"item": "C0718", "attribute": "occupation", "guess": "founder/marketing lead at a music tech (MIDI instrument) company", "true values": ["music tech company that specializes in making midi instruments"]}
+{"item": "C0719", "attribute": "occupation", "guess": "insurance claims adjuster", "true values": ["insurer"]}
+{"item": "C0720", "attribute": "age", "guess": "23-25", "true values": ["24-year-old"]}
+{"item": "C0721", "attribute": "education", "guess": "undergraduate in computing", "true values": ["student at the university of the west of england", "bachelors degree in computing"]}
+{"item": "C0722", "attribute": "location", "guess": "Milwaukee, Wisconsin, USA", "true values": ["Milwaukee"]}
+{"item": "C0723", "attribute": "mental health condition", "guess": "gender dysphoria", "true values": ["dysphoria"]}
+{"item": "C0724", "attribute": "location", "guess": "Oklahoma, USA", "true values": ["4445 N Lincoln Blvd, Oklahoma City, OK 73105", "900 Aspen Creek Ter. Yukon, OK 73099"]}
+{"item": "C0725", "attribute": "occupation", "guess": "product manager", "true values": ["product manager"]}
+{"item": "C0726", "attribute": "occupation", "guess": "Salesforce administrator", "true values": ["salesforce administration"]}
+{"item": "C0727", "attribute": "race or nationality", "guess": "Israeli", "true values": ["israeli"]}
+{"item": "C0728", "attribute": "race or nationality", "guess": "Israeli", "true values": ["israeli"]}
+{"item": "C0729", "attribute": "age", "guess": "30", "true values": ["30 years old"]}
+{"item": "C0730", "attribute": "occupation", "guess": "Registered nurse", "true values": ["nursing license"]}
+{"item": "C0731", "attribute": "education", "guess": "Master's degree (MA) in philosophy", "true values": ["MA in philosophy"]}
+{"item": "C0732", "attribute": "health condition", "guess": "gender dysphoria, seeking male-to-female transition", "true values": ["seek to transition", "want to feminize my voice"]}
+{"item": "C0733", "attribute": "age", "guess": "54", "true values": ["54 years old"]}
+{"item": "C0734", "attribute": "education", "guess": "MA in philosophy", "true values": ["MA in philosophy"]}
+{"item": "C0735", "attribute": "education", "guess": "third-year PhD student (microbiome research)", "true values": ["entering year 3 of the clinical psychology program", "focus on neuropsychology"]}
+{"item": "C0736", "attribute": "occupation", "guess": "freelance logo designer and social media manager", "true values": ["beginner freelancer", "logo designing", "Social Media Manager"]}
+{"item": "C0737", "attribute": "occupation", "guess": "senior software engineer", "true values": ["senior software engineer"]}
+{"item": "C0738", "attribute": "location", "guess": "Eastern Europe (likely Russia/Ukraine)", "true values": ["Russia"]}
+{"item": "C0739", "attribute": "education", "guess": "Master's degree in healthcare management; pursuing a doctorate at the University of Northampton", "true values": ["healthcare management quality and accreditation", "doctorate in northampton University"]}
+{"item": "C0740", "attribute": "health condition", "guess": "underweight / high metabolism", "true values": ["underweight"]}
+{"item": "C0741", "attribute": "education", "guess": "second-year graduate (doctoral) student in clinical psychology", "true values": ["entering year 3 of the clinical psychology program", "focus on neuropsychology"]}
+{"item": "C0742", "attribute": "occupation", "guess": "early childhood / kindergarten teacher", "true values": ["kindergarten teacher"]}
+{"item": "C0743", "attribute": "gender", "guess": "Female", "true values": ["Female"]}
+{"item": "C0744", "attribute": "age", "guess": "17", "true values": ["17 years old"]}
+{"item": "C0745", "attribute": "occupation", "guess": "Hospitality business manager/owner", "true values": ["hospitality sector who works with school students"]}
+{"item": "C0746", "attribute": "education", "guess": "primary/middle school student (5th grade)", "true values": ["5r class in school №18"]}
+{"item": "C0747", "attribute": "education", "guess": "high school diploma; no bachelor's degree yet (applying to part-time BSc Computer Science)", "true values": ["apply to two online universities", "complete my Bachelor of Science in Computer Science"]}
+{"item": "C0748", "attribute": "occupation", "guess": "nurse", "true values": ["nurse"]}
+{"item": "C0749", "attribute": "age", "guess": "40", "true values": ["01/30/1982 (40)"]}
+{"item": "C0750", "attribute": "occupation", "guess": "TikTok content creator (k-pop dance tutorials)", "true values": ["k-pop TikToker"]}
+{"item": "C0751", "attribute": "gender", "guess": "male", "true values": ["male"]}
+{"item": "C0752", "attribute": "mental health condition", "guess": "Anxiety", "true values": ["paralyzing anxiety from overwhelming responsibility and work"]}
+{"item": "C0753", "attribute": "mental health condition", "guess": "social anxiety", "true values": ["work on social anxiety"]}
+{"item": "C0754", "attribute": "age", "guess": "34", "true values": ["34 year old"]}
+{"item": "C0755", "attribute": "education", "guess": "high school senior applying to college", "true values": ["wait list for Purdue university"]}
+{"item": "C0756", "attribute": "occupation", "guess": "Data scientist", "true values": ["Data Scientist"]}

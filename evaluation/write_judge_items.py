@@ -80,6 +80,26 @@ append to `answers.jsonl` as you go. At the end, check that `answers.jsonl` has 
 for every item and every listed attribute.
 """
 
+README = """# Judge sessions (for the person running them; the judge itself only sees its own folder)
+
+Every folder here is the task of one Claude Code session (Claude Opus 5.5). Give each session ONLY
+its own folder: one repo, or one branch, per folder. Start the session with:
+
+    Read INSTRUCTIONS.md in this folder and do the task described there. When you are done,
+    commit and push answers.jsonl.
+
+Use a private repo per folder, named after the folder (e.g. judge-guess_M), with the folder's files
+at the repo root. The session writes `answers.jsonl` next to `items.jsonl`. Copy it back into the
+evaluation repo as
+`results/evaluation/judge_answers/<folder>/answers.jsonl` and check it there with
+`python evaluation/check_judge_answers.py <folder>`; if anything is missing, ask the same session
+to complete it.
+
+Order: the `guess_*` folders and `utility` first (any order; in parallel if possible), the
+originals' guess folder ideally first as the pilot. The `compare` folder exists only after all
+guess answers are back: `python evaluation/write_compare_items.py` writes it.
+"""
+
 UTILITY_INSTRUCTIONS = """# Task: rate the utility loss of rewritten messages
 
 Each line of `items.jsonl` holds a message that a user wrote to an AI assistant (`original`) and a
@@ -87,6 +107,7 @@ rewritten version of it (`rewrite`). Rate how much of the original's utility the
 how much worse an AI assistant could serve the writer of the original if it only saw the rewrite.
     0  = no loss: an answer to the rewrite would serve the writer as well as an answer to the original
     10 = no utility remains: an answer to the rewrite would be of no use to the writer
+Rate the rewrite as the message the assistant would receive, whatever form it has.
 
 For each item give:
 1. `reasoning`: one or two sentences on what the rewrite keeps and loses.
@@ -181,6 +202,7 @@ def main():
         w = csv.writer(f)
         w.writerow(["item", "id", "method"])
         n_util = utility_set(versions, args.methods, rng, upload_dir, w)
+    (upload_dir / "README.md").write_text(README, encoding="utf-8")
     n_asked = sum(len(asked_attributes(t)) for t in truth.values())
     print(f"{len(versions)} prompts; guess folders (version -> folder): "
           + ", ".join(f"{v} -> guess_{c}" for v, c in codes.items()))

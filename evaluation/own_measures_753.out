@@ -1,0 +1,95 @@
+sudo: sorry, you must have a tty to run sudo
+Job 753 on studgpu-spark01.inf.ethz.ch (aarch64), args: 
+112 prompts x 7 versions; 24 prompts done, 88 to go -> /work/projects/mkilic/LLM-privacy/results/evaluation/own_measures.csv
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 9254.73it/s]
+  1/88 id 137 (140 s): original R=0%  loop R=40%  presidio R=14%  loiseau_pupa R=49%  loiseau_synthpai R=33%  papillon R=24%  staab R=16%
+  2/88 id 140 (101 s): original R=0%  loop R=49%  presidio R=47%  loiseau_pupa R=21%  loiseau_synthpai R=7%  papillon R=88%  staab R=118%
+  3/88 id 150 (143 s): original R=0%  loop R=24%  presidio R=0%  loiseau_pupa R=69%  loiseau_synthpai R=68%  papillon R=27%  staab R=1%
+  4/88 id 153 (143 s): original R=0%  loop R=12%  presidio R=29%  loiseau_pupa R=96%  loiseau_synthpai R=4%  papillon R=59%  staab R=28%
+  5/88 id 162 (129 s): original R=0%  loop R=31%  presidio R=24%  loiseau_pupa R=26%  loiseau_synthpai R=16%  papillon R=53%  staab R=20%
+  6/88 id 171 (124 s): original R=0%  loop R=27%  presidio R=20%  loiseau_pupa R=14%  loiseau_synthpai R=26%  papillon R=16%  staab R=0%
+  7/88 id 175 (124 s): original R=0%  loop R=31%  presidio R=0%  loiseau_pupa R=80%  loiseau_synthpai R=34%  papillon R=50%  staab R=0%
+  8/88 id 183 (137 s): original R=0%  loop R=23%  presidio R=22%  loiseau_pupa R=87%  loiseau_synthpai R=22%  papillon R=25%  staab R=34%
+  9/88 id 186 (137 s): original R=0%  loop R=12%  presidio R=30%  loiseau_pupa R=117%  loiseau_synthpai R=86%  papillon R=27%  staab R=26%
+  10/88 id 192 (123 s): original R=0%  loop R=54%  presidio R=67%  loiseau_pupa R=33%  loiseau_synthpai R=77%  papillon R=71%  staab R=28%
+  11/88 id 198 (83 s): original R=0%  loop R=44%  presidio R=0%  loiseau_pupa R=59%  loiseau_synthpai R=39%  papillon R=52%  staab R=43%
+  12/88 id 199 (140 s): original R=0%  loop R=5%  presidio R=2%  loiseau_pupa R=42%  loiseau_synthpai R=5%  papillon R=23%  staab R=17%
+  13/88 id 214 (119 s): original R=0%  loop R=35%  presidio R=0%  loiseau_pupa R=66%  loiseau_synthpai R=56%  papillon R=110%  staab R=106%
+  14/88 id 219 (123 s): original R=0%  loop R=65%  presidio R=39%  loiseau_pupa R=37%  loiseau_synthpai R=28%  papillon R=130%  staab R=28%
+  15/88 id 221 (35 s): original R=0%  loop R=72%  presidio R=25%  loiseau_pupa R=55%  loiseau_synthpai R=53%  papillon R=37%  staab R=71%
+  16/88 id 234 (128 s): original R=0%  loop R=46%  presidio R=18%  loiseau_pupa R=140%  loiseau_synthpai R=31%  papillon R=99%  staab R=34%
+  17/88 id 247 (123 s): original R=0%  loop R=46%  presidio R=0%  loiseau_pupa R=18%  loiseau_synthpai R=38%  papillon R=63%  staab R=0%
+  18/88 id 255 (124 s): original R=0%  loop R=32%  presidio R=0%  loiseau_pupa R=34%  loiseau_synthpai R=30%  papillon R=35%  staab R=33%
+  19/88 id 258 (123 s): original R=0%  loop R=19%  presidio R=24%  loiseau_pupa R=36%  loiseau_synthpai R=28%  papillon R=42%  staab R=0%
+  20/88 id 266 (119 s): original R=0%  loop R=34%  presidio R=42%  loiseau_pupa R=59%  loiseau_synthpai R=5%  papillon R=29%  staab R=63%
+  21/88 id 274 (128 s): original R=0%  loop R=28%  presidio R=8%  loiseau_pupa R=18%  loiseau_synthpai R=29%  papillon R=17%  staab R=36%
+  22/88 id 286 (122 s): original R=0%  loop R=73%  presidio R=103%  loiseau_pupa R=22%  loiseau_synthpai R=4%  papillon R=28%  staab R=69%
+  23/88 id 287 (126 s): original R=0%  loop R=11%  presidio R=8%  loiseau_pupa R=31%  loiseau_synthpai R=16%  papillon R=52%  staab R=12%
+  24/88 id 290 (142 s): original R=0%  loop R=10%  presidio R=0%  loiseau_pupa R=7%  loiseau_synthpai R=9%  papillon R=19%  staab R=23%
+  25/88 id 298 (124 s): original R=0%  loop R=0%  presidio R=73%  loiseau_pupa R=31%  loiseau_synthpai R=25%  papillon R=52%  staab R=23%
+  26/88 id 300 (142 s): original R=0%  loop R=35%  presidio R=21%  loiseau_pupa R=62%  loiseau_synthpai R=31%  papillon R=54%  staab R=19%
+  27/88 id 306 (111 s): original R=0%  loop R=56%  presidio R=65%  loiseau_pupa R=2%  loiseau_synthpai R=55%  papillon R=25%  staab R=55%
+  28/88 id 313 (124 s): original R=0%  loop R=0%  presidio R=0%  loiseau_pupa R=48%  loiseau_synthpai R=47%  papillon R=32%  staab R=8%
+  29/88 id 327 (128 s): original R=0%  loop R=31%  presidio R=12%  loiseau_pupa R=46%  loiseau_synthpai R=31%  papillon R=54%  staab R=29%
+  30/88 id 337 (124 s): original R=0%  loop R=50%  presidio R=0%  loiseau_pupa R=11%  loiseau_synthpai R=0%  papillon R=19%  staab R=59%
+  31/88 id 339 (137 s): original R=0%  loop R=58%  presidio R=2%  loiseau_pupa R=57%  loiseau_synthpai R=57%  papillon R=30%  staab R=6%
+  32/88 id 340 (141 s): original R=0%  loop R=19%  presidio R=18%  loiseau_pupa R=72%  loiseau_synthpai R=13%  papillon R=85%  staab R=3%
+  33/88 id 355 (123 s): original R=0%  loop R=35%  presidio R=37%  loiseau_pupa R=13%  loiseau_synthpai R=11%  papillon R=52%  staab R=11%
+  34/88 id 359 (122 s): original R=0%  loop R=65%  presidio R=49%  loiseau_pupa R=31%  loiseau_synthpai R=72%  papillon R=16%  staab R=72%
+  35/88 id 368 (124 s): original R=0%  loop R=2%  presidio R=0%  loiseau_pupa R=2%  loiseau_synthpai R=2%  papillon R=32%  staab R=83%
+  36/88 id 415 (123 s): original R=0%  loop R=11%  presidio R=0%  loiseau_pupa R=88%  loiseau_synthpai R=80%  papillon R=50%  staab R=0%
+  37/88 id 429 (133 s): original R=0%  loop R=4%  presidio R=6%  loiseau_pupa R=15%  loiseau_synthpai R=4%  papillon R=36%  staab R=0%
+  38/88 id 433 (99 s): original R=0%  loop R=34%  presidio R=21%  loiseau_pupa R=48%  loiseau_synthpai R=70%  papillon R=15%  staab R=111%
+  39/88 id 447 (119 s): original R=0%  loop R=50%  presidio R=0%  loiseau_pupa R=2%  loiseau_synthpai R=0%  papillon R=55%  staab R=1%
+  40/88 id 454 (131 s): original R=0%  loop R=82%  presidio R=9%  loiseau_pupa R=80%  loiseau_synthpai R=71%  papillon R=17%  staab R=51%
+  41/88 id 458 (137 s): original R=0%  loop R=51%  presidio R=27%  loiseau_pupa R=37%  loiseau_synthpai R=24%  papillon R=30%  staab R=54%
+  42/88 id 473 (128 s): original R=0%  loop R=20%  presidio R=45%  loiseau_pupa R=42%  loiseau_synthpai R=69%  papillon R=46%  staab R=0%
+  43/88 id 474 (62 s): original R=0%  loop R=67%  presidio R=15%  loiseau_pupa R=63%  loiseau_synthpai R=48%  papillon R=21%  staab R=28%
+  44/88 id 507 (124 s): original R=0%  loop R=15%  presidio R=0%  loiseau_pupa R=46%  loiseau_synthpai R=33%  papillon R=47%  staab R=0%
+  45/88 id 510 (121 s): original R=0%  loop R=81%  presidio R=38%  loiseau_pupa R=63%  loiseau_synthpai R=84%  papillon R=26%  staab R=34%
+  46/88 id 514 (77 s): original R=0%  loop R=65%  presidio R=0%  loiseau_pupa R=77%  loiseau_synthpai R=17%  papillon R=87%  staab R=140%
+  47/88 id 527 (125 s): original R=0%  loop R=82%  presidio R=15%  loiseau_pupa R=16%  loiseau_synthpai R=0%  papillon R=28%  staab R=0%
+  48/88 id 539 (129 s): original R=0%  loop R=4%  presidio R=1%  loiseau_pupa R=21%  loiseau_synthpai R=10%  papillon R=65%  staab R=0%
+  49/88 id 542 (72 s): original R=0%  loop R=8%  presidio R=0%  loiseau_pupa R=57%  loiseau_synthpai R=60%  papillon R=16%  staab R=1%
+  50/88 id 564 (127 s): original R=0%  loop R=0%  presidio R=0%  loiseau_pupa R=25%  loiseau_synthpai R=1%  papillon R=60%  staab R=1%
+  51/88 id 593 (122 s): original R=0%  loop R=0%  presidio R=0%  loiseau_pupa R=9%  loiseau_synthpai R=4%  papillon R=41%  staab R=0%
+  52/88 id 598 (123 s): original R=0%  loop R=85%  presidio R=31%  loiseau_pupa R=40%  loiseau_synthpai R=14%  papillon R=28%  staab R=0%
+  53/88 id 604 (123 s): original R=0%  loop R=0%  presidio R=0%  loiseau_pupa R=55%  loiseau_synthpai R=46%  papillon R=71%  staab R=55%
+  54/88 id 609 (141 s): original R=0%  loop R=10%  presidio R=0%  loiseau_pupa R=17%  loiseau_synthpai R=9%  papillon R=84%  staab R=0%
+  55/88 id 610 (123 s): original R=0%  loop R=0%  presidio R=41%  loiseau_pupa R=19%  loiseau_synthpai R=56%  papillon R=24%  staab R=0%
+  56/88 id 637 (124 s): original R=0%  loop R=35%  presidio R=0%  loiseau_pupa R=45%  loiseau_synthpai R=34%  papillon R=50%  staab R=140%
+  57/88 id 640 (98 s): original R=0%  loop R=12%  presidio R=4%  loiseau_pupa R=53%  loiseau_synthpai R=57%  papillon R=52%  staab R=40%
+  58/88 id 653 (128 s): original R=0%  loop R=11%  presidio R=16%  loiseau_pupa R=33%  loiseau_synthpai R=45%  papillon R=57%  staab R=0%
+  59/88 id 661 (123 s): original R=0%  loop R=79%  presidio R=94%  loiseau_pupa R=22%  loiseau_synthpai R=59%  papillon R=9%  staab R=37%
+  60/88 id 682 (134 s): original R=0%  loop R=34%  presidio R=0%  loiseau_pupa R=95%  loiseau_synthpai R=42%  papillon R=53%  staab R=0%
+  61/88 id 691 (140 s): original R=0%  loop R=60%  presidio R=5%  loiseau_pupa R=69%  loiseau_synthpai R=19%  papillon R=10%  staab R=1%
+  62/88 id 692 (124 s): original R=0%  loop R=4%  presidio R=19%  loiseau_pupa R=23%  loiseau_synthpai R=1%  papillon R=66%  staab R=1%
+  63/88 id 707 (127 s): original R=0%  loop R=22%  presidio R=0%  loiseau_pupa R=41%  loiseau_synthpai R=14%  papillon R=32%  staab R=21%
+  64/88 id 712 (121 s): original R=0%  loop R=52%  presidio R=0%  loiseau_pupa R=62%  loiseau_synthpai R=78%  papillon R=55%  staab R=0%
+  65/88 id 724 (128 s): original R=0%  loop R=3%  presidio R=1%  loiseau_pupa R=9%  loiseau_synthpai R=1%  papillon R=36%  staab R=1%
+  66/88 id 734 (170 s): original R=0%  loop R=24%  presidio R=4%  loiseau_pupa R=69%  loiseau_synthpai R=46%  papillon R=71%  staab R=3%
+  67/88 id 735 (129 s): original R=0%  loop R=1%  presidio R=0%  loiseau_pupa R=10%  loiseau_synthpai R=9%  papillon R=34%  staab R=21%
+  68/88 id 744 (135 s): original R=0%  loop R=53%  presidio R=27%  loiseau_pupa R=45%  loiseau_synthpai R=42%  papillon R=31%  staab R=24%
+  69/88 id 747 (131 s): original R=0%  loop R=43%  presidio R=2%  loiseau_pupa R=4%  loiseau_synthpai R=2%  papillon R=19%  staab R=0%
+  70/88 id 761 (129 s): original R=0%  loop R=4%  presidio R=3%  loiseau_pupa R=80%  loiseau_synthpai R=90%  papillon R=25%  staab R=2%
+  71/88 id 789 (136 s): original R=0%  loop R=31%  presidio R=1%  loiseau_pupa R=17%  loiseau_synthpai R=21%  papillon R=34%  staab R=18%
+  72/88 id 841 (128 s): original R=0%  loop R=8%  presidio R=0%  loiseau_pupa R=35%  loiseau_synthpai R=31%  papillon R=74%  staab R=0%
+  73/88 id 848 (140 s): original R=0%  loop R=16%  presidio R=14%  loiseau_pupa R=19%  loiseau_synthpai R=17%  papillon R=100%  staab R=17%
+  74/88 id 851 (122 s): original R=0%  loop R=5%  presidio R=0%  loiseau_pupa R=24%  loiseau_synthpai R=10%  papillon R=27%  staab R=0%
+  75/88 id 908 (125 s): original R=0%  loop R=62%  presidio R=0%  loiseau_pupa R=38%  loiseau_synthpai R=61%  papillon R=40%  staab R=122%
+  76/88 id 914 (124 s): original R=0%  loop R=90%  presidio R=0%  loiseau_pupa R=17%  loiseau_synthpai R=7%  papillon R=55%  staab R=32%
+  77/88 id 916 (131 s): original R=0%  loop R=22%  presidio R=11%  loiseau_pupa R=46%  loiseau_synthpai R=12%  papillon R=37%  staab R=18%
+  78/88 id 933 (129 s): original R=0%  loop R=13%  presidio R=4%  loiseau_pupa R=28%  loiseau_synthpai R=21%  papillon R=37%  staab R=1%
+  79/88 id 934 (124 s): original R=0%  loop R=81%  presidio R=40%  loiseau_pupa R=73%  loiseau_synthpai R=51%  papillon R=72%  staab R=0%
+  80/88 id 966 (124 s): original R=0%  loop R=18%  presidio R=59%  loiseau_pupa R=11%  loiseau_synthpai R=6%  papillon R=33%  staab R=0%
+  81/88 id 973 (124 s): original R=0%  loop R=58%  presidio R=0%  loiseau_pupa R=28%  loiseau_synthpai R=7%  papillon R=50%  staab R=2%
+  82/88 id 993 (132 s): original R=0%  loop R=7%  presidio R=0%  loiseau_pupa R=22%  loiseau_synthpai R=10%  papillon R=73%  staab R=0%
+  83/88 id 1007 (136 s): original R=0%  loop R=36%  presidio R=15%  loiseau_pupa R=67%  loiseau_synthpai R=51%  papillon R=24%  staab R=7%
+  84/88 id 1010 (129 s): original R=0%  loop R=2%  presidio R=1%  loiseau_pupa R=14%  loiseau_synthpai R=1%  papillon R=42%  staab R=4%
+  85/88 id 1022 (122 s): original R=0%  loop R=58%  presidio R=28%  loiseau_pupa R=17%  loiseau_synthpai R=7%  papillon R=22%  staab R=0%
+  86/88 id 1074 (45 s): original R=0%  loop R=98%  presidio R=71%  loiseau_pupa R=71%  loiseau_synthpai R=71%  papillon R=49%  staab R=94%
+  87/88 id 1078 (134 s): original R=0%  loop R=42%  presidio R=0%  loiseau_pupa R=89%  loiseau_synthpai R=25%  papillon R=55%  staab R=24%
+  88/88 id 1121 (127 s): original R=0%  loop R=8%  presidio R=0%  loiseau_pupa R=59%  loiseau_synthpai R=3%  papillon R=12%  staab R=1%
+Done Tue Oct 13 15:45:16 CEST 2026

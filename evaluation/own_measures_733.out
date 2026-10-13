@@ -7,3 +7,48 @@ Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
   1/112 id 3 (125 s): original R=0%  loop R=3%  presidio R=38%  loiseau_pupa R=5%  loiseau_synthpai R=3%  papillon R=27%  staab R=2%
   2/112 id 4 (117 s): original R=0%  loop R=7%  presidio R=0%  loiseau_pupa R=44%  loiseau_synthpai R=43%  papillon R=47%  staab R=15%
   3/112 id 8 (121 s): original R=0%  loop R=19%  presidio R=4%  loiseau_pupa R=121%  loiseau_synthpai R=14%  papillon R=20%  staab R=51%
+  4/112 id 12 (125 s): original R=0%  loop R=21%  presidio R=0%  loiseau_pupa R=21%  loiseau_synthpai R=29%  papillon R=61%  staab R=1%
+  5/112 id 15 (126 s): original R=0%  loop R=24%  presidio R=26%  loiseau_pupa R=13%  loiseau_synthpai R=23%  papillon R=59%  staab R=127%
+  6/112 id 17 (128 s): original R=0%  loop R=53%  presidio R=33%  loiseau_pupa R=5%  loiseau_synthpai R=6%  papillon R=37%  staab R=53%
+  7/112 id 36 (119 s): original R=0%  loop R=25%  presidio R=17%  loiseau_pupa R=60%  loiseau_synthpai R=44%  papillon R=28%  staab R=23%
+  8/112 id 38 (127 s): original R=0%  loop R=14%  presidio R=26%  loiseau_pupa R=69%  loiseau_synthpai R=22%  papillon R=30%  staab R=0%
+  9/112 id 40 (130 s): original R=0%  loop R=18%  presidio R=0%  loiseau_pupa R=142%  loiseau_synthpai R=0%  papillon R=92%  staab R=2%
+  10/112 id 51 (124 s): original R=0%  loop R=41%  presidio R=13%  loiseau_pupa R=51%  loiseau_synthpai R=56%  papillon R=59%  staab R=0%
+  11/112 id 57 (132 s): original R=0%  loop R=0%  presidio R=0%  loiseau_pupa R=213%  loiseau_synthpai R=0%  papillon R=65%  staab R=0%
+  12/112 id 58 (126 s): original R=0%  loop R=39%  presidio R=21%  loiseau_pupa R=41%  loiseau_synthpai R=22%  papillon R=64%  staab R=38%
+  13/112 id 62 (125 s): original R=0%  loop R=41%  presidio R=0%  loiseau_pupa R=88%  loiseau_synthpai R=9%  papillon R=71%  staab R=52%
+  14/112 id 66 (123 s): original R=0%  loop R=69%  presidio R=0%  loiseau_pupa R=10%  loiseau_synthpai R=3%  papillon R=116%  staab R=0%
+  15/112 id 78 (130 s): original R=0%  loop R=22%  presidio R=0%  loiseau_pupa R=60%  loiseau_synthpai R=24%  papillon R=78%  staab R=0%
+  16/112 id 88 (123 s): original R=0%  loop R=72%  presidio R=27%  loiseau_pupa R=12%  loiseau_synthpai R=24%  papillon R=32%  staab R=1%
+  17/112 id 94 (129 s): original R=0%  loop R=37%  presidio R=0%  loiseau_pupa R=9%  loiseau_synthpai R=8%  papillon R=87%  staab R=2%
+  18/112 id 99 (128 s): original R=0%  loop R=40%  presidio R=0%  loiseau_pupa R=34%  loiseau_synthpai R=26%  papillon R=42%  staab R=3%
+  19/112 id 103 (135 s): original R=0%  loop R=29%  presidio R=4%  loiseau_pupa R=58%  loiseau_synthpai R=5%  papillon R=40%  staab R=3%
+  20/112 id 108 (124 s): original R=0%  loop R=26%  presidio R=0%  loiseau_pupa R=73%  loiseau_synthpai R=54%  papillon R=23%  staab R=1%
+  21/112 id 125 (123 s): original R=0%  loop R=1%  presidio R=0%  loiseau_pupa R=20%  loiseau_synthpai R=23%  papillon R=50%  staab R=0%
+  22/112 id 129 (129 s): original R=0%  loop R=18%  presidio R=0%  loiseau_pupa R=13%  loiseau_synthpai R=1%  papillon R=80%  staab R=26%
+  23/112 id 130 (58 s): original R=0%  loop R=22%  presidio R=2%  loiseau_pupa R=72%  loiseau_synthpai R=27%  papillon R=101%  staab R=5%
+  24/112 id 134 (124 s): original R=0%  loop R=66%  presidio R=0%  loiseau_pupa R=25%  loiseau_synthpai R=53%  papillon R=39%  staab R=0%
+Traceback (most recent call last):
+  File "/work/projects/mkilic/LLM-privacy/evaluation/score_own_measures.py", line 163, in <module>
+    main()
+  File "/work/projects/mkilic/LLM-privacy/evaluation/score_own_measures.py", line 154, in main
+    answers[i], rows = score_prompt(model, tok, attackers, versions[i], args, device)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/mkilic/LLM-privacy/evaluation/score_own_measures.py", line 110, in score_prompt
+    per, P = score(attackers, texts)                   # {attacker: [versions, K]}, max over attackers [versions, K]
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/mkilic/LLM-privacy/privacy/privacy_rewrite.py", line 138, in score
+    per = {a.name: a.p(texts) for a in attackers}
+                   ^^^^^^^^^^
+  File "/work/projects/mkilic/LLM-privacy/privacy/privacy_rewrite.py", line 133, in p
+    return torch.sigmoid(self.probe.logits([self.probe.encode(t) for t in texts])).cpu()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/mkilic/.llmvenv-gb10/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/projects/mkilic/LLM-privacy/privacy/laya_probe.py", line 108, in logits
+    rows = [r for m in msgs_ids for r in self._rows(m)]
+                                         ^^^^^^^^^^^^^
+  File "/work/projects/mkilic/LLM-privacy/privacy/laya_probe.py", line 77, in _rows
+    raise ValueError(f"message too long for Laya: {longest} > max_len={self.max_len} tokens")
+ValueError: message too long for Laya: 559 > max_len=512 tokens

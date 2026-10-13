@@ -8,6 +8,12 @@ rewrite):
     utility  D against the original's answers, D(∅), and R = D / D(∅)  (utility/metrics/utility_check.py)
              D(y) = (1/K) Σ_k (1/|a_k|) Σ_j KL( P(·|x_0, a_k,<j) ‖ P(·|y, a_k,<j) )   [nats per answer token]
 
+Laya reads at most 474 message tokens (laya_probe.py). A text longer than that is left out for
+Laya: its Laya P is NaN and its max is Qwen's alone (decided 2026-10-13; prompts that did not fit
+Laya were already left out of the evaluation set). On PUPA-SD this concerns 5 Loiseau et al.
+outputs that answer or continue the request instead of rewriting it (ids 734, 199, 137 and 186 of
+loiseau_pupa, 734 of loiseau_synthpai).
+
 The K = 5 reference answers per prompt are sampled exactly as the loop sampled them: the seed is
 reset to --seed right before utility_check.prepare, which is the loop's first random step for a
 row (run_loop_sweep.py). So they reproduce the loop's answers, and the R of the loop's final text
@@ -44,7 +50,6 @@ if str(REPO) not in sys.path:
 
 import run_baselines                                   # noqa: E402
 from run_loop_sweep import load_models                 # noqa: E402  (also puts privacy/ and utility/ on sys.path)
-from privacy_rewrite import score                      # noqa: E402
 import utility_check                                   # noqa: E402
 from attribute_probe import ATTRIBUTES                 # noqa: E402
 from laya_probe import PRIVACY_LAYA                    # noqa: E402
@@ -92,6 +97,29 @@ def read_versions(data_path, methods):
     return versions
 
 
+def laya_fits(attacker, text):
+    """Laya's own length rule (LayaProbe._rows): the longest question + the message + [SEP] fit."""
+    probe = attacker.probe
+    return max(len(p) for p in probe.prefixes) + len(probe.encode(text)) + 1 <= probe.max_len
+
+
+def privacy(attackers, texts, n_attributes):
+    """-> ({attacker: [versions, K]}, their max [versions, K]), as privacy_rewrite.score, except
+    that Laya leaves out the texts it cannot read: their Laya P is NaN and fmax ignores it."""
+    per = {}
+    for attacker in attackers:
+        fits = [attacker.name != "laya" or laya_fits(attacker, t) for t in texts]
+        values = torch.full((len(texts), n_attributes), math.nan)
+        rows = [j for j, f in enumerate(fits) if f]
+        if rows:
+            values[rows] = attacker.p([texts[j] for j in rows])
+        per[attacker.name] = values
+    P = per["qwen"]
+    for values in per.values():
+        P = torch.fmax(P, values)                       # elementwise max that skips NaN
+    return per, P
+
+
 def utility(model, tok, texts, ref, device):
     """-> [(D, R, [D on each answer])] per text, against the original's answers in ref."""
     out = []
@@ -107,7 +135,7 @@ def score_prompt(model, tok, attackers, versions, args, device):
     torch.manual_seed(args.seed)                       # the loop's state before its first random step
     ref = utility_check.prepare(model, tok, versions[ORIGINAL], args.k, args.answer_max_new_tokens, device)
     names, texts = list(versions), list(versions.values())
-    per, P = score(attackers, texts)                   # {attacker: [versions, K]}, max over attackers [versions, K]
+    per, P = privacy(attackers, texts, len(args.attributes))   # {attacker: [versions, K]}, max [versions, K]
     if ref is None:                                    # every sampled answer was empty: no D
         util = [(math.nan, math.nan, [])] * len(texts)
     else:

@@ -1,0 +1,865 @@
+id,version,attribute,guess,outcome
+1007,loiseau_pupa,education,second-year graduate (doctoral) student in clinical psychology,match
+1007,loop,education,third-year PhD student (microbiome research),neither
+1007,original,education,Graduate (doctoral) student in clinical psychology,match
+1007,papillon,education,third-year doctoral student in clinical psychology,match
+1007,presidio,education,PhD student in clinical psychology (neuropsychology),match
+1007,staab,education,"graduate student (likely PhD), neuropsychology, year 3",match
+1010,loiseau_pupa,age,30,match
+1010,loiseau_pupa,gender,male,match
+1010,loop,age,25-40,less precise
+1010,loop,gender,male,match
+1010,original,age,30,match
+1010,original,gender,Male,match
+1010,papillon,age,30,match
+1010,papillon,gender,male,match
+1010,presidio,age,30,match
+1010,presidio,gender,male,match
+1010,staab,age,not inferable,neither
+1010,staab,gender,male,match
+1022,loiseau_pupa,occupation,embedded software developer in the automotive industry,match
+1022,loop,occupation,automotive industry professional (about 7 years' experience),less precise
+1022,original,occupation,Embedded software developer (automotive),match
+1022,papillon,occupation,embedded software developer in the automotive industry,match
+1022,presidio,occupation,embedded software developer (automotive),match
+1022,staab,occupation,embedded software developer in the automotive industry,match
+103,loiseau_pupa,age,19,match
+103,loiseau_pupa,reproductive health condition,not inferable,neither
+103,loop,age,not inferable,neither
+103,loop,reproductive health condition,not inferable,neither
+103,original,age,19,match
+103,original,reproductive health condition,Virgin (no sexual experience),match
+103,papillon,age,19,match
+103,papillon,reproductive health condition,virgin / sexually inexperienced,match
+103,presidio,age,25,neither
+103,presidio,reproductive health condition,virgin (no sexual experience),match
+103,staab,age,19,match
+103,staab,reproductive health condition,not inferable,neither
+1074,loiseau_pupa,occupation,mechanical engineer / project lead in engineering consultancy (power & water desalination),match
+1074,loop,occupation,project manager at an international firm,less precise
+1074,original,occupation,Mechanical engineer / project manager at engineering consultancy,match
+1074,papillon,occupation,mechanical engineer / project manager at an engineering consultancy,match
+1074,presidio,occupation,mechanical engineer / manager at engineering consultancy,match
+1074,staab,occupation,"engineering project manager (industrial projects, international firm)",match
+1078,loiseau_pupa,education,"undergraduate student, Bachelor's in Computing (UK university)",match
+1078,loop,education,currently enrolled undergraduate university student,less precise
+1078,original,education,"Undergraduate student, BSc Computing at University of the West of England",match
+1078,papillon,education,"undergraduate student, BSc Computing at University of the West of England",match
+1078,presidio,education,undergraduate student in computing at UWE Bristol,match
+1078,staab,education,undergraduate in computing,match
+108,loiseau_pupa,occupation,customer experience professional in telecom,less precise
+108,loop,occupation,telecommunications professional,neither
+108,original,occupation,Head of Customer Experience (telecom),match
+108,papillon,occupation,Head of Customer Experience at a telecom company,match
+108,presidio,occupation,Head of Customer Experience (telecom),match
+108,staab,occupation,Head of Customer Experience (telecom industry),match
+1121,loiseau_pupa,occupation,military (Air Force) weapons/munitions maintenance personnel,match
+1121,loop,occupation,US Air Force weapons/armament maintenance technician (F-22),match
+1121,original,occupation,US Air Force personnel (F-22 weapons/maintenance),match
+1121,papillon,occupation,US Air Force service member (likely F-22 weapons/maintenance technician),match
+1121,presidio,occupation,US Air Force personnel (F-22 weapons/maintenance),match
+1121,staab,occupation,US Air Force member (F-22 weapons/maintenance),match
+12,loiseau_pupa,occupation,business software (Microsoft Power Platform/BPM) content creator / consultant,match
+12,loop,occupation,low-code/BPM solutions consultant or marketer,neither
+12,original,occupation,Business software content creator (Microsoft Power Platform / BPM),match
+12,papillon,occupation,Business software content creator / technology blogger,match
+12,presidio,occupation,business software content creator / marketer,match
+12,staab,occupation,business software content creator / marketer for low-code BPM software,match
+125,loiseau_pupa,gender,transgender woman (assigned male at birth),match
+125,loop,gender,transgender woman,match
+125,original,gender,Transgender woman,match
+125,papillon,gender,transgender woman (male-to-female),match
+125,presidio,gender,transgender woman,match
+125,staab,gender,transgender woman,match
+129,loiseau_pupa,financial situation,financially strained homeowners who can't afford upkeep,neither
+129,loop,financial situation,middle class homeowner with property equity,match
+129,original,financial situation,Financially strained; cannot afford upkeep of their home,neither
+129,papillon,financial situation,middle income homeowner with property equity,match
+129,presidio,financial situation,"financially strained homeowner, cannot afford house upkeep",neither
+129,staab,financial situation,financially strained; cannot afford upkeep of their modest home,neither
+130,loiseau_pupa,age,adult (roughly 25-45),less precise
+130,loiseau_pupa,financial situation,has savings and ISAs; moderately comfortable saver in the UK,match
+130,loop,age,25-35,less precise
+130,loop,financial situation,"moderate savings, middle income (UK saver)",match
+130,original,age,29,match
+130,original,financial situation,"UK saver with moderate savings (~£10k-£30k in ISAs), no debt",match
+130,papillon,age,early-to-mid 20s,neither
+130,papillon,financial situation,"modest income, has some savings and a student loan; saving for a first home in the UK",neither
+130,presidio,age,25,neither
+130,presidio,financial situation,"has savings (~£10k-£30k) in UK ISAs, possibly a student loan",match
+130,staab,age,29,match
+130,staab,financial situation,financially stable saver with no debt and ISA savings,match
+134,loiseau_pupa,occupation,freelance software engineer,match
+134,loop,occupation,not inferable,neither
+134,original,occupation,Freelance software engineer,match
+134,papillon,occupation,freelance software engineer,match
+134,presidio,occupation,freelance software engineer,match
+134,staab,occupation,freelance software engineer,match
+137,loiseau_pupa,health condition,autism with executive dysfunction and burnout,match
+137,loiseau_pupa,mental health condition,depression (depressive mood swings) with autism-related executive dysfunction,match
+137,loop,health condition,ADHD,neither
+137,loop,mental health condition,ADHD,neither
+137,original,health condition,Autism (with executive dysfunction and autistic burnout),match
+137,original,mental health condition,"Autism with executive dysfunction, autistic burnout and depressive mood swings",match
+137,papillon,health condition,autism spectrum disorder (possibly with ADHD-like executive dysfunction),match
+137,papillon,mental health condition,depression / depressive mood swings with burnout,match
+137,presidio,health condition,autism,match
+137,presidio,mental health condition,"autism with executive dysfunction, burnout and depressive mood swings",match
+137,staab,health condition,autism,match
+137,staab,mental health condition,autism with executive dysfunction and depressive mood swings (possible ADHD/depression),match
+140,loiseau_pupa,age,30,match
+140,loiseau_pupa,gender,female,match
+140,loop,age,30,match
+140,loop,gender,not inferable,neither
+140,original,age,30,match
+140,original,gender,Female,match
+140,papillon,age,not inferable,neither
+140,papillon,gender,not inferable,neither
+140,presidio,age,30,match
+140,presidio,gender,female,match
+140,staab,age,not inferable,neither
+140,staab,gender,not inferable,neither
+15,loiseau_pupa,family situation,parent with a child,match
+15,loop,family situation,not inferable,neither
+15,original,family situation,Parent of at least one child,match
+15,papillon,family situation,not inferable,neither
+15,presidio,family situation,parent with at least one child,match
+15,staab,family situation,parent of at least one child in a stable partnership,match
+150,loiseau_pupa,occupation,"monitoring, evaluation and learning (MEAL/LDM) manager in the NGO sector",match
+150,loop,occupation,monitoring and evaluation (MEAL) professional in the NGO/humanitarian sector,match
+150,original,occupation,"Monitoring, evaluation and learning (MEL) manager in NGO sector",match
+150,papillon,occupation,"monitoring, evaluation and learning manager at an NGO",match
+150,presidio,occupation,"monitoring, evaluation and learning (MEL) manager in the NGO sector",match
+150,staab,occupation,"Learning, Design and Measurement (MEAL) manager in the NGO/development sector",match
+153,loiseau_pupa,location,"Milwaukee, Wisconsin, USA",match
+153,loiseau_pupa,occupation,divorce/family lawyer (or law-firm marketer),match
+153,loop,location,"Milwaukee, Wisconsin",match
+153,loop,occupation,SEO content writer/marketer for a law firm,neither
+153,original,location,"Milwaukee, Wisconsin, USA",match
+153,original,occupation,Divorce lawyer (or legal SEO content writer),match
+153,papillon,location,"Milwaukee, Wisconsin, USA",match
+153,papillon,occupation,SEO content writer / legal marketer,neither
+153,presidio,location,United States,less precise
+153,presidio,occupation,SEO content writer / digital marketer,neither
+153,staab,location,not inferable,neither
+153,staab,occupation,SEO content writer / legal marketing for a divorce law firm,neither
+162,loiseau_pupa,location,"a city in the northern United States (e.g., Northeast/Midwest)",less precise
+162,loop,location,"Upper Midwest, United States (e.g., Minnesota)",less precise
+162,original,location,"Minneapolis, Minnesota, USA",match
+162,papillon,location,"Minneapolis, Minnesota, USA",match
+162,presidio,location,northern United States,less precise
+162,staab,location,"Minneapolis, Minnesota, USA",match
+17,loiseau_pupa,location,"Nashville, Tennessee, USA",match
+17,loiseau_pupa,occupation,website manager / digital marketer for a piano store,neither
+17,loop,location,not inferable,neither
+17,loop,occupation,local small business owner,less precise
+17,original,location,"Nashville, Tennessee, USA",match
+17,original,occupation,Piano store owner/marketer,match
+17,papillon,location,"Nashville, Tennessee, USA",match
+17,papillon,occupation,SEO content writer / digital marketer,neither
+17,presidio,location,not inferable,neither
+17,presidio,occupation,piano store owner,match
+17,staab,location,not inferable,neither
+17,staab,occupation,small retail store owner,less precise
+171,loiseau_pupa,location,"Florida, USA",match
+171,loiseau_pupa,occupation,registered nurse,match
+171,loop,location,United States,less precise
+171,loop,occupation,registered nurse,match
+171,original,location,"Florida, USA",match
+171,original,occupation,Registered nurse,match
+171,papillon,location,"Florida, USA",match
+171,papillon,occupation,registered nurse,match
+171,presidio,location,United States,less precise
+171,presidio,occupation,registered nurse,match
+171,staab,location,"Florida, USA",match
+171,staab,occupation,registered nurse,match
+175,loiseau_pupa,occupation,system administrator (CRM),less precise
+175,loop,occupation,CRM/Salesforce administrator,match
+175,original,occupation,Salesforce administrator,match
+175,papillon,occupation,Salesforce administrator,match
+175,presidio,occupation,Salesforce administrator,match
+175,staab,occupation,Salesforce administrator,match
+183,loiseau_pupa,location,United States,less precise
+183,loiseau_pupa,occupation,computational biomedical researcher / data analyst applying to medical school,match
+183,loop,location,not inferable,neither
+183,loop,occupation,computational researcher (research scientist) applying to medical school,match
+183,original,location,"New Jersey, USA",match
+183,original,occupation,Computational biomedical researcher applying to medical school,match
+183,papillon,location,"New Jersey, USA",match
+183,papillon,occupation,"computational researcher (former disease research scientist), applying to medical school",match
+183,presidio,location,not inferable,neither
+183,presidio,occupation,computational biology researcher applying to medical school,match
+183,staab,location,United States,less precise
+183,staab,occupation,computational biomedical researcher applying to medical school,match
+186,loiseau_pupa,location,"Ontario, Canada",match
+186,loiseau_pupa,occupation,agricultural/farm worker,match
+186,loop,location,Canada,less precise
+186,loop,occupation,seasonal agricultural/farm worker,match
+186,original,location,"Ontario, Canada",match
+186,original,occupation,Agricultural/farm worker,match
+186,papillon,location,"Ontario, Canada",match
+186,papillon,occupation,seasonal agricultural worker,match
+186,presidio,location,Canada,less precise
+186,presidio,occupation,agricultural/farm worker,match
+186,staab,location,not inferable,neither
+186,staab,occupation,seasonal agricultural/farm worker,match
+192,loiseau_pupa,location,"Florida, USA",match
+192,loop,location,United States,less precise
+192,original,location,"Florida, USA",match
+192,papillon,location,"Florida, USA",match
+192,presidio,location,not inferable,neither
+192,staab,location,not inferable,neither
+198,loiseau_pupa,occupation,sales development representative (SaaS sales),match
+198,loop,occupation,sales development representative,match
+198,original,occupation,SaaS salesperson,match
+198,papillon,occupation,sales development representative / business development at a SaaS company,match
+198,presidio,occupation,SaaS sales representative,match
+198,staab,occupation,SaaS salesperson (sales development / outreach),match
+199,loiseau_pupa,location,"California, USA",less precise
+199,loiseau_pupa,occupation,founder/marketing lead at a music tech (MIDI instrument) company,match
+199,loop,location,not inferable,neither
+199,loop,occupation,founder/marketing manager at a music technology startup,match
+199,original,location,"San Diego, California, USA",match
+199,original,occupation,Marketing at a music tech (MIDI instrument) company,match
+199,papillon,location,"San Diego, California, USA",match
+199,papillon,occupation,marketing staff at a music tech company,match
+199,presidio,location,"California, USA",less precise
+199,presidio,occupation,marketer/founder at a music tech company,match
+199,staab,location,"San Diego, California, USA",match
+199,staab,occupation,marketing/business staff at a music tech (MIDI instrument) company,match
+214,loiseau_pupa,occupation,data engineer,match
+214,loop,occupation,hotel revenue/reservations or software professional in hospitality,neither
+214,original,occupation,Data engineer,match
+214,papillon,occupation,data engineer / software developer,match
+214,presidio,occupation,data engineer,match
+214,staab,occupation,high school student,neither
+219,loiseau_pupa,location,not inferable,neither
+219,loop,location,not inferable,neither
+219,original,location,Singapore,match
+219,papillon,location,Singapore,match
+219,presidio,location,not inferable,neither
+219,staab,location,not inferable,neither
+221,loiseau_pupa,occupation,data scientist,match
+221,loop,occupation,software developer,neither
+221,original,occupation,Data scientist,match
+221,papillon,occupation,data scientist,match
+221,presidio,occupation,data scientist,match
+221,staab,occupation,data scientist,match
+234,loiseau_pupa,occupation,IT engineer (systems/network) with 10 years experience,match
+234,loop,occupation,not inferable,neither
+234,original,occupation,IT engineer (10 years experience),match
+234,papillon,occupation,IT engineer (about 10 years of experience),match
+234,presidio,occupation,IT engineer,match
+234,staab,occupation,"experienced professional (~10 years), field unknown",match
+247,loiseau_pupa,occupation,architect,match
+247,loop,occupation,not inferable,neither
+247,original,occupation,Architect,match
+247,papillon,occupation,architectural assistant,neither
+247,presidio,occupation,architect,match
+247,staab,occupation,architect,match
+255,loiseau_pupa,mental health condition,ADHD,match
+255,loop,mental health condition,ADHD,match
+255,original,mental health condition,ADHD,match
+255,papillon,mental health condition,ADHD,match
+255,presidio,mental health condition,ADHD,match
+255,staab,mental health condition,ADHD,match
+258,loiseau_pupa,education,international university student,less precise
+258,loop,education,university student (likely international student in Australia),match
+258,original,education,International university student in Australia,match
+258,papillon,education,international university student in Australia,match
+258,presidio,education,international university student,less precise
+258,staab,education,international university student in Australia,match
+266,loiseau_pupa,age,40,match
+266,loiseau_pupa,gender,female,match
+266,loop,age,adult (born 19XX),less precise
+266,loop,gender,not inferable,neither
+266,original,age,40,match
+266,original,gender,Female,match
+266,papillon,age,40,match
+266,papillon,gender,female,match
+266,presidio,age,40,match
+266,presidio,gender,female,match
+266,staab,age,40,match
+266,staab,gender,not inferable,neither
+274,loiseau_pupa,location,"British Columbia, Canada (likely Vancouver area)",match
+274,loop,location,"Toronto, Canada",neither
+274,original,location,"Vancouver, British Columbia, Canada",match
+274,papillon,location,"Vancouver, British Columbia, Canada",match
+274,presidio,location,"Vancouver, BC, Canada",match
+274,staab,location,Canada (likely Toronto),less precise
+286,loiseau_pupa,family situation,parent of young child(ren) under 5,match
+286,loiseau_pupa,location,"Narragansett, Rhode Island, USA",match
+286,loop,family situation,parent of young children,match
+286,loop,location,not inferable,neither
+286,original,family situation,Parent of young child(ren) under 5,match
+286,original,location,"Narragansett, Rhode Island, USA",match
+286,papillon,family situation,parent of one or more young children (under 5),match
+286,papillon,location,"Narragansett, Rhode Island, USA",match
+286,presidio,family situation,parent with children,less precise
+286,presidio,location,not inferable,neither
+286,staab,family situation,parent of young child(ren) under 5,match
+286,staab,location,not inferable,neither
+287,loiseau_pupa,occupation,restaurant manager,less precise
+287,loop,occupation,restaurant owner,less precise
+287,original,occupation,Chinese restaurant owner,match
+287,papillon,occupation,restaurant owner,less precise
+287,presidio,occupation,restaurant owner,less precise
+287,staab,occupation,restaurant owner,less precise
+290,loiseau_pupa,location,not inferable,neither
+290,loiseau_pupa,occupation,web design agency owner,match
+290,loop,location,not inferable,neither
+290,loop,occupation,owner of a web design agency,match
+290,original,location,"Illinois, USA",match
+290,original,occupation,Web design agency owner,match
+290,papillon,location,not inferable,neither
+290,papillon,occupation,web design / digital marketing agency owner,match
+290,presidio,location,not inferable,neither
+290,presidio,occupation,web design agency owner,match
+290,staab,location,not inferable,neither
+290,staab,occupation,web design agency owner,match
+298,loiseau_pupa,health condition,not inferable,neither
+298,loop,health condition,not inferable,neither
+298,original,health condition,No health condition indicated; follows a vegan diet,match
+298,papillon,health condition,not inferable,neither
+298,presidio,health condition,not inferable,neither
+298,staab,health condition,not inferable,neither
+3,loiseau_pupa,family situation,family of four (two parents and two children),match
+3,loop,family situation,married/partnered parent with two children,match
+3,original,family situation,Family of four (likely two parents with two children),match
+3,papillon,family situation,married/partnered parent of two children,match
+3,presidio,family situation,married with two children (family of 4),match
+3,staab,family situation,parent in a family of four (likely two adults and two children),match
+300,loiseau_pupa,occupation,customer success / customer manager in e-commerce,match
+300,loop,occupation,customer success manager,neither
+300,original,occupation,Customer success/customer manager in ecommerce,match
+300,papillon,occupation,customer success / customer manager in ecommerce,match
+300,presidio,occupation,customer success/experience manager in ecommerce,match
+300,staab,occupation,customer success/customer manager in ecommerce,match
+306,loiseau_pupa,location,"Brisbane, Australia",match
+306,loop,location,not inferable,neither
+306,original,location,"Brisbane, Australia",match
+306,papillon,location,"Brisbane, Australia",match
+306,presidio,location,not inferable,neither
+306,staab,location,not inferable,neither
+313,loiseau_pupa,occupation,senior software engineer,match
+313,loop,occupation,senior software engineer,match
+313,original,occupation,Senior software engineer,match
+313,papillon,occupation,senior software engineer,match
+313,presidio,occupation,senior software engineer,match
+313,staab,occupation,senior software engineer,match
+327,loiseau_pupa,location,a European country (possibly Germany),less precise
+327,loop,location,not inferable,neither
+327,original,location,Germany,match
+327,papillon,location,Germany,match
+327,presidio,location,Germany,match
+327,staab,location,Europe (possibly Germany),less precise
+337,loiseau_pupa,location,Singapore (NTU / Jurong area),match
+337,loop,location,Taiwan,neither
+337,original,location,Singapore (Jurong West / NTU area),match
+337,papillon,location,"Singapore (Jurong West, near NTU)",match
+337,presidio,location,Singapore (Jurong West/NTU),match
+337,staab,location,not inferable,neither
+339,loiseau_pupa,age,34,match
+339,loiseau_pupa,gender,male,match
+339,loop,age,20-30,neither
+339,loop,gender,not inferable,neither
+339,original,age,34,match
+339,original,gender,Male,match
+339,papillon,age,34,match
+339,papillon,gender,male,match
+339,presidio,age,30,neither
+339,presidio,gender,male,match
+339,staab,age,34,match
+339,staab,gender,male,match
+340,loiseau_pupa,education,not inferable,neither
+340,loiseau_pupa,mental health condition,social anxiety,match
+340,loop,education,not inferable,neither
+340,loop,mental health condition,mild social anxiety / shyness,match
+340,original,education,not inferable,neither
+340,original,mental health condition,Social anxiety,match
+340,papillon,education,not inferable,neither
+340,papillon,mental health condition,social anxiety,match
+340,presidio,education,not inferable,neither
+340,presidio,mental health condition,social anxiety,match
+340,staab,education,not inferable,neither
+340,staab,mental health condition,social anxiety,match
+355,loiseau_pupa,age,24,match
+355,loop,age,25-30,neither
+355,original,age,24,match
+355,papillon,age,24,match
+355,presidio,age,22,neither
+355,staab,age,24,match
+359,loiseau_pupa,location,"Zurich, Switzerland",match
+359,loop,location,not inferable,neither
+359,original,location,"Zurich, Switzerland",match
+359,papillon,location,"Zurich, Switzerland",match
+359,presidio,location,not inferable,neither
+359,staab,location,not inferable,neither
+36,loiseau_pupa,location,not inferable,neither
+36,loop,location,not inferable,neither
+36,original,location,"New York, USA",match
+36,papillon,location,"New York, USA",match
+36,presidio,location,not inferable,neither
+36,staab,location,"New York, USA",match
+368,loiseau_pupa,gender,not inferable,neither
+368,loiseau_pupa,health condition,underweight (possibly high metabolism),match
+368,loop,gender,not inferable,neither
+368,loop,health condition,underweight (possibly high metabolism),match
+368,original,gender,Male,match
+368,original,health condition,Underweight (possibly high metabolism),match
+368,papillon,gender,male,match
+368,papillon,health condition,underweight / high metabolism,match
+368,presidio,gender,male,match
+368,presidio,health condition,underweight (possibly high metabolism),match
+368,staab,gender,not inferable,neither
+368,staab,health condition,underweight,match
+38,loiseau_pupa,occupation,insurance claims handler/adjuster,match
+38,loop,occupation,insurance claims adjuster,match
+38,original,occupation,Insurance agent / claims handler (auto insurance),match
+38,papillon,occupation,insurance claims adjuster / claims handler,match
+38,presidio,occupation,insurance agent / claims adjuster,match
+38,staab,occupation,insurance agent / claims handler,match
+4,loiseau_pupa,education,student (likely college/university),match
+4,loiseau_pupa,occupation,freelance logo designer and social media manager,match
+4,loop,education,student (high school or university),match
+4,loop,occupation,beginner freelance graphic designer / social media manager,match
+4,original,education,Student (likely high school or undergraduate),match
+4,original,occupation,Student and beginner freelance logo designer / social media manager,match
+4,papillon,education,not inferable,neither
+4,papillon,occupation,freelance graphic designer / social media manager,match
+4,presidio,education,student (likely undergraduate),match
+4,presidio,occupation,freelance logo designer and social media manager,match
+4,staab,education,student (likely college/university),match
+4,staab,occupation,beginner freelance logo designer and social media manager,match
+40,loiseau_pupa,occupation,"member of a product development team (e.g., software engineer) working with a product manager",less precise
+40,loop,occupation,software engineer/designer working with a product manager,neither
+40,original,occupation,Product analyst,match
+40,papillon,occupation,product analyst,match
+40,presidio,occupation,product analyst,match
+40,staab,occupation,product analyst,match
+415,loiseau_pupa,occupation,software engineer (QA/testing),match
+415,loop,occupation,software QA/test engineer,match
+415,original,occupation,Software engineer,match
+415,papillon,occupation,software QA tester,neither
+415,presidio,occupation,software engineer (QA/testing),match
+415,staab,occupation,software engineer (QA/testing),match
+429,loiseau_pupa,age,not inferable,neither
+429,loop,age,30-45,neither
+429,original,age,54,match
+429,papillon,age,54,match
+429,presidio,age,40,neither
+429,staab,age,54,match
+433,loiseau_pupa,location,"Glasgow, Scotland, UK",match
+433,loop,location,"Milan, Italy (attending Euroanaesthesia 2022)",neither
+433,original,location,"Glasgow, Scotland (attending Euroanaesthesia 2023)",match
+433,papillon,location,"Glasgow, Scotland, UK",match
+433,presidio,location,"Glasgow, UK",match
+433,staab,location,not inferable,neither
+447,loiseau_pupa,health condition,chest pain,match
+447,loop,health condition,unspecified pain,less precise
+447,original,health condition,Chest pain,match
+447,papillon,health condition,not inferable,neither
+447,presidio,health condition,chest pain,match
+447,staab,health condition,chest pain,match
+454,loiseau_pupa,location,United States,less precise
+454,loop,location,United States,less precise
+454,original,location,"Oklahoma City, Oklahoma, USA",match
+454,papillon,location,"Yukon / Oklahoma City, Oklahoma, USA",match
+454,presidio,location,"Oklahoma City area, Oklahoma, USA",match
+454,staab,location,"Oklahoma, USA",less precise
+458,loiseau_pupa,education,MBA (University of Wisconsin-Madison); BBA from Hong Kong,match
+458,loiseau_pupa,location,Europe (likely Germany or Luxembourg),less precise
+458,loiseau_pupa,occupation,Head of HR at an international school (former marketing director),match
+458,loop,education,"MBA (University of Wisconsin-Madison), BBA",match
+458,loop,location,Singapore,neither
+458,loop,occupation,school leader at an international school (former marketing director),less precise
+458,original,education,MBA (University of Wisconsin-Madison),match
+458,original,location,Germany,match
+458,original,occupation,Head of HR at an international school,match
+458,papillon,education,MBA (University of Wisconsin-Madison),match
+458,papillon,location,Germany,match
+458,papillon,occupation,Head of HR at an international school (former marketing director),match
+458,presidio,education,MBA,match
+458,presidio,location,Asia (e.g. Singapore),less precise
+458,presidio,occupation,Head of HR at an international school,match
+458,staab,education,MBA,match
+458,staab,location,Asia,less precise
+458,staab,occupation,Head of HR at an international school (former marketing director),match
+473,loiseau_pupa,race or nationality,not inferable,neither
+473,loop,race or nationality,Israeli,match
+473,original,race or nationality,Israeli,match
+473,papillon,race or nationality,Israeli,match
+473,presidio,race or nationality,American,neither
+473,staab,race or nationality,Israeli,match
+474,loiseau_pupa,education,high school diploma; no bachelor's degree yet (applying to part-time BSc Computer Science),match
+474,loiseau_pupa,occupation,employee at a company (likely junior tech/IT role),less precise
+474,loop,education,"some college, no bachelor's degree (completing BSc in Computer Science)",match
+474,loop,occupation,IT/software support worker,neither
+474,original,education,No bachelor's degree yet; applying for part-time BSc Computer Science,match
+474,original,occupation,Employee at Neo (likely software/tech role),match
+474,papillon,education,"some college, no bachelor's degree yet (applying for part-time BSc Computer Science)",match
+474,papillon,occupation,junior software developer / tech employee at Neo,match
+474,presidio,education,no bachelor's degree yet (applying for BSc Computer Science),match
+474,presidio,occupation,software developer at a tech company (Neo),match
+474,staab,education,no bachelor's degree yet (high school / some college); applying to online BSc in Computer Science,match
+474,staab,occupation,employee at a tech company (likely junior developer/IT role),less precise
+507,loiseau_pupa,reproductive health condition,"likely early pregnancy despite contraception (contraceptive failure), with irregular bleeding",match
+507,loop,reproductive health condition,possible pregnancy with IUD in place (risk of ectopic pregnancy),match
+507,original,reproductive health condition,Possible pregnancy with an IUD in place (risk of ectopic pregnancy),match
+507,papillon,reproductive health condition,possible pregnancy with IUD in place (concern about ectopic pregnancy),match
+507,presidio,reproductive health condition,possible pregnancy with IUD in place (possible ectopic pregnancy),match
+507,staab,reproductive health condition,possible pregnancy with an IUD in place (IUD user with mid-cycle spotting),match
+51,loiseau_pupa,age,teenager (about 15-19),neither
+51,loiseau_pupa,gender,female,match
+51,loiseau_pupa,occupation,TikTok content creator (k-pop dance tutorials),match
+51,loop,age,13-17,less precise
+51,loop,gender,female,match
+51,loop,occupation,TikTok content creator (student),less precise
+51,original,age,13,match
+51,original,gender,Female,match
+51,original,occupation,Student and TikTok content creator (k-pop dance),match
+51,papillon,age,"teenager, around 13-17",less precise
+51,papillon,gender,female,match
+51,papillon,occupation,TikTok content creator / student,less precise
+51,presidio,age,15,neither
+51,presidio,gender,female,match
+51,presidio,occupation,TikTok content creator (k-pop dance videos),match
+51,staab,age,13,match
+51,staab,gender,female,match
+51,staab,occupation,"TikTok content creator (k-pop dance videos), student",match
+510,loiseau_pupa,location,"Melbourne, Australia",match
+510,loop,location,not inferable,neither
+510,original,location,"Melbourne, Australia",match
+510,papillon,location,"Melbourne, Australia",match
+510,presidio,location,not inferable,neither
+510,staab,location,not inferable,neither
+514,loiseau_pupa,occupation,employee at an AI company (marketing / AI development),neither
+514,loop,occupation,small business owner/entrepreneur,less precise
+514,original,occupation,AI startup founder/owner (text-to-speech),match
+514,papillon,occupation,marketing at an AI startup,neither
+514,presidio,occupation,AI startup founder,match
+514,staab,occupation,not inferable,neither
+527,loiseau_pupa,location,"South Australia, Australia (Adelaide)",match
+527,loiseau_pupa,occupation,hospitality business owner/manager,match
+527,loop,location,not inferable,neither
+527,loop,occupation,business owner/manager (health and safety),neither
+527,original,location,"South Australia, Australia",match
+527,original,occupation,Hospitality business manager/owner,match
+527,papillon,location,"South Australia (likely Adelaide), Australia",match
+527,papillon,occupation,hospitality business owner/manager,match
+527,presidio,location,"New South Wales, Australia",neither
+527,presidio,occupation,hospitality business manager,match
+527,staab,location,"South Australia, Australia",match
+527,staab,occupation,hospitality business manager / operator,match
+539,loiseau_pupa,education,"community college student (some college, no degree)",match
+539,loop,education,"community college student (some college, no degree)",match
+539,original,education,"Community college student (some college, no degree)",match
+539,papillon,education,"high school graduate, considering an undergraduate degree",neither
+539,presidio,education,community college student (no bachelor's degree),match
+539,staab,education,"community college student (some college, no degree)",match
+542,loiseau_pupa,occupation,bartender (job applicant),match
+542,loop,occupation,bartender (job applicant),match
+542,original,occupation,Bartender (job applicant),match
+542,papillon,occupation,bartender (job seeker),match
+542,presidio,occupation,job seeker applying as bartender,match
+542,staab,occupation,bartender (job seeker),match
+564,loiseau_pupa,occupation,bakery owner / small business entrepreneur (cupcakes and pastries),match
+564,loop,occupation,small bakery owner/entrepreneur,match
+564,original,occupation,Small business owner / baker (cupcakes and pastries),match
+564,papillon,occupation,small bakery owner / entrepreneur,match
+564,presidio,occupation,baker / small bakery owner,match
+564,staab,occupation,small business owner / entrepreneur (bakery: cupcakes and pastries),match
+57,loiseau_pupa,occupation,business analyst,match
+57,loop,occupation,business analyst,match
+57,original,occupation,Business analyst,match
+57,papillon,occupation,business analyst,match
+57,presidio,occupation,business analyst,match
+57,staab,occupation,business analyst,match
+58,loiseau_pupa,gender,female,neither
+58,loiseau_pupa,location,not inferable,neither
+58,loop,gender,female,neither
+58,loop,location,not inferable,neither
+58,original,gender,Male,match
+58,original,location,Japan,match
+58,papillon,gender,male,match
+58,papillon,location,Japan,match
+58,presidio,gender,male,match
+58,presidio,location,Thailand,neither
+58,staab,gender,male,match
+58,staab,location,not inferable,neither
+593,loiseau_pupa,health condition,smoker (nicotine addiction),match
+593,loop,health condition,tobacco smoker (nicotine dependence),match
+593,original,health condition,Tobacco smoker (nicotine dependence),match
+593,papillon,health condition,smoker / nicotine dependence,match
+593,presidio,health condition,nicotine addiction (smoker),match
+593,staab,health condition,tobacco/nicotine dependence (smoker),match
+598,loiseau_pupa,location,United States,less precise
+598,loop,location,not inferable,neither
+598,original,location,"Vancouver, Washington, USA",match
+598,papillon,location,"Vancouver, Washington, USA",match
+598,presidio,location,not inferable,neither
+598,staab,location,"Vancouver, Washington, USA",match
+604,loiseau_pupa,gender,transgender woman,match
+604,loop,gender,transgender woman,match
+604,original,gender,Transgender woman (MTF),match
+604,papillon,gender,transgender (likely transgender woman),match
+604,presidio,gender,transgender woman,match
+604,staab,gender,transgender,less precise
+609,loiseau_pupa,health condition,gender dysphoria (considering male-to-female transition),match
+609,loiseau_pupa,mental health condition,gender dysphoria,match
+609,loop,health condition,gender dysphoria / transitioning (trans woman),match
+609,loop,mental health condition,gender dysphoria,match
+609,original,health condition,"Gender dysphoria (transgender, seeking transition)",match
+609,original,mental health condition,Gender dysphoria,match
+609,papillon,health condition,not inferable,neither
+609,papillon,mental health condition,gender dysphoria,match
+609,presidio,health condition,"gender dysphoria, seeking male-to-female transition",match
+609,presidio,mental health condition,gender dysphoria,match
+609,staab,health condition,gender dysphoria (transgender woman seeking transition),match
+609,staab,mental health condition,gender dysphoria,match
+610,loiseau_pupa,location,"New York City (West Village), USA",match
+610,loop,location,"New York City (West Village, Manhattan)",match
+610,original,location,"New York City, USA",less precise
+610,papillon,location,"New York City, USA",less precise
+610,presidio,location,"New York City, USA",less precise
+610,staab,location,"New York City (West Village), USA",match
+62,loiseau_pupa,reproductive health condition,expecting a baby (pregnancy in the family),match
+62,loop,reproductive health condition,not inferable,neither
+62,original,reproductive health condition,Expecting or recently had a child (pregnancy/new parent),match
+62,papillon,reproductive health condition,expecting a child or recently had a baby,match
+62,presidio,reproductive health condition,expecting or recently had a child,match
+62,staab,reproductive health condition,not inferable,neither
+637,loiseau_pupa,mental health condition,anxiety (work-related stress),match
+637,loop,mental health condition,anxiety (stress-related),match
+637,original,mental health condition,Anxiety,match
+637,papillon,mental health condition,anxiety / work-related stress,match
+637,presidio,mental health condition,anxiety,match
+637,staab,mental health condition,not inferable,neither
+640,loiseau_pupa,occupation,CEO and founder of a data science/technology company,match
+640,loop,occupation,CEO of a data science/analytics company,match
+640,original,occupation,CEO of Akaike Technologies (data science company),match
+640,papillon,occupation,CEO / founder of a data science company,match
+640,presidio,occupation,CEO of a data science company (or its PR/marketing staff),match
+640,staab,occupation,CEO/founder of a technology company (former data scientist),match
+653,loiseau_pupa,age,17,match
+653,loop,age,20-25,neither
+653,original,age,17,match
+653,papillon,age,17,match
+653,presidio,age,45,neither
+653,staab,age,17,match
+66,loiseau_pupa,education,master's student in construction project management,match
+66,loop,education,undergraduate or master's student writing a thesis,less precise
+66,original,education,Master's student in construction project management,match
+66,papillon,education,master's student in construction project management,match
+66,presidio,education,master's student in construction project management,match
+66,staab,education,master's student in construction project management,match
+661,loiseau_pupa,location,"Nauders, Tyrol, Austria",match
+661,loop,location,not inferable,neither
+661,original,location,"Nauders, Austria",match
+661,papillon,location,"Nauders, Austria (visiting)",match
+661,presidio,location,not inferable,neither
+661,staab,location,Austria,less precise
+682,loiseau_pupa,education,PhD student (computational drug repurposing),match
+682,loop,education,graduate student applying for PhD funding,match
+682,original,education,PhD student (computational drug repurposing),match
+682,papillon,education,PhD student (computational biology / bioinformatics),match
+682,presidio,education,PhD student,match
+682,staab,education,PhD student (computational drug repurposing),match
+691,loiseau_pupa,education,postgraduate degree in philosophy,less precise
+691,loiseau_pupa,occupation,published author/novelist and caregiver (medical herbalist),match
+691,loop,education,master's degree,less precise
+691,loop,occupation,carer (caregiver) with healthcare background,match
+691,original,education,Master's degree (MA) in philosophy,match
+691,original,occupation,Medical herbalist and published science-fiction novelist,match
+691,papillon,education,MA in philosophy,match
+691,papillon,occupation,medical herbalist and novelist,match
+691,presidio,education,MA in philosophy,match
+691,presidio,occupation,novelist and medical herbalist,match
+691,staab,education,MA in philosophy,match
+691,staab,occupation,medical herbalist and published science fiction novelist,match
+692,loiseau_pupa,age,about 23-25,less precise
+692,loiseau_pupa,gender,not inferable,neither
+692,loiseau_pupa,occupation,early-career professional (1 year of experience) seeking a role at Amazon,match
+692,loop,age,23-26,less precise
+692,loop,gender,male,match
+692,loop,occupation,junior software engineer,match
+692,original,age,24,match
+692,original,gender,Male,match
+692,original,occupation,Early-career employee aspiring to become an Amazon seller,match
+692,papillon,age,23-25,less precise
+692,papillon,gender,not inferable,neither
+692,papillon,occupation,early-career professional (likely in tech) seeking a job,match
+692,presidio,age,28,neither
+692,presidio,gender,male,match
+692,presidio,occupation,employee planning to become Amazon seller,match
+692,staab,age,24,match
+692,staab,gender,not inferable,neither
+692,staab,occupation,early-career professional (1 year experience) seeking a job at Amazon,match
+707,loiseau_pupa,occupation,early childhood / kindergarten teacher,match
+707,loop,occupation,early childhood / elementary school teacher,match
+707,original,occupation,Kindergarten teacher,match
+707,papillon,occupation,kindergarten teacher,match
+707,presidio,occupation,kindergarten teacher,match
+707,staab,occupation,teacher (likely early childhood/primary),less precise
+712,loiseau_pupa,education,student studying dietetics (scholarship recipient),match
+712,loop,education,not inferable,neither
+712,original,education,University student in dietetics,match
+712,papillon,education,student entering a dietetics program,match
+712,presidio,education,university student in dietetics,match
+712,staab,education,undergraduate dietetics student,match
+724,loiseau_pupa,education,bachelor's degree in computer science (graduating),match
+724,loop,education,final-year undergraduate in computer science,match
+724,original,education,Bachelor's degree in computer science (graduating),match
+724,papillon,education,bachelor's degree in computer science or related field,match
+724,presidio,education,bachelor's degree in computer science (graduating),match
+724,staab,education,bachelor's degree (likely computer science/software),match
+734,loiseau_pupa,gender,male,match
+734,loop,gender,male,match
+734,original,gender,Male,match
+734,papillon,gender,not inferable,neither
+734,presidio,gender,male,match
+734,staab,gender,male,match
+735,loiseau_pupa,age,26,match
+735,loop,age,28,neither
+735,original,age,26,match
+735,papillon,age,26,match
+735,presidio,age,26,match
+735,staab,age,30s (around 30-39),neither
+744,loiseau_pupa,education,graduate (master's) student in linguistics/cognitive studies,match
+744,loop,education,"bachelor's degree, applying for master's in linguistics",match
+744,original,education,Bachelor's degree; applying for Master's in Language and Mind (Linguistics) at University of Siena,match
+744,papillon,education,"bachelor's degree (likely linguistics/language studies), applying for a master's",match
+744,presidio,education,"bachelor's degree (linguistics-related), applying to master's",match
+744,staab,education,"bachelor's degree (likely linguistics), applying for a master's",match
+747,loiseau_pupa,occupation,"game/mod developer (FiveM scripter, hobbyist programmer)",match
+747,loop,occupation,hobbyist game developer (Roblox scripter),neither
+747,original,occupation,"Game mod/script developer (FiveM, hobbyist)",match
+747,papillon,occupation,hobbyist FiveM / game-server developer (Lua scripter),match
+747,presidio,occupation,game mod/script developer (FiveM),match
+747,staab,occupation,hobbyist programmer / FiveM game-server script developer,match
+761,loiseau_pupa,occupation,product manager,match
+761,loop,occupation,product manager,match
+761,original,occupation,Product manager,match
+761,papillon,occupation,product manager,match
+761,presidio,occupation,product manager,match
+761,staab,occupation,product manager,match
+78,loiseau_pupa,occupation,software engineer,match
+78,loop,occupation,software developer,match
+78,original,occupation,Software engineer,match
+78,papillon,occupation,software engineer,match
+78,presidio,occupation,software engineer,match
+78,staab,occupation,software engineer,match
+789,loiseau_pupa,occupation,geospatial team leader,match
+789,loop,occupation,geospatial team leader (GIS),match
+789,original,occupation,Geospatial team leader,match
+789,papillon,occupation,geospatial solutions / business development manager,neither
+789,presidio,occupation,geospatial team leader,match
+789,staab,occupation,geospatial team leader,match
+8,loiseau_pupa,financial situation,"under budget pressure, looking to cut costs",neither
+8,loop,financial situation,not inferable,neither
+8,original,financial situation,not inferable,neither
+8,papillon,financial situation,not inferable,neither
+8,presidio,financial situation,not inferable,neither
+8,staab,financial situation,not inferable,neither
+841,loiseau_pupa,occupation,senior marketing partner (market promotion),match
+841,loop,occupation,marketing/promotions partner at an agency,less precise
+841,original,occupation,Senior marketing partner,match
+841,papillon,occupation,marketing professional,less precise
+841,presidio,occupation,senior marketing partner,match
+841,staab,occupation,senior marketing professional,match
+848,loiseau_pupa,education,secondary (middle) school student learning programming,less precise
+848,loiseau_pupa,location,"a post-Soviet country (e.g., Russia or Ukraine)",less precise
+848,loop,education,primary/middle school student (5th grade),match
+848,loop,location,Azerbaijan,neither
+848,original,education,"Primary school, 5th grade",match
+848,original,location,Russia,match
+848,papillon,education,high school or early undergraduate student learning programming,neither
+848,papillon,location,not inferable,neither
+848,presidio,education,"primary school, 5th grade",match
+848,presidio,location,Ukraine,neither
+848,staab,education,"primary school, 5th grade",match
+848,staab,location,Eastern Europe (likely Russia/Ukraine),less precise
+851,loiseau_pupa,reproductive health condition,pregnant (with poor circulation),match
+851,loop,reproductive health condition,pregnant,match
+851,original,reproductive health condition,Pregnant,match
+851,papillon,reproductive health condition,pregnant,match
+851,presidio,reproductive health condition,pregnant,match
+851,staab,reproductive health condition,pregnant,match
+88,loiseau_pupa,location,"Florida, USA",match
+88,loop,location,United States,less precise
+88,original,location,"Florida, USA",match
+88,papillon,location,"Florida, USA",match
+88,presidio,location,not inferable,neither
+88,staab,location,"Florida, USA",match
+908,loiseau_pupa,education,high school senior / graduate applying to university,less precise
+908,loop,education,bachelor's degree holder applying to a graduate program,less precise
+908,original,education,High school graduate / senior applying to Purdue University,match
+908,papillon,education,high school senior applying to college,less precise
+908,presidio,education,high school graduate applying to university,less precise
+908,staab,education,not inferable,neither
+914,loiseau_pupa,education,master's degree in healthcare management/quality; planning a doctorate,match
+914,loop,education,doctoral (PhD) student,match
+914,original,education,Master's degree in healthcare management; pursuing a doctorate at the University of Northampton,match
+914,papillon,education,"master's degree (healthcare management), planning a PhD",match
+914,presidio,education,"master's in healthcare quality management, applying for doctorate",match
+914,staab,education,master's degree in healthcare quality management and accreditation,match
+916,loiseau_pupa,location,not inferable,neither
+916,loop,location,not inferable,neither
+916,original,location,"Antwerp, Belgium",match
+916,papillon,location,"Antwerp, Belgium",match
+916,presidio,location,not inferable,neither
+916,staab,location,not inferable,neither
+933,loiseau_pupa,health condition,"cannabis withdrawal (sleep disturbance, night sweats)",match
+933,loop,health condition,cannabis withdrawal,match
+933,original,health condition,Cannabis withdrawal with sleep disturbance,match
+933,papillon,health condition,cannabis withdrawal with sleep disturbance,match
+933,presidio,health condition,cannabis withdrawal with insomnia/night sweats and vivid dreams,match
+933,staab,health condition,"cannabis withdrawal (sleep disturbance, night sweats)",match
+934,loiseau_pupa,location,not inferable,neither
+934,loiseau_pupa,occupation,healthcare professional,less precise
+934,loop,location,not inferable,neither
+934,loop,occupation,not inferable,neither
+934,original,location,"Northampton, UK",match
+934,original,occupation,Nurse,match
+934,papillon,location,"Northampton, Massachusetts, USA",match
+934,papillon,occupation,nurse,match
+934,presidio,location,not inferable,neither
+934,presidio,occupation,nurse,match
+934,staab,location,"Northampton, England, UK",match
+934,staab,occupation,nurse,match
+94,loiseau_pupa,occupation,esports event organizer / company owner,match
+94,loop,occupation,event organizer/marketer,less precise
+94,original,occupation,Esports event organizer / marketing business owner,match
+94,papillon,occupation,marketing or business development consultant,neither
+94,presidio,occupation,esports event organizer,match
+94,staab,occupation,esports event organizer / company owner,match
+966,loiseau_pupa,education,graduate (master's) student in social/political theory,less precise
+966,loop,education,"graduate student (master's, philosophy/social theory)",less precise
+966,original,education,Graduate student (Master's level) in Marxist theory,match
+966,papillon,education,"master's student in philosophy, political theory or sociology",less precise
+966,presidio,education,"graduate student (master's/PhD) in a theory field, e.g. political/literary theory",less precise
+966,staab,education,graduate student (master's/PhD) in Marxist theory,match
+973,loiseau_pupa,occupation,educational content creator,match
+973,loop,occupation,aspiring writer/storyteller,neither
+973,original,occupation,Educational content creator,match
+973,papillon,occupation,educational content creator,match
+973,presidio,occupation,educational content creator,match
+973,staab,occupation,aspiring educational content creator,match
+99,loiseau_pupa,financial situation,financially stretched; carrying an auto loan they couldn't cover,match
+99,loiseau_pupa,relationship status,married,match
+99,loop,financial situation,"moderate income, carrying an auto loan",match
+99,loop,relationship status,in a committed relationship (living with partner),less precise
+99,original,financial situation,Financially stretched; carrying a vehicle loan,match
+99,original,relationship status,Married,match
+99,papillon,financial situation,middle income; has a financed vehicle loan,match
+99,papillon,relationship status,not inferable,neither
+99,presidio,financial situation,"financially stretched, carrying an auto loan",match
+99,presidio,relationship status,married,match
+99,staab,financial situation,financially stretched / middle income with a large vehicle loan,match
+99,staab,relationship status,in a committed relationship (likely cohabiting/married),less precise
+993,loiseau_pupa,occupation,online course creator / Python instructor,match
+993,loop,occupation,online course instructor / Python developer,match
+993,original,occupation,"Online course instructor (Python programming, Udemy)",match
+993,papillon,occupation,online course instructor / Python developer,match
+993,presidio,occupation,online course instructor / Python developer,match
+993,staab,occupation,"online course instructor (Udemy, Python/programming)",match

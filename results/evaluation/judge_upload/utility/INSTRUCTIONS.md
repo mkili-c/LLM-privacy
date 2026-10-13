@@ -5,6 +5,7 @@ rewritten version of it (`rewrite`). Rate how much of the original's utility the
 how much worse an AI assistant could serve the writer of the original if it only saw the rewrite.
     0  = no loss: an answer to the rewrite would serve the writer as well as an answer to the original
     10 = no utility remains: an answer to the rewrite would be of no use to the writer
+Rate the rewrite as the message the assistant would receive, whatever form it has.
 
 For each item give:
 1. `reasoning`: one or two sentences on what the rewrite keeps and loses.

@@ -1,0 +1,757 @@
+item,guess_item,attribute
+C0001,N066,occupation
+C0002,M064,mental health condition
+C0003,M042,education
+C0004,B055,health condition
+C0005,Y063,occupation
+C0006,Q032,occupation
+C0007,B010,occupation
+C0008,N024,education
+C0009,Y001,occupation
+C0010,N105,occupation
+C0011,Q008,financial situation
+C0012,B065,occupation
+C0013,Y106,family situation
+C0014,N016,location
+C0015,N010,education
+C0016,Y082,gender
+C0017,Q094,health condition
+C0018,I021,location
+C0019,Q029,occupation
+C0020,M089,gender
+C0021,B005,occupation
+C0022,M074,location
+C0023,I056,occupation
+C0024,M081,occupation
+C0025,M075,occupation
+C0026,B066,gender
+C0027,I072,reproductive health condition
+C0028,Y102,occupation
+C0029,Y017,occupation
+C0030,Q048,education
+C0031,Y075,location
+C0032,I075,occupation
+C0033,M005,occupation
+C0034,I051,financial situation
+C0035,B005,location
+C0036,M022,gender
+C0037,N018,health condition
+C0038,B046,location
+C0039,N104,financial situation
+C0040,I089,occupation
+C0041,Y006,location
+C0042,M111,occupation
+C0043,Y047,occupation
+C0044,B016,occupation
+C0045,I091,health condition
+C0046,Y026,occupation
+C0047,M098,reproductive health condition
+C0048,M017,age
+C0049,Q068,education
+C0050,B025,occupation
+C0051,Y067,occupation
+C0052,B086,education
+C0053,B104,health condition
+C0054,Q074,occupation
+C0055,N037,occupation
+C0056,M096,occupation
+C0057,I032,occupation
+C0058,M089,age
+C0059,Q008,relationship status
+C0060,N072,age
+C0061,N076,education
+C0062,Q050,education
+C0063,Y064,occupation
+C0064,B057,location
+C0065,I103,mental health condition
+C0066,M093,health condition
+C0067,Q093,location
+C0068,N009,age
+C0069,I079,location
+C0070,Y027,age
+C0071,B083,occupation
+C0072,N041,location
+C0073,N093,mental health condition
+C0074,M070,gender
+C0075,Q009,age
+C0076,N072,gender
+C0077,Q059,occupation
+C0078,Q078,occupation
+C0079,M001,location
+C0080,B101,occupation
+C0081,M055,occupation
+C0082,I030,occupation
+C0083,M095,location
+C0084,Y041,occupation
+C0085,I039,occupation
+C0086,Y018,occupation
+C0087,N058,age
+C0088,Y080,occupation
+C0089,B074,occupation
+C0090,Q016,occupation
+C0091,Q035,occupation
+C0092,N025,mental health condition
+C0093,Q039,occupation
+C0094,B040,occupation
+C0095,N059,occupation
+C0096,Y055,occupation
+C0097,M102,financial situation
+C0098,I109,location
+C0099,M004,occupation
+C0100,Y040,education
+C0101,N048,occupation
+C0102,N015,education
+C0103,I102,age
+C0104,M060,education
+C0105,Q081,location
+C0106,I066,age
+C0107,M013,occupation
+C0108,Q070,education
+C0109,N061,occupation
+C0110,N083,occupation
+C0111,I057,occupation
+C0112,N024,location
+C0113,N004,occupation
+C0114,M085,education
+C0115,I038,education
+C0116,I106,location
+C0117,N013,occupation
+C0118,I052,mental health condition
+C0119,N086,family situation
+C0120,Q105,education
+C0121,M109,education
+C0122,M061,family situation
+C0123,N044,gender
+C0124,M027,occupation
+C0125,Q041,occupation
+C0126,B061,occupation
+C0127,N059,age
+C0128,N026,location
+C0129,Y105,occupation
+C0130,Y060,occupation
+C0131,N001,health condition
+C0132,M051,location
+C0133,Q054,education
+C0134,N011,location
+C0135,B093,relationship status
+C0136,Y097,mental health condition
+C0137,I029,reproductive health condition
+C0138,Y099,occupation
+C0139,I086,occupation
+C0140,M052,occupation
+C0141,Q020,gender
+C0142,B051,health condition
+C0143,Y077,age
+C0144,Q084,occupation
+C0145,Q011,education
+C0146,Y013,age
+C0147,Q026,location
+C0148,N030,financial situation
+C0149,Y101,health condition
+C0150,B035,education
+C0151,B035,occupation
+C0152,M069,education
+C0153,I093,gender
+C0154,Y108,gender
+C0155,N097,occupation
+C0156,M079,occupation
+C0157,N077,occupation
+C0158,M092,reproductive health condition
+C0159,N112,health condition
+C0160,N071,education
+C0161,N002,age
+C0162,Q077,education
+C0163,B098,occupation
+C0164,M021,occupation
+C0165,N105,location
+C0166,M053,gender
+C0167,B031,location
+C0168,M106,location
+C0169,I026,occupation
+C0170,M110,location
+C0171,Q024,age
+C0172,Y089,occupation
+C0173,M080,location
+C0174,M073,occupation
+C0175,N012,education
+C0176,M082,mental health condition
+C0177,B049,age
+C0178,Q072,location
+C0179,N112,gender
+C0180,Y004,occupation
+C0181,B033,education
+C0182,B078,occupation
+C0183,I087,age
+C0184,N038,age
+C0185,N042,gender
+C0186,B023,location
+C0187,Y005,location
+C0188,M104,location
+C0189,I033,gender
+C0190,I022,occupation
+C0191,Q055,occupation
+C0192,Y011,age
+C0193,M096,location
+C0194,B071,location
+C0195,B026,occupation
+C0196,Y040,occupation
+C0197,M034,location
+C0198,N068,occupation
+C0199,B034,reproductive health condition
+C0200,Y058,age
+C0201,Q036,health condition
+C0202,N034,occupation
+C0203,M065,occupation
+C0204,I112,location
+C0205,N010,location
+C0206,Y055,location
+C0207,I049,occupation
+C0208,M032,mental health condition
+C0209,M077,occupation
+C0210,B019,occupation
+C0211,I063,location
+C0212,Y052,occupation
+C0213,I047,occupation
+C0214,I068,reproductive health condition
+C0215,M046,occupation
+C0216,Y023,location
+C0217,B061,education
+C0218,I049,age
+C0219,B037,occupation
+C0220,Y104,mental health condition
+C0221,N081,occupation
+C0222,B082,age
+C0223,N050,reproductive health condition
+C0224,I099,gender
+C0225,N109,education
+C0226,B024,occupation
+C0227,N100,family situation
+C0228,N060,mental health condition
+C0229,B092,occupation
+C0230,M050,occupation
+C0231,N099,location
+C0232,Y045,gender
+C0233,N032,education
+C0234,I016,health condition
+C0235,N055,race or nationality
+C0236,Y023,education
+C0237,Q104,occupation
+C0238,N014,age
+C0239,Q033,occupation
+C0240,M106,family situation
+C0241,B028,location
+C0242,I097,occupation
+C0243,N096,education
+C0244,I043,education
+C0245,Q060,occupation
+C0246,I054,family situation
+C0247,Q024,gender
+C0248,Q111,family situation
+C0249,Y003,occupation
+C0250,B015,occupation
+C0251,I064,occupation
+C0252,Y071,gender
+C0253,Y110,education
+C0254,M054,education
+C0255,Q042,mental health condition
+C0256,I102,reproductive health condition
+C0257,M058,occupation
+C0258,I088,age
+C0259,I096,occupation
+C0260,I001,location
+C0261,Y073,health condition
+C0262,Q013,financial situation
+C0263,I058,occupation
+C0264,Q067,education
+C0265,M071,occupation
+C0266,N073,occupation
+C0267,Y059,education
+C0268,N046,reproductive health condition
+C0269,Q014,occupation
+C0270,Q065,education
+C0271,Q005,occupation
+C0272,Y077,occupation
+C0273,I095,occupation
+C0274,B063,location
+C0275,B006,occupation
+C0276,N084,health condition
+C0277,I057,location
+C0278,B112,occupation
+C0279,B079,health condition
+C0280,Q076,occupation
+C0281,Y012,gender
+C0282,N059,gender
+C0283,I078,location
+C0284,Q035,age
+C0285,M014,reproductive health condition
+C0286,I065,occupation
+C0287,I094,location
+C0288,M087,education
+C0289,Q070,occupation
+C0290,Q056,occupation
+C0291,N009,gender
+C0292,M045,location
+C0293,Y015,occupation
+C0294,N107,occupation
+C0295,I027,occupation
+C0296,M063,location
+C0297,M075,education
+C0298,Q034,occupation
+C0299,N007,occupation
+C0300,Q053,occupation
+C0301,N069,education
+C0302,N003,education
+C0303,Q083,mental health condition
+C0304,I067,location
+C0305,N092,occupation
+C0306,Y111,location
+C0307,Y042,occupation
+C0308,Y007,relationship status
+C0309,N111,occupation
+C0310,M010,gender
+C0311,I014,occupation
+C0312,I044,mental health condition
+C0313,B059,education
+C0314,I017,occupation
+C0315,B066,age
+C0316,I012,education
+C0317,M100,health condition
+C0318,M010,age
+C0319,I076,age
+C0320,N062,occupation
+C0321,M039,financial situation
+C0322,I105,occupation
+C0323,I111,location
+C0324,I028,occupation
+C0325,N020,location
+C0326,B003,occupation
+C0327,Q006,occupation
+C0328,M101,occupation
+C0329,Y014,location
+C0330,B093,financial situation
+C0331,Q002,occupation
+C0332,M078,location
+C0333,B109,health condition
+C0334,I104,occupation
+C0335,N085,gender
+C0336,Y057,education
+C0337,I057,education
+C0338,Q047,occupation
+C0339,Q023,family situation
+C0340,N033,occupation
+C0341,B089,gender
+C0342,B027,occupation
+C0343,Y087,reproductive health condition
+C0344,M037,education
+C0345,Y002,education
+C0346,B038,mental health condition
+C0347,Y043,health condition
+C0348,M102,relationship status
+C0349,I010,occupation
+C0350,Y016,family situation
+C0351,B002,age
+C0352,N094,age
+C0353,I086,education
+C0354,I110,location
+C0355,Y042,location
+C0356,N073,education
+C0357,Y098,education
+C0358,I074,education
+C0359,B008,occupation
+C0360,N053,location
+C0361,Q031,occupation
+C0362,I031,location
+C0363,I106,occupation
+C0364,Y091,age
+C0365,B094,education
+C0366,Q027,occupation
+C0367,N104,relationship status
+C0368,M025,education
+C0369,I104,location
+C0370,Y019,occupation
+C0371,Y057,occupation
+C0372,B017,education
+C0373,I069,occupation
+C0374,I025,location
+C0375,Q080,location
+C0376,B109,mental health condition
+C0377,Q001,occupation
+C0378,M011,location
+C0379,Q022,occupation
+C0380,I024,occupation
+C0381,I004,gender
+C0382,I042,location
+C0383,M043,location
+C0384,Y020,occupation
+C0385,Y103,location
+C0386,N101,location
+C0387,M103,location
+C0388,B080,occupation
+C0389,Y008,occupation
+C0390,N019,occupation
+C0391,B045,occupation
+C0392,I109,occupation
+C0393,M043,occupation
+C0394,B001,gender
+C0395,M067,location
+C0396,Q055,location
+C0397,N084,mental health condition
+C0398,B081,gender
+C0399,Q069,occupation
+C0400,M049,occupation
+C0401,M068,family situation
+C0402,Y074,location
+C0403,B046,occupation
+C0404,B032,occupation
+C0405,M099,education
+C0406,Q100,family situation
+C0407,B056,occupation
+C0408,I034,location
+C0409,B035,location
+C0410,Y070,education
+C0411,M038,location
+C0412,M008,age
+C0413,N080,location
+C0414,I033,age
+C0415,M007,occupation
+C0416,B050,occupation
+C0417,M018,location
+C0418,Q029,age
+C0419,M046,location
+C0420,M112,health condition
+C0421,Q087,gender
+C0422,B048,occupation
+C0423,B091,occupation
+C0424,Q052,occupation
+C0425,Y009,gender
+C0426,Y045,age
+C0427,B102,mental health condition
+C0428,M033,health condition
+C0429,N029,occupation
+C0430,M093,mental health condition
+C0431,N022,occupation
+C0432,N031,occupation
+C0433,M032,health condition
+C0434,Y049,education
+C0435,B107,location
+C0436,N039,occupation
+C0437,N052,occupation
+C0438,Q079,mental health condition
+C0439,B068,occupation
+C0440,Q108,age
+C0441,Q095,occupation
+C0442,M062,age
+C0443,Q018,occupation
+C0444,B099,age
+C0445,M030,location
+C0446,Y066,mental health condition
+C0447,B084,family situation
+C0448,Q003,location
+C0449,M044,occupation
+C0450,B013,mental health condition
+C0451,N024,occupation
+C0452,Q062,occupation
+C0453,B106,education
+C0454,Y110,occupation
+C0455,B062,financial situation
+C0456,N103,occupation
+C0457,Q045,age
+C0458,N047,location
+C0459,B054,location
+C0460,B087,gender
+C0461,I087,gender
+C0462,M048,gender
+C0463,Q018,education
+C0464,Q103,occupation
+C0465,Y045,occupation
+C0466,M103,education
+C0467,B042,education
+C0468,I050,education
+C0469,N045,location
+C0470,Y028,race or nationality
+C0471,Q102,gender
+C0472,Q112,occupation
+C0473,Q099,location
+C0474,I076,gender
+C0475,B073,occupation
+C0476,Q052,location
+C0477,M071,education
+C0478,M056,location
+C0479,M035,occupation
+C0480,M017,gender
+C0481,N106,occupation
+C0482,Q085,occupation
+C0483,Q106,health condition
+C0484,Q088,reproductive health condition
+C0485,B012,occupation
+C0486,Q040,age
+C0487,N016,gender
+C0488,I055,location
+C0489,B099,financial situation
+C0490,B060,reproductive health condition
+C0491,B075,location
+C0492,Y037,age
+C0493,N021,occupation
+C0494,B083,location
+C0495,Q066,education
+C0496,B039,occupation
+C0497,M041,occupation
+C0498,N082,gender
+C0499,M107,location
+C0500,M089,occupation
+C0501,Y077,gender
+C0502,Y034,occupation
+C0503,M057,occupation
+C0504,B019,age
+C0505,I005,financial situation
+C0506,B030,family situation
+C0507,Q030,occupation
+C0508,B049,gender
+C0509,Q058,age
+C0510,M066,occupation
+C0511,Q079,health condition
+C0512,N028,occupation
+C0513,B028,education
+C0514,N070,financial situation
+C0515,I081,education
+C0516,Q046,occupation
+C0517,Q055,education
+C0518,Q097,location
+C0519,M088,education
+C0520,B108,education
+C0521,Y056,occupation
+C0522,Q096,occupation
+C0523,I108,occupation
+C0524,M083,occupation
+C0525,N091,occupation
+C0526,Y062,education
+C0527,B007,occupation
+C0528,I019,occupation
+C0529,I009,gender
+C0530,Y036,education
+C0531,B077,occupation
+C0532,Y078,health condition
+C0533,M031,occupation
+C0534,M008,financial situation
+C0535,M105,health condition
+C0536,N006,age
+C0537,Q059,location
+C0538,Y021,mental health condition
+C0539,I031,occupation
+C0540,N054,occupation
+C0541,M065,location
+C0542,I083,occupation
+C0543,N051,occupation
+C0544,M040,race or nationality
+C0545,Y076,occupation
+C0546,M103,occupation
+C0547,N044,age
+C0548,M050,location
+C0549,I041,location
+C0550,N063,occupation
+C0551,B022,age
+C0552,Q082,education
+C0553,I023,location
+C0554,Y086,age
+C0555,B067,education
+C0556,I015,education
+C0557,Y082,age
+C0558,I040,occupation
+C0559,I107,location
+C0560,I007,occupation
+C0561,Q091,age
+C0562,Y023,occupation
+C0563,M029,occupation
+C0564,Y007,financial situation
+C0565,B024,location
+C0566,M016,occupation
+C0567,Y088,financial situation
+C0568,M017,occupation
+C0569,B052,location
+C0570,Q101,occupation
+C0571,I010,location
+C0572,N006,gender
+C0573,M091,occupation
+C0574,N009,occupation
+C0575,Y048,education
+C0576,B044,financial situation
+C0577,N087,occupation
+C0578,B014,gender
+C0579,N056,occupation
+C0580,M020,gender
+C0581,M094,age
+C0582,B090,education
+C0583,B111,occupation
+C0584,N064,health condition
+C0585,B072,occupation
+C0586,N040,education
+C0587,N020,occupation
+C0588,Q058,financial situation
+C0589,Q073,age
+C0590,I084,mental health condition
+C0591,Y022,occupation
+C0592,Y031,location
+C0593,M059,gender
+C0594,N037,education
+C0595,Q007,gender
+C0596,Y046,age
+C0597,M092,age
+C0598,Q003,occupation
+C0599,N002,reproductive health condition
+C0600,N026,occupation
+C0601,M012,occupation
+C0602,B070,occupation
+C0603,M015,location
+C0604,M070,location
+C0605,M059,health condition
+C0606,M026,location
+C0607,Q107,health condition
+C0608,I046,occupation
+C0609,M076,age
+C0610,Y044,occupation
+C0611,I077,occupation
+C0612,I045,occupation
+C0613,Y041,location
+C0614,Y093,occupation
+C0615,M023,age
+C0616,I090,occupation
+C0617,B075,occupation
+C0618,N074,occupation
+C0619,I036,education
+C0620,I034,occupation
+C0621,M002,education
+C0622,N090,occupation
+C0623,Q038,location
+C0624,N102,reproductive health condition
+C0625,B100,location
+C0626,B036,age
+C0627,I006,location
+C0628,Q012,occupation
+C0629,I048,occupation
+C0630,I062,mental health condition
+C0631,N108,education
+C0632,B096,location
+C0633,M047,occupation
+C0634,B047,location
+C0635,Y069,education
+C0636,I053,education
+C0637,I018,age
+C0638,M104,occupation
+C0639,I011,location
+C0640,B011,location
+C0641,M006,occupation
+C0642,I101,education
+C0643,Q010,gender
+C0644,N017,education
+C0645,Q063,location
+C0646,N098,occupation
+C0647,I070,occupation
+C0648,N088,education
+C0649,I013,occupation
+C0650,B029,family situation
+C0651,Y096,occupation
+C0652,Q035,gender
+C0653,I035,occupation
+C0654,Y061,occupation
+C0655,M011,occupation
+C0656,Y090,location
+C0657,I004,location
+C0658,Y032,occupation
+C0659,Y035,occupation
+C0660,B021,location
+C0661,I071,age
+C0662,I085,education
+C0663,I105,location
+C0664,N053,occupation
+C0665,M036,occupation
+C0666,B085,mental health condition
+C0667,M024,occupation
+C0668,B105,location
+C0669,B001,age
+C0670,Q044,location
+C0671,I020,occupation
+C0672,Y024,education
+C0673,M090,reproductive health condition
+C0674,I008,financial situation
+C0675,B058,education
+C0676,M072,occupation
+C0677,B004,reproductive health condition
+C0678,I044,health condition
+C0679,N110,occupation
+C0680,Y039,occupation
+C0681,Q037,health condition
+C0682,B036,gender
+C0683,B029,location
+C0684,Y107,health condition
+C0685,B094,occupation
+C0686,M028,location
+C0687,I082,education
+C0688,B020,education
+C0689,I006,family situation
+C0690,I002,occupation
+C0691,I080,occupation
+C0692,N030,age
+C0693,N047,occupation
+C0694,Y051,reproductive health condition
+C0695,Q043,occupation
+C0696,I008,age
+C0697,Q075,occupation
+C0698,I003,occupation
+C0699,N075,family situation
+C0700,M099,location
+C0701,N042,age
+C0702,Q004,reproductive health condition
+C0703,Y046,financial situation
+C0704,M084,gender
+C0705,Q017,education
+C0706,I049,gender
+C0707,B038,health condition
+C0708,Q081,occupation
+C0709,N035,gender
+C0710,B076,location
+C0711,Y081,occupation
+C0712,Q050,occupation
+C0713,Y094,occupation
+C0714,N089,location
+C0715,Y097,health condition
+C0716,I047,location
+C0717,Q106,mental health condition
+C0718,B057,occupation
+C0719,Y085,occupation
+C0720,I027,age
+C0721,Q098,education
+C0722,B045,location
+C0723,Y078,mental health condition
+C0724,Q057,location
+C0725,B009,occupation
+C0726,M009,occupation
+C0727,I037,race or nationality
+C0728,Q025,race or nationality
+C0729,M022,age
+C0730,M018,occupation
+C0731,M024,education
+C0732,N060,health condition
+C0733,M086,age
+C0734,I083,education
+C0735,Y092,education
+C0736,N015,occupation
+C0737,B064,occupation
+C0738,Q066,location
+C0739,M003,education
+C0740,I099,health condition
+C0741,B053,education
+C0742,B018,occupation
+C0743,M023,gender
+C0744,B103,age
+C0745,M078,occupation
+C0746,Y074,education
+C0747,B008,education
+C0748,Q026,occupation
+C0749,B089,age
+C0750,B066,occupation
+C0751,B110,gender
+C0752,M097,mental health condition
+C0753,N008,mental health condition
+C0754,M053,age
+C0755,I061,education
+C0756,M108,occupation

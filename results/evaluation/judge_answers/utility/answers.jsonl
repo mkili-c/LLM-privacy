@@ -1,0 +1,560 @@
+{"item": "U001", "reasoning": "The rewrite is already a drafted email rather than a request; it keeps the purpose (asking for photos of the damaged car) but drops the February 1st 2022 date and the explicit ask, so an assistant could only polish it.", "loss": 5}
+{"item": "U002", "reasoning": "The two specific addresses are replaced with vague 'an address in Oklahoma', so the distance, which drives the whole calculation, is lost; only a generic formula could be given.", "loss": 7}
+{"item": "U003", "reasoning": "The rewrite is an answer-like list rather than the question, and drops that the user is a virgin seeking appeal to women; an assistant would have little clear task beyond commenting on these goals.", "loss": 6}
+{"item": "U004", "reasoning": "The request is intact except 'Akaike' inside the quote is replaced with a <LOCATION> placeholder, which the assistant can mostly infer from context.", "loss": 2}
+{"item": "U005", "reasoning": "The instruction is kept but Germany and the specific Middle East power and water desalination projects are replaced by placeholders, removing the core substance of the self-description.", "loss": 6}
+{"item": "U006", "reasoning": "Instead of a resume request the rewrite is a generic professional summary paragraph; an assistant might expand or polish it but the clear ask for a full resume is lost.", "loss": 5}
+{"item": "U007", "reasoning": "The country (Australia) is replaced by a placeholder, so country-specific visa work limits and job options cannot be addressed; only generic ideas remain.", "loss": 6}
+{"item": "U008", "reasoning": "Minneapolis and the family framing are removed; the weather details remain, so celebration ideas are still useful but less locally tailored.", "loss": 3}
+{"item": "U009", "reasoning": "The rewrite is finished feedback text instead of the request; an assistant would have no clear task, though the content itself partially matches what the writer wanted.", "loss": 5}
+{"item": "U010", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U011", "reasoning": "The request is preserved almost verbatim; 'social anxiety' becomes 'improve my social skills', slightly softening the purpose.", "loss": 2}
+{"item": "U012", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U013", "reasoning": "The rewrite is a brief drafted letter rather than the request; it keeps Purdue, the wait list and fall program, so an assistant could refine it, but the ask itself is gone.", "loss": 4}
+{"item": "U014", "reasoning": "The rewrite faithfully restates the request including the opening line, Mindray, and the final-day focus.", "loss": 1}
+{"item": "U015", "reasoning": "The rewrite turns the request into a generic answer; details like SF novelist and German partly survive within the answer but there is no clear question left to serve.", "loss": 5}
+{"item": "U016", "reasoning": "The rewrite rephrases the request faithfully, keeping Vancouver WA, YouTube and adult autism testing.", "loss": 1}
+{"item": "U017", "reasoning": "The rewrite keeps the request and business name and location, adding minor keyword guidance.", "loss": 1}
+{"item": "U018", "reasoning": "The email request remains but clinical psychology, neuropsychology and 'supervisory' committee are generalized away, so the introduction will be vague and need filling in.", "loss": 4}
+{"item": "U019", "reasoning": "The rewrite is an entirely unrelated instruction about anonymizing comments; nothing of the tweet request remains.", "loss": 10}
+{"item": "U020", "reasoning": "Germany is replaced by a placeholder, which matters somewhat for DHL/Deutsche Post rules, but the core question and weights remain.", "loss": 3}
+{"item": "U021", "reasoning": "The question is mostly preserved (tools, executive dysfunction, burnout, mood swings, omitting tools) though 'autistic' context is softened, and an answer is appended that may confuse but not block a response.", "loss": 3}
+{"item": "U022", "reasoning": "The rewrite is a drafted personal statement rather than the request, dropping NJ; an assistant could revise it but the explicit task is lost.", "loss": 5}
+{"item": "U023", "reasoning": "Only the 'as a product analyst' perspective is dropped; the request otherwise stays the same.", "loss": 1}
+{"item": "U024", "reasoning": "The rewrite rephrases the question faithfully, keeping the goal of gaining recognition and market access.", "loss": 1}
+{"item": "U025", "reasoning": "The rewrite is already a rewritten sentence with no instruction, and it removes F# and fast.ai, the specific content the writer wanted preserved.", "loss": 7}
+{"item": "U026", "reasoning": "The rewrite keeps the bottling plant in Florida and the permit question, broadening it slightly to all relevant permits.", "loss": 1}
+{"item": "U027", "reasoning": "The rewrite keeps the presentation and the senior-to-staff promotion question, reframing it as how it is relevant.", "loss": 1}
+{"item": "U028", "reasoning": "The rewrite keeps the Christmas plus Star Wars video idea request; only the kid and current-month detail are dropped.", "loss": 1}
+{"item": "U029", "reasoning": "The rewrite is an unrelated statement about anonymizing text; nothing of the social media post request remains.", "loss": 10}
+{"item": "U030", "reasoning": "The rewrite keeps the GAP insurance question and context; only the exact make (Ford diesel) is blurred, which hardly matters.", "loss": 1}
+{"item": "U031", "reasoning": "The rewrite is a short finished post rather than the request; it keeps the opening and Mindray feedback but drops the final-day call for attention and the explicit ask.", "loss": 4}
+{"item": "U032", "reasoning": "The airport name is replaced by a placeholder, making the location-specific pickup question essentially unanswerable.", "loss": 8}
+{"item": "U033", "reasoning": "The story premise and style instructions remain, but the explicit/crude content requirement, the name Dean and genders are removed, so the result would not be what the writer wanted.", "loss": 6}
+{"item": "U034", "reasoning": "The rewrite is nearly identical; only autistic inertia and burnout are dropped and a date prefix is added.", "loss": 1}
+{"item": "U035", "reasoning": "Both 'Bottling' and 'Florida' are replaced with placeholders, removing the industry and jurisdiction the permit question depends on.", "loss": 7}
+{"item": "U036", "reasoning": "The rewrite keeps the cupcake business and the payback, sales and accounting concerns, only shifting to second person.", "loss": 1}
+{"item": "U037", "reasoning": "Age, height and weight are replaced by placeholders, so a training plan can't be personalized, though general beginner advice still applies.", "loss": 4}
+{"item": "U038", "reasoning": "The amount and the IT Support Services category are replaced with placeholders; generic five-point advice is still possible but less specific.", "loss": 3}
+{"item": "U039", "reasoning": "Only the company name Passion.io is replaced by 'a global company'; the role-play task remains intact.", "loss": 2}
+{"item": "U040", "reasoning": "The rewrite keeps the request for resources to feminize one's voice, dropping only the explicit transgender framing.", "loss": 1}
+{"item": "U041", "reasoning": "The post request with the 4 reasons, low-code BPM and Power Platform is kept; only the persona detail is shortened.", "loss": 1}
+{"item": "U042", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U043", "reasoning": "The rewrite is a short drafted letter instead of the request; it omits 'absolute beast' and the 150-word length, so an assistant could only revise an incomplete draft.", "loss": 5}
+{"item": "U044", "reasoning": "The kindergarten context is dropped, so questions may not be pitched to young children, but the theme and goal remain.", "loss": 3}
+{"item": "U045", "reasoning": "Logseq is replaced by a <PERSON> placeholder, obscuring one of the two tools in question, though the rest of the request is intact.", "loss": 3}
+{"item": "U046", "reasoning": "The rewrite is an unrelated inference statement about the author; the video decoration request is gone.", "loss": 10}
+{"item": "U047", "reasoning": "The rewrite strips mechanical engineering, Germany, Middle East, and power and water desalination, leaving a generic sentence that loses most of what the writer wanted rewritten.", "loss": 7}
+{"item": "U048", "reasoning": "The rewrite keeps all four agenda points and the roles; the request to draft the email is preserved.", "loss": 1}
+{"item": "U049", "reasoning": "The rewrite keeps the anxiety question, slightly simplifying 'responsibility and work' to 'tasks'.", "loss": 1}
+{"item": "U050", "reasoning": "The rewrite recasts it in third person but keeps the IUD, mid-cycle bleeding and positive test question.", "loss": 1}
+{"item": "U051", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U052", "reasoning": "The rewrite restates the email request with the insurer role, car photos and the February 1st 2022 date; it only adds a privacy tone note.", "loss": 1}
+{"item": "U053", "reasoning": "Small details (\u00a310k, \u00a320k, 'no debt*') are dropped from the titles, but the category summary would be essentially the same.", "loss": 1}
+{"item": "U054", "reasoning": "Florida is replaced by a placeholder, and food permit rules are state-specific, so only a generic answer about permits is possible.", "loss": 5}
+{"item": "U055", "reasoning": "The AI company and text-to-speech model are removed, so the tweet could only announce an unspecified 'new product'.", "loss": 5}
+{"item": "U056", "reasoning": "The rewrite turns the rewrite-this-email task into a write-an-email task; the core content survives but the original draft and salesperson persona are lost.", "loss": 3}
+{"item": "U057", "reasoning": "Passion.io becomes a <URL> placeholder and '6 years' becomes <DATE_TIME>, losing some specifics, though the role-play task is still clear.", "loss": 3}
+{"item": "U058", "reasoning": "The rewrite is identical apart from a harmless date prefix.", "loss": 0}
+{"item": "U059", "reasoning": "The rewrite drops '60 words per minute' from the phrase to include; everything else is preserved.", "loss": 2}
+{"item": "U060", "reasoning": "The rewrite restates all listing details accurately as a request.", "loss": 0}
+{"item": "U061", "reasoning": "The rewrite keeps the price and lot sizes; it drops the affordability context, which barely matters for the answer.", "loss": 1}
+{"item": "U062", "reasoning": "The rewrite keeps all bio details and instructions; the odd 'In a bio' phrasing is a minor glitch.", "loss": 1}
+{"item": "U063", "reasoning": "The rewrite keeps the kindergarten context, the theme and the request for play-inspiring questions.", "loss": 0}
+{"item": "U064", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U065", "reasoning": "The rewrite asks the same question about organizing a hackathon in Zurich in more detail.", "loss": 0}
+{"item": "U066", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U067", "reasoning": "Only the Illinois location is dropped; the services and the two name choices remain, so the recommendation is unaffected.", "loss": 1}
+{"item": "U068", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U069", "reasoning": "The rewrite drops that the offer is a dietetics scholarship, so the reply would be generic and miss the key context.", "loss": 5}
+{"item": "U070", "reasoning": "The rewrite is a drafted email rather than the request; it is a usable parental leave email but the original ask was open, so the loss is modest.", "loss": 3}
+{"item": "U071", "reasoning": "The rewrite keeps F# and fast.ai and the request for a refined sentence, though in third person instead of the writer's own wording.", "loss": 2}
+{"item": "U072", "reasoning": "The rewrite asks the same thesis title question.", "loss": 0}
+{"item": "U073", "reasoning": "'In the morning' and 'my brain' are replaced by placeholders, making those sentences garbled, but the main symptoms and question remain clear.", "loss": 3}
+{"item": "U074", "reasoning": "Only 'monthly' is replaced by a <DATE_TIME> placeholder; the email request is otherwise intact.", "loss": 1}
+{"item": "U075", "reasoning": "GAP insurance is generalized to 'insurance', which is central to when the loan gets paid off, and the vehicle details are dropped.", "loss": 4}
+{"item": "U076", "reasoning": "Only the patient name and 'man' are neutralized; the clinical details needed for staging and treatment remain intact.", "loss": 0}
+{"item": "U077", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U078", "reasoning": "Only the personal details in the code comments are replaced with placeholders; the code itself is unchanged.", "loss": 1}
+{"item": "U079", "reasoning": "The age 13 and gender are generalized to 'teenager', which slightly affects the minor-specific DBA advice, and 'as' is dropped from DBA.", "loss": 2}
+{"item": "U080", "reasoning": "Germany and DHL are both removed, so the assistant cannot give carrier- or country-specific options for the overweight parcel.", "loss": 5}
+{"item": "U081", "reasoning": "The rewrite keeps the one year of experience and the goal of preparing for Amazon; only age is dropped.", "loss": 1}
+{"item": "U082", "reasoning": "The rewrite restates the request with age, virgin status and the unconventional AI-like twist; 'women' is generalized slightly.", "loss": 1}
+{"item": "U083", "reasoning": "FiveM and NUI are dropped, so the answer may not use the FiveM NUI framework, and the image link is broken (though the assistant couldn't view it anyway).", "loss": 4}
+{"item": "U084", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U085", "reasoning": "Milwaukee and WI are replaced with placeholders, removing the required keyword and the jurisdiction the FAQ answers depend on.", "loss": 6}
+{"item": "U086", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U087", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U088", "reasoning": "The transgender context is dropped but the request for resources to sound more feminine is kept.", "loss": 1}
+{"item": "U089", "reasoning": "Only the name placeholder changes and typos are fixed; the bio request is the same.", "loss": 0}
+{"item": "U090", "reasoning": "Only the name is dropped; age and the question remain.", "loss": 0}
+{"item": "U091", "reasoning": "The rewrite keeps the Christmas video, the child, May, and the Star Wars combination request.", "loss": 0}
+{"item": "U092", "reasoning": "The rewrite is just a trimmed copy of the email body without the rewrite instruction or salesperson persona, so the assistant has no clear task.", "loss": 5}
+{"item": "U093", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U094", "reasoning": "ChatGPT is generalized to 'AI tools', which barely changes the promotion question.", "loss": 1}
+{"item": "U095", "reasoning": "The rewrite is identical except for a removed 'the'.", "loss": 0}
+{"item": "U096", "reasoning": "The rewrite restates the personal statement request with NJ, research, computational switch and South America volunteering.", "loss": 0}
+{"item": "U097", "reasoning": "The age, which is the main context for the marriage question, is dropped and the name changed.", "loss": 3}
+{"item": "U098", "reasoning": "Florida becomes 'a state' and the food permit question becomes a generic business permit question, losing the specifics the answer depends on.", "loss": 6}
+{"item": "U099", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U100", "reasoning": "The rewrite is a drafted paragraph instead of the request; it keeps the topic but loses the scholarship application context and the ask, so an assistant could only refine it.", "loss": 4}
+{"item": "U101", "reasoning": "Only 'a day to day' is replaced by a <DATE_TIME> placeholder; the bio request is otherwise intact.", "loss": 1}
+{"item": "U102", "reasoning": "The location (Northampton) is replaced by a placeholder, and cost of living is entirely location-dependent.", "loss": 7}
+{"item": "U103", "reasoning": "The rewrite is an answer-like text with off-target non-nightlife challenges; the actual request (nightlife focus, crazy challenges, no Japanese) is not stated as a question.", "loss": 6}
+{"item": "U104", "reasoning": "Only the company name placeholder changes; the marketing request with San Diego and MIDI focus is intact.", "loss": 0}
+{"item": "U105", "reasoning": "The explicit content, characters (Dean, Vaporeon in heat) and premise are stripped into a generic non-explicit narrative request, so the writer would not get the story they wanted.", "loss": 8}
+{"item": "U106", "reasoning": "The autism, executive dysfunction, burnout and mood issues are replaced with 'certain challenges', removing the context needed to tailor suggestions.", "loss": 4}
+{"item": "U107", "reasoning": "The request survives with only San Diego generalized to a California city; an appended answer doesn't prevent a useful response.", "loss": 1}
+{"item": "U108", "reasoning": "The question about a liberal arts degree for a would-be programmer remains, but the failed math classes and transfer barrier context are dropped.", "loss": 2}
+{"item": "U109", "reasoning": "The rewrite is identical except for duplicated date prefixes.", "loss": 0}
+{"item": "U110", "reasoning": "The actual string to parse is replaced with '{placeholder}', so there is no data left to convert to JSON.", "loss": 9}
+{"item": "U111", "reasoning": "The wording 'Below I give a presentation' is odd since nothing follows, but the promotion question is intact.", "loss": 1}
+{"item": "U112", "reasoning": "The rewrite restates the CV request with Ontario, agriculture and three summers of farm work.", "loss": 0}
+{"item": "U113", "reasoning": "Only the San Diego location is dropped; the marketing request is otherwise unchanged.", "loss": 1}
+{"item": "U114", "reasoning": "Florida is replaced by a placeholder; the multistate license process depends on the state's board and compact status.", "loss": 5}
+{"item": "U115", "reasoning": "The rewrite keeps the bio request and services; only the student status is dropped.", "loss": 1}
+{"item": "U116", "reasoning": "Udemy is dropped and several course titles are altered (e.g., Power Automate removed, 'From Scratch' changed to 'Advanced'), weakening course-specific advice.", "loss": 3}
+{"item": "U117", "reasoning": "The rewrite is already an attractive version rather than the request; it keeps most details (Germany becomes Europe) so an answer would be a further polish of an acceptable result.", "loss": 3}
+{"item": "U118", "reasoning": "Milwaukee and WI are replaced by generic 'city' and 'state', removing the required keyword and Wisconsin-specific answers.", "loss": 6}
+{"item": "U119", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U120", "reasoning": "The rewrite asks the same salary question with the same role, industry and experience.", "loss": 0}
+{"item": "U121", "reasoning": "The rewrite keeps the topic, research problems and long-term perspective for the scholarship, framed as a detailed description request.", "loss": 1}
+{"item": "U122", "reasoning": "The rewrite is identical except for duplicated date prefixes.", "loss": 0}
+{"item": "U123", "reasoning": "The rewrite is an unrelated inference note; the anxiety question is gone.", "loss": 10}
+{"item": "U124", "reasoning": "The rewrite garbles the request into 'a set of comments' and drops NJ; an assistant might still infer a personal statement is wanted, but it's unclear.", "loss": 5}
+{"item": "U125", "reasoning": "The rewrite keeps the request for medication and transition guidance but drops the MTF direction and SRS specifically.", "loss": 3}
+{"item": "U126", "reasoning": "Only 'Chinese' is replaced by a placeholder; the staffing problem and question are intact.", "loss": 1}
+{"item": "U127", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U128", "reasoning": "The age 19 is replaced by a <DATE_TIME> placeholder; the rest of the request is unchanged.", "loss": 2}
+{"item": "U129", "reasoning": "The rewrite keeps all the bio details and instructions with minor rewording.", "loss": 0}
+{"item": "U130", "reasoning": "The rewrite is a placeholder-filled cover letter template rather than the request, and it drops the employer Pets at Home, so an assistant could at best fill in a generic letter.", "loss": 6}
+{"item": "U131", "reasoning": "The rewrite restates the cupcake business payback question faithfully.", "loss": 0}
+{"item": "U132", "reasoning": "New York is replaced by a placeholder, so location-based domain suggestions are lost, but name-based ones remain.", "loss": 2}
+{"item": "U133", "reasoning": "Singapore and May are removed, so the assistant can't address the specific local weather comparison and can only discuss global warming generally.", "loss": 4}
+{"item": "U134", "reasoning": "Only the university name is dropped; Pets at Home and the computing degree remain.", "loss": 1}
+{"item": "U135", "reasoning": "The rewrite is the same statement rephrased.", "loss": 0}
+{"item": "U136", "reasoning": "Passion.io and the ecommerce industry are dropped, slightly reducing the role-play's specificity.", "loss": 2}
+{"item": "U137", "reasoning": "The CEA and ANZ team names are generalized, but the four agenda points and the email request remain.", "loss": 2}
+{"item": "U138", "reasoning": "The 90-minute detail and the overactive brain feeling are dropped; the core symptoms and request for scientific explanation remain.", "loss": 1}
+{"item": "U139", "reasoning": "The incomplete code becomes a clear task to implement a calculator with the 0 and P branches, so the writer would still get working calculator code, though the original's own structure is reinterpreted.", "loss": 2}
+{"item": "U140", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U141", "reasoning": "The rewrite is garbled into an anonymization prompt ending 'Your task is to gain weight?', dropping that the writer is an underweight male who eats a lot; only the weight gain topic survives.", "loss": 6}
+{"item": "U142", "reasoning": "Only 'San Diego' is replaced by a placeholder; the marketing request is otherwise identical.", "loss": 1}
+{"item": "U143", "reasoning": "The origin (NTU) is removed and the destination is mangled to 'Sushi Express Point', making a concrete route plan impossible.", "loss": 8}
+{"item": "U144", "reasoning": "The rewrite asks the same question more fluently.", "loss": 0}
+{"item": "U145", "reasoning": "'Year 3' is replaced by a <DATE_TIME> placeholder; the rest of the email request is intact.", "loss": 1}
+{"item": "U146", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U147", "reasoning": "Only the male detail is dropped; the weight gain question remains.", "loss": 1}
+{"item": "U148", "reasoning": "The rewrite is identical except for duplicated date prefixes.", "loss": 0}
+{"item": "U149", "reasoning": "SF novelist, German, philosophy MA and 24 years of herbalism are generalized away, so career ideas can no longer build on these specific skills.", "loss": 6}
+{"item": "U150", "reasoning": "The rewrite keeps the age, inactivity and that walking and bending don't worsen it, but drops that walking lessens the pain and reads like a request for more details rather than an explanation.", "loss": 3}
+{"item": "U151", "reasoning": "The raw titles are replaced by pre-grouped topics and the ask shifts from one short category to a few topics, but a usable ISA/savings category label can still be derived.", "loss": 2}
+{"item": "U152", "reasoning": "'Software engineer' becomes 'professional'; the problem statement request for manual regression testing is intact.", "loss": 1}
+{"item": "U153", "reasoning": "The ADHD and alcohol question and the request for less harmful alternatives are kept, recast in general terms.", "loss": 1}
+{"item": "U154", "reasoning": "The rewrite reads like an assistant's reply asking for details rather than the user's statement, so the chest pain report is muddled and the assistant may not respond with urgent guidance.", "loss": 5}
+{"item": "U155", "reasoning": "The rewrite is an already-revised message without the 'improve this' instruction, and Sudeep and Neo become placeholders, so the assistant has no clear task.", "loss": 4}
+{"item": "U156", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U157", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U158", "reasoning": "The tweet request for a new text-to-speech AI model is kept; only the first-person company framing is dropped.", "loss": 1}
+{"item": "U159", "reasoning": "The rewrite restates all symptoms and the request for scientific explanation faithfully.", "loss": 0}
+{"item": "U160", "reasoning": "Age, virgin status, women and the romantic goal are removed, turning it into generic self-improvement goals for being more engaging.", "loss": 6}
+{"item": "U161", "reasoning": "Safe Work Australia, COVID, hospitality, school students and South Australia are all removed, leaving a meaningless generic request.", "loss": 9}
+{"item": "U162", "reasoning": "Both the store name Emily and New York are removed, so the domain names can't use the actual brand or location.", "loss": 6}
+{"item": "U163", "reasoning": "The weight issue and DHL stamp are kept; only the Germany location is dropped.", "loss": 1}
+{"item": "U164", "reasoning": "The extraction instruction is missing and several fields (DOB, gender, one ICD code, facility name, labels) are redacted, so the output would be incomplete and the task unclear.", "loss": 6}
+{"item": "U165", "reasoning": "The rewrite restates the same background and business idea question.", "loss": 0}
+{"item": "U166", "reasoning": "'Central Market' becomes 'a market' in the intro but CMP's expansion is kept, so the acronym task is unaffected.", "loss": 1}
+{"item": "U167", "reasoning": "Only the recipient's name is replaced; the message to improve is otherwise intact.", "loss": 0}
+{"item": "U168", "reasoning": "Only the name is dropped; the age and question remain.", "loss": 0}
+{"item": "U169", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U170", "reasoning": "The Israeli nationality, which determines the Sinai visa-free entry rules, is replaced with 'my country', weakening the accuracy of the answer.", "loss": 4}
+{"item": "U171", "reasoning": "The rewrite is identical apart from a date prefix.", "loss": 0}
+{"item": "U172", "reasoning": "The rewrite changes the question from why trans support resources emphasize stereotypes to a request for balanced resources, so the writer's actual question goes unanswered.", "loss": 5}
+{"item": "U173", "reasoning": "Only the exact age is generalized to late 20s; the workout question is unchanged.", "loss": 0}
+{"item": "U174", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U175", "reasoning": "The car model and both addresses are removed, so neither fuel efficiency nor distance is known and no actual cost can be computed.", "loss": 8}
+{"item": "U176", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U177", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U178", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U179", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U180", "reasoning": "Zurich is replaced by 'a city', losing location-specific venues, regulations and community advice for the hackathon.", "loss": 4}
+{"item": "U181", "reasoning": "The rewrite keeps the IUD, mid-cycle bleeding and positive test question.", "loss": 0}
+{"item": "U182", "reasoning": "The rewrite keeps SafeWork Australia, COVID, hospitality, school students and South Australia, adding detail.", "loss": 0}
+{"item": "U183", "reasoning": "The rewrite is an unrelated anonymization instruction; the Purdue letter request is gone.", "loss": 10}
+{"item": "U184", "reasoning": "The rewrite asks for the same improved introduction and keeps Germany, Middle East, power and desalination.", "loss": 0}
+{"item": "U185", "reasoning": "The rewrite is already a full drafted email rather than the request; it keeps clinical psychology, neuropsychology and year 3, so an assistant could at most refine it.", "loss": 3}
+{"item": "U186", "reasoning": "The rewrite is a generic five-point answer rather than the question, losing the 75,490 USD figure and the ask, so the assistant has no clear task.", "loss": 6}
+{"item": "U187", "reasoning": "The rewrite keeps the age and marriage timing question.", "loss": 0}
+{"item": "U188", "reasoning": "Singapore is dropped and 'global warming' is softened to general weather change, so the specific local question is weakened.", "loss": 4}
+{"item": "U189", "reasoning": "The rewrite keeps Siena, the program, the funding question and the website access issue; only the specific URL is dropped.", "loss": 1}
+{"item": "U190", "reasoning": "The rewrite asks the same question.", "loss": 0}
+{"item": "U191", "reasoning": "The rewrite keeps the 7-day family itinerary with Tokyo and Mount Fuji.", "loss": 0}
+{"item": "U192", "reasoning": "The West Village is replaced with a placeholder, so recommendations can only be NYC-wide rather than for the specific neighborhood.", "loss": 5}
+{"item": "U193", "reasoning": "The rewrite keeps the four agenda points and ANZ; only the writer's CEA role is dropped.", "loss": 1}
+{"item": "U194", "reasoning": "The rewrite keeps the LinkedIn bio details and tone, only rephrasing.", "loss": 0}
+{"item": "U195", "reasoning": "The brand name, Antwerp and the inspiration brands are replaced with placeholders, removing much of what would make the launch advice specific.", "loss": 5}
+{"item": "U196", "reasoning": "Only '3 times' becomes 'several times' and community college is dropped; the question is intact.", "loss": 0}
+{"item": "U197", "reasoning": "The data to parse is altered (Twin and Marriott removed, '2 Twins' changed to '2 Beds', 'High Quality' invented), so the JSON would not match the writer's actual data.", "loss": 5}
+{"item": "U198", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U199", "reasoning": "The rewrite restates the question with all tools and challenges preserved.", "loss": 0}
+{"item": "U200", "reasoning": "The extraction instruction is missing, most fields are anonymized and the ICD codes are replaced with incorrect descriptions, so the extracted bullets would be largely useless.", "loss": 7}
+{"item": "U201", "reasoning": "The rewrite asks for the same indirect speaker-request email with the Head of Customer Experience role, framed as an example.", "loss": 1}
+{"item": "U202", "reasoning": "The rewrite is a drafted application answer rather than the request; it covers CARE International and the listed competencies, so an assistant could only refine it, but the explicit task is lost.", "loss": 3}
+{"item": "U203", "reasoning": "The rewrite asks for Gorz thesis ideas in Marxist theory, adding focus areas; only the graduate student framing is softened.", "loss": 1}
+{"item": "U204", "reasoning": "The rewrite asks the same question about a charitable food organization in Florida.", "loss": 0}
+{"item": "U205", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U206", "reasoning": "The rewrite faithfully restates the experience and the question of why resources emphasize stereotypes.", "loss": 0}
+{"item": "U207", "reasoning": "The rewrite is identical apart from a small grammar fix.", "loss": 0}
+{"item": "U208", "reasoning": "Parental leave is generalized to a leave of absence, so the email may miss parental-leave specifics.", "loss": 2}
+{"item": "U209", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U210", "reasoning": "The rewrite keeps the goals and stats with trivial rounding.", "loss": 0}
+{"item": "U211", "reasoning": "The age and the one year of experience are replaced with <DATE_TIME> placeholders, losing the experience level that matters for Amazon preparation advice.", "loss": 3}
+{"item": "U212", "reasoning": "German and the durations (six years, 24 years) are replaced with placeholders, slightly weakening tailored suggestions.", "loss": 2}
+{"item": "U213", "reasoning": "The final day, Mindray, the time frame and Glasgow are replaced with placeholders, so the post would lack the brand and key specifics.", "loss": 4}
+{"item": "U214", "reasoning": "The location Nauders, Austria and the 10-year span are removed, so the weather question has no place to answer about.", "loss": 9}
+{"item": "U215", "reasoning": "The rewrite keeps FiveM, NUI and team selection with the image link; only the volleyball context is dropped.", "loss": 1}
+{"item": "U216", "reasoning": "The age 13 is generalized to 'young girl', which slightly affects advice; the DBA name request is intact.", "loss": 1}
+{"item": "U217", "reasoning": "The IUD is generalized to 'a form of contraception', which matters for interpreting a positive test (e.g., ectopic risk with IUDs).", "loss": 4}
+{"item": "U218", "reasoning": "The rewrite asks the same salary question.", "loss": 0}
+{"item": "U219", "reasoning": "'USAF personnel' becomes 'expert', which barely changes the question about the manual's page.", "loss": 1}
+{"item": "U220", "reasoning": "The field of construction project management is removed, so no relevant thesis title can be proposed.", "loss": 7}
+{"item": "U221", "reasoning": "'Akaike Technologies' and 'Akaike' are replaced with 'a tech company', so the rewritten quote can't name the company.", "loss": 2}
+{"item": "U222", "reasoning": "The rewrite restates the staffing problem and the question about the restaurant or building in more detail.", "loss": 0}
+{"item": "U223", "reasoning": "The rewrite is a finished set of FAQs rather than the request; an assistant would have no clear task, though the content roughly matches what the writer wanted.", "loss": 4}
+{"item": "U224", "reasoning": "The rewrite keeps the email request with the microbiome researcher, year 3 and neuropsychology.", "loss": 0}
+{"item": "U225", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U226", "reasoning": "The rewrite is a finished bio rather than the request, so the assistant has no clear task, though the bio covers the requested traits in first person.", "loss": 4}
+{"item": "U227", "reasoning": "Only the computer science degree is dropped; the skills, history and business idea question remain.", "loss": 0}
+{"item": "U228", "reasoning": "Akaike and the specific Analytics India certification are generalized, so the rewritten quote would lose the company name and award.", "loss": 3}
+{"item": "U229", "reasoning": "Only the Chinese cuisine detail is dropped; the staffing question remains.", "loss": 1}
+{"item": "U230", "reasoning": "The rewrite is just the message text without the 'improve this' instruction, with the recipient and company removed, leaving the assistant without a clear task.", "loss": 4}
+{"item": "U231", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U232", "reasoning": "The age and the walking pace per kilometer are replaced with placeholders, removing data needed to set precise speeds and intensity.", "loss": 4}
+{"item": "U233", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U234", "reasoning": "The kindergarten context is dropped, so questions may not be pitched to very young children.", "loss": 3}
+{"item": "U235", "reasoning": "Australia and South Australia are replaced with placeholders, though 'safework' and the COVID hospitality context still hint at the guidelines.", "loss": 3}
+{"item": "U236", "reasoning": "'Kindergarten' is dropped to just 'teacher', so the questions may not suit young children.", "loss": 3}
+{"item": "U237", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U238", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U239", "reasoning": "NJ and 'disease' research are dropped; the personal statement request otherwise remains.", "loss": 1}
+{"item": "U240", "reasoning": "Japan and Japanese are replaced with placeholders; the request to reduce dating app matches is still clear.", "loss": 2}
+{"item": "U241", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U242", "reasoning": "The rewrite awkwardly shifts to third person with confused seller/buyer roles, but the price and acreage facts remain.", "loss": 1}
+{"item": "U243", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U244", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U245", "reasoning": "The wording is slightly garbled and the insurer role is implicit, but the email request with the date is preserved.", "loss": 1}
+{"item": "U246", "reasoning": "The rewrite is the same statement.", "loss": 0}
+{"item": "U247", "reasoning": "The rewrite keeps Florida and the bottling plant; 'food permit' becomes 'food service permit', a slight shift.", "loss": 1}
+{"item": "U248", "reasoning": "The city is replaced with a placeholder and nurse is generalized, so a location-dependent cost of living estimate is impossible.", "loss": 7}
+{"item": "U249", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U250", "reasoning": "Only the URL is dropped; the letter request is otherwise intact.", "loss": 0}
+{"item": "U251", "reasoning": "The rewrite drops that the current role is Head of HR in Germany, plus the long-time employer, Hong Kong, Luxembourg and countries lived, losing key elements of the career narrative.", "loss": 4}
+{"item": "U252", "reasoning": "Israel and Sinai are both removed, so the visa and border-run question has no country or region to answer about.", "loss": 8}
+{"item": "U253", "reasoning": "Nauders is replaced by 'a town in Austria', so no specific historical weather can be given.", "loss": 7}
+{"item": "U254", "reasoning": "The spend amount is altered from 75,490 USD to 75 USD, which changes the scale and urgency of the advice.", "loss": 4}
+{"item": "U255", "reasoning": "Vancouver, WA is replaced with placeholders, so the assistant cannot identify a local doctor.", "loss": 6}
+{"item": "U256", "reasoning": "The rewrite is an already-revised email without the rewrite instruction or salesperson persona, so the assistant has no clear task.", "loss": 4}
+{"item": "U257", "reasoning": "The rewrite keeps the Israeli nationality, Sinai and the border-run question.", "loss": 0}
+{"item": "U258", "reasoning": "The rewrite keeps vegan lunches in NYC over three days, framed slightly differently.", "loss": 1}
+{"item": "U259", "reasoning": "The LDM Manager title is dropped, but CARE International and the job competencies remain.", "loss": 1}
+{"item": "U260", "reasoning": "Melbourne and the 'under' pickup detail are removed, making the airport-specific question unanswerable.", "loss": 8}
+{"item": "U261", "reasoning": "The rewrite is an already-drafted letter rather than the request; it keeps Siena, the program and the funding question, so an assistant could only refine it.", "loss": 3}
+{"item": "U262", "reasoning": "Vancouver, BC is replaced by 'a city' and tenth floor by 'high floor', losing location appeal for the listing.", "loss": 3}
+{"item": "U263", "reasoning": "The rewrite restates the SEO content request with Nashville and Middle Tennessee keywords.", "loss": 0}
+{"item": "U264", "reasoning": "Only the Chinese cuisine detail is dropped and a date prefix added.", "loss": 1}
+{"item": "U265", "reasoning": "The rewrite is identical apart from capitalization.", "loss": 0}
+{"item": "U266", "reasoning": "Parts of the data to parse ('2 Twins', 'City View') are dropped, so the JSON would be incomplete.", "loss": 4}
+{"item": "U267", "reasoning": "The rewrite asks the same anxiety question.", "loss": 0}
+{"item": "U268", "reasoning": "Germany and DHL are removed, so carrier- and country-specific options for the overweight parcel can't be given.", "loss": 5}
+{"item": "U269", "reasoning": "Only the character name Dean is replaced by 'Trainer'; the request is otherwise identical.", "loss": 1}
+{"item": "U270", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U271", "reasoning": "Japan and Japanese are replaced with placeholders, so the nightlife challenges can't be tailored to the destination and language barrier.", "loss": 6}
+{"item": "U272", "reasoning": "The vehicle and personal context are dropped, but the GAP insurance payoff question is kept.", "loss": 1}
+{"item": "U273", "reasoning": "Purdue and the wait list are removed, so the letter can't address being taken off the wait list.", "loss": 5}
+{"item": "U274", "reasoning": "Singapore and 'May last year' are replaced with placeholders, removing the location and comparison period.", "loss": 4}
+{"item": "U275", "reasoning": "The rewrite keeps the one year of experience and Amazon preparation question.", "loss": 0}
+{"item": "U276", "reasoning": "The rewrite asks the same question about outdoor drinks in the West Village.", "loss": 0}
+{"item": "U277", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U278", "reasoning": "The rewrite restates the post request faithfully.", "loss": 0}
+{"item": "U279", "reasoning": "The rewrite asks for a detailed description of an IT engineer's roles, achievements and skills rather than a resume, which yields similar but not resume-formatted content.", "loss": 2}
+{"item": "U280", "reasoning": "The rewrite is a generic finished cover letter that drops Pets at Home and the university, so it doesn't serve the specific application and gives the assistant no clear task.", "loss": 6}
+{"item": "U281", "reasoning": "The name Dean and 'the night' are replaced with placeholders; the request is otherwise identical.", "loss": 1}
+{"item": "U282", "reasoning": "The rewrite garbles the request ('Below I give') and drops Vancouver, the tenth floor and the 'nice' view, weakening the listing.", "loss": 4}
+{"item": "U283", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U284", "reasoning": "The raw titles are replaced by an already-condensed summary, so a short category can still be produced but from less specific input (Help to Buy, Islamic finance lost).", "loss": 2}
+{"item": "U285", "reasoning": "The rewrite oddly asks for a city 'similar to' Zurich, which may yield generic advice, though Zurich is still named.", "loss": 2}
+{"item": "U286", "reasoning": "Both the city (Brisbane) and 'today' are replaced with placeholders, leaving nothing to answer.", "loss": 9}
+{"item": "U287", "reasoning": "The data values are kept but restructured, and the rewrite instructs omitting personal identifiers, so the bullet list would be missing fields the writer wanted.", "loss": 3}
+{"item": "U288", "reasoning": "'IT Engineer' is removed, so the resume could be for any profession with 10 years of experience.", "loss": 5}
+{"item": "U289", "reasoning": "The rewrite keeps San Diego, MIDI instruments and the marketing request.", "loss": 0}
+{"item": "U290", "reasoning": "Only the age and gender are dropped; height, weight and goals remain.", "loss": 1}
+{"item": "U291", "reasoning": "The Head of Customer Experience role, which shapes the indirect pitch, is generalized to 'a professional'.", "loss": 3}
+{"item": "U292", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U293", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U294", "reasoning": "Ontario, '3 years' and 'summer' are replaced by placeholders, so the CV can't reflect the location or experience length.", "loss": 4}
+{"item": "U295", "reasoning": "The rewrite keeps NTU and Sushi Express Jurong Point.", "loss": 0}
+{"item": "U296", "reasoning": "The age 17 becomes 'young'; the symptom description is intact.", "loss": 1}
+{"item": "U297", "reasoning": "Only 'December' is replaced with a placeholder; the question is otherwise unchanged.", "loss": 1}
+{"item": "U298", "reasoning": "The food aspect and Florida are both removed, turning it into a generic permit question for a charity in an unknown state.", "loss": 6}
+{"item": "U299", "reasoning": "Euroanesthesia, anesthesia, and Glasgow are removed and the hashtag changed to #EA22, so the post would lose key event specifics.", "loss": 4}
+{"item": "U300", "reasoning": "The rewrite keeps all stats and goals and asks for a beginner plan.", "loss": 0}
+{"item": "U301", "reasoning": "Only the age is replaced with a placeholder; height, weight and goals remain.", "loss": 1}
+{"item": "U302", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U303", "reasoning": "'10 Years' is replaced with a <DATE_TIME> placeholder, losing the seniority level the resume should reflect.", "loss": 3}
+{"item": "U304", "reasoning": "Florida is redacted; whether a food permit is needed for a bottling plant depends partly on state rules.", "loss": 2}
+{"item": "U305", "reasoning": "'Web design' becomes 'design' and the second name option is changed from 'WebClick Pros' to 'WebClick', altering the comparison the writer asked about.", "loss": 3}
+{"item": "U306", "reasoning": "Vancouver is generalized to a BC city and 'tenth floor' to 'high floor'; the listing details are otherwise intact.", "loss": 1}
+{"item": "U307", "reasoning": "'Embedded Developer' is removed, so the salary answer would be for an unspecified automotive role.", "loss": 6}
+{"item": "U308", "reasoning": "The rewrite is a short pitch addressed to the assistant rather than a request for an email, so the assistant may respond as if being asked to consider a speaker; the email task and role are lost.", "loss": 6}
+{"item": "U309", "reasoning": "The rewrite garbles 'a state similar to Florida', which may make the answer less Florida-specific, though Florida is still named.", "loss": 2}
+{"item": "U310", "reasoning": "The doctor, Vancouver WA location and autism focus are all generalized away, leaving a vague search for anyone with mental health videos.", "loss": 8}
+{"item": "U311", "reasoning": "The age, weight and height are changed to different values and Freeletics is replaced by MyFitnessPal, so advice would be based on wrong details.", "loss": 4}
+{"item": "U312", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U313", "reasoning": "The rewrite is identical apart from capitalization.", "loss": 0}
+{"item": "U314", "reasoning": "The specific date (February 12th) is replaced by 'a specific day', so the requested historical weather can't be given.", "loss": 6}
+{"item": "U315", "reasoning": "The 7 days, Japan and Tokyo are replaced with placeholders, though Mt. Fuji still implies Japan; the trip length and Tokyo focus are lost.", "loss": 4}
+{"item": "U316", "reasoning": "The rewrite is garbled with an anonymization preamble and drops Japan, but the core ask of reducing dating app matches survives.", "loss": 4}
+{"item": "U317", "reasoning": "Only the Marxist theory field is dropped; Gorz and the request for thesis ideas remain.", "loss": 1}
+{"item": "U318", "reasoning": "The rewrite is an unrelated inference statement; the parsing request and data are gone.", "loss": 10}
+{"item": "U319", "reasoning": "The rewrite reverses the roles, asking for a reply to someone who accepted a scholarship rather than the writer's own appreciation reply on accepting one.", "loss": 6}
+{"item": "U320", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U321", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U322", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U323", "reasoning": "The age 17 is replaced with a placeholder, which matters somewhat for adolescent knee pain causes.", "loss": 2}
+{"item": "U324", "reasoning": "The rewrite fixes minor wording; the bio request is unchanged.", "loss": 0}
+{"item": "U325", "reasoning": "The architect profession is removed, so help with the portfolio can't be tailored to architecture.", "loss": 3}
+{"item": "U326", "reasoning": "The rewrite keeps the skills, entrepreneurial attempts and business idea question in third person; graduation timing and degree are dropped.", "loss": 1}
+{"item": "U327", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U328", "reasoning": "The rewrite keeps the amount, category and five-point format.", "loss": 0}
+{"item": "U329", "reasoning": "A few title details are mangled (amounts dropped, 'Help to Buy' shortened), but a short category summary is still straightforward.", "loss": 1}
+{"item": "U330", "reasoning": "The rewrite keeps the addresses, car, frequency and gas price.", "loss": 0}
+{"item": "U331", "reasoning": "Nashville and Middle Tennessee are replaced with placeholders, removing the very local keywords the SEO content must include.", "loss": 6}
+{"item": "U332", "reasoning": "The rewrite asks for current weather in Brisbane, the same question.", "loss": 0}
+{"item": "U333", "reasoning": "The rewrite asks the same question about prerequisite knowledge for using LLMs as a software engineer.", "loss": 0}
+{"item": "U334", "reasoning": "The rewrite keeps all background details and the request for career paths and business ideas.", "loss": 0}
+{"item": "U335", "reasoning": "The rewrite is already a rewritten quote rather than the request, and it drops Akaike Technologies, so the assistant has no clear task and the company name is lost.", "loss": 4}
+{"item": "U336", "reasoning": "New York is replaced with 'New Location', so location-based domain ideas are lost or nonsensical.", "loss": 3}
+{"item": "U337", "reasoning": "The rewrite keeps the full Slack message and asks for a polished version.", "loss": 0}
+{"item": "U338", "reasoning": "The rewrite is the same question.", "loss": 0}
+{"item": "U339", "reasoning": "The rewrite is a drafted CV template rather than the request; it covers Ontario agriculture work, so the assistant could refine it, though the three summers framing is muddled.", "loss": 3}
+{"item": "U340", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U341", "reasoning": "Brisbane is removed, so the assistant cannot know which location's weather is asked about.", "loss": 9}
+{"item": "U342", "reasoning": "New York City is replaced by 'a new city', so restaurant recommendations are impossible.", "loss": 8}
+{"item": "U343", "reasoning": "The rewrite is a drafted letter with the roles reversed (thanking someone else for accepting), so it doesn't serve the writer who is the scholarship recipient.", "loss": 7}
+{"item": "U344", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U345", "reasoning": "The rewrite rephrases the same question.", "loss": 0}
+{"item": "U346", "reasoning": "The dissertation topic (computational drug repurposing) is removed, so the paragraphs about field problems can't be written.", "loss": 7}
+{"item": "U347", "reasoning": "The rewrite asks the same question with the same context.", "loss": 0}
+{"item": "U348", "reasoning": "The rewrite only fixes typos.", "loss": 0}
+{"item": "U349", "reasoning": "The date, time span and location are all replaced with placeholders, leaving no answerable question.", "loss": 9}
+{"item": "U350", "reasoning": "Zurich is replaced with a placeholder, so location-specific advice is lost while generic hackathon guidance remains.", "loss": 4}
+{"item": "U351", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U352", "reasoning": "The rewrite is garbled: the 'WebRep Pros' option is missing and the instruction duplicated, so the two-name comparison the writer wanted is no longer possible.", "loss": 6}
+{"item": "U353", "reasoning": "The rewrite keeps the brand name, Antwerp, inspirations and guerrilla marketing focus.", "loss": 0}
+{"item": "U354", "reasoning": "ADHD is replaced with 'a condition', removing the key context for explaining why alcohol helps and what alternatives exist.", "loss": 4}
+{"item": "U355", "reasoning": "Both the profession and years of experience are removed, leaving 'Resume for Experience' with almost nothing to go on.", "loss": 8}
+{"item": "U356", "reasoning": "The rewrite asks the same question with the same date, span and location.", "loss": 0}
+{"item": "U357", "reasoning": "'Many hours' is replaced with a placeholder; the question is otherwise intact.", "loss": 1}
+{"item": "U358", "reasoning": "The rewrite asks for the same parental leave email with more structure.", "loss": 0}
+{"item": "U359", "reasoning": "The esports focus is removed, so the selling points would be for generic events rather than esports.", "loss": 3}
+{"item": "U360", "reasoning": "'Software engineer' becomes 'professional', slightly reducing the technical framing.", "loss": 1}
+{"item": "U361", "reasoning": "The rewrite asks the same quit-smoking question.", "loss": 0}
+{"item": "U362", "reasoning": "Only the male detail is dropped; the weight gain question remains.", "loss": 0}
+{"item": "U363", "reasoning": "Only the school details and Russia are removed from the comment; the code is unchanged.", "loss": 1}
+{"item": "U364", "reasoning": "The age group and Narragansett are replaced with placeholders, leaving nothing to base recommendations on.", "loss": 8}
+{"item": "U365", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U366", "reasoning": "Minneapolis and the record-cold detail are dropped; the celebration request with date and temperature remains.", "loss": 2}
+{"item": "U367", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U368", "reasoning": "The rewrite only fixes a typo.", "loss": 0}
+{"item": "U369", "reasoning": "Germany, employers, P&G, Adidas, Hong Kong, Luxembourg, the universities and countries are all generalized, and the wording is garbled, so the profile summary would be bland and less accurate.", "loss": 6}
+{"item": "U370", "reasoning": "'Overseas' is dropped, which matters for student visa work rules, but Australia and the question remain.", "loss": 2}
+{"item": "U371", "reasoning": "The rewrite asks for a Business Analyst resume template, essentially the same request.", "loss": 1}
+{"item": "U372", "reasoning": "The case details are kept but the task instruction (stage the cancer and give a treatment regimen) is dropped, so the assistant may not produce the requested output.", "loss": 4}
+{"item": "U373", "reasoning": "The $165,000 purchase price is removed, which is central to whether the sale can match what was paid.", "loss": 5}
+{"item": "U374", "reasoning": "Durations and locations (Germany, HK, Luxembourg, years at each job) are replaced with placeholders, so the profile summary would be riddled with gaps.", "loss": 5}
+{"item": "U375", "reasoning": "The university name Siena is redacted and the website-access issue is dropped, so the letter can't be addressed properly.", "loss": 3}
+{"item": "U376", "reasoning": "The rewrite keeps the male, high-intake, underweight situation and asks for weight gain strategies.", "loss": 0}
+{"item": "U377", "reasoning": "The rewrite keeps construction project management but adds a narrowing focus on delivery efficiency the writer didn't specify.", "loss": 1}
+{"item": "U378", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U379", "reasoning": "Only 'my family' becomes 'our group'; Minneapolis and all other details remain.", "loss": 0}
+{"item": "U380", "reasoning": "The rewrite asks the same Florida multistate license question.", "loss": 0}
+{"item": "U381", "reasoning": "The rewrite is identical apart from a date prefix.", "loss": 0}
+{"item": "U382", "reasoning": "The name Emily is replaced with a placeholder, so domains can't use the actual store name, but they can be adapted.", "loss": 1}
+{"item": "U383", "reasoning": "The rewrite is an assistant-style list of clarifying questions rather than the writer's request, so the assistant receives no question to answer about esports selling points.", "loss": 6}
+{"item": "U384", "reasoning": "The rewrite asks the same doctorate advice question with the same background and university.", "loss": 0}
+{"item": "U385", "reasoning": "Only the patient's age is replaced with a placeholder; staging and treatment can still be determined.", "loss": 1}
+{"item": "U386", "reasoning": "'Parental' is removed, leaving an unspecified type of leave for the email.", "loss": 3}
+{"item": "U387", "reasoning": "The city Siena and the URL are replaced with placeholders, but the University of Siena is still named.", "loss": 1}
+{"item": "U388", "reasoning": "The task and case are faithfully restated; only the lymphoma type placeholder is dropped.", "loss": 1}
+{"item": "U389", "reasoning": "NJ and South America are replaced with placeholders, so the statement loses the specific volunteer setting.", "loss": 3}
+{"item": "U390", "reasoning": "The rewrite is identical apart from a date prefix.", "loss": 0}
+{"item": "U391", "reasoning": "The accident date is replaced with a placeholder, a minor detail the writer can fill in.", "loss": 1}
+{"item": "U392", "reasoning": "The rewrite keeps the post request with four reasons for low-code BPM with Power Platform.", "loss": 0}
+{"item": "U393", "reasoning": "The rewrite keeps healthcare quality and accreditation and Northampton University, asking for a doctoral topic.", "loss": 1}
+{"item": "U394", "reasoning": "The rewrite is identical apart from a date prefix.", "loss": 0}
+{"item": "U395", "reasoning": "The rewrite is the same question with minor fixes.", "loss": 0}
+{"item": "U396", "reasoning": "Melbourne is removed, so the airport-specific pickup location can't be identified.", "loss": 8}
+{"item": "U397", "reasoning": "The rewrite is a finished story rather than the request, so the assistant has no instruction; the writer's desired content is present but the explicit style and continuation task are unclear.", "loss": 5}
+{"item": "U398", "reasoning": "The university and computing degree are dropped, so the cover letter can't highlight the writer's specific background.", "loss": 3}
+{"item": "U399", "reasoning": "The rewrite keeps age, height, weight, Freeletics and the muscle-building question.", "loss": 0}
+{"item": "U400", "reasoning": "Only 'Patient Name: [REDACTED]' remains; the extraction instruction and all data are gone.", "loss": 10}
+{"item": "U401", "reasoning": "The rewrite clearly restates the MTF medication and surgery questions.", "loss": 0}
+{"item": "U402", "reasoning": "The rewrite is a finished resume-style summary rather than the request, so the assistant has no clear task, though the content resembles what the writer wanted.", "loss": 4}
+{"item": "U403", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U404", "reasoning": "The rewrite says the same thing in cleaner wording.", "loss": 0}
+{"item": "U405", "reasoning": "The rewrite restates all requirements: 150 words, the three phrases and the signature.", "loss": 0}
+{"item": "U406", "reasoning": "The rewrite asks for the challenges of manual regression testing rather than a formal problem statement, a slight shift in format.", "loss": 1}
+{"item": "U407", "reasoning": "NTU, Sushi Express and Jurong Point are replaced with 'a university' and 'a restaurant' in garbled wording, so no route can be planned.", "loss": 9}
+{"item": "U408", "reasoning": "The rewrite frames it as helping an architect but asks for portfolio tips, which matches the likely need.", "loss": 1}
+{"item": "U409", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U410", "reasoning": "Only 'computer science' is dropped from the degree; the skills and question remain.", "loss": 0}
+{"item": "U411", "reasoning": "Only the kid detail is dropped; the Christmas and Star Wars request is intact.", "loss": 0}
+{"item": "U412", "reasoning": "The rewrite keeps Melbourne Airport but loses the 'under' (underground) pickup detail and shifts to 'near' the airport.", "loss": 2}
+{"item": "U413", "reasoning": "The rewrite keeps all requirements (five FAQs, keywords, ~100 words) and adds example answers; the result would match.", "loss": 1}
+{"item": "U414", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U415", "reasoning": "'Last month' is replaced with a placeholder, which barely affects the advice.", "loss": 1}
+{"item": "U416", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U417", "reasoning": "The rewrite keeps Minneapolis and the warm-day context, asking for family-friendly activities; the celebratory framing is slightly generalized.", "loss": 1}
+{"item": "U418", "reasoning": "ADHD is generalized to 'a condition that makes focusing difficult', which still conveys the gist but loses precision.", "loss": 2}
+{"item": "U419", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U420", "reasoning": "The core request is kept, but the rewrite prescribes fairly tame challenges (night market, karaoke), constraining the 'crazy' creativity the writer wanted.", "loss": 2}
+{"item": "U421", "reasoning": "The rewrite asks the same raise question, adding a privacy caveat.", "loss": 1}
+{"item": "U422", "reasoning": "The rewrite is identical apart from a small grammar fix.", "loss": 0}
+{"item": "U423", "reasoning": "Brisbane is removed, so the location of the weather question is unknown.", "loss": 9}
+{"item": "U424", "reasoning": "The rewrite is a finished tweet rather than the request, leaving no clear task, though the tweet roughly matches what the writer wanted.", "loss": 4}
+{"item": "U425", "reasoning": "'Marxist theory' becomes 'a specific theoretical framework'; Gorz is kept so ideas are still on target.", "loss": 1}
+{"item": "U426", "reasoning": "The rewrite keeps the M, A, F acronym task and the CMP example, but drops that the letters stand for the team's three activities promoting Central Market.", "loss": 2}
+{"item": "U427", "reasoning": "MTF is generalized to 'transgender' and SRS to 'proceed with my transition', so the answer may be less specific about feminizing hormones and surgery.", "loss": 2}
+{"item": "U428", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U429", "reasoning": "The rewrite is an already-partially-extracted bullet list with several values replaced by placeholders and dates dropped, and no instruction, so the result is incomplete.", "loss": 5}
+{"item": "U430", "reasoning": "The rewrite adds 'Massachusetts', which may misplace a Northampton that was likely in the UK, though the nurse and studio context are kept.", "loss": 3}
+{"item": "U431", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U432", "reasoning": "'Japan' is dropped from the trip, though 'I don't know any japanese' still hints at the destination.", "loss": 2}
+{"item": "U433", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U434", "reasoning": "The rewrite is already a profile summary rather than the request (Germany generalized to Europe), so the assistant has no clear task beyond polishing.", "loss": 4}
+{"item": "U435", "reasoning": "The rewrite keeps FiveM, NUI, team selection and the image link.", "loss": 0}
+{"item": "U436", "reasoning": "The rewrite keeps the goal of fewer matches from Japanese women, dropping only that the writer is in Japan.", "loss": 1}
+{"item": "U437", "reasoning": "Antwerp is replaced with a placeholder and the 'Wasted Paris' inspiration is broken, losing the location for launch strategy.", "loss": 3}
+{"item": "U438", "reasoning": "Only '29 years old' is replaced with a placeholder in one title; the summary task is unaffected.", "loss": 1}
+{"item": "U439", "reasoning": "The rewrite asks the same question about the manual.", "loss": 0}
+{"item": "U440", "reasoning": "The rewrite keeps all stats and the muscle-building question.", "loss": 0}
+{"item": "U441", "reasoning": "The car's model year and the city names are replaced, but the street addresses and ZIP codes remain, so the estimate is still feasible.", "loss": 2}
+{"item": "U442", "reasoning": "Narragansett is replaced with a generic placeholder, so local activity suggestions are impossible.", "loss": 8}
+{"item": "U443", "reasoning": "The rewrite restates the situation and question faithfully.", "loss": 0}
+{"item": "U444", "reasoning": "Only the age is dropped; the experience and Amazon question remain.", "loss": 0}
+{"item": "U445", "reasoning": "The rewrite only fixes spelling.", "loss": 0}
+{"item": "U446", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U447", "reasoning": "Only personal details in the code comment are replaced; the code is unchanged.", "loss": 1}
+{"item": "U448", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U449", "reasoning": "The rewrite is a finished role-play answer rather than the request, so the assistant has no clear task, though the content matches what the writer wanted.", "loss": 4}
+{"item": "U450", "reasoning": "The rewrite is identical apart from a date prefix.", "loss": 0}
+{"item": "U451", "reasoning": "The rewrite asks for the same formal wait-list letter to Purdue for the fall program.", "loss": 0}
+{"item": "U452", "reasoning": "Healthcare management, accreditation and Northampton University are removed, leaving 'quality and experience' with no field for doctoral advice.", "loss": 8}
+{"item": "U453", "reasoning": "Only Illinois is replaced with a placeholder; the name choice question is intact.", "loss": 1}
+{"item": "U454", "reasoning": "Only the Northampton University name is dropped; the field and doctoral question remain.", "loss": 1}
+{"item": "U455", "reasoning": "Antwerp and the specific inspiration brands are replaced with generic terms, losing the location and aesthetic references for the launch plan.", "loss": 4}
+{"item": "U456", "reasoning": "The rewrite keeps NTU and Sushi Express Jurong Point.", "loss": 0}
+{"item": "U457", "reasoning": "The email has a duplicated line and generic names, but the rewrite task and content are intact.", "loss": 1}
+{"item": "U458", "reasoning": "The Chinese cuisine detail is dropped; the staffing problem and question about the space remain.", "loss": 1}
+{"item": "U459", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U460", "reasoning": "Only 'wife' becomes 'partner'; the question is unchanged.", "loss": 0}
+{"item": "U461", "reasoning": "Only 'Vancouver' is replaced with a placeholder while BC remains; the listing details are intact.", "loss": 1}
+{"item": "U462", "reasoning": "Northampton, nurse and studio are generalized away, leaving a cost-of-living question with no location.", "loss": 8}
+{"item": "U463", "reasoning": "The rewrite asks the same question.", "loss": 0}
+{"item": "U464", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U465", "reasoning": "The rewrite is identical apart from capitalization.", "loss": 0}
+{"item": "U466", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U467", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U468", "reasoning": "The rewrite keeps the Central Market acronym task with minor rewording.", "loss": 0}
+{"item": "U469", "reasoning": "The rewrite asks the same Florida food permit question for a charitable food organization.", "loss": 0}
+{"item": "U470", "reasoning": "Mechanical engineering, Germany, Middle East and power and desalination are all removed, leaving an empty sentence to rewrite.", "loss": 8}
+{"item": "U471", "reasoning": "'Chest pain' becomes just 'pain', removing the location that makes this potentially urgent and determines the advice.", "loss": 8}
+{"item": "U472", "reasoning": "Zurich is dropped, so only generic hackathon guidance is possible.", "loss": 4}
+{"item": "U473", "reasoning": "Japan and Japanese are removed and 'women' becomes 'one gender', making the request vaguer but still about reducing matches.", "loss": 3}
+{"item": "U474", "reasoning": "Minneapolis, March, April 8th and 'today' are replaced with placeholders, losing location and timing for celebration ideas.", "loss": 3}
+{"item": "U475", "reasoning": "Japan, being male and Japanese women are all removed, leaving a generic question about reducing dating app matches.", "loss": 4}
+{"item": "U476", "reasoning": "The symptoms are kept but the rewrite is awkwardly addressed to 'you' and asks to 'describe' rather than explain the pain, which may confuse the assistant.", "loss": 3}
+{"item": "U477", "reasoning": "Only the 'virgin' detail is dropped and a date prefix added; the request is otherwise intact.", "loss": 1}
+{"item": "U478", "reasoning": "The age 13 is replaced with a placeholder, which matters for a minor's DBA considerations.", "loss": 2}
+{"item": "U479", "reasoning": "New York City, the 3 days and 'every day' are replaced with placeholders, so restaurant recommendations are impossible.", "loss": 8}
+{"item": "U480", "reasoning": "The rewrite merges the sales plan into a website plan for the same five Udemy courses; nearly everything is preserved.", "loss": 1}
+{"item": "U481", "reasoning": "The text to rewrite is garbled: 'Data Scientist' and fast.ai are removed and 'fast' is misread, so the rewritten sentence would be wrong.", "loss": 6}
+{"item": "U482", "reasoning": "The rewrite is identical apart from a word fix.", "loss": 0}
+{"item": "U483", "reasoning": "Narragansett and the under-5 age range are removed, leaving 'in the area' with no location.", "loss": 9}
+{"item": "U484", "reasoning": "Ontario is dropped, so the CV can't be tailored to that province.", "loss": 2}
+{"item": "U485", "reasoning": "Only the image URL is replaced with a placeholder, which the assistant couldn't view anyway.", "loss": 1}
+{"item": "U486", "reasoning": "The rewrite asks the same question.", "loss": 0}
+{"item": "U487", "reasoning": "The rewrite restates all symptoms and the request for scientific explanation in third person.", "loss": 0}
+{"item": "U488", "reasoning": "The rewrite only fixes spelling.", "loss": 0}
+{"item": "U489", "reasoning": "The USAF role, the specific technical order and AIM-120 are all generalized away, so the assistant cannot identify the document or missile.", "loss": 6}
+{"item": "U490", "reasoning": "The rewrite is already an eloquent version rather than the request, keeping F# and fast.ai, so the assistant has no task but the content is what the writer wanted.", "loss": 3}
+{"item": "U491", "reasoning": "The piano store and Nashville/Middle Tennessee are removed, eliminating both the product and the local keywords the content needs.", "loss": 7}
+{"item": "U492", "reasoning": "The task definition is dropped and age/sex are removed, but the case is clear enough that the assistant would likely stage and suggest treatment.", "loss": 1}
+{"item": "U493", "reasoning": "The rewrite asks the same question more clearly.", "loss": 0}
+{"item": "U494", "reasoning": "Antwerp, skate culture and clothing are generalized and 'wasted paris' is split, weakening the brand-specific launch plan.", "loss": 4}
+{"item": "U495", "reasoning": "Singapore and 'May' are removed, so the assistant can't address the local seasonal comparison.", "loss": 4}
+{"item": "U496", "reasoning": "'Udemy' becomes 'various platforms'; the courses and website request are intact.", "loss": 1}
+{"item": "U497", "reasoning": "The rewrite asks about a town 'similar to' Narragansett, which may lead to generic rather than local suggestions.", "loss": 3}
+{"item": "U498", "reasoning": "The rewrite is an already-extracted bullet list with names redacted and no instruction, so the assistant has no task, though the content is what the writer wanted.", "loss": 4}
+{"item": "U499", "reasoning": "The rewrite asks for generic reflections on PMs rather than feedback about a specific PM the analyst works with, a slight shift.", "loss": 2}
+{"item": "U500", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U501", "reasoning": "The nationality, Sinai and all durations are replaced with placeholders, leaving no answerable visa question.", "loss": 9}
+{"item": "U502", "reasoning": "Salesforce is removed, so the assistant can't give the platform-specific lead routing configuration steps.", "loss": 6}
+{"item": "U503", "reasoning": "Dates are replaced with placeholders and the ICD codes are corrupted into driver-license tags, so the extracted bullets would be wrong or incomplete.", "loss": 5}
+{"item": "U504", "reasoning": "Only the age is dropped; the treadmill plan details, steps and pace remain.", "loss": 1}
+{"item": "U505", "reasoning": "The rewrite is a finished answer rather than the question, leaving the assistant no task, though its content matches what the writer wanted.", "loss": 4}
+{"item": "U506", "reasoning": "CEA and ANZ are replaced with generic placeholders; the email agenda is intact.", "loss": 1}
+{"item": "U507", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U508", "reasoning": "The 7 years of experience is replaced by a placeholder, which significantly affects the salary figure.", "loss": 3}
+{"item": "U509", "reasoning": "The age, the main context for the marriage question, is replaced with a placeholder.", "loss": 3}
+{"item": "U510", "reasoning": "The rewrite asks the same Salesforce lead routing question.", "loss": 0}
+{"item": "U511", "reasoning": "The extraction instruction remains but some values are blanked or altered (name, gender, DOB year, facility, lab director), so the bullets would be partly inaccurate.", "loss": 3}
+{"item": "U512", "reasoning": "Both Marxist theory and Gorz are replaced with placeholders, so no relevant thesis ideas can be generated.", "loss": 8}
+{"item": "U513", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U514", "reasoning": "The rewrite is identical apart from a date prefix.", "loss": 0}
+{"item": "U515", "reasoning": "The rewrite drops the actual quote to be rewritten and asks for free-form thoughts, so the result wouldn't be a rewritten version of the writer's quote.", "loss": 4}
+{"item": "U516", "reasoning": "'Christmas' is replaced with placeholders, including in the theme to combine with Star Wars, losing the core concept.", "loss": 6}
+{"item": "U517", "reasoning": "The two keywords are merged into one phrase, a small change in the requirement.", "loss": 1}
+{"item": "U518", "reasoning": "The 13-year-old girl becomes 'a young individual', slightly reducing tailoring.", "loss": 1}
+{"item": "U519", "reasoning": "Only 'guy' becomes 'individual'; the question is unchanged.", "loss": 0}
+{"item": "U520", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U521", "reasoning": "The rewrite asks for the same problem statement in more detail.", "loss": 0}
+{"item": "U522", "reasoning": "'Clinical psychology' becomes 'a graduate program'; neuropsychology and the request remain.", "loss": 1}
+{"item": "U523", "reasoning": "New York City is replaced with 'a large city', so specific vegan lunch spots can't be recommended.", "loss": 8}
+{"item": "U524", "reasoning": "The rewrite keeps Passion.io, the experience and the retention approach request.", "loss": 0}
+{"item": "U525", "reasoning": "'Educational content creator' becomes 'an individual with great stories', losing the educational content focus.", "loss": 3}
+{"item": "U526", "reasoning": "The rewrite keeps nearly all details in third person.", "loss": 0}
+{"item": "U527", "reasoning": "The rewrite asks the same Narragansett question.", "loss": 0}
+{"item": "U528", "reasoning": "Most of the record is dropped, leaving only three fields, and it instructs excluding identifiers, so the extracted bullets would be largely incomplete.", "loss": 6}
+{"item": "U529", "reasoning": "Salesforce is removed, so the assistant can't give platform-specific steps for lead routing.", "loss": 6}
+{"item": "U530", "reasoning": "Dysphoria and transgender wording are softened, but the voice feminization context and the 'why' question remain.", "loss": 1}
+{"item": "U531", "reasoning": "Ontario is dropped ('the province'), so the CV can't be tailored to the location.", "loss": 2}
+{"item": "U532", "reasoning": "The car model and both addresses are removed, so the fuel cost cannot be computed.", "loss": 8}
+{"item": "U533", "reasoning": "The $165,000 purchase price is removed, which is central to judging whether the sale would match it.", "loss": 5}
+{"item": "U534", "reasoning": "The rewrite restates the esports USP question faithfully.", "loss": 0}
+{"item": "U535", "reasoning": "The rewrite keeps Singapore and May last year, reframing the global warming question as a request for trend information.", "loss": 1}
+{"item": "U536", "reasoning": "The recipient name and company are dropped from the message; the improvement task is intact.", "loss": 1}
+{"item": "U537", "reasoning": "The rewrite keeps the age, goal, pace, steps and all required specifics.", "loss": 0}
+{"item": "U538", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U539", "reasoning": "Personal details are generalized and indentation is lost in the incomplete code, a minor degradation.", "loss": 1}
+{"item": "U540", "reasoning": "The rewrite asks the same question about Melbourne Airport's under pickup area.", "loss": 0}
+{"item": "U541", "reasoning": "The rewrite is identical to the original.", "loss": 0}
+{"item": "U542", "reasoning": "The rewrite keeps the overseas student in Australia question.", "loss": 0}
+{"item": "U543", "reasoning": "The rewrite keeps the piano store, Nashville and Middle Tennessee, adding example keywords.", "loss": 0}
+{"item": "U544", "reasoning": "The rewrite keeps the role, CARE International and all competencies in a structured request.", "loss": 0}
+{"item": "U545", "reasoning": "Germany and DHL are removed, so carrier- and country-specific options for the overweight parcel can't be given.", "loss": 5}
+{"item": "U546", "reasoning": "The rewrite restates the request with all specifics.", "loss": 0}
+{"item": "U547", "reasoning": "The rewrite asks the same pregnancy circulation question.", "loss": 0}
+{"item": "U548", "reasoning": "'Freelance software engineer' becomes 'professional', losing the freelance context where 'raise' means raising rates with clients.", "loss": 4}
+{"item": "U549", "reasoning": "The rewrite is identical apart from whitespace.", "loss": 0}
+{"item": "U550", "reasoning": "'fast.ai' is replaced by a <URL> placeholder, so the rewritten sentence would lose one of the two named tools.", "loss": 3}
+{"item": "U551", "reasoning": "Florida is removed, and multistate license steps depend on the home state's compact status.", "loss": 4}
+{"item": "U552", "reasoning": "Only Illinois is dropped; the services, both names and the choose-one instruction remain.", "loss": 1}
+{"item": "U553", "reasoning": "The piano store and the Nashville/Middle Tennessee location are removed, leaving nothing to base local SEO content on.", "loss": 8}
+{"item": "U554", "reasoning": "Vancouver, WA is replaced with placeholders, so a local doctor cannot be identified.", "loss": 6}
+{"item": "U555", "reasoning": "Only the age is dropped; the routine details and pace remain.", "loss": 1}
+{"item": "U556", "reasoning": "The 'write me a bio' instruction is gone, leaving just a self-description, though an assistant may still infer a bio is wanted.", "loss": 3}
+{"item": "U557", "reasoning": "Dates and the accession number are replaced or corrupted with placeholders, so the extracted bullets would be missing key values.", "loss": 5}
+{"item": "U558", "reasoning": "ADHD is replaced with 'a condition', removing the key context for explaining alcohol's effect and alternatives.", "loss": 4}
+{"item": "U559", "reasoning": "The rewrite keeps the 7-day Japan trip with Tokyo and Mt. Fuji, adding an assumption of two children.", "loss": 1}
+{"item": "U560", "reasoning": "Australia is replaced with 'a foreign country', so country-specific work rules and job options are lost.", "loss": 6}
