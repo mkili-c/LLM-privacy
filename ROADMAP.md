@@ -460,7 +460,13 @@ A1c measures `algorithm_v3`, and its numbers set the C1 and D1 estimates.
     - **Mean utility loss (0–10):** loop **3.23**, Loiseau-PUPA 2.71, Staab 2.34, Presidio 2.16, PAPILLON 1.12 (n = 112 each).
     - **Blind spots** (our max P ≤ 0.5 but the judge matches): loop 17/70 (24.3%), Presidio 9/38, Loiseau-PUPA 3/21, PAPILLON 14/28, Staab 8/36.
     - **Long outputs** (> 2.5× the original's words): Loiseau-PUPA 19, PAPILLON 16, others 0.
-    - `hand_check.csv` written (50 decisions) for the user's check.
+    - `hand_check.csv` written (50 decisions) for the user's check; the check is postponed (user, 2026-10-13).
+  - **PAPILLON check (2026-10-13):** the adapter is right (`createdPrompt` of their zero-shot module, the prompt level their own leakage is measured at). It leaks more than Presidio because it keeps the details the request needs (location 27/29 vs Presidio's 5/29), and our own attackers rank it the same way. Its published 35.1% is PII strings on PUPA-TNB, a different metric.
+  - **Results tables (2026-10-13):** `read_judge_answers.py` now prints the judge and our measures side by side, on the same 140 counted pairs, and draws `results/evaluation/privacy_utility.png` (leak rate against utility loss, one point per version, judge and ours):
+    - **Main table**, our measures next to the judge's: our leak rate (max P > 0.5) original 127/140, loop 70, Presidio 102, Loiseau-PUPA 119, PAPILLON 112, Staab 104; mean R loop 32.5%, Presidio 15.0%, Loiseau-PUPA 44.7%, PAPILLON 47.0%, Staab 24.0%; texts with R ≥ 100%: loop 0, Presidio 1, Loiseau-PUPA 5, PAPILLON 4, Staab 7 (of 112).
+    - **Per attribute**, the judge's and ours. The loop's weak spots are occupation (judge 24/48, ours 38/48) and education (judge 10/17, ours 14/17).
+    - **Judge vs our attackers** (agreement): loop 66.4%, the baselines 78.6–85.7%. The loop has 30 pairs where our attackers still see the attribute but the judge does not: 15 of them the judge calls "less precise" (a generalized value, which our yes/no probe still counts as inferable), and 18 of the 30 are occupation.
+    - **Judge loss vs R:** within-prompt pair accuracy 78.2% (653/835), lowest for pairs with PAPILLON (65.3%), highest with Staab (87.7%). The 17 rewrites with R ≥ 100% have a mean judged loss of 6.71, the other 543 of 2.17, so the R rule holds on the test set in that direction, while D misreads reformulating methods like PAPILLON.
   - **Compared with Staab et al.'s evaluation** (`baselines/repos/llm-anonymization`, read 2026-10-12), for the deviations table:
     - **Calls:** they make one API call per profile, without shared context; we use cloud sessions per text version.
     - **Guess:** their attacker reasons step by step, then gives top-3 guesses and a certainty of 1–5 per attribute, and always guesses (no abstain option). It is framed as "public comments made on Reddit by one author". We plan one guess or "not inferable".
@@ -471,7 +477,7 @@ A1c measures `algorithm_v3`, and its numbers set the C1 and D1 estimates.
       - Keep "not inferable": abstaining is allowed, a stricter leak claim than Staab's forced guesses (deviation).
       - Every compare, age included, goes to the judge with the three-way rule, so that "less precise" stays available (e.g. "34" vs "early thirties") and all attributes are treated uniformly. Unlike Staab's rule-based age check, this is a deviation.
 - [ ] **D3** Staab check: rewritten lines that are verbatim copies of a different original line, plus the sensitivity check without those prompts. 30 min.
-- [ ] **E** Report: main table with CIs, breakdown by attribute, leak-vs-D plot, deviations table, limitations (judge covers labeled values only, `[stall]` counts, echo as definition, fluency thresholds from small samples, the final fix's leak check is noise-driven on non-converged rows). ~5 h.
+- [ ] **E** Report: main table with plain k/n (no bootstrap, user 2026-10-13), breakdown by attribute, privacy-utility plot, deviations table, limitations (judge covers labeled values only, `[stall]` counts, echo as definition, fluency thresholds from small samples, the final fix's leak check is noise-driven on non-converged rows). ~5 h.
 - Optional: Laya Step 5 ablation (one more C1-sized run + judge), Qwen reference probes for Laya's not-aligned claim (~1 h GPU + 1 h coding), reproduction checks (need an API budget).
 
 Order from here (2026-10-11, evening): commit the probe speed-ups (job 644 confirmed them) → decide the noise chase and the protection bypass (job 637) → A1i rerun → C1 (dev, 30 rows, ~3–5 h) → D1 (PUPA-SD, ~25–40 h per threshold; 1.0 first) → D2 → D3 → E. C2 and C3 are coded while the GPU runs; the id-734 rerun and the Presidio CPU job go anywhere before D2.
