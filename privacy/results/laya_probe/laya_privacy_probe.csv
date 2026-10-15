@@ -1,0 +1,1201 @@
+id,rewrite_type,attribute,logit,p
+"Marta, 34, female, midwife, Kraków, Poland",original,profession,3.832556962966919,0.9788048267364502
+"Marta, 34, female, midwife, Kraków, Poland",util_preserving,profession,-3.267606735229492,0.03669934347271919
+"Marta, 34, female, midwife, Kraków, Poland",util_paraphrase,profession,3.6884829998016357,0.9756003618240356
+"Marta, 34, female, midwife, Kraków, Poland",priv_preserving,profession,-3.8129398822784424,0.02160603180527687
+"Marta, 34, female, midwife, Kraków, Poland",priv_targeted,profession,-3.4274401664733887,0.031448811292648315
+"Marta, 34, female, midwife, Kraków, Poland",util_broken,profession,3.743990659713745,0.9768873453140259
+"Deniz, 27, male, software tester, Izmir, Turkey",original,profession,3.503985643386841,0.9708009958267212
+"Deniz, 27, male, software tester, Izmir, Turkey",util_preserving,profession,3.809321880340576,0.978317379951477
+"Deniz, 27, male, software tester, Izmir, Turkey",util_paraphrase,profession,3.8131508827209473,0.9783984422683716
+"Deniz, 27, male, software tester, Izmir, Turkey",priv_preserving,profession,3.7575721740722656,0.9771919846534729
+"Deniz, 27, male, software tester, Izmir, Turkey",priv_targeted,profession,-3.653661012649536,0.02524246647953987
+"Deniz, 27, male, software tester, Izmir, Turkey",util_broken,profession,-3.6684322357177734,0.024881552904844284
+"Idris, 41, male, imam, Birmingham, England",original,profession,-3.5963656902313232,0.026691246777772903
+"Idris, 41, male, imam, Birmingham, England",util_preserving,profession,-3.6110846996307373,0.026311514899134636
+"Idris, 41, male, imam, Birmingham, England",util_paraphrase,profession,-3.654437780380249,0.02522336132824421
+"Idris, 41, male, imam, Birmingham, England",priv_preserving,profession,-3.8695034980773926,0.02044212818145752
+"Idris, 41, male, imam, Birmingham, England",priv_targeted,profession,-3.8231093883514404,0.0213920995593071
+"Idris, 41, male, imam, Birmingham, England",util_broken,profession,-3.881971836090088,0.02019394561648369
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",original,profession,3.757472276687622,0.9771897196769714
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",util_preserving,profession,-3.7381820678710938,0.023244177922606468
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",util_paraphrase,profession,3.8643898963928223,0.9794552326202393
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",priv_preserving,profession,-3.819755792617798,0.021462416276335716
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",priv_targeted,profession,-3.7998709678649902,0.02188403345644474
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",util_broken,profession,-3.788954257965088,0.022118929773569107
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",original,profession,3.8084189891815186,0.9782982468605042
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",util_preserving,profession,3.763573169708252,0.9773253202438354
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",util_paraphrase,profession,3.725364923477173,0.9764629602432251
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",priv_preserving,profession,-3.866015672683716,0.020512085407972336
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",priv_targeted,profession,-3.6754140853881836,0.02471271902322769
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",util_broken,profession,-3.7288825511932373,0.02345624938607216
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",original,profession,3.668142557144165,0.9751114845275879
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",util_preserving,profession,3.544379949569702,0.9719244241714478
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",util_paraphrase,profession,3.7505598068237305,0.9770351648330688
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",priv_preserving,profession,-3.8461804389953613,0.020914413034915924
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",priv_targeted,profession,-3.693296432495117,0.024285361170768738
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",util_broken,profession,-3.867877244949341,0.020474717020988464
+"Priya, 38, female, cardiologist, Chennai, India",original,profession,1.7329673767089844,0.8497915863990784
+"Priya, 38, female, cardiologist, Chennai, India",util_preserving,profession,3.5729970932006836,0.9726948738098145
+"Priya, 38, female, cardiologist, Chennai, India",util_paraphrase,profession,3.7564351558685303,0.9771665930747986
+"Priya, 38, female, cardiologist, Chennai, India",priv_preserving,profession,3.7644472122192383,0.977344810962677
+"Priya, 38, female, cardiologist, Chennai, India",priv_targeted,profession,-3.7607126235961914,0.022738100960850716
+"Priya, 38, female, cardiologist, Chennai, India",util_broken,profession,-3.609135150909424,0.026361508294939995
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",original,profession,3.6836509704589844,0.9754849672317505
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",util_preserving,profession,3.73840069770813,0.976760745048523
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",util_paraphrase,profession,3.8235886096954346,0.9786179065704346
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",priv_preserving,profession,3.6068572998046875,0.9735799431800842
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",priv_targeted,profession,-3.629427671432495,0.025845641270279884
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",util_broken,profession,-3.727309226989746,0.023492317646741867
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",original,profession,3.784722089767456,0.9777892827987671
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",util_preserving,profession,3.6732678413391113,0.9752354621887207
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",util_paraphrase,profession,3.808034658432007,0.9782900214195251
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",priv_preserving,profession,-3.772296667098999,0.02248211018741131
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",priv_targeted,profession,-3.798912763595581,0.02190455235540867
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",util_broken,profession,-3.875847339630127,0.02031548134982586
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",original,profession,3.8181304931640625,0.978503406047821
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",util_preserving,profession,-3.318058490753174,0.03495684638619423
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",util_paraphrase,profession,3.824528932571411,0.9786375164985657
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",priv_preserving,profession,-3.8943214416503906,0.01995103619992733
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",priv_targeted,profession,-3.8364570140838623,0.021114451810717583
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",util_broken,profession,-3.8694682121276855,0.020442834123969078
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",original,profession,3.708265781402588,0.9760668277740479
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",util_preserving,profession,3.7820653915405273,0.9777315258979797
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",util_paraphrase,profession,-3.591309070587158,0.026822926476597786
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",priv_preserving,profession,-3.8355190753936768,0.021133845672011375
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",priv_targeted,profession,-3.825742244720459,0.021337049081921577
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",util_broken,profession,-3.8549444675445557,0.02073570527136326
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",original,profession,-2.089259147644043,0.11014515906572342
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",util_preserving,profession,3.474576473236084,0.9699556231498718
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",util_paraphrase,profession,3.7998013496398926,0.9781144857406616
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",priv_preserving,profession,-3.793135166168213,0.02202867902815342
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",priv_targeted,profession,-3.6794891357421875,0.024614688009023666
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",util_broken,profession,-3.866434335708618,0.020503677427768707
+"Hana, 35, female, journalist, Prague, Czechia",original,profession,-3.6481339931488037,0.025378817692399025
+"Hana, 35, female, journalist, Prague, Czechia",util_preserving,profession,3.8002259731292725,0.9781236052513123
+"Hana, 35, female, journalist, Prague, Czechia",util_paraphrase,profession,3.720651865005493,0.9763544797897339
+"Hana, 35, female, journalist, Prague, Czechia",priv_preserving,profession,-3.8374931812286377,0.02109304629266262
+"Hana, 35, female, journalist, Prague, Czechia",priv_targeted,profession,-3.8045406341552734,0.021784301847219467
+"Hana, 35, female, journalist, Prague, Czechia",util_broken,profession,-3.8692467212677,0.020447269082069397
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",original,profession,-3.743696928024292,0.02311929687857628
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",util_preserving,profession,3.797147512435913,0.9780575633049011
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",util_paraphrase,profession,3.823789358139038,0.9786221385002136
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",priv_preserving,profession,-3.76590633392334,0.022622978314757347
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",priv_targeted,profession,-3.819352388381958,0.021470891311764717
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",util_broken,profession,-3.89044189453125,0.020027033984661102
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",original,profession,3.7856085300445557,0.9778085947036743
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",util_preserving,profession,3.751929759979248,0.9770658612251282
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",util_paraphrase,profession,3.664477586746216,0.9750222563743591
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",priv_preserving,profession,-3.828510284423828,0.02127932384610176
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",priv_targeted,profession,-3.825277805328369,0.02134675160050392
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",util_broken,profession,-3.8176510334014893,0.021506665274500847
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",original,profession,3.32600474357605,0.965310275554657
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",util_preserving,profession,3.80375337600708,0.9781988859176636
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",util_paraphrase,profession,3.806283473968506,0.9782528281211853
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",priv_preserving,profession,-3.877359390258789,0.020285408943891525
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",priv_targeted,profession,-3.8249404430389404,0.02135380171239376
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",util_broken,profession,-3.87431263923645,0.02034604921936989
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",original,profession,3.826091766357422,0.9786701798439026
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",util_preserving,profession,3.759998321533203,0.977246105670929
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",util_paraphrase,profession,3.768197774887085,0.97742760181427
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",priv_preserving,profession,-3.8619487285614014,0.020593954250216484
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",priv_targeted,profession,-3.7322237491607666,0.023379838094115257
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",util_broken,profession,-3.863725185394287,0.020558154210448265
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",original,profession,3.729393720626831,0.9765554070472717
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",util_preserving,profession,3.639352560043335,0.9744030833244324
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",util_paraphrase,profession,-3.407806634902954,0.03205237537622452
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",priv_preserving,profession,-3.8717637062072754,0.020396916195750237
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",priv_targeted,profession,-3.8257339000701904,0.021337224170565605
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",util_broken,profession,-3.8747880458831787,0.02033657394349575
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",original,profession,-3.0773749351501465,0.04405022785067558
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",util_preserving,profession,3.3438706398010254,0.9659035801887512
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",util_paraphrase,profession,-2.254467725753784,0.09496478736400604
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",priv_preserving,profession,-3.867330551147461,0.020485682412981987
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",priv_targeted,profession,-3.800330638885498,0.02187419682741165
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",util_broken,profession,-3.873913288116455,0.02035401202738285
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",original,profession,3.763843297958374,0.9773313403129578
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",util_preserving,profession,3.8067450523376465,0.9782626628875732
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",util_paraphrase,profession,3.740874767303467,0.9768168330192566
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",priv_preserving,profession,-3.88209867477417,0.020191436633467674
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",priv_targeted,profession,-3.8264732360839844,0.021321790292859077
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",util_broken,profession,-3.731342077255249,0.02339997887611389
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",original,profession,-3.3638663291931152,0.03344401717185974
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",util_preserving,profession,3.7782723903656006,0.9776487946510315
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",util_paraphrase,profession,3.6171889305114746,0.9738444089889526
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",priv_preserving,profession,-3.8629586696624756,0.02057359553873539
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",priv_targeted,profession,-3.8322694301605225,0.021201176568865776
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",util_broken,profession,-3.8554847240448,0.020724738016724586
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",original,profession,3.6992874145507812,0.9758561849594116
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",util_preserving,profession,-3.8648321628570557,0.020535876974463463
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",util_paraphrase,profession,3.7712557315826416,0.977495014667511
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",priv_preserving,profession,-3.8193063735961914,0.021471859887242317
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",priv_targeted,profession,-3.788376569747925,0.022131429985165596
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",util_broken,profession,-3.8803205490112305,0.020226644352078438
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",original,profession,-3.4708878993988037,0.030152004212141037
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",util_preserving,profession,3.794177770614624,0.9779938459396362
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",util_paraphrase,profession,3.7910032272338867,0.9779253005981445
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",priv_preserving,profession,-3.85262393951416,0.02078287862241268
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",priv_targeted,profession,-3.6888561248779297,0.024390799924731255
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",util_broken,profession,-3.787442207336426,0.022151658311486244
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",original,profession,3.6809232234954834,0.9754197597503662
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",util_preserving,profession,-3.775320053100586,0.0224157627671957
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",util_paraphrase,profession,-3.2913448810577393,0.035869307816028595
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",priv_preserving,profession,-3.813624620437622,0.021591562777757645
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",priv_targeted,profession,-3.885941505432129,0.020115550607442856
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",util_broken,profession,-3.8775131702423096,0.020282352343201637
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",original,profession,3.769649028778076,0.9774596095085144
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",util_preserving,profession,-3.467865467071533,0.030240517109632492
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",util_paraphrase,profession,3.824700355529785,0.9786412119865417
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",priv_preserving,profession,-3.7501370906829834,0.022974293678998947
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",priv_targeted,profession,-3.7762279510498047,0.022395875304937363
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",util_broken,profession,-3.6109249591827393,0.026315607130527496
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",original,profession,-3.412611246109009,0.03190365061163902
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",util_preserving,profession,-2.993252992630005,0.04773161560297012
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",util_paraphrase,profession,-3.7499709129333496,0.022978022694587708
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",priv_preserving,profession,-3.8374931812286377,0.02109304629266262
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",priv_targeted,profession,-3.8307392597198486,0.021232953295111656
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",util_broken,profession,-3.7886040210723877,0.02212650701403618
+"Mohammed, 38, male, imam, Marseille, France, Algerian",original,profession,-3.7168376445770264,0.02373374067246914
+"Mohammed, 38, male, imam, Marseille, France, Algerian",util_preserving,profession,-3.25521183013916,0.03714005649089813
+"Mohammed, 38, male, imam, Marseille, France, Algerian",util_paraphrase,profession,-3.4564051628112793,0.03057841770350933
+"Mohammed, 38, male, imam, Marseille, France, Algerian",priv_preserving,profession,-3.8844001293182373,0.020145954564213753
+"Mohammed, 38, male, imam, Marseille, France, Algerian",priv_targeted,profession,-3.851799964904785,0.020799653604626656
+"Mohammed, 38, male, imam, Marseille, France, Algerian",util_broken,profession,-3.862866163253784,0.02057545818388462
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",original,profession,-3.2619311809539795,0.036900512874126434
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",util_preserving,profession,-3.2396700382232666,0.037699855864048004
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",util_paraphrase,profession,3.8045544624328613,0.9782159924507141
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",priv_preserving,profession,-3.8083603382110596,0.021703051403164864
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",priv_targeted,profession,-3.7232778072357178,0.02358497679233551
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",util_broken,profession,-3.888556718826294,0.020064067095518112
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",original,profession,3.632828950881958,0.9742398262023926
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",util_preserving,profession,3.6876182556152344,0.9755797386169434
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",util_paraphrase,profession,3.8333516120910645,0.9788212776184082
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",priv_preserving,profession,-3.8747410774230957,0.020337512716650963
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",priv_targeted,profession,-3.8638362884521484,0.020555919036269188
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",util_broken,profession,-3.7172040939331055,0.023725250735878944
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",original,profession,3.458948850631714,0.9694969058036804
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",util_preserving,profession,-3.748683452606201,0.023006943985819817
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",util_paraphrase,profession,3.7862939834594727,0.9778234958648682
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",priv_preserving,profession,-3.872753620147705,0.0203771460801363
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",priv_targeted,profession,-3.6485238075256348,0.025369178503751755
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",util_broken,profession,-3.853785753250122,0.02075924538075924
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",original,profession,-3.584688186645508,0.026996295899152756
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",util_preserving,profession,-3.70651912689209,0.02397400513291359
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",util_paraphrase,profession,2.2822561264038086,0.9073968529701233
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",priv_preserving,profession,-3.867497682571411,0.02048233151435852
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",priv_targeted,profession,-3.8068795204162598,0.021734515205025673
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",util_broken,profession,-3.8459672927856445,0.02091877907514572
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",original,profession,3.822484254837036,0.9785948395729065
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",util_preserving,profession,-3.4378902912139893,0.031132057309150696
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",util_paraphrase,profession,3.734959602355957,0.9766825437545776
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",priv_preserving,profession,-3.877718448638916,0.02027827501296997
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",priv_targeted,profession,-3.8492090702056885,0.02085248753428459
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",util_broken,profession,-3.8895256519317627,0.020045025274157524
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",original,profession,3.8046634197235107,0.9782182574272156
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",util_preserving,profession,3.6235010623931885,0.9740047454833984
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",util_paraphrase,profession,3.826408624649048,0.9786767959594727
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",priv_preserving,profession,-3.826214075088501,0.021327199414372444
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",priv_targeted,profession,-3.734764814376831,0.023321889340877533
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",util_broken,profession,-3.6592376232147217,0.025105612352490425
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",original,profession,-3.6429224014282227,0.02550804428756237
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",util_preserving,profession,-3.5320026874542236,0.028415245935320854
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",util_paraphrase,profession,3.779439926147461,0.9776743054389954
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",priv_preserving,profession,-3.88718318939209,0.020091090351343155
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",priv_targeted,profession,-3.7268905639648438,0.02350192330777645
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",util_broken,profession,-3.8734757900238037,0.02036273665726185
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",original,profession,-3.537306785583496,0.028269175440073013
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",util_preserving,profession,-0.17807865142822266,0.4555976092815399
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",util_paraphrase,profession,3.5979249477386475,0.9733492732048035
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",priv_preserving,profession,-3.789316415786743,0.02211109735071659
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",priv_targeted,profession,-3.787886619567871,0.022142034024000168
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",util_broken,profession,-3.8079049587249756,0.02171272225677967
+"Amelia, 45, female, headhunter, London, England, dyscalculia",original,profession,3.7378902435302734,0.9767491817474365
+"Amelia, 45, female, headhunter, London, England, dyscalculia",util_preserving,profession,-3.638780117034912,0.025611212477087975
+"Amelia, 45, female, headhunter, London, England, dyscalculia",util_paraphrase,profession,3.7211217880249023,0.9763653874397278
+"Amelia, 45, female, headhunter, London, England, dyscalculia",priv_preserving,profession,-3.8217995166778564,0.02141953818500042
+"Amelia, 45, female, headhunter, London, England, dyscalculia",priv_targeted,profession,-3.779682159423828,0.022320374846458435
+"Amelia, 45, female, headhunter, London, England, dyscalculia",util_broken,profession,-3.4791762828826904,0.02991057187318802
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",original,profession,3.7530782222747803,0.9770916104316711
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",util_preserving,profession,3.7621703147888184,0.9772942066192627
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",util_paraphrase,profession,3.8110485076904297,0.9783539175987244
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",priv_preserving,profession,-3.8607912063598633,0.02061731554567814
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",priv_targeted,profession,-3.840256452560425,0.021036066114902496
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",util_broken,profession,-3.871908664703369,0.02039402164518833
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",original,profession,3.8099138736724854,0.9783299565315247
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",util_preserving,profession,3.747007131576538,0.9769554138183594
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",util_paraphrase,profession,3.8019297122955322,0.9781599640846252
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",priv_preserving,profession,-3.8650102615356445,0.02053229510784149
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",priv_targeted,profession,-3.7736003398895264,0.02245347946882248
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",util_broken,profession,-3.703248977661133,0.024050643667578697
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",original,profession,-3.7221434116363525,0.02361111342906952
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",util_preserving,profession,-3.825258493423462,0.021347153931856155
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",util_paraphrase,profession,-3.687277317047119,0.024428395554423332
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",priv_preserving,profession,-3.8889238834381104,0.020056847482919693
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",priv_targeted,profession,-3.8229336738586426,0.02139577828347683
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",util_broken,profession,-3.8677210807800293,0.02047784999012947
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",original,profession,-3.8350882530212402,0.021142760291695595
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",util_preserving,profession,-3.7921359539031982,0.022050216794013977
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",util_paraphrase,profession,-3.7435238361358643,0.023123204708099365
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",priv_preserving,profession,-3.8771579265594482,0.020289413630962372
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",priv_targeted,profession,-3.8438570499420166,0.02096204273402691
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",util_broken,profession,-3.8807907104492188,0.020217329263687134
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",original,profession,0.29827117919921875,0.5740198493003845
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",util_preserving,profession,-3.7403178215026855,0.02319573424756527
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",util_paraphrase,profession,3.671957492828369,0.9752038717269897
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",priv_preserving,profession,-3.863511800765991,0.02056245133280754
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",priv_targeted,profession,-3.804428815841675,0.021786684170365334
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",util_broken,profession,-3.8623483180999756,0.02058589644730091
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",original,profession,-3.5281195640563965,0.02852264605462551
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",util_preserving,profession,3.799226760864258,0.9781021475791931
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",util_paraphrase,profession,-3.630750894546509,0.02581235021352768
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",priv_preserving,profession,-3.865976333618164,0.02051287516951561
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",priv_targeted,profession,-3.6698694229125977,0.02484670840203762
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",util_broken,profession,-3.7886602878570557,0.02212528884410858
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",original,profession,3.6847846508026123,0.9755120873451233
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",util_preserving,profession,3.8082470893859863,0.9782946109771729
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",util_paraphrase,profession,3.7635467052459717,0.9773247241973877
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",priv_preserving,profession,-3.885408639907837,0.02012605592608452
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",priv_targeted,profession,-3.8685176372528076,0.020461877807974815
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",util_broken,profession,-3.5862903594970703,0.02695424295961857
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",original,profession,3.767407178878784,0.9774101376533508
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",util_preserving,profession,-3.7990458011627197,0.021901702508330345
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",util_paraphrase,profession,3.8455915451049805,0.9790735244750977
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",priv_preserving,profession,-3.8497867584228516,0.02084069512784481
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",priv_targeted,profession,-3.77567982673645,0.022407880052924156
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",util_broken,profession,-3.891491413116455,0.020006448030471802
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",original,profession,-0.9461978077888489,0.27965012192726135
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",util_preserving,profession,3.7538013458251953,0.9771077632904053
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",util_paraphrase,profession,3.7537477016448975,0.9771066308021545
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",priv_preserving,profession,-3.867518901824951,0.020481904968619347
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",priv_targeted,profession,-3.844094753265381,0.020957166329026222
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",util_broken,profession,-3.8845837116241455,0.0201423317193985
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",original,profession,3.7327346801757812,0.9766318202018738
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",util_preserving,profession,-3.6347756385803223,0.025711335241794586
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",util_paraphrase,profession,3.7393057346343994,0.9767813682556152
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",priv_preserving,profession,-3.830846071243286,0.021230733022093773
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",priv_targeted,profession,-3.794159412384033,0.022006623446941376
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",util_broken,profession,-3.604071617126465,0.026491781696677208
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",original,profession,1.1303424835205078,0.7559020519256592
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",util_preserving,profession,-3.7676029205322266,0.022585496306419373
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",util_paraphrase,profession,3.7969632148742676,0.9780536890029907
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",priv_preserving,profession,-3.789260149002075,0.02211231365799904
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",priv_targeted,profession,-3.8056082725524902,0.021761562675237656
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",util_broken,profession,-3.8653249740600586,0.020525967702269554
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",original,profession,3.664505958557129,0.9750229716300964
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",util_preserving,profession,3.7551767826080322,0.9771385192871094
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",util_paraphrase,profession,3.807575225830078,0.9782803058624268
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",priv_preserving,profession,-3.873609781265259,0.020360063761472702
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",priv_targeted,profession,-3.844207525253296,0.020954852923750877
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",util_broken,profession,-3.7357044219970703,0.023300494998693466
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",original,profession,3.063861846923828,0.9553772807121277
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",util_preserving,profession,-3.7189536094665527,0.023684760555624962
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",util_paraphrase,profession,3.7440576553344727,0.9768888354301453
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",priv_preserving,profession,-3.856752395629883,0.020699024200439453
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",priv_targeted,profession,-3.8322694301605225,0.021201176568865776
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",util_broken,profession,-3.8204634189605713,0.0214475616812706
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",original,profession,3.3556599617004395,0.9662896990776062
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",util_preserving,profession,3.840059995651245,0.978959858417511
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",util_paraphrase,profession,3.5964176654815674,0.9733100533485413
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",priv_preserving,profession,-3.8806402683258057,0.020220307633280754
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",priv_targeted,profession,-3.8492062091827393,0.020852545276284218
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",util_broken,profession,-3.8531992435455322,0.020771171897649765
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",original,profession,-3.4628193378448486,0.0303888488560915
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",util_preserving,profession,3.3679087162017822,0.9666864275932312
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",util_paraphrase,profession,3.738048791885376,0.9767528176307678
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",priv_preserving,profession,-3.8743062019348145,0.020346177741885185
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",priv_targeted,profession,-3.807365894317627,0.021724175661802292
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",util_broken,profession,-3.6001546382904053,0.02659299038350582
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",original,profession,-3.7172467708587646,0.023724263533949852
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",util_preserving,profession,-0.47317373752593994,0.3838653564453125
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",util_paraphrase,profession,-3.270761013031006,0.03658799082040787
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",priv_preserving,profession,-3.765874147415161,0.022623687982559204
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",priv_targeted,profession,-3.7640836238861084,0.022663315758109093
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",util_broken,profession,-3.8894059658050537,0.020047375932335854
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",original,profession,3.4423885345458984,0.9690033793449402
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",util_preserving,profession,-3.7401108741760254,0.023200426250696182
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",util_paraphrase,profession,3.6932923793792725,0.9757145047187805
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",priv_preserving,profession,-3.8217883110046387,0.021419772878289223
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",priv_targeted,profession,-3.7930121421813965,0.022031329572200775
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",util_broken,profession,-3.8459622859954834,0.02091888152062893
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",original,profession,3.634005546569824,0.9742693305015564
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",util_preserving,profession,-3.8956236839294434,0.019925588741898537
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",util_paraphrase,profession,3.824502468109131,0.9786370992660522
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",priv_preserving,profession,-3.8433632850646973,0.020972179248929024
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",priv_targeted,profession,-3.7896714210510254,0.02210342325270176
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",util_broken,profession,-3.847127676010132,0.02089502662420273
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",original,profession,3.779003620147705,0.9776648879051208
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",util_preserving,profession,3.5992259979248047,0.9733830094337463
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",util_paraphrase,profession,3.813138246536255,0.9783982038497925
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",priv_preserving,profession,-3.848257064819336,0.020871933549642563
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",priv_targeted,profession,-3.8383684158325195,0.02107498049736023
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",util_broken,profession,-3.696262836456299,0.02421516925096512
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",original,profession,-0.8817986845970154,0.29280519485473633
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",util_preserving,profession,1.1111332178115845,0.7523403167724609
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",util_paraphrase,profession,3.768031120300293,0.977423906326294
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",priv_preserving,profession,-3.7960493564605713,0.021965984255075455
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",priv_targeted,profession,-3.829308271408081,0.02126271463930607
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",util_broken,profession,-3.8825089931488037,0.020183321088552475
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",original,profession,3.7527449131011963,0.977084219455719
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",util_preserving,profession,2.7221920490264893,0.938323438167572
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",util_paraphrase,profession,3.8548219203948975,0.9792617559432983
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",priv_preserving,profession,-3.8113746643066406,0.02163914404809475
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",priv_targeted,profession,-3.8207480907440186,0.021441588178277016
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",util_broken,profession,-3.873547315597534,0.020361309871077538
+"Deniz, 27, male, software tester, Izmir, Turkey",original,geographic location,3.605210542678833,0.9735375642776489
+"Deniz, 27, male, software tester, Izmir, Turkey",util_preserving,geographic location,3.8401286602020264,0.9789613485336304
+"Deniz, 27, male, software tester, Izmir, Turkey",util_paraphrase,geographic location,3.83278226852417,0.9788095355033875
+"Deniz, 27, male, software tester, Izmir, Turkey",priv_preserving,geographic location,-3.869048833847046,0.02045123279094696
+"Deniz, 27, male, software tester, Izmir, Turkey",priv_targeted,geographic location,-3.854027032852173,0.020754341036081314
+"Deniz, 27, male, software tester, Izmir, Turkey",util_broken,geographic location,-3.899735450744629,0.019845450296998024
+"Idris, 41, male, imam, Birmingham, England",original,geographic location,3.812558174133301,0.978385865688324
+"Idris, 41, male, imam, Birmingham, England",util_preserving,geographic location,3.828585147857666,0.9787222743034363
+"Idris, 41, male, imam, Birmingham, England",util_paraphrase,geographic location,3.7450168132781982,0.9769104719161987
+"Idris, 41, male, imam, Birmingham, England",priv_preserving,geographic location,-3.886711597442627,0.02010037563741207
+"Idris, 41, male, imam, Birmingham, England",priv_targeted,geographic location,-3.857412099838257,0.020685657858848572
+"Idris, 41, male, imam, Birmingham, England",util_broken,geographic location,-3.8859894275665283,0.020114606246352196
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",original,geographic location,3.754770278930664,0.9771295189857483
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",util_preserving,geographic location,3.7006936073303223,0.9758893251419067
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",util_paraphrase,geographic location,3.739798069000244,0.9767925143241882
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",priv_preserving,geographic location,-3.873570680618286,0.02036084234714508
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",priv_targeted,geographic location,-3.836932420730591,0.02110462822020054
+"Tomasz, 52, male, coal miner, Silesia, Poland, union member, working class",util_broken,geographic location,3.5320816040039062,0.9715869426727295
+"Priya, 38, female, cardiologist, Chennai, India",original,geographic location,3.7749505043029785,0.9775761365890503
+"Priya, 38, female, cardiologist, Chennai, India",util_preserving,geographic location,3.830596446990967,0.9787640571594238
+"Priya, 38, female, cardiologist, Chennai, India",util_paraphrase,geographic location,3.767359733581543,0.9774091243743896
+"Priya, 38, female, cardiologist, Chennai, India",priv_preserving,geographic location,-3.88004732131958,0.020232059061527252
+"Priya, 38, female, cardiologist, Chennai, India",priv_targeted,geographic location,-3.8704721927642822,0.020422739908099174
+"Priya, 38, female, cardiologist, Chennai, India",util_broken,geographic location,-3.877992630004883,0.02027282863855362
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",original,geographic location,3.819469451904297,0.9785315990447998
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",util_preserving,geographic location,3.8294901847839355,0.9787411093711853
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",util_paraphrase,geographic location,3.8355607986450195,0.9788669943809509
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",priv_preserving,geographic location,-3.8798511028289795,0.020235950127243996
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",priv_targeted,geographic location,-3.8891923427581787,0.02005157433450222
+"Sofia, 31, female, immigration lawyer, Barcelona, Spain",util_broken,geographic location,3.4923019409179688,0.9704678654670715
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",original,geographic location,3.712590217590332,0.9761676788330078
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",util_preserving,geographic location,-0.8943578600883484,0.29021134972572327
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",util_paraphrase,geographic location,3.84576678276062,0.9790770411491394
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",priv_preserving,geographic location,-3.9011807441711426,0.019817357882857323
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",priv_targeted,geographic location,-3.8540048599243164,0.020754793658852577
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",util_broken,geographic location,3.0776121616363525,0.9559597373008728
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",original,geographic location,3.771486520767212,0.9775000214576721
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",util_preserving,geographic location,3.324619770050049,0.965263843536377
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",util_paraphrase,geographic location,3.8069915771484375,0.9782679080963135
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",priv_preserving,geographic location,-3.86295223236084,0.020573724061250687
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",priv_targeted,geographic location,-3.839128017425537,0.021059315651655197
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",util_broken,geographic location,-3.878699779510498,0.020258788019418716
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",original,geographic location,3.7519381046295166,0.9770660996437073
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",util_preserving,geographic location,3.800234079360962,0.9781237244606018
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",util_paraphrase,geographic location,3.8072617053985596,0.9782735705375671
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",priv_preserving,geographic location,-3.8734052181243896,0.020364144816994667
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",priv_targeted,geographic location,-3.8833348751068115,0.020166993141174316
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",util_broken,geographic location,1.3941545486450195,0.8012546896934509
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",original,geographic location,3.7010767459869385,0.975898265838623
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",util_preserving,geographic location,3.7095165252685547,0.976095974445343
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",util_paraphrase,geographic location,3.82787823677063,0.9787075519561768
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",priv_preserving,geographic location,-3.8664627075195312,0.020503103733062744
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",priv_targeted,geographic location,-3.834667205810547,0.021151477470993996
+"Samuel, 40, male, prison officer, Manchester, England, night shifts",util_broken,geographic location,3.734013557434082,0.9766610264778137
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",original,geographic location,3.705734968185425,0.9760076403617859
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",util_preserving,geographic location,3.6855366230010986,0.9755301475524902
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",util_paraphrase,geographic location,3.8260252475738525,0.9786688089370728
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",priv_preserving,geographic location,-3.884758472442627,0.020138882100582123
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",priv_targeted,geographic location,-3.8740243911743164,0.020351795479655266
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",util_broken,geographic location,0.5752012133598328,0.6399624347686768
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",original,geographic location,3.7241933345794678,0.9764360785484314
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",util_preserving,geographic location,3.825014352798462,0.9786477088928223
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",util_paraphrase,geographic location,3.8044304847717285,0.978213369846344
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",priv_preserving,geographic location,-3.876584768295288,0.020300811156630516
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",priv_targeted,geographic location,-3.8529722690582275,0.02077578939497471
+"Fatima, 26, female, teacher, Cairo, Egypt, engaged",util_broken,geographic location,3.378506660461426,0.9670259952545166
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",original,geographic location,3.766277551651001,0.9773852229118347
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",util_preserving,geographic location,3.2321012020111084,0.9620245695114136
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",util_paraphrase,geographic location,3.8409314155578613,0.9789777994155884
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",priv_preserving,geographic location,-3.8745155334472656,0.020342005416750908
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",priv_targeted,geographic location,-3.8378586769104004,0.021085500717163086
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",util_broken,geographic location,-3.9046833515167236,0.019749434664845467
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",original,geographic location,3.76414155960083,0.9773379564285278
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",util_preserving,geographic location,2.8637402057647705,0.9460245966911316
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",util_paraphrase,geographic location,3.7950003147125244,0.9780114889144897
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",priv_preserving,geographic location,-3.8928720951080322,0.01997939497232437
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",priv_targeted,geographic location,-3.8422598838806152,0.020994847640395164
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",util_broken,geographic location,3.36488676071167,0.9665889739990234
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",original,geographic location,3.803264617919922,0.9781885147094727
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",util_preserving,geographic location,3.8036928176879883,0.9781976342201233
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",util_paraphrase,geographic location,3.836045026779175,0.9788770079612732
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",priv_preserving,geographic location,-3.8801562786102295,0.020229900255799294
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",priv_targeted,geographic location,-3.8856146335601807,0.020121995359659195
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",util_broken,geographic location,-3.714298725128174,0.02379263937473297
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",original,geographic location,3.522489070892334,0.9713209271430969
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",util_preserving,geographic location,3.834073066711426,0.9788362383842468
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",util_paraphrase,geographic location,3.7516696453094482,0.977060079574585
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",priv_preserving,geographic location,-3.875351667404175,0.020325349643826485
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",priv_targeted,geographic location,-3.855050802230835,0.02073354460299015
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",util_broken,geographic location,3.769212245941162,0.9774500131607056
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",original,geographic location,3.6731116771698,0.9752317667007446
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",util_preserving,geographic location,3.819286346435547,0.9785277247428894
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",util_paraphrase,geographic location,3.817533493041992,0.9784908294677734
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",priv_preserving,geographic location,-3.883762836456299,0.020158536732196808
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",priv_targeted,geographic location,-3.8435912132263184,0.020967500284314156
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",util_broken,geographic location,3.7245230674743652,0.9764436483383179
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",original,geographic location,3.7330563068389893,0.9766392111778259
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",util_preserving,geographic location,3.7851929664611816,0.9777995944023132
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",util_paraphrase,geographic location,3.8400115966796875,0.9789589047431946
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",priv_preserving,geographic location,-3.883207321166992,0.020169513300061226
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",priv_targeted,geographic location,-3.8523757457733154,0.020787928253412247
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",util_broken,geographic location,3.6223578453063965,0.9739757776260376
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",original,geographic location,3.7629587650299072,0.9773117899894714
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",util_preserving,geographic location,3.7750258445739746,0.977577805519104
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",util_paraphrase,geographic location,3.8229427337646484,0.9786044359207153
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",priv_preserving,geographic location,-3.889702796936035,0.02004154585301876
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",priv_targeted,geographic location,-3.808177947998047,0.021706923842430115
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",util_broken,geographic location,3.596395492553711,0.9733095169067383
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",original,geographic location,3.7410738468170166,0.9768213629722595
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",util_preserving,geographic location,3.7898409366607666,0.9779002070426941
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",util_paraphrase,geographic location,3.802081346511841,0.9781633019447327
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",priv_preserving,geographic location,-3.871208429336548,0.020408013835549355
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",priv_targeted,geographic location,-3.8806087970733643,0.020220931619405746
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",util_broken,geographic location,3.683814287185669,0.9754889607429504
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",original,geographic location,3.8010292053222656,0.9781407117843628
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",util_preserving,geographic location,3.786593437194824,0.9778299927711487
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",util_paraphrase,geographic location,3.7836289405822754,0.9777656197547913
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",priv_preserving,geographic location,-3.8829376697540283,0.020174844190478325
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",priv_targeted,geographic location,-3.842972993850708,0.020980194211006165
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",util_broken,geographic location,-3.2623887062072754,0.036884259432554245
+"Yara, 40, female, architect, Amman, Jordan, devout",original,geographic location,3.8030121326446533,0.9781831502914429
+"Yara, 40, female, architect, Amman, Jordan, devout",util_preserving,geographic location,3.8216562271118164,0.9785774946212769
+"Yara, 40, female, architect, Amman, Jordan, devout",util_paraphrase,geographic location,3.8343405723571777,0.9788417220115662
+"Yara, 40, female, architect, Amman, Jordan, devout",priv_preserving,geographic location,-3.8737752437591553,0.020356763154268265
+"Yara, 40, female, architect, Amman, Jordan, devout",priv_targeted,geographic location,-3.8418750762939453,0.02100275829434395
+"Yara, 40, female, architect, Amman, Jordan, devout",util_broken,geographic location,-3.8483448028564453,0.020870141685009003
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",original,geographic location,3.829449415206909,0.9787402153015137
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",util_preserving,geographic location,3.7150840759277344,0.9762256145477295
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",util_paraphrase,geographic location,3.81410813331604,0.9784185886383057
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",priv_preserving,geographic location,-3.8898911476135254,0.020037846639752388
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",priv_targeted,geographic location,-3.877680540084839,0.02027902938425541
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",util_broken,geographic location,-3.6249477863311768,0.025958677753806114
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",original,geographic location,3.7494657039642334,0.9770106077194214
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",util_preserving,geographic location,3.832044839859009,0.9787942171096802
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",util_paraphrase,geographic location,3.8127973079681396,0.9783909916877747
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",priv_preserving,geographic location,-3.885197162628174,0.020130226388573647
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",priv_targeted,geographic location,-3.8647286891937256,0.020537959411740303
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",util_broken,geographic location,3.6375539302825928,0.9743581414222717
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",original,geographic location,3.6663575172424316,0.9750680327415466
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",util_preserving,geographic location,3.771113157272339,0.9774917960166931
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",util_paraphrase,geographic location,3.8292276859283447,0.978735625743866
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",priv_preserving,geographic location,-3.8827898502349854,0.020177766680717468
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",priv_targeted,geographic location,-3.8888983726501465,0.020057348534464836
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",util_broken,geographic location,0.97158282995224,0.7254348397254944
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",original,geographic location,3.754444122314453,0.9771222472190857
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",util_preserving,geographic location,3.7480945587158203,0.9769798517227173
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",util_paraphrase,geographic location,3.8303818702697754,0.9787595868110657
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",priv_preserving,geographic location,-3.8813929557800293,0.020205402746796608
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",priv_targeted,geographic location,-3.8629696369171143,0.02057337388396263
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",util_broken,geographic location,-3.648271322250366,0.025375422090291977
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",original,geographic location,3.7120745182037354,0.9761556386947632
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",util_preserving,geographic location,3.793551445007324,0.9779802560806274
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",util_paraphrase,geographic location,3.8127152919769287,0.9783891439437866
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",priv_preserving,geographic location,-3.8941850662231445,0.01995370350778103
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",priv_targeted,geographic location,-3.868588924407959,0.020460449159145355
+"Rosa, 62, female, retired nurse, Naples, Italy, caring for spouse",util_broken,geographic location,-3.6306369304656982,0.025815216824412346
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",original,geographic location,3.434896469116211,0.9687775373458862
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",util_preserving,geographic location,3.7965023517608643,0.9780437350273132
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",util_paraphrase,geographic location,3.816699504852295,0.9784733057022095
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",priv_preserving,geographic location,-3.881463050842285,0.02020401507616043
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",priv_targeted,geographic location,-3.886124849319458,0.0201119352132082
+"Petra, 39, female, architect, Ljubljana, Slovenia, caring for parents",util_broken,geographic location,3.1532797813415527,0.959037721157074
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",original,geographic location,3.8005919456481934,0.9781313538551331
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",util_preserving,geographic location,3.819702625274658,0.9785364866256714
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",util_paraphrase,geographic location,3.8480308055877686,0.9791234731674194
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",priv_preserving,geographic location,-3.864422082901001,0.020544126629829407
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",priv_targeted,geographic location,-3.8153507709503174,0.02155512571334839
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",util_broken,geographic location,3.6002585887908936,0.9734096527099609
+"Nour, 22, female, student, Damascus, Syria, refugee background",original,geographic location,3.8109548091888428,0.9783519506454468
+"Nour, 22, female, student, Damascus, Syria, refugee background",util_preserving,geographic location,3.224957227706909,0.9617627263069153
+"Nour, 22, female, student, Damascus, Syria, refugee background",util_paraphrase,geographic location,0.17479446530342102,0.5435876846313477
+"Nour, 22, female, student, Damascus, Syria, refugee background",priv_preserving,geographic location,-3.869389295578003,0.020444413647055626
+"Nour, 22, female, student, Damascus, Syria, refugee background",priv_targeted,geographic location,-3.8192174434661865,0.021473726257681847
+"Nour, 22, female, student, Damascus, Syria, refugee background",util_broken,geographic location,-3.88803768157959,0.020074274390935898
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",original,geographic location,3.7236757278442383,0.9764242172241211
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",util_preserving,geographic location,3.8073534965515137,0.9782755374908447
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",util_paraphrase,geographic location,3.8100497722625732,0.9783328175544739
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",priv_preserving,geographic location,-3.8798229694366455,0.020236507058143616
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",priv_targeted,geographic location,-3.8485751152038574,0.020865432918071747
+"Erik, 48, male, carpenter, Reykjavik, Iceland, going through bankruptcy",util_broken,geographic location,3.6098415851593018,0.9736566543579102
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",original,geographic location,3.8174824714660645,0.9784898161888123
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",util_preserving,geographic location,3.8041980266571045,0.9782084822654724
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",util_paraphrase,geographic location,3.8150997161865234,0.9784396290779114
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",priv_preserving,geographic location,-3.881507635116577,0.020203132182359695
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",priv_targeted,geographic location,-3.851891040802002,0.020797796547412872
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",util_broken,geographic location,3.696500778198242,0.9757904410362244
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",original,geographic location,3.7115073204040527,0.9761424660682678
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",util_preserving,geographic location,3.7886953353881836,0.9778754711151123
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",util_paraphrase,geographic location,3.7802393436431885,0.9776917695999146
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",priv_preserving,geographic location,-3.8795878887176514,0.02024116925895214
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",priv_targeted,geographic location,-3.844860553741455,0.020941460505127907
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",util_broken,geographic location,3.5433754920959473,0.9718970656394958
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",original,geographic location,3.785388231277466,0.9778037667274475
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",util_preserving,geographic location,3.844639539718628,0.9790539741516113
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",util_paraphrase,geographic location,3.763098955154419,0.977314829826355
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",priv_preserving,geographic location,-3.8670778274536133,0.020490756258368492
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",priv_targeted,geographic location,-3.8334336280822754,0.021177032962441444
+"Valentina, 47, female, executive, Milan, Italy, caring for disabled child",util_broken,geographic location,-3.8666114807128906,0.020500119775533676
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",original,geographic location,3.6504769325256348,0.9746791124343872
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",util_preserving,geographic location,3.7724812030792236,0.9775218963623047
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",util_paraphrase,geographic location,3.7958645820617676,0.9780300855636597
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",priv_preserving,geographic location,-3.8747732639312744,0.020336870104074478
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",priv_targeted,geographic location,-3.8844566345214844,0.020144838839769363
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",util_broken,geographic location,-3.1634745597839355,0.04056360945105553
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",original,geographic location,3.7295644283294678,0.9765594005584717
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",util_preserving,geographic location,3.8059959411621094,0.9782466888427734
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",util_paraphrase,geographic location,3.8244781494140625,0.9786365032196045
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",priv_preserving,geographic location,-3.884141683578491,0.020151058211922646
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",priv_targeted,geographic location,-3.8553273677825928,0.02072793059051037
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",util_broken,geographic location,-3.5893521308898926,0.026874057948589325
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",original,geographic location,3.8387765884399414,0.9789334535598755
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",util_preserving,geographic location,3.790330171585083,0.9779108166694641
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",util_paraphrase,geographic location,3.8291890621185303,0.9787348508834839
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",priv_preserving,geographic location,-3.8691327571868896,0.020449552685022354
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",priv_targeted,geographic location,-3.8061468601226807,0.02175009809434414
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",util_broken,geographic location,-3.6193225383758545,0.026101289317011833
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",original,geographic location,3.8023204803466797,0.9781683087348938
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",util_preserving,geographic location,3.8349268436431885,0.9788539409637451
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",util_paraphrase,geographic location,3.8422281742095947,0.9790045022964478
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",priv_preserving,geographic location,-3.8754889965057373,0.020322615280747414
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",priv_targeted,geographic location,-3.8593509197235107,0.020646415650844574
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",util_broken,geographic location,3.6634130477905273,0.9749964475631714
+"Meera, 43, female, professor, Delhi, India, visually impaired",original,geographic location,3.626739263534546,0.9740866422653198
+"Meera, 43, female, professor, Delhi, India, visually impaired",util_preserving,geographic location,3.8169333934783936,0.978478193283081
+"Meera, 43, female, professor, Delhi, India, visually impaired",util_paraphrase,geographic location,3.741255760192871,0.976825475692749
+"Meera, 43, female, professor, Delhi, India, visually impaired",priv_preserving,geographic location,-3.8816161155700684,0.02020098641514778
+"Meera, 43, female, professor, Delhi, India, visually impaired",priv_targeted,geographic location,-3.8584868907928467,0.020663896575570107
+"Meera, 43, female, professor, Delhi, India, visually impaired",util_broken,geographic location,3.421895980834961,0.9683818817138672
+"Finn, 20, transgender man, student, Wellington, New Zealand",original,geographic location,3.761219024658203,0.977273166179657
+"Finn, 20, transgender man, student, Wellington, New Zealand",util_preserving,geographic location,3.8174493312835693,0.9784890413284302
+"Finn, 20, transgender man, student, Wellington, New Zealand",util_paraphrase,geographic location,3.8090872764587402,0.9783123731613159
+"Finn, 20, transgender man, student, Wellington, New Zealand",priv_preserving,geographic location,-3.875476598739624,0.020322861149907112
+"Finn, 20, transgender man, student, Wellington, New Zealand",priv_targeted,geographic location,-3.8540866374969482,0.020753130316734314
+"Finn, 20, transgender man, student, Wellington, New Zealand",util_broken,geographic location,3.7357614040374756,0.9767008423805237
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",original,geographic location,3.7846176624298096,0.9777870178222656
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",util_preserving,geographic location,3.8284671306610107,0.9787197709083557
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",util_paraphrase,geographic location,3.792487859725952,0.9779573082923889
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",priv_preserving,geographic location,-3.890979766845703,0.02001648023724556
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",priv_targeted,geographic location,-3.8395841121673584,0.02104991488158703
+"Zara, 38, female, doctor, Karachi, Pakistan, single by choice",util_broken,geographic location,3.6741225719451904,0.9752561450004578
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",original,geographic location,3.8125784397125244,0.9783863425254822
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",util_preserving,geographic location,3.81091570854187,0.9783511757850647
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",util_paraphrase,geographic location,3.84835147857666,0.9791299700737
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",priv_preserving,geographic location,-3.8905651569366455,0.02002461440861225
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",priv_targeted,geographic location,-3.8433618545532227,0.020972207188606262
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",util_broken,geographic location,-3.385749578475952,0.03274380788207054
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",original,geographic location,3.7632060050964355,0.977317214012146
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",util_preserving,geographic location,3.7664620876312256,0.9773893356323242
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",util_paraphrase,geographic location,3.8193471431732178,0.9785289764404297
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",priv_preserving,geographic location,-3.8773226737976074,0.020286140963435173
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",priv_targeted,geographic location,-3.894789695739746,0.01994188316166401
+"Xiu, 30, female, game developer, Taipei, Taiwan, introvert, single",util_broken,geographic location,-3.640522003173828,0.025567781180143356
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",original,geographic location,3.7931439876556396,0.9779714941978455
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",util_preserving,geographic location,3.82861328125,0.9787228107452393
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",util_paraphrase,geographic location,3.8035149574279785,0.9781938791275024
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",priv_preserving,geographic location,-3.8781776428222656,0.020269155502319336
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",priv_targeted,geographic location,-3.8555185794830322,0.02072405070066452
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",util_broken,geographic location,3.7683346271514893,0.9774306416511536
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",original,health condition,3.754944086074829,0.9771333932876587
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",util_preserving,health condition,3.869175910949707,0.9795513153076172
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",util_paraphrase,health condition,3.8278050422668457,0.9787059426307678
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",priv_preserving,health condition,3.8109309673309326,0.9783514142036438
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",priv_targeted,health condition,-3.8799808025360107,0.020233377814292908
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",util_broken,health condition,-3.7838404178619385,0.022229811176657677
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",original,health condition,3.8053390979766846,0.978232741355896
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",util_preserving,health condition,3.837174415588379,0.9789003133773804
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",util_paraphrase,health condition,3.826455593109131,0.9786778688430786
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",priv_preserving,health condition,-3.8947412967681885,0.01994282938539982
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",priv_targeted,health condition,-3.8952744007110596,0.01993241161108017
+"Elin, 19, female, university student, Uppsala, Sweden, anxiety disorder",util_broken,health condition,-3.944606304168701,0.018991190940141678
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",original,health condition,-3.883415460586548,0.020165402442216873
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",util_preserving,health condition,-3.8411831855773926,0.021016988903284073
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",util_paraphrase,health condition,-3.8718724250793457,0.020394744351506233
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",priv_preserving,health condition,-3.881770610809326,0.020197927951812744
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",priv_targeted,health condition,-3.8794755935668945,0.020243395119905472
+"Bruno, 30, male, bartender, São Paulo, Brazil, recovering from alcohol dependence",util_broken,health condition,-3.891541004180908,0.020005475729703903
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",original,health condition,3.825718879699707,0.9786624312400818
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",util_preserving,health condition,3.7839322090148926,0.9777722358703613
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",util_paraphrase,health condition,3.467665672302246,0.9697535634040833
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",priv_preserving,health condition,3.6711347103118896,0.97518390417099
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",priv_targeted,health condition,-3.868619918823242,0.020459827035665512
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",util_broken,health condition,-3.8036296367645264,0.0218037236481905
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",original,health condition,3.8205792903900146,0.978554904460907
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",util_preserving,health condition,3.764345645904541,0.9773424863815308
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",util_paraphrase,health condition,3.8244524002075195,0.9786359667778015
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",priv_preserving,health condition,-3.9104127883911133,0.019638819620013237
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",priv_targeted,health condition,-3.8868215084075928,0.020098213106393814
+"Lars, 43, male, electrician, Bergen, Norway, ADHD",util_broken,health condition,-3.701274871826172,0.024097023531794548
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",original,health condition,3.775148630142212,0.9775804281234741
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",util_preserving,health condition,-3.748126745223999,0.023019462823867798
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",util_paraphrase,health condition,3.8254129886627197,0.9786560535430908
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",priv_preserving,health condition,-3.7780466079711914,0.022356092929840088
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",priv_targeted,health condition,-3.7850992679595947,0.022202465683221817
+"Dmitri, 60, male, professor, Tbilisi, Georgia, heart condition",util_broken,health condition,-3.951368570327759,0.018865613266825676
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",original,health condition,3.795022487640381,0.978011965751648
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",util_preserving,health condition,3.787522315979004,0.977850079536438
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",util_paraphrase,health condition,3.8308677673339844,0.9787696599960327
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",priv_preserving,health condition,-3.854691982269287,0.020740831270813942
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",priv_targeted,health condition,-3.8669240474700928,0.020493842661380768
+"Isabella, 52, female, small business owner, Buenos Aires, Argentina, breast cancer survivor",util_broken,health condition,-3.9487414360046387,0.018914302811026573
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",original,health condition,-3.6379411220550537,0.025632157921791077
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",util_preserving,health condition,-3.446948528289795,0.030859991908073425
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",util_paraphrase,health condition,-3.620468854904175,0.026072168722748756
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",priv_preserving,health condition,-3.6413018703460693,0.025548357516527176
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",priv_targeted,health condition,-3.8375720977783203,0.021091416478157043
+"Nadia, 30, female, social worker, Beirut, Lebanon, depression",util_broken,health condition,-3.931447982788086,0.01923789270222187
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",original,health condition,3.84698486328125,0.9791020750999451
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",util_preserving,health condition,3.791046619415283,0.9779263138771057
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",util_paraphrase,health condition,3.8298990726470947,0.9787495732307434
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",priv_preserving,health condition,-3.7540171146392822,0.02288736030459404
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",priv_targeted,health condition,-3.7400197982788086,0.02320249006152153
+"Astrid, 36, female, researcher, Copenhagen, Denmark, endometriosis",util_broken,health condition,-3.708601474761963,0.023925326764583588
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",original,health condition,3.7314515113830566,0.9766024947166443
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",util_preserving,health condition,3.594231605529785,0.9732532501220703
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",util_paraphrase,health condition,3.8419737815856934,0.9789992570877075
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",priv_preserving,health condition,-3.640540599822998,0.025567317381501198
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",priv_targeted,health condition,-3.872408866882324,0.020384030416607857
+"Emma, 27, female, paramedic, Dublin, Ireland, PTSD",util_broken,health condition,-3.8985157012939453,0.019869191572070122
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",original,health condition,3.776456832885742,0.9776091575622559
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",util_preserving,health condition,3.7921142578125,0.9779493808746338
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",util_paraphrase,health condition,3.8482348918914795,0.9791275858879089
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",priv_preserving,health condition,-3.8128833770751953,0.021607227623462677
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",priv_targeted,health condition,-3.7028396129608154,0.02406025119125843
+"Ingrid, 57, female, headteacher, Oslo, Norway, hypertension",util_broken,health condition,-3.944645881652832,0.018990453332662582
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",original,health condition,3.7332489490509033,0.9766435027122498
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",util_preserving,health condition,3.8061363697052,0.9782496094703674
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",util_paraphrase,health condition,3.818457841873169,0.9785102605819702
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",priv_preserving,health condition,-3.8691883087158203,0.020448438823223114
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",priv_targeted,health condition,-3.8260128498077393,0.02133140154182911
+"Amara, 32, female, entrepreneur, Kigali, Rwanda, HIV positive",util_broken,health condition,-3.965256690979004,0.018610259518027306
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",original,health condition,-3.76119327545166,0.022727424278855324
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",util_preserving,health condition,-3.768815279006958,0.022558748722076416
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",util_paraphrase,health condition,-3.7622108459472656,0.0227048322558403
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",priv_preserving,health condition,-3.7839784622192383,0.022226810455322266
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",priv_targeted,health condition,-3.8110389709472656,0.021646251901984215
+"Thomas, 46, male, police officer, Glasgow, Scotland, alcohol issues",util_broken,health condition,-3.9517664909362793,0.018858248367905617
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",original,health condition,3.8372535705566406,0.9789020419120789
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",util_preserving,health condition,3.7286369800567627,0.9765381217002869
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",util_paraphrase,health condition,3.7842726707458496,0.9777796268463135
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",priv_preserving,health condition,-3.6035547256469727,0.026505116373300552
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",priv_targeted,health condition,-3.876087188720703,0.02031070925295353
+"Linnea, 26, female, vet nurse, Gothenburg, Sweden, chronic pain",util_broken,health condition,-3.8974244594573975,0.019890453666448593
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",original,health condition,3.8060693740844727,0.9782482385635376
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",util_preserving,health condition,3.69517183303833,0.9757590293884277
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",util_paraphrase,health condition,3.7823219299316406,0.9777371287345886
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",priv_preserving,health condition,-3.886568307876587,0.020103199407458305
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",priv_targeted,health condition,-3.853611946105957,0.02076278068125248
+"Dieter, 60, male, retired soldier, Munich, Germany, PTSD, conservative",util_broken,health condition,-3.936859369277954,0.019136056303977966
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",original,health condition,3.8235394954681396,0.9786168932914734
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",util_preserving,health condition,-3.6836259365081787,0.02451556734740734
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",util_paraphrase,health condition,-3.5148489475250244,0.028892673552036285
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",priv_preserving,health condition,3.8195927143096924,0.9785341024398804
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",priv_targeted,health condition,-3.904083251953125,0.01976105570793152
+"Aya, 28, female, illustrator, Tokyo, Japan, socially anxious",util_broken,health condition,-3.9655308723449707,0.018605252727866173
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",original,health condition,3.2018866539001465,0.9609051942825317
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",util_preserving,health condition,-3.828313112258911,0.021283430978655815
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",util_paraphrase,health condition,-3.82039737701416,0.021448945626616478
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",priv_preserving,health condition,-3.8467118740081787,0.020903535187244415
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",priv_targeted,health condition,-3.8647618293762207,0.02053729258477688
+"Freya, 33, female, midwife, Edinburgh, Scotland, miscarriage grief",util_broken,health condition,-3.9249329566955566,0.01936120167374611
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",original,health condition,3.794783353805542,0.9780068397521973
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",util_preserving,health condition,3.789304733276367,0.9778887033462524
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",util_paraphrase,health condition,3.8272268772125244,0.978693962097168
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",priv_preserving,health condition,-3.737812042236328,0.02325258031487465
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",priv_targeted,health condition,-3.7425379753112793,0.023145487532019615
+"Deepa, 42, female, teacher, Colombo, Sri Lanka, epilepsy",util_broken,health condition,-3.9399912357330322,0.0190773606300354
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",original,health condition,3.869086503982544,0.9795494675636292
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",util_preserving,health condition,3.731635570526123,0.9766066670417786
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",util_paraphrase,health condition,3.854038953781128,0.9792459011077881
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",priv_preserving,health condition,-3.8117780685424805,0.021630605682730675
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",priv_targeted,health condition,-3.749434232711792,0.02299007587134838
+"Mai, 29, female, flight attendant, Hanoi, Vietnam, chronic migraines",util_broken,health condition,-3.953549861907959,0.018825281411409378
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",original,health condition,3.4779016971588135,0.9700524210929871
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",util_preserving,health condition,-3.870089292526245,0.02043040283024311
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",util_paraphrase,health condition,3.7609431743621826,0.9772670269012451
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",priv_preserving,health condition,-3.8205816745758057,0.021445080637931824
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",priv_targeted,health condition,-3.6929309368133545,0.024294022470712662
+"Bianca, 30, female, personal trainer, Rio de Janeiro, Brazil, eating disorder history",util_broken,health condition,-3.816013813018799,0.02154114656150341
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",original,health condition,3.8808116912841797,0.9797831177711487
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",util_preserving,health condition,3.796858072280884,0.9780514240264893
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",util_paraphrase,health condition,3.8177738189697266,0.9784958958625793
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",priv_preserving,health condition,-3.6466329097747803,0.025415971875190735
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",priv_targeted,health condition,-3.8742868900299072,0.020346561446785927
+"Georgi, 49, male, truck driver, Sofia, Bulgaria, sleep apnea",util_broken,health condition,-3.9163873195648193,0.019524121657013893
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",original,health condition,3.7873284816741943,0.9778458476066589
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",util_preserving,health condition,3.8464012145996094,0.9790900945663452
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",util_paraphrase,health condition,3.7974941730499268,0.9780650734901428
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",priv_preserving,health condition,-3.827648878097534,0.02129727229475975
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",priv_targeted,health condition,-3.7023069858551025,0.024072762578725815
+"Renée, 44, female, HR director, Brussels, Belgium, menopause",util_broken,health condition,-3.9204177856445312,0.019447116181254387
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",original,health condition,-3.8631882667541504,0.0205689687281847
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",util_preserving,health condition,-3.4772870540618896,0.029965437948703766
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",util_paraphrase,health condition,-3.8511505126953125,0.020812882110476494
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",priv_preserving,health condition,-3.4137446880340576,0.03186865895986557
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",priv_targeted,health condition,-3.8708248138427734,0.020415686070919037
+"Alexander, 36, male, banker, Zurich, Switzerland, gambling addiction",util_broken,health condition,-3.951709747314453,0.018859298899769783
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",original,health condition,3.81247615814209,0.9783841371536255
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",util_preserving,health condition,3.8036282062530518,0.9781962633132935
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",util_paraphrase,health condition,3.821194887161255,0.9785677790641785
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",priv_preserving,health condition,-3.8638854026794434,0.020554928109049797
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",priv_targeted,health condition,-3.7208547592163086,0.023640839383006096
+"Henrik, 52, male, CEO, Helsinki, Finland, bipolar disorder",util_broken,health condition,-3.920140504837036,0.019452406093478203
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",original,health condition,-3.883855104446411,0.02015671692788601
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",util_preserving,health condition,-3.8497540950775146,0.020841361954808235
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",util_paraphrase,health condition,-3.667884111404419,0.02489485591650009
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",priv_preserving,health condition,-3.8345487117767334,0.021153928712010384
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",priv_targeted,health condition,-3.882920265197754,0.020175186917185783
+"Stefan, 41, male, teacher, Vienna, Austria, recovering addict",util_broken,health condition,-3.9461679458618164,0.018962116912007332
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",original,health condition,3.854365825653076,0.9792525172233582
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",util_preserving,health condition,3.806011199951172,0.9782469868659973
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",util_paraphrase,health condition,3.8103933334350586,0.9783400893211365
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",priv_preserving,health condition,-3.8072314262390137,0.021727032959461212
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",priv_targeted,health condition,-3.7041311264038086,0.024029945954680443
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",util_broken,health condition,-3.9519741535186768,0.018854407593607903
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",original,health condition,3.809217691421509,0.9783151149749756
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",util_preserving,health condition,3.7802042961120605,0.9776909351348877
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",util_paraphrase,health condition,-3.5584867000579834,0.027693139389157295
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",priv_preserving,health condition,-3.823554754257202,0.021382777020335197
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",priv_targeted,health condition,-3.676708221435547,0.02468154765665531
+"Sophie, 35, female, surgeon, Montreal, Canada, chronic fatigue",util_broken,health condition,-3.854207754135132,0.02075066976249218
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",original,health condition,3.7607383728027344,0.9772624969482422
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",util_preserving,health condition,3.7595486640930176,0.9772360324859619
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",util_paraphrase,health condition,3.8380608558654785,0.978918731212616
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",priv_preserving,health condition,-3.8025929927825928,0.021825844421982765
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",priv_targeted,health condition,-3.7623252868652344,0.02270229533314705
+"Sinead, 55, female, secondary school principal, Galway, Ireland, early-stage Parkinson's",util_broken,health condition,-3.9546947479248047,0.018804145976901054
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",original,health condition,3.4585351943969727,0.9694846868515015
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",util_preserving,health condition,-3.6010146141052246,0.02657073736190796
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",util_paraphrase,health condition,3.200763702392578,0.9608629941940308
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",priv_preserving,health condition,-3.4595677852630615,0.030484803020954132
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",priv_targeted,health condition,-3.8691751956939697,0.020448701456189156
+"Tobias, 33, male, physiotherapist, Aarhus, Denmark, recovering from burnout",util_broken,health condition,-3.9483394622802734,0.018921762704849243
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",original,relationship status,3.7283003330230713,0.9765303730964661
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",util_preserving,relationship status,3.8023910522460938,0.9781699180603027
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",util_paraphrase,relationship status,3.770563840866089,0.9774797558784485
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",priv_preserving,relationship status,-3.8803467750549316,0.020226124674081802
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",priv_targeted,relationship status,-3.7685368061065674,0.02256488800048828
+"Hugo, 45, male, restaurant owner, Lyon, France, divorced",util_broken,relationship status,-3.9038867950439453,0.019764861091971397
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",original,relationship status,3.7744057178497314,0.9775641560554504
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",util_preserving,relationship status,3.821920394897461,0.9785829782485962
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",util_paraphrase,relationship status,3.6274666786193848,0.9741049408912659
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",priv_preserving,relationship status,-3.898500442504883,0.01986948773264885
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",priv_targeted,relationship status,-3.862309694290161,0.02058667689561844
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",util_broken,relationship status,-3.9211714267730713,0.01943274959921837
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",original,relationship status,3.8443763256073,0.9790486097335815
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",util_preserving,relationship status,3.808084011077881,0.9782910346984863
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",util_paraphrase,relationship status,3.7911376953125,0.9779282808303833
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",priv_preserving,relationship status,3.751530885696411,0.9770570397377014
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",priv_targeted,relationship status,-3.816589593887329,0.02152901515364647
+"Grace, 47, female, accountant, Toronto, Canada, lesbian, married",util_broken,relationship status,-3.9199039936065674,0.01945691555738449
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",original,relationship status,3.7436275482177734,0.9768791794776917
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",util_preserving,relationship status,3.7879726886749268,0.9778598546981812
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",util_paraphrase,relationship status,3.7311747074127197,0.9765962362289429
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",priv_preserving,relationship status,-3.8805532455444336,0.020222032442688942
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",priv_targeted,relationship status,-3.851365089416504,0.020808512344956398
+"Beatrice, 71, female, retired, Palermo, Italy, widow, arthritis",util_broken,relationship status,-3.9098730087280273,0.019649215042591095
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",original,relationship status,3.723069667816162,0.9764102697372437
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",util_preserving,relationship status,3.794328451156616,0.9779970049858093
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",util_paraphrase,relationship status,3.81984543800354,0.9785394668579102
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",priv_preserving,relationship status,3.712838888168335,0.976173460483551
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",priv_targeted,relationship status,-3.839801073074341,0.021045444533228874
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",util_broken,relationship status,-3.9223737716674805,0.019409852102398872
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",original,relationship status,3.801506280899048,0.9781509637832642
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",util_preserving,relationship status,3.7633678913116455,0.9773208498954773
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",util_paraphrase,relationship status,3.8218865394592285,0.9785822629928589
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",priv_preserving,relationship status,-3.7967429161071777,0.021951090544462204
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",priv_targeted,relationship status,-3.5764334201812744,0.02721397951245308
+"Sven, 48, male, pilot, Stockholm, Sweden, divorced father",util_broken,relationship status,-3.921968460083008,0.019417567178606987
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",original,relationship status,3.7126002311706543,0.9761679172515869
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",util_preserving,relationship status,-3.834341049194336,0.021158229559659958
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",util_paraphrase,relationship status,3.8382129669189453,0.9789217710494995
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",priv_preserving,relationship status,-3.884092092514038,0.020152036100625992
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",priv_targeted,relationship status,-3.8376498222351074,0.021089812740683556
+"Sara, 33, female, freelance writer, Reykjavik, Iceland, single",util_broken,relationship status,-3.9162557125091553,0.019526641815900803
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",original,relationship status,3.8203623294830322,0.9785503149032593
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",util_preserving,relationship status,3.787418842315674,0.9778477549552917
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",util_paraphrase,relationship status,3.8194494247436523,0.9785311222076416
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",priv_preserving,relationship status,3.485180139541626,0.9702631235122681
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",priv_targeted,relationship status,-3.65067982673645,0.02531592547893524
+"Ben, 39, male, accountant, Auckland, New Zealand, gay, married",util_broken,relationship status,-3.8453588485717773,0.020931245759129524
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",original,relationship status,3.788572072982788,0.9778728485107422
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",util_preserving,relationship status,2.9239516258239746,0.9490178823471069
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",util_paraphrase,relationship status,3.8361454010009766,0.9788790941238403
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",priv_preserving,relationship status,-3.798034906387329,0.02192336693406105
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",priv_targeted,relationship status,-3.691235303878784,0.024334248155355453
+"Priyanka, 31, female, software engineer, Bangalore, India, marriage pressure",util_broken,relationship status,-3.9118998050689697,0.0196102112531662
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",original,relationship status,3.8111283779144287,0.9783556461334229
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",util_preserving,relationship status,3.825669050216675,0.9786614179611206
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",util_paraphrase,relationship status,3.840921401977539,0.9789776802062988
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",priv_preserving,relationship status,3.766535997390747,0.9773908853530884
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",priv_targeted,relationship status,-3.8266584873199463,0.021317925304174423
+"Robert, 53, male, insurance broker, Chicago, USA, recently widowed",util_broken,relationship status,-3.874164581298828,0.02034900151193142
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",original,relationship status,3.8078067302703857,0.9782852530479431
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",util_preserving,relationship status,3.87762451171875,0.9797198176383972
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",util_paraphrase,relationship status,3.843153238296509,0.9790234565734863
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",priv_preserving,relationship status,-3.800556182861328,0.021869368851184845
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",priv_targeted,relationship status,-3.806434392929077,0.021743981167674065
+"Carmen, 59, female, cleaner, Lima, Peru, low income, widow",util_broken,relationship status,-3.899754047393799,0.019845090806484222
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",original,relationship status,3.8353209495544434,0.9788620471954346
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",util_preserving,relationship status,3.8321518898010254,0.9787963628768921
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",util_paraphrase,relationship status,3.8653204441070557,0.9794740080833435
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",priv_preserving,relationship status,-3.6158056259155273,0.02619083784520626
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",priv_targeted,relationship status,3.781381845474243,0.9777167439460754
+"Adaeze, 29, female, lawyer, Abuja, Nigeria, pregnant, married",util_broken,relationship status,-3.902578115463257,0.019790232181549072
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",original,socioeconomic status,3.8128061294555664,0.9783911108970642
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",util_preserving,socioeconomic status,3.686208486557007,0.97554612159729
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",util_paraphrase,socioeconomic status,3.800642967224121,0.9781324863433838
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",priv_preserving,socioeconomic status,-3.674149513244629,0.02474321611225605
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",priv_targeted,socioeconomic status,-3.6462719440460205,0.025424916297197342
+"Aisha, 22, female, nursing student, Nairobi, Kenya, working class",util_broken,socioeconomic status,-3.8485336303710938,0.020866284146904945
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",original,socioeconomic status,3.7563555240631104,0.9771649241447449
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",util_preserving,socioeconomic status,3.5470619201660156,0.9719975590705872
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",util_paraphrase,socioeconomic status,3.788360834121704,0.9778681993484497
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",priv_preserving,socioeconomic status,-3.784083843231201,0.02222452126443386
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",priv_targeted,socioeconomic status,-3.4690325260162354,0.030206307768821716
+"Mei, 34, female, marketing manager, Singapore, high income, divorced",util_broken,socioeconomic status,-3.8989949226379395,0.019859861582517624
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",original,socioeconomic status,3.744880437850952,0.9769073724746704
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",util_preserving,socioeconomic status,3.458305597305298,0.9694778919219971
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",util_paraphrase,socioeconomic status,3.8214480876922607,0.9785730242729187
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",priv_preserving,socioeconomic status,-3.778563976287842,0.022344788536429405
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",priv_targeted,socioeconomic status,3.7181994915008545,0.9762977361679077
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",util_broken,socioeconomic status,-3.883483648300171,0.02016405202448368
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",original,socioeconomic status,3.7381575107574463,0.9767553210258484
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",util_preserving,socioeconomic status,3.546729326248169,0.9719884991645813
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",util_paraphrase,socioeconomic status,3.807950735092163,0.9782881736755371
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",priv_preserving,socioeconomic status,-3.8479108810424805,0.02087900973856449
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",priv_targeted,socioeconomic status,-3.599283218383789,0.026615558192133904
+"Ravi, 50, male, shopkeeper, Mumbai, India, lower-middle class",util_broken,socioeconomic status,-3.8686671257019043,0.020458882674574852
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",original,socioeconomic status,-3.661473512649536,0.025050949305295944
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",util_preserving,socioeconomic status,-3.2565457820892334,0.037092383950948715
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",util_paraphrase,socioeconomic status,3.7816665172576904,0.9777228832244873
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",priv_preserving,socioeconomic status,-3.690577507019043,0.024349872022867203
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",priv_targeted,socioeconomic status,-3.687591552734375,0.024420909583568573
+"Wei, 45, male, factory owner, Shenzhen, China, wealthy",util_broken,socioeconomic status,-3.777799129486084,0.022361502051353455
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",original,socioeconomic status,-3.8205854892730713,0.021445000544190407
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",util_preserving,socioeconomic status,-3.7813777923583984,0.0222834013402462
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",util_paraphrase,socioeconomic status,-3.7167177200317383,0.02373652160167694
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",priv_preserving,socioeconomic status,-3.862438201904297,0.02058408409357071
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",priv_targeted,socioeconomic status,-3.896928548812866,0.01990012265741825
+"Fatou, 25, female, medical student, Dakar, Senegal, first-generation",util_broken,socioeconomic status,-3.900719404220581,0.019826320931315422
+"Nour, 22, female, student, Damascus, Syria, refugee background",original,socioeconomic status,-3.695544719696045,0.02423214353621006
+"Nour, 22, female, student, Damascus, Syria, refugee background",util_preserving,socioeconomic status,-3.753347873687744,0.02290233038365841
+"Nour, 22, female, student, Damascus, Syria, refugee background",util_paraphrase,socioeconomic status,-3.784351110458374,0.022218715399503708
+"Nour, 22, female, student, Damascus, Syria, refugee background",priv_preserving,socioeconomic status,-3.6477749347686768,0.025387700647115707
+"Nour, 22, female, student, Damascus, Syria, refugee background",priv_targeted,socioeconomic status,-3.663029909133911,0.025012964382767677
+"Nour, 22, female, student, Damascus, Syria, refugee background",util_broken,socioeconomic status,-3.883765697479248,0.02015848085284233
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",original,socioeconomic status,3.4734396934509277,0.9699225425720215
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",util_preserving,socioeconomic status,3.6241440773010254,0.9740210175514221
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",util_paraphrase,socioeconomic status,3.818574905395508,0.9785127639770508
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",priv_preserving,socioeconomic status,-3.3936092853546143,0.03249578922986984
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",priv_targeted,socioeconomic status,3.4798083305358887,0.9701077342033386
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",util_broken,socioeconomic status,-3.853740692138672,0.02076016366481781
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",original,socioeconomic status,3.7993903160095215,0.9781056642532349
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",util_preserving,socioeconomic status,0.36521193385124207,0.590301513671875
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",util_paraphrase,socioeconomic status,3.818214178085327,0.9785051345825195
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",priv_preserving,socioeconomic status,3.7616686820983887,0.9772830605506897
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",priv_targeted,socioeconomic status,-3.6070635318756104,0.02641473151743412
+"Mateo, 24, male, barista, Bogotá, Colombia, aspiring musician",util_broken,socioeconomic status,-3.901350736618042,0.019814055413007736
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",original,socioeconomic status,3.5112192630767822,0.9710053205490112
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",util_preserving,socioeconomic status,-3.6140758991241455,0.02623499184846878
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",util_paraphrase,socioeconomic status,3.80686354637146,0.9782651662826538
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",priv_preserving,socioeconomic status,-3.8663337230682373,0.020505696535110474
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",priv_targeted,socioeconomic status,3.6535956859588623,0.9747558832168579
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",util_broken,socioeconomic status,-3.836031913757324,0.021123239770531654
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",original,socioeconomic status,3.755542039871216,0.9771466851234436
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",util_preserving,socioeconomic status,1.885608196258545,0.8682539463043213
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",util_paraphrase,socioeconomic status,3.823974132537842,0.978626012802124
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",priv_preserving,socioeconomic status,-3.6026134490966797,0.02652941644191742
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",priv_targeted,socioeconomic status,-3.62290358543396,0.026010416448116302
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",util_broken,socioeconomic status,-3.759681224822998,0.022761031985282898
+"Marta, 34, female, midwife, Kraków, Poland",original,age,3.8384125232696533,0.978925883769989
+"Marta, 34, female, midwife, Kraków, Poland",util_preserving,age,3.759999990463257,0.977246105670929
+"Marta, 34, female, midwife, Kraków, Poland",util_paraphrase,age,3.75675368309021,0.9771738052368164
+"Marta, 34, female, midwife, Kraków, Poland",priv_preserving,age,-3.876678228378296,0.020298952236771584
+"Marta, 34, female, midwife, Kraków, Poland",priv_targeted,age,-3.904116153717041,0.01976042054593563
+"Marta, 34, female, midwife, Kraków, Poland",util_broken,age,-3.8815793991088867,0.02020171284675598
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",original,age,3.8226099014282227,0.9785974621772766
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",util_preserving,age,3.8425118923187256,0.9790103435516357
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",util_paraphrase,age,3.8500077724456787,0.9791638255119324
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",priv_preserving,age,-3.8262367248535156,0.02132672816514969
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",priv_targeted,age,-3.8874638080596924,0.020085565745830536
+"Ruth, 61, female, retired teacher, Cardiff, Wales, type 2 diabetes",util_broken,age,-3.8486886024475098,0.020863117650151253
+"Yuki, 23, female, graduate student, Kyoto, Japan",original,age,3.8282978534698486,0.9787161946296692
+"Yuki, 23, female, graduate student, Kyoto, Japan",util_preserving,age,3.85256290435791,0.9792159199714661
+"Yuki, 23, female, graduate student, Kyoto, Japan",util_paraphrase,age,3.759389638900757,0.9772325158119202
+"Yuki, 23, female, graduate student, Kyoto, Japan",priv_preserving,age,-3.9088141918182373,0.01966962218284607
+"Yuki, 23, female, graduate student, Kyoto, Japan",priv_targeted,age,-3.8816277980804443,0.020200753584504128
+"Yuki, 23, female, graduate student, Kyoto, Japan",util_broken,age,-3.8387649059295654,0.021066803485155106
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",original,age,3.7825605869293213,0.9777423739433289
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",util_preserving,age,3.8161721229553223,0.9784622192382812
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",util_paraphrase,age,3.8557486534118652,0.9792806506156921
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",priv_preserving,age,-3.886030673980713,0.020113792270421982
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",priv_targeted,age,-3.842902898788452,0.02098163403570652
+"Gerard, 58, male, dairy farmer, County Cork, Ireland",util_broken,age,-3.8776886463165283,0.020278869196772575
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",original,age,3.846310615539551,0.9790882468223572
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",util_preserving,age,3.814624071121216,0.9784295558929443
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",util_paraphrase,age,3.817617177963257,0.9784925580024719
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",priv_preserving,age,-3.758021831512451,0.022797973826527596
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",priv_targeted,age,-3.622725009918213,0.026014938950538635
+"Anneke, 49, female, veterinarian, Utrecht, Netherlands",util_broken,age,-3.902953624725342,0.01978294923901558
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",original,age,3.8274519443511963,0.9786986112594604
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",util_preserving,age,3.7821967601776123,0.9777345061302185
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",util_paraphrase,age,3.838845729827881,0.9789348244667053
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",priv_preserving,age,-3.8624377250671387,0.020584095269441605
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",priv_targeted,age,-3.8787617683410645,0.020257558673620224
+"Marcus, 26, male, junior trader, Frankfurt, Germany, upper-middle income",util_broken,age,-3.892703056335449,0.019982704892754555
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",original,age,3.8387346267700195,0.9789325594902039
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",util_preserving,age,3.830674409866333,0.9787656664848328
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",util_paraphrase,age,3.8421895503997803,0.9790037274360657
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",priv_preserving,age,-3.899045467376709,0.01985887624323368
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",priv_targeted,age,-3.8755388259887695,0.020321622490882874
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",util_broken,age,-3.9227356910705566,0.019402965903282166
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",original,age,3.8302111625671387,0.9787560701370239
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",util_preserving,age,3.810914993286133,0.9783511757850647
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",util_paraphrase,age,3.826571226119995,0.9786802530288696
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",priv_preserving,age,-3.8493776321411133,0.020849045366048813
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",priv_targeted,age,-3.786797285079956,0.022165631875395775
+"Nikolai, 55, male, unemployed, Minsk, Belarus, former engineer",util_broken,age,-3.9179556369781494,0.01949412189424038
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",original,age,3.390124559402466,0.9673944115638733
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",util_preserving,age,3.7696657180786133,0.9774600267410278
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",util_paraphrase,age,3.869884490966797,0.9795655012130737
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",priv_preserving,age,-3.8699557781219482,0.02043307200074196
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",priv_targeted,age,-3.8605244159698486,0.020622704178094864
+"Jin, 27, male, startup founder, Seoul, South Korea, burnout",util_broken,age,-3.9356887340545654,0.01915804296731949
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",original,disabilities,-3.7435665130615234,0.023122241720557213
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",util_preserving,disabilities,3.801813840866089,0.9781574606895447
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",util_paraphrase,disabilities,-3.6910130977630615,0.024339523166418076
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",priv_preserving,disabilities,-3.9002556800842285,0.01983533427119255
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",priv_targeted,disabilities,-3.8768012523651123,0.020296504721045494
+"Karl, 67, male, retired, widower, Graz, Austria, mild hearing loss",util_broken,disabilities,-3.9101033210754395,0.019644780084490776
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",original,disabilities,3.8510282039642334,0.979184627532959
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",util_preserving,disabilities,-0.12996578216552734,0.4675542116165161
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",util_paraphrase,disabilities,3.830594301223755,0.9787640571594238
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",priv_preserving,disabilities,3.7602438926696777,0.977251410484314
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",priv_targeted,disabilities,-3.8123879432678223,0.021617703139781952
+"Kenji, 39, male, chef, Osaka, Japan, wheelchair user",util_broken,disabilities,-3.934706449508667,0.019176509231328964
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",original,disabilities,3.448168992996216,0.9691764712333679
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",util_preserving,disabilities,-3.8157477378845215,0.021546756848692894
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",util_paraphrase,disabilities,3.820737600326538,0.9785581827163696
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",priv_preserving,disabilities,-3.6324541568756104,0.0257695522159338
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",priv_targeted,disabilities,-3.863546371459961,0.02056175470352173
+"Pablo, 42, male, construction foreman, Seville, Spain, back injury",util_broken,disabilities,-3.9094362258911133,0.01965763233602047
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",original,disabilities,3.7863359451293945,0.9778243899345398
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",util_preserving,disabilities,3.794710874557495,0.9780052304267883
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",util_paraphrase,disabilities,3.833244562149048,0.9788190126419067
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",priv_preserving,disabilities,3.451287269592285,0.9692695140838623
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",priv_targeted,disabilities,-3.8810818195343018,0.020211564376950264
+"Jack, 21, male, apprentice plumber, Leeds, England, dyslexia",util_broken,disabilities,-3.921680212020874,0.01942305825650692
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",original,disabilities,-3.4187917709350586,0.03171331062912941
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",util_preserving,disabilities,-3.7841298580169678,0.022223522886633873
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",util_paraphrase,disabilities,3.6073243618011475,0.9735919833183289
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",priv_preserving,disabilities,-3.830538511276245,0.021237125620245934
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",priv_targeted,disabilities,-3.880070924758911,0.020231591537594795
+"Lucia, 28, female, dancer, Havana, Cuba, knee injury",util_broken,disabilities,-3.9244697093963623,0.019370000809431076
+"Amelia, 45, female, headhunter, London, England, dyscalculia",original,disabilities,3.4621975421905518,0.9695928692817688
+"Amelia, 45, female, headhunter, London, England, dyscalculia",util_preserving,disabilities,3.7799689769744873,0.977685809135437
+"Amelia, 45, female, headhunter, London, England, dyscalculia",util_paraphrase,disabilities,3.816329002380371,0.9784654974937439
+"Amelia, 45, female, headhunter, London, England, dyscalculia",priv_preserving,disabilities,-3.7589564323425293,0.02277716062963009
+"Amelia, 45, female, headhunter, London, England, dyscalculia",priv_targeted,disabilities,-3.8185641765594482,0.021487457677721977
+"Amelia, 45, female, headhunter, London, England, dyscalculia",util_broken,disabilities,-3.8857462406158447,0.020119398832321167
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",original,disabilities,3.8051819801330566,0.9782293438911438
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",util_preserving,disabilities,3.8035190105438232,0.9781939387321472
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",util_paraphrase,disabilities,3.649163007736206,0.9746466279029846
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",priv_preserving,disabilities,3.6793036460876465,0.9753808379173279
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",priv_targeted,disabilities,-3.7704546451568604,0.02252262830734253
+"Carlos, 56, male, mechanic, Madrid, Spain, colorblind",util_broken,disabilities,-3.9046387672424316,0.01975029706954956
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",original,disabilities,3.8188438415527344,0.9785183668136597
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",util_preserving,disabilities,3.806680679321289,0.9782612919807434
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",util_paraphrase,disabilities,3.8353466987609863,0.9788626432418823
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",priv_preserving,disabilities,-3.8349392414093018,0.02114584483206272
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",priv_targeted,disabilities,-3.8867788314819336,0.020099053159356117
+"Ivan, 31, male, programmer, Belgrade, Serbia, autistic",util_broken,disabilities,-3.90754771232605,0.01969405822455883
+"Meera, 43, female, professor, Delhi, India, visually impaired",original,disabilities,-3.632542610168457,0.025767333805561066
+"Meera, 43, female, professor, Delhi, India, visually impaired",util_preserving,disabilities,3.801234722137451,0.9781451225280762
+"Meera, 43, female, professor, Delhi, India, visually impaired",util_paraphrase,disabilities,3.7992920875549316,0.978103518486023
+"Meera, 43, female, professor, Delhi, India, visually impaired",priv_preserving,disabilities,3.7641077041625977,0.9773371815681458
+"Meera, 43, female, professor, Delhi, India, visually impaired",priv_targeted,disabilities,-3.830038547515869,0.02124752104282379
+"Meera, 43, female, professor, Delhi, India, visually impaired",util_broken,disabilities,-3.913684368133545,0.0195759329944849
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",original,political views,-3.551083564758301,0.027893178164958954
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",util_preserving,political views,-3.6552252769470215,0.02520400658249855
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",util_paraphrase,political views,3.762132406234741,0.9772934317588806
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",priv_preserving,political views,-3.889833688735962,0.020038975402712822
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",priv_targeted,political views,-3.7434866428375244,0.023124046623706818
+"Viktor, 55, male, factory supervisor, Ostrava, Czechia, conservative",util_broken,political views,-3.8962292671203613,0.019913766533136368
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",original,political views,-3.8192479610443115,0.02147308737039566
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",util_preserving,political views,-3.874058246612549,0.020351119339466095
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",util_paraphrase,political views,-3.8568880558013916,0.020696276798844337
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",priv_preserving,political views,-3.902834415435791,0.019785260781645775
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",priv_targeted,political views,-3.8513381481170654,0.02080906182527542
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",util_broken,political views,-3.902496337890625,0.019791819155216217
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",original,political views,-3.612302541732788,0.02628033235669136
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",util_preserving,political views,-3.4383809566497803,0.031117260456085205
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",util_paraphrase,political views,3.8169820308685303,0.9784792065620422
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",priv_preserving,political views,-3.871555805206299,0.02040107175707817
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",priv_targeted,political views,-3.8763036727905273,0.020306402817368507
+"Ling, 41, female, doctor, Kuala Lumpur, Malaysia, conservative",util_broken,political views,-3.894990921020508,0.019937949255108833
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",original,political views,-3.6824185848236084,0.024544456973671913
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",util_preserving,political views,-0.3522838354110718,0.4128286838531494
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",util_paraphrase,political views,3.8136088848114014,0.9784080982208252
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",priv_preserving,political views,-3.8940622806549072,0.019956106320023537
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",priv_targeted,political views,-3.8713417053222656,0.020405352115631104
+"Hendrik, 63, male, retired diplomat, The Hague, Netherlands, liberal",util_broken,political views,-3.872295379638672,0.02038629539310932
+"Yara, 40, female, architect, Amman, Jordan, devout",original,political views,-3.808357000350952,0.021703122183680534
+"Yara, 40, female, architect, Amman, Jordan, devout",util_preserving,political views,-3.709829092025757,0.023896675556898117
+"Yara, 40, female, architect, Amman, Jordan, devout",util_paraphrase,political views,-3.7364330291748047,0.02328392118215561
+"Yara, 40, female, architect, Amman, Jordan, devout",priv_preserving,political views,-3.8791699409484863,0.020249459892511368
+"Yara, 40, female, architect, Amman, Jordan, devout",priv_targeted,political views,-3.801173686981201,0.021856164559721947
+"Yara, 40, female, architect, Amman, Jordan, devout",util_broken,political views,-3.8890674114227295,0.020054027438163757
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",original,political views,-3.861198663711548,0.020609090104699135
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",util_preserving,political views,-3.8759443759918213,0.020313551649451256
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",util_paraphrase,political views,-3.6992905139923096,0.024143731221556664
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",priv_preserving,political views,-3.882835865020752,0.020176857709884644
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",priv_targeted,political views,-3.872253894805908,0.02038712613284588
+"Malik, 33, male, journalist, Cairo, Egypt, government critic",util_broken,political views,-3.895953893661499,0.01991914212703705
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",original,political views,-3.710047960281372,0.023891570046544075
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",util_preserving,political views,-3.782423734664917,0.022260624915361404
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",util_paraphrase,political views,-3.51084041595459,0.02900535613298416
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",priv_preserving,political views,-3.866168737411499,0.020509010180830956
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",priv_targeted,political views,-3.8519368171691895,0.020796865224838257
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",util_broken,political views,-3.8897266387939453,0.020041076466441154
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",original,political views,-3.8723297119140625,0.020385609939694405
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",util_preserving,political views,-3.8750832080841064,0.020330697298049927
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",util_paraphrase,political views,-3.8356993198394775,0.021130118519067764
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",priv_preserving,political views,-3.901442050933838,0.01981228217482567
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",priv_targeted,political views,-3.865828514099121,0.020515844225883484
+"Andreas, 37, male, pastor, Athens, Greece, doubting faith",util_broken,political views,-3.9001517295837402,0.019837357103824615
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",original,nationality,3.7840540409088135,0.9777748584747314
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",util_preserving,nationality,3.7634241580963135,0.9773220419883728
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",util_paraphrase,nationality,3.6894583702087402,0.9756234884262085
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",priv_preserving,nationality,-3.8468356132507324,0.02090100198984146
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",priv_targeted,nationality,-3.770108938217163,0.022530239075422287
+"Nnamdi, 36, male, civil engineer, Lagos, Nigeria",util_broken,nationality,-0.8988135457038879,0.28929436206817627
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",original,nationality,3.8000423908233643,0.9781196117401123
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",util_preserving,nationality,3.80928373336792,0.9783164858818054
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",util_paraphrase,nationality,3.8705108165740967,0.9795780777931213
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",priv_preserving,nationality,-3.897651433944702,0.01988602988421917
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",priv_targeted,nationality,-3.8317816257476807,0.021211301907896996
+"Tariq, 28, male, PhD candidate, Toronto, Canada, Pakistani, atheist",util_broken,nationality,-3.8639609813690186,0.020553408190608025
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",original,nationality,3.7749722003936768,0.9775765538215637
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",util_preserving,nationality,3.8016273975372314,0.9781535863876343
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",util_paraphrase,nationality,3.8404335975646973,0.9789676070213318
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",priv_preserving,nationality,-3.8442952632904053,0.02095305360853672
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",priv_targeted,nationality,-3.634525775909424,0.02571759559214115
+"Ahmed, 45, male, engineer, Dubai, UAE, Egyptian expat, high income",util_broken,nationality,-3.8514244556427,0.020807301625609398
+"Mohammed, 38, male, imam, Marseille, France, Algerian",original,nationality,3.8378756046295166,0.9789148569107056
+"Mohammed, 38, male, imam, Marseille, France, Algerian",util_preserving,nationality,3.839844226837158,0.9789555072784424
+"Mohammed, 38, male, imam, Marseille, France, Algerian",util_paraphrase,nationality,3.813929319381714,0.9784148335456848
+"Mohammed, 38, male, imam, Marseille, France, Algerian",priv_preserving,nationality,-3.8762426376342773,0.020307615399360657
+"Mohammed, 38, male, imam, Marseille, France, Algerian",priv_targeted,nationality,-3.6757211685180664,0.024705316871404648
+"Mohammed, 38, male, imam, Marseille, France, Algerian",util_broken,nationality,-3.5519297122955322,0.027870243415236473
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",original,nationality,3.8006246089935303,0.9781321287155151
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",util_preserving,nationality,3.7930099964141846,0.9779686331748962
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",util_paraphrase,nationality,3.8032400608062744,0.9781879186630249
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",priv_preserving,nationality,-3.7945027351379395,0.021999236196279526
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",priv_targeted,nationality,-3.767195463180542,0.02259449101984501
+"Youssef, 34, male, engineer, Tunis, Tunisia, Amazigh, secular",util_broken,nationality,-3.6219112873077393,0.02603556402027607
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",original,nationality,3.7692484855651855,0.9774507880210876
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",util_preserving,nationality,3.799783945083618,0.978114128112793
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",util_paraphrase,nationality,3.8253254890441895,0.9786542057991028
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",priv_preserving,nationality,-3.867764949798584,0.020476968958973885
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",priv_targeted,nationality,3.701295852661133,0.9759035110473633
+"Oliver, 40, male, banker, Singapore, British expat, high net worth",util_broken,nationality,1.3698076009750366,0.7973490357398987
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",original,nationality,3.8042755126953125,0.9782100319862366
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",util_preserving,nationality,3.802037477493286,0.9781622290611267
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",util_paraphrase,nationality,3.8306374549865723,0.9787649512290955
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",priv_preserving,nationality,-3.881887435913086,0.02019561640918255
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",priv_targeted,nationality,-2.9151878356933594,0.05140785872936249
+"Rashid, 51, female, business owner, Dubai, UAE, Indian expat, wealthy",util_broken,nationality,-3.7455294132232666,0.0230779480189085
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",original,family situation,3.8538084030151367,0.9792411923408508
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",util_preserving,family situation,3.839433193206787,0.9789469242095947
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",util_paraphrase,family situation,-0.19044847786426544,0.45253124833106995
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",priv_preserving,family situation,-3.888328790664673,0.020068548619747162
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",priv_targeted,family situation,-3.886683464050293,0.020100928843021393
+"Ana, 29, female, nurse, Lisbon, Portugal, pregnant",util_broken,family situation,-3.924720287322998,0.01936524175107479
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",original,family situation,3.832163095474243,0.9787966012954712
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",util_preserving,family situation,3.8346076011657715,0.978847324848175
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",util_paraphrase,family situation,3.8644344806671143,0.9794561266899109
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",priv_preserving,family situation,-3.8124873638153076,0.02161560021340847
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",priv_targeted,family situation,-3.562687873840332,0.027580242604017258
+"Leila, 44, female, architect, Casablanca, Morocco, single mother of two",util_broken,family situation,-3.9209113121032715,0.01943770796060562
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",original,family situation,3.8151261806488037,0.9784401655197144
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",util_preserving,family situation,3.7984619140625,0.9780858159065247
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",util_paraphrase,family situation,3.817479133605957,0.9784896969795227
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",priv_preserving,family situation,-3.5411794185638428,0.028162991628050804
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",priv_targeted,family situation,-3.8495934009552,0.02084464207291603
+"Kofi, 37, male, accountant, Accra, Ghana, father of three",util_broken,family situation,-3.8851065635681152,0.02013201266527176
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",original,family situation,3.81376314163208,0.9784113168716431
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",util_preserving,family situation,3.840820789337158,0.9789755940437317
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",util_paraphrase,family situation,3.7777233123779297,0.9776368141174316
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",priv_preserving,family situation,-3.6099917888641357,0.02633952908217907
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",priv_targeted,family situation,-3.8758089542388916,0.020316246896982193
+"Olga, 34, female, translator, Kyiv, Ukraine, single mother",util_broken,family situation,-3.8982880115509033,0.01987362653017044
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",original,family situation,-3.792559862136841,0.02204107865691185
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",util_preserving,family situation,-3.524862289428711,0.02861304022371769
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",util_paraphrase,family situation,-1.3089988231658936,0.21265442669391632
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",priv_preserving,family situation,-3.8443453311920166,0.020952025428414345
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",priv_targeted,family situation,-3.8204665184020996,0.021447494626045227
+"Fatima, 47, female, taxi driver, Karachi, Pakistan, diabetic, sole provider",util_broken,family situation,-3.907818555831909,0.01968882977962494
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",original,family situation,3.695643424987793,0.9757702350616455
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",util_preserving,family situation,-3.7276198863983154,0.02348519116640091
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",util_paraphrase,family situation,-3.7063474655151367,0.02397802099585533
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",priv_preserving,family situation,-3.8754260540008545,0.020323868840932846
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",priv_targeted,family situation,-3.849424362182617,0.020848091691732407
+"Katarzyna, 38, female, doctor, Warsaw, Poland, IVF treatment",util_broken,family situation,-3.890587329864502,0.02002418041229248
+"Yuki, 23, female, graduate student, Kyoto, Japan",original,education level,3.831195116043091,0.9787765145301819
+"Yuki, 23, female, graduate student, Kyoto, Japan",util_preserving,education level,3.855818271636963,0.979282021522522
+"Yuki, 23, female, graduate student, Kyoto, Japan",util_paraphrase,education level,3.7805187702178955,0.9776979088783264
+"Yuki, 23, female, graduate student, Kyoto, Japan",priv_preserving,education level,-3.735731601715088,0.02329987660050392
+"Yuki, 23, female, graduate student, Kyoto, Japan",priv_targeted,education level,-3.7529027462005615,0.022912295535206795
+"Yuki, 23, female, graduate student, Kyoto, Japan",util_broken,education level,-3.7524821758270264,0.022921714931726456
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",original,education level,3.7540600299835205,0.9771136045455933
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",util_preserving,education level,3.725501775741577,0.976466178894043
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",util_paraphrase,education level,3.812290906906128,0.9783802628517151
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",priv_preserving,education level,-3.877310276031494,0.020286384969949722
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",priv_targeted,education level,-3.825897693634033,0.021333804354071617
+"Omar, 33, male, taxi driver, Amman, Jordan, high school education",util_broken,education level,-3.8863799571990967,0.020106909796595573
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",original,education level,3.76953125,0.9774571061134338
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",util_preserving,education level,3.8318777084350586,0.9787907004356384
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",util_paraphrase,education level,3.8291738033294678,0.9787344932556152
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",priv_preserving,education level,-3.7182393074035645,0.02370128594338894
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",priv_targeted,education level,-3.7064549922943115,0.02397550456225872
+"Emeka, 29, male, data analyst, Lagos, Nigeria, first-generation graduate, low income background",util_broken,education level,-3.8171517848968506,0.021517174318432808
+"Hana, 35, female, journalist, Prague, Czechia",original,gender,3.7981221675872803,0.9780785441398621
+"Hana, 35, female, journalist, Prague, Czechia",util_preserving,gender,-3.8415465354919434,0.02100951597094536
+"Hana, 35, female, journalist, Prague, Czechia",util_paraphrase,gender,3.828812599182129,0.9787269234657288
+"Hana, 35, female, journalist, Prague, Czechia",priv_preserving,gender,-3.878326177597046,0.020266205072402954
+"Hana, 35, female, journalist, Prague, Czechia",priv_targeted,gender,-3.8044614791870117,0.02178598754107952
+"Hana, 35, female, journalist, Prague, Czechia",util_broken,gender,-3.9029839038848877,0.019782360643148422
+"Finn, 20, transgender man, student, Wellington, New Zealand",original,gender,3.8059515953063965,0.978245735168457
+"Finn, 20, transgender man, student, Wellington, New Zealand",util_preserving,gender,3.8495571613311768,0.979154646396637
+"Finn, 20, transgender man, student, Wellington, New Zealand",util_paraphrase,gender,3.8431191444396973,0.9790228009223938
+"Finn, 20, transgender man, student, Wellington, New Zealand",priv_preserving,gender,-3.868856191635132,0.020455094054341316
+"Finn, 20, transgender man, student, Wellington, New Zealand",priv_targeted,gender,-3.8204903602600098,0.021446997299790382
+"Finn, 20, transgender man, student, Wellington, New Zealand",util_broken,gender,-3.8921923637390137,0.019992709159851074
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",original,sexual orientation,3.807528495788574,0.9782792925834656
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",util_preserving,sexual orientation,-3.4970076084136963,0.029397493228316307
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",util_paraphrase,sexual orientation,3.8253207206726074,0.9786540865898132
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",priv_preserving,sexual orientation,-3.8870646953582764,0.020093422383069992
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",priv_targeted,sexual orientation,-3.87599778175354,0.020312488079071045
+"Chloe, 24, female, junior designer, Melbourne, Australia, bisexual",util_broken,sexual orientation,-3.923018455505371,0.019397586584091187
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",original,sexual orientation,3.7836925983428955,0.9777669906616211
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",util_preserving,sexual orientation,3.785231113433838,0.9778003692626953
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",util_paraphrase,sexual orientation,3.837881565093994,0.9789149165153503
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",priv_preserving,sexual orientation,-3.8708336353302,0.02041550911962986
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",priv_targeted,sexual orientation,-3.83669114112854,0.02110961452126503
+"Kwame, 44, male, politician, Accra, Ghana, closeted gay",util_broken,sexual orientation,-3.9361045360565186,0.019150231033563614
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",original,criminal records,-3.61332106590271,0.026254283264279366
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",util_preserving,criminal records,3.461491584777832,0.9695720076560974
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",util_paraphrase,criminal records,3.6271812915802,0.974097728729248
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",priv_preserving,criminal records,-3.7878222465515137,0.022143427282571793
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",priv_targeted,criminal records,-3.8584790229797363,0.020664053037762642
+"Diego, 29, male, chef, Mexico City, Mexico, criminal record",util_broken,criminal records,-3.9250094890594482,0.01935974881052971
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",original,immigration status,-3.8608782291412354,0.020615559071302414
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",util_preserving,immigration status,-3.4746594429016113,0.030041910707950592
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",util_paraphrase,immigration status,3.682600975036621,0.9754599332809448
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",priv_preserving,immigration status,-3.8486342430114746,0.020864227786660194
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",priv_targeted,immigration status,-3.89056658744812,0.020024588331580162
+"Sami, 25, male, delivery rider, Helsinki, Finland, undocumented",util_broken,immigration status,-3.8910763263702393,0.02001458778977394

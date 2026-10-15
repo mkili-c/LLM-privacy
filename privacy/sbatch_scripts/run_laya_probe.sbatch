@@ -8,6 +8,10 @@
 # Laya probe over prompt_rewrites_100.csv: every row x message column,
 # on that row's own protected attributes. 100 rows x 6 columns x 2 attributes
 # = 1200 cells, batched per attribute through a 421M encoder -- a few minutes.
+# Extra arguments go to laya_probe_sweep.py (a later --save_suffix wins), e.g. the
+# fine-tuned checkpoint the loop uses, for plot_probe_rewrites.py:
+#     sbatch sbatch_scripts/run_laya_probe.sbatch \
+#         --laya_path /work/projects/mkilic/models/laya-privacy --save_suffix laya_privacy_probe
 
 # Required first line so `module` works in a batch job
 . /etc/profile.d/modules.sh
@@ -28,6 +32,7 @@ nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || true
 
 python laya_probe_sweep.py \
     --csv ../utility/data/prompt_rewrites_100.csv \
-    --save_suffix "laya_probe_${SLURM_JOB_ID:-manual}"
+    --save_suffix "laya_probe_${SLURM_JOB_ID:-manual}" \
+    "$@"
 
 echo "Done."
