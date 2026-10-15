@@ -1,6 +1,6 @@
 """
-Learning curve of the Laya fine-tuning (ROADMAP "Laya fine-tuning"): accuracy, AUROC and pair
-accuracy against the number of training rows, on the synthetic test split and the
+Learning curve of the Laya fine-tuning (ROADMAP "Laya fine-tuning"): accuracy and pair accuracy
+against the number of training rows, on the synthetic test split and the
 out-of-distribution set (prompt_rewrites_100), with laya_eval.py's 95% bootstrap CIs.
 
 A row is one line of data/laya_ft/train.csv: a leaking message and its safe edit. Each point is
@@ -24,12 +24,12 @@ RESULTS = HERE / "results" / "laya_eval" / "laya_eval_408.json"
 # model name in the JSON -> training rows it was fine-tuned on
 MODELS = {"base": 0, "laya-privacy-n250": 250, "laya-privacy-n500": 500,
           "laya-privacy-n1000": 1000, "laya-privacy-n1930": 1930}
-METRICS = [("acc", "Accuracy (P > 0.5)"), ("auroc", "AUROC"), ("pair_acc", "Pair accuracy")]
+METRICS = [("acc", "Accuracy (P > 0.5)"), ("pair_acc", "Pair accuracy")]
 SETS = [("synthetic", "Synthetic test (400 rows)"), ("ood", "Out-of-distribution (100 prompts)")]
 DIRECT_LABELS = {"synthetic": "synthetic", "ood": "OOD"}
 DODGE = 18                 # x-offset in rows, so the two sets' error bars do not overlap
-Y_RANGE = (0.5, 1.0)       # 0.5 = chance for AUROC and pair accuracy
-FIGSIZE = (7.2, 2.7)       # inches, about the text width of a report page
+Y_RANGE = (0.5, 1.0)       # 0.5 = chance for pair accuracy
+FIGSIZE = (5.6, 2.8)       # inches, two panels within the text width of a report page
 
 # Categorical slots 1-2 of the validated default palette, as in utility/metrics/plotting
 PALETTE = ["#2a78d6", "#eb6834"]   # blue, orange
