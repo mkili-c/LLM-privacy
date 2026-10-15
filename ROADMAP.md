@@ -91,6 +91,14 @@ Goal: make Laya a real second attacker. Not fine-tuned, it ranks leaks somewhat 
 - [x] Test sets: the synthetic one, and `prompt_rewrites_100.csv` as out-of-distribution (original vs `priv_targeted` on `protected_attrs`, without the 13 of 200 cells on attributes Laya is not trained on: disabilities 9, sexual orientation 2, criminal records 1, immigration status 1).
 - [x] Rows: Laya; Laya + a bias σ(α·ℓ + β) fitted on train.csv (is the gain more than a threshold shift?).
 - [ ] Qwen 3B / 7B probes on the same test items as reference (not in laya_eval.py). No 32B (too slow; 2026-10-06).
+  - [x] On the OOD set, done 2026-10-15: `plot_probe_rewrites.py` → `privacy/figures/probe_rewrites/` (violin, separation, detection). Fine-tuned Laya on all 6 versions is job 824 (`results/laya_probe/laya_privacy_probe.csv`), identical to job 408's n1930 logits (max diff 1.4e-6).
+    - **Original vs priv_targeted, all 200 cells, AUROC / accuracy at τ / pair accuracy:**
+      - Qwen 7B: 0.922 / 0.882 / 0.963
+      - Laya base: 0.760 / 0.540 / 0.825
+      - Laya fine-tuned: 0.947 / 0.882 / 0.965
+      - max (the loop's attacker): 0.939 / 0.897 / 0.973
+    - **Flagged at τ, Qwen vs fine-tuned Laya:** originals 92.0% vs 79.0% (max 95.5%), priv_targeted 15.5% vs 2.5% (max 16.0%). Combining them catches more originals but inherits Qwen's false alarms.
+    - The synthetic test set has no Qwen reference yet.
 - [ ] Run it on the GPU.
 
 ### Step 3: training (`privacy/laya_finetune.py`, one GPU job)

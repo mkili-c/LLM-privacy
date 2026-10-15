@@ -29,8 +29,12 @@ and the ranking accuracy improve as K grows. Accuracy is the same statistic
 summarize_cos()/summarize_kl() in test_cos_kl.py print, so the numbers here and
 in the .out files agree.
 
+With --ranking_pair, only one figure: the ranking accuracy of RANKING_PAIR's two
+metrics side by side, without util_broken (ranking_<metrics>_zoom.png).
+
 Usage:
     python plotting/plot_k_sweep.py                      # every dataset whose CSV exists
+    python plotting/plot_k_sweep.py --ranking_pair       # only the ranking-accuracy pair
     python plotting/plot_k_sweep.py --dataset rewrites_loop_kl
     python plotting/plot_k_sweep.py --csv path.csv --dataset paraphrases
 """
@@ -117,6 +121,10 @@ DATASETS = {
         "loop_kl": True,
     },
 }
+
+# --ranking_pair: the ranking accuracy of these two metrics side by side, one row
+# (the centroid cosine, and the KL direction of the loop's D)
+RANKING_PAIR = ("rewrites", ["cos_centroid", "kl_orig_to_rew"])
 
 # (column, y label, higher = more utility kept, keep zero in view)
 LOOP_METRICS = [
@@ -280,6 +288,15 @@ def plot_ktrend(values, ds, column, label, higher_is_better, zero_baseline,
     return out
 
 
+def ranking_accuracy(ref, other, higher_is_better):
+    """% of personas where the reference keeps more utility than the other type:
+    lower distance or divergence, higher centroid cosine. Same rule as summarize_cos()."""
+    _, ids = paired(ref, other)
+    correct = sum((ref[i] > other[i]) if higher_is_better else (ref[i] < other[i])
+                  for i in ids)
+    return 100.0 * correct / len(ids)
+
+
 def plot_separation(values, ds, column, label, higher_is_better,
                     ks, types, colors, suffix, out_dir):
     """Paired gap +- SE and pairwise ranking accuracy against the reference."""
@@ -293,14 +310,10 @@ def plot_separation(values, ds, column, label, higher_is_better,
         gaps, ses, accs = [], [], []
         for k in ks:
             ref = values[column][k][reference]
-            diff, ids = paired(ref, values[column][k][t])
+            diff, _ = paired(ref, values[column][k][t])
             gaps.append(diff.mean())
             ses.append(diff.std(ddof=1) / np.sqrt(len(diff)))
-            # "correct" = the reference keeps more utility: lower distance or
-            # divergence, higher centroid cosine. Same rule as summarize_cos().
-            correct = sum((ref[i] > values[column][k][t][i]) if higher_is_better
-                          else (ref[i] < values[column][k][t][i]) for i in ids)
-            accs.append(100.0 * correct / len(ids))
+            accs.append(ranking_accuracy(ref, values[column][k][t], higher_is_better))
 
         ax_gap.errorbar(ks, gaps, yerr=ses, color=color, linewidth=2,
                         marker="o", markersize=8, markeredgecolor="white",
@@ -343,6 +356,62 @@ def plot_separation(values, ds, column, label, higher_is_better,
     return out
 
 
+def plot_ranking_pair(values, ds, metrics, ks, types, colors, out_dir):
+    """Only the pairwise ranking accuracy against the reference, one panel per
+    metric in one row, on a shared y-axis."""
+    reference = ds["reference"]
+    others = [t for t in types if t != reference]
+    other_colors = [colors[types.index(t)] for t in others]
+
+    fig, axes = plt.subplots(1, len(metrics), figsize=(11.5, 5.4), sharey=True)
+    for ax, (column, label, higher_is_better, _) in zip(axes, metrics):
+        for t, color in zip(others, other_colors):
+            accs = [ranking_accuracy(values[column][k][reference],
+                                     values[column][k][t], higher_is_better)
+                    for k in ks]
+            ax.plot(ks, accs, color=color, linewidth=2, marker="o", markersize=8,
+                    markeredgecolor="white", markeredgewidth=1.5, label=t)
+        ax.axhline(50.0, color=INK_MUTED, linewidth=1.0, linestyle="--")
+        ax.annotate("chance", (ks[0], 50.0), textcoords="offset points",
+                    xytext=(0, 4), fontsize=8, color=INK_MUTED)
+        ax.set_ylim(0, 105)
+        ax.set_title(label, fontsize=10, color=INK)
+        ax.set_xticks(ks)
+        ax.set_xticklabels([str(k) for k in ks])
+        ax.set_xlabel("K  (answers sampled per prompt)", fontsize=10, color=INK)
+        style(ax)
+    axes[0].set_ylabel(f"% of personas ranked below {reference}",
+                       fontsize=10, color=INK)
+
+    dropped = ", ".join(t for t in ds["types"] if t not in types)
+    fig.suptitle(f"Pairwise ranking accuracy\nagainst {reference} by K - {ds['title']}"
+                 f"  ({dropped} excluded)", fontsize=11, color=INK)
+    fig.tight_layout()
+    # One legend for both panels: they carry the same series.
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, fontsize=9, frameon=False, ncol=len(others),
+               loc="upper center", bbox_to_anchor=(0.5, 0.03))
+    out = os.path.join(out_dir, "ranking_" + "_".join(c for c, _, _, _ in metrics)
+                       + "_zoom.png")
+    fig.savefig(out, dpi=200, bbox_inches="tight")
+    plt.close(fig)
+    return out
+
+
+def run_ranking_pair(csv_path):
+    """The ranking accuracy of the RANKING_PAIR metrics side by side, without the
+    dataset's drop_for_zoom types."""
+    name, columns = RANKING_PAIR
+    ds = DATASETS[name]
+    metrics = [next(m for m in METRICS if m[0] == c) for c in columns]
+    values, ks = load(csv_path or ds["csv"], metrics)
+    # colours stay bound to the type, as in the zoom variants of run()
+    types = [t for t in ds["types"] if t not in ds["drop_for_zoom"]]
+    colors = [PALETTE[ds["types"].index(t)] for t in types]
+    os.makedirs(ds["out"], exist_ok=True)
+    print("wrote", plot_ranking_pair(values, ds, metrics, ks, types, colors, ds["out"]))
+
+
 def run(name, ds, csv_path):
     metrics = LOOP_METRICS if ds.get("loop_kl") else METRICS
     values, ks = load(csv_path, metrics)
@@ -378,7 +447,13 @@ if __name__ == "__main__":
                    default="all")
     p.add_argument("--csv", default=None,
                    help="override the CSV for the selected dataset")
+    p.add_argument("--ranking_pair", action="store_true",
+                   help="only the ranking-accuracy figure of RANKING_PAIR")
     args = p.parse_args()
+
+    if args.ranking_pair:
+        run_ranking_pair(args.csv)
+        raise SystemExit
 
     names = sorted(DATASETS) if args.dataset == "all" else [args.dataset]
     if args.csv and len(names) > 1:
