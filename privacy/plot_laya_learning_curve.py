@@ -1,10 +1,11 @@
 """
 Learning curve of the Laya fine-tuning (ROADMAP "Laya fine-tuning"): accuracy, AUROC and pair
-accuracy against the number of training pairs, on the synthetic test split and the
+accuracy against the number of training rows, on the synthetic test split and the
 out-of-distribution set (prompt_rewrites_100), with laya_eval.py's 95% bootstrap CIs.
 
-Each point is a separate laya_finetune.py run from the base model on the first n training pairs
-(nested subsets, jobs 404-407); n = 0 is the base model. The numbers are read from
+A row is one line of data/laya_ft/train.csv: a leaking message and its safe edit. Each point is
+a separate laya_finetune.py run from the base model on the first n training rows (nested subsets,
+jobs 404-407); n = 0 is the base model. The numbers are read from
 laya_eval.py's JSON (job 408), nothing is scored again.
 
     python plot_laya_learning_curve.py   -> results/laya_eval/laya_learning_curve.{pdf,png}
@@ -20,13 +21,13 @@ import matplotlib.pyplot as plt
 HERE = Path(__file__).resolve().parent
 RESULTS = HERE / "results" / "laya_eval" / "laya_eval_408.json"
 
-# model name in the JSON -> training pairs it was fine-tuned on
+# model name in the JSON -> training rows it was fine-tuned on
 MODELS = {"base": 0, "laya-privacy-n250": 250, "laya-privacy-n500": 500,
           "laya-privacy-n1000": 1000, "laya-privacy-n1930": 1930}
 METRICS = [("acc", "Accuracy (P > 0.5)"), ("auroc", "AUROC"), ("pair_acc", "Pair accuracy")]
-SETS = [("synthetic", "Synthetic test (400 pairs)"), ("ood", "Out-of-distribution (100 prompts)")]
+SETS = [("synthetic", "Synthetic test (400 rows)"), ("ood", "Out-of-distribution (100 prompts)")]
 DIRECT_LABELS = {"synthetic": "synthetic", "ood": "OOD"}
-DODGE = 18                 # x-offset in pairs, so the two sets' error bars do not overlap
+DODGE = 18                 # x-offset in rows, so the two sets' error bars do not overlap
 Y_RANGE = (0.5, 1.0)       # 0.5 = chance for AUROC and pair accuracy
 FIGSIZE = (7.2, 2.7)       # inches, about the text width of a report page
 
@@ -80,7 +81,7 @@ def plot_curves(curves, out_stem):
         ax.set_xticks(list(MODELS.values()))
         ax.set_xlim(-120, 2050)
         ax.set_ylim(*Y_RANGE)
-        ax.set_xlabel("training pairs (0 = base Laya)", color=INK_MUTED, fontsize=8)
+        ax.set_xlabel("training rows (0 = base Laya)", color=INK_MUTED, fontsize=8)
     axes[0].set_ylabel("score", color=INK_MUTED, fontsize=8)
 
     # direct labels in the first panel, in ink, just below each line midway between its
