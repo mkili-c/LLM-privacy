@@ -20,6 +20,12 @@ K: each answer's own D is written too. The answers are independent samples, so t
 first 5 or 8 is D as the loop would measure it with K = 5 or 8. B2 compares those with K = 10
 (how often D falls on the other side of δ) to choose K, since the utility step's cost grows with K.
 
+K sweep (utility/metrics/kl_k_sweep.py): run with --k 30 and a fresh --out_dir; D with the first
+5, 15 and 30 answers then gives the tests of test_cos_kl.py with the loop's D. --data and
+--columns score another dataset of the same shape, e.g. the paraphrase controls:
+    --data utility/data/prompt_paraphrases_100.csv
+    --columns original paraphrase_synonyms paraphrase_reordered paraphrase_both
+
 ε and the spikes are gone with the fluency guard (2026-10-10): both steps now rewrite with one
 greedy LLM call.
 
@@ -61,6 +67,8 @@ EMPTY = "empty"     # the column of the empty message, D(∅): not in the CSV, s
 def get_args():
     p = argparse.ArgumentParser(description="D for calibrating δ (B1)")
     p.add_argument("--data", default=str(REPO / "utility" / "data" / "prompt_rewrites_100.csv"))
+    p.add_argument("--columns", nargs="+", default=COLUMNS,
+                   help="CSV columns to score, 'original' first (its D must be 0)")
     p.add_argument("--out_dir", default=str(REPO / "results" / "calibration"))
     p.add_argument("--limit", type=int, default=None, help="only the first N dev rows (smoke test)")
     # 10 answers, so that B2 can compare the loop's K = 5 (or 8) with all 10 on the same answers
@@ -78,10 +86,10 @@ def read_csv(path, limit=None):
     return rows[:limit] if limit else rows
 
 
-def measure_row(model, tok, row, answers, device):
-    """-> [(column, D, [D on each answer])] for one dev row and the empty message, against
-    its original's answers."""
-    columns, texts = COLUMNS + [EMPTY], [row[c] for c in COLUMNS] + [""]
+def measure_row(model, tok, row, columns, answers, device):
+    """-> [(column, D, [D on each answer])] for the given columns of one dev row and the empty
+    message, against its original's answers."""
+    columns, texts = columns + [EMPTY], [row[c] for c in columns] + [""]
     if not answers:                                   # every sampled answer was empty: no D
         return [(c, float("nan"), []) for c in columns]
     # the original's log-probs on each answer, computed once and shared by all columns
@@ -108,7 +116,7 @@ def measure_dev(model, tok, rows, args, device, out_dir):
                 answers[row["id"]] = utility_check.sample_answers(model, tok, row["original"], args.k,
                                                                   args.answer_max_new_tokens)
                 answers_path.write_text(json.dumps(answers, ensure_ascii=False, indent=1), encoding="utf-8")
-            results = measure_row(model, tok, row, answers[row["id"]], device)
+            results = measure_row(model, tok, row, args.columns, answers[row["id"]], device)
             w.writerows([row["id"], c, f"{D:.6f}", " ".join(f"{k:.6f}" for k in kls)] for c, D, kls in results)
             f.flush()
             print(f"  {n}/{len(todo)} {row['id'][:30]!r}: "

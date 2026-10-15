@@ -62,9 +62,9 @@ def get_args():
                     "prompt, each step minimizing KL(P_original || P_rewritten)")
     p.add_argument("--model", default=DEFAULT_MODEL)
     p.add_argument("--original", default="I am a 45-year-old male doctor living in New York. "
-                                         "What are the best ways to manage stress?")
-    p.add_argument("--rewritten", default="What are some good general strategies for "
-                                          "managing everyday stress?")
+                                         "What are good ways to manage stress?")
+    p.add_argument("--rewritten", default="What are good strategies for "
+                                          "managing stress?")
     p.add_argument("--target", default=None,
                    help="fixed answer to teacher-force; if omitted, one answer is "
                         "sampled from P_orig")

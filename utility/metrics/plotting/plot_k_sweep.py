@@ -10,6 +10,12 @@ first-class axis, and the metric set is cut down to the three that matter:
     cos_centroid                cosine between answer centroids
     total_divergence_per_token  KL(orig||rew) + KL(rew||orig), plus both directions
 
+The datasets rewrites_loop_kl and paraphrases_loop_kl plot the loop's own measure instead
+(utility/metrics/kl_k_sweep.py writes their k_sweep.csv):
+
+    D   KL(x_0 || y) over the whole vocabulary, nats per answer token
+    R   D / D(empty message)
+
 Three figures per dataset and metric:
 
     violin_<metric>.png      the old violin+box, faceted by K on a shared y-axis
@@ -24,8 +30,8 @@ summarize_cos()/summarize_kl() in test_cos_kl.py print, so the numbers here and
 in the .out files agree.
 
 Usage:
-    python plotting/plot_k_sweep.py                      # both datasets
-    python plotting/plot_k_sweep.py --dataset rewrites
+    python plotting/plot_k_sweep.py                      # every dataset whose CSV exists
+    python plotting/plot_k_sweep.py --dataset rewrites_loop_kl
     python plotting/plot_k_sweep.py --csv path.csv --dataset paraphrases
 """
 
@@ -43,6 +49,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 METRICS_DIR = os.path.dirname(HERE)              # utility/metrics
 UTILITY_DIR = os.path.dirname(METRICS_DIR)       # utility
 RESULTS = os.path.join(UTILITY_DIR, "results", "cos_kl_test")
+LOOP_RESULTS = os.path.join(os.path.dirname(UTILITY_DIR), "results", "kl_k_sweep")
 FIGURES = os.path.join(UTILITY_DIR, "figures")
 
 # Categorical slots 1-5 of the validated default palette, used in slot order.
@@ -87,9 +94,37 @@ DATASETS = {
         "reference": "reordered",
         "drop_for_zoom": [],
     },
+    # The loop's own D and R (kl_k_sweep.py), on the same two datasets.
+    "rewrites_loop_kl": {
+        "csv": os.path.join(LOOP_RESULTS, "rewrites", "k_sweep.csv"),
+        "out": os.path.join(FIGURES, "k_sweep", "rewrites_loop_kl"),
+        "title": "privacy prompt rewrites, loop's KL",
+        "unit": "rewrite type",
+        "types": ["util_preserving", "util_paraphrase", "priv_preserving",
+                  "priv_targeted", "util_broken"],
+        "reference": "util_preserving",
+        "drop_for_zoom": ["util_broken"],
+        "loop_kl": True,
+    },
+    "paraphrases_loop_kl": {
+        "csv": os.path.join(LOOP_RESULTS, "paraphrases", "k_sweep.csv"),
+        "out": os.path.join(FIGURES, "k_sweep", "paraphrases_loop_kl"),
+        "title": "paraphrase controls, loop's KL",
+        "unit": "paraphrase type",
+        "types": ["synonyms", "reordered", "both"],
+        "reference": "reordered",
+        "drop_for_zoom": [],
+        "loop_kl": True,
+    },
 }
 
 # (column, y label, higher = more utility kept, keep zero in view)
+LOOP_METRICS = [
+    ("D",
+     "Loop's D = KL(x0 || y)  [nats per answer token]", False, True),
+    ("R",
+     "R = D / D(empty message)", False, True),
+]
 METRICS = [
     ("udist2",
      "Unbiased squared distance between answer centroids", False, True),
@@ -104,7 +139,7 @@ METRICS = [
 ]
 
 
-def load(path):
+def load(path, metrics):
     """-> values[metric][k][type][id] = float, and the sorted K grid."""
     values = defaultdict(lambda: defaultdict(lambda: defaultdict(dict)))
     ks = set()
@@ -113,7 +148,7 @@ def load(path):
             k = int(row["k"])
             ks.add(k)
             rtype = row["rewrite_type"].strip()
-            for column, _, _, _ in METRICS:
+            for column, _, _, _ in metrics:
                 values[column][k][rtype][row["id"]] = float(row[column])
     return values, sorted(ks)
 
@@ -309,7 +344,8 @@ def plot_separation(values, ds, column, label, higher_is_better,
 
 
 def run(name, ds, csv_path):
-    values, ks = load(csv_path)
+    metrics = LOOP_METRICS if ds.get("loop_kl") else METRICS
+    values, ks = load(csv_path, metrics)
     types = ds["types"]
     colors = PALETTE[:len(types)]
     out_dir = ds["out"]
@@ -323,7 +359,7 @@ def run(name, ds, csv_path):
         kept = [t for t in types if t not in ds["drop_for_zoom"]]
         variants.append(("_zoom", kept, [colors[types.index(t)] for t in kept]))
 
-    for column, label, higher, zero in METRICS:
+    for column, label, higher, zero in metrics:
         for suffix, vtypes, vcolors in variants:
             # The zoom variant exists to autoscale to the surviving types, so it
             # drops the zero baseline that would otherwise flatten them again.
@@ -338,14 +374,19 @@ def run(name, ds, csv_path):
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__.split("\n")[1])
-    p.add_argument("--dataset", choices=sorted(DATASETS) + ["both"],
-                   default="both")
+    p.add_argument("--dataset", choices=sorted(DATASETS) + ["all"],
+                   default="all")
     p.add_argument("--csv", default=None,
                    help="override the CSV for the selected dataset")
     args = p.parse_args()
 
-    names = sorted(DATASETS) if args.dataset == "both" else [args.dataset]
+    names = sorted(DATASETS) if args.dataset == "all" else [args.dataset]
     if args.csv and len(names) > 1:
         p.error("--csv needs a single --dataset")
     for n in names:
-        run(n, DATASETS[n], args.csv or DATASETS[n]["csv"])
+        csv_path = args.csv or DATASETS[n]["csv"]
+        # the loop-KL CSVs exist only after their GPU run and kl_k_sweep.py
+        if not os.path.exists(csv_path):
+            print(f"[{n}] skipped, no {csv_path}")
+            continue
+        run(n, DATASETS[n], csv_path)

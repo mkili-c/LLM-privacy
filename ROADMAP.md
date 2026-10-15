@@ -461,6 +461,12 @@ A1c measures `algorithm_v3`, and its numbers set the C1 and D1 estimates.
     - **Blind spots** (our max P ≤ 0.5 but the judge matches): loop 17/70 (24.3%), Presidio 9/38, Loiseau-PUPA 3/21, PAPILLON 14/28, Staab 8/36.
     - **Long outputs** (> 2.5× the original's words): Loiseau-PUPA 19, PAPILLON 16, others 0.
     - `hand_check.csv` written (50 decisions) for the user's check; the check is postponed (user, 2026-10-13).
+  - **Qwen vs Laya on the 140 counted pairs (2026-10-14, from `own_measures.csv`):**
+    - On the originals, Qwen flags 108 pairs, Laya 106, and either of them 127.
+    - Laya alone catches 19 pairs, all 19 confirmed by the judge. Most of the gain is location: Qwen 15/29, Laya 28/29.
+    - On the baselines' rewrites (texts that never saw either attacker), the judge confirms the Laya-only pairs 54/63 (86%) and the Qwen-only pairs 86/116 (74%).
+    - On the loop's rewrites, 4 pairs stay above τ for Laya alone and 38 for Qwen alone.
+    - This does not show that Laya makes the loop's output more private; that needs the ablation.
   - **PAPILLON check (2026-10-13):** the adapter is right (`createdPrompt` of their zero-shot module, the prompt level their own leakage is measured at). It leaks more than Presidio because it keeps the details the request needs (location 27/29 vs Presidio's 5/29), and our own attackers rank it the same way. Its published 35.1% is PII strings on PUPA-TNB, a different metric.
   - **Results tables (2026-10-13):** `read_judge_answers.py` now prints the judge and our measures side by side, on the same 140 counted pairs, and draws `results/evaluation/privacy_utility.png` (leak rate against utility loss, one point per version, judge and ours):
     - **Main table**, our measures next to the judge's: our leak rate (max P > 0.5) original 127/140, loop 70, Presidio 102, Loiseau-PUPA 119, PAPILLON 112, Staab 104; mean R loop 32.5%, Presidio 15.0%, Loiseau-PUPA 44.7%, PAPILLON 47.0%, Staab 24.0%; texts with R ≥ 100%: loop 0, Presidio 1, Loiseau-PUPA 5, PAPILLON 4, Staab 7 (of 112).
