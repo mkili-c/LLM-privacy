@@ -1,0 +1,113 @@
+id,rounds,stop,converged,leak,R,ref_s,privacy_s,occl_s,spans_scored,picks,accepted,retry_in,protected,noop,moved,resolved,ineffective,stalls,final_leaking,words_orig,words_final,similarity
+3,2,stalled,False,1.0,0.03,91,186,133,151,5,2,0,0,2,0,1,1,,education level (qwen); family situation (both),23,23,0.739
+4,3,stalled,False,0.979,0.07,87,296,229,256,7,2,0,0,4,1,0,1,,age (qwen); profession (both); education level (both),28,27,0.8
+8,2,stalled,False,0.622,0.19,88,143,107,123,3,1,0,0,2,0,0,0,,education level (qwen),24,23,0.894
+12,3,stalled,False,1.0,0.21,91,287,228,259,5,2,0,0,3,0,0,0,profession,profession (qwen); education level (qwen),29,22,0.784
+15,1,done,True,0.321,0.24,91,106,84,93,1,1,0,0,0,0,0,0,,,33,30,0.921
+17,3,stalled,False,0.998,0.53,91,257,197,220,4,3,0,0,1,0,0,1,,profession (qwen),33,23,0.75
+36,2,stalled,False,0.977,0.25,87,120,84,100,4,1,0,0,2,0,1,0,,gender (both),15,15,0.933
+38,3,stalled,False,0.986,0.14,91,302,238,265,4,3,0,0,1,0,0,1,,profession (qwen),30,27,0.807
+40,2,stalled,False,0.924,0.18,91,169,140,160,2,1,0,0,1,0,0,0,,profession (qwen),30,26,0.893
+51,3,stalled,False,0.971,0.41,91,227,149,171,6,4,0,0,2,0,0,1,,age (qwen); education level (qwen),21,17,0.737
+57,1,stalled,False,0.998,0.0,91,18,9,11,1,0,0,0,1,0,0,0,,profession (both); education level (qwen),5,5,1.0
+58,4,stalled,False,0.998,0.39,91,371,277,315,7,5,0,0,1,1,0,2,,age (qwen); relationship status (qwen),29,23,0.808
+62,1,done,True,0.06,0.41,91,47,27,34,1,1,0,0,0,0,0,0,,,11,10,0.952
+66,6,stalled,False,0.967,0.69,90,303,191,233,10,5,0,0,5,0,0,3,,age (qwen); education level (qwen),15,11,0.692
+78,3,stalled,False,1.0,0.22,91,261,202,228,5,2,0,0,3,0,0,0,education level; profession,profession (qwen); education level (qwen),27,25,0.885
+88,2,done,True,0.053,0.72,91,132,78,94,4,3,0,0,0,1,0,1,,,16,15,0.774
+94,3,stalled,False,1.0,0.37,91,477,422,446,3,2,0,0,1,0,0,2,,profession (both),47,42,0.719
+99,5,stalled,False,1.0,0.4,91,750,551,595,15,7,0,0,8,0,0,3,socioeconomic status,education level (qwen); socioeconomic status (qwen); relationship status (both); family situation (qwen),43,37,0.75
+103,4,stalled,False,0.562,0.29,92,660,530,558,8,6,0,0,1,0,1,1,,education level (qwen),49,44,0.688
+108,3,stalled,False,0.986,0.26,91,251,201,228,4,2,0,0,1,1,0,1,,profession (qwen),29,27,0.786
+125,2,stalled,False,0.976,0.01,91,101,76,92,2,1,0,0,1,0,0,0,,gender (both),16,16,0.875
+129,2,stalled,False,0.968,0.18,92,437,381,374,3,2,0,0,1,0,0,0,,socioeconomic status (laya),61,60,0.793
+130,7,done,True,0.223,0.22,29,2336,2031,1756,16,11,0,0,4,1,0,4,socioeconomic status,,88,69,0.777
+134,2,done,True,0.223,0.66,91,98,61,74,2,2,0,0,0,0,0,1,,,15,13,0.857
+137,2,stalled,False,0.835,0.4,92,446,409,393,2,1,0,0,1,0,0,0,health condition,profession (qwen),62,56,0.797
+140,4,done,True,0.023,0.49,66,1050,845,724,10,7,0,0,1,0,2,2,,,42,28,0.743
+150,3,stalled,False,1.0,0.24,92,821,741,698,5,2,0,0,2,1,0,0,profession,profession (qwen); education level (qwen),67,63,0.862
+153,2,stalled,False,0.993,0.12,92,427,318,321,8,2,0,0,6,0,0,1,,geographic location (both); education level (qwen); relationship status (qwen); family situation (qwen); nationality (qwen),46,45,0.923
+162,3,stalled,False,0.986,0.31,92,552,463,462,5,3,0,0,2,0,0,2,,geographic location (qwen); education level (qwen),55,49,0.865
+171,3,stalled,False,1.0,0.27,91,156,99,119,5,3,0,0,1,1,0,0,,profession (qwen),15,10,0.64
+175,2,stalled,False,1.0,0.31,91,167,139,158,2,1,0,0,1,0,0,1,,profession (both); education level (qwen),26,25,0.863
+183,3,stalled,False,1.0,0.23,91,412,324,357,7,3,0,0,3,1,0,1,education level,profession (qwen); education level (qwen),38,35,0.904
+186,1,done,True,0.438,0.12,91,124,100,112,1,1,0,0,0,0,0,0,,,35,33,0.824
+192,3,done,True,0.321,0.54,91,179,122,146,4,3,0,0,0,1,0,0,,,15,16,0.71
+198,3,stalled,False,0.562,0.44,51,624,577,543,3,2,0,0,1,0,0,0,,profession (qwen),90,34,0.548
+199,2,stalled,False,0.978,0.05,92,456,409,405,3,1,0,0,2,0,0,0,,profession (both),64,61,0.912
+214,5,stalled,False,0.989,0.35,90,490,370,411,9,6,0,0,2,1,0,2,,profession (both); education level (qwen); socioeconomic status (qwen),25,21,0.739
+219,6,stalled,False,0.5,0.65,91,407,263,312,11,8,0,0,3,0,0,3,,,17,16,0.424
+221,3,stalled,False,0.971,0.72,13,280,229,259,4,3,0,0,1,0,0,1,,profession (qwen); education level (qwen),28,23,0.51
+234,5,stalled,False,0.989,0.46,91,144,70,78,6,4,0,0,2,0,0,2,,profession (qwen),9,3,0.5
+247,2,stalled,False,0.798,0.46,91,55,31,36,2,1,0,0,1,0,0,0,,profession (qwen),9,6,0.667
+255,2,stalled,False,0.622,0.32,91,133,99,117,3,1,0,0,2,0,0,0,,education level (qwen),22,23,0.933
+258,2,stalled,False,0.94,0.19,91,103,77,93,2,1,0,0,1,0,0,1,,age (qwen); education level (qwen),17,14,0.839
+266,2,done,True,0.498,0.34,76,830,668,512,6,4,0,0,1,1,0,1,,,49,58,0.673
+274,2,stalled,False,0.976,0.28,92,244,196,216,3,2,0,0,1,0,0,1,,socioeconomic status (both),30,32,0.839
+286,2,stalled,False,0.999,0.73,91,78,40,48,3,2,0,0,1,0,0,0,,family situation (qwen),11,10,0.667
+287,2,stalled,False,1.0,0.11,91,164,135,150,2,1,0,0,1,0,0,0,,profession (both),29,27,0.893
+290,4,stalled,False,1.0,0.1,94,1474,1219,1065,12,6,0,0,6,0,0,2,profession,geographic location (qwen); profession (both); education level (qwen),82,78,0.887
+298,0,done,True,0.032,0.0,91,4,0,0,0,0,0,0,0,0,0,0,,,27,27,1.0
+300,5,stalled,False,1.0,0.35,92,875,778,815,5,4,0,0,1,0,0,4,profession,profession (qwen),51,49,0.82
+306,1,done,True,0.021,0.56,84,34,16,19,1,1,0,0,0,0,0,0,,,8,6,0.714
+313,2,stalled,False,1.0,0.0,91,190,147,169,4,1,0,0,3,0,0,0,,profession (both); education level (qwen),27,28,0.982
+327,3,stalled,False,0.777,0.31,92,498,377,395,8,4,0,0,4,0,0,0,,profession (qwen); education level (qwen),40,43,0.843
+337,2,done,True,0.119,0.5,91,122,85,102,2,2,0,0,0,0,0,0,,,15,16,0.839
+339,3,stalled,False,1.0,0.58,94,999,846,754,9,4,0,0,4,1,0,2,education level; health condition,profession (qwen); health condition (both); education level (qwen),99,61,0.65
+340,3,stalled,False,0.98,0.19,92,553,469,488,5,3,0,0,2,0,0,1,,education level (qwen),49,49,0.816
+355,2,stalled,False,0.998,0.35,91,123,74,87,5,2,0,0,3,0,0,1,,gender (qwen); relationship status (laya),19,13,0.562
+359,1,done,True,0.269,0.65,91,42,18,22,2,1,0,0,1,0,0,0,,,9,7,0.875
+368,2,stalled,False,0.881,0.02,91,113,81,96,3,1,0,0,2,0,0,0,,health condition (qwen),20,16,0.889
+415,3,stalled,False,1.0,0.11,91,148,96,115,5,2,0,0,3,0,0,1,,profession (qwen); education level (qwen),13,12,0.8
+429,3,stalled,False,0.622,0.04,92,820,753,699,3,2,0,0,1,0,0,0,,education level (qwen),76,71,0.884
+433,3,stalled,False,0.989,0.34,68,684,612,607,4,3,0,0,1,0,0,0,,profession (qwen),60,58,0.915
+447,2,done,True,0.023,0.5,90,50,18,21,2,2,0,0,0,0,0,0,,,4,4,0.25
+454,3,stalled,False,0.968,0.82,92,453,364,379,7,3,0,0,3,1,0,1,,education level (qwen); socioeconomic status (laya),44,30,0.703
+458,3,stalled,False,1.0,0.51,93,1083,844,751,12,7,0,0,5,0,0,5,education level; profession; socioeconomic status,profession (both); education level (both); socioeconomic status (qwen),76,73,0.617
+473,3,stalled,False,0.972,0.2,92,385,316,346,6,2,0,0,2,2,0,0,,education level (qwen); nationality (laya),38,39,0.701
+474,3,stalled,False,0.994,0.67,35,548,456,471,8,3,0,0,5,0,0,2,education level,profession (qwen); education level (both); socioeconomic status (qwen),52,41,0.796
+507,3,stalled,False,0.971,0.15,91,257,184,206,6,3,0,0,3,0,0,1,,gender (both); health condition (qwen); education level (qwen),26,19,0.578
+510,1,done,True,0.029,0.81,91,38,18,23,1,1,0,0,0,0,0,0,,,9,9,0.667
+514,4,stalled,False,0.993,0.65,50,419,339,377,6,4,0,0,2,0,0,1,,profession (qwen),40,27,0.567
+527,5,stalled,False,0.905,0.82,91,391,256,300,11,7,0,0,4,0,0,3,,profession (qwen),25,11,0.444
+539,2,stalled,False,0.992,0.04,92,497,438,433,4,1,0,0,3,0,0,0,education level,age (qwen); education level (both); family situation (qwen),69,65,0.94
+542,2,stalled,False,0.975,0.08,44,287,244,259,3,2,0,0,1,0,0,1,,profession (laya),42,37,0.861
+564,0,done,True,0.469,0.0,92,4,0,0,0,0,0,0,0,0,0,0,,,31,31,1.0
+593,1,stalled,False,1.0,0.0,91,16,8,8,1,0,0,0,1,0,0,0,,health condition (qwen),7,7,1.0
+598,4,stalled,False,0.963,0.85,91,302,200,238,8,6,0,0,1,1,0,4,,profession (qwen),19,17,0.611
+604,0,done,True,0.333,0.0,91,4,0,0,0,0,0,0,0,0,0,0,,,11,11,1.0
+609,3,stalled,False,0.977,0.1,94,1248,1112,935,5,4,0,0,1,0,0,3,gender,gender (laya),100,103,0.798
+610,1,stalled,False,0.976,0.0,91,47,37,46,1,0,0,0,1,0,0,0,,geographic location (laya),16,16,1.0
+637,3,done,True,0.119,0.35,91,178,124,149,3,3,0,0,0,0,0,2,,,20,16,0.833
+640,2,stalled,False,1.0,0.12,65,614,552,516,4,1,0,0,3,0,0,1,profession,profession (both); education level (qwen),77,80,0.943
+653,1,done,True,0.148,0.11,92,141,116,124,1,1,0,0,0,0,0,0,,,38,35,0.932
+661,3,stalled,False,0.622,0.79,91,148,105,122,3,2,0,0,1,0,0,1,,education level (qwen),17,14,0.774
+682,5,stalled,False,0.947,0.34,92,1004,861,863,8,5,0,0,3,0,0,2,education level,education level (qwen),64,48,0.786
+691,4,stalled,False,1.0,0.6,92,724,542,562,11,8,0,0,3,0,0,4,,education level (both); socioeconomic status (qwen),55,43,0.714
+692,1,done,True,0.223,0.04,91,73,52,61,1,1,0,0,0,0,0,0,,,20,19,0.769
+707,3,stalled,False,1.0,0.22,91,348,266,298,6,3,0,0,3,0,0,2,education level; profession,profession (qwen); education level (qwen),34,33,0.955
+712,2,done,True,0.021,0.52,90,66,32,39,2,2,0,0,0,0,0,0,,,8,6,0.571
+724,2,stalled,False,1.0,0.03,92,386,328,339,5,1,0,0,3,0,1,0,,profession (both); education level (both),55,48,0.874
+734,2,stalled,False,0.994,0.24,94,858,770,647,5,2,0,0,1,2,0,0,,education level (qwen),100,93,0.798
+735,2,stalled,False,0.989,0.01,92,494,453,425,2,1,0,0,1,0,0,1,,age (both),66,68,0.925
+744,4,stalled,False,1.0,0.53,94,1082,953,877,8,4,0,0,2,2,0,1,education level,education level (both),70,57,0.74
+747,5,stalled,False,0.995,0.43,92,983,813,763,9,6,0,0,2,1,0,2,profession,profession (qwen),39,36,0.72
+761,2,stalled,False,1.0,0.04,92,300,249,265,4,1,0,0,3,0,0,0,,profession (both); education level (qwen),42,38,0.725
+789,2,stalled,False,1.0,0.31,94,606,540,485,3,2,0,0,1,0,0,1,,profession (both); education level (qwen),78,68,0.74
+841,3,stalled,False,1.0,0.08,92,663,543,546,7,5,0,0,1,0,1,2,profession,profession (qwen),55,56,0.757
+848,2,stalled,False,0.5,0.16,94,521,455,401,3,2,0,0,1,0,0,0,,,59,56,0.922
+851,3,stalled,False,1.0,0.05,91,98,46,53,6,2,0,0,4,0,0,2,,gender (qwen); health condition (qwen); relationship status (qwen),6,7,0.769
+908,3,stalled,False,0.5,0.62,91,231,181,209,4,2,0,0,2,0,0,0,,,28,16,0.545
+914,4,stalled,False,1.0,0.9,91,223,134,161,7,4,0,1,1,1,0,0,,education level (qwen),19,15,0.529
+916,4,stalled,False,0.999,0.22,92,1084,906,852,12,5,0,0,4,2,1,2,profession,age (qwen); profession (qwen),65,67,0.879
+933,2,stalled,False,0.905,0.13,92,328,278,289,3,2,0,0,1,0,0,1,,health condition (qwen),52,39,0.659
+934,3,done,True,0.06,0.81,91,136,72,86,6,3,0,0,2,1,0,0,,,12,10,0.636
+966,2,stalled,False,1.0,0.18,91,156,128,145,2,1,0,0,1,0,0,1,education level,age (qwen); profession (qwen); education level (both),26,23,0.898
+973,2,done,True,0.021,0.58,91,176,137,156,2,2,0,0,0,0,0,0,,,26,27,0.83
+993,3,stalled,False,0.998,0.07,92,983,883,790,6,2,0,0,3,1,0,0,,profession (qwen); education level (qwen),80,80,0.925
+1007,4,stalled,False,1.0,0.36,92,655,528,562,8,5,0,0,3,0,0,5,education level; profession,profession (qwen); education level (both),41,47,0.795
+1010,2,stalled,False,0.978,0.02,92,234,185,204,3,2,0,0,1,0,0,0,,age (laya),34,31,0.738
+1022,2,done,True,0.028,0.58,91,118,80,97,2,2,0,0,0,0,0,0,,,15,18,0.545
+1074,8,stalled,False,1.0,0.98,22,693,476,547,21,9,1,4,5,0,2,3,profession; socioeconomic status,profession (both); education level (qwen); socioeconomic status (qwen),30,16,0.391
+1078,5,stalled,False,0.978,0.42,91,382,275,322,10,5,0,0,2,3,0,0,,education level (laya),26,15,0.439
+1121,4,stalled,False,0.974,0.08,92,322,242,264,5,3,0,0,2,0,0,0,,profession (qwen); education level (qwen),19,18,0.919

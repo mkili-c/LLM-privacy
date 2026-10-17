@@ -92,6 +92,20 @@ Goal: make Laya a real second attacker. Not fine-tuned, it ranks leaks somewhat 
 - [x] Rows: Laya; Laya + a bias σ(α·ℓ + β) fitted on train.csv (is the gain more than a threshold shift?).
 - [ ] Qwen 3B / 7B probes on the same test items as reference (not in laya_eval.py). No 32B (too slow; 2026-10-06).
   - [x] On the OOD set, done 2026-10-15: `plot_probe_rewrites.py` → `privacy/figures/probe_rewrites/` (violin, separation, detection). Fine-tuned Laya on all 6 versions is job 824 (`results/laya_probe/laya_privacy_probe.csv`), identical to job 408's n1930 logits (max diff 1.4e-6).
+    - **Figures** (each as .pdf and .png):
+      - `violin_qwen_7b`, `violin_laya`, `violin_laya_fine_tuned`, `violin_max_loop`: one figure per attacker, as asked by the user. They use exactly the five rewrite types of the utility violins (`plot_k_sweep.py`), in the same order, colors and plain tick labels, with τ dashed. The original is left out, as in the utility violins; it is the reference in the separation figure.
+      - `separation`: paired drop of P against the original ± SE, and the ranking accuracy, per type.
+      - `detection`: AUROC, accuracy and pair accuracy on original vs priv_targeted, with bootstrap CIs over personas.
+      - Run `~/.llmvenv/bin/python privacy/plot_probe_rewrites.py`. The Qwen data is job 350, whose yes/no word list may predate correct/Correct/wrong/Wrong. Coverage is median ≈ 1.0, 1st percentile 0.991, min 0.879, so the effect is small; rerun `sbatch privacy/sbatch_scripts/run_attribute_probe_gb10.sbatch` for exactness.
+      - **Open:** the separation and detection figures color by attacker (Qwen blue), while the violins color by type (util_preserving blue), and their tick labels still carry the "(keeps)/(removes)" notes. Align them if both appear in one section.
+    - **Per rewrite type**, share flagged at τ (Qwen 7B / base Laya / fine-tuned Laya / max):
+      - original 92.0 / 15.0 / 79.0 / 95.5%;
+      - util_preserving 87.5 / 26.0 / 71.0 / 91.0%;
+      - util_paraphrase 93.0 / 15.0 / 85.0 / 96.0%;
+      - priv_preserving 29.0 / 15.5 / 7.5 / 29.5%;
+      - priv_targeted 15.5 / 7.0 / 2.5 / 16.0%;
+      - util_broken 1.5 / 2.0 / 13.5 / 15.0%.
+    - Fine-tuned Laya scores util_paraphrase above the original in 73% of cells, because the paraphrases state the attributes more explicitly. Its 13.5% on util_broken is mostly location kept in off-topic rewrites. priv_preserving keeps what the request needs, so it is not a clean "no".
     - **Original vs priv_targeted, all 200 cells, AUROC / accuracy at τ / pair accuracy:**
       - Qwen 7B: 0.922 / 0.882 / 0.963
       - Laya base: 0.760 / 0.540 / 0.825
@@ -216,7 +230,29 @@ Four baselines: Presidio, Loiseau et al., PAPILLON and Staab et al. Their code i
 - Presidio: no LLM.
 
 - [ ] Each row of the table. Presidio done 2026-10-06: `results/rewrites/pupa_sd_presidio.csv`, 141 rows, looks as expected at first sight. Presidio leaves 45 of 141 prompts unchanged (no entity found). Loiseau et al. and PAPILLON: smoke test passed 2026-10-06 (job 426: 3 rows each, 9 requests, no failures, reasonable rewrites; ~7 s per row per Loiseau prompt, ~13 s for PAPILLON, whose rewrites run ~1.5× the original's length). Next: delete the smoke files and run all 141 rows in one fresh job (~1 h), so a rerun reproduces them. Presidio's file predates the cost columns, so rerun it too (a ~1 min CPU job).
-- [ ] One deviations table: what changed per baseline and why (plumbing only).
+- [x] One deviations table: what changed per baseline and why (plumbing only). Consolidated 2026-10-15:
+
+  | Baseline | Deviation | Why |
+  |---|---|---|
+  | All LLM baselines | Qwen2.5-7B-Instruct instead of each paper's model (Staab: GPT-4; Loiseau's main paper: 24–30B; PAPILLON: Llama/Mistral) | Same backbone makes the comparison about method, not model. Each choice has a published counterpart: Loiseau released Qwen2.5-7B-optimized prompts, Li et al. 2026 report zero-shot PAPILLON with Qwen2.5-7B, and Staab's repo has 7B-class configs. |
+  | | Decoding settings a method does not set come from Qwen's `generation_config` (sampling, temperature 0.7, top-p 0.8, top-k 20, repetition penalty 1.05) | Loiseau and PAPILLON leave the temperature to DSPy, so Qwen's defaults apply; Staab sets 0.1, as in their configs. |
+  | Presidio | None: 2.2.364, default recognizers, default `replace` operator, spaCy `en_core_web_lg` | 44 of 112 prompts come back unchanged (no entity found). |
+  | Loiseau et al. | Only the optimized instruction is released, not the compiled program; rebuilt as their `dspy.Predict("text -> anonymized_text")` with it | Their optimizer and export code give this structure. DSPy 3.0.4 as in their paper; `max_tokens` 25,000 as in their `models.py`. |
+  | | The PUPA prompt is the main one; the SynthPAI prompt was run but not judged | Their prompts are optimized per dataset (user's decision). |
+  | | id 734 timed out and was rerun (job 729) | Plumbing. |
+  | PAPILLON | DSPy 3.1.2 instead of dspy-ai 2.5.35 | Their environment no longer installs; the README says inference runs on the newest DSPy, and their 2026 follow-up uses 3.1.2. |
+  | | Prompt level only: `createdPrompt`, with no remote model and no aggregation | Our threat model is what leaves the user's machine, and it is where they measure leakage. |
+  | | Zero-shot, not optimized | Optimized prompts exist only for Llama and Mistral, and PCD-k was optimized on PUPA-SD (our test set). `max_tokens` 4000, as in their `evaluate_papillon.py`. |
+  | Staab et al. | Qwen2.5-7B as anonymizer, attacker and utility model | Same backbone; expect weaker anonymization than their GPT-4 numbers. |
+  | | Input: each prompt is one profile whose comments are its non-empty lines, with one fixed date. Their prompts then present it as "public comments made on Reddit", and the rewrite is put back into the original layout. | Their code anonymizes Reddit profiles. Only 9 of 112 prompts have several lines (3 over 5). D3 found 2 with moved lines and 22 with the echoed date; the sensitivity check is in D3. |
+  | | Attributes: all 10 of ours for every prompt, under their keys where they exist (location, occupation, education, income, married, gender, age). Health condition, family situation and nationality pass by name, without their descriptions and answer options. | The same list the loop gets; on SynthPAI their attacker targets each profile's labeled attributes. |
+  | | Their SynthPAI config: temperature 0.1, 3 rounds, default anonymizer prompt, `max_workers` 1 | As released, models pointed at our server. |
+  | | One patch: the batch timeout goes from 40–120 s to 24 h | Their timeout covers the whole batch and suits a parallel hosted API; locally at ~10 tokens/s, requests would time out and resubmit endlessly. |
+  | | `main.py` runs once per prompt | Gives each prompt its own time; the same method, since their loop never mixes profiles. |
+
+  - **Also state, though not deviations:** 19 Loiseau-PUPA and 16 PAPILLON outputs answer instead of rewriting (> 2.5× the original's words), and are scored as they are. The ports were not checked against the published numbers (no API budget).
+  - **Still open:** whether Staab et al.'s paper reports 7B-class runs, to cite against the weaker-backbone question.
+  - **Hardware for the thesis:** the GB10 is NVIDIA's Grace Blackwell superchip, a Blackwell GPU plus a 20-core Arm Grace CPU with 128 GB of unified LPDDR5x memory. That is why the node is aarch64 and why the 7B in bf16 fits. Name the chip, "a single NVIDIA GB10 (Grace Blackwell) system with 128 GB of unified memory", not the product: the node name `studgpu-spark01` suggests a DGX Spark, but that is not verified.
 - Dropped: RUPTA (its utility is occupation classification; Loiseau et al. ran it only on DB-Bio for that reason) and DP-Prompt (2026-10-06: it would have to be reimplemented, and four baselines suffice).
 
 ### Step 5: reproduction checks
@@ -325,6 +361,28 @@ A1c measures `algorithm_v3`, and its numbers set the C1 and D1 estimates.
     - **The paraphrase anchor is worse:** D / D(paraphrase) AUROC 0.897.
     - **Within-row pair accuracy:** 0.998 (399/400). It is the same for D and R, since R divides a row by one constant.
     - **Errors at 100%:** the 8 privacy rewrites above 100% mostly destroyed the request, so the rule is right about them. Diego's targeted rewrite drops the "old conviction" his licensing question is about (112%); Bruno's drops "two years sober" (111%). The 10 util_broken rewrites below 100% keep the persona (Erik: "What's the carpentry trade like in Iceland?", 89%), so their answers share its echo.
+    - **Thesis tables (2026-10-15)**, from a rerun of `analyze_calibration.py`; both were given to the user as LaTeX.
+      - `tab:calibration-types`, R per rewrite type (median, middle 50%, min–max, R ≥ 100%):
+        - util_paraphrase 32.8%, 23.8–39.7%, 11.8–65.6%, 0/100;
+        - util_preserving 39.5%, 30.7–51.0%, 12.1–90.5%, 0/100;
+        - priv_targeted 56.6%, 44.5–74.5%, 18.8–112.0%, 3/100;
+        - priv_preserving 77.0%, 62.2–86.6%, 19.6–116.8%, 5/100;
+        - util_broken 112.5%, 106.8–125.4%, 89.3–157.4%, 90/100.
+      - `tab:calibration-threshold`, the rule "broken iff R ≥ p" (broken caught; vs all 4 preserving: left alone, accuracy; vs the 2 privacy rewrites: left alone, accuracy):
+        - 60%: 100%; 65%, 0.720; 38%, 0.583.
+        - 70%: 100%; 74%, 0.796; 52%, 0.683.
+        - 80%: 100%; 84%, 0.868; 68%, 0.790.
+        - 90%: 99%; 94%, 0.948; 88%, 0.917.
+        - **100%: 90%; 98%, 0.964; 96%, 0.940.**
+        - 110%: 62%; 99%, 0.918; 98%, 0.863.
+      - The 3/100 and 5/100 counts are the 8 named preserving rewrites at or above 100%, by type.
+    - **Utility ranking-accuracy figure (2026-10-15):** `python plotting/plot_k_sweep.py --ranking_pair` (from `utility/metrics`) → `utility/figures/k_sweep/rewrites/ranking_cos_centroid_kl_orig_to_rew_zoom.png`.
+      - Only the pairwise ranking accuracy against util_preserving, cosine centroid and KL(orig ‖ rew) side by side, without util_broken.
+      - Title "Pairwise ranking accuracy" without the "fraction of personas ordered correctly" note, same y-label and style as the separation figures.
+      - Values by K = 5/15/30 (util_paraphrase, priv_preserving, priv_targeted):
+        - cosine 44/45/44, 76/83/76, 70/79/72;
+        - KL 23/20/20, 100/98/99, 71/77/74.
+      - The `ranking_accuracy()` helper is now shared with `plot_separation()`. The flag draws only this figure, because the script changed after its other figures were drawn.
     - **K:** decisions at 100% with the first K answers vs all 10: K = 5 flips 8 of 500 (accuracy 0.956), K = 8 flips 1 (0.966), K = 3 flips 15.
     - **Limit:** util_broken here is off-topic ("worse than nothing"), so the rule detects destroyed requests, not single lost details. The loop's outputs from job 547 sit at Marta 71% (lost "night shifts"), Deniz 38%, Ruth 24% (lost "diabetes"; 11% with it restored), i.e. inside the privacy rewrites' range. The judge's utility ratings must cover partial losses.
 - [x] **`algorithm_v7`, interleaved loop (2026-10-11, user's design).** The sequential privacy → utility alternation is gone. `privacy_utility_loop.py` now:
@@ -371,7 +429,48 @@ A1c measures `algorithm_v3`, and its numbers set the C1 and D1 estimates.
   - **Still leaking at the stop:** profession 18 rows, education 7, socioeconomic status 7, family situation 6, age 5.
   - **Converged rows** are real privacy rewrites, but "How does someone protect herself" (Hana) still reveals gender, another probe blind spot.
   - **Decided (user, 2026-10-12): keep as is, freeze.** Options were: keep as is (report 20% in-loop convergence; the judge measures real privacy; PUPA ~57 h), or exclude unchanged spans from later picks like protected ones (likely more privacy edits, but more rounds: ~93 h at 5 rounds, beyond the 48–58 h window).
-- [ ] **C2** Log statistics: stalls, failed tries, fixes applied, iterations, convergence; Laya's 0.979 ceiling and the non-converged rows (implied attributes). ~1 h coding.
+- [x] **C2** Log statistics (2026-10-17). `evaluation/loop_log_stats.py` reads jobs 665 and 674. It finds all 112 ids, and every final text matches `pupa_sd_loop.csv`. Per-prompt output: `results/evaluation/loop_stats.csv`.
+  - **How prompts end:**
+    - 24/112 (21.4%) converge, i.e. every P ≤ τ.
+    - 88 stop because a whole round changed nothing.
+    - None reaches the 8-round cap, and none runs out of unprotected spans.
+    - Rounds: median 3 for stalled prompts, 2 for converged ones. 3 prompts were already private at the start.
+  - **What happens to the 559 picked spans:**
+    - 56% accepted.
+    - 36% no-op: the rewriter returns the message unchanged.
+    - 7% skipped, because an earlier rewrite moved the span or resolved its attributes.
+    - The utility check refused only 6 rewrites, on 2 prompts. 1 retry passed, and 5 spans were protected, 4 of them in id 1074.
+    - A third of the accepted rewrites (106/312) did not lower the hinge.
+    - Blame does not separate no-ops from accepted spans (median 0.67 vs 0.82).
+  - **No-ops vs accepted rewrites, per attribute:** education 82 vs 76, profession 57 vs 104, location 12 vs 44, nationality 1 vs 13.
+  - **Saturation** (`[stall]`) occurs in 24 prompts, mostly on profession (13) and education (11).
+  - **What still leaks at the end is held mostly by Qwen alone:** education 39 Qwen-only, 9 both, 1 Laya-only; profession 31 Qwen-only, 15 both, 1 Laya-only.
+  - **Cross-check with the judge:**
+    - 40 of the 57 pairs the judge still recovers are on prompts where the loop stalled while our attackers still flagged the attribute. For occupation it is 20 of 24.
+    - 17 are blind spots: 8 on converged prompts, 9 on stalled prompts where our attackers no longer flagged it.
+    - **So the remaining leakage comes from rewriter no-ops and saturation, not from the utility check.** This corrects the earlier explanation that the check keeps occupation in the prompt.
+  - **Edits:** the final text keeps a median 92% of the words (word similarity 0.80); 3 prompts lost more than half their words; 6 are unchanged.
+  - **Runtime:** reference sampling ~91 s per prompt; occlusion is 81% of the privacy step, at a median of 76 s per round.
+  - **What a no-op is:** the log line `'<span>' (<attributes>): rewriter changed nothing`. `privacy_rewrite.rewrite` asks the LLM to rewrite the marked span and gets the message back exactly as it was (`new == text`, or an empty answer). Nothing goes in, and there is no utility check, no retry and no protection.
+    - **How it ends the loop:** decoding is greedy, so if the span is picked again, the same input gives the same unchanged answer. A round that changes nothing and protects nothing ends the loop (`no rewrite changed the message: stop`). So once every span picked in a round is a no-op, the loop stops while the attackers still flag the attribute. That is what happened in 88 of 112 prompts.
+    - **No-op vs utility refusal:**
+
+      | | Utility refusal | No-op |
+      |---|---|---|
+      | The rewriter produced | a changed message | the same message |
+      | Decided by | R ≥ 100% (the check) | nothing; it is rejected as identical |
+      | What follows | a generalizing retry, then protection | nothing: the span stays and can be picked again |
+      | Count on PUPA-SD | 6 | 203 |
+
+    - **Two kinds of no-ops**, from a sample of 40:
+      - **Real cues the request needs:** "staff software engineer", "lymphoma", "female", "Emily's", "freelance", "retirement", "thesis". The rewrite prompt says "the request of the message must stay intact", so the LLM seems to keep these itself.
+      - **Spans without a visible cue**, mostly blamed for education: "and provide", "weather getting warmer", "FAQ that", "dueAmount: dueDate", "conditions would insurance pay". They were picked because deleting them moved Qwen's education P, and the rewriter finds nothing to generalize.
+      - Blame does not separate the two kinds: 64% of no-op spans and 68% of accepted spans have blame ≥ 0.5, and 19% vs 16% have blame < 0.1.
+    - **Qwen's education flags:** Qwen flags education in 61 of the 112 originals, Laya in 22, but PUPA-SD labels only 17 education pairs. So much of the non-convergence rests on Qwen education flags that the judge cannot verify.
+    - **Link to C1:** the option declined on 2026-10-12 ("exclude unchanged spans from later picks like protected ones") is exactly the lever C2 points to. Treating a no-op like a refusal (retry, or move on to the next-best span) is the obvious future fix; the algorithm stays frozen.
+  - **Corrections for the thesis text:**
+    - **Results:** replace "Occupation is often what the request is about, so the utility check keeps it in the prompt" with "In 20 of the 24 occupations the judge still recovers, our attackers still flag it too, but the loop stops because the rewriter leaves the span unchanged; the utility check refused only 6 rewrites in the whole run."
+    - **Conclusion:** drop the clause about the utility check keeping spans ("which is why half of the occupations remain recoverable"), and add the rewriter's no-ops as a limitation, with the fix above as future work.
 - [ ] **C3** Scoring with the judge, a separate stage from calibration. `score_rewrites.py`: D and spikes (B1's code); the judge's item files (privacy: blind guess, then a three-way compare; quality: utility and fluency ratings 1–5); reading the judge's answers back; bootstrap 95% CIs. Instructions for the cloud session; sanity check on the dev set; the user checks ~50 decisions by hand. ~5 h coding, ~1–2 h judge, ~1 h user.
   - **Our own measures for every method (user, 2026-10-12):** the final privacy per attribute (Qwen P, Laya P and their max, for each of the 10 attributes) and the final utility (D, D(∅), R = D / D(∅)), scored on every method's rewrite and on the originals, written as structured CSVs. The loop's values exist in its logs, but not in a structured form, and the baselines have none. The same 5 reference answers per prompt as the loop: same seed, sampled first, so they reproduce; the loop's logged final R serves as a check. Estimate: one GB10 job of ~3.5 h. Re-sampling the answers is ~2.8 h of that (91 s per prompt, including D(∅)); privacy for 784 texts takes ~20 min and D for 672 rewrites ~25 min. These are the loop's own objectives, so for the loop they are not independent evidence; the judge is.
     - [x] Written 2026-10-13: `evaluation/score_own_measures.py` + `evaluation/run_score_own_measures_gb10.sbatch` (6 h limit, `--limit` for a smoke test). It writes `results/evaluation/own_measures.csv`, one row per (prompt, version) for the original and the 6 methods, with D, d_empty, R, kl_per_answer and qwen/laya/max per attribute, plus `reference_answers.json`. It reuses `run_loop_sweep.load_models` and resets the seed to 23 right before `utility_check.prepare`, as the loop did, so the answers reproduce. It resumes by prompt id, and a method missing a rewrite stops it. Stub-tested: 784 rows, 36 columns, seed before every sampling, resume, D = 0 for identical texts. Smoke test (job 731, 2 prompts): the loop rows give R 3% (id 3) and 7% (id 4), exactly the loop's logged values, so the answers reproduce; the originals give R 0%; ~2 min per prompt, i.e. ~3.7 h for the full job, which the user starts 2026-10-13.
@@ -490,9 +589,89 @@ A1c measures `algorithm_v3`, and its numbers set the C1 and D1 estimates.
       - A short reasoning (1–2 sentences) before each guess, for ~+15–30 min of session time in total (864 guesses × ~40 tokens).
       - Keep "not inferable": abstaining is allowed, a stricter leak claim than Staab's forced guesses (deviation).
       - Every compare, age included, goes to the judge with the three-way rule, so that "less precise" stays available (e.g. "34" vs "early thirties") and all attributes are treated uniformly. Unlike Staab's rule-based age check, this is a deviation.
-- [ ] **D3** Staab check: rewritten lines that are verbatim copies of a different original line, plus the sensitivity check without those prompts. 30 min.
+- [x] **D3** Staab check (2026-10-17, `evaluation/staab_line_check.py`). It checks every round of their saved comment sets against the round before, and every reassembled rewrite matches `pupa_sd_staab.csv`.
+  - **Moved lines:** 2 of the 9 multi-line prompts.
+    - id 198: "NAME_1," was overwritten by a copy of the next line, so the email body appears twice.
+    - id 290: "-WebRep Pros", one of the two names the user asks to choose between, was overwritten by the closing question.
+  - **Echoed date:** 22 of 112 rewrites start with the comment date their prompts print (2023-11-14, our fixed timestamp). Their parser strips "YYYY-MM-DD:" only within a line's first 11 characters, and a leading space defeats that.
+  - **Sensitivity**, for all methods on the same remaining prompts:
+    - Without the 2 moved-line prompts, Staab goes from 70.0% to 70.1% leak and from 2.34 to 2.32 utility loss.
+    - Without the 22 date prompts (which include both moved-line prompts), Staab is at 69.6% and 2.40.
+    - The method ranking is unchanged in both cases. The loop rises to 43.8%, because the excluded prompts happen to be easier for it.
+    - The conclusions do not depend on these artifacts. Report both, as artifacts of their parser on our input.
+  - **Their parser** (`llm_anonymizers.filter_and_align_comments`):
+    - It splits the answer at `\n#`, then into non-empty lines.
+    - If the line count differs from the prompt's, it matches every old line to its most similar returned line (Jaro-Winkler > 0.5, each returned line used once). Where nothing matches, it keeps the old text unchanged, and unmatched returned lines are dropped.
+    - So a single-line prompt whose answer has several lines keeps only the most similar line. Their saved files cannot show that.
+    - Their "Number of comments does not match" messages are not in `baselines/logs/sweep_453.out`, so mismatch events cannot be counted from the logs.
+  - **How the check works:**
+    - **copied:** line i of a round equals line j ≠ i of the previous round, and is not line i's own text.
+    - **misaligned:** line i of a round is closer to line j ≠ i of the previous round than to its own (difflib ratio, above 0.5).
+    - Both detections were confirmed by reading the round-by-round lines.
+  - **Sentence for the thesis:** "Their comment parser moved lines in 2 of our 9 multi-line prompts and left the comment date in 22 rewrites; excluding these prompts changes no method's leak rate by more than 3 points and leaves the ranking unchanged."
+- [x] **Qwen vs Laya per attribute, figure** (2026-10-15, `evaluation/plot_attacker_recall.py` → `results/evaluation/attacker_recall.{pdf,png}`): of the pairs the judge recovers from the original PUPA-SD prompts (real leaks), the share each attacker flags (P > 0.5), as grouped bars with k/n on top. Same style and attacker colors as the dev-set figures.
+  - **Gender 7/11 (Qwen) vs 6/11 (Laya); location 15/29 vs 28/29; occupation 41/48 vs 34/48.**
+  - **The claim that Laya guesses gender while Qwen doesn't is not supported.**
+    - Across all 112 originals, Qwen flags gender in 12 and Laya in 10.
+    - Each catches cases the other misses: Laya alone catches id 368 ("male"); Qwen alone catches ids 266 and 734.
+    - The dev set has only 2 gender cells, too few to show anything.
+    - The real difference is location.
+  - **Flags on all 112 originals, all 10 attributes asked (Qwen / Laya / both):** gender 12/10/9, age 21/10/8, location 22/35/18, profession 54/42/36, health 11/8/6, education 61/22/22, socioeconomic 15/9/8, relationship 6/4/2, family 11/4/3, nationality 11/11/4.
+  - **Suggested caption:** "Of the attributes the judge recovers from the original PUPA-SD prompts, the share each attacker flags as inferable (P > 0.5). Laya catches almost every location, which Qwen misses in half the prompts, while Qwen catches more occupations; on gender they are close." It argues for using both attackers: each covers leaks the other misses.
+- [x] **Runtime per anonymization** (2026-10-15, from the rewrite CSVs, the 112 prompts):
+
+  | Method | Median | Mean | Range | LLM calls (mean) | Hardware |
+  |---|---|---|---|---|---|
+  | Loop | 388 s (6.5 min) | 491 s (8.2 min) | 102–2,371 s | 5.7 | GB10 |
+  | Presidio | 0.01 s | 0.02 s | 0–0.2 s | – | CPU |
+  | Loiseau-PUPA | 7.2 s | 31.4 s | 3.1–2,247 s | 1 | GB10 |
+  | PAPILLON | 12.9 s | 13.5 s | 6.2–47 s | 1 | GB10 |
+  | Staab | 352 s (5.9 min) | 356 s (5.9 min) | 256–529 s | 10 | GB10 |
+
+  - Loiseau's mean is pulled up by one runaway output of 37 min (their 25,000-token limit), so quote its median in the text.
+  - The loop's time includes the attackers' forward passes for span scoring and the utility checks, which are not counted as calls.
+  - Not verified: whether sampling the 5 reference answers counts as calls in the loop's `calls` column.
+  - The loop's time varies with the number of rounds; Staab always runs 3 rounds with 10 calls.
+  - LaTeX table `tab:runtime` given to the user.
 - [ ] **E** Report: main table with plain k/n (no bootstrap, user 2026-10-13), breakdown by attribute, privacy-utility plot, deviations table, limitations (judge covers labeled values only, `[stall]` counts, echo as definition, fluency thresholds from small samples, the final fix's leak check is noise-driven on non-converged rows). ~5 h.
 - Optional: Laya Step 5 ablation (one more C1-sized run + judge), Qwen reference probes for Laya's not-aligned claim (~1 h GPU + 1 h coding), reproduction checks (need an API budget).
+- **Further experiments** (listed 2026-10-17). Recommended: (1) the judge hand check, (2) C2, done, (3) the utility-threshold sweep or the attacker ablation.
+  - From the existing results, no GPU:
+
+    | Experiment | What it shows | Cost |
+    |---|---|---|
+    | Hand check of 50 judge decisions (`hand_check.csv`) | Whether the judge can be trusted; every privacy number rests on it | ~1 h, user |
+    | Lenient leak rate (match + less precise) | Results under Loiseau's stricter rule; the counts already exist | minutes |
+    | Per-prompt wins vs the best baseline | Whether the loop wins consistently or only on average | minutes |
+    | Sensitivity without the outputs that answer instead of rewriting | Loiseau's and PAPILLON's numbers on proper rewrites only | minutes |
+
+  - With the models (GPU, plus the judge):
+
+    | Experiment | What it shows | Cost |
+    |---|---|---|
+    | Utility-threshold sweep (ρ = 0.5, 0.75) | A privacy-utility curve for the loop instead of one point | ~4 h per value on 30 prompts, ~15 h on 112 |
+    | Attacker ablation (Qwen only; base Laya instead of fine-tuned) | What each attacker and the fine-tuning contribute to the outputs | ~4 h each on 30 prompts |
+    | Long prompts (the 29 over 100 words) | The deferred long-prompt study | ~32 h |
+    | Downstream answer quality | Send rewrites to a model, let the judge compare answers to the original's: utility as the user experiences it | ~1–2 h GPU + judge |
+    | Unlabeled leakage | The judge guesses all 10 attributes on every text, so added and unlabeled leakage is measured | judge only, ~1 h |
+    | Staab's evaluation protocol on all outputs | Their top-3 attacker, for numbers comparable to their paper | ~10 h GPU |
+    | Loop on SynthPAI | The method on Staab's home dataset | ~1–2 days GPU |
+    | Another backbone (e.g. Qwen3) | Whether the method transfers beyond Qwen2.5-7B | ~15 h per model |
+    | Multi-turn leakage | Attributes spread over several prompts: the stateful extension | new data + code |
+
+- **Reproducibility status (2026-10-15/17):**
+  - **Everything is pushed** to github.com/mkili-c/LLM-privacy (`main`, nothing uncommitted): code, PUPA-SD (raw and eval), the dev sets, Laya's training data, every rewrite, `own_measures.csv`, the judge's items/keys/answers, the calibration CSVs and the probe sweeps. Every table and figure can be regenerated from the repo without a GPU.
+  - **Already pinned:**
+    - The GB10 venv: `setup_gb10.sh` + `requirements-gb10.txt` (torch 2.11.0 cu128, transformers 5.8.0, laya 0.3.21 from PyPI).
+    - The baseline venvs: `baselines/setup_venvs.sh` + frozen requirements, repos at pinned commits (`fetch_repos.sh`), the Staab patch.
+    - Qwen2.5-7B at revision `a09a35458c702b33eeacc393d103063234e8bc28`.
+  - **Gaps:**
+    1. **The fine-tuned Laya** (`models/laya-privacy`, 809 MB) exists only on /work, plus a copy on /scratch that can be deleted. It is not in git (weights ignored) and not on Hugging Face. If lost, `laya_finetune.py` can retrain it (seed 0, tracked data), but not bitwise identically, so loop reruns would differ. **To do:** upload it to a private Hugging Face repo or to ETH Research Collection/Zenodo, and record the revision.
+    2. **Done 2026-10-15:** the x86 venv (`~/.llmvenv`) is frozen in `requirements-x86.txt` (pip freeze without torch and laya), with `setup_x86.sh`. The user changed the script to resolve `torch==2.11.0+cu128` together with the file, because the file pins torch's own CUDA packages. A fresh resolution of the file alone fails, because accelerate then pulls torch from PyPI. The dry run of the combined install was interrupted and is unverified.
+    3. **Not done:** a model download script (`models/download_models.py`, referenced in `.gitignore` but missing) with revisions: Qwen2.5-7B `a09a354…`, Qwen2.5-3B `aa8e72537993ba99e69dfaafa59ed015b17504d1`, base Laya `55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851`. Laya's Hugging Face repo id is not recorded; it is probably `convaiinnovations/laya-typed-decisions` (the "English checkpoint"), unconfirmed.
+    4. **Not done:** a README setup section saying which venv runs what, in which order.
+  - **A full file copy (2026-10-17, user)** works at the same paths on this cluster. Venvs are not relocatable, because the absolute paths in `activate`, the console-script shebangs and `pyvenv.cfg` are baked in. They also need the same system Python 3.12 and a CUDA 12.8-capable driver, and the GB10 venv runs only on aarch64. Not carried by a copy: the Slurm setup (account, GPU types, `cuda/12.4` module, `drop-caches`), /scratch unless copied (the 7B and the `laya-privacy-n*` checkpoints), and the judge's cloud sessions and private `judge-*` repos (their answers are in the repo).
+  - **Inherent limits:** reruns on other hardware are not bitwise identical (bf16 kernels, aarch64); the judge is not deterministic (the numbers reproduce from the stored answers); and outside hosting can vanish (PAPILLON's original environment already did).
 
 Order from here (2026-10-11, evening): commit the probe speed-ups (job 644 confirmed them) → decide the noise chase and the protection bypass (job 637) → A1i rerun → C1 (dev, 30 rows, ~3–5 h) → D1 (PUPA-SD, ~25–40 h per threshold; 1.0 first) → D2 → D3 → E. C2 and C3 are coded while the GPU runs; the id-734 rerun and the Presidio CPU job go anywhere before D2.
 
