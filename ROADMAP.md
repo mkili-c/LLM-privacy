@@ -636,14 +636,19 @@ A1c measures `algorithm_v3`, and its numbers set the C1 and D1 estimates.
 - [ ] **E** Report: main table with plain k/n (no bootstrap, user 2026-10-13), breakdown by attribute, privacy-utility plot, deviations table, limitations (judge covers labeled values only, `[stall]` counts, echo as definition, fluency thresholds from small samples, the final fix's leak check is noise-driven on non-converged rows). ~5 h.
 - Optional: Laya Step 5 ablation (one more C1-sized run + judge), Qwen reference probes for Laya's not-aligned claim (~1 h GPU + 1 h coding), reproduction checks (need an API budget).
 - **Further experiments** (listed 2026-10-17). Recommended: (1) the judge hand check, (2) C2, done, (3) the utility-threshold sweep or the attacker ablation.
-  - From the existing results, no GPU:
+  - From the existing results, no GPU. Saved for later (user, 2026-10-17). Items 1–6 are one extension of `read_judge_answers.py` (~1 h), item 7 is a manual pass over 17 cases, item 8 is minutes. Inputs: `judge_outcomes.csv`, `judge_utility.csv`, `own_measures.csv`, `loop_stats.csv`, the rewrite CSVs.
 
-    | Experiment | What it shows | Cost |
-    |---|---|---|
-    | Hand check of 50 judge decisions (`hand_check.csv`) | Whether the judge can be trusted; every privacy number rests on it | ~1 h, user |
-    | Lenient leak rate (match + less precise) | Results under Loiseau's stricter rule; the counts already exist | minutes |
-    | Per-prompt wins vs the best baseline | Whether the loop wins consistently or only on average | minutes |
-    | Sensitivity without the outputs that answer instead of rewriting | Loiseau's and PAPILLON's numbers on proper rewrites only | minutes |
+    | # | Statistic | What it shows | Cost |
+    |---|---|---|---|
+    | 0 | Hand check of 50 judge decisions (`hand_check.csv`) | Whether the judge can be trusted; every privacy number rests on it | ~1 h, user |
+    | 1 | Lenient leak rate (match + less precise), Loiseau's stricter rule | Already follows from the main table: loop 84/140 (60.0%), Presidio 111 (79.3%), Staab 111 (79.3%), PAPILLON 117 (83.6%), Loiseau-PUPA 124 (88.6%). The loop stays first; its margin shrinks from ~30 to ~20 points because it generalizes more than it removes. | done (numbers) |
+    | 2 | Paired comparison, loop vs each baseline | Per pair: hidden by the loop but leaked by the baseline, and the reverse. Per prompt: wins, ties and losses on leak count and on judged utility loss. Shows whether the loop wins consistently or only on average (plain counts, no test). | minutes |
+    | 3 | The judge's results by how the loop ended | Leak rate and utility loss for converged vs stalled prompts, and by rounds: does convergence by our attackers mean real privacy to the judge? C2's cross-table hints ~26% leaking on converged prompts vs ~45% on stalled ones. | minutes |
+    | 4 | Distribution of judged utility loss per method | Share rated 0 (no loss) and share rated ≥ 5 (half or more lost): whether the loop's mean of 3.23 is many small losses or a few destroyed requests | minutes |
+    | 5 | Sensitivity without the outputs that answer instead of rewriting | Loiseau's and PAPILLON's numbers without their 19 / 16 long outputs, like the D3 check | minutes |
+    | 6 | Edit size per method vs utility loss | Word similarity to the original and the share of unchanged outputs per method (Presidio 44 unchanged, the loop 6); do bigger edits go with bigger judged loss? | minutes |
+    | 7 | The loop's 17 blind spots, qualitatively | Which attributes and cue patterns (first person removed, gendered pronouns, implied attributes): a short table for the limitations | manual, ~30 min |
+    | 8 | Effects of prompt length | Leak and utility loss in length bins (≤ 25, 26–50, 51–100 words), a first hint for the long-prompt study | minutes |
 
   - With the models (GPU, plus the judge):
 
