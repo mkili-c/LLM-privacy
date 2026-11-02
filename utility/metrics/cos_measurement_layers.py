@@ -60,7 +60,7 @@ HIGHER_IS_BETTER = {"cos_centroid"}
 def get_args():
     p = argparse.ArgumentParser(description="Layer-wise cosine-similarity utility "
                                             "over the paraphrase CSV")
-    p.add_argument("--model_path", default="/work/projects/mkilic/models/Qwen2.5-3B-Instruct")
+    p.add_argument("--model_path", default="/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct")
     p.add_argument("--csv", default="../data/prompt_paraphrases_100.csv")
     p.add_argument("--k_grid", type=int, nargs="+", default=[10],
                    help="sample counts to test (needs >= 2 per cell)")

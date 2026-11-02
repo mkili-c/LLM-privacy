@@ -4,7 +4,7 @@
 #SBATCH --gpus=gb10:1
 #SBATCH --time=24:00:00
 #SBATCH --export=NONE
-#SBATCH --output=/work/projects/mkilic/LLM-privacy/pu_loop_sweep_%j.out
+#SBATCH --output=/work/projects/p23-mkilic/LLM-privacy/pu_loop_sweep_%j.out
 
 # The privacy-utility loop over an evaluation CSV (run_loop_sweep.py) on a GB10 node, with
 # Qwen2.5-7B-Instruct in bf16, the backbone of every baseline. All arguments go to the script:
@@ -15,8 +15,8 @@
 
 set -euo pipefail
 
-source /work/projects/mkilic/.llmvenv-gb10/bin/activate
-REPO=/work/projects/mkilic/LLM-privacy
+source /work/projects/p23-mkilic/.llmvenv-gb10/bin/activate
+REPO=/work/projects/p23-mkilic/LLM-privacy
 MODEL=/scratch/users/mkilic/Qwen2.5-7B-Instruct   # revision a09a35458c702b33eeacc393d103063234e8bc28, as the baselines
 cd "$REPO"
 

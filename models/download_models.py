@@ -25,10 +25,13 @@ MODELS = {
     "qwen7b": ("Qwen/Qwen2.5-7B-Instruct", "a09a35458c702b33eeacc393d103063234e8bc28",
                "/scratch/users/mkilic/Qwen2.5-7B-Instruct"),
     "qwen3b": ("Qwen/Qwen2.5-3B-Instruct", "aa8e72537993ba99e69dfaafa59ed015b17504d1",
-               "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"),
+               "/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct"),
     "laya": ("convaiinnovations/laya", "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
-             "/work/projects/mkilic/models/laya"),
+             "/work/projects/p23-mkilic/models/laya"),
 }
+# The Laya repo also bundles two other checkpoints. Our runs used only the root (English) one, and
+# laya_finetune.save_weights copies the whole base folder into every fine-tuned checkpoint.
+IGNORE = {"laya": ["typed-decisions/*", "multilingual/*"]}
 
 
 def get_args():
@@ -50,8 +53,9 @@ def check(repo, revision):
     print(f"ok    {repo} @ {info.sha[:7]} ({len(info.siblings)} files)")
 
 
-def download(repo, revision, local_dir):
-    path = snapshot_download(repo_id=repo, revision=revision, local_dir=local_dir)
+def download(repo, revision, local_dir, ignore):
+    path = snapshot_download(repo_id=repo, revision=revision, local_dir=local_dir,
+                             ignore_patterns=ignore)
     print(f"done  {repo} @ {revision[:7]} -> {path}")
 
 
@@ -62,7 +66,7 @@ def main():
         if args.check:
             check(repo, revision)
         else:
-            download(repo, revision, local_dir)
+            download(repo, revision, local_dir, IGNORE.get(name))
 
 
 if __name__ == "__main__":

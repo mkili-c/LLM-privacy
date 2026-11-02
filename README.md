@@ -13,8 +13,8 @@ Everything the thesis reports is in this repository: code, data (PUPA-SD, the de
 | Environment | Where it runs | What runs in it | Build it with |
 |---|---|---|---|
 | `~/.llmvenv` | x86 (login node, RTX 5060 Ti) | Laya jobs, dev-set utility measurements, all analysis and plotting | `bash setup_x86.sh` (on the login node) |
-| `/work/projects/mkilic/.llmvenv-gb10` | GB10 (aarch64) | the loop, calibration, our measures, the model server for the baselines | `bash setup_gb10.sh` (inside a GB10 session, see the script) |
-| `/work/projects/mkilic/venvs/<method>` | presidio: x86; loiseau, papillon, staab: GB10 | one per baseline, since they pin conflicting packages | `bash baselines/setup_venvs.sh <method>` |
+| `/work/projects/p23-mkilic/.llmvenv-gb10` | GB10 (aarch64) | the loop, calibration, our measures, the model server for the baselines | `bash setup_gb10.sh` (inside a GB10 session, see the script) |
+| `/work/projects/p23-mkilic/venvs/<method>` | presidio: x86; loiseau, papillon, staab: GB10 | one per baseline, since they pin conflicting packages | `bash baselines/setup_venvs.sh <method>` |
 
 All three are built from frozen requirement files (`requirements-x86.txt`, `requirements-gb10.txt`, `baselines/requirements-<method>.txt`). The baselines' code is cloned at pinned commits, with our one patch applied, by `bash baselines/fetch_repos.sh`.
 
@@ -23,13 +23,13 @@ All three are built from frozen requirement files (`requirements-x86.txt`, `requ
     python models/download_models.py --check   # the pinned revisions still exist
     python models/download_models.py           # Qwen2.5-7B, Qwen2.5-3B, base Laya
 
-Each model is downloaded at the exact revision of our runs, to the path the scripts read. The fine-tuned Laya (`/work/projects/mkilic/models/laya-privacy`, the loop's second attacker) is ours and not on the Hub: restore it from its backup, or retrain it with `sbatch privacy/sbatch_scripts/run_laya_finetune.sbatch` (all 1,930 training pairs, seed 0) and copy `/scratch/users/mkilic/laya-privacy-n1930` there. A retrained model is close to, but not bit-identical with, the one of our runs.
+Each model is downloaded at the exact revision of our runs, to the path the scripts read. The fine-tuned Laya (`/work/projects/p23-mkilic/models/laya-privacy`, the loop's second attacker) is ours and not on the Hub: restore it from its backup, or retrain it with `sbatch privacy/sbatch_scripts/run_laya_finetune.sbatch` (all 1,930 training pairs, seed 0) and copy `/scratch/users/mkilic/laya-privacy-n1930` there. A retrained model is close to, but not bit-identical with, the one of our runs.
 
 ### 3. Runs (GPU)
 
     sbatch run_loop_sweep_gb10.sbatch --data data/pupa_sd/pupa_sd_eval.csv --out results/rewrites/pupa_sd_loop.csv
     sbatch baselines/run_sweep_gb10.sbatch "loiseau_pupa loiseau_synthpai papillon staab"
-    srun -A projects -p interactive-cpu -t 00:15:00 /work/projects/mkilic/venvs/presidio/bin/python run_baselines.py --method presidio --data data/pupa_sd/pupa_sd_eval.csv
+    srun -A projects -p interactive-cpu -t 00:15:00 /work/projects/p23-mkilic/venvs/presidio/bin/python run_baselines.py --method presidio --data data/pupa_sd/pupa_sd_eval.csv
     sbatch evaluation/run_score_own_measures_gb10.sbatch
     sbatch calibration/run_calibration_gb10.sbatch
 
@@ -95,5 +95,5 @@ torch comes from the CUDA 12.8 wheel index (`cu128`) and bundles its own CUDA li
 - **Precision:** Qwen runs in bfloat16 on the GB10 (the loop, the server, our measures). Laya scores in float32.
 - **Model server:** `transformers serve`, without continuous batching, because it would drop Qwen's repetition penalty. A baseline that does not set a decoding parameter gets Qwen's `generation_config.json` defaults: sampling, temperature 0.7, top-p 0.8, top-k 20, repetition penalty 1.05. Staab et al. set temperature 0.1.
 - **Other seeds:** Staab et al.'s config uses seed 10; the Laya fine-tuning uses seed 0.
-- **Not pinned:** `sentence-transformers/all-MiniLM-L6-v2`, which Staab et al.'s code loads from the Hugging Face cache at import (`src/utils/string_utils.py`). It maps their attacker's answers to attribute types (`src/reddit/reddit.py`), so it can affect their outputs. Its revision was not recorded.
+- **Not pinned, but recorded:** `sentence-transformers/all-MiniLM-L6-v2`, which Staab et al.'s code loads by name at import (`src/utils/string_utils.py`), so it gets the Hub's current revision. It maps their attacker's answers to attribute types (`src/reddit/reddit.py`), so it can affect their outputs. Our runs used revision `1110a243fdf4706b3f48f1d95db1a4f5529b4d41`, the only one in our Hugging Face cache (downloaded 2026-10-08) and still the Hub's latest on 2026-11-02 (last changed 2026-06-01). If the Hub's version changes, a rerun loads the newer one.
 - **Paths:** the paths above are hard-coded in the job scripts; on another account or cluster, change them there.

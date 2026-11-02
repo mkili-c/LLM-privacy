@@ -11,7 +11,7 @@
 # Extra arguments go to laya_probe_sweep.py (a later --save_suffix wins), e.g. the
 # fine-tuned checkpoint the loop uses, for plot_probe_rewrites.py:
 #     sbatch sbatch_scripts/run_laya_probe.sbatch \
-#         --laya_path /work/projects/mkilic/models/laya-privacy --save_suffix laya_privacy_probe
+#         --laya_path /work/projects/p23-mkilic/models/laya-privacy --save_suffix laya_privacy_probe
 
 # Required first line so `module` works in a batch job
 . /etc/profile.d/modules.sh
@@ -22,7 +22,7 @@ set -euo pipefail
 source /home/mkilic/.llmvenv/bin/activate
 # Repo root -- override with `REPO_ROOT=/path/to/LLM-privacy sbatch <script>` if
 # the repo lives elsewhere.
-REPO_ROOT="${REPO_ROOT:-/work/projects/mkilic/LLM-privacy}"
+REPO_ROOT="${REPO_ROOT:-/work/projects/p23-mkilic/LLM-privacy}"
 cd "$REPO_ROOT/privacy"
 
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True

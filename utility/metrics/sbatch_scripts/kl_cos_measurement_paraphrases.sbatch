@@ -21,7 +21,7 @@ source /home/mkilic/.llmvenv/bin/activate
 # Repo root -- override with `REPO_ROOT=/path/to/LLM-privacy sbatch <script>` if
 # the repo lives elsewhere. Every path below is relative to it, so the job no
 # longer depends on which directory you submit from.
-REPO_ROOT="${REPO_ROOT:-/work/projects/mkilic/LLM-privacy}"
+REPO_ROOT="${REPO_ROOT:-/work/projects/p23-mkilic/LLM-privacy}"
 cd "$REPO_ROOT/utility"
 
 #Expandable segments let the allocator grow/shrink a single segment instead of 

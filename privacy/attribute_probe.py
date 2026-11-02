@@ -32,7 +32,7 @@ from transformers import DynamicCache
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "utility" / "metrics"))
 from topk_sample import load 
 
-DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+DEFAULT_MODEL = "/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct"
 # messages per forward pass in logits_batch and logits_shared. Only each row's last position goes
 # through the output layer, so a batch holds no (rows, length, vocab) logits tensor and 64 rows of
 # the longest PUPA-SD prompt (~480 tokens) take a few GB; it was 16 with the full logits. The size

@@ -12,7 +12,7 @@ A row whose call fails gets an empty rewrite and the exception in `error`. Ids w
 successful rewrite in the output are skipped, so an interrupted run resumes where it stopped
 and retries the failures; for each id the last row in the file counts.
 
-Each method runs in its own venv (/work/projects/mkilic/venvs/<venv>), because the
+Each method runs in its own venv (/work/projects/p23-mkilic/venvs/<venv>), because the
 baselines pin conflicting packages: presidio -> presidio, loiseau_* -> loiseau
 (DSPy 3.0.4, as in their paper), papillon -> papillon (DSPy 3.1.2: PAPILLON's README says
 its code runs with the newest DSPy for inference, and the authors' 2026 follow-up uses 3.1.2),

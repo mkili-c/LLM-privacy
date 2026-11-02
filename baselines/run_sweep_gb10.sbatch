@@ -4,7 +4,7 @@
 #SBATCH --gpus=gb10:1
 #SBATCH --time=24:00:00
 #SBATCH --export=NONE
-#SBATCH --output=/work/projects/mkilic/LLM-privacy/baselines/logs/sweep_%j.out
+#SBATCH --output=/work/projects/p23-mkilic/LLM-privacy/baselines/logs/sweep_%j.out
 
 # Serve Qwen2.5-7B-Instruct with `transformers serve` on a GB10 node and run baselines
 # through it, one request at a time (no continuous batching: Qwen decodes exactly as its
@@ -15,8 +15,8 @@
 
 set -euo pipefail
 
-REPO=/work/projects/mkilic/LLM-privacy
-VENVS=/work/projects/mkilic/venvs
+REPO=/work/projects/p23-mkilic/LLM-privacy
+VENVS=/work/projects/p23-mkilic/venvs
 MODEL=/scratch/users/mkilic/Qwen2.5-7B-Instruct   # revision a09a35458c702b33eeacc393d103063234e8bc28
 METHODS=$1
 shift
@@ -36,7 +36,7 @@ export OPENAI_API_BASE=http://localhost:8000/v1
 SERVE_LOG=baselines/logs/serve_${SLURM_JOB_ID:-manual}.log
 
 echo "Job ${SLURM_JOB_ID:-manual} on $(hostname) ($(uname -m)), methods: $METHODS"
-/work/projects/mkilic/.llmvenv-gb10/bin/transformers serve "$MODEL" --default-seed 0 --port 8000 > "$SERVE_LOG" 2>&1 &
+/work/projects/p23-mkilic/.llmvenv-gb10/bin/transformers serve "$MODEL" --default-seed 0 --port 8000 > "$SERVE_LOG" 2>&1 &
 SERVER=$!
 trap 'kill $SERVER 2>/dev/null || true' EXIT
 until curl -s localhost:8000/health > /dev/null; do

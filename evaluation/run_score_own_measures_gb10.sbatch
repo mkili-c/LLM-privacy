@@ -4,7 +4,7 @@
 #SBATCH --gpus=gb10:1
 #SBATCH --time=06:00:00
 #SBATCH --export=NONE
-#SBATCH --output=/work/projects/mkilic/LLM-privacy/evaluation/own_measures_%j.out
+#SBATCH --output=/work/projects/p23-mkilic/LLM-privacy/evaluation/own_measures_%j.out
 
 # The loop's own privacy and utility measures on every method's rewrites of PUPA-SD and on the
 # originals (evaluation/score_own_measures.py). ~3.5 h. A rerun continues where it stopped.
@@ -14,8 +14,8 @@
 
 set -euo pipefail
 
-source /work/projects/mkilic/.llmvenv-gb10/bin/activate
-cd /work/projects/mkilic/LLM-privacy
+source /work/projects/p23-mkilic/.llmvenv-gb10/bin/activate
+cd /work/projects/p23-mkilic/LLM-privacy
 
 /usr/bin/drop-caches || true
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True

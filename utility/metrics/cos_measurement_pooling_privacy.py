@@ -62,7 +62,7 @@ def get_args(description="Pooling sweep of the cosine-similarity utility over "
              csv_default="./data/prompt_rewrites_100.csv",
              suffix_default="privacy_cos_pooling"):
     p = argparse.ArgumentParser(description=description)
-    p.add_argument("--model_path", default="/work/projects/mkilic/models/Qwen2.5-3B-Instruct")
+    p.add_argument("--model_path", default="/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct")
     p.add_argument("--csv", default=csv_default)
     p.add_argument("--k_grid", type=int, nargs="+", default=[15],
                    help="sample counts to test (needs >= 2 per cell)")

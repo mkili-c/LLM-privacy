@@ -31,7 +31,7 @@ from transformers import AutoTokenizer
 
 RAW = "PUPA_SD.csv"
 OUT = "pupa_sd_eval.csv"
-LAYA_TOKENIZER = "/work/projects/mkilic/models/laya/tokenizer"
+LAYA_TOKENIZER = "/work/projects/p23-mkilic/models/laya/tokenizer"
 # Laya, the loop's second attacker, reads 512 tokens: the longest of our 10 attribute
 # questions takes 37 and [SEP] 1, leaving 474 for the message (laya_probe.py raises above).
 # 50 tokens of headroom because the loop's edits can lengthen the text.

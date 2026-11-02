@@ -16,8 +16,8 @@
 
 set -euo pipefail
 
-source /work/projects/mkilic/.llmvenv-gb10/bin/activate
-REPO_ROOT=/work/projects/mkilic/LLM-privacy
+source /work/projects/p23-mkilic/.llmvenv-gb10/bin/activate
+REPO_ROOT=/work/projects/p23-mkilic/LLM-privacy
 MODEL_PATH=/scratch/users/mkilic/Qwen2.5-32B-Instruct
 cd "$REPO_ROOT"
 

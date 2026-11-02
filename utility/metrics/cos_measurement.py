@@ -64,7 +64,7 @@ SUMMARY_METRICS = ["udist2", "cos_centroid"]
 def get_args():
     p = argparse.ArgumentParser(description="Cosine-similarity utility over the "
                                             "prompt-rewrites CSV")
-    p.add_argument("--model_path", default="/work/projects/mkilic/models/Qwen2.5-3B-Instruct")
+    p.add_argument("--model_path", default="/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct")
     p.add_argument("--csv", default="./data/privacy_prompt_rewrites_100.csv")
     p.add_argument("--k_grid", type=int, nargs="+", default=[5, 10, 15],
                    help="sample counts to test (needs >= 2 per cell)")

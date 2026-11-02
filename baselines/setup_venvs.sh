@@ -8,7 +8,7 @@
 #   bash baselines/setup_venvs.sh papillon    # on a GB10 node
 set -euo pipefail
 
-VENVS=/work/projects/mkilic/venvs
+VENVS=/work/projects/p23-mkilic/venvs
 HERE=$(cd "$(dirname "$0")" && pwd)
 METHOD=${1:?usage: setup_venvs.sh <method>}
 

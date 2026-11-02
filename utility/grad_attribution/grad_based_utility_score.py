@@ -22,7 +22,7 @@ import torch
 import torch.nn.functional as F
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+DEFAULT_MODEL = "/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct"
 
 
 def load(model_path, device, dtype):

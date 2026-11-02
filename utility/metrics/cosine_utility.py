@@ -47,7 +47,7 @@ import torch.nn.functional as F
 
 from topk_sample import load, topk_answers
 
-DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+DEFAULT_MODEL = "/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct"
 
 
 def get_args():

@@ -16,7 +16,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 def get_args():
     p = argparse.ArgumentParser(description="Top-K answers for one prompt")
-    p.add_argument("--model_path", default="/work/projects/mkilic/models/Qwen2.5-3B-Instruct")
+    p.add_argument("--model_path", default="/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct")
     p.add_argument("--prompt", default="I am a 45-years-old doctor living in New York. Give me one advice for coping with stress.")
     p.add_argument("--k", type=int, default=15)
     p.add_argument("--mode", choices=["beam", "sample"], default="sample")

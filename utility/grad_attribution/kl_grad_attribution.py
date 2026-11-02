@@ -66,7 +66,7 @@ from topk_sample import topk_answers
 from kl_utility_scoring import build_prompt_ids
 from grad_based_utility_score import load
 
-DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+DEFAULT_MODEL = "/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct"
 
 
 def get_args():

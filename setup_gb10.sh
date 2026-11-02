@@ -7,13 +7,13 @@
 # are not inherited):
 #
 #     srun --gpus gb10:1 --pty -A projects -t 60 bash --login
-#     bash /work/projects/mkilic/LLM-privacy/setup_gb10.sh
+#     bash /work/projects/p23-mkilic/LLM-privacy/setup_gb10.sh
 #
 # The venv goes to /work/projects (permanent); /home is nearly full.
 set -euo pipefail
 
-VENV="${VENV:-/work/projects/mkilic/.llmvenv-gb10}"
-REPO_ROOT="${REPO_ROOT:-/work/projects/mkilic/LLM-privacy}"
+VENV="${VENV:-/work/projects/p23-mkilic/.llmvenv-gb10}"
+REPO_ROOT="${REPO_ROOT:-/work/projects/p23-mkilic/LLM-privacy}"
 
 if [ "$(uname -m)" != "aarch64" ]; then
     echo "This is $(uname -m), not a GB10 node: run it inside a GB10 session." >&2

@@ -51,7 +51,7 @@ from cosine_utility import cosine_stats
 
 def get_args():
     p = argparse.ArgumentParser(description="Sweep the hidden layer used for answer embeddings")
-    p.add_argument("--model_path", default="/work/projects/mkilic/models/Qwen2.5-3B-Instruct")
+    p.add_argument("--model_path", default="/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct")
     p.add_argument("--csv", default="data/privacy_prompt_rewrites.csv")
     p.add_argument("--k", type=int, default=15, help="answers sampled per prompt")
     p.add_argument("--max_new_tokens", type=int, default=256)

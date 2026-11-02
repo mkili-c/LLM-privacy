@@ -4,7 +4,7 @@
 #SBATCH --gpus=gb10:1
 #SBATCH --time=01:00:00
 #SBATCH --export=NONE
-#SBATCH --output=/work/projects/mkilic/LLM-privacy/privacy/sbatch_scripts/check_probe_speed_%j.out
+#SBATCH --output=/work/projects/p23-mkilic/LLM-privacy/privacy/sbatch_scripts/check_probe_speed_%j.out
 
 # The probe speed-ups (output layer on the last positions only; the message encoded once for all
 # attribute questions) against the probe as it was: same P, and how much faster. ~25 min.
@@ -12,8 +12,8 @@
 
 set -euo pipefail
 
-source /work/projects/mkilic/.llmvenv-gb10/bin/activate
-cd /work/projects/mkilic/LLM-privacy
+source /work/projects/p23-mkilic/.llmvenv-gb10/bin/activate
+cd /work/projects/p23-mkilic/LLM-privacy
 
 /usr/bin/drop-caches || true
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True

@@ -32,7 +32,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "utility" / "metric
 from topk_sample import load                     # noqa: E402
 from kl_utility_scoring import build_prompt_ids  # noqa: E402
 
-DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+DEFAULT_MODEL = "/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct"
 
 YES_FORMS = ["Yes", "yes", "YES", " Yes", " yes", "Yeah", "Yep", "Y", "True", "true"]
 NO_FORMS = ["No", "no", "NO", " No", " no", "Nope", "Nah", "N", "False", "false"]

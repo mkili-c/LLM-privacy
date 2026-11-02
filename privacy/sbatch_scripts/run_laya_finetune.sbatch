@@ -23,7 +23,7 @@ module load cuda/12.4
 set -euo pipefail
 
 source /home/mkilic/.llmvenv/bin/activate
-REPO_ROOT="${REPO_ROOT:-/work/projects/mkilic/LLM-privacy}"
+REPO_ROOT="${REPO_ROOT:-/work/projects/p23-mkilic/LLM-privacy}"
 cd "$REPO_ROOT/privacy"
 
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True

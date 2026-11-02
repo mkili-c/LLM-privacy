@@ -134,7 +134,7 @@ Follows the creators' fine-tuning notebook (`notebooks/laya_finetune_typed_decis
   - OOD gaps: political views stays at 0.50 (our data only has party affiliation; the OOD set uses ideology and religion words); addiction and mental health are almost absent from the training data; profession detection depends on phrasing ("How does a 41-year-old teacher…").
 
 ### Step 5: in the loop (after Phase 1)
-- [ ] Run the loop on the same prompts with old and fine-tuned Laya, and score both outputs with the Evaluation pipeline's judge. The fine-tuned one is the default since 2026-10-08; the old one needs `--laya_path /work/projects/mkilic/models/laya`.
+- [ ] Run the loop on the same prompts with old and fine-tuned Laya, and score both outputs with the Evaluation pipeline's judge. The fine-tuned one is the default since 2026-10-08; the old one needs `--laya_path /work/projects/p23-mkilic/models/laya`.
 
 Rules: never train on `prompt_rewrites_100.csv` (out-of-distribution test and Phase 1 set), PUPA or SynthPAI. Laya's own scores on loop outputs are not evidence, since the loop optimized against them.
 
@@ -203,7 +203,7 @@ Four baselines: Presidio, Loiseau et al., PAPILLON and Staab et al. Their code i
 - [x] `baselines/fetch_repos.sh` clones the repos at their pinned commits into `baselines/repos/`; the adapters read PAPILLON's module and Loiseau et al.'s prompts from there.
 - [x] `baselines/run_sweep_gb10.sbatch "<methods>" [run_baselines args]`: starts `transformers serve` (seed 0, no batching) on GB10, waits for it with a liveness check, runs each method in its venv, and stops the server. Each job gets a fresh DSPy cache dir, so cache hits from earlier jobs can't shift the seeded sampling. Logs go to `baselines/logs/`.
 - [ ] Runs inside the method's own venv. The repos pin conflicting packages: Staab et al. need `openai==0.28.1`, while DSPy (PAPILLON, Loiseau et al.) needs openai ≥ 1. So there are three venvs.
-- **Reproducibility** (2026-10-06): venvs live on permanent storage in `/work/projects/mkilic/venvs/<method>` and are built only from frozen requirements, `baselines/requirements-<method>.txt` (a `pip freeze` of the venv the results come from), by `bash baselines/setup_venvs.sh <method>`. Also pinned:
+- **Reproducibility** (2026-10-06): venvs live on permanent storage in `/work/projects/p23-mkilic/venvs/<method>` and are built only from frozen requirements, `baselines/requirements-<method>.txt` (a `pip freeze` of the venv the results come from), by `bash baselines/setup_venvs.sh <method>`. Also pinned:
   - repo commits: eth-sri/llm-anonymization `5dafa6d`, Columbia-NLP-Lab/PAPILLON `594e7eb` (the original; not the Probabilistic_PAPILLON follow-up, whose `createdPrompt` field carries an extra description), gabrielloiseau/adaptive-text-anonymization `315ed31`;
   - the model: Qwen/Qwen2.5-7B-Instruct revision `a09a35458c702b33eeacc393d103063234e8bc28` (the copy in /scratch; re-download it with `hf download --revision` if scratch is cleaned);
   - each method's own sampling settings, as released, recorded in the deviations table.

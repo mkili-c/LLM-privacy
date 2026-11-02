@@ -5,7 +5,7 @@
 #
 # Only installs packages, so it may run on the login node:
 #
-#     bash /work/projects/mkilic/LLM-privacy/setup_x86.sh
+#     bash /work/projects/p23-mkilic/LLM-privacy/setup_x86.sh
 #
 # torch comes from the CUDA 12.8 wheel index and is resolved together with the frozen
 # requirements: they pin torch's own CUDA packages (cuda-toolkit, nvidia-*, triton), which
@@ -13,7 +13,7 @@
 set -euo pipefail
 
 VENV="${VENV:-/home/mkilic/.llmvenv}"
-REPO_ROOT="${REPO_ROOT:-/work/projects/mkilic/LLM-privacy}"
+REPO_ROOT="${REPO_ROOT:-/work/projects/p23-mkilic/LLM-privacy}"
 
 if [ "$(uname -m)" != "x86_64" ]; then
     echo "This is $(uname -m), not x86_64: on a GB10 node use setup_gb10.sh." >&2

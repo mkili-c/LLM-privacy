@@ -54,7 +54,7 @@ from kl_grad_attribution import content_span
 from kl_token_grad import token_gradients
 from kl_gcg_rewrite import build_ids_with_answer, kl_of, evaluate_candidates
 
-DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+DEFAULT_MODEL = "/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct"
 MASK = "[MASK]"
 
 

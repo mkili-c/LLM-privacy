@@ -64,7 +64,7 @@ from kl_grad_attribution import kl_attribution
 from kl_gcg_rewrite import build_ids_with_answer, kl_of
 from privacy_rewrite import OPEN, CLOSE, WORD, STOPWORDS, generate_message
 
-DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+DEFAULT_MODEL = "/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct"
 
 
 def get_args():

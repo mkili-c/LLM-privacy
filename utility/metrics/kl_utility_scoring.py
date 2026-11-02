@@ -28,7 +28,7 @@ import torch.nn.functional as F
 
 from topk_sample import load, topk_answers
 
-DEFAULT_MODEL = "/work/projects/mkilic/models/Qwen2.5-3B-Instruct"
+DEFAULT_MODEL = "/work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct"
 MESSAGE_SLOT = "\x00MESSAGE\x00"    # placeholder that splits the chat template around the message
 # A token above 8 nats of surprisal (P < 1/3000) is a spike: broken grammar ("I am a, who",
 # "I sensitivity my eyes") shows up as such spikes, a clean edit mostly does not.
