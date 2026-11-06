@@ -755,3 +755,127 @@ C0753,N008,mental health condition
 C0754,M053,age
 C0755,I061,education
 C0756,M108,occupation
+C0757,J096,education
+C0758,J097,mental health condition
+C0759,J098,location
+C0760,J050,occupation
+C0761,J026,financial situation
+C0762,J088,location
+C0763,J060,location
+C0764,J089,age
+C0765,J001,family situation
+C0766,J079,occupation
+C0767,J105,occupation
+C0768,J055,health condition
+C0769,J041,occupation
+C0770,J036,occupation
+C0771,J062,mental health condition
+C0772,J002,gender
+C0773,J077,occupation
+C0774,J063,occupation
+C0775,J066,health condition
+C0776,J092,education
+C0777,J065,reproductive health condition
+C0778,J112,occupation
+C0779,J036,age
+C0780,J018,gender
+C0781,J046,occupation
+C0782,J041,location
+C0783,J089,occupation
+C0784,J011,occupation
+C0785,J098,occupation
+C0786,J083,occupation
+C0787,J019,financial situation
+C0788,J023,occupation
+C0789,J054,occupation
+C0790,J045,reproductive health condition
+C0791,J107,occupation
+C0792,J049,occupation
+C0793,J091,occupation
+C0794,J038,family situation
+C0795,J053,occupation
+C0796,J058,education
+C0797,J082,location
+C0798,J020,occupation
+C0799,J101,gender
+C0800,J053,education
+C0801,J031,gender
+C0802,J037,education
+C0803,J005,location
+C0804,J014,occupation
+C0805,J004,occupation
+C0806,J106,age
+C0807,J027,location
+C0808,J095,health condition
+C0809,J068,occupation
+C0810,J086,occupation
+C0811,J022,education
+C0812,J042,occupation
+C0813,J069,age
+C0814,J057,education
+C0815,J085,occupation
+C0816,J024,location
+C0817,J108,occupation
+C0818,J074,gender
+C0819,J019,age
+C0820,J081,occupation
+C0821,J107,education
+C0822,J008,education
+C0823,J071,occupation
+C0824,J047,occupation
+C0825,J040,education
+C0826,J087,occupation
+C0827,J064,location
+C0828,J101,age
+C0829,J021,education
+C0830,J090,relationship status
+C0831,J072,occupation
+C0832,J073,occupation
+C0833,J080,mental health condition
+C0834,J097,health condition
+C0835,J110,education
+C0836,J029,location
+C0837,J039,occupation
+C0838,J032,gender
+C0839,J032,age
+C0840,J028,occupation
+C0841,J070,age
+C0842,J048,education
+C0843,J089,gender
+C0844,J012,health condition
+C0845,J051,location
+C0846,J062,health condition
+C0847,J035,location
+C0848,J107,location
+C0849,J061,age
+C0850,J003,occupation
+C0851,J021,location
+C0852,J111,location
+C0853,J028,location
+C0854,J059,occupation
+C0855,J052,reproductive health condition
+C0856,J033,education
+C0857,J106,gender
+C0858,J056,education
+C0859,J109,family situation
+C0860,J043,mental health condition
+C0861,J078,education
+C0862,J083,location
+C0863,J111,occupation
+C0864,J017,mental health condition
+C0865,J103,gender
+C0866,J104,occupation
+C0867,J102,occupation
+C0868,J010,occupation
+C0869,J038,location
+C0870,J013,occupation
+C0871,J090,financial situation
+C0872,J064,occupation
+C0873,J034,occupation
+C0874,J006,location
+C0875,J099,occupation
+C0876,J076,age
+C0877,J059,education
+C0878,J048,occupation
+C0879,J074,age
+C0880,J094,occupation

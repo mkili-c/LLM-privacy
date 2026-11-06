@@ -1,0 +1,112 @@
+{"item": "U561", "reasoning": "The request to organize a hackathon is kept, but Zurich is generalized to \"a city\", so Zurich-specific venues, permits, sponsors and tech communities are lost; only generic advice remains.", "loss": 4}
+{"item": "U562", "reasoning": "The rewrite replaces the instruction with an already drafted email, so the assistant gets no explicit task; much of the intended content (year 3, clinical psychology, neuropsychology, committee request) survives, but a response would likely not be the requested email.", "loss": 5}
+{"item": "U563", "reasoning": "The task of summarizing into a short category is kept and the titles stay recognizably about ISAs and savings, though some details (Help to Buy ISA, Islamic finance, student loan) are altered or dropped.", "loss": 2}
+{"item": "U564", "reasoning": "Both the type of plant (bottling, which drives food permit rules) and the location (Florida) are removed, so the assistant cannot give the specific permit guidance the writer needs.", "loss": 7}
+{"item": "U565", "reasoning": "The core scenario (mid-cycle bleeding and positive pregnancy test despite contraception) is kept, but \"IUD\" becomes a generic contraceptive device, losing IUD-specific concerns such as ectopic pregnancy risk and device removal.", "loss": 3}
+{"item": "U566", "reasoning": "A close paraphrase that keeps the full meaning of the question about anxiety from overwhelming responsibilities.", "loss": 0}
+{"item": "U567", "reasoning": "Same question about improving poor circulation during pregnancy, just more grammatical.", "loss": 0}
+{"item": "U568", "reasoning": "The video project and Star Wars theme remain, but Christmas becomes a vague \"holiday\", so the specific Christmas + Star Wars combination ideas the writer wanted are only partially recoverable.", "loss": 4}
+{"item": "U569", "reasoning": "Identical request apart from a spelling correction; all details (SafeWork Australia, hospitality, school students, South Australia) are preserved.", "loss": 0}
+{"item": "U570", "reasoning": "The rewrite is just a reworded sentence without the instruction to make a more eloquent and succinct version, so an assistant would not know to produce rewrites; only the content of the sentence survives.", "loss": 7}
+{"item": "U571", "reasoning": "All courses, the sales-plan request and the website request are preserved, just formatted more cleanly.", "loss": 0}
+{"item": "U572", "reasoning": "Same question with grammar fixed; role, industry and experience are all kept.", "loss": 0}
+{"item": "U573", "reasoning": "The formal letter request survives, but Purdue and the key waitlist context are removed, so the letter would be a generic admission request rather than a request to be moved off the waitlist.", "loss": 5}
+{"item": "U574", "reasoning": "Synonymous rephrasing of the request for help quitting smoking.", "loss": 0}
+{"item": "U575", "reasoning": "The instruction to write an appreciation reply is replaced by a bare thank-you sentence (with dietetics changed to nutrition), so the assistant would likely just acknowledge it rather than draft the reply.", "loss": 7}
+{"item": "U576", "reasoning": "The role-play and retention-approach task are kept with experience details, but the specific company Passion.io is removed, losing tailoring to its product and customers.", "loss": 3}
+{"item": "U577", "reasoning": "The request to reduce dating-app matches remains, but the Japan context is dropped, losing advice specific to Japanese dating apps and culture.", "loss": 3}
+{"item": "U578", "reasoning": "Near-verbatim paraphrase keeping all background and the business-idea question.", "loss": 0}
+{"item": "U579", "reasoning": "The parsing task is kept but the data itself is altered (Twin\u2192Room, 2 Twins\u21922 Beds, Marriott Senior Discount\u2192Discount, typo fixed), so the resulting JSON would not reflect the writer's actual data.", "loss": 6}
+{"item": "U580", "reasoning": "The question about upgrading to a multi-state nursing license remains, but Florida is removed, losing the state-specific board procedures and requirements the writer needs.", "loss": 5}
+{"item": "U581", "reasoning": "A faithful paraphrase that keeps the esports organization context, the USP question and the invitation to ask questions.", "loss": 0}
+{"item": "U582", "reasoning": "The full original instruction is preserved verbatim (minor typo fixes); an appended story draft adds content but still fits the \"continue writing\" request, so little is lost.", "loss": 1}
+{"item": "U583", "reasoning": "The cover letter request for Pets at Home and the computing degree are kept; only the specific university (UWE) is dropped, a detail that is easy to fill in.", "loss": 2}
+{"item": "U584", "reasoning": "The question about food permits for a charitable food organization remains, but Florida is removed, and permit requirements are state-specific.", "loss": 5}
+{"item": "U585", "reasoning": "The instruction is replaced by a finished first-person statement; the assistant receives no task and the LDM Manager role is dropped, so a response would not produce the requested tailored application answer.", "loss": 6}
+{"item": "U586", "reasoning": "Near-identical question with \"cool\" and \"access\" swapped for synonyms.", "loss": 0}
+{"item": "U587", "reasoning": "The rewrite is a ready-made bio with no instruction, so the assistant would not know to write a LinkedIn bio; the persona details mostly survive in the text but the task does not.", "loss": 6}
+{"item": "U588", "reasoning": "The request to role-play and produce a CV is replaced by a short first-person paragraph, so the assistant would not generate a CV; only the experience facts remain.", "loss": 7}
+{"item": "U589", "reasoning": "Keeps the scholarship application task and the computational drug repurposing area; slightly vaguer that it is the exact dissertation topic.", "loss": 1}
+{"item": "U590", "reasoning": "The writer seeks a specific doctor in Vancouver, WA; replacing the city with \"a city\" removes the key search constraint, leaving only the state.", "loss": 6}
+{"item": "U591", "reasoning": "Same task framed slightly differently (\"describe the challenge\" instead of \"write the problem statement\"); the format request is softened but the content is kept.", "loss": 1}
+{"item": "U592", "reasoning": "Only \"guy\" is changed to \"individual\"; the question about preparing for Amazon is unaffected.", "loss": 0}
+{"item": "U593", "reasoning": "The marketing assistant task, company type and name are kept; only San Diego is removed, which matters little for general marketing strategies.", "loss": 2}
+{"item": "U594", "reasoning": "Only the name is removed; the age and marriage question are fully preserved.", "loss": 0}
+{"item": "U595", "reasoning": "The instruction to rewrite attractively is gone and the rewrite is itself an altered output (Germany changed to Europe), so the assistant gets no task and the facts are distorted.", "loss": 7}
+{"item": "U596", "reasoning": "Same request with typos fixed and the image link preserved.", "loss": 0}
+{"item": "U597", "reasoning": "The SMART goals request is kept, but \"virgin\" is softened and \"women\" becomes \"individuals\", losing the writer's stated target audience.", "loss": 2}
+{"item": "U598", "reasoning": "Identical to the original.", "loss": 0}
+{"item": "U599", "reasoning": "The task definition (identify stage and treatment regimen) is removed, and the lymphoma type (an eponymous lymphoma, likely Hodgkin's) is replaced by \"a patient's lymphoma\", so staging and treatment cannot be determined reliably.", "loss": 7}
+{"item": "U600", "reasoning": "The vehicle model and both specific addresses are removed, so the distance and fuel economy needed to compute the cost are unavailable; only the gas price and frequency remain.", "loss": 8}
+{"item": "U601", "reasoning": "All the record data is preserved, but the instruction to extract it in bullet form is removed, so the assistant may not produce the requested bulleted extraction.", "loss": 5}
+{"item": "U602", "reasoning": "The record data is kept intact, but the \"extract the information in bullet form\" instruction is dropped, leaving the assistant to guess what to do with the raw text.", "loss": 5}
+{"item": "U603", "reasoning": "The request is distorted from writing an indirect email asking to speak into \"forwarding\" an email expressing interest; the indirect tone requirement and the Head of Customer Experience title are lost.", "loss": 5}
+{"item": "U604", "reasoning": "The question and 5-point format are kept; only the specific 75,490 USD figure becomes \"a significant amount\", which matters little for general advice.", "loss": 2}
+{"item": "U605", "reasoning": "The services and freelancer details are kept, but the explicit \"Write me a bio\" instruction is removed and the name replaced, so the assistant may not know to produce a bio.", "loss": 5}
+{"item": "U606", "reasoning": "Same question with spelling and punctuation fixed.", "loss": 0}
+{"item": "U607", "reasoning": "Faithful paraphrase; \"3 times\" becomes \"multiple times\", which does not affect the degree recommendation.", "loss": 0}
+{"item": "U608", "reasoning": "The promotion question is kept, but ChatGPT becomes \"a tool\", losing the AI-adoption angle that bears on how compelling the presentation is.", "loss": 2}
+{"item": "U609", "reasoning": "The only substantive constraint, West Village in NYC, is replaced with \"a neighborhood of a city\", so no useful bar recommendations can be given.", "loss": 9}
+{"item": "U610", "reasoning": "The acronym task with M, A, F is kept, but \"Central Market\" becomes \"a market\" and CMP is mis-expanded, losing the name the writer wants to build on.", "loss": 3}
+{"item": "U611", "reasoning": "The request for resources to sound more feminine is kept, but the transgender context is removed, losing the pointer to voice feminization training and trans-specific resources.", "loss": 4}
+{"item": "U612", "reasoning": "The celebration question and weather context are kept, but Minneapolis is removed, losing location-specific outdoor ideas.", "loss": 3}
+{"item": "U613", "reasoning": "Most of the profile survives, but German, the church involvement, and exact years of experience are generalized, slightly weakening tailored suggestions.", "loss": 2}
+{"item": "U614", "reasoning": "The naming choice and the service description are preserved; only Illinois and slight wording nuances are lost, which barely affect the choice.", "loss": 1}
+{"item": "U615", "reasoning": "Equivalent request to write an email about parental leave.", "loss": 0}
+{"item": "U616", "reasoning": "The code is unchanged; only the personal details in the header comment are anonymized, which does not affect any help with the program.", "loss": 0}
+{"item": "U617", "reasoning": "The raise question is kept; the software engineering field is generalized, losing only minor field-specific advice.", "loss": 1}
+{"item": "U618", "reasoning": "The only meaningful context, that the writer is an architect, is removed, so portfolio help would be generic rather than architecture-specific.", "loss": 6}
+{"item": "U619", "reasoning": "The listing details are mostly kept, but Vancouver, BC and the tenth floor are generalized, so the description lacks location selling points the writer would need to add.", "loss": 3}
+{"item": "U620", "reasoning": "Same question with grammar fixes; prices and acreage are preserved.", "loss": 0}
+{"item": "U621", "reasoning": "Identical to the original.", "loss": 0}
+{"item": "U622", "reasoning": "The GAP insurance question is preserved; dropping \"diesel\" and \"wife\" does not affect the answer about when GAP pays off a loan.", "loss": 0}
+{"item": "U623", "reasoning": "Same question with grammar fixed; field and Northampton University are kept.", "loss": 0}
+{"item": "U624", "reasoning": "The rewrite is an already rewritten quote without the instruction, and it drops the company name (Akaike Technologies) and the specific Analytics India certification, so the assistant gets no task and key details are gone.", "loss": 7}
+{"item": "U625", "reasoning": "Faithful paraphrase keeping the piano store, SEO and Nashville/Middle Tennessee keyword requirements.", "loss": 0}
+{"item": "U626", "reasoning": "The context of the TTS model launch is kept, but the request to write a tweet becomes \"Here's a tweet\" with no tweet attached, so the assistant may or may not infer it should write one.", "loss": 5}
+{"item": "U627", "reasoning": "Stats, goal and situation are preserved; only Freeletics becomes a generic workout program, a minor loss.", "loss": 1}
+{"item": "U628", "reasoning": "Removing Brisbane leaves no location, so the weather question cannot be answered.", "loss": 9}
+{"item": "U629", "reasoning": "A faithful paraphrase that keeps the experience with transition resources and the question about why.", "loss": 0}
+{"item": "U630", "reasoning": "Same itinerary request with spelling fixes; Tokyo and Mt. Fuji are kept.", "loss": 0}
+{"item": "U631", "reasoning": "Identical to the original.", "loss": 0}
+{"item": "U632", "reasoning": "New York City is replaced with \"a city\", so no vegan lunch spots can be recommended for the writer's trip.", "loss": 9}
+{"item": "U633", "reasoning": "Same question with spelling fixed; all stats are preserved.", "loss": 0}
+{"item": "U634", "reasoning": "Melbourne International Airport is replaced by \"an international airport\", so the specific pickup location cannot be given.", "loss": 9}
+{"item": "U635", "reasoning": "The personal statement structure is kept, but NJ and South America become generic, losing details that would personalize the statement and must be added back.", "loss": 3}
+{"item": "U636", "reasoning": "Paraphrase that keeps every constraint: 5 FAQs, ~100-word answers, both keywords, optional WI, no duplicates.", "loss": 0}
+{"item": "U637", "reasoning": "The theme is slightly reworded from responsibility to caring for the planet; the questions requested remain nearly the same.", "loss": 1}
+{"item": "U638", "reasoning": "The alcohol and task-initiation question is kept, but ADHD becomes a vague focus condition, weakening ADHD-specific explanations and alternatives such as stimulant medication.", "loss": 3}
+{"item": "U639", "reasoning": "Marxist theory becomes social theory, but Gorz is retained, so thesis ideas would be similar.", "loss": 1}
+{"item": "U640", "reasoning": "Knee is generalized to \"joint\" throughout and age blurred to under 18, losing the knee-specific information needed to explain likely causes.", "loss": 5}
+{"item": "U641", "reasoning": "Only the suggested opening line survives; the instruction to write a post, the last-day call for attention, Euroanesthesia2023 and Mindray's new anesthesia solution are all lost.", "loss": 7}
+{"item": "U642", "reasoning": "The global warming question is kept, but Singapore and the May comparison are removed, losing the local climate context for a grounded answer.", "loss": 3}
+{"item": "U643", "reasoning": "Israel, Sinai and the border run are all abstracted away, so the visa question becomes unanswerable.", "loss": 9}
+{"item": "U644", "reasoning": "Power Platform is replaced by \"a platform\" and \"a similar technology\", making the post's premise incoherent and losing the specific product the writer is targeting.", "loss": 7}
+{"item": "U645", "reasoning": "\"Emily's Flower Store in New York\" becomes \"person's flower store in city\", so the domain names cannot include the store's actual name or location.", "loss": 6}
+{"item": "U646", "reasoning": "The email request is intact; only the accident date becomes a placeholder, which the writer can easily fill in.", "loss": 1}
+{"item": "U647", "reasoning": "Salesforce is generalized to \"the system\", so the assistant cannot give the platform-specific configuration steps (web-to-lead, assignment rules) the writer needs.", "loss": 6}
+{"item": "U648", "reasoning": "The symptoms are preserved but cannabis becomes \"a substance\", losing the key cause (cannabis withdrawal and REM rebound) the explanation hinges on.", "loss": 5}
+{"item": "U649", "reasoning": "All training details are kept; only the age of 54 is removed, which slightly affects tailoring intensity and safety.", "loss": 2}
+{"item": "U650", "reasoning": "Faithful paraphrase of the request about prerequisite knowledge for using LLMs.", "loss": 0}
+{"item": "U651", "reasoning": "Only \"USAF\" becomes \"military\"; the manual and the AIM-120 question are unchanged.", "loss": 0}
+{"item": "U652", "reasoning": "All four agenda items are kept; only the team identifiers (CEA, ANZ) are dropped, which the writer can add back.", "loss": 1}
+{"item": "U653", "reasoning": "Same question with synonyms; Australia and the student context are kept.", "loss": 0}
+{"item": "U654", "reasoning": "Identical to the original.", "loss": 0}
+{"item": "U655", "reasoning": "The instruction to improve the message is removed and the rewrite is an already edited message with the recipient's name replaced by \"individual\", so the assistant gets no task.", "loss": 6}
+{"item": "U656", "reasoning": "The persona and email-rewriting task are intact; only already placeholder names are relabeled.", "loss": 0}
+{"item": "U657", "reasoning": "The brand details, inspiration and guerilla marketing request are kept, but Antwerp is removed, losing location-specific tactics.", "loss": 3}
+{"item": "U658", "reasoning": "The questions about medicine and surgery are kept, but \"mtf\" becomes just \"transgender\", losing the direction of transition that determines which hormones and surgeries apply.", "loss": 4}
+{"item": "U659", "reasoning": "Same request with grammar fixed.", "loss": 0}
+{"item": "U660", "reasoning": "Germany and DHL are removed, so the assistant cannot give the carrier-specific options (DHL weight classes, upgrades, surcharges) the writer needs.", "loss": 6}
+{"item": "U661", "reasoning": "The challenge format and social anxiety goal are kept, but Japan is removed (along with not speaking Japanese), so the Japan-specific nightlife challenges the writer wants are lost.", "loss": 6}
+{"item": "U662", "reasoning": "Narragansett is still named, so the question about activities for young kids is fully answerable.", "loss": 0}
+{"item": "U663", "reasoning": "The rewrite is an already drafted letter rather than a request, and the fellowship URL is hidden; the program, funding question and thanks survive, but the assistant gets no explicit task.", "loss": 5}
+{"item": "U664", "reasoning": "Nearly all career details are kept; only Germany becomes Europe and an already anonymized role is generalized, a minor loss for the summary.", "loss": 1}
+{"item": "U665", "reasoning": "The staffing problem and question are kept; dropping \"Chinese\" slightly reduces cuisine-specific suggestions.", "loss": 1}
+{"item": "U666", "reasoning": "The DBA naming request is kept, but the 13-year-old girl and the k-pop focus are generalized, losing the theme that names would build on.", "loss": 4}
+{"item": "U667", "reasoning": "The tools and the request are preserved, but the autism context (autistic inertia and burnout) is generalized, reducing how well suggestions can be tailored.", "loss": 3}
+{"item": "U668", "reasoning": "Both the date (12 February) and the location (Nauders) are removed, so the historical weather question cannot be answered.", "loss": 9}
+{"item": "U669", "reasoning": "The resume request with 10 years of experience is kept; \"IT Engineer\" becomes the broader \"IT Field\", a small loss in targeting.", "loss": 1}
+{"item": "U670", "reasoning": "The rewrite is a short finished cover letter instead of the request, losing the explicit 150-word requirement and leaving the assistant no task.", "loss": 6}
+{"item": "U671", "reasoning": "The weight-gain question is kept; removing \"male\" slightly reduces tailoring of calorie and training advice.", "loss": 1}
+{"item": "U672", "reasoning": "Northampton is replaced with \"a city\", so the cost-of-living estimate the writer needs cannot be given.", "loss": 8}
