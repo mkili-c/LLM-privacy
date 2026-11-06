@@ -1,0 +1,11 @@
+Job 2654 on studgpu-spark01.inf.ethz.ch (aarch64), methods: papillon_t0
+server up Fri Nov  6 16:56:03 CET 2026
+== papillon_t0 (venv papillon) Fri Nov  6 16:56:03 CET 2026
+papillon_t0: 0 rows already done, 112 to go -> results/rewrites/pupa_sd_papillon_t0.csv
+  20/112 (0 failed)
+  40/112 (0 failed)
+  60/112 (0 failed)
+  80/112 (0 failed)
+  100/112 (0 failed)
+  112/112 (0 failed)
+Done Fri Nov  6 17:20:30 CET 2026

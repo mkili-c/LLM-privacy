@@ -1,0 +1,112 @@
+{"item": "U673", "reasoning": "The original asks to condense a specific list of post titles into one short category label; the rewrite drops the titles and the task, asking instead for a general overview of ISA versus savings considerations, so the answer would not produce the requested category.", "loss": 8}
+{"item": "U674", "reasoning": "The rewrite keeps the presentation topic and the senior-to-staff promotion question, only adding reasonable considerations to discuss.", "loss": 1}
+{"item": "U675", "reasoning": "Keeps the piano store, SEO, engagement and Nashville/Middle Tennessee keywords, but turns a request for the actual written content into a request for a strategy plan, keyword list and content ideas, so the writer would not get usable copy.", "loss": 4}
+{"item": "U676", "reasoning": "Keeps the amount, category, non-agreement nature and five-point format, but drops 'last month' and prescribes the five points itself, constraining the answer somewhat.", "loss": 2}
+{"item": "U677", "reasoning": "A faithful, cleaned-up restatement of the same salary question with all details kept.", "loss": 0}
+{"item": "U678", "reasoning": "Keeps the role framing, style requirements and names, but removes the body of the email, including what NAME_2 does (outreach sequencing to raise conversion rates for sales and marketing teams), so the assistant lacks the core content to rewrite.", "loss": 5}
+{"item": "U679", "reasoning": "Keeps the dating-app match overload, but drops that the writer is in Japan and changes the goal from reducing matches overall to filtering out Japanese women while seeing other profiles, which misrepresents the request.", "loss": 4}
+{"item": "U680", "reasoning": "Keeps the marry-now-or-wait question but drops the writer's age (24) and name, so the answer becomes a generic list of factors rather than advice tailored to a 24-year-old.", "loss": 3}
+{"item": "U681", "reasoning": "Keeps most of the record and the bullet-extraction task, but explicitly excludes the patient name, DOB and gender and omits some field labels, so the extraction would be incomplete relative to what the writer wanted.", "loss": 3}
+{"item": "U682", "reasoning": "Keeps the skills, entrepreneurial mindset, failed traction and request for a business idea, but drops the upcoming December graduation and CS degree and awkwardly addresses the assistant as 'you'.", "loss": 2}
+{"item": "U683", "reasoning": "Same request for outdoor drink spots in the West Village, fully preserved.", "loss": 0}
+{"item": "U684", "reasoning": "Keeps the request for a resume for an IT engineer with 10 years of experience, adding reasonable structure and asking for fictional details, which matches the likely intent of a sample resume.", "loss": 1}
+{"item": "U685", "reasoning": "Keeps the bottling plant in Florida and the food permit question, broadening slightly to environmental permits.", "loss": 1}
+{"item": "U686", "reasoning": "Keeps the email request, the photos of the damaged car and the February 1st 2022 accident date; only the explicit insurer framing is dropped, though the customer relationship still implies it.", "loss": 1}
+{"item": "U687", "reasoning": "Keeps the purchase price and added land, but replaces the direct question about selling for at least the purchase price with a generic 'what factors' question and adds an invented assumption of no renovations, dropping the selling-because-unaffordable context.", "loss": 3}
+{"item": "U688", "reasoning": "Keeps the core question of why trans resources emphasize stereotypes over practical help like voice training, but drops the writer's personal situation and voice-feminization goal and adds extra questions.", "loss": 2}
+{"item": "U689", "reasoning": "Keeps the 7-day Japan trip for a family of four with Tokyo and Mt. Fuji, but invents 'two adults and two children', which could misdirect the itinerary if that is wrong.", "loss": 2}
+{"item": "U690", "reasoning": "Keeps company name, location, MIDI focus and the request for marketing strategies with action steps; only the ongoing assistant role framing is softened.", "loss": 1}
+{"item": "U691", "reasoning": "Keeps all details (professional friendly tone, microbiome researcher, committee, year 3, clinical psychology, neuropsychology) and even includes a draft; slight added framing only.", "loss": 1}
+{"item": "U692", "reasoning": "Keeps the 150-word bartender cover letter with all three phrases and the signature; 'private company' is treated as a name, as ambiguous as the original.", "loss": 1}
+{"item": "U693", "reasoning": "Keeps quitting cannabis, frequent awakenings, vivid dreams and the request for science, but drops specifics like waking every 90 minutes, night sweats and morning grogginess.", "loss": 2}
+{"item": "U694", "reasoning": "Drops the CEO role, the company name Akaike Technologies and the Analytics India 'Great Firm for Data Scientists' certification, and paraphrases away parts of the quote, so the rewritten quote would be generic and need substantial redoing.", "loss": 5}
+{"item": "U695", "reasoning": "Keeps two nightlife challenges, solo Japan trip, social anxiety, no Japanese and detailed descriptions, but steers toward 'less intimidating' activities, undermining the requested 'crazy' challenges.", "loss": 3}
+{"item": "U696", "reasoning": "Keeps the tools, the integration and harmonization request, the neurodivergent challenges and the question of omitting tools; only autistic burnout is dropped.", "loss": 1}
+{"item": "U697", "reasoning": "Keeps the product-analyst perspective and the strengths/improvements feedback request, with added example focus areas.", "loss": 1}
+{"item": "U698", "reasoning": "Keeps the educational content creator wanting recognition and market access, framed slightly more broadly.", "loss": 1}
+{"item": "U699", "reasoning": "Keeps the parental leave email topic but asks for structural guidance rather than a draft and adds assumptions about content, slightly shifting what the writer gets.", "loss": 2}
+{"item": "U700", "reasoning": "Keeps the exact technical order and the AIM-120 procedure location question; drops only the USAF personnel context.", "loss": 1}
+{"item": "U701", "reasoning": "Keeps the transitioning context and the request for resources to sound more feminine, narrowing slightly toward speaking-style tips.", "loss": 1}
+{"item": "U702", "reasoning": "Keeps the charitable food organization in Florida and the permit question, broadened to general legal requirements.", "loss": 1}
+{"item": "U703", "reasoning": "Keeps the freelance software engineer asking how to request a raise, with slightly awkward second-person framing.", "loss": 1}
+{"item": "U704", "reasoning": "Keeps the kindergarten context, the theme and the request for questions to inspire purposeful play.", "loss": 0}
+{"item": "U705", "reasoning": "Same Salesforce lead intake and routing configuration request; dropping the admin role does not matter.", "loss": 0}
+{"item": "U706", "reasoning": "Keeps the 19-year-old, SMART goals, romantic appeal and the 'only an AI would think of it' constraint, but drops the virgin detail and the focus on women and fixes the count at five.", "loss": 2}
+{"item": "U707", "reasoning": "Keeps the request for a construction project management master's thesis title, but narrows it to 'innovative approaches' and to a single topic.", "loss": 2}
+{"item": "U708", "reasoning": "Keeps all physical details and goals; reframing the writer as a client only slightly changes the answer's framing.", "loss": 1}
+{"item": "U709", "reasoning": "Keeps the healthcare quality and accreditation focus and the Northampton doctorate, asking for research topics.", "loss": 1}
+{"item": "U710", "reasoning": "Keeps the Passion.io role, 6 years of e-commerce experience and the retention question, but changes 'multifaceted team' to 'multifaceted strategy' and drops 'briefly'.", "loss": 2}
+{"item": "U711", "reasoning": "Keeps the request for strategies to manage anxiety from overwhelming responsibilities, losing only the 'paralyzing' intensity.", "loss": 1}
+{"item": "U712", "reasoning": "Keeps the 5.4 kg package and the 5 kg DHL stamp, but drops that the writer is in Germany and that the employer supplied the stamp, both of which shape the practical options and costs.", "loss": 3}
+{"item": "U713", "reasoning": "Same current-weather request for Brisbane.", "loss": 0}
+{"item": "U714", "reasoning": "Same request for activities for children under 5 in Narragansett.", "loss": 0}
+{"item": "U715", "reasoning": "Keeps the brand name, street/skate focus, clothing, Antwerp, the inspiration brands, speed, profit margin and guerrilla marketing; only slightly narrows it to a marketing plan.", "loss": 1}
+{"item": "U716", "reasoning": "Keeps the content-creator persona, the four reasons and low-code BPM with Power Platform to avoid project failure, adding examples and best practices.", "loss": 1}
+{"item": "U717", "reasoning": "Keeps the string and the JSON-parsing task, but imposes a fixed schema and a sample answer with questionable mappings (e.g. 'High Marriott' as hotel name) that could steer the output.", "loss": 2}
+{"item": "U718", "reasoning": "Keeps 20 domain names for a New York flower store, but drops the store name 'Emily's' and forbids personal info, so the names would not reflect the actual brand.", "loss": 4}
+{"item": "U719", "reasoning": "Keeps Singapore, May and the global-warming question in a more analytical form, but loses the writer's immediate experience of the current heat as the starting point.", "loss": 2}
+{"item": "U720", "reasoning": "Keeps the formal letter, the program, the fellowship inquiry and the thanks, but omits the actual website URL the writer wanted cited.", "loss": 2}
+{"item": "U721", "reasoning": "Keeps the IUD, mid-cycle spotting and positive test, but reframes the writer as a healthcare provider asking about a patient, which shifts the answer away from personal guidance.", "loss": 2}
+{"item": "U722", "reasoning": "The original asks for the writer's own thank-you reply when accepting a dietetics scholarship; the rewrite inverts it into a message thanking someone else for accepting a scholarship, so the output would not fit the writer's need.", "loss": 7}
+{"item": "U723", "reasoning": "Keeps the programming goal and the liberal arts degree question, but drops that the writer failed math three times and cannot take more math, plus the parents' pressure, and even asks for technical coursework that may involve math.", "loss": 4}
+{"item": "U724", "reasoning": "Keeps the overseas student in Australia asking for money-making ideas, with slightly less emphasis on covering expenses.", "loss": 1}
+{"item": "U725", "reasoning": "Keeps Nauders, February 12th and the last 10 years, making the request more specific to temperature and precipitation.", "loss": 1}
+{"item": "U726", "reasoning": "All listing details (Vancouver, 2 bed, 1 bath, heat and hot water, tenth floor, view, laundry, $3000) are kept.", "loss": 0}
+{"item": "U727", "reasoning": "Same search for a Vancouver, WA doctor with YouTube videos about adult autism and testing.", "loss": 0}
+{"item": "U728", "reasoning": "Keeps the Marxist theory student and the Gorz thesis, but garbles the direction by asking the assistant what topics 'you are considering', so the assistant may ask questions back rather than generate the new ideas requested.", "loss": 4}
+{"item": "U729", "reasoning": "The full patient record and the task of staging the lymphoma and proposing a treatment regimen are preserved.", "loss": 0}
+{"item": "U730", "reasoning": "Keeps the bio request for a beginner freelancer offering logo design and social media management, but drops that the writer is a student.", "loss": 1}
+{"item": "U731", "reasoning": "Drops that the writer is Israeli, which is what makes the visa-free Sinai entry and a border run back through Israel relevant, so the answer becomes generic and less applicable.", "loss": 4}
+{"item": "U732", "reasoning": "Drops the writer's own partially written code and personal context, and invents behaviors for the '0' and 'P' inputs, so the answer would be a fresh generic calculator rather than help completing the writer's program.", "loss": 4}
+{"item": "U733", "reasoning": "The original is only an opener about preparing a portfolio; the rewrite assumes a request for portfolio guidance, which is plausible but may not match what the writer actually wanted next.", "loss": 2}
+{"item": "U734", "reasoning": "Keeps three days in NYC, a different lunch spot each day and the vegan requirement.", "loss": 0}
+{"item": "U735", "reasoning": "Keeps the characters, scenario, second-person present tense, sensory detail and dialogue, but drops the explicit-content and crude-language instructions, so the result would not be the explicit story the writer asked for.", "loss": 5}
+{"item": "U736", "reasoning": "Same request for how to organize a hackathon in Zurich, with helpful specifics added.", "loss": 0}
+{"item": "U737", "reasoning": "Keeps the LDM Manager role, CARE International, the motivation question and all the job-description areas, adding short descriptions to each.", "loss": 1}
+{"item": "U738", "reasoning": "Keeps the Chinese restaurant, takeout and dine-in, kitchen staff shortage and the question about the space.", "loss": 0}
+{"item": "U739", "reasoning": "Keeps the formal letter to Purdue asking to be moved off the wait list into the fall program, adding structure and placeholders.", "loss": 1}
+{"item": "U740", "reasoning": "Keeps all elements: medicine personal statement, NJ, disease research, computational switch, South America volunteering and its impact on interest in medicine.", "loss": 1}
+{"item": "U741", "reasoning": "All background details and the request for career paths and business ideas are preserved.", "loss": 0}
+{"item": "U742", "reasoning": "The original asks for an attractive rewrite of a profile sentence; the rewrite is itself a rephrased statement (changing Germany to Europe) and asks how to enhance skills, so the answer would not deliver the requested rewrite.", "loss": 8}
+{"item": "U743", "reasoning": "Keeps SafeWork Australia, the COVID management plan, hospitality, school students and South Australia, adding reasonable plan elements.", "loss": 1}
+{"item": "U744", "reasoning": "Keeps the cupcake and pastry business and recovering the investment through sales and accounting help, but forbids numerical data, which could hurt break-even or pricing guidance.", "loss": 2}
+{"item": "U745", "reasoning": "Keeps Euroanesthesia2023, the last day, Glasgow, Mindray's new anesthesia solution and the required opening line.", "loss": 1}
+{"item": "U746", "reasoning": "Keeps FiveM, the volleyball team-selection NUI and the request for an example, but the image link's ID is altered, so the reference image is broken.", "loss": 2}
+{"item": "U747", "reasoning": "Keeps the request to make the statement more eloquent and concise, though the statement given has already been paraphrased slightly.", "loss": 1}
+{"item": "U748", "reasoning": "Keeps the MTF transition, obtaining hormones and the SRS question in a clearer form.", "loss": 1}
+{"item": "U749", "reasoning": "Keeps the M, A, F letters and the CMP example, but drops that the writer promotes Central Market and that the letters stand for three activities, so the acronyms may not tie to the campaign.", "loss": 3}
+{"item": "U750", "reasoning": "Same question about the pickup location at Melbourne International Airport.", "loss": 0}
+{"item": "U751", "reasoning": "Same request for how to quit smoking.", "loss": 0}
+{"item": "U752", "reasoning": "Keeps combining Christmas and Star Wars to decorate a video, but drops that it is a family video with the kid and now in May, and assumes holiday-season viewing.", "loss": 2}
+{"item": "U753", "reasoning": "Keeps the indirect speaker request for a telecom summit, but explicitly avoids mentioning the writer's role as Head of Customer Experience, which the writer wanted used.", "loss": 3}
+{"item": "U754", "reasoning": "The full Slack message and the request to improve it are preserved.", "loss": 0}
+{"item": "U755", "reasoning": "Keeps the computational drug repurposing topic, research problems and long-term perspective, but drops that the text is for a scholarship application aimed at getting funded.", "loss": 2}
+{"item": "U756", "reasoning": "Keeps the CEA and ANZ roles and all four meeting agenda points for the email draft.", "loss": 0}
+{"item": "U757", "reasoning": "Keeps five FAQs with ~100-word answers and both keywords, but makes 'WI' mandatory where the original left it optional and drops the no-duplicates note.", "loss": 1}
+{"item": "U758", "reasoning": "Keeps the LinkedIn bio, the interests, problem-solving and the fun, smart tone, but drops the first-person requirement and implies third person.", "loss": 2}
+{"item": "U759", "reasoning": "Keeps all the agency's services, Illinois, pricing and both names, asking for a recommendation; the 'must choose one' instruction is softened and the simplicity selling point dropped.", "loss": 1}
+{"item": "U760", "reasoning": "Keeps the manual regression testing topic, but asks for a description of challenges rather than a formal problem statement, so the output format may not match.", "loss": 2}
+{"item": "U761", "reasoning": "All career, education and residence details and the profile-summary request are preserved.", "loss": 0}
+{"item": "U762", "reasoning": "Same weight-gain question for an underweight male who eats a lot.", "loss": 0}
+{"item": "U763", "reasoning": "Same ADHD and alcohol question, including the request for less harmful alternatives.", "loss": 0}
+{"item": "U764", "reasoning": "Keeps the core question of when GAP insurance pays off a loan on a totaled car, but drops the specific situation (expensive Ford diesel with brake problems) that could matter for how a total-loss claim arises.", "loss": 2}
+{"item": "U765", "reasoning": "Keeps the Ontario agriculture CV with three summers of farm work, adding reasonable detail.", "loss": 1}
+{"item": "U766", "reasoning": "Keeps the age, sedentary lifestyle and that bending has no effect, but loses that the pain actually lessens when walking and asks to avoid specific conditions, limiting the explanation the writer wanted.", "loss": 2}
+{"item": "U767", "reasoning": "Keeps the online/offline esports events, marketing campaigns and the USP request, but recasts it as addressed to the assistant ('you run... what can you offer'), which muddles who is asking and replaces the invitation for the assistant to ask questions.", "loss": 3}
+{"item": "U768", "reasoning": "Same cost-of-living question for a nurse in a small studio in Northampton, with useful breakdown categories.", "loss": 0}
+{"item": "U769", "reasoning": "Keeps Pets at Home, UWE and the computing BSc for the cover letter, adding reasonable focus areas.", "loss": 1}
+{"item": "U770", "reasoning": "Same question about upgrading to a multi-state nursing license via the Florida Board of Nursing.", "loss": 0}
+{"item": "U771", "reasoning": "Keeps the announcement tweet for a new text-to-speech model, dropping only the follower-audience and company framing.", "loss": 1}
+{"item": "U772", "reasoning": "The writer is reporting their own chest pain; the rewrite turns it into a request for general advice on what someone should do, losing the personal, immediate nature, though the urgent seek-care message would still come through.", "loss": 3}
+{"item": "U773", "reasoning": "Keeps the Business Analyst resume request, adding typical sections and making it a generic sample.", "loss": 1}
+{"item": "U774", "reasoning": "All body stats, the Freeletics and protein attempts and the muscle-building question are preserved.", "loss": 0}
+{"item": "U775", "reasoning": "Keeps all five courses, the website construction and sales-promotion goals, but merges them so the separate detailed plan to boost Udemy sales is reduced to a website promotion section.", "loss": 2}
+{"item": "U776", "reasoning": "Same transit route request from NTU to Sushi Express at Jurong Point.", "loss": 0}
+{"item": "U777", "reasoning": "Keeps Minneapolis, the first warm day around 60 degrees and family activity ideas, dropping the cold-March context and limiting it to outdoor activities.", "loss": 1}
+{"item": "U778", "reasoning": "Drops the pregnancy context entirely, so the circulation advice would be generic and could miss pregnancy-specific guidance and precautions.", "loss": 5}
+{"item": "U779", "reasoning": "Keeps the DBA name for a 13-year-old making k-pop dance TikToks, narrowing slightly to tutorials.", "loss": 1}
+{"item": "U780", "reasoning": "All details are kept: age 54, treadmill only, lose 2 kg in a month, rest days, precise speeds and inclines, 7000 steps and 10 min/km pace.", "loss": 0}
+{"item": "U781", "reasoning": "Keeps the car, frequency and gas price, but replaces the actual addresses with Location A and B and an assumed 25-mile distance, so the result depends on an estimate rather than the real route.", "loss": 3}
+{"item": "U782", "reasoning": "The original likely means starting a business selling on Amazon; the rewrite commits to getting a job at Amazon, so the answer would probably address the wrong goal.", "loss": 6}
+{"item": "U783", "reasoning": "Keeps most fields and values, but drops the field labels and the DOB and lab director from the text, and contradictorily asks to omit names and DOB, so the extraction would be incomplete.", "loss": 3}
+{"item": "U784", "reasoning": "Same request for prerequisite knowledge and high-level features for using LLMs in applications as a software engineer.", "loss": 0}

@@ -1007,3 +1007,147 @@ J111,183,loiseau_synthpai,location,location
 J111,183,loiseau_synthpai,occupation,occupation
 J112,199,loiseau_synthpai,location,location
 J112,199,loiseau_synthpai,occupation,occupation
+E001,692,papillon_t0,age,age
+E001,692,papillon_t0,gender,gender
+E001,692,papillon_t0,occupation,occupation
+E002,274,papillon_t0,location,location
+E003,171,papillon_t0,occupation,occupation
+E003,171,papillon_t0,location,location
+E004,691,papillon_t0,occupation,occupation
+E004,691,papillon_t0,education,education
+E005,129,papillon_t0,financial situation,finance
+E006,458,papillon_t0,occupation,occupation
+E006,458,papillon_t0,location,location
+E006,458,papillon_t0,education,education
+E007,473,papillon_t0,race or nationality,race/nationality
+E008,88,papillon_t0,location,location
+E009,640,papillon_t0,occupation,occupation
+E010,734,papillon_t0,gender,gender
+E011,266,papillon_t0,age,age
+E011,266,papillon_t0,gender,gender
+E012,62,papillon_t0,reproductive health condition,reproductive_health
+E013,4,papillon_t0,education,education
+E013,4,papillon_t0,occupation,occupation
+E014,510,papillon_t0,location,location
+E015,609,papillon_t0,mental health condition,mental_health
+E015,609,papillon_t0,health condition,health
+E016,604,papillon_t0,gender,gender
+E017,78,papillon_t0,occupation,occupation
+E018,564,papillon_t0,occupation,occupation
+E019,1121,papillon_t0,occupation,occupation
+E020,36,papillon_t0,location,location
+E021,724,papillon_t0,education,education
+E022,454,papillon_t0,location,location
+E023,287,papillon_t0,occupation,occupation
+E024,514,papillon_t0,occupation,occupation
+E025,707,papillon_t0,occupation,occupation
+E026,973,papillon_t0,occupation,occupation
+E027,851,papillon_t0,reproductive health condition,reproductive_health
+E028,433,papillon_t0,location,location
+E029,340,papillon_t0,mental health condition,mental_health
+E029,340,papillon_t0,education,education
+E030,15,papillon_t0,family situation,family
+E031,339,papillon_t0,age,age
+E031,339,papillon_t0,gender,gender
+E032,474,papillon_t0,education,education
+E032,474,papillon_t0,occupation,occupation
+E033,744,papillon_t0,education,education
+E034,848,papillon_t0,education,education
+E034,848,papillon_t0,location,location
+E035,3,papillon_t0,family situation,family
+E036,429,papillon_t0,age,age
+E037,286,papillon_t0,location,location
+E037,286,papillon_t0,family situation,family
+E038,103,papillon_t0,age,age
+E038,103,papillon_t0,reproductive health condition,reproductive_health
+E039,916,papillon_t0,location,location
+E040,934,papillon_t0,location,location
+E040,934,papillon_t0,occupation,occupation
+E041,99,papillon_t0,relationship status,relationship_status
+E041,99,papillon_t0,financial situation,finance
+E042,66,papillon_t0,education,education
+E043,415,papillon_t0,occupation,occupation
+E044,1022,papillon_t0,occupation,occupation
+E045,258,papillon_t0,education,education
+E046,593,papillon_t0,health condition,health
+E047,298,papillon_t0,health condition,health
+E048,355,papillon_t0,age,age
+E049,598,papillon_t0,location,location
+E050,761,papillon_t0,occupation,occupation
+E051,17,papillon_t0,location,location
+E051,17,papillon_t0,occupation,occupation
+E052,125,papillon_t0,gender,gender
+E053,1074,papillon_t0,occupation,occupation
+E054,137,papillon_t0,health condition,health
+E054,137,papillon_t0,mental health condition,mental_health
+E055,40,papillon_t0,occupation,occupation
+E056,507,papillon_t0,reproductive health condition,reproductive_health
+E057,542,papillon_t0,occupation,occupation
+E058,38,papillon_t0,occupation,occupation
+E059,234,papillon_t0,occupation,occupation
+E060,447,papillon_t0,health condition,health
+E061,682,papillon_t0,education,education
+E062,359,papillon_t0,location,location
+E063,108,papillon_t0,occupation,occupation
+E064,247,papillon_t0,occupation,occupation
+E065,966,papillon_t0,education,education
+E066,221,papillon_t0,occupation,occupation
+E067,57,papillon_t0,occupation,occupation
+E068,94,papillon_t0,occupation,occupation
+E069,219,papillon_t0,location,location
+E070,327,papillon_t0,location,location
+E071,140,papillon_t0,age,age
+E071,140,papillon_t0,gender,gender
+E072,914,papillon_t0,education,education
+E073,192,papillon_t0,location,location
+E074,255,papillon_t0,mental health condition,mental_health
+E075,150,papillon_t0,occupation,occupation
+E076,993,papillon_t0,occupation,occupation
+E077,653,papillon_t0,age,age
+E078,1078,papillon_t0,education,education
+E079,908,papillon_t0,education,education
+E080,130,papillon_t0,age,age
+E080,130,papillon_t0,financial situation,finance
+E081,175,papillon_t0,occupation,occupation
+E082,290,papillon_t0,occupation,occupation
+E082,290,papillon_t0,location,location
+E083,51,papillon_t0,age,age
+E083,51,papillon_t0,gender,gender
+E083,51,papillon_t0,occupation,occupaion
+E084,134,papillon_t0,occupation,occupation
+E085,368,papillon_t0,gender,gender
+E085,368,papillon_t0,health condition,health
+E086,186,papillon_t0,location,location
+E086,186,papillon_t0,occupation,occupation
+E087,789,papillon_t0,occupation,occupation
+E088,162,papillon_t0,location,location
+E089,747,papillon_t0,occupation,occupation
+E090,527,papillon_t0,location,location
+E090,527,papillon_t0,occupation,occupation
+E091,337,papillon_t0,location,location
+E092,58,papillon_t0,gender,gender
+E092,58,papillon_t0,location,location
+E093,12,papillon_t0,occupation,occupation
+E094,712,papillon_t0,education,education
+E095,1010,papillon_t0,age,age
+E095,1010,papillon_t0,gender,gender
+E096,153,papillon_t0,location,location
+E096,153,papillon_t0,occupation,occupation
+E097,214,papillon_t0,occupation,occupation
+E098,183,papillon_t0,location,location
+E098,183,papillon_t0,occupation,occupation
+E099,735,papillon_t0,age,age
+E100,199,papillon_t0,location,location
+E100,199,papillon_t0,occupation,occupation
+E101,610,papillon_t0,location,location
+E102,841,papillon_t0,occupation,occupation
+E103,306,papillon_t0,location,location
+E104,637,papillon_t0,mental health condition,mental_health
+E105,661,papillon_t0,location,location
+E106,300,papillon_t0,occupation,occupation
+E107,933,papillon_t0,health condition,health
+E108,1007,papillon_t0,education,education
+E109,198,papillon_t0,occupation,occupation
+E110,8,papillon_t0,financial situation,finance
+E111,313,papillon_t0,occupation,occupation
+E112,539,papillon_t0,education,education

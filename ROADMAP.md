@@ -47,7 +47,19 @@ Judge leak rate (match): loop 40.7%, Staab 70.0%, Presidio 71.4%, Loiseau-PUPA 7
 
 **1.2 Fairer settings:** only settings the authors themselves document, fixed before looking at any PUPA-SD result, and reported as extra rows.
 - [ ] **Loiseau, SynthPAI prompt:** it targets attribute inference from text (our threat model), their PUPA prompt targets PII. Already run on all prompts (`results/rewrites/pupa_sd_loiseau_synthpai.csv`); its own measures are in `own_measures.csv` (ours: leak 107/140, mean R 29.1%). Included (user, 2026-11-06). Judge folders written 2026-11-06: `guess_J` (112 texts, 144 questions) and `utility_2` (U561–U672). Both sessions done and checked the same day (sessions push to `claude/…` branches, not `main`). `guess_J`: 142 distinct reasonings, 20 "not inferable"; `utility_2`: mean loss 3.05. `compare_2` written: 124 items, C0757–C0880. Next: its session, then `read_judge_answers.py --methods loop presidio loiseau_pupa papillon staab loiseau_synthpai`.
-- [ ] **PAPILLON greedy** (`papillon_t0`, from 1.1): ~25 min GPU.
+- [ ] **PAPILLON greedy** (`papillon_t0`, from 1.1): ~25 min GPU. Code ready 2026-11-06:
+  - `run_baselines.py` method `papillon_t0` passes `temperature=0.0` to `dspy.LM` (DSPy 3.1.2 forwards it; the server then decodes greedily). `papillon` stays as run, for the before/after.
+  - The job script maps `papillon*` to the papillon venv.
+  - Checked with a stand-in `dspy` that the two methods differ only in `temperature`.
+  - Run: `sbatch baselines/run_sweep_gb10.sbatch "papillon_t0"` → `results/rewrites/pupa_sd_papillon_t0.csv`.
+  - Run 2026-11-06 (job 2654): 112/112, 0 errors, median 12.3 s per prompt. 111 of 112 rewrites differ from the sampled run in wording, not in shape: 16 over 2.5× the original's words, as before; median length ratio 1.52 against 1.53.
+  - Judge folders written: `guess_E` and `utility_3` (U673–U784); local repos prepared in `/work/projects/p23-mkilic/judge_repos/`.
+  - Answers back and checked 2026-11-06: `guess_E` 144 distinct reasonings, 15 "not inferable" (sampled: 14); `utility_3` mean loss 1.72 (sampled, in October's joint session: 1.12).
+  - Caveat: the new utility session rated only this version, while October's rated all five mixed, so part of the difference may be the session, not the decoding. Re-rating a sample of October's items in a new session would measure that.
+  - `compare_3` written (129 items, only `guess_E`); repo prepared. My shell has no GitHub credentials, so the user fetches and I copy the answers.
+  - **Judge result (2026-11-06):** greedy leaks 118/140 (84.3%) against 110/140 (78.6%) sampled. Paired: both leak 99, only sampled 11, only greedy 19, which is no clear difference. Occupation 43/48 against 38/48, age 10/12 against 8/12; location and education about equal. **The decoding deviation did not disadvantage PAPILLON; the ranking stands.** Utility loss 1.72 against 1.12, with the session caveat above.
+  - Still missing: our measures for it (the read-back's "ours" columns), then the full read-back.
+  - Next: our measures.
 - [ ] **Staab, 5 rounds** (`staab_r5`), as in their PersonalReddit configs. Their `main.py` reloads its per-round files and continues every profile below `max_num_iterations`, so a copy of each finished run with 5 rounds should run only rounds 4–5 (~7 h instead of ~18 h fresh). Check first, on 2 prompts, that a resumed run equals a fresh 5-round run (~20 min GPU); the final inference after round 3 is the same call as the first step of round 4.
 - Not changed: giving Loiseau, PAPILLON or Presidio the attribute list (that would change their algorithm; state it as a difference in inputs), a larger backbone (no 32B), Presidio's settings.
 - Optional, if 1.1 leaves Loiseau's decoding unclear: Loiseau greedy as a sensitivity row (~1 h GPU).
@@ -69,7 +81,11 @@ Judge leak rate (match): loop 40.7%, Staab 70.0%, Presidio 71.4%, Loiseau-PUPA 7
   - **Checker and read-back:** `check_judge_answers.py` accepts `utility_<n>` and `compare_<n>`. `read_judge_answers.py` merges all `compare*`/`utility*` answers and reads only the versions in `--methods`.
   - **Tests:** a from-scratch run into an empty folder reproduces the 2026-10-13 upload and keys byte for byte; the read-back reproduces the committed `judge_outcomes.csv`, `judge_utility.csv` and `hand_check.csv`; a full addition with fake answers runs end to end and leaves every old row untouched.
   - [ ] Still open: reusing answers for texts identical to ones already judged (for the sweep).
-- [ ] Our measures for new versions: `score_own_measures.py` reuses `reference_answers.json` (2.8 h of its 3.5 h is re-sampling them) and appends versions.
+- [ ] Our measures for new versions (code done 2026-11-06):
+  - **Resume:** `score_own_measures.py` resumes per (prompt, version) row, not per prompt, so an added method is scored on its own.
+  - **Reuse:** cached answers in `reference_answers.json` are reused. `reference()` recomputes only x₀'s log-probs and D(∅) with `utility_check`'s own functions, and `utility_check.py` (frozen) is untouched. ~15 min per added method instead of ~3.5 h.
+  - **Checked without GPU:** a default run would score exactly the 112 `papillon_t0` rows, all on cached answers; the three paths of `reference()` were stub-tested.
+  - **Open:** the GPU check that reuse reproduces the stored values exactly. `sbatch evaluation/run_score_own_measures_gb10.sbatch --out_dir /scratch/users/mkilic/own_measures_reuse_check --limit 2`; the folder holds only a copy of the cached answers, so the 7 old versions of 2 prompts must equal their rows in `own_measures.csv`.
 - [ ] Names: `papillon_t0`, `staab_r5`, `loop_r050`, `loop_r025`, `loop_qwen_only`, `loop_3b`; outputs `results/rewrites/pupa_sd_<name>.csv`.
 
 ### Order and budget

@@ -48,6 +48,7 @@ echo "server up $(date)"
 for method in $METHODS; do
     case $method in
         loiseau_*) venv=loiseau ;;
+        papillon*) venv=papillon ;;
         *)         venv=$method ;;
     esac
     echo "== $method (venv $venv) $(date)"

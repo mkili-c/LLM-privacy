@@ -7,7 +7,8 @@
 #SBATCH --output=/work/projects/p23-mkilic/LLM-privacy/evaluation/own_measures_%j.out
 
 # The loop's own privacy and utility measures on every method's rewrites of PUPA-SD and on the
-# originals (evaluation/score_own_measures.py). ~3.5 h. A rerun continues where it stopped.
+# originals (evaluation/score_own_measures.py). ~3.5 h from scratch; a rerun continues where it
+# stopped, and a method added later takes ~15 min (only its rows, on the cached answers).
 #     sbatch evaluation/run_score_own_measures_gb10.sbatch            (all methods)
 #     sbatch evaluation/run_score_own_measures_gb10.sbatch --out_dir results/evaluation_smoke --limit 2
 # (Arguments, not VAR=... sbatch: --export=NONE drops such variables.)

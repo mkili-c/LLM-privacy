@@ -27,10 +27,14 @@ Output (in --out_dir, default results/evaluation/):
                             kl_per_answer (space-separated), and per attribute a the columns
                             "qwen <a>", "laya <a>", "max <a>"
     reference_answers.json  id -> the K answers D was measured on
-A prompt's rows are written together once it is done, and prompts already in own_measures.csv
-are skipped, so a rerun continues.
+Only (prompt, version) rows not yet in own_measures.csv are scored and appended, a prompt's rows
+together once it is done, so a rerun continues and a method added later is scored on its own.
+A prompt whose answers are already in reference_answers.json reuses them: only x_0's log-probs
+on them and D(∅) are recomputed (K forward passes each), which gives the same values without
+sampling again.
 
-Cost on the GB10: ~3.5 h for 112 prompts x 7 versions; sampling the answers is ~2.8 h of it.
+Cost on the GB10: ~3.5 h for 112 prompts x 7 versions from scratch, sampling the answers is
+~2.8 h of it; ~15 min per added method with the answers reused.
 
     sbatch evaluation/run_score_own_measures_gb10.sbatch
 """
@@ -55,7 +59,7 @@ from attribute_probe import ATTRIBUTES                 # noqa: E402
 from laya_probe import PRIVACY_LAYA                    # noqa: E402
 
 ORIGINAL = "original"                                  # the method name of the unedited prompt
-METHODS = ["loop"] + run_baselines.METHODS             # loop, presidio, loiseau_pupa, loiseau_synthpai, papillon, staab
+METHODS = ["loop"] + run_baselines.METHODS             # loop and every baseline in run_baselines.METHODS
 
 
 def get_args():
@@ -130,11 +134,24 @@ def utility(model, tok, texts, ref, device):
     return out
 
 
-def score_prompt(model, tok, attackers, versions, args, device):
-    """Both measures for every version of one prompt. -> (answers, rows)."""
-    torch.manual_seed(args.seed)                       # the loop's state before its first random step
-    ref = utility_check.prepare(model, tok, versions[ORIGINAL], args.k, args.answer_max_new_tokens, device)
-    names, texts = list(versions), list(versions.values())
+def reference(model, tok, x0, cached, args, device):
+    """utility_check.prepare's dict for one prompt. Answers cached in reference_answers.json are
+    reused, recomputing only what prepare computes from them (x_0's log-probs and D(∅)); without
+    a cache they are sampled as the loop sampled them. -> dict, or None if every answer was empty."""
+    if cached is None:
+        torch.manual_seed(args.seed)                   # the loop's state before its first random step
+        return utility_check.prepare(model, tok, x0, args.k, args.answer_max_new_tokens, device)
+    if not cached:                                     # every sampled answer was empty: no D
+        return None
+    ref_logp = utility_check.reference_logprobs(model, tok, x0, cached, device)
+    kls = utility_check.answer_kls(model, tok, "", cached, ref_logp, device)
+    return dict(answers=cached, ref_logp=ref_logp, d_empty=sum(kls) / len(kls))
+
+
+def score_prompt(model, tok, attackers, versions, names, cached, args, device):
+    """Both measures for the versions `names` of one prompt. -> (answers, rows)."""
+    ref = reference(model, tok, versions[ORIGINAL], cached, args, device)
+    texts = [versions[name] for name in names]
     per, P = privacy(attackers, texts, len(args.attributes))   # {attacker: [versions, K]}, max [versions, K]
     if ref is None:                                    # every sampled answer was empty: no D
         util = [(math.nan, math.nan, [])] * len(texts)
@@ -164,11 +181,13 @@ def main():
     done = set()
     if out_path.exists():
         with open(out_path, encoding="utf-8") as f:
-            done = {r["id"] for r in csv.DictReader(f)}
+            done = {(r["id"], r["method"]) for r in csv.DictReader(f)}
     answers = json.loads(answers_path.read_text(encoding="utf-8")) if answers_path.exists() else {}
-    todo = [i for i in versions if i not in done][:args.limit]
-    print(f"{len(versions)} prompts x {len(args.methods) + 1} versions; {len(done)} prompts done, "
-          f"{len(todo)} to go -> {out_path}")
+    missing = {i: [name for name in versions[i] if (i, name) not in done] for i in versions}
+    todo = [i for i in versions if missing[i]][:args.limit]
+    print(f"{len(versions)} prompts x {len(args.methods) + 1} versions; {len(done)} rows done, "
+          f"{sum(len(missing[i]) for i in todo)} to go on {len(todo)} prompts "
+          f"({sum(i in answers for i in todo)} of them with cached answers) -> {out_path}")
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model, tok, attackers = load_models(args, device)
@@ -179,7 +198,8 @@ def main():
             w.writeheader()
         for n, i in enumerate(todo, 1):
             start = time.perf_counter()
-            answers[i], rows = score_prompt(model, tok, attackers, versions[i], args, device)
+            answers[i], rows = score_prompt(model, tok, attackers, versions[i], missing[i],
+                                            answers.get(i), args, device)
             w.writerows({"id": i, **r} for r in rows)
             f.flush()
             answers_path.write_text(json.dumps(answers, ensure_ascii=False, indent=1), encoding="utf-8")

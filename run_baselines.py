@@ -14,9 +14,12 @@ and retries the failures; for each id the last row in the file counts.
 
 Each method runs in its own venv (/work/projects/p23-mkilic/venvs/<venv>), because the
 baselines pin conflicting packages: presidio -> presidio, loiseau_* -> loiseau
-(DSPy 3.0.4, as in their paper), papillon -> papillon (DSPy 3.1.2: PAPILLON's README says
+(DSPy 3.0.4, as in their paper), papillon* -> papillon (DSPy 3.1.2: PAPILLON's README says
 its code runs with the newest DSPy for inference, and the authors' 2026 follow-up uses 3.1.2),
 staab -> staab (openai 0.28.1, as in their environment.yaml).
+papillon_t0 is PAPILLON with greedy decoding, as in their own environment: dspy-ai 2.5.35's
+dspy.LM defaults to temperature 0.0, while DSPy 3.1.2's sends none, so `papillon` (run
+2026-10-09, kept for comparison) sampled with Qwen's generation_config (found 2026-11-06).
 The LLM baselines talk to Qwen2.5-7B-Instruct through `transformers serve` at SERVER
 (baselines/run_sweep_gb10.sbatch starts it). The adapters only feed the prompt to the
 released code (baselines/repos, pinned by baselines/fetch_repos.sh) and read its
@@ -38,7 +41,7 @@ import sys
 import time
 from pathlib import Path
 
-METHODS = ["presidio", "loiseau_pupa", "loiseau_synthpai", "papillon", "staab"]
+METHODS = ["presidio", "loiseau_pupa", "loiseau_synthpai", "papillon", "papillon_t0", "staab"]
 COLUMNS = ["id", "method", "rewrite", "error", "seconds", "calls", "prompt_tokens", "completion_tokens"]
 OUT_TEMPLATE = "results/rewrites/{data}_{method}.csv"  # {data}: the eval CSV's folder name
 HERE = Path(__file__).resolve().parent
@@ -112,15 +115,16 @@ def load_loiseau(method):
     return lambda text: call_counting_usage(lm, lambda: program(text=text).anonymized_text)
 
 
-def load_papillon():
+def load_papillon(greedy):
     """PAPILLON (Columbia-NLP-Lab/PAPILLON, papillon/run_llama_dspy.py) zero-shot at prompt level:
     the local model's prompt_creater output (the prompt it would send to the remote model) is the
     rewrite; the remote model and the aggregator are never called. LM settings as in their
-    papillon/evaluate_papillon.py."""
+    papillon/evaluate_papillon.py; greedy passes the temperature 0.0 their dspy-ai 2.5.35 defaults to."""
     import dspy
     sys.path.insert(0, str(REPOS / "PAPILLON" / "papillon"))
     from run_llama_dspy import PAPILLON
-    lm = dspy.LM(f"openai/{SERVED_MODEL}", api_base=SERVER, api_key="", max_tokens=4000)
+    decoding = {"temperature": 0.0} if greedy else {}   # the server decodes greedily at temperature 0
+    lm = dspy.LM(f"openai/{SERVED_MODEL}", api_base=SERVER, api_key="", max_tokens=4000, **decoding)
     dspy.configure(lm=lm)
     pipeline = PAPILLON(untrusted_model=None)
     return lambda text: call_counting_usage(lm, lambda: pipeline.prompt_creater(userQuery=text).createdPrompt)
@@ -133,8 +137,8 @@ def load_adapter(method):
         return load_presidio()
     if method in LOISEAU_PROMPTS:
         return load_loiseau(method)
-    if method == "papillon":
-        return load_papillon()
+    if method in ("papillon", "papillon_t0"):
+        return load_papillon(greedy=method == "papillon_t0")
     raise ValueError(f"no adapter for {method}")
 
 
