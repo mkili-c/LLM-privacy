@@ -25,6 +25,14 @@ Output:
 
     python evaluation/write_judge_items.py                    # originals + loop + 4 baselines
     python evaluation/write_judge_items.py --methods loop presidio loiseau_pupa loiseau_synthpai papillon staab
+
+A from-scratch run refuses to start once judge_key/guess_key.csv exists: it would reassign every
+item and orphan the answers already collected. Versions judged later go through --add, which
+leaves everything existing as it is: one new guess folder per added version (a letter not used
+yet), one new utility folder (utility_2, ...) for their (prompt, version) pairs, both keys
+appended to, item numbers continuing.
+
+    python evaluation/write_judge_items.py --add loiseau_synthpai
 """
 import argparse
 import csv
@@ -42,6 +50,7 @@ from score_own_measures import ORIGINAL, read_versions        # noqa: E402
 # Loiseau et al.'s SynthPAI prompt is optional (user, 2026-10-12): add it with --methods
 METHODS = ["loop", "presidio", "loiseau_pupa", "papillon", "staab"]
 SEED = 0
+RESERVED_LETTERS = {"U", "C"}   # prefixes of the utility and compare items, never a guess folder
 # PUPA-SD category -> the attribute name the judge is asked about
 CATEGORY_NAMES = {
     "occupation": "occupation", "occupaion": "occupation",
@@ -127,6 +136,8 @@ def get_args():
     p = argparse.ArgumentParser(description="Item files and keys for the external judge")
     p.add_argument("--data", default=str(REPO / "data" / "pupa_sd" / "pupa_sd_eval.csv"))
     p.add_argument("--methods", nargs="+", default=METHODS)
+    p.add_argument("--add", nargs="+", default=None,
+                   help="versions to add to the existing judge run, which stays untouched")
     p.add_argument("--upload_dir", default=str(REPO / "results" / "evaluation" / "judge_upload"))
     p.add_argument("--key_dir", default=str(REPO / "results" / "evaluation" / "judge_key"))
     return p.parse_args()
@@ -155,58 +166,94 @@ def write_folder(folder, items, instructions):
     (folder / "INSTRUCTIONS.md").write_text(instructions, encoding="utf-8")
 
 
-def guess_sets(versions, truth, rng, upload_dir, key_writer):
-    """One shuffled guess folder per version, under a random letter. -> {version: letter}."""
-    names = [ORIGINAL] + [m for m in next(iter(versions.values())) if m != ORIGINAL]
-    letters = rng.sample(string.ascii_uppercase, len(names))
-    codes = dict(zip(names, letters))
-    for name in names:
+def read_key(path):
+    with open(path, encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def guess_sets(versions, truth, codes, rng, upload_dir, key_writer):
+    """One shuffled guess folder per version in codes ({version: letter}), items <letter>001, ..."""
+    for name, letter in codes.items():
         ids = list(versions)
         rng.shuffle(ids)
         items = []
         for n, i in enumerate(ids, 1):
-            item = f"{codes[name]}{n:03d}"
+            item = f"{letter}{n:03d}"
             asked = asked_attributes(truth[i])
             items.append({"item": item, "text": versions[i][name], "attributes": list(asked)})
             for attribute, categories in asked.items():
                 key_writer.writerow([item, i, name, attribute, "; ".join(categories)])
-        write_folder(upload_dir / f"guess_{codes[name]}", items, GUESS_INSTRUCTIONS)
-    return codes
+        write_folder(upload_dir / f"guess_{letter}", items, GUESS_INSTRUCTIONS)
 
 
-def utility_set(versions, methods, rng, upload_dir, key_writer):
-    """All (prompt, method) pairs in one shuffled folder."""
+def utility_set(versions, methods, rng, folder, first, key_writer):
+    """All (prompt, method) pairs in one shuffled folder, items U<first>, U<first + 1>, ..."""
     pairs = [(i, m) for i in versions for m in methods]
     rng.shuffle(pairs)
     items = []
-    for n, (i, m) in enumerate(pairs, 1):
+    for n, (i, m) in enumerate(pairs, first):
         item = f"U{n:03d}"
         items.append({"item": item, "original": versions[i][ORIGINAL], "rewrite": versions[i][m]})
         key_writer.writerow([item, i, m])
-    write_folder(upload_dir / "utility", items, UTILITY_INSTRUCTIONS)
+    write_folder(folder, items, UTILITY_INSTRUCTIONS)
     return len(items)
+
+
+def first_run(args, truth, upload_dir, key_dir):
+    """The whole judge run from scratch: the originals and every method in --methods."""
+    if (key_dir / "guess_key.csv").exists():
+        sys.exit(f"{key_dir / 'guess_key.csv'} exists: a new run would reassign every item and orphan "
+                 "the answers already collected. Add versions with --add.")
+    versions = read_versions(args.data, args.methods)
+    key_dir.mkdir(parents=True, exist_ok=True)
+    rng = random.Random(SEED)
+    names = [ORIGINAL] + args.methods
+    codes = dict(zip(names, rng.sample(string.ascii_uppercase, len(names))))
+    with open(key_dir / "guess_key.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["item", "id", "version", "attribute", "categories"])
+        guess_sets(versions, truth, codes, rng, upload_dir, w)
+    with open(key_dir / "utility_key.csv", "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["item", "id", "method"])
+        n_util = utility_set(versions, args.methods, rng, upload_dir / "utility", 1, w)
+    (upload_dir / "README.md").write_text(README, encoding="utf-8")
+    return versions, codes, "utility", n_util
+
+
+def add_versions(args, truth, upload_dir, key_dir):
+    """New versions next to the existing judge run, which stays untouched: guess folders under
+    letters not used yet, one new utility folder, both keys appended to, item numbers continuing."""
+    guess_key, utility_key = read_key(key_dir / "guess_key.csv"), read_key(key_dir / "utility_key.csv")
+    judged = {r["version"] for r in guess_key} & set(args.add)
+    if judged:
+        sys.exit(f"already judged: {', '.join(sorted(judged))}")
+    versions = read_versions(args.data, args.add)
+    # seeded by what is added, so the same addition always gives the same folders
+    rng = random.Random(f"{SEED}+{' '.join(args.add)}")
+    used = {r["item"][0] for r in guess_key} | RESERVED_LETTERS
+    free = [c for c in string.ascii_uppercase if c not in used]
+    codes = dict(zip(args.add, rng.sample(free, len(args.add))))
+    with open(key_dir / "guess_key.csv", "a", newline="", encoding="utf-8") as f:
+        guess_sets(versions, truth, codes, rng, upload_dir, csv.writer(f))
+    folder = f"utility_{len(list(upload_dir.glob('utility*'))) + 1}"
+    first = max(int(r["item"][1:]) for r in utility_key) + 1
+    with open(key_dir / "utility_key.csv", "a", newline="", encoding="utf-8") as f:
+        n_util = utility_set(versions, args.add, rng, upload_dir / folder, first, csv.writer(f))
+    return versions, codes, folder, n_util
 
 
 def main():
     args = get_args()
-    versions = read_versions(args.data, args.methods)
     truth = read_truth(args.data)
     upload_dir, key_dir = Path(args.upload_dir), Path(args.key_dir)
-    key_dir.mkdir(parents=True, exist_ok=True)
-    rng = random.Random(SEED)
-    with open(key_dir / "guess_key.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["item", "id", "version", "attribute", "categories"])
-        codes = guess_sets(versions, truth, rng, upload_dir, w)
-    with open(key_dir / "utility_key.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
-        w.writerow(["item", "id", "method"])
-        n_util = utility_set(versions, args.methods, rng, upload_dir, w)
-    (upload_dir / "README.md").write_text(README, encoding="utf-8")
+    run = add_versions if args.add else first_run
+    versions, codes, utility_folder, n_util = run(args, truth, upload_dir, key_dir)
     n_asked = sum(len(asked_attributes(t)) for t in truth.values())
     print(f"{len(versions)} prompts; guess folders (version -> folder): "
           + ", ".join(f"{v} -> guess_{c}" for v, c in codes.items()))
-    print(f"  {len(versions)} texts and {n_asked} attribute guesses per folder; utility: {n_util} items")
+    print(f"  {len(versions)} texts and {n_asked} attribute guesses per folder; "
+          f"{utility_folder}: {n_util} items")
     print(f"upload: {upload_dir}   keys (stay here): {key_dir}")
 
 

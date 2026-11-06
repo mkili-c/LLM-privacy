@@ -863,3 +863,147 @@ Q109,337,staab,location,location
 Q110,433,staab,location,location
 Q111,15,staab,family situation,family
 Q112,38,staab,occupation,occupation
+J001,15,loiseau_synthpai,family situation,family
+J002,734,loiseau_synthpai,gender,gender
+J003,234,loiseau_synthpai,occupation,occupation
+J004,841,loiseau_synthpai,occupation,occupation
+J005,274,loiseau_synthpai,location,location
+J006,337,loiseau_synthpai,location,location
+J007,916,loiseau_synthpai,location,location
+J008,914,loiseau_synthpai,education,education
+J009,306,loiseau_synthpai,location,location
+J010,150,loiseau_synthpai,occupation,occupation
+J011,38,loiseau_synthpai,occupation,occupation
+J012,447,loiseau_synthpai,health condition,health
+J013,415,loiseau_synthpai,occupation,occupation
+J014,542,loiseau_synthpai,occupation,occupation
+J015,473,loiseau_synthpai,race or nationality,race/nationality
+J016,429,loiseau_synthpai,age,age
+J017,255,loiseau_synthpai,mental health condition,mental_health
+J018,604,loiseau_synthpai,gender,gender
+J019,130,loiseau_synthpai,age,age
+J019,130,loiseau_synthpai,financial situation,finance
+J020,40,loiseau_synthpai,occupation,occupation
+J021,848,loiseau_synthpai,education,education
+J021,848,loiseau_synthpai,location,location
+J022,539,loiseau_synthpai,education,education
+J023,287,loiseau_synthpai,occupation,occupation
+J024,661,loiseau_synthpai,location,location
+J025,8,loiseau_synthpai,financial situation,finance
+J026,129,loiseau_synthpai,financial situation,finance
+J027,327,loiseau_synthpai,location,location
+J028,527,loiseau_synthpai,location,location
+J028,527,loiseau_synthpai,occupation,occupation
+J029,598,loiseau_synthpai,location,location
+J030,36,loiseau_synthpai,location,location
+J031,125,loiseau_synthpai,gender,gender
+J032,266,loiseau_synthpai,age,age
+J032,266,loiseau_synthpai,gender,gender
+J033,66,loiseau_synthpai,education,education
+J034,12,loiseau_synthpai,occupation,occupation
+J035,433,loiseau_synthpai,location,location
+J036,692,loiseau_synthpai,age,age
+J036,692,loiseau_synthpai,gender,gender
+J036,692,loiseau_synthpai,occupation,occupation
+J037,724,loiseau_synthpai,education,education
+J038,286,loiseau_synthpai,location,location
+J038,286,loiseau_synthpai,family situation,family
+J039,214,loiseau_synthpai,occupation,occupation
+J040,744,loiseau_synthpai,education,education
+J041,186,loiseau_synthpai,location,location
+J041,186,loiseau_synthpai,occupation,occupation
+J042,789,loiseau_synthpai,occupation,occupation
+J043,637,loiseau_synthpai,mental health condition,mental_health
+J044,359,loiseau_synthpai,location,location
+J045,62,loiseau_synthpai,reproductive health condition,reproductive_health
+J046,993,loiseau_synthpai,occupation,occupation
+J047,514,loiseau_synthpai,occupation,occupation
+J048,691,loiseau_synthpai,occupation,occupation
+J048,691,loiseau_synthpai,education,education
+J049,57,loiseau_synthpai,occupation,occupation
+J050,198,loiseau_synthpai,occupation,occupation
+J051,192,loiseau_synthpai,location,location
+J052,851,loiseau_synthpai,reproductive health condition,reproductive_health
+J053,474,loiseau_synthpai,education,education
+J053,474,loiseau_synthpai,occupation,occupation
+J054,934,loiseau_synthpai,location,location
+J054,934,loiseau_synthpai,occupation,occupation
+J055,593,loiseau_synthpai,health condition,health
+J056,966,loiseau_synthpai,education,education
+J057,682,loiseau_synthpai,education,education
+J058,908,loiseau_synthpai,education,education
+J059,4,loiseau_synthpai,education,education
+J059,4,loiseau_synthpai,occupation,occupation
+J060,162,loiseau_synthpai,location,location
+J061,735,loiseau_synthpai,age,age
+J062,137,loiseau_synthpai,health condition,health
+J062,137,loiseau_synthpai,mental health condition,mental_health
+J063,747,loiseau_synthpai,occupation,occupation
+J064,171,loiseau_synthpai,occupation,occupation
+J064,171,loiseau_synthpai,location,location
+J065,507,loiseau_synthpai,reproductive health condition,reproductive_health
+J066,933,loiseau_synthpai,health condition,health
+J067,298,loiseau_synthpai,health condition,health
+J068,1121,loiseau_synthpai,occupation,occupation
+J069,103,loiseau_synthpai,age,age
+J069,103,loiseau_synthpai,reproductive health condition,reproductive_health
+J070,653,loiseau_synthpai,age,age
+J071,1022,loiseau_synthpai,occupation,occupation
+J072,290,loiseau_synthpai,occupation,occupation
+J072,290,loiseau_synthpai,location,location
+J073,175,loiseau_synthpai,occupation,occupation
+J074,140,loiseau_synthpai,age,age
+J074,140,loiseau_synthpai,gender,gender
+J075,610,loiseau_synthpai,location,location
+J076,355,loiseau_synthpai,age,age
+J077,313,loiseau_synthpai,occupation,occupation
+J078,258,loiseau_synthpai,education,education
+J079,78,loiseau_synthpai,occupation,occupation
+J080,340,loiseau_synthpai,mental health condition,mental_health
+J080,340,loiseau_synthpai,education,education
+J081,300,loiseau_synthpai,occupation,occupation
+J082,88,loiseau_synthpai,location,location
+J083,153,loiseau_synthpai,location,location
+J083,153,loiseau_synthpai,occupation,occupation
+J084,510,loiseau_synthpai,location,location
+J085,707,loiseau_synthpai,occupation,occupation
+J086,640,loiseau_synthpai,occupation,occupation
+J087,134,loiseau_synthpai,occupation,occupation
+J088,454,loiseau_synthpai,location,location
+J089,51,loiseau_synthpai,age,age
+J089,51,loiseau_synthpai,gender,gender
+J089,51,loiseau_synthpai,occupation,occupaion
+J090,99,loiseau_synthpai,relationship status,relationship_status
+J090,99,loiseau_synthpai,financial situation,finance
+J091,973,loiseau_synthpai,occupation,occupation
+J092,1007,loiseau_synthpai,education,education
+J093,219,loiseau_synthpai,location,location
+J094,108,loiseau_synthpai,occupation,occupation
+J095,368,loiseau_synthpai,gender,gender
+J095,368,loiseau_synthpai,health condition,health
+J096,712,loiseau_synthpai,education,education
+J097,609,loiseau_synthpai,mental health condition,mental_health
+J097,609,loiseau_synthpai,health condition,health
+J098,17,loiseau_synthpai,location,location
+J098,17,loiseau_synthpai,occupation,occupation
+J099,94,loiseau_synthpai,occupation,occupation
+J100,247,loiseau_synthpai,occupation,occupation
+J101,1010,loiseau_synthpai,age,age
+J101,1010,loiseau_synthpai,gender,gender
+J102,564,loiseau_synthpai,occupation,occupation
+J103,58,loiseau_synthpai,gender,gender
+J103,58,loiseau_synthpai,location,location
+J104,1074,loiseau_synthpai,occupation,occupation
+J105,761,loiseau_synthpai,occupation,occupation
+J106,339,loiseau_synthpai,age,age
+J106,339,loiseau_synthpai,gender,gender
+J107,458,loiseau_synthpai,occupation,occupation
+J107,458,loiseau_synthpai,location,location
+J107,458,loiseau_synthpai,education,education
+J108,221,loiseau_synthpai,occupation,occupation
+J109,3,loiseau_synthpai,family situation,family
+J110,1078,loiseau_synthpai,education,education
+J111,183,loiseau_synthpai,location,location
+J111,183,loiseau_synthpai,occupation,occupation
+J112,199,loiseau_synthpai,location,location
+J112,199,loiseau_synthpai,occupation,occupation

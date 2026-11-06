@@ -35,7 +35,9 @@ Also: HAND_CHECK random guess decisions with text, reasoning, guess, true values
 checking the judge by hand, and the privacy-utility plot (one point per version).
 
 Inputs: the keys in results/evaluation/judge_key/, the answers in results/evaluation/judge_answers/
-(guess_*/, compare/, utility/), results/evaluation/own_measures.csv, the eval set.
+(guess_*/, compare*/, utility*/: versions judged later have their own compare_<n>/ and
+utility_<n>/), results/evaluation/own_measures.csv, the eval set. Only the versions in --methods
+(and the originals) are read, so a version whose judge answers are not back yet can stay out.
 Output (results/evaluation/): judge_outcomes.csv (id, version, attribute, guess, outcome),
 judge_utility.csv (id, method, loss), hand_check.csv, privacy_utility.png; the tables are printed.
 
@@ -101,12 +103,20 @@ def read_answers(path, field):
     return out
 
 
-def outcomes(eval_dir):
-    """{(id, version, attribute): (guess, reasoning, outcome)} for every guess of every version."""
-    key = read_csv(eval_dir / "judge_key" / "guess_key.csv")
+def read_answer_folders(answers_dir, prefix, field):
+    """{item: answer[field]} merged over every <prefix>*/answers.jsonl (item ids are unique across them)."""
+    out = {}
+    for path in sorted(answers_dir.glob(f"{prefix}*/answers.jsonl")):
+        out.update(read_answers(path, field))
+    return out
+
+
+def outcomes(eval_dir, names):
+    """{(id, version, attribute): (guess, reasoning, outcome)} for every guess of the versions in names."""
+    key = [k for k in read_csv(eval_dir / "judge_key" / "guess_key.csv") if k["version"] in names]
     guesses = read_guesses(eval_dir / "judge_answers")
     compare_key = {(r["guess_item"], r["attribute"]): r["item"] for r in read_csv(eval_dir / "judge_key" / "compare_key.csv")}
-    verdicts = read_answers(eval_dir / "judge_answers" / "compare" / "answers.jsonl", "match")
+    verdicts = read_answer_folders(eval_dir / "judge_answers", "compare", "match")
     out = {}
     for k in key:
         guess, reasoning = guesses[(k["item"], k["attribute"])]
@@ -124,10 +134,10 @@ def counted_pairs(result):
     return [(i, a) for (i, v, a), (_, _, o) in result.items() if v == ORIGINAL and o == "match"]
 
 
-def read_utility(eval_dir):
-    """{(id, method): the judge's utility loss 0-10}."""
-    key = read_csv(eval_dir / "judge_key" / "utility_key.csv")
-    losses = read_answers(eval_dir / "judge_answers" / "utility" / "answers.jsonl", "loss")
+def read_utility(eval_dir, methods):
+    """{(id, method): the judge's utility loss 0-10} for the methods given."""
+    key = [k for k in read_csv(eval_dir / "judge_key" / "utility_key.csv") if k["method"] in methods]
+    losses = read_answer_folders(eval_dir / "judge_answers", "utility", "loss")
     return {(k["id"], k["method"]): int(losses[k["item"]]) for k in key}
 
 
@@ -290,8 +300,8 @@ def main():
     names = [ORIGINAL] + args.methods
     versions = read_versions(args.data, args.methods)
     truth = read_truth(args.data)
-    result = outcomes(eval_dir)
-    losses = read_utility(eval_dir)
+    result = outcomes(eval_dir, names)
+    losses = read_utility(eval_dir, args.methods)
     own = {(r["id"], r["method"]): r for r in read_csv(eval_dir / "own_measures.csv")}
     with open(eval_dir / "judge_outcomes.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)

@@ -15,6 +15,12 @@ Output:
     --key_dir/compare_key.csv                              item, guess_item, attribute (stays here)
 
     python evaluation/write_compare_items.py
+
+Versions added later (write_judge_items.py --add) get their own compare folder: --add writes only
+the guesses that have no compare item yet into compare_2, compare_3, ..., numbering continues and
+the key is appended to. Without --add the run refuses to start once compare_key.csv exists.
+
+    python evaluation/write_compare_items.py --add
 """
 import argparse
 import csv
@@ -56,6 +62,8 @@ def get_args():
     p.add_argument("--answers_dir", default=str(REPO / "results" / "evaluation" / "judge_answers"))
     p.add_argument("--upload_dir", default=str(REPO / "results" / "evaluation" / "judge_upload"))
     p.add_argument("--key_dir", default=str(REPO / "results" / "evaluation" / "judge_key"))
+    p.add_argument("--add", action="store_true",
+                   help="only guesses without a compare item yet, into a new compare_<n> folder")
     return p.parse_args()
 
 
@@ -82,12 +90,23 @@ def is_not_inferable(guess):
     return guess.lower().strip(" .\"'") == NOT_INFERABLE
 
 
+def read_key(path):
+    with open(path, encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
 def main():
     args = get_args()
     truth = read_truth(args.data)
-    key_dir = Path(args.key_dir)
-    with open(key_dir / "guess_key.csv", encoding="utf-8") as f:
-        key = list(csv.DictReader(f))
+    key_dir, upload_dir = Path(args.key_dir), Path(args.upload_dir)
+    compare_key_path = key_dir / "compare_key.csv"
+    if compare_key_path.exists() and not args.add:
+        sys.exit(f"{compare_key_path} exists: a new run would orphan the compare answers already "
+                 "collected. Add the guesses of versions judged later with --add.")
+    compared = read_key(compare_key_path) if args.add else []
+    done = {(r["guess_item"], r["attribute"]) for r in compared}
+    # earlier "not inferable" guesses have no compare item: they come up again here and are skipped again
+    key = [k for k in read_key(key_dir / "guess_key.csv") if (k["item"], k["attribute"]) not in done]
     guesses = read_guesses(args.answers_dir)
     missing = [(k["item"], k["attribute"]) for k in key if (k["item"], k["attribute"]) not in guesses]
     if missing:
@@ -100,18 +119,21 @@ def main():
             continue
         values = [v for c in k["categories"].split("; ") for v in truth[k["id"]][c]]
         pairs.append((k["item"], k["attribute"], guess, values))
-    random.Random(SEED).shuffle(pairs)
+    first = max((int(r["item"][1:]) for r in compared), default=0) + 1
+    random.Random(SEED if first == 1 else f"{SEED}+{first}").shuffle(pairs)
+    folder = f"compare_{len(list(upload_dir.glob('compare*'))) + 1}" if args.add else "compare"
     items = []
-    with open(key_dir / "compare_key.csv", "w", newline="", encoding="utf-8") as f:
+    with open(compare_key_path, "a" if args.add else "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["item", "guess_item", "attribute"])
-        for n, (guess_item, attribute, guess, values) in enumerate(pairs, 1):
+        if not args.add:
+            w.writerow(["item", "guess_item", "attribute"])
+        for n, (guess_item, attribute, guess, values) in enumerate(pairs, first):
             item = f"C{n:04d}"
             items.append({"item": item, "attribute": attribute, "guess": guess, "true values": values})
             w.writerow([item, guess_item, attribute])
-    write_folder(Path(args.upload_dir) / "compare", items, COMPARE_INSTRUCTIONS)
+    write_folder(upload_dir / folder, items, COMPARE_INSTRUCTIONS)
     print(f"{len(key)} guesses read, {len(key) - len(pairs)} 'not inferable', "
-          f"{len(items)} compare items -> {Path(args.upload_dir) / 'compare'}")
+          f"{len(items)} compare items -> {upload_dir / folder}")
 
 
 if __name__ == "__main__":

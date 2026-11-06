@@ -46,7 +46,7 @@ Judge leak rate (match): loop 40.7%, Staab 70.0%, Presidio 71.4%, Loiseau-PUPA 7
   Output: a short explanation per baseline of why it leaks.
 
 **1.2 Fairer settings:** only settings the authors themselves document, fixed before looking at any PUPA-SD result, and reported as extra rows.
-- [ ] **Loiseau, SynthPAI prompt:** it targets attribute inference from text (our threat model), their PUPA prompt targets PII. Already run on all prompts (`results/rewrites/pupa_sd_loiseau_synthpai.csv`); only the judge is missing. No GPU.
+- [ ] **Loiseau, SynthPAI prompt:** it targets attribute inference from text (our threat model), their PUPA prompt targets PII. Already run on all prompts (`results/rewrites/pupa_sd_loiseau_synthpai.csv`); its own measures are in `own_measures.csv` (ours: leak 107/140, mean R 29.1%). Included (user, 2026-11-06). Judge folders written 2026-11-06: `guess_J` (112 texts, 144 questions) and `utility_2` (U561–U672). Next: those two sessions, then `write_compare_items.py --add` → `compare_2`, its session, then `read_judge_answers.py --methods loop presidio loiseau_pupa papillon staab loiseau_synthpai`.
 - [ ] **PAPILLON greedy** (`papillon_t0`, from 1.1): ~25 min GPU.
 - [ ] **Staab, 5 rounds** (`staab_r5`), as in their PersonalReddit configs. Their `main.py` reloads its per-round files and continues every profile below `max_num_iterations`, so a copy of each finished run with 5 rounds should run only rounds 4–5 (~7 h instead of ~18 h fresh). Check first, on 2 prompts, that a resumed run equals a fresh 5-round run (~20 min GPU); the final inference after round 3 is the same call as the first step of round 4.
 - Not changed: giving Loiseau, PAPILLON or Presidio the attribute list (that would change their algorithm; state it as a difference in inputs), a larger backbone (no 32B), Presidio's settings.
@@ -64,11 +64,11 @@ Judge leak rate (match): loop 40.7%, Staab 70.0%, Presidio 71.4%, Loiseau-PUPA 7
 - 2.4 Other model families: future work. Qwen3 needs `enable_thinking=False` in every chat-template call, Llama is gated, and each family needs chat-template and tokenizer fixes plus its own runs.
 
 ### Shared plumbing (coding, ~4–5 h)
-- [ ] Judge files for new versions only:
-  - fresh letters not used before; existing keys untouched;
-  - compare and utility items only for the new texts;
-  - a text identical to one already judged reuses its answers;
-  - extend `write_judge_items.py`, `write_compare_items.py` and `read_judge_answers.py`.
+- [x] Judge files for new versions only (2026-11-06):
+  - **Writers:** `write_judge_items.py --add <versions>` and `write_compare_items.py --add`. New guess folders get unused letters (U and C reserved); new `utility_<n>` and `compare_<n>` folders; keys appended, numbering continues. Without `--add`, both refuse to run once their key exists.
+  - **Checker and read-back:** `check_judge_answers.py` accepts `utility_<n>` and `compare_<n>`. `read_judge_answers.py` merges all `compare*`/`utility*` answers and reads only the versions in `--methods`.
+  - **Tests:** a from-scratch run into an empty folder reproduces the 2026-10-13 upload and keys byte for byte; the read-back reproduces the committed `judge_outcomes.csv`, `judge_utility.csv` and `hand_check.csv`; a full addition with fake answers runs end to end and leaves every old row untouched.
+  - [ ] Still open: reusing answers for texts identical to ones already judged (for the sweep).
 - [ ] Our measures for new versions: `score_own_measures.py` reuses `reference_answers.json` (2.8 h of its 3.5 h is re-sampling them) and appends versions.
 - [ ] Names: `papillon_t0`, `staab_r5`, `loop_r050`, `loop_r025`, `loop_qwen_only`, `loop_3b`; outputs `results/rewrites/pupa_sd_<name>.csv`.
 

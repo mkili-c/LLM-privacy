@@ -1,7 +1,7 @@
 """
 Check a judge session's answers.jsonl right after the session, while it can still be asked to fix gaps.
 
-For one folder (guess_<code>, utility or compare), compares --answers_dir/<folder>/answers.jsonl with
+For one folder (guess_<code>, utility[_<n>] or compare[_<n>]), compares --answers_dir/<folder>/answers.jsonl with
 the items the judge was given (--upload_dir/<folder>/items.jsonl) and reports:
     missing items, items answered more than once (the last answer counts), unknown item ids,
     malformed lines, and per kind:
@@ -24,7 +24,7 @@ MATCH_LABELS = {"match", "less precise", "no"}
 
 def get_args():
     p = argparse.ArgumentParser(description="Check one judge session's answers")
-    p.add_argument("folder", help="guess_<code>, utility or compare")
+    p.add_argument("folder", help="guess_<code>, utility[_<n>] or compare[_<n>]")
     p.add_argument("--upload_dir", default=str(REPO / "results" / "evaluation" / "judge_upload"))
     p.add_argument("--answers_dir", default=str(REPO / "results" / "evaluation" / "judge_answers"))
     return p.parse_args()
@@ -67,7 +67,7 @@ def answer_problems(kind, item, answer):
 
 def main():
     args = get_args()
-    kind = "guess" if args.folder.startswith("guess_") else args.folder
+    kind = args.folder.split("_")[0]          # guess_M -> guess, utility_2 -> utility, compare -> compare
     items, _ = read_jsonl(Path(args.upload_dir) / args.folder / "items.jsonl")
     items = {it["item"]: it for it in items}
     answers, problems = read_jsonl(Path(args.answers_dir) / args.folder / "answers.jsonl")
