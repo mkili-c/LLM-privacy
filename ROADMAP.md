@@ -1,6 +1,92 @@
 # Privacy–utility loop: roadmap
 
-Status: 2026-10-11. `algorithm_v7`: one privacy step whose every LLM rewrite passes a utility check, R = D / D(∅) < 100% (calibrated in B2), with one retry to generalize and a protected list on failure. The sequential utility rewriter is retired. Next: smoke test A1g. The sections below describe earlier versions.
+Status: 2026-11-02. The evaluation is finished and the report is written (offline; it will not be extended). The environment was rebuilt after the cluster reset and reproduces the old runs exactly (job 1984). Current plan: "Additional experiments" right below. The algorithm is `algorithm_v7` (frozen, commit `f5c7f82`): one privacy step whose every LLM rewrite passes a utility check, R = D / D(∅) < 100% (calibrated in B2), with one retry to generalize and a protected list on failure. The sections after the plan describe earlier work.
+
+## Additional experiments (plan of 2026-11-02)
+
+Two tasks under time pressure (deadline unknown, at least a week). The report is final and cannot be updated; results and corrections from this phase go into the presentation (user, 2026-11-02). The GPU is the bottleneck (one job at a time): GPU jobs run back to back, coding and judge sessions run alongside them. Rules as before:
+- no tuning on PUPA-SD;
+- for baselines, change the plumbing, never the algorithm;
+- every new output is judged like the old ones (Claude Opus 5.5: blind guess, three-way compare, utility loss 0–10), with the originals' leak filter unchanged;
+- old rows stay; new rows are added next to them.
+
+### Task 1: why do the baselines do so poorly?
+
+Judge leak rate (match): loop 40.7%, Staab 70.0%, Presidio 71.4%, Loiseau-PUPA 73.6%, PAPILLON 78.6%. Presidio is NER only and cannot see occupation, education or health, so the LLM anonymizers should beat it on privacy; they don't.
+
+**1.1 Did we implement them as released, and did our plumbing change anything?** (no GPU, except the PAPILLON rerun)
+- [ ] Audit each baseline line by line: their reference code path against our adapter, for instructions, LM call parameters (temperature, top-p, max_tokens), input format, output parsing, rounds and attribute inputs. Result: one table, extending the deviations table (Step 4). What is known so far:
+  - **PAPILLON decoding (found 2026-11-02):** their environment, dspy-ai 2.5.35, defaults to `dspy.LM(temperature=0.0)`, i.e. greedy decoding. DSPy 3.1.2 (ours) defaults to None, so our server sampled with Qwen's `generation_config` (T 0.7, top-p 0.8, top-k 20, repetition penalty 1.05). The deviations table's "Loiseau and PAPILLON leave the temperature to DSPy" is therefore wrong for PAPILLON. Fix (plumbing): pass `temperature=0.0`, rerun as `papillon_t0`.
+  - **Loiseau decoding:** their `models.py` builds `dspy.LM` for OpenRouter with only `max_tokens`, so DSPy 3.0.4's unset default is as released. But in their runs the provider's defaults applied (unknown), in ours Qwen's. To check: their paper and README for decoding settings, and that our `text -> anonymized_text` signature uses the field names of their program in `src/`, since the optimized instruction refers to them.
+  - **Staab:** 3 rounds matches their SynthPAI configs (all 3); their PersonalReddit configs use 5 (including `reddit_qwen15-7B.yaml`). `prompt_level` 3 is their default. The parser artifacts are known (D3).
+  - **Presidio:** defaults (all recognizers, threshold 0, `replace`). Nothing to change.
+  - **Answers instead of rewrites** (Loiseau-PUPA 19, PAPILLON 16): read ~10 and decide whether our plumbing causes them (DSPy adapter, prompt format) or the method on a 7B.
+- [x] **Audit results (2026-11-06)**, baseline by baseline; ranked by likely effect in "Fixes and variants" below.
+  - **Shared server** (`transformers serve`): a request without `max_tokens` gets at most 1024 new tokens. A request can override only temperature and top-p, so Qwen's top-k 20 and repetition penalty 1.05 always apply. `temperature: 0` switches to greedy. The torch seed is set once at server start, so reproducibility rests on the fixed request order. The 17 requests without an answer in `serve_453.log` are all Loiseau-PUPA id 734's timeout and retries (rerun in job 729): no effect on fairness.
+  - **Presidio: as released.** Quickstart call with all defaults (all recognizers, threshold 0, `replace`, spaCy `en_core_web_lg` 3.8.0). Replacements on the 112 prompts: DATE_TIME 60, LOCATION 60, PERSON 10, NRP 6, US_DRIVER_LICENSE 6, URL 4; 44 unchanged. Its leak is its design: occupation, education and health are not entity types.
+  - **Loiseau: as released.** Their program is `dspy.Predict("text:str -> anonymized_text:str")` (`optimizer.py`), the same as ours. GEPA optimizes only instructions (no demos), `export_prompts.py` writes exactly `signature.instructions`, and our extraction is byte-exact for both prompts. DSPy 3.0.4 and `max_tokens` 25,000 match theirs. On the 112 prompts: 0 errors, no parse retries, longest output 1,164 tokens. Their paper states no decoding settings or provider; their code leaves them to the provider. **Fairness point:** their PUPA prompt was optimized for PII masking (privacy = share of annotated entity strings removed, `tasks.py`), the SynthPAI prompt against an attacker guessing a target attribute, which is our threat model. The PUPA prompt itself instructs "Provide a detailed and actionable response when requested", which explains its 19 answers instead of rewrites (SynthPAI prompt: 2).
+  - **PAPILLON: correct call path, two deviations.** `prompt_creater` (a ChainOfThought over `CreateOnePrompt`) gets the raw query, as in their `forward`; `max_tokens` 4000 as theirs; 0 errors, no retries, longest output 517 tokens. Deviation 1: decoding, sampled at T 0.7 instead of the greedy default of their dspy-ai 2.5.35. Deviation 2: zero-shot. Their `evaluate_papillon.py` always loads a DSPy-optimized prompt for the local model and stops with "You will have to optimize it yourself!" for others, so zero-shot is the unoptimized starting point of their method. Most of the long outputs are expanded prompts that keep what the request needs ("Milwaukee"); id 447 answers the user instead. Also unavoidable: DSPy 3.1.2 formats the prompt differently from 2.5.35.
+  - **Staab: config as released, one parsing failure, one open question.** Our config matches their SynthPAI configs key by key (3 rounds, T 0.1, `prompt_level` 3 by default, `target_mode` unused in their code), apart from the intended differences (our server, one request at a time, no `num_tokens` filter). Their client sends `max_tokens` 2000; the longest of 1,120 attacker answers is 883 tokens, so nothing was cut. All 10 attributes are parsed, including the three passed by name. Their decoding gets Qwen's top-p 0.8, top-k 20 and repetition penalty 1.05 on top of T 0.1, negligible at T 0.1.
+    - **Parsing failure:** in 15 (prompt, round) pairs on 9 prompts (4, 140, 198, 199, 266, 339, 433, 458, 542; 8 of them in round 0), Qwen answered in Markdown (`### Type:`, `**Guess:**`). Their parser then returns `{'inference': 'MISSING', 'guess': []}` for every attribute, and their `full_answer` fallback runs only on an exception, so the anonymizer got no inferences in those rounds. id 433's rewrite starts with the anonymizer's explanation.
+    - **Open question:** 24 rewrites are unchanged (none of the 9 above), although in all 24 their round-0 attacker was confident (certainty ≥ 3) about some attribute. Either Qwen did not edit, or their line alignment kept a quoted original line (a one-line prompt whose answer has several lines keeps only the most similar line). The raw anonymizer answers were never saved (`save_prompts` is unused in their code), so telling them apart needs a diagnostic rerun.
+  - **Fixes and variants**, by likely effect:
+    1. Loiseau with the SynthPAI prompt: already run, judge only.
+    2. PAPILLON optimized for Qwen. Options: (a) their MIPROv2 optimization on PUPA-New, with a local proposer and judge in place of GPT-4o-mini (a deviation); (b) their released Llama-3.1-8B prompt transferred; (c) Li et al. 2026's Qwen2.5-7B prompt, usable only on PUPA-SD rows outside their optimization split.
+    3. PAPILLON greedy (`temperature=0.0`).
+    4. Staab diagnostic: the 24 unchanged prompts with raw answers logged (debug wrapper, no change to their code); then fix the plumbing if it is the alignment.
+    5. Staab Markdown-tolerant parser (plumbing), rerun the 9 prompts (~1 h).
+    6. Staab 5 rounds.
+
+    Optional: Loiseau greedy as a sensitivity row.
+- [ ] Diagnose from the stored outputs (no GPU, ~2 h): where does each baseline leak?
+  - leak per attribute and method (occupation is 48 of the 140 counted pairs);
+  - edit size and share of unchanged outputs per method (Presidio 44 unchanged, the loop 6);
+  - Staab, from their per-round files (`results/staab_runs/pupa_sd/<id>/out/inference_*.jsonl`, `anonymized_*.jsonl`): did their attacker name the leaked attribute, and did their anonymizer then remove it? That separates a detection failure from an editing failure, as C2 did for the loop (no-ops vs refusals).
+
+  Output: a short explanation per baseline of why it leaks.
+
+**1.2 Fairer settings:** only settings the authors themselves document, fixed before looking at any PUPA-SD result, and reported as extra rows.
+- [ ] **Loiseau, SynthPAI prompt:** it targets attribute inference from text (our threat model), their PUPA prompt targets PII. Already run on all prompts (`results/rewrites/pupa_sd_loiseau_synthpai.csv`); only the judge is missing. No GPU.
+- [ ] **PAPILLON greedy** (`papillon_t0`, from 1.1): ~25 min GPU.
+- [ ] **Staab, 5 rounds** (`staab_r5`), as in their PersonalReddit configs. Their `main.py` reloads its per-round files and continues every profile below `max_num_iterations`, so a copy of each finished run with 5 rounds should run only rounds 4–5 (~7 h instead of ~18 h fresh). Check first, on 2 prompts, that a resumed run equals a fresh 5-round run (~20 min GPU); the final inference after round 3 is the same call as the first step of round 4.
+- Not changed: giving Loiseau, PAPILLON or Presidio the attribute list (that would change their algorithm; state it as a difference in inputs), a larger backbone (no 32B), Presidio's settings.
+- Optional, if 1.1 leaves Loiseau's decoding unclear: Loiseau greedy as a sensitivity row (~1 h GPU).
+
+### Task 2: further experiments with the loop
+- [ ] **2.1 Utility-threshold sweep** (`--max_share`), for a privacy-utility curve. Values **0.5 and 0.25**, not 0.75: at 1.0 the loop's final R exceeds 75% on only 8 of 112 prompts (50%: 30, 25%: 60), so 0.75 would barely differ from 1.0.
+  - **Exact shortcut:** the loop is deterministic (job 1984 reproduced job 663 bit for bit). A prompt whose checked R stayed below the budget at every rewrite of the 1.0 run (the `utility R …%` lines of jobs 665 and 674, 451 checks) gives the same output, so rerun only the others. The log rounds R to whole percents, so a prompt within 1 point of the budget counts as affected. Add 2–3 unaffected prompts as a control.
+  - Cost: ~5 h GPU at 0.5, ~9 h at 0.25 (instead of ~15–20 h each). The judge only needs the changed texts.
+- [ ] **2.2 Laya ablation (optional):**
+  - Qwen only (what Laya adds): needs a small switch (`--laya_path none`), default unchanged; ~13 h on 112 prompts.
+  - Or base Laya (what the fine-tuning adds): `--laya_path /work/projects/p23-mkilic/models/laya`, no code; ~15 h.
+  - If only one: Qwen only.
+- [ ] **2.3 Qwen2.5-3B backbone (optional):** `--model_path /work/projects/p23-mkilic/models/Qwen2.5-3B-Instruct` for attacker, rewriter and utility, with Laya, τ and the R rule unchanged. R is relative to the model's own D(∅), so no recalibration is needed. Expect more edits: the 3B flags 28% of `util_broken` as leaking, the 7B 1%. Time 3 dev rows first; ~8 h expected for 112.
+- 2.4 Other model families: future work. Qwen3 needs `enable_thinking=False` in every chat-template call, Llama is gated, and each family needs chat-template and tokenizer fixes plus its own runs.
+
+### Shared plumbing (coding, ~4–5 h)
+- [ ] Judge files for new versions only:
+  - fresh letters not used before; existing keys untouched;
+  - compare and utility items only for the new texts;
+  - a text identical to one already judged reuses its answers;
+  - extend `write_judge_items.py`, `write_compare_items.py` and `read_judge_answers.py`.
+- [ ] Our measures for new versions: `score_own_measures.py` reuses `reference_answers.json` (2.8 h of its 3.5 h is re-sampling them) and appends versions.
+- [ ] Names: `papillon_t0`, `staab_r5`, `loop_r050`, `loop_r025`, `loop_qwen_only`, `loop_3b`; outputs `results/rewrites/pupa_sd_<name>.csv`.
+
+### Order and budget
+GPU, one job after the other (~23 h required, ~44 h with the optional runs):
+1. `papillon_t0` (~25 min), after the one-line fix.
+2. Loop at 0.5 on the affected prompts (~5 h), then 0.25 (~9 h), after the shortcut script.
+3. Staab resume check (~20 min), then `staab_r5` (~7 h).
+4. Our measures for the new versions (~1 h).
+5. Optional: Qwen-only ablation (~13 h); 3B (time 3 dev rows first, then ~8 h).
+
+While these run: the 1.1 audit and diagnosis, the shortcut script, and the judge and measures plumbing. The judge runs in two waves: (1) `loiseau_synthpai`, `papillon_t0`, `staab_r5`, `loop_r050`, `loop_r025`; (2) the optional runs.
+
+Open decisions (user):
+- [ ] Sweep values 0.5 and 0.25 instead of 0.5 and 0.75 (recommended).
+- [ ] Baseline variants as extra rows next to the released-setting rows, never replacing them (recommended).
+- [ ] Ablation: Qwen only (recommended) or base Laya.
+- [ ] Reuse judge answers for texts identical to ones already judged (recommended: the judge is not deterministic, so re-judging identical texts only adds noise).
 
 ## How the loop works now
 
