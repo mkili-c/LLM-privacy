@@ -29,6 +29,11 @@ Staab et al. are not a per-prompt adapter: their main.py loops over all prompts 
 iteration. run_staab runs main.py unchanged once per prompt (so each prompt gets its own time)
 and reads the results back into the same CSV format (tokens empty: their code does not keep
 the usage).
+
+staab_md is Staab et al. with baselines/staab_main.py in place of main.py, which puts Qwen's
+Markdown-formatted attacker answers into the plain layout their parser reads. It reruns only the
+prompts in STAAB_BLIND_IDS (or --ids); the other rows are copied from the `staab` run, since the
+parser worked there and the fix would change nothing.
 """
 import argparse
 import csv
@@ -41,7 +46,7 @@ import sys
 import time
 from pathlib import Path
 
-METHODS = ["presidio", "loiseau_pupa", "loiseau_synthpai", "papillon", "papillon_t0", "staab"]
+METHODS = ["presidio", "loiseau_pupa", "loiseau_synthpai", "papillon", "papillon_t0", "staab", "staab_md"]
 COLUMNS = ["id", "method", "rewrite", "error", "seconds", "calls", "prompt_tokens", "completion_tokens"]
 OUT_TEMPLATE = "results/rewrites/{data}_{method}.csv"  # {data}: the eval CSV's folder name
 HERE = Path(__file__).resolve().parent
@@ -58,6 +63,10 @@ STAAB_RUNS = HERE / "results" / "staab_runs"   # their inputs and per-iteration 
 STAAB_ITERATIONS = 3                           # as in their configs
 STAAB_TEMPERATURE = 0.1                        # as in their configs
 STAAB_TIMESTAMP = 1700000000                   # their prompts print each comment's date: one fixed date for all
+STAAB_MAIN = HERE / "baselines" / "staab_main.py"   # main.py with the Markdown fix (staab_md)
+# PUPA-SD prompts where the attacker's Markdown answer left the anonymizer without inferences in
+# at least one of rounds 0-2 (results/staab_runs/pupa_sd/<id>/out/inference_<round>.jsonl)
+STAAB_BLIND_IDS = ["4", "140", "198", "199", "266", "339", "458", "542"]
 # Our 10 attributes, under Staab et al.'s key where they have one, so their own description and
 # answer options apply (reddit_utils.type_to_str / type_to_options); the other three pass
 # through by name. Every prompt gets all 10: their attacker targets the types in `reviews`.
@@ -252,10 +261,10 @@ def staab_rewrite(original, profile):
     return "\n".join(next(texts) if line.strip() else line for line in original.split("\n"))
 
 
-def run_staab_prompt(row, prompt_dir):
-    """One prompt through their main.py, unchanged, in its own folder. Returns its final saved
-    profile (None if there is none), the seconds the run took and main.py's exit code.
-    A finished prompt is not run again; an unfinished one starts over, so its time is whole."""
+def run_staab_prompt(row, prompt_dir, script):
+    """One prompt through their code (script: their main.py, or STAAB_MAIN), in its own folder.
+    Returns its final saved profile (None if there is none), the seconds the run took and the exit
+    code. A finished prompt is not run again; an unfinished one starts over, so its time is whole."""
     seconds_path, out_dir = prompt_dir / "seconds.txt", prompt_dir / "out"
     if seconds_path.exists():
         profile = staab_final_profiles(out_dir).get(row["id"])
@@ -267,38 +276,47 @@ def run_staab_prompt(row, prompt_dir):
     write_staab_profiles([row], profiles_path)
     write_staab_config(profiles_path, prompt_dir, config_path)
     start = time.perf_counter()
-    done = subprocess.run([sys.executable, "main.py", "--config_path", str(config_path)], cwd=STAAB_REPO)
+    done = subprocess.run([sys.executable, script, "--config_path", str(config_path)], cwd=STAAB_REPO)
     seconds = round(time.perf_counter() - start, 2)
     seconds_path.write_text(str(seconds))
     return staab_final_profiles(out_dir).get(row["id"]), seconds, done.returncode
 
 
-def run_staab(rows, out_path, run_name):
-    """Each prompt through their main.py separately (STAAB_RUNS/run_name/<id>/), so every prompt
+def run_staab(rows, out_path, run_name, method="staab", rerun=None, copy_from=None):
+    """Each prompt through their code separately (STAAB_RUNS/run_name/<id>/), so every prompt
     gets its own time. Their main.py handles all prompts together in each step, and its loop never
     mixes profiles, so one prompt per run is the same method; only the order of calls differs.
     The seconds include ~10-20 s of process startup (their imports and embedding model).
-    The CSV is rewritten from all prompt folders on every run, so a rerun resumes."""
+    The CSV is rewritten from all prompt folders on every run, so a rerun resumes.
+    With rerun (ids) only those prompts run; the other rows are copied from the CSV copy_from."""
     run_dir = STAAB_RUNS / run_name
-    print(f"staab: {len(rows)} prompts, their files in {run_dir}/<id>/")
+    script = "main.py" if method == "staab" else str(STAAB_MAIN)
+    copied = {}
+    if rerun is not None:
+        with open(copy_from, encoding="utf-8") as f:
+            copied = {r["id"]: r for r in csv.DictReader(f) if not r.get("error")}
+    print(f"{method}: {len(rows)} prompts, their files in {run_dir}/<id>/")
     incomplete = 0
     with open(out_path, "w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(COLUMNS)
         for n, row in enumerate(rows, 1):
-            profile, seconds, exit_code = run_staab_prompt(row, run_dir / row["id"])
+            if rerun is not None and row["id"] not in rerun:
+                writer.writerow([{**copied[row["id"]], "method": method}[c] for c in COLUMNS])
+                continue
+            profile, seconds, exit_code = run_staab_prompt(row, run_dir / row["id"], script)
             sets, filled = staab_progress(profile) if profile else (0, 0)
             if sets <= STAAB_ITERATIONS:
                 incomplete += 1
                 error = (f"incomplete: {max(0, sets - 1)} of {STAAB_ITERATIONS} anonymizations "
                          f"(main.py exit code {exit_code})")
-                writer.writerow([row["id"], "staab", "", error, seconds, "", "", ""])
+                writer.writerow([row["id"], method, "", error, seconds, "", "", ""])
             else:
-                writer.writerow([row["id"], "staab", staab_rewrite(row["original"], profile), "",
+                writer.writerow([row["id"], method, staab_rewrite(row["original"], profile), "",
                                  seconds, sets - 1 + filled, "", ""])
             f.flush()
             print(f"  {n}/{len(rows)} id {row['id']}: {seconds} s ({incomplete} incomplete so far)")
-    print(f"staab: wrote {out_path} ({incomplete} incomplete)")
+    print(f"{method}: wrote {out_path} ({incomplete} incomplete)")
 
 
 def main():
@@ -307,14 +325,18 @@ def main():
     out_path = args.out or OUT_TEMPLATE.format(data=data_name, method=args.method)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     rows = read_rows(args.data, args.limit, args.ids)
-    if args.method == "staab":
+    if args.method in ("staab", "staab_md"):
         # a smoke test (--limit / --ids) gets its own folder, so it never mixes into the full run's files
-        run_name = data_name
+        run_name = data_name if args.method == "staab" else f"{data_name}_md"
         if args.ids:
             run_name += "_ids_" + "_".join(args.ids)
         elif args.limit:
             run_name += f"_first{args.limit}"
-        run_staab(rows, out_path, run_name)
+        rerun, copy_from = None, None
+        if args.method == "staab_md":
+            rerun = set(args.ids) if args.ids else set(STAAB_BLIND_IDS)
+            copy_from = OUT_TEMPLATE.format(data=data_name, method="staab")
+        run_staab(rows, out_path, run_name, args.method, rerun, copy_from)
         return
     rewrite = load_adapter(args.method)
     run(rows, rewrite, args.method, out_path)

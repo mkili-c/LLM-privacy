@@ -49,6 +49,7 @@ for method in $METHODS; do
     case $method in
         loiseau_*) venv=loiseau ;;
         papillon*) venv=papillon ;;
+        staab*)    venv=staab ;;
         *)         venv=$method ;;
     esac
     echo "== $method (venv $venv) $(date)"

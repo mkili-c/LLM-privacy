@@ -1,0 +1,9 @@
+sudo: sorry, you must have a tty to run sudo
+Job 2675 on studgpu-spark01.inf.ethz.ch (aarch64), args: --out_dir /scratch/users/mkilic/own_measures_reuse_check --limit 2
+112 prompts x 8 versions; 0 rows done, 16 to go on 2 prompts (2 of them with cached answers) -> /scratch/users/mkilic/own_measures_reuse_check/own_measures.csv
+Loading /scratch/users/mkilic/Qwen2.5-7B-Instruct on cuda (bfloat16) ...
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   0%|          | 1/339 [00:00<03:42,  1.52it/s]Loading weights:   4%|▎         | 12/339 [00:00<00:16, 19.98it/s]Loading weights:   5%|▌         | 18/339 [00:01<00:21, 14.70it/s]Loading weights:   7%|▋         | 24/339 [00:01<00:19, 16.34it/s]Loading weights:   8%|▊         | 27/339 [00:01<00:19, 16.27it/s]Loading weights:   9%|▉         | 30/339 [00:02<00:23, 13.40it/s]Loading weights:  11%|█         | 37/339 [00:02<00:14, 20.25it/s]Loading weights:  18%|█▊        | 60/339 [00:02<00:07, 37.39it/s]Loading weights:  21%|██        | 72/339 [00:02<00:05, 47.50it/s]Loading weights:  23%|██▎       | 79/339 [00:03<00:08, 31.08it/s]Loading weights:  26%|██▋       | 89/339 [00:03<00:06, 37.52it/s]Loading weights:  28%|██▊       | 95/339 [00:03<00:06, 38.49it/s]Loading weights: 100%|██████████| 339/339 [00:03<00:00, 93.05it/s]
+  1/2 id 3 (48 s): original R=0%  loop R=3%  presidio R=38%  loiseau_pupa R=5%  loiseau_synthpai R=3%  papillon R=27%  papillon_t0 R=34%  staab R=2%
+  2/2 id 4 (41 s): original R=0%  loop R=7%  presidio R=0%  loiseau_pupa R=44%  loiseau_synthpai R=43%  papillon R=47%  papillon_t0 R=50%  staab R=15%
+Done Fri Nov  6 18:10:42 CET 2026
