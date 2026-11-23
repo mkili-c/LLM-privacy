@@ -1,1 +1,74 @@
 Job 2981 on studgpu-spark01.inf.ethz.ch (aarch64), methods: staab_md
+server up Mon Nov  9 16:57:03 CET 2026
+== staab_md (venv staab) Mon Nov  9 16:57:03 CET 2026
+staab_md: 2 prompts, their files in /work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_md_ids_198_542/<id>/
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights:  65%|██████▌   | 67/103 [00:00<00:00, 629.99it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 860.45it/s]
+{'output_dir': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_md_ids_198_542/198/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_md_ids_198_542/198/profiles.jsonl', 'outpath': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_md_ids_198_542/198/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:07<00:00, 67.02s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:20<00:00, 20.66s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.59s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.28s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:22<00:00, 22.11s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.72s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.89s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:21<00:00, 21.21s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:14<00:00, 14.59s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:57<00:00, 57.06s/it][A
+                                                       [A  1/2 id 198: 395.04 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 8448.82it/s]
+{'output_dir': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_md_ids_198_542/542/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_md_ids_198_542/542/profiles.jsonl', 'outpath': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_md_ids_198_542/542/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 3, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:50<00:00, 50.89s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:10<00:00, 10.87s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:18<00:00, 18.21s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:55<00:00, 55.31s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.05s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.05s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:54<00:00, 54.92s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.87s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.68s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.82s/it][A
+                                                       [A  2/2 id 542: 341.38 s (0 incomplete so far)
+staab_md: wrote /scratch/users/mkilic/staab_md_smoke.csv (0 incomplete)
+Done Mon Nov  9 17:09:20 CET 2026

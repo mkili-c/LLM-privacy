@@ -34,6 +34,9 @@ staab_md is Staab et al. with baselines/staab_main.py in place of main.py, which
 Markdown-formatted attacker answers into the plain layout their parser reads. It reruns only the
 prompts in STAAB_BLIND_IDS (or --ids); the other rows are copied from the `staab` run, since the
 parser worked there and the fix would change nothing.
+
+staab_r5 is staab_md with 5 rounds, as in their PersonalReddit configs (theirs for SynthPAI use 3),
+run from scratch on every prompt.
 """
 import argparse
 import csv
@@ -46,7 +49,7 @@ import sys
 import time
 from pathlib import Path
 
-METHODS = ["presidio", "loiseau_pupa", "loiseau_synthpai", "papillon", "papillon_t0", "staab", "staab_md"]
+METHODS = ["presidio", "loiseau_pupa", "loiseau_synthpai", "papillon", "papillon_t0", "staab", "staab_md", "staab_r5"]
 COLUMNS = ["id", "method", "rewrite", "error", "seconds", "calls", "prompt_tokens", "completion_tokens"]
 OUT_TEMPLATE = "results/rewrites/{data}_{method}.csv"  # {data}: the eval CSV's folder name
 HERE = Path(__file__).resolve().parent
@@ -60,7 +63,8 @@ LOISEAU_PROMPTS = {
 }
 STAAB_REPO = REPOS / "llm-anonymization"
 STAAB_RUNS = HERE / "results" / "staab_runs"   # their inputs and per-iteration outputs, one folder per run
-STAAB_ITERATIONS = 3                           # as in their configs
+STAAB_ITERATIONS = 3                           # as in their SynthPAI configs
+STAAB_R5_ITERATIONS = 5                        # staab_r5: as in their PersonalReddit configs (reddit_*.yaml)
 STAAB_TEMPERATURE = 0.1                        # as in their configs
 STAAB_TIMESTAMP = 1700000000                   # their prompts print each comment's date: one fixed date for all
 STAAB_MAIN = HERE / "baselines" / "staab_main.py"   # main.py with the Markdown fix (staab_md)
@@ -214,7 +218,7 @@ def write_staab_profiles(rows, path):
             f.write(json.dumps({"username": row["id"], "comments": comments, "reviews": reviews}) + "\n")
 
 
-def write_staab_config(profiles_path, run_dir, config_path):
+def write_staab_config(profiles_path, run_dir, config_path, iterations=STAAB_ITERATIONS):
     """Their SynthPAI config (configs/anonymization/synthpai/*.yaml) with every model set to our
     server, one request at a time, and no separate evaluation model. JSON is valid YAML."""
     model = {"name": SERVED_MODEL, "provider": "openai", "args": {"temperature": STAAB_TEMPERATURE}}
@@ -227,7 +231,7 @@ def write_staab_config(profiles_path, run_dir, config_path):
             "anon_model": model, "inference_model": model, "utility_model": model,
             "eval_inference_model": None,
             "profile_filter": {"hardness": 1, "certainty": 1},
-            "max_num_iterations": STAAB_ITERATIONS, "use_ner": False,
+            "max_num_iterations": iterations, "use_ner": False,
             "offset": 0, "num_profiles": 100_000,
         },
         "gen_model": model,
@@ -237,7 +241,7 @@ def write_staab_config(profiles_path, run_dir, config_path):
 
 def staab_progress(profile):
     """(comment sets, filled inferences + utility scores) of one saved profile state. A finished
-    profile has 1 + STAAB_ITERATIONS comment sets; its calls = anonymizations + filled."""
+    profile has 1 + rounds comment sets; its calls = anonymizations + filled."""
     filled = sum(SERVED_MODEL in c.get("predictions", {}) for c in profile["comments"])
     filled += sum(SERVED_MODEL in c.get("utility", {}) for c in profile["comments"])
     return len(profile["comments"]), filled
@@ -261,20 +265,20 @@ def staab_rewrite(original, profile):
     return "\n".join(next(texts) if line.strip() else line for line in original.split("\n"))
 
 
-def run_staab_prompt(row, prompt_dir, script):
+def run_staab_prompt(row, prompt_dir, script, iterations=STAAB_ITERATIONS):
     """One prompt through their code (script: their main.py, or STAAB_MAIN), in its own folder.
     Returns its final saved profile (None if there is none), the seconds the run took and the exit
     code. A finished prompt is not run again; an unfinished one starts over, so its time is whole."""
     seconds_path, out_dir = prompt_dir / "seconds.txt", prompt_dir / "out"
     if seconds_path.exists():
         profile = staab_final_profiles(out_dir).get(row["id"])
-        if profile is not None and staab_progress(profile)[0] > STAAB_ITERATIONS:
+        if profile is not None and staab_progress(profile)[0] > iterations:
             return profile, float(seconds_path.read_text()), 0
     shutil.rmtree(prompt_dir, ignore_errors=True)
     prompt_dir.mkdir(parents=True)
     profiles_path, config_path = prompt_dir / "profiles.jsonl", prompt_dir / "config.yaml"
     write_staab_profiles([row], profiles_path)
-    write_staab_config(profiles_path, prompt_dir, config_path)
+    write_staab_config(profiles_path, prompt_dir, config_path, iterations)
     start = time.perf_counter()
     done = subprocess.run([sys.executable, script, "--config_path", str(config_path)], cwd=STAAB_REPO)
     seconds = round(time.perf_counter() - start, 2)
@@ -282,7 +286,8 @@ def run_staab_prompt(row, prompt_dir, script):
     return staab_final_profiles(out_dir).get(row["id"]), seconds, done.returncode
 
 
-def run_staab(rows, out_path, run_name, method="staab", rerun=None, copy_from=None):
+def run_staab(rows, out_path, run_name, method="staab", rerun=None, copy_from=None,
+              iterations=STAAB_ITERATIONS):
     """Each prompt through their code separately (STAAB_RUNS/run_name/<id>/), so every prompt
     gets its own time. Their main.py handles all prompts together in each step, and its loop never
     mixes profiles, so one prompt per run is the same method; only the order of calls differs.
@@ -304,11 +309,11 @@ def run_staab(rows, out_path, run_name, method="staab", rerun=None, copy_from=No
             if rerun is not None and row["id"] not in rerun:
                 writer.writerow([{**copied[row["id"]], "method": method}[c] for c in COLUMNS])
                 continue
-            profile, seconds, exit_code = run_staab_prompt(row, run_dir / row["id"], script)
+            profile, seconds, exit_code = run_staab_prompt(row, run_dir / row["id"], script, iterations)
             sets, filled = staab_progress(profile) if profile else (0, 0)
-            if sets <= STAAB_ITERATIONS:
+            if sets <= iterations:
                 incomplete += 1
-                error = (f"incomplete: {max(0, sets - 1)} of {STAAB_ITERATIONS} anonymizations "
+                error = (f"incomplete: {max(0, sets - 1)} of {iterations} anonymizations "
                          f"(main.py exit code {exit_code})")
                 writer.writerow([row["id"], method, "", error, seconds, "", "", ""])
             else:
@@ -325,9 +330,9 @@ def main():
     out_path = args.out or OUT_TEMPLATE.format(data=data_name, method=args.method)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     rows = read_rows(args.data, args.limit, args.ids)
-    if args.method in ("staab", "staab_md"):
+    if args.method in ("staab", "staab_md", "staab_r5"):
         # a smoke test (--limit / --ids) gets its own folder, so it never mixes into the full run's files
-        run_name = data_name if args.method == "staab" else f"{data_name}_md"
+        run_name = data_name + {"staab": "", "staab_md": "_md", "staab_r5": "_r5"}[args.method]
         if args.ids:
             run_name += "_ids_" + "_".join(args.ids)
         elif args.limit:
@@ -336,7 +341,8 @@ def main():
         if args.method == "staab_md":
             rerun = set(args.ids) if args.ids else set(STAAB_BLIND_IDS)
             copy_from = OUT_TEMPLATE.format(data=data_name, method="staab")
-        run_staab(rows, out_path, run_name, args.method, rerun, copy_from)
+        iterations = STAAB_R5_ITERATIONS if args.method == "staab_r5" else STAAB_ITERATIONS
+        run_staab(rows, out_path, run_name, args.method, rerun, copy_from, iterations)
         return
     rewrite = load_adapter(args.method)
     run(rows, rewrite, args.method, out_path)

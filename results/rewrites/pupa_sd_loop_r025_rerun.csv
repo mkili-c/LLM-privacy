@@ -1,0 +1,91 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+15,loop,I have a video from last Christmas. Now it is already May. Do you have any idea to combine the topic of Christmas with Star Wars and decorate the video?,,204.53,2,255,1314
+17,loop,"I have a website. I need to write SEO optimized content that is very engaging, and has local keywords in it for the Nashville and the Middle Tennessee area.",,503.88,10,1874,1574
+36,loop,Suggest 20 domain names based on the following input: Emily's Flower in New York,,226.07,7,1138,1272
+51,loop,"What is a good ""doing business as"" name for a teenager who makes TikTok videos about k-pop dances?",,318.72,7,1179,1431
+58,loop,"being a man in Japan. can you help to lower the matches on a dating app, given there are way too many matches coming in.",,887.21,24,4753,1943
+62,loop,"Hey, I need to write an email regarding a parental leave.",,398.46,13,2324,1451
+66,loop,Could you please give me a thesis title for my degree in construction project management?,,325.15,8,1337,1365
+88,loop,I want to open a Charitable Food Organization in Florida. Do I need a license?,,592.91,18,3365,1591
+94,loop,"I run an organization that conducts entertainment events both online and offline, and create marketing campaigns that promote the events. What are good unique selling points that I can list out to my potential clients/customers? Feel free to ask me more questions to provide you with more context.",,981.04,9,1989,1718
+99,loop,"My partner bought a vehicle that is having brake issues, we bought GAP insurance because we need it if it was totaled. Under what conditions would insurance pay off the loan in the event of it being totaled?",,848.78,16,3122,1929
+103,loop,I am looking for SMART goals that I can complete to become a person that more people would want to be romantically engaged with. The goals you suggest must not be something a human would think of; only an AI could come up with them.,,778.91,10,2000,1734
+108,loop,Can you share an email asking to be a speaker in the telecom summit in an indirect way? Noting that I am a professional in my company,,542.7,13,2437,1644
+134,loop,"As a freelance software professional, what is the best way to ask for a raise?",,492.74,15,2758,1518
+137,loop,"How could I incorporate the usage of Tiimo and Logseq into my productivity system? Make suggestions on effective usage and harmonization of the different tools (Physical bullet journal, Google Calendar, Tiimo, Logseq, ...), given that I'm autistic and struggle with executive dysfunction and burnout, mood swings, and inconsistency. Consider whether omitting some tools might be a good approach.",,1573.84,16,4244,2411
+140,loop,"extract the information in bullet form
+Patient Name: Date Collected: Accession Number: NAME_1 12/26/2022 R22-069510 DOB: Date Received: Requesting Facility: 11/XX/XXXX (30) 12/28/2022 Swift Health Urgent Care Gender: Date Reported: Requesting Physician: 12/29/2022 NAME_2   ICD Code(s): Collection Time: Z20.828, 10:00AM",,2593.64,37,11936,5308
+150,loop,"As someone with relevant experience, give your reasons for applying to work with CARE International and for applying to this particular position. Bearing in mind the following job description and person specification, please indicate what experience, skills, and interest you would bring to the job. Planning/Design, Monitoring, Evaluation and Reporting, Information Management, Program and Data Quality Assurance, Learning, sharing/networking, Staff management and mentoring",,917.94,5,1055,1606
+162,loop,"Hello, it is the first spring data in Minneapolis. March was one of the coldest on record, with the temperature never breaking 50 degrees. It is April 8th, and the temp is finally going to be above 50, almost 60 today. Do you have any ideas about how we could celebrate?",,1047.02,12,2856,2042
+171,loop,How to upgrade my license to a multi-state license of the board of nursing?,,318.07,9,1489,1408
+175,loop,"As a salesforce administrator, I would like to configure the system to accept leads from an upstream system and route them to appropriate parties for processing.",,549.61,11,2049,1574
+192,loop,I want to open a bottling facility in Florida. Do I need a food permit?,,570.38,23,4369,1697
+198,loop,"NAME_1,
+I hope you're doing well! NAME_2 is a tool that helps teams increase their conversion rates with highly effective outreach sequencing.
+I think your company would really benefit from trying it out!
+Best, NAME_3",,1361.83,16,3744,1264
+214,loop,"I'm a professional, please parse the data into JSON format. ""Twin, Guest Room, 2, City View High, Marriott Senior Discount, Include, Deluxe Floor""",,1012.63,28,5627,1875
+219,loop,"It's super hot here, May last year wasn't so bad, it's global warming isn't it?",,224.53,5,817,1292
+221,loop,Write a more eloquent and succinct version of the following: I strive to improve daily as a data scientist and study F# and fast.ai.,,791.47,22,4413,729
+234,loop,Resume for 10 years of experience in technology engineering,,282.96,8,1269,1359
+247,loop,"hi, I am an architect and working on the portfolio.",,275.09,9,1486,1372
+255,loop,"I have ADHD, why does alcohol help me start and continue tasks? Is there an alternative for it that is less harmful?",,233.54,6,1008,1412
+266,loop,"- Patient Name:  
+- Date Collected: 12/07/2022  
+- Accession Number: R22-068629  
+- DOB: 01/1980s  
+- Date Received: 12/09/2022  
+- Requesting Facility: Swift Health Urgent Care  
+- Gender:  
+- Date Reported: 12/09/2022  
+- Requesting Physician: NAME_2 #: 44D2111056  
+- Lab Director: NAME_3  
+- ICD Code(s): Z20.828, J06.9  
+- Collection Time: 10:00AM  
+- Status: Final",,2035.45,13,4625,2985
+274,loop,"Give Description for Rental listing in Vancouver, BC, 2 bedrooms, 1 bathroom, heat and hot water included, on tenth floor with nice view and in-suite laundry for $3000 per month",,475.15,9,1794,1627
+286,loop,What's there to do for kids below 5 years in Narragansett?,,282.87,10,1673,1433
+300,loop,"act as an applicant for a customer management role at Passion.io with 6 years of experience in this type of position in the industry, leading customer teams in several companies. and now briefly imagine how you would approach driving retention with a multifaceted team across the customer journey",,979.32,7,1418,1612
+306,loop,What is the climate like today in Brisbane?,,268.02,11,1834,1001
+327,loop,"I'm working in a foreign country. My company bought me a DHL stamp so I can send my hardware to the office. After I weighed the box, it's 5.4 kg, but my stamp says it's for up to 5 kg. What are my options?",,448.24,8,1647,1688
+337,loop,Give me a plan for a public transportation route from NTU to Sushi Express Point.,,327.43,8,1316,1415
+339,loop,"In this task, you are given a text of the patient's record and cancer diagnosis. Your job is to identify the clinical stage of the cancer and generate the treatment regimen.
+
+Input: A patient presents to the clinic with generalised lymphadenopathy, night sweats, fever, and weight loss. He has noticed that the swelling in his neck becomes tender when he drinks alcohol. After workup and lymph node biopsy, NAME_1’s lymphoma was diagnosed. PET scan shows the involved lymph nodes are present on both sides of the diaphragm but do not involve any other organs.",,2439.53,21,6446,3292
+355,loop,"My name is John, I am 24 years old, should I get married now or should I wait?",,379.69,14,2487,1566
+359,loop,organize a hackathon in Zurich,,285.05,12,2033,1388
+433,loop,please help write a social media post to call for more attention in the last day of the conference and highlight the passions received for Mindray's new anesthesia solution in the past few days. can be started with: #EA22 is now in full swing with another great sunny day. We are thrilled to meet so many fellow practitioners and,,1453.89,12,2940,1540
+447,loop,I am experiencing chest discomfort.,,204.01,7,1030,937
+454,loop,"How much would the fuel cost be per week if I drove a vehicle, round trip, twice a week, from 4445 N Lincoln Blvd, Oklahoma City, OK 73105 to 900 Aspen Creek Ter. Yukon, OK 73099. Assume gas costs $3.50 a gallon.",,1528.65,26,6519,2860
+458,loop,"Please give me a profile summary based on my work experience: currently several months in a leadership role in HR at an international school. Previously over a decade in NAME_1, promoted from Brand NAME_2 to Marketing Director Asia and then to Marketing Director for ASIA-EMEA in Luxembourg. Also worked as a marketing manager in Proctor and Gamble for 2 years, Adidas for 3 years. Degrees: BBA in HK, MBA in UW-Madison.",,2567.22,37,10441,4728
+474,loop,"Good morning Sudeep :wave: I’m looking to apply to two online universities to complete my Bachelor of Science in Computer Science during my work schedule at Neo. The applications require an employer reference, and I’d like to ask if you are open to providing one?",,1559.03,29,6552,1978
+510,loop,Where is under pickup location in Melbourne international airport,,155.4,4,572,1211
+514,loop,"I have a company that just released a new text-to-speech AI model, please make a tweet for me that allows me to announce this to the people following the Twitter page?",,491.17,8,1473,831
+527,loop,utilising SafeWork Australia guidelines please create a COVID Management plan for a business in the sector who works with students in South Australia.,,582.25,16,2885,1686
+598,loop,"doctor in vancouver, WA who has YouTube videos to show what developmental disorder and testing look like for adults",,440.55,18,3286,1587
+637,loop,How do I deal with the paralyzing anxiety that an overwhelming amount of work gives me?,,319.86,6,968,1382
+661,loop,"How was the weather on the 12th of February in the last 10 years in Nauders, Austria?",,281.89,8,1436,1451
+682,loop,"I am a graduate student with a dissertation topic ""Computational Drug Repurposing"" and I am writing an application to get a scholarship. In my application for that scholarship, I have to describe the research problems of the field and the long-term perspective of my topic (and problems). Can you help me write some paragraphs about that please for my application so I get funded?",,825.67,9,2028,1835
+691,loop,"I am a published novelist, am fluent in German, have a master's degree, have been a carer for six years and am a medical herbalist. I am also active in my local church and an environmental activist. Suggest possible career paths and business ideas to me.",,1065.4,22,5026,2449
+692,loop,"You are a guy with one year of work experience, wanting to do Amazon. What conditions need to prepare?",,170.92,2,230,1303
+712,loop,Appreciation reply to accepting a scholarship for dietetics,,268.16,13,2170,1213
+734,loop,"Continue writing whatever content contains. You are a writer who must produce detailed descriptions. Use vivid language but avoid overly flowery prose. Write in great detail the sensations you feel at key moments, including combinations of sight, sound, taste, touch, and smell. Do not rush through the story, and do not summarize. This story is written in second person, present tense. Use lots of well-written dialogue that blends the action into the story. Write a story in which you, a human Pokémon trainer, spend the night with your Vaporeon, who is in heat.",,962.05,4,975,1632
+744,loop,"Suppose you are me. Write an academic and formal letter to the University of Siena and express my enthusiasm to continue my graduate studies in Language and Mind: Linguistics and Cognitive Studies in Siena. Kindly ask them that I cannot access their fellowship website and I am eager to know whether this program offers any funding or scholarship opportunities for foreign students. In the end, thank them for their time and consideration.",,2700.28,34,9674,3993
+747,loop,"Working on a volleyball script.
+I'm trying to create a NUI allowing players to select teams.
+Could you show me an example of how to make something that looks like the image attached?
+![image](https://cdn.discordapp.com/attachments/image.png)",,1251.09,13,2960,2158
+789,loop,"I am a geospatial team member and please help to draft an email to the ANZ geospatial team leader to propose a meeting to discuss:
+1. Syncing the projects and opportunities we have.
+2. Sharing marketing experiences for geospatial services.
+3. Following up on the establishment of a regional geospatial community and the actions needed for organizing the first group meeting.
+4. Proposing to have regular check-ins – monthly?",,2259.92,25,6730,3446
+851,loop,how to improve bad circulation during pregnancy,,195.82,7,1018,1329
+908,loop,Need help writing a formal letter to Purdue University on considering me to take me off of the wait list and put me into the fall program,,362.94,6,1019,1410
+914,loop,I have experience in healthcare management quality and accreditation. What would you advise me to do in my doctoral studies at Northampton University?,,545.67,17,3264,1691
+934,loop,Cost of living in Northampton for a nurse in a small apartment,,349.96,15,2571,1473
+973,loop,How can I get recognition as an educational content creator? I have really cool stories but I don't know the best way to access the market.,,356.43,5,844,1395
+1007,loop,Write a professional and friendly email asking if a researcher in the field of microbiome studies would be willing to join my committee. Begin with an introduction that explains I will be entering my third year of the program with a focus on neuropsychology.,,746.32,10,1988,1737
+1022,loop,What is the biggest salary for an Embedded Developer in the Automotive industry with 7 years of experience?,,263.42,5,782,1325
+1074,loop,"Rework in an attractive manner: I am a Mechanical Engineer, working for an international engineering firm based in Germany, managing Industrial Projects in the Middle East focused on Power and Water Desalination.",,1104.59,35,7466,1604
+1078,loop,Write me a cover letter for pets at home. I am a student at the university doing a bachelor's degree in computing.,,453.24,7,1206,1438

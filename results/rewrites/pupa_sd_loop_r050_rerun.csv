@@ -1,0 +1,37 @@
+id,method,rewrite,error,seconds,calls,prompt_tokens,completion_tokens
+17,loop,"I have a website. I need to write SEO-optimized content that is very engaging, and has local keywords in it for the Tennessee area.",,642.68,18,3501,1798
+62,loop,"Hey, I need to write an email regarding a leave.",,144.72,2,210,1293
+66,loop,Could you please give me a thesis title for my degree in project management?,,473.48,14,2403,1461
+88,loop,I want to open a Charitable Food Organization. Do I need a permit?,,275.65,6,956,1371
+134,loop,"As a freelancer, what is the best way to ask for a raise?",,226.19,5,769,1344
+140,loop,"Name: Date Collected: Accession Number: NAME_1 12/26/2022 R22-069510 DOB: Date Received: Requesting Facility: 11/XX/XXXX (30) 12/28/2022 Swift Urgent Care: Date Reported: Requesting Physician: 12/29/2022 NAME_2   Code(s): Z20.828, 10:00AM",,1119.5,9,2390,1821
+192,loop,I want to open a bottling plant in a state. Do I need a food permit?,,594.91,15,2788,1560
+219,loop,"It's super hot here, May last year wasn't so bad. Is it getting hotter in general?",,367.37,10,1747,1402
+221,loop,Write a more eloquent and succinct version of the following: I am dedicated to continuous improvement and study F# and fast.ai for that reason.,,306.81,6,1052,273
+234,loop,Resume for Ten Years of Experience,,213.5,6,882,1317
+247,loop,"hi, I am preparing the portfolio.",,152.78,3,370,1298
+286,loop,What's there to do for kids below 5 years in the area?,,184.39,5,767,1338
+306,loop,What is the weather like in the region today?,,190.63,7,1137,964
+337,loop,Give me a plan for public transport route from my current location to Sushi Express in the area.,,225.43,4,626,1341
+339,loop,"In this task, you are given a text of the patient's record and cancer diagnosis. Your job is to identify the clinical stage of the cancer and generate the treatment regimen.
+
+Input: A patient presents to the clinic with generalised lymphadenopathy, night sweats, fever, and weight loss. He has noticed that the swelling in his neck becomes tender when he drinks alcohol. After workup and lymph node biopsy, NAME_1’s lymphoma was diagnosed. PET scan shows the involved lymph nodes are present on both sides of the diaphragm but do not involve any other organs.",,2439.4,21,6446,3292
+359,loop,organize a hackathon in Switzerland,,312.36,14,2406,1413
+447,loop,I am experiencing chest discomfort.,,204.17,7,1030,937
+454,loop,"How would the fuel cost be calculated per week if I drove a vehicle, round trip, twice a week, from 4445 N Lincoln Blvd to 900 Aspen Creek Ter. Assume gas costs $3.50 a gallon.",,1021.0,16,3670,2127
+458,loop,"Please give me a profile summary based on my work experience: currently 4 months in a leadership role in HR at an international school. Previously, I had 19 years in various marketing roles, including Brand NAME_2 to Marketing Director Asia and then to Marketing Director for ASIA-EMEA. I also worked as a marketing manager at Procter and Gamble for 2 years and at Adidas for 3 years. Degrees: BBA from an unspecified university, MBA from UW-Madison.",,1884.46,20,5267,3171
+474,loop,"Good morning Sudeep :wave: I’m looking to apply to two online universities to complete my Bachelor of Science in Computer Science part-time alongside my work. The applications require an employer reference, and I’d like to ask if you are willing to provide one?",,596.09,10,2041,902
+510,loop,Where is under pickup location in Melbourne international airport,,155.46,4,572,1211
+514,loop,"I have a company that just released a new text-to-speech AI model, please make a tweet for me that allows me to announce this to the people following the Twitter page?",,491.14,8,1473,831
+527,loop,utilising SafeWork Australia guidelines please create a COVID management plan for a business in South Australia.,,724.39,25,4543,1782
+598,loop,"doctor in Vancouver, WA who has online videos to show what psychological health disorders and testing look like for people",,773.5,24,4489,1709
+661,loop,"How was the weather on a particular day in the last 10 years in Nauders, Austria?",,281.54,8,1364,1443
+691,loop,"I am fluent in a language, have advanced training, have been a carer for six years and am a herbalist. I am also active in my local church and an environmental activist. Suggest possible career paths and business ideas to me.",,973.64,15,3072,2022
+712,loop,Appreciation reply to accepting the scholarship,,211.6,6,898,1139
+744,loop,"Suppose you are me. Write an academic and formal letter to the University and express my enthusiasm to continue my studies in Language and Mind: Linguistics and Cognitive Studies. Kindly ask them if this program offers any funding, fellowship, or scholarship positions for international students. In the end, thank them for their time and consideration.",,1901.39,17,4157,2462
+908,loop,Need help writing a formal letter to the university on considering me to take me off of the wait list and put me into the fall program,,365.49,6,1020,1410
+914,loop,I have experience with quality and accreditation. What would you advise me to do in my doctorate at Northampton University?,,369.2,11,1982,1514
+934,loop,Cost of living in Northampton for a small studio,,228.34,8,1236,1357
+973,loop,How can I get recognition as a content creator? I have really cool stories but I don't know the best way to access the market.,,280.47,4,660,1368
+1022,loop,What is the biggest salary for an Embedded Developer in the Automotive industry with 7 years of experience?,,263.44,5,782,1325
+1074,loop,"Rework in an attractive manner: I am a Mechanical Engineer by profession, working for an International Engineering Consultancy firm, managing Industrial Projects in a region focused on Power and Water Desalination.",,553.83,16,3135,834

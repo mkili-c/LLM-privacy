@@ -31,3 +31,6 @@ diag_privacy.py
 .idea/
 # Third-party baseline code, fetched by baselines/fetch_repos.sh
 baselines/repos/
+
+#slides
+presentation/

@@ -1,0 +1,110 @@
+Job 4957 on studgpu-spark01.inf.ethz.ch (aarch64), methods: staab_r5
+server up Sun Nov 22 23:16:51 CET 2026
+== staab_r5 (venv staab) Sun Nov 22 23:16:51 CET 2026
+staab_r5: 2 prompts, their files in /work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_r5_ids_57_198/<id>/
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 7717.69it/s]
+{'output_dir': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_r5_ids_57_198/57/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_r5_ids_57_198/57/profiles.jsonl', 'outpath': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_r5_ids_57_198/57/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 5, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:55<00:00, 55.10s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:58<00:00, 58.06s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.59s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:52<00:00, 52.02s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.75s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.60s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:54<00:00, 54.76s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:54<00:00, 54.20s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.60s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:55<00:00, 55.36s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:07<00:00,  7.06s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.60s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:53<00:00, 53.08s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:06<00:00,  6.98s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:12<00:00, 12.60s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:56<00:00, 56.08s/it][A
+                                                       [A  1/2 id 57: 615.8 s (0 incomplete so far)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6931.07it/s]
+{'output_dir': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_r5_ids_57_198/198/logs', 'seed': 10, 'task': 'ANONYMIZED', 'dryrun': False, 'save_prompts': True, 'timeout': 0.0, 'max_workers': 1, 'task_config': {'profile_path': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_r5_ids_57_198/198/profiles.jsonl', 'outpath': '/work/projects/p23-mkilic/LLM-privacy/results/staab_runs/pupa_sd_r5_ids_57_198/198/out', 'anonymizer': {'anon_type': 'llm', 'target_mode': 'single', 'max_workers': 1}, 'anon_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'inference_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'utility_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}, 'eval_inference_model': None, 'profile_filter': {'hardness': 1, 'certainty': 1}, 'max_num_iterations': 5, 'use_ner': False, 'offset': 0, 'num_profiles': 100000}, 'gen_model': {'name': '/scratch/users/mkilic/Qwen2.5-7B-Instruct', 'provider': 'openai', 'args': {'temperature': 0.1}}}
+
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:07<00:00, 67.05s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:20<00:00, 20.85s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.48s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:02<00:00, 62.14s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:21<00:00, 21.49s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.51s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:01<00:00, 61.20s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:21<00:00, 21.39s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:16<00:00, 16.76s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:55<00:00, 55.61s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:21<00:00, 21.66s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:15<00:00, 15.76s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:01<00:00, 61.66s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:22<00:00, 22.85s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [00:17<00:00, 17.30s/it][A
+                                                       [A
+Profiles:   0%|          | 0/1 [00:00<?, ?it/s][A
+Profiles: 100%|██████████| 1/1 [01:00<00:00, 60.18s/it][A
+                                                       [A  2/2 id 198: 583.96 s (0 incomplete so far)
+staab_r5: wrote /scratch/users/mkilic/staab_r5_smoke.csv (0 incomplete)
+Done Sun Nov 22 23:36:51 CET 2026
